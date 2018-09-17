@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project name="Web.Version" default="version.calc" xmlns="http://nant.sf.net/release/0.85-rc2/nant.xsd">
+	<description>
+		This build file:
+		* calculates the build version number
+		* writes the version number to the source
+	</description>
+
+	<include buildfile="shared.build" />
+	
+	<target name="version.calc">
+
+		<asminfo output="${site.dir}\Properties\AssemblyInfo.cs" language="CSharp">
+			<imports>
+				<import namespace="System" />
+				<import namespace="System.Reflection" />
+				<import namespace="System.Runtime.CompilerServices" />
+				<import namespace="System.Runtime.InteropServices" />
+			</imports>
+			<attributes>
+				<attribute type="AssemblyVersionAttribute" value="${CCNetLabel}" />
+				<attribute type="AssemblyProductAttribute" value="NorthfieldBank.Web" />
+				<attribute type="AssemblyCopyrightAttribute" value="copyright 2018 Multimedia Solutions Corp" />
+				<attribute type="AssemblyCompanyAttribute" value="Multimedia Solutions" />
+				<attribute type="AssemblyTrademarkAttribute" value="Multimedia Solutions" />
+				<attribute type="CLSCompliantAttribute" value="false" />
+				<attribute type="ComVisibleAttribute" value="false" />
+			</attributes>
+		</asminfo>
+	</target>
+</project>
