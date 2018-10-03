@@ -29,6 +29,9 @@
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 1px;
+    &:hover{
+        background: #0e53b7;
+    }
 }
 
 .heroBanner {
@@ -112,7 +115,7 @@
     p {
         margin-bottom: 32px;
         font-size: 20px;
-        line-height: 25px;
+        line-height: 24px;
         color: #666666;
         @include bp(landscape) {
             font-size: 18px;
@@ -270,7 +273,7 @@
                 &:after {
                     position: absolute;
                     content: '';
-                    bottom: -20px;
+                    bottom: -25px;
                     left: 0;
                     width: 120px;
                     height: 25px;
@@ -380,7 +383,7 @@
                         }
                     }
                     p {
-                        font-size: 16px;
+                        font-size: 17px;
                         line-height: 19px;
                         @include bp(landscape) {
                             line-height: 20px;
@@ -514,7 +517,7 @@
 .boardDirectors {
     .bgWrap {
         background: #1268e5;
-        padding: 50px 100px;
+        padding: 35px 65px 35px 100px;
         @include bp(landscape) {
             padding: 22px 85px;
         }
@@ -533,16 +536,24 @@
             }
             tbody {
                 tr {
+                    display: flex;
+                    justify-content: space-between;
+                    border-top: 1px solid #5794ed;
                     @include bp(mobile-large) {
                         width: 50%;
                         float: left;
+                        display: block;
+                    }
+                    @include bp(mobile) {
+                        display: block;
+                        border: none;
                     }
                     td {
-                        min-width: 33.33%;
+                        min-width: 26%;
                         display: inline-block;
                         padding: 15px 0px;
-                        border-top: 1px solid #5794ed;
                         color: #fff;
+                        border: none;
                         @include bp(mobile) {
                             border: none;
                             padding: 9px 0px;
@@ -571,14 +582,14 @@
 .memberFlexWrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     @include bp(mobile) {
         flex-direction: column;
         margin-top: 17px;
     }
     .memberFlex {
         margin-bottom: 20px;
-        width: 33.33%;
+        width: 26%;
         @include bp(mobile) {
             width: 100%;
         }

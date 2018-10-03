@@ -32,6 +32,7 @@ $(document).ready(function(){
     });
 });
 
+$( "#careerInput" ).selectmenu();
 // NProgress
 
 $('body').show();

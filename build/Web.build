@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="Web" default="autobuild">
+    <include buildfile="shared.build" />
+    <include buildfile="version.build" />
+
+    <property name="CCNetLabel" value="1.0.${environment::get-variable('BUILD_NUMBER')}" />
+
+    <property name="build-name" value="ManasquanBank.Web" />
+
+	<!--  build debug version  -->
+    <property name="debug" value="true" />
+
+    <target name="autobuild" description="Continuous integration build">
+        <call target="build" />
+        <!-- call target="bulk-test-deploy"/ -->
+    </target>
+
+    <target name="live-deploy">
+	<call target="package-live-release" />
+
+    </target>
+    <target name="bulk-test-deploy">
+        <call target="web-deploy" />
+
+        <!-- tidies up all the temp mess-->
+        <call target="prepare" />
+    </target>
+
+    <target name="prepare" description="Gets rid of old temp folders (if there) and recreates">
+        <if test="${directory::exists(property::get-value('output.dir'))}">
+            <delete dir="${output.dir}" />
+        </if>
+        <mkdir dir="${output.dir}" />
+        <mkdir dir="${output.dir}\release" />
+    </target>
+
+  
+
+    <!-- deploy to the Test site -->
+    <target name="web-deploy">
+
+        <property name="deploy-target" value="${web-target}" />
+        <property name="config-file" value="Test.web.config" />
+		
+        <call target="deploy" />
+
+    </target>
+</project>
