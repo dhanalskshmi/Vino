@@ -43,7 +43,7 @@ footer {
   order: 2;
   padding-top: 25px;
   ul {
-    padding-left: calc(100% - 136% / 2);
+    margin-left: calc(100% - 136% / 2);
     font-weight: 700;
     text-transform: uppercase;
     li {
@@ -60,7 +60,7 @@ footer {
   order: 1;
   .detailsWrap {
     padding-top: 15px;
-    padding-left: calc(100% - 136% / 2);
+    margin-left: calc(100% - 136% / 2);
     p {
       font-size: 16px;
       color: #828282;
@@ -190,13 +190,13 @@ footer {
     }
   }
   .fMenu {
-    padding-left: 11px;
-    padding-right: 11px;
+    margin-left: 11px;
+    margin-right: 11px;
     ul {
-      padding-left: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+      margin-left: 0;
       border-bottom: 1px solid #FFF;
       li {
         display: inline-block;
@@ -220,7 +220,8 @@ footer {
     }
     .detailsWrap {
       width: 77%;
-      padding-left: calc(100% - 158% / 2);
+      max-width: 174px;
+      margin-left: calc(100% - 158% / 2);
       padding-top: 0;
       p {
         font-size: 12px;
@@ -412,7 +413,8 @@ footer {
       max-width: 282px;
     }
     .detailsWrap {
-      padding-left: 88px;
+      margin-left: 88px;
+      max-width: 234px;
       p {
         font-size: 16px;
         line-height: 20px;
@@ -537,6 +539,7 @@ footer {
   }
   .footerWraps {
     padding-bottom: 37px;
+    margin: 0;
   }
 
   .fMenu {
@@ -555,7 +558,8 @@ footer {
     }
     .detailsWrap {
       padding-top: 8px;
-      padding-left: 134px;
+      margin-left: 134px;
+      max-width: 227px;
       ul {
         margin-top: 31px;
         li {

@@ -26,7 +26,7 @@
 
 #nprogress .bar {
   /*background: #f03943;*/
-  background: #7a9fb9;
+  background: #1b3d6e;
 
   position: fixed;
   z-index: 1031;
@@ -34,7 +34,7 @@
   left: 0;
 
   width: 100%;
-  height: 2px;
+  height: 3px;
 }
 
 /* Fancy blur effect */
@@ -44,7 +44,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #7a9fb9, 0 0 5px #7a9fb9;
+  box-shadow: 0 0 10px #1b3d6e, 0 0 5px #1b3d6e;
   opacity: 1.0;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -65,13 +65,13 @@
 }
 
 #nprogress .spinner-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   box-sizing: border-box;
 
-  border: solid 2px transparent;
-  border-top-color: #7a9fb9;
-  border-left-color: #7a9fb9;
+  border: solid 3px transparent;
+  border-top-color: #ec2c3a;
+  border-left-color: #ec2c3a;
   border-radius: 50%;
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;

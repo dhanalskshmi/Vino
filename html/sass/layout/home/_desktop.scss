@@ -766,7 +766,9 @@
   .communityPannel {
     position: relative;
     padding-top: 31px;
-    margin-bottom: 41px;
+    /*padding-left: 60px;
+    padding-right: 60px;*/
+    margin-bottom: 57px;
     .bgWraps {
       padding-top: 36px;
     }
@@ -810,7 +812,7 @@
     }
     .redBlock {
       padding: 12px 0 5px;
-      max-width: calc(100% - 100px);
+      max-width: calc(100% - 210px);
     }
     .detailBlock {
       padding-top: 7px;
@@ -830,7 +832,6 @@
 
   .appPannel {
     background: none;
-    margin-bottom: 6px;
     .bgWraps {
       background: #ec2c3a;
       padding-bottom: 25px;
@@ -945,7 +946,7 @@
     }
     label {
       font-size: 16px;
-      margin-bottom: -2px;
+      margin-bottom: 0;
     }
     .txtBox {
       font-size: 16px;
@@ -956,7 +957,7 @@
       margin-bottom: 0;
       button {
         font-size: 12px;
-        padding: 2px 21px 0;
+        padding: 2px 21px 4px;
       }
     }
     form {
@@ -988,7 +989,7 @@
             .checkbox {
               width: 12px;
               height: 12px;
-              top: -10px;
+              top: -7px;
               &::after {
                 width: 5px;
                 height: 8px;
@@ -1000,7 +1001,7 @@
             label {
               font-size: 16px;
               padding-left: 20px;
-              margin-top: 5px;
+              margin-top: 2px;
             }
           }
         }
@@ -1142,12 +1143,17 @@
     padding-top: 60px;
     .titleBlock,
     .redBlock {
-      max-width: calc(100% - 205px);
+      max-width: calc(100% - 305px);
       padding: 14px 0 7px;
-      margin: 0 53px;
+      margin: 0 59px;
       h2 {
         font-size: 38px;
         line-height: 34px;
+      }
+    }
+    .titleBlock {
+      h2 {
+        padding-left: 0;
       }
     }
     .detailBlock {
@@ -1264,6 +1270,22 @@
   }
 
 
+}
+
+@media screen and (min-width: $base - 16px) {
+
+  .communityPannel {
+    .titleBlock {
+      .containerWrapper {
+        padding: 0;
+      }
+    }
+  }
+  .bluePannel {
+    figure {
+      max-width: 147px;
+    }
+  }
 }
 
 @media screen and (min-width: $base) {
@@ -1415,15 +1437,18 @@
       padding-bottom: 0;
       margin: 0 20px -4px;
       max-width: 100%;
+      .containerWrapper {
+        padding: 0;
+      }
       h2 {
-        padding-left: 115px;
+        padding-left: 80px;
       }
     }
     .redBlock {
-      max-width: 1180px;
+      max-width: 1150px;
       padding-bottom: 24px;
       margin: 0 auto;
-      transform: translateX(-50px);
+      transform: translateX(-64px);
       h2 {
         padding-left: 104px;
       }
@@ -1431,7 +1456,7 @@
     .detailBlock {
       padding-top: 26px;
       .wraps {
-        margin-left: 139px;
+        margin-left: 103px;
         padding-left: 0;
       }
       p {
@@ -1445,7 +1470,7 @@
       }
     }
     .imgBlock {
-      top: 81px;
+      top: 30px;
       right: 0;
       figure {
         width: 501px;

@@ -6,7 +6,7 @@
 // .aboutUs {
     .containerWrapper {
         @include bp(landscape) {
-            padding: 0 60px;
+            padding: 0 53px;
         }
         @include bp(tablet) {
             padding: 0 20px;
@@ -66,7 +66,7 @@
     position: relative;
     margin-top: -230px;
     width: 100%;
-    
+
     @include bp(landscape) {
         margin-top: -286px;
     }
@@ -75,7 +75,7 @@
     }
     .bgWrap {
         width: 100%;
-        
+
         background: #f1f1f1;
         padding: 50px 65px 40px 65px;
         @include bp(landscape) {
@@ -223,7 +223,7 @@
 
 .ContentBlk1 {
     width: 100%;
-    
+
     .bgWrap {
         padding: 45px 0px;
         background: #dcdada;

@@ -45,6 +45,8 @@ setTimeout(function() {
 }, 1000);
 
 
+
+
 // Button Effects
 
 (function(window) {
@@ -698,5 +700,32 @@ if (isSafari) console.log("You are using Safari!");
 
 
 
+
+});
+
+$(document).ready(function() {
+	setTimeout(function(){
+		$('.bannerWrapper').addClass('animateIt');
+	},1900);
+	$('.bannerWrapper').bind('inview', function (event, visible) {
+  if (visible == true) {
+    alert('visible');
+  } else {
+    // element has gone out of viewport
+  }
+});
+	$(function () {
+
+  $('.bannerWrapper').bind('inview', function (event, visible) {
+		alert('inview');
+    if (visible) {
+			alert('visible');
+      $('.bannerWrapper').addClass('animate-in');
+    } else {
+      $('.bannerWrapper').addClass('animate-out');
+    }
+  });
+
+});
 
 });
