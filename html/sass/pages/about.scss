@@ -1,0 +1,754 @@
+.full-width {
+    width: 100%;
+    float: left;
+}
+
+// .aboutUs {
+    .containerWrapper {
+        @include bp(landscape) {
+            padding: 0 60px;
+        }
+        @include bp(tablet) {
+            padding: 0 20px;
+        }
+        @include bp(mobile) {
+            padding: 0 15px;
+        }
+    }
+// }
+
+.btn-mansq {
+    display: inline-block;
+    background: #1268e5;
+    padding: 10px 45px;
+    line-height: 16px;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.heroBanner {
+    min-height: 830px;
+    @include bp(landscape) {
+        min-height: 671px;
+    }
+    @include bp(tablet) {
+        min-height: 500px;
+    }
+    @include bp(mobile) {
+        min-height: 420px;
+    }
+    .bannerImage {
+        min-height: 830px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        @include bp(landscape) {
+            min-height: 671px;
+        }
+        @include bp(tablet) {
+            min-height: 500px;
+        }
+        @include bp(mobile) {
+            min-height: 420px;
+        }
+    }
+}
+
+.heroBlock {
+    position: relative;
+    margin-top: -230px;
+    width: 100%;
+    
+    @include bp(landscape) {
+        margin-top: -286px;
+    }
+    @include bp(mobile) {
+        margin-top: -116px;
+    }
+    .bgWrap {
+        width: 100%;
+        
+        background: #f1f1f1;
+        padding: 50px 65px 40px 65px;
+        @include bp(landscape) {
+            padding: 45px 60px 20px 55px;
+        }
+        @include bp(tablet) {
+            padding: 42px 60px 20px 60px;
+        }
+        @include bp(mobile) {
+            padding: 50px 10px 0px 10px;
+        }
+    }
+    h2,
+    h1 {
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight: bold;
+        color: #1268e5;
+        margin-bottom: 22px;
+        @include bp(landscape) {
+            font-size: 36px;
+            margin-bottom: 22px;
+        }
+        @include bp(tablet) {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        @include bp(mobile) {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+    p {
+        margin-bottom: 32px;
+        font-size: 20px;
+        line-height: 25px;
+        color: #666666;
+        @include bp(landscape) {
+            font-size: 18px;
+            line-height: 23px;
+            margin-bottom: 22px;
+        }
+        @include bp(tablet) {
+            line-height: 25px;
+            margin-bottom: 16px;
+        }
+        @include bp(mobile) {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 17px;
+        }
+    }
+}
+
+.heroLinks {
+    text-align: center;
+    padding-top: 22px;
+    @include bp(landscape) {
+        padding-top: 18px;
+    }
+    li {
+        display: inline-block;
+        a {
+            position: relative;
+            background: #1268e5;
+            min-width: 238px;
+            min-height: 83px;
+            font-size: 28px;
+            color: #fff;
+            padding: 6px 22px 10px 90px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0px 11px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 35px;
+            letter-spacing: 1px;
+            @include bp(landscape) {
+                font-size: 18px;
+                min-width: 160px;
+                min-height: auto;
+                line-height: 25px;
+                padding: 3px 8px 3px 70px;
+                margin: 0 14px;
+                margin-bottom: 0px;
+            }
+            @include bp(mobile) {
+                line-height: 25px;
+                margin-bottom: 20px;
+            }
+            .heroLinksImage {
+                position: absolute;
+                width: 57px;
+                height: 55px;
+                left: 14px;
+                top: 14px;
+                img{
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+                @include bp(landscape) {
+                    background-size: cover !important;
+                    width: 42px;
+                    height: 39px;
+                    top: 8px;
+                    left: 15px;
+                }
+                @include bp(mobile) {
+                    background-size: cover !important;
+                    width: 50px;
+                    height: 39px;
+                    top: 8px;
+                }
+            }
+        }
+    }
+    .find-us {
+        a {
+            padding-left: 140px;
+            background: #1a3d6e;
+            @include bp(landscape) {
+                padding-left: 70px;
+            }
+            @include bp(mobile) {
+                padding-left: 72px;
+            }
+        }
+    }
+    .call-us {
+        a {
+            padding-left: 128px;
+            background: #eb2837;
+            @include bp(landscape) {
+                padding-left: 70px;
+            }
+            @include bp(mobile) {
+                padding-left: 72px;
+            }
+        }
+    }
+}
+
+.ContentBlk1 {
+    width: 100%;
+    
+    .bgWrap {
+        padding: 45px 0px;
+        background: #dcdada;
+        @include bp(mobile) {
+            background: #fff;
+        }
+        .flexWrapper {
+            background: #fff;
+            display: flex;
+            @include bp(mobile) {
+                display: flex;
+                flex-direction: column;
+            }
+            .ContentImageWrap {
+                width: 44%;
+                float: left;
+                min-height: 450px;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 100px 0px;
+                @include bp(landscape) {
+                    width: 40.8%;
+                    min-height: 330px;
+                    padding: 40px 0;
+                    display: flex;
+                }
+                @include bp(tablet) {
+                    width: 34%;
+                    min-height: 330px;
+                    padding: 40px 0;
+                    display: flex;
+                    background-position: left;
+                    background-size: auto;
+                }
+                @include bp(mobile) {
+                    width: 100%;
+                    min-height: 238px;
+                    padding: 10px 0px;
+                    display: flex;
+                }
+                &:after {
+                    position: absolute;
+                    content: '';
+                    bottom: -20px;
+                    left: 0;
+                    width: 120px;
+                    height: 25px;
+                    background: #eb2837;
+                    @include bp(landscape) {
+                        bottom: -15px;
+                        width: 102px;
+                        height: 15px;
+                    }
+                    @include bp(mobile) {
+                        display: none;
+                    }
+                }
+                .figureContent {
+                    max-width: 255px;
+                    border: 3px solid #fff;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin: auto;
+                    color: #fff;
+                    padding: 38px 46px;
+                    @include bp(landscape) {
+                        padding: 40px 48px;
+                        max-width: 61%;
+                        display: block;
+                    }
+                    @include bp(tablet) {
+                        padding: 30px 26px;
+                        max-width: 73%;
+                    }
+                    @include bp(mobile) {
+                        margin: auto;
+                        padding: 38px 50px;
+                        max-width: 80%;
+                    }
+                    h4 {
+                        font-size: 40px;
+                        line-height: 55px;
+                        text-transform: uppercase;
+                        position: relative;
+                        @include bp(landscape) {
+                            font-size: 36px;
+                            line-height: 43px;
+                        }
+                        @include bp(tablet) {
+                            font-size: 28px;
+                            line-height: 35px;
+                        }
+                        @include bp(mobile) {
+                            font-size: 36px;
+                            line-height: 42px;
+                        }
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            bottom: -8px;
+                            width: 30px;
+                            height: 9px;
+                            background: #eb2837;
+                            left: 0;
+                            @include bp(tablet) {
+                                width: 28px;
+                                height: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            .ContentParaWrap {
+                padding: 30px 0 0px 35px;
+                width: 56%;
+                float: left;
+                @include bp(landscape) {
+                    padding: 20px 0 0 30px;
+                }
+                @include bp(tablet) {
+                    width: 66%;
+                    padding: 22px 30px 0 30px;
+                }
+                @include bp(mobile) {
+                    width: 100%;
+                    padding: 42px 0 0 10px;
+                }
+                .SingleContentBlk {
+                    margin-bottom: 20px;
+                    @include bp(landscape) {
+                        margin-bottom: 14px;
+                    }
+                    @include bp(mobile) {
+                        margin-bottom: 30px;
+                    }
+                    h4 {
+                        font-size: 23px;
+                        font-weight: bold;
+                        color: #666666;
+                        text-transform: uppercase;
+                        margin-bottom: 11px;
+                        letter-spacing: 0.7px;
+                        @include bp(landscape) {
+                            margin-bottom: 0px;
+                            font-size: 18px;
+                        }
+                        @include bp(mobile) {
+                            margin-bottom: 5px;
+                            font-size: 18px;
+                        }
+                    }
+                    p {
+                        font-size: 16px;
+                        line-height: 19px;
+                        @include bp(landscape) {
+                            line-height: 20px;
+                        }
+                        @include bp(mobile) {
+                            line-height: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.ltAlign {
+        .bgWrap {
+            padding-top: 80px;
+            @include bp(landscape) {
+                padding-top: 60px;
+                padding-bottom: 0;
+            }
+            @include bp(tablet) {
+                padding-top: 40px;
+            }
+        }
+    }
+    &.rtAlign {
+        .bgWrap {
+            padding-bottom: 80px;
+            @include bp(tablet) {
+                padding-top: 45px;
+                padding-bottom: 40px;
+            }
+            @include bp(mobile) {
+                padding: 0;
+            }
+            .flexWrapper {
+                .ContentImageWrap {
+                    padding: 57px 0 71px 0px;
+                    @include bp(landscape) {
+                        min-height: 330px;
+                        width: 31.8%;
+                        padding: 30px 0px;
+                    }
+                    @include bp(tablet) {
+                        order: 1;
+                        min-height: 330px;
+                        width: 33%;
+                    }
+                    @include bp(mobile) {
+                        width: 100%;
+                        order: 1;
+                        min-height: 400px;
+                    }
+                    .figureContent {
+                        max-width: 285px;
+                        padding: 31px 25px;
+                        @include bp(landscape) {
+                            max-width: 78%;
+                            padding: 11px 18px;
+                        }
+                        @include bp(tablet) {
+                            max-width: 92%;
+                            padding: 17px 17px 15px 20px;
+                        }
+                        @include bp(mobile) {
+                            max-width: 75%;
+                            padding: 15px;
+                        }
+                        h4 {
+                            @include bp(tablet) {
+                                font-size: 36px;
+                            }
+                        }
+                        p {
+                            font-size: 24px;
+                            line-height: 23px;
+                            margin-top: 20px;
+                            @include bp(landscape) {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+                            @include bp(mobile) {
+                                font-size: 16px;
+                                margin-top: 17px;
+                            }
+                        }
+                    }
+                }
+                .contentLeft {
+                    padding-left: 0;
+                    @include bp(landscape) {
+                        width: 68.2%;
+                        padding-left: 30px;
+                    }
+                    @include bp(tablet) {
+                        padding-left: 20px;
+                    }
+                    @include bp(mobile) {
+                        width: 100%;
+                        order: 2;
+                        padding-left: 10px;
+                        padding-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.titleWrap {
+    h3 {
+        font-size: 36px;
+        padding-bottom: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        @include bp(landscape) {
+            font-size: 24px;
+            padding-bottom: 15px;
+        }
+        @include bp(tablet) {
+            font-size: 22px;
+            padding-bottom: 15px;
+        }
+        @include bp(mobile) {
+            font-size: 22px;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.boardDirectors {
+    .bgWrap {
+        background: #1268e5;
+        padding: 50px 100px;
+        @include bp(landscape) {
+            padding: 22px 85px;
+        }
+        @include bp(tablet) {
+            padding: 20px 40px 10px 40px;
+        }
+        @include bp(mobile) {
+            padding: 25px 10px 0px 10px;
+        }
+        .table {
+            @include bp(tablet) {
+                margin-bottom: 0;
+            }
+            @include bp(mobile) {
+                margin-bottom: 0;
+            }
+            tbody {
+                tr {
+                    @include bp(mobile-large) {
+                        width: 50%;
+                        float: left;
+                    }
+                    td {
+                        min-width: 33.33%;
+                        display: inline-block;
+                        padding: 15px 0px;
+                        border-top: 1px solid #5794ed;
+                        color: #fff;
+                        @include bp(mobile) {
+                            border: none;
+                            padding: 9px 0px;
+                            display: block;
+                        }
+                        h5 {
+                            font-size: 20px;
+                            font-weight: bold;
+                            @include bp(landscape) {
+                                font-size: 16px;
+                            }
+                        }
+                        p {
+                            line-height: initial;
+                            @include bp(landscape) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.memberFlexWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include bp(mobile) {
+        flex-direction: column;
+        margin-top: 17px;
+    }
+    .memberFlex {
+        margin-bottom: 20px;
+        width: 33.33%;
+        @include bp(mobile) {
+            width: 100%;
+        }
+        h5 {
+            font-size: 20px;
+            font-weight: bold;
+            @include bp(landscape) {
+                font-size: 16px;
+            }
+        }
+        p {
+            line-height: initial;
+            @include bp(landscape) {
+                font-size: 16px;
+            }
+        }
+        .memberFlexIcons {
+            margin-top: 10px;
+            a {
+                display: inline-block;
+                margin-right: 10px;
+                img {
+                    max-width: 40px;
+                    @include bp(landscape) {
+                        max-width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.execManage {
+    .bgWrap {
+        .titleWrap {
+            h3 {
+                @include bp(landscape) {
+                    padding-bottom: 40px;
+                }
+                @include bp(tablet) {
+                    padding-bottom: 42px;
+                }
+                @include bp(mobile) {
+                    padding-bottom: 0px;
+                }
+            }
+        }
+        background: #3b88f7;
+        padding: 35px 65px 35px 100px;
+        @include bp(landscape) {
+            padding: 22px 25px 35px 84px;
+        }
+        @include bp(tablet) {
+            padding: 21px 40px 19px 40px;
+        }
+        @include bp(mobile) {
+            padding: 25px 10px 0px 10px;
+        }
+        .memberFlexWrap {
+            color: #fff;
+        }
+    }
+}
+
+.snrManage {
+    margin-bottom: -140px;
+    position: relative;
+    z-index: 1;
+    @include bp(landscape) {
+        margin-bottom: -80px;
+    }
+    @include bp(tablet) {
+        margin-bottom: -89px;
+    }
+    @include bp(mobile) {
+        margin-bottom: -20px;
+    }
+    .bgWrap {
+        background: #cce1ff;
+        padding: 35px 65px 35px 100px;
+        color: #1a3d6e;
+        @include bp(landscape) {
+            padding: 23px 65px 35px 85px;
+        }
+        @include bp(tablet) {
+            padding: 21px 40px 0px 40px;
+        }
+        @include bp(mobile) {
+            padding: 25px 10px 0px 10px;
+        }
+        .titleWrap {
+            h3 {
+                @include bp(landscape) {
+                    padding-bottom: 38px;
+                }
+                @include bp(tablet) {
+                    padding-bottom: 40px;
+                }
+                @include bp(mobile) {
+                    padding-bottom: 0px;
+                }
+                color: #1a3d6e;
+            }
+        }
+        .memberFlexWrap {
+            .memberFlex {
+                margin-bottom: 80px;
+                @include bp(landscape) {
+                    margin-bottom: 43px;
+                }
+                @include bp(mobile) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.historyTimeline {
+    min-height: 1000px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: table;
+    width: 100%;
+    @include bp(landscape) {
+        min-height: 690px;
+    }
+    @include bp(tablet) {
+        min-height: 508px;
+    }
+    @include bp(mobile) {
+        min-height: 215px;
+    }
+    .bgWrap {
+        .titleWrap {
+            margin-top: 300px;
+            text-align: center;
+            @include bp(landscape) {
+                margin-top: 170px;
+            }
+            @include bp(tablet) {
+                margin-top: 134px;
+            }
+            @include bp(mobile) {
+                margin-top: 35px;
+            }
+            h3 {
+                font-size: 66px;
+                @include bp(landscape) {
+                    font-size: 36px;
+                    margin-bottom: 19px;
+                }
+                @include bp(tablet) {
+                    font-size: 24px;
+                    margin-bottom: 0px;
+                }
+                @include bp(mobile) {
+                    font-size: 22px;
+                    margin-bottom: 5px;
+                }
+            }
+            a {
+                @extend .btn-mansq;
+                @include bp(landscape) {
+                    padding: 6px 31px;
+                    letter-spacing: 0;
+                    line-height: initial;
+                }
+            }
+        }
+    }
+}
