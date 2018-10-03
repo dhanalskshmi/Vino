@@ -1,0 +1,1558 @@
+
+.bannerWrapper {
+  min-height: 719px;
+  .bannerWrap {
+  }
+  .bannerImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 719px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .bannerContent {
+    padding-top: 87px;
+    position: relative;
+    h1 {
+      font-weight: 400;
+      font-size: 23px;
+      color: #FFF;
+      line-height: 25px;
+      text-align: center;
+      text-transform: uppercase;
+      span {
+        font-weight: 700;
+        display: inline-block;
+      }
+    }
+  }
+}
+.loginBlocks {
+  margin-top: 12px;
+  .personalLogin {
+    background: #1268e5;
+  }
+  .businessLogin {
+    background: #1b3d6e;
+  }
+  .personalLogin,
+  .businessLogin {
+    padding: 5px 25px 4px;
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #FFF;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    p {
+      text-align: right;
+      a {
+        display: inline-block;
+        color: #FFF;
+        font-weight: 400;
+        font-size: 12px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        &:last-child {
+          margin-left: 24px;
+        }
+      }
+    }
+    .txtBox {
+      display: block;
+      background: #FFF;
+      font-weight: 400;
+      font-size: 16px;
+      color: #363636;
+      padding: 0 12px;
+      width: 100%;
+      height: 36px;
+      margin-bottom: 15px;
+    }
+    ::-webkit-input-placeholder {
+      color: #363636;
+    }
+   :-moz-placeholder {
+      color:    #363636;
+      opacity:  1;
+    }
+   :-ms-input-placeholder {
+      color:    #363636;
+    }
+    button {
+      display: block;
+      background: none;
+      font-weight: 400;
+      font-size: 16px;
+      color: #FFF;
+      width: 100%;
+      height: 36px;
+      border: 1px solid #FFF;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.bankingServices {
+  margin-top: -67px;
+  position: relative;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 100%;
+      &:nth-child(1) {
+        order: 2;
+      }
+      &:nth-child(2) {
+        order: 1;
+      }
+      &:nth-child(3) {
+        padding: 31px 22px 0;
+        order: 3;
+      }
+      &:nth-child(4) {
+        order: 4;
+      }
+      &:nth-child(5) {
+        order: 4;
+      }
+      &:nth-child(6) {
+        order: 6;
+      }
+    }
+  }
+  li {
+    min-height: 228px;
+    margin-bottom: 26px;
+    position: relative;
+    .imgBlock {
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 228px;
+      position: relative;
+      &::after {
+        content: '';
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .serviceContent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+      color: #FFF;
+      padding-right: 31px;
+      padding-bottom: 9px;
+      line-height: 22px;
+      text-transform: uppercase;
+      text-align: right;
+      bold {
+        display: block;
+        font-weight: 700;
+      }
+    }
+    h3 {
+      font-size: 29px;
+      font-weight: 400;
+      color: #FFF;
+      bold {
+        font-weight: 700;
+      }
+    }
+
+
+    &.mortage {
+      .serviceContent {
+        padding: 31px 22px 17px;
+      }
+      h3 {
+        font-size: 29px;
+        font-weight: 400;
+        color: #FFF;
+        text-transform: uppercase;
+        span {
+          display: block;
+          font-weight: 700;
+        }
+        i {
+          display: inline-block;
+          font-style: normal;
+        }
+        bold {
+          font-size: 113px;
+          display: inline-block;
+          font-weight: 400;
+          letter-spacing: -13px;
+          line-height: 92px;
+          margin-top: -22px;
+          padding-left: 75px;
+          width: 274px;
+          span {
+            font-size: 62px;
+            vertical-align: top;
+            margin-top: -27px;
+            margin-left: -12px;
+            display: inline-block;
+            width: 26px;
+          }
+        }
+      }
+    }
+    &.kasasa {
+      border-right: none;
+      border-left: 1px solid #FFF;
+      .serviceContent {
+        position: relative;
+        min-height: 228px;
+        .detailBlock {
+          width: 187px;
+          float: right;
+          padding-top: 23px;
+          padding-right: 16px;
+          position: relative;
+          z-index: 99;
+        }
+        h3 {
+          font-size: 20px;
+          margin-bottom: 13px;
+          line-height: 20px;
+          text-transform: uppercase;
+          bold {
+            font-size: inherit;
+          }
+        }
+        .lmoBtn {
+          font-size: 12px;
+          text-transform: uppercase;
+          @include btnstyle();
+        }
+      }
+      figure {
+        width: 129px;
+        position: absolute;
+        bottom: 0;
+        img {
+          margin-left: -11px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Blue bluePannel
+.bluePannel {
+  background: #1b3d6e;
+  padding: 26px 18px;
+  .wraps {
+    padding: 16px 19px 0;
+  }
+  .detailsWrap {
+    color: #FFF;
+    padding-bottom: 16px;
+    border: 1px solid #FFF;
+    border-radius: 15px;
+    position: relative;
+    h2 {
+      font-weight: 700;
+      font-size: 19px;
+      color: #FFF;
+      margin-bottom: -10px;
+      text-transform: uppercase;
+      + p {
+        margin-top: 9px;
+      }
+      a {
+        color: inherit;
+      }
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 16px;
+      color: #FFF;
+      text-transform: uppercase;
+      position: relative;
+    }
+    p {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 11px;
+    }
+    .btnSection {
+      display: inline-block;
+      background: #1268e5;
+      color: #FFF;
+      font-weight: 700;
+      font-size: 10px;
+      padding: 3px 14px;
+      margin-top: 13px;
+      min-width: 125px;
+      border: 1px solid #FFF;
+      border-radius: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-left: 19px;
+    }
+  }
+  figure {
+    display: block;
+    max-width: 122px;
+    margin: 24px auto 19px;
+  }
+}
+
+.communityPannel {
+  padding-top: 39px;
+  .bgWraps {
+    background: #fafafa;
+  }
+  .imgBlock {
+    padding-bottom: 23px;
+    figure {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 257px;
+      margin: 0 auto;
+      min-height: 257px;
+      border-radius: 50%;
+    }
+  }
+  .titleBlock {
+    margin-bottom: -4px;
+    h2 {
+      font-weight: 700;
+      font-size: 39px;
+      color: #ec2c3a;
+      text-transform: uppercase;
+      line-height: 36px;
+    }
+  }
+  .redBlock {
+    background: #ec2c3a;
+    padding: 9px 0 17px;
+    h2 {
+      font-weight: 400;
+      font-size: 39px;
+      color: #FFF;
+      line-height: 32px;
+    }
+  }
+  .detailBlock {
+    padding: 9px 0 50px;
+    p {
+      font-size: 18px;
+      color: #17140e;
+      margin-bottom: 15px;
+      line-height: 21px;
+    }
+    .lmo {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #484848;
+      background: #FFF;
+      padding: 8px 17px;
+      text-transform: uppercase;
+      border: 1px solid #484848;
+      border-radius: 10px;
+    }
+  }
+}
+
+// App Pannel
+
+.appPannel {
+  background: #ec2c3a;
+  padding: 36px 0 81px;
+  h2 {
+    font-size: 47px;
+    font-weight: 400;
+    color: #FFF;
+    padding-bottom: 22px;
+    text-transform: uppercase;
+    line-height: 52px;
+  }
+  p {
+    color: #FFF;
+  }
+  .appStores {
+    padding: 24px 0 2px;
+    figure {
+      max-width: 190px;
+      display: block;
+      margin-bottom: 25px;
+      a {
+        display: block;
+      }
+    }
+  }
+  .imgDesg {
+    display: block;
+    max-width: 288px;
+  }
+}
+
+// Knowlege Pannel
+
+.knowledgePannel {
+  background: #1b3d6e;
+  padding: 68px 0;
+  text-align: center;
+  h2 {
+    font-size: 42px;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  ul {
+    padding: 104px 0 55px;
+    text-align: center;
+    li {
+      margin-bottom: 58px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    figure {
+      padding-bottom: 25px;
+    }
+    h4 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #FFF;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .lmo {
+    display: inline-block;
+    background: #1268e5;
+    font-size: 13px;
+    color: #FFF;
+    font-weight: 700;
+    padding: 9px 22px;
+    text-transform: uppercase;
+    border: 1px solid #FFF;
+    border-radius: 15px;
+  }
+}
+
+// Events Pannel
+
+.eventsPannel {
+  background: #ec2c3a;
+  h2 {
+    font-weight: 700;
+    color: #FFF;
+    font-size: 43px;
+    text-align: center;
+  }
+}
+
+
+// Join Our Email
+
+.joinEmail {
+  background: #969696;
+  padding: 53px 0;
+  h2 {
+    font-weight: 700;
+    font-size: 42px;
+    color: #FFF;
+    padding-bottom: 63px;
+    text-align: center;
+    line-height: 32px;
+  }
+  label {
+    display: block;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFF;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+  }
+  .txtBox {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: #FFF;
+    font-size: 20px;
+    color: #676767;
+    padding: 0 15px
+  }
+  div {
+    margin-bottom: 32px;
+    &.containerWrapper {
+      margin-bottom: 0;
+    }
+  }
+  .groupCheckbox {
+    div {
+      label {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      label {
+        font-size: 21px;
+        padding-left: 30px;
+        position: relative;
+        user-select: none;
+      }
+      .checkbox {
+        background: #FFF;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: -7px;
+        left: 0;
+        transition: all 0.55s;
+        &::after {
+          content: '';
+          width: 7px;
+          height: 12px;
+          position: absolute;
+          left: 9px;
+          top: 5px;
+          opacity: 0;
+          border: solid white;
+          border-width: 0 3px 3px 0;
+          transform: rotate(45deg) scale(0);
+          transition: all 0.55s;
+        }
+      }
+      .chkBox {
+        position: absolute;
+        opacity: 0;
+        &:checked {
+          ~ .checkbox {
+            background-color: #1b3d6e;
+            &::after {
+              opacity: 1;
+              transform: rotate(45deg) scale(1);
+            }
+          }
+        }
+      }
+    }
+  }
+  .submit {
+    button {
+      background: #1268e5;
+      font-weight: 700;
+      font-size: 27px;
+      color: #FFF;
+      padding: 3px 40px 0;
+      border-radius: 25px;
+      border: 1px solid #FFF;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media screen and (min-width: $tab-port-min) {
+
+  .bannerWrapper{
+    min-height: 432px;
+    .loginBlocks {
+      display: none;
+    }
+    .bannerImage {
+      min-height: 432px;
+    }
+    .bannerContent {
+      padding-top: 157px;
+      h1 {
+        font-size: 31px;
+        line-height: 33px;
+        text-align: left;
+      }
+    }
+  }
+  .bankingServices {
+    max-width: 614px;
+    padding-bottom: 69px;
+    margin: -40px auto 0;
+    .containerWrapper {
+      padding: 0;
+    }
+    ul {
+      display: table;
+      width: 100%;
+      li {
+        max-width: 171px;
+        min-height: 154px;
+        max-height: 154px;
+        float: left;
+        margin-bottom: 0;
+        border: 1px solid #FFF;
+        h2 {
+          font-size: 20px;
+        }
+        .imgBlock {
+          min-height: 154px;
+        }
+        &.bunisessBank {
+          border-right: none;
+        }
+        &.mortage {
+          border-left: none;
+        }
+        &.bunisessBank,
+        &.mortage {
+          margin-top: 12px;
+        }
+        &.personalBank,
+        &.didgitalCenter {
+          max-width: 271px;
+          min-height: 166px;
+          max-height: 166px;
+          figure {
+            min-height: 166px;
+          }
+          h2 {
+            padding-right: 34px;
+          }
+        }
+        &.mortage {
+          padding: 0 26px;
+          .serviceContent {
+            position: static;
+            padding: 22px 0 0;
+          }
+          h3 {
+            font-size: 20px;
+            line-height: 20px;
+            bold {
+              font-size: 40px;
+              padding-left: 0;
+              margin-top: 15px;
+              line-height: 22px;
+              letter-spacing: -1px;
+              span {
+                font-size: 30px;
+                margin-top: -9px;
+                margin-left: -9px;
+              }
+            }
+          }
+        }
+        &.kasasa {
+          .serviceContent {
+            min-height: 154px;
+            .detailBlock {
+              width: 112px;
+              padding-right: 5px;
+              padding-top: 11px;
+              h3 {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 16px;
+                margin-bottom: 6px;
+                bold {
+                  font-weight: 700;
+                }
+                sup {
+                  top: 0;
+                  font-size: 100%;
+                }
+              }
+            }
+            .lmoBtn {
+              font-weight: 700;
+              font-size: 7px;
+              padding: 3px 5px;
+              margin-left: 4px;
+            }
+          }
+          figure {
+            width: 83px;
+            bottom: -1px;
+          }
+        }
+        &.clentService {
+          border-left: none;
+          border-top: none;
+        }
+      }
+    }
+  }
+  // Blue Pannel
+
+  .bluePannel {
+    background: none;
+    padding: 0;
+    .bgWrap {
+      background: #1b3d6e;
+      padding: 27px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      //align-items: center
+    }
+    .wraps {
+      padding: 20px 24px 0;
+      position: relative;
+    }
+    .detailsWrap {
+      max-width: calc(50% - 48.5px);
+      //max-width: 43.165%;
+      //max-width: 45.965%;
+      display: inline-block;
+      vertical-align: top;
+      padding-bottom: 48px;
+      margin-right: 3px;
+      border-radius: 24px;
+      h2 {
+        font-size: 21px;
+        margin-bottom: -4px;
+        line-height: 24px;
+        + p {
+          margin-top: 3px;
+        }
+      }
+      h3 {
+        + p {
+          margin-top: -1px;
+        }
+      }
+      p {
+        font-size: 12px;
+        line-height: 13px;
+      }
+      .btnSection {
+        font-size: 12px;
+        padding: 3px 18px;
+        margin-top: 0;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+      }
+    }
+    figure {
+      max-width: 85px;
+      display: inline-flex;
+      align-items: center;
+      + .detailsWrap {
+        margin-left: 3px;
+      }
+    }
+  }
+
+  // Community Pannel
+
+  .communityPannel {
+    position: relative;
+    padding-top: 31px;
+    margin-bottom: 41px;
+    .bgWraps {
+      padding-top: 36px;
+    }
+    .imgBlock {
+      position: absolute;
+      right: 20px;
+      top: 46px;
+      z-index: 99;
+      figure {
+        width: 280px;
+        height: 280px;
+      }
+    }
+    .titleBlock,
+    .redBlock,
+    .detailBlock {
+      h2,
+      .wraps {
+        padding-left: 60px;
+      }
+    }
+    .redBlock,
+    .titleBlock {
+      h2 {
+        font-size: 30px;
+      }
+    }
+    .titleBlock {
+      h2 {
+        line-height: 28px;
+      }
+    }
+    .redBlock {
+      margin: 0 20px;
+      .containerWrapper {
+        padding: 0;
+      }
+      h2 {
+        line-height: 33px;
+      }
+    }
+    .redBlock {
+      padding: 12px 0 5px;
+      max-width: calc(100% - 100px);
+    }
+    .detailBlock {
+      padding-top: 7px;
+      padding-bottom: 0;
+      .wraps {
+        max-width: 332px;
+      }
+      p {
+        font-size: 15px;
+        line-height: 16px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  // App Pannel
+
+  .appPannel {
+    background: none;
+    margin-bottom: 6px;
+    .bgWraps {
+      background: #ec2c3a;
+      padding-bottom: 25px;
+      position: relative;
+    }
+    .imgDesg {
+      max-width: 228px;
+      position: absolute;
+      top: -35px;
+      left: -23px;
+    }
+    .appStores {
+      padding: 12px 0 4px 0;
+      figure {
+        display: inline-block;
+        max-width: 108px;
+        margin-bottom: 0;
+        margin-right: 3px;
+        text-align: right;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .appDetails {
+      max-width: 496px;
+      padding-top: 16px;
+      padding-right: 40px;
+      margin-left: auto; // TO align right
+      text-align: right;
+    }
+    h2 {
+      font-size: 45px;
+      padding-bottom: 12px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  // Knowledge Center
+
+  .knowledgePannel {
+    background: none;
+    padding: 0;
+    margin-bottom: 46px;
+    .bgWraps {
+      background: #1b3d6e;
+      padding: 17px 0;
+    }
+    h2 {
+      font-size: 25px;
+    }
+    ul {
+      padding: 29px 59px 17px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: top;
+      justify-content: space-around;
+      overflow: hidden;
+      text-align: center;
+      li {
+        max-width: 25%;
+        margin-bottom: 0;
+        //float: left;
+        &:nth-child(2) {
+
+        }
+      }
+      figure {
+        max-width: 69px;
+        margin: 0 auto;
+        padding: 0;
+        min-height: 63px;
+      }
+      h4 {
+        font-size: 16px;
+      }
+    }
+    .lmo {
+      font-size: 12px;
+      padding: 3px 12px;
+    }
+  }
+
+  // Events Pannel
+
+  .eventsPannel {
+    padding-top: 24px;
+    padding-bottom: 17px;
+    h2 {
+      font-size: 28px;
+      padding-bottom: 17px;
+    }
+    ul {
+      min-height: 249px;
+    }
+  }
+
+
+  // Join Our Email
+
+  .joinEmail {
+    padding: 29px 0 25px;
+    h2 {
+      font-size: 23px;
+      padding-bottom: 7px;
+      br {
+        display: none;
+      }
+    }
+    label {
+      font-size: 16px;
+      margin-bottom: -2px;
+    }
+    .txtBox {
+      font-size: 16px;
+      height: 31px;
+    }
+    .submit {
+      margin-top: 13px;
+      margin-bottom: 0;
+      button {
+        font-size: 12px;
+        padding: 2px 21px 0;
+      }
+    }
+    form {
+      div {
+        display: inline-block;
+        vertical-align: top;
+        width: 30.03%;
+        margin-right: 33px;
+        margin-bottom: 16px;
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+        &.submit {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+        &.groupCheckbox {
+          width: 100%;
+          max-width: 96.6%;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: top;
+          justify-content: space-between;
+          margin: 0 auto;
+          div {
+            margin-bottom: 8px;
+            margin-right: 0;
+            .checkbox {
+              width: 12px;
+              height: 12px;
+              top: -10px;
+              &::after {
+                width: 5px;
+                height: 8px;
+                left: 4px;
+                top: 1px;
+                border-width: 0 2px 2px 0;
+              }
+            }
+            label {
+              font-size: 16px;
+              padding-left: 20px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+}
+
+@media screen and (min-width: $tab-lands-min) {
+
+  // Banner
+
+  .bannerWrapper {
+    min-height: 576px;
+    .bannerImage {
+      min-height: 576px;
+    }
+    .bannerContent {
+      padding-top: 204px;
+      h1 {
+        font-size: 38px;
+        line-height: 44px;
+      }
+    }
+  }
+
+  // Services
+
+  .bankingServices {
+    max-width: 861px;
+    margin-top: -92px;
+    .containerWrapper {
+      padding: 0;
+    }
+    ul {
+      li {
+        max-width: 243px;
+        min-height: 223px;
+        max-height: 223px;
+        .imgBlock {
+          min-height: 223px;
+        }
+        h2 {
+          font-size: 28px;
+          line-height: 27px;
+        }
+        &.bunisessBank,
+        &.mortage {
+          margin-top: 16px;
+        }
+        &.personalBank,
+        &.didgitalCenter {
+          max-width: 374px;
+          min-height: 239px;
+          max-height: 239px;
+          .imgBlock {
+            min-height: 239px;
+          }
+          h2 {
+            padding-right: 47px;
+          }
+        }
+        &.mortage {
+          h3 {
+            font-size: 28px;
+            line-height: 27px;
+            bold {
+              font-size: 56px;
+              margin-top: 32px;
+            }
+          }
+        }
+        &.kasasa {
+          border-right: none;
+          .serviceContent {
+            .detailBlock {
+              width: 150px;
+              h3 {
+                font-size: 25px;
+                margin-bottom: 5px;
+                line-height: 20px;
+              }
+            }
+            .lmoBtn {
+              font-size: 10px;
+              padding: 6px 11px;
+            }
+          }
+
+          figure {
+            width: 117px;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Blue Pannel
+
+  .bluePannel {
+    .wraps {
+      padding: 28px 19px 0;
+    }
+    .detailsWrap {
+      padding-bottom: 54px;
+      h2 {
+        font-size: 26px;
+        margin-bottom: 2px;
+      }
+      h3 {
+        font-size: 21px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 20px;
+        a {
+          font-size: inherit;
+        }
+      }
+      .btnSection {
+        font-size: 15px;
+        padding: 5px 21px 6px;
+        margin-top: 0;
+        bottom: 16px;
+      }
+    }
+  }
+
+
+  // Community Pannel
+
+  .communityPannel {
+    padding-top: 60px;
+    .titleBlock,
+    .redBlock {
+      max-width: calc(100% - 205px);
+      padding: 14px 0 7px;
+      margin: 0 53px;
+      h2 {
+        font-size: 38px;
+        line-height: 34px;
+      }
+    }
+    .detailBlock {
+      padding-top: 11px;
+      p {
+        font-size: 18px;
+        line-height: 19px;
+      }
+    }
+    .imgBlock {
+      top: 57px;
+      figure {
+        width: 348px;
+        height: 348px;
+      }
+    }
+  }
+
+  // App Pannel
+
+  .appPannel {
+    padding-bottom: 102px;
+    .bgWraps {
+      padding-bottom: 30px;
+    }
+    .appDetails {
+      max-width: 551px;
+      padding-right: 0;
+      margin-right: 54px;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 62px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    .appStores {
+      padding-top: 17px;
+      figure {
+        max-width: 126px;
+        margin-right: 6px;
+      }
+    }
+    .imgDesg {
+      max-width: 278px;
+      top: -31px;
+    }
+  }
+
+  // Knowledge Pannel
+
+  .knowledgePannel {
+    .bgWraps {
+      padding: 26px 0 25px;
+    }
+    h2 {
+      font-size: 35px;
+    }
+    ul {
+      padding: 29px 30px 21px;
+      figure {
+        max-width: 84px;
+        min-height: 81px;
+      }
+      h4 {
+        font-size: 20px;
+      }
+    }
+    .lmo {
+      font-size: 15px;
+      padding: 6px 24px;
+    }
+  }
+
+  // Join Email
+
+  .joinEmail {
+    padding: 45px 0 30px;
+    h2 {
+      font-size: 30px;
+      padding-bottom: 14px;
+    }
+    label {
+      font-size: 21px;
+      margin-bottom: 2px;
+    }
+    form {
+      div {
+        margin-right: 39px;
+        margin-bottom: 21px;
+        &.groupCheckbox {
+          div {
+            label {
+              padding-left: 27px;
+            }
+            .checkbox {
+              width: 16px;
+              height: 16px;
+              top: -8px;
+            }
+          }
+        }
+        &.submit {
+          margin-top: 20px;
+          button {
+            font-size: 16px;
+            padding: 2px 29px 3px;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+@media screen and (min-width: $base) {
+
+  .bannerWrapper {
+    min-height: 965px;
+    .bannerImage {
+      min-height: 965px;
+    }
+    .bannerContent {
+      padding-top: 284px;
+      h1 {
+        font-size: 63px;
+        line-height: 68px;
+      }
+    }
+  }
+
+  .bankingServices {
+    max-width: 1242px;
+    margin-top: -161px;
+    ul {
+      li {
+        max-width: 340px;
+        min-height: 336px;
+        max-height: 336px;
+        .imgBlock {
+          min-height: 336px;
+        }
+        h2 {
+          font-size: 43px;
+          line-height: 37px;
+        }
+        &.personalBank,
+        &.didgitalCenter {
+          max-width: 557px;
+          min-height: 352px;
+          max-height: 352px;
+          .imgBlock {
+            min-height: 352px;
+          }
+        }
+        &.mortage {
+          .serviceContent {
+            padding: 42px 0 0;
+          }
+          h3 {
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 38px;
+            span {
+              font-weight: 400;
+            }
+            bold {
+              font-size: 126px;
+              margin-top: 37px;
+              text-align: right;
+              span {
+                font-size: 66px;
+                margin-top: -23px;
+                margin-left: -30px;
+              }
+            }
+          }
+        }
+        &.kasasa {
+          .serviceContent {
+            .detailBlock {
+              width: 202px;
+              padding-top: 20px;
+              h3 {
+                font-size: 29px;
+                margin-bottom: 17px;
+                line-height: 29px;
+              }
+            }
+            .lmoBtn {
+              font-size: 13px;
+              padding: 10px 27px;
+            }
+          }
+          figure {
+            max-width: 182px;
+            left: -10px;
+          }
+        }
+      }
+    }
+  }
+
+  //Blue Pannel
+
+  .bluePannel {
+    .detailsWrap {
+      max-width: calc(50% - 81.5px);
+      padding-bottom: 89px;
+      margin-right: 5px;
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+        margin-bottom: -1px;
+        + p {
+          margin-top: 5px;
+        }
+      }
+      h3 {
+        font-size: 31px;
+        margin-bottom: 9px;
+        + p {
+          margin-top: 0;
+        }
+      }
+      p {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      .btnSection {
+        font-size: 19px;
+        padding: 12px 22px;
+        border-radius: 23px;
+        bottom: 25px;
+      }
+    }
+    figure {
+      max-width: 147px;
+      + .detailsWrap {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  // Community Pannel
+
+  .communityPannel {
+    padding-top: 51px;
+    .bgWraps {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .titleBlock,
+    .redBlock {
+      h2 {
+        font-size: 63px;
+        line-height: 53px;
+      }
+    }
+    .titleBlock {
+      padding-bottom: 0;
+      margin: 0 20px -4px;
+      max-width: 100%;
+      h2 {
+        padding-left: 115px;
+      }
+    }
+    .redBlock {
+      max-width: 1180px;
+      padding-bottom: 24px;
+      margin: 0 auto;
+      transform: translateX(-50px);
+      h2 {
+        padding-left: 104px;
+      }
+    }
+    .detailBlock {
+      padding-top: 26px;
+      .wraps {
+        margin-left: 139px;
+        padding-left: 0;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      .lmo {
+        font-size: 19px;
+        padding: 10px 37px;
+        border-radius: 20px;
+      }
+    }
+    .imgBlock {
+      top: 81px;
+      right: 0;
+      figure {
+        width: 501px;
+        height: 501px;
+      }
+    }
+  }
+
+  // App Pannel
+
+  .appPannel {
+    padding-top: 96px;
+    margin-bottom: 90px;
+    .bgWraps {
+      padding-bottom: 46px;
+    }
+    h2 {
+      font-size: 81px;
+      padding-top: 50px;
+      padding-bottom: 42px;
+    }
+    p {
+      font-size: 26px;
+      line-height: 25px;
+    }
+    .appDetails {
+      max-width: 731px;
+    }
+    .imgDesg {
+      max-width: 408px;
+    }
+    .appStores {
+      padding-top: 41px;
+      figure {
+        max-width: 185px;
+      }
+    }
+  }
+
+  // Knowledge Pannel
+
+  .knowledgePannel {
+    margin-bottom: 73px;
+    .bgWraps {
+      padding: 35px 0;
+    }
+    h2 {
+      font-size: 50px;
+    }
+    ul {
+      padding: 66px 38px 41px;
+      h4 {
+        font-size: 24px;
+      }
+      figure {
+        max-width: 116px;
+        min-height: 112px;
+      }
+    }
+    .lmo {
+      font-size: 17px;
+      padding: 11px 44px;
+      border-radius: 22px;
+    }
+  }
+
+  // Join Email
+
+  .joinEmail {
+    padding: 34px 0 32px;
+    h2 {
+      font-size: 47px;
+      padding-bottom: 32px;
+    }
+    label {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .txtBox {
+      height: 60px;
+    }
+    form {
+      div {
+        width: 31.03%;
+        margin-bottom: 35px;
+        &.groupCheckbox {
+          width: 71.6%;
+          div {
+            label {
+              font-size: 22px;
+              padding-left: 40px;
+            }
+            .checkbox {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        &.submit {
+          button {
+            font-size: 28px;
+            padding: 3px 43px 5px;
+          }
+        }
+      }
+    }
+  }
+
+
+}

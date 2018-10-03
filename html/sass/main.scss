@@ -1,0 +1,45 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, nav, figure, section, article, aside {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	a {
+		color: inherit;
+	}
+}
+img {
+	max-width: 100%;
+}
+a {
+	text-decoration: none;
+	outline: none;
+	&:active, &:focus {
+		//outline: none;
+	}
+}
+p {
+	a {
+		color: inherit;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
+@import "helper/helper.scss";
+@import "layout/header/desktop";
+@import "layout/home/desktop";
+@import "layout/footer/desktop";

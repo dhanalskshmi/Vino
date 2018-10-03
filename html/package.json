@@ -1,0 +1,33 @@
+{
+  "name": "SMP",
+  "version": "0.0.1",
+  "description": "SMP html conversion",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "html",
+    "css"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-minified": "^0.0.6",
+    "grunt-update": "^0.2.3"
+  },
+  "dependencies": {
+    "composer": "^0.14.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "ruby": "^0.6.1",
+    "rubygems": "^1.0.3"
+  }
+}

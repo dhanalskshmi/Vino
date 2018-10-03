@@ -1,0 +1,634 @@
+
+/*@import "tabletLandscape";
+@import "tabletPotrait";
+@import "phonePotrait";	*/
+
+/* Footer */
+
+//variables
+$img: '../images/footer';
+
+footer {
+  background: #353535;
+  padding: 29px 0 0;
+  //position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+.footerWraps {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 150px;
+  .fMenu,
+  .fCols,
+  .fCols2,
+  .fCols3 {
+    width: 100%;
+  }
+
+
+  .fCols2 {
+    order: 3;
+  }
+  .fCols3 {
+    order: 4;
+  }
+
+}
+
+.fMenu {
+  order: 2;
+  padding-top: 25px;
+  ul {
+    padding-left: calc(100% - 136% / 2);
+    font-weight: 700;
+    text-transform: uppercase;
+    li {
+      font-size: 20px;
+      padding-bottom: 5px;
+      a {
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.fCols {
+  order: 1;
+  .detailsWrap {
+    padding-top: 15px;
+    padding-left: calc(100% - 136% / 2);
+    p {
+      font-size: 16px;
+      color: #828282;
+      line-height: 21px;
+    }
+    ul {
+      display: none;
+    }
+  }
+}
+.fCols2,
+.fCols3 {
+  padding-left: calc(100% - 136% / 2);
+}
+.fCols2 {
+  padding-top: 36px;
+  padding-bottom: 29px;
+  h3 {
+    font-size: 22px;
+    color: #828282;
+    padding-bottom: 7px;
+  }
+  p {
+    font-size: 22px;
+    color: #FFF;
+    line-height: 29px;
+    + h3 {
+      padding-top: 12px;
+    }
+  }
+}
+
+.fCols3 {
+  figure {
+    margin-top: 39px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .partnersBlock {
+    margin-top: 33px;
+    a {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0;
+      color: transparent;
+      background-image: url('#{$img}/sprite_img.png');
+      background-size: cover;
+      width: 84px;
+    }
+    .fdic {
+      background-position: 0 -290px;
+      height: 50px;
+      margin-right: 32px;
+      margin-top: 17px;
+    }
+    .lender {
+      background-position: 0 -298px;
+      height: 55px;
+      width: 67px;
+      margin-top: 12px;
+    }
+  }
+}
+
+.fRow {
+  background: #292a2d;
+  padding: 21px 0 34px;
+  ul {
+    padding-left: calc(100% - 221px);
+    li {
+      font-size: 14px;
+      color: #FFF;
+      line-height: 18px;
+      &:first-child {
+        padding-bottom: 22px;
+      }
+      a {
+        color: #FFF;
+      }
+      &.fLink {
+        margin-bottom: 9px;
+        + li {
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@media screen and (min-width: 480px) {
+
+
+}
+@media screen and (max-width: 767px) {
+
+
+
+}
+@media screen and (min-width: $tab-port-min) {
+
+  .Windows {
+    footer {
+      position: relative;
+    }
+  }
+
+  footer {
+    position: absolute;
+    padding: 18px 0 0;
+  }
+
+  .footerWraps {
+    display: block;
+    margin: 0 49px;
+    padding-bottom: 23px;
+    .fCols,
+    .fCols2,
+    .fCols3 {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .fMenu {
+    padding-left: 11px;
+    padding-right: 11px;
+    ul {
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      border-bottom: 1px solid #FFF;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+  .footerWraps {
+    .fCols {
+      width: 49.367%;
+    }
+    .fCols2 {
+      width: 32.382%;
+    }
+    .fCols3 {
+      width: 16%;
+    }
+  }
+  .fCols {
+    figure {
+      max-width: 212px;
+    }
+    .detailsWrap {
+      width: 77%;
+      padding-left: calc(100% - 158% / 2);
+      padding-top: 0;
+      p {
+        font-size: 12px;
+        line-height: 13px;
+        margin-bottom: 8px;
+      }
+      ul {
+        display: block;
+        li {
+          display: inline-block;
+          vertical-align: top;
+          font-size: 0;
+          color: transparent;
+          margin-right: 15px;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            background-image: url('#{$img}/sprite_img.png');
+            background-size: 38px 254px;
+            color: transparent;
+            display: block;
+            width: 15px;
+            height: 16px;
+          }
+          &.linkedIn {
+            a {
+              background-position: -13px -18px;
+              background-size: 41px 238px;
+            }
+          }
+          &.fb {
+            a {
+              background-position: -12px -52px;
+              background-size: 39px 247px;
+            }
+          }
+          &.uTube {
+            a {
+              background-position: -9px -75px;
+              background-size: 33px 223px;
+              height: 16px;
+              width: 16px;
+            }
+          }
+          &.tweet {
+            a {
+              background-position: -13px -19px;
+              background-size: 41px 257px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .fCols2,
+  .fCols3 {
+    padding-left: 0;
+  }
+
+  .fMenu {
+    padding-top: 19px;
+    margin-bottom: 18px;
+    ul {
+      li {
+        font-size: 15px;
+        padding-bottom: 9px;
+      }
+    }
+  }
+  .fCols2 {
+    padding-top: 3px;
+    padding-bottom: 0;
+    h3 {
+      font-size: 14px;
+      padding-bottom: 0;
+      margin-bottom: -5px;
+      line-height: 26px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 16px;
+      + h3 {
+        padding-top: 1px;
+      }
+    }
+  }
+  .fCols3 {
+    figure {
+      margin-top: 19px;
+    }
+    .partnersBlock {
+      margin-top: 14px;
+      .fdic {
+        background-position: 0 -355px;
+        width: 39px;
+        height: 25px;
+        margin-right: 14px;
+        margin-top: 17px;
+      }
+      .lender {
+        background-position: 0 -368px;
+        height: 41px;
+        width: 37px;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .fRow {
+    padding: 9px 0 5px;
+    ul {
+      padding-left: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 12px;
+        position: relative;
+        padding-right: 21px;
+        &::after {
+          content: '';
+          background: #FFF;
+          width: 1px;
+          height: 18px;
+          position: absolute;
+          top: -2px;
+          right: 10px;
+        }
+        &:first-child {
+          padding-bottom: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+          &::after {
+            display: none;
+          }
+        }
+        &.fLink {
+          margin-bottom: 0;
+          margin-top: 0;
+          + li {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+}
+@media screen and (min-width: 800px) {
+
+  .Windows {
+    footer {
+      position: absolute;
+    }
+  }
+}
+@media screen and (min-width: $tab-lands-min) {
+
+  .Windows {
+    footer {
+      position: absolute;
+    }
+  }
+  .footerWraps {
+    padding-bottom: 10px;
+  }
+
+  .fMenu {
+    padding-top: 0;
+    margin-bottom: 25px;
+    ul {
+      li {
+        font-size: 20px;
+        padding-bottom: 11px;
+      }
+    }
+  }
+
+
+  .fCols {
+    figure {
+      max-width: 282px;
+    }
+    .detailsWrap {
+      padding-left: 88px;
+      p {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      ul {
+        margin-top: 29px;
+        li {
+          a {
+            width: 20px;
+            height: 21px
+          }
+          &.linkedIn {
+            a {
+              background-position: -20px -25px;
+              background-size: 60px 332px;
+            }
+          }
+          &.fb {
+            a {
+              background-position: -15px -66px;
+              background-size: 49px 314px;
+            }
+          }
+          &.uTube {
+            a {
+              background-position: -9px -91px;
+              background-size: 37px 260px;
+              height: 16px;
+              width: 20px;
+              margin-top: 4px;
+            }
+          }
+          &.tweet {
+            a {
+              background-position: -19px -136px;
+              background-size: 53px 289px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fCols2 {
+    h3 {
+      font-size: 18px;
+      margin-bottom: -2px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 21px;
+      + h3 {
+        padding-top: 7px;
+      }
+    }
+  }
+  .fCols3 {
+    figure {
+      margin-top: 26px;
+    }
+    .partnersBlock {
+      margin-top: 28px;
+      .fdic {
+        background-position: 0 -484px;
+        width: 53px;
+        height: 33px;
+        margin-right: 22px;
+      }
+      .lender {
+        background-position: -4px -588px;
+        background-size: 51px 329px;
+        height: 45px;
+        width: 41px;
+        margin-top: 8px;
+      }
+    }
+  }
+  .fRow {
+    padding: 15px 0 13px;
+    ul {
+      li {
+        font-size: 16px;
+        padding-right: 26px;
+      }
+    }
+  }
+
+  footer {
+    padding: 21px 0 0;
+    transition: all 0.3s;
+    //transform: translateY(100%);
+    &.animateIt {
+      //transform: translateY(0);
+    }
+  }
+
+
+}
+
+// Hover Effects
+@media screen and (min-width: 319px) {
+
+
+
+
+}
+
+@media screen and (min-width: 1025px) {
+
+
+}
+@media screen and (min-width: $base) {
+
+  footer {
+
+    /*position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;*/
+    padding: 30px 0 0;
+  }
+  .footerWraps {
+    padding-bottom: 37px;
+  }
+
+  .fMenu {
+    margin-bottom: 42px;
+    ul {
+      li {
+        font-size: 24px;
+        padding-bottom: 26px;
+      }
+    }
+  }
+
+  .fCols {
+    figure {
+      max-width: 418px;
+    }
+    .detailsWrap {
+      padding-top: 8px;
+      padding-left: 134px;
+      ul {
+        margin-top: 31px;
+        li {
+          margin-right: 20px;
+          a {
+            width: 29px;
+            height: 29px;
+          }
+          &.linkedIn {
+            a {
+              background-position: -26px -32px;
+              background-size: 80px 443px;
+            }
+          }
+          &.fb {
+            a {
+              background-position: -26px -93px;
+              background-size: 78px 442px;
+            }
+          }
+          &.uTube {
+            margin-top: -3px;
+            a {
+              background-position: -21px -157px;
+              background-size: 82px 448px;
+              width: 39px;
+              height: 27px;
+            }
+          }
+          &.tweet {
+            a {
+              background-position: -24px -215px;
+              background-size: 82px 448px;
+              width: 36px;
+              height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .fCols2 {
+    h3 {
+      font-size: 23px;
+      margin-bottom: 13px;
+    }
+    p {
+      font-size: 23px;
+      line-height: 32px;
+      + h3 {
+        padding-top: 13px;
+      }
+    }
+  }
+
+  .fCols3 {
+    figure {
+      margin-top: 29px;
+    }
+    .partnersBlock {
+      .fdic {
+        background-position: 0 -278px;
+        background-size: 84px 460px;
+        width: 84px;
+        height: 49px;
+      }
+      .lender {
+        background-position: -8px -821px;
+        background-size: 82px 460px;
+        width: 67px;
+        height: 67px;
+      }
+    }
+  }
+
+}
