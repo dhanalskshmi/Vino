@@ -1,0 +1,23 @@
+# top-most EditorConfig file
+root = true
+
+# Windows-style newlines with a blank line ending only C# files
+[*.{cs, cshtml}]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# Windows-style newlines with a blank line ending. The Umbraco web.config file has an indent of tabs
+[Web.config]
+indent_style = tab
+
+# Windows-style newlines with a blank line ending. The Umbraco config files have an indent of two spaces
+[*.config]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+

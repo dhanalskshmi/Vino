@@ -1,0 +1,225 @@
+﻿<project name="Web.shared" xmlns="http://nant.sf.net/release/0.85-rc2/nant.xsd">
+
+	<property name="build.root" value="${path::get-full-path('..')}" />
+    <property name="lib.root" value="${path::combine(property::get-value('build.root'), 'lib')}" />
+    <property name="output.dir" value="${path::combine(property::get-value('build.root'), 'build\output')}" />
+    <property name="build.dir" value="${output.dir}\release" />
+    <property name="code.dir" value="${build.root}\src" />
+	<property name="site.dir" value="${code.dir}\${property::get-value('build-name')}" />
+    <property name="tools.root" value="${path::combine(property::get-value('build.root'), 'tools')}" />
+
+    <echo message="The build root is ${build.root}" />
+    <echo message="The lib root is ${lib.root}" />
+    <echo message="The output dir is ${output.dir}" />
+    <echo message="The code dir is ${code.dir}" />
+    <echo message="The tools root is ${tools.root}" />
+
+ <target name="build">
+        <property name="build-number" value="${CCNetLabel}" />
+
+        <echo message="This is version ${build-number}" />
+
+        <call target="prepare" />
+        <property name="lib.dir" value="${lib.root}" />
+        <property name="build.dir" value="${output.dir}\release" />
+
+        <!--  build version, default to debug  -->
+        <property name="debug" value="true" unless="${property::exists('debug')}" />
+        <call target="version.calc" />
+	<call target="get-release-note" />
+	<call target="compile" />
+        
+    </target>
+    
+     <!-- Add a Release Note. Use the most recent commit message as the Release Note. -->
+    <target name="get-release-note">
+        <property name="git.output.file" value="${build.root}\releaseNotes.txt" />
+        
+        <exec program="c:\progra~1\git\bin\git" output="${git.output.file}">
+            <arg value="log" />
+            <arg value="-1" />
+            <arg value="--pretty=format:%s" />
+        </exec>
+    </target>  
+   
+   <target name="compile">
+        
+	<property name="branch.name" value="${environment::get-variable('GIT_BRANCH')}" />
+	<property name="issue.id" value="${string::substring(property::get-value('branch.name'), string::last-index-of(property::get-value('branch.name'), '/') + 1, string::get-length(property::get-value('branch.name')) - string::last-index-of(property::get-value('branch.name'), '/') - 1)}" />
+
+	<echo message="Branch is ${issue.id}" />
+   	
+   	<!-- if master branch, there will be no issue id -->
+        <if test="${issue.id=='master'}">
+            <property name="issue.id" value="" />
+        </if>
+         <ifnot test="${issue.id==''}">
+            <property name="issue.id" value="${'-' + issue.id}" />  <!-- prefix the issue id with a hyphen separator for a valid version number -->
+        </ifnot>
+
+        <!-- restore the nuget packages, if required -->
+        <property name="NugetPath" value="C:\program files\nuget\nuget.exe" />    
+        
+        <exec program="${NugetPath}" workingdir="${code.dir}">
+            <arg value="restore" />
+        </exec>
+        
+        <!-- update ClientDependency.config with the version number ( to refresh the cached js, css  ) -->
+        <xmlpoke file="${site.dir}\config\ClientDependency.config" xpath="/clientDependency/@version" value="${environment::get-variable('BUILD_NUMBER')}" />  
+
+    	<property name="octopusdeploy.key" value="${environment::get-variable('OCTOPUS_DEPLOY_API_KEY')}" />
+
+         <!-- build/compile -->
+        <property name="MSBuildPath" value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe" />    
+		<exec program="${MSBuildPath}">
+			<arg line="&quot;${code.dir}\${build-name}.sln&quot;" />
+			<arg value="/p:VisualStudioVersion=12.0" />
+			<arg value="/p:RunOctoPack=true" />
+			<arg value="/p:OctoPackPublishPackageToHttp=http://octopus.multimediasolutions.com/nuget/packages" />
+			<arg value="/p:OctoPackPublishApiKey=${octopusdeploy.key}" />
+			<arg value="/p:OctoPackReleaseNotesFile=${build.root}\releaseNotes.txt" />
+			<arg value="/p:OctoPackPackageVersion=${CCNetLabel}${issue.id}" /> 
+			<arg value="/p:OctoPackProjectName=${'build-name'}" />
+
+			<arg value="/verbosity:normal" />
+			<arg value="/nologo" />
+		</exec>
+  
+		<!-- Create release of this version in Octopus Deploy and deploy to Test. Automatic Release Creation can only be applied to one channel. -->
+		<exec program="c:\tools\octo\octo.exe">
+			<arg value="create-release" />
+			<arg line="--project &quot;Manasquan Bank&quot;" />
+			<arg line="--version ${CCNetLabel}${issue.id}" />
+			<arg line="--packageversion ${CCNetLabel}${issue.id}" />
+			<arg line="--server http://octopus.multimediasolutions.com" />
+			<arg line="--apiKey ${octopusdeploy.key}" />
+		</exec>
+
+		<copy todir="${build.dir}">
+            <fileset basedir="${site.dir}\bin">
+                <include name="*.dll" />
+            </fileset>
+		</copy>
+
+    </target>
+	
+ <target name="deploy">
+
+        <!-- copy binary files -->
+        <copy todir="${deploy-target}\bin">
+            <fileset basedir="${build.dir}">
+                <include name="NorthfieldBank.Web.*" />
+            </fileset>
+        </copy>
+
+		<!-- copy binary files in lib directory -->
+        <copy todir="${deploy-target}\bin" flatten="true">
+            <fileset basedir="${lib.dir}">
+                <include name="**\*.dll" />
+            </fileset>
+        </copy>
+
+			   <!-- copy app_code  -->
+        <copy todir="${deploy-target}\App_Code">
+            <fileset basedir="${site.dir}\App_Code">
+                <include name="**/*.cs" />
+            </fileset>
+        </copy>
+		
+        <!-- copy usercontrols -->
+        <copy todir="${deploy-target}\usercontrols">
+            <fileset basedir="${site.dir}\usercontrols">
+                <exclude name="**/*.resx" />
+                <exclude name="**/*.cs" />
+                <include name="**/*.ascx" />
+            </fileset>
+        </copy>
+		
+		 <!-- copy handlers / webservice -->
+        <copy todir="${deploy-target}">
+            <fileset basedir="${site.dir}">
+                <include name="*.ashx" />
+				<include name="*.asmx" />
+            </fileset>
+        </copy>
+		
+		<!-- copy masterpages -->
+        <copy todir="${deploy-target}\masterpages">
+            <fileset basedir="${site.dir}\masterpages">
+                <include name="*.master" />
+            </fileset>
+        </copy>
+		
+		<!-- copy usercontrols from source -->
+        <copy todir="${deploy-target}\usercontrols">
+            <fileset basedir="${site.dir}\usercontrols">
+                <include name="**/*.ascx" />
+            </fileset>
+        </copy>
+		
+		<!-- copy views from source -->
+        <copy todir="${deploy-target}\views">
+            <fileset basedir="${site.dir}\views">
+                <include name="**/*.cshtml" />
+            </fileset>
+        </copy>
+		
+		<!-- copy razor macros from source -->
+        <copy todir="${deploy-target}\macroScripts">
+            <fileset basedir="${site.dir}\macroScripts">
+                <include name="**/*.cshtml" />
+            </fileset>
+        </copy>
+		
+        <!-- copy xslt -->
+        <copy todir="${deploy-target}\xslt">
+            <fileset basedir="${site.dir}\xslt">
+                <include name="*.xslt" />
+            </fileset>
+        </copy>
+
+        <!-- copy css -->
+        <copy todir="${deploy-target}\css">
+            <fileset basedir="${site.dir}\css">
+                <include name="**/*.css" />
+            </fileset>
+        </copy>
+
+        <!-- copy image -->
+        <copy todir="${deploy-target}\images">
+            <fileset basedir="${site.dir}\images">
+                <include name="**/*.*" />
+            </fileset>
+        </copy>
+
+        <!-- copy javascript -->
+        <copy todir="${deploy-target}\js">
+            <fileset basedir="${site.dir}\js">
+                <include name="**/*.js" />
+            </fileset>
+        </copy>
+		
+		<!-- copy javascript from scripts dir-->
+        <copy todir="${deploy-target}\scripts">
+            <fileset basedir="${site.dir}\scripts">
+                <include name="**/*.js" />
+            </fileset>
+        </copy>
+		
+		 <!-- copy umbraco config files -->
+        <copy todir="${deploy-target}\config">
+            <fileset basedir="${site.dir}\config">
+                <include name="*.config" />
+            </fileset>
+        </copy>
+		
+		 <!-- copy favicon -->
+        <copy todir="${deploy-target}">
+            <fileset basedir="${site.dir}">
+                <include name="favicon.ico" />
+            </fileset>
+        </copy>
+
+    </target>
+
+</project>

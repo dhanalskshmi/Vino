@@ -1,0 +1,19 @@
+<smtp deliveryMethod="network">
+	<network host="localhost" enableSsl="false" port="25"/>
+</smtp>
+
+<!-- possible configuration settings for the network element are:
+
+ <network
+          clientDomain=""
+          defaultCredentials="false"
+          enableSsl="false"  
+          host=""
+	  username=""
+	  password=""
+          port="25"
+        />
+
+for full details check http://msdn.microsoft.com/en-us/library/ms164242(v=vs.110).aspx
+
+-->
