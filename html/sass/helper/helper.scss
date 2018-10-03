@@ -1,3 +1,20 @@
+@mixin bp($point) {
+  @if $point == desktop {
+    @media (min-width: 1280px) { @content; }
+  }
+  @else if $point == landscape {
+    @media (max-width: 1279px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (max-width: 991px)  { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: 767px)  { @content; }
+  }
+  @else if $point == mobile-large {
+    @media (min-width: 475px) and (max-width: 767px)  { @content; }
+  }
+}
 $base: 1280px;
 $tab-lands-max: 1279px;
 $tab-lands-min: 1024px;
@@ -640,4 +657,77 @@ p {
   30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
 
   40%, 60% {transform: translate3d(4px, 0, 0);}
+}
+
+
+// Custom Checkbox
+// Reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 17px;
+	width: 17px;
+	background-color: #eee;
+  border: 2px solid #666666;
+  @include bp(tablet){
+    height: 15px;
+    width: 15px;
+    border: 1px solid #666666;
+  }
+	&:after {
+		content: "";
+		position: absolute;
+		display: none;
+  }
+  &.FocusIn{
+    outline: 1px solid rgb(0, 142, 255);
+    background: #ccc;
+  }
+}
+.custom-checkbox {
+	&:hover {
+		input {
+			~ {
+				.checkmark {
+					background-color: #ccc;
+				}
+			}
+		}
+	}
+	input {
+		&:checked {
+			~ {
+				.checkmark {
+          background-color: #1268e5;
+          border-color: #1268e5;
+					&:after {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.checkmark {
+		&:after {
+			left: 4px;
+			top: 1px;
+			width: 5px;
+			height: 10px;
+			border: solid #fff;
+			border-width: 0 2px 2px 0px;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.checkbox label{
+  padding-left: 29px;
+  @include bp(tablet){
+    padding-left: 23px;
+  }
 }

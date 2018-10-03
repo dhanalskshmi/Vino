@@ -39,7 +39,10 @@ input[type="submit"] {
      -webkit-appearance: none;
      border-radius: 0;
 }
-@import "helper/helper.scss";
+@import "helper/helper";
 @import "layout/header/desktop";
-@import "layout/home/desktop";
 @import "layout/footer/desktop";
+@import "layout/home/desktop";
+@import "pages/about";
+@import "pages/contact";
+@import "pages/careers";

@@ -1,0 +1,54 @@
+.careers {
+    .heroBlock {
+        .heroCareer {
+            img {
+                max-width: 120px;
+                float: left;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+.heroFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .flexLinkWrap {
+        height: 330px;
+        width: 340px;
+        overflow: hidden;
+        position: relative;
+        .flexLinks {
+            display: inline-block;
+            .flexImage {
+                height: 330px;
+                width: 340px;
+                margin-bottom: 50px;
+                background-size: cover;
+                transition: .2s all;
+            }
+        }
+        .heroFlexheading {
+            position: absolute;
+            bottom: 43px;
+            left: 0;
+            background: #eb2837;
+            color: #fff;
+            font-size: 30px;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-bottom: 0;
+            width: 79%;
+        }
+        &:hover {
+            .flexLinks {
+                .flexImage {
+                    transform: scale(1.3);
+                    transition: .3s all;
+                }
+            }
+        }
+    }
+}
