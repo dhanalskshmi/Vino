@@ -265,6 +265,7 @@
 .bluePannel {
   background: #1b3d6e;
   padding: 26px 18px;
+  margin-bottom: 39px;
   .wraps {
     padding: 16px 19px 0;
   }
@@ -323,7 +324,6 @@
 }
 
 .communityPannel {
-  padding-top: 39px;
   .bgWraps {
     background: #fafafa;
   }
@@ -705,6 +705,7 @@
   .bluePannel {
     background: none;
     padding: 0;
+    margin-bottom: 31px;
     .bgWrap {
       background: #1b3d6e;
       padding: 27px 24px;
@@ -765,7 +766,6 @@
 
   .communityPannel {
     position: relative;
-    padding-top: 31px;
     /*padding-left: 60px;
     padding-right: 60px;*/
     margin-bottom: 57px;
@@ -1108,6 +1108,7 @@
   // Blue Pannel
 
   .bluePannel {
+    margin-bottom: 60px;
     .wraps {
       padding: 28px 19px 0;
     }
@@ -1140,7 +1141,6 @@
   // Community Pannel
 
   .communityPannel {
-    padding-top: 60px;
     .titleBlock,
     .redBlock {
       max-width: calc(100% - 305px);
@@ -1368,7 +1368,7 @@
             }
           }
           figure {
-            max-width: 182px;
+            width: 182px;
             left: -10px;
           }
         }
@@ -1379,6 +1379,7 @@
   //Blue Pannel
 
   .bluePannel {
+    margin-bottom: 51px;
     .detailsWrap {
       max-width: calc(50% - 81.5px);
       padding-bottom: 89px;
@@ -1420,7 +1421,7 @@
   // Community Pannel
 
   .communityPannel {
-    padding-top: 51px;
+    margin-bottom: 163px;
     .bgWraps {
       max-width: 1280px;
       margin: 0 auto;
@@ -1482,8 +1483,8 @@
   // App Pannel
 
   .appPannel {
-    padding-top: 96px;
     margin-bottom: 90px;
+    padding-top: 0;
     .bgWraps {
       padding-bottom: 46px;
     }
@@ -1501,6 +1502,7 @@
     }
     .imgDesg {
       max-width: 408px;
+      top: -56px;
     }
     .appStores {
       padding-top: 41px;
@@ -1557,7 +1559,8 @@
         width: 31.03%;
         margin-bottom: 35px;
         &.groupCheckbox {
-          width: 71.6%;
+          width: 100%;
+          margin: 0;
           div {
             label {
               font-size: 22px;

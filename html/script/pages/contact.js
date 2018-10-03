@@ -12,7 +12,7 @@ if ($('#contactForm').length > 0) {
                 $(selector).parent().addClass("errorForm");
             },
             unhighlight: function (element, errorClass) {
-                
+
                 var selector = "#" + element.id;
                 $(selector).removeClass(errorClass);
                 $(selector).parent().removeClass("errorForm");
@@ -23,6 +23,7 @@ if ($('#contactForm').length > 0) {
     });
 }
 $(document).ready(function(){
+  if ($('.checkbox').length > 0) {
     $( ".checkbox" ).focusin(function() {
         console.log("sadgk");
         $(this).closest('.custom-checkbox').find('.checkmark').addClass("FocusIn");
@@ -30,6 +31,8 @@ $(document).ready(function(){
     $( ".checkbox" ).focusout(function() {
         $(this).closest('.custom-checkbox').find('.checkmark').removeClass("FocusIn");
     });
+  }
+
 });
 
 $( "#careerInput" ).selectmenu();

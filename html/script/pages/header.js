@@ -671,7 +671,7 @@ if (isSafari) console.log("You are using Safari!");
 
 $(document).ready(function() {
 	setTimeout(function(){
-		$('.bannerWrapper').addClass('animateIt');
+		$('.bannerWrapper, .bankingServices ul').addClass('animateIt');
 	},1900);
 	$('.bannerWrapper').bind('inview', function (event, visible) {
   if (visible == true) {

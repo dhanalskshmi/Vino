@@ -56,23 +56,44 @@
   }
   &.bluePannel {
     opacity: 0;
-    transform: translateY(20%);
-    transition: all 1.5s;
-    transition-delay: 1s;
+    transform: translateY(20%) scale(0.95);
+    transition-delay: 2s;
+    transition: all 0.75s;
   }
   &.communityPannel {
     .imgBlock {
       opacity: 0;
       transform: translateX(-13%);
-      transition: all 0.75s;
+      transition-delay: 2.5s;
+      transition: all 1.5s;
     }
   }
   &.appPannel {
     .imgDesg {
       opacity: 0;
-      transform: scale(0.6) translateY(10%);
+      transform: translateX(20%);
       transform-origin: 0% 34%;
-      transition: all 0.75s;
+      transition-delay: 2s;
+      transition: all 2s cubic-bezier(.175,.885,.32,1.275);
+    }
+  }
+  &.knowledgePannel {
+    ul {
+      li {
+        opacity: 0;
+        transform: scale(0);
+        transition-delay: 2.3s;
+        transition: all .75s cubic-bezier(.175,.885,.32,1.275);
+        &:nth-child(2) {
+          transition-delay: 0.6s;
+        }
+        &:nth-child(3) {
+          transition-delay: 0.9s;
+        }
+        &:nth-child(4) {
+          transition-delay: 1.2s;
+        }
+      }
     }
   }
   &.animate-in {
@@ -113,7 +134,7 @@
         }
       }
     }
-    .bankingServices {
+    &.bankingServices {
       ul {
         li {
           &.bunisessBank,
@@ -142,24 +163,30 @@
     }
 
     */
+
     &.bluePannel {
       opacity: 1;
-      transform: translateY(0);
-      transition: all 0.75s;
+      transform: translateY(0) scale(1);
     }
     &.communityPannel {
       .imgBlock {
         opacity: 1;
         transform: translateX(0);
-        transition: all 0.75s;
       }
     }
     &.appPannel {
       .imgDesg {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateX(0);
         transform-origin: center;
-        transition: all 0.75s;
+      }
+    }
+    &.knowledgePannel {
+      ul {
+        li {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
     }
 
@@ -222,7 +249,7 @@
     &.appPannel {
       .imgDesg {
         opacity: 0;
-        transform: scale(0.6) translateY(10%);
+        transform: translateX(20%);
         transform-origin: 0% 34%;
         transition: all 0.75s;
       }
@@ -281,7 +308,41 @@
 
 }
 
+.bankingServices {
+  ul {
+    li {
+      &.bunisessBank {
+        opacity: 0;
+        transform: scale(1.1) translateX(-50px) translateY(-50px);
+        transition: all 1s;
+      }
+      &.mortage {
+        opacity: 0;
+        transform: scale(1.1) translateX(50px) translateY(-50px);
+        transition: all 1s;
+      }
+      &.personalBank {
+        opacity: 0;
+        transform: translateY(15%);
+        transition: all 0.75s;
+      }
+    }
+    &.animateIt {
+      li {
+        &.bunisessBank,
+        &.mortage {
+          opacity: 1;
+          transform: scale(1) translateX(0) translateY(0);
+        }
+        &.personalBank {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
+    }
+  }
+}
 @keyframes lftRgt {
     0% { opacity: 0; transform: translateX(-12%); }
     30% { opacity: 0; transform: translateX(-12%); }
