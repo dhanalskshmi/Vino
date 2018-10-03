@@ -31,3 +31,5 @@ $(document).ready(function(){
         $(this).closest('.custom-checkbox').find('.checkmark').removeClass("FocusIn");
     });
 });
+
+$( "#careerInput" ).selectmenu();

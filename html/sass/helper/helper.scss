@@ -731,3 +731,45 @@ p {
     padding-left: 23px;
   }
 }
+
+// UI Selectbox
+.ui-widget{
+  font-family: inherit;
+}
+.ui-selectmenu-button {
+  &.ui-button {
+      background: #fff;
+      span{
+          &.ui-icon{
+              background: url("../images/careers/down-arrow.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position-y: 5px;
+          }
+      }
+  }
+}
+.ui-menu{
+  .ui-menu-item{
+      padding: 0;
+      .ui-menu-item-wrapper{
+          font-size: 16px;
+          padding: .3em .7em;
+      }
+  }
+  .ui-state-active{
+      background: #1268e5;
+      color: #fff;
+  }
+}
+.ui-selectmenu-button {
+  &.ui-button {
+      border-radius: 0px;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      .ui-selectmenu-text{
+          padding: 0.6em 2.1em 0.6em .7em;
+      }
+  }
+}
