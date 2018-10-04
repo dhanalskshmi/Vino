@@ -365,7 +365,17 @@ header {
 @media screen and (min-width: $base - 16px) {
 
 	header {
-		margin-top: 22px
+		margin-top: 22px;
+		transition: background, margin 0.75s;
+		&.fixed {
+			position: fixed;
+			background: rgba(255,255,255,.92);
+			z-index: 999999999;
+			margin-top: 0;
+			.headerWrapper {
+				background: transparent;
+			}
+		}
 	}
 
 	.headerWrapper {

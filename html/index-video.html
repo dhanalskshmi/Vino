@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link href='css/lib/nprogress.css' rel='stylesheet' />
   <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
+  <link href="css/lib/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
   <body style='display: none'>
@@ -74,6 +75,7 @@
                           Media Center
                         </a>
                       </li>
+                      </li>
                       <li>
                         <a href="#">
                           Find a Branch
@@ -136,9 +138,13 @@
   			</header>
         <section class="bannerWrapper">
           <div class="bannerWrap">
-            <figure class="bannerImage" style="background-image: url('images/banner/banner_bg.jpg')">
-
-            </figure>
+            <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+              <div class="goto">
+                <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
+              </div>
+              <!--7SnmCUwOsts--><!--BsekcY04xvQ--><!--r1xohS2u69E--><!--Fk9EBOOAYiU--><!--sEuXfDtrco8--><!--9d8wWcJLnFI--><!--Fk9EBOOAYiU--><!-- https://www.youtube.com/watch?v=VHcAusNO3L4&list=RDEMtvEj6XzR7gbh_QCXSzFudw -->
+              <div id="bgndVideo" class="player" data-property="{videoURL:'kDvm_PaCals',containment:'body', showControls:true, autoPlay:true, loop:true, vol:1, mute:true, startAt:50,  stopAt:300, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}">My video</div>
+            </div>
             <div class="bannerContent">
               <div class="containerWrapper">
                 <h1>
@@ -186,7 +192,7 @@
             <ul>
               <li class="bunisessBank">
                 <figure class="imgBlock" style="background-image: url('images/home/service_1.jpg')">
-                  <a href="#">Business Banking</a>
+
                 </figure>
                 <div class="serviceContent">
                   <h2>
@@ -197,7 +203,7 @@
               </li>
               <li class="personalBank">
                 <figure class="imgBlock" style="background-image: url('images/home/service_2.jpg')">
-                  <a href="#">Personal Banking</a>
+
                 </figure>
                 <div class="serviceContent">
                   <h2>
@@ -243,7 +249,7 @@
               </li>
               <li class="didgitalCenter">
                 <figure class="imgBlock" style="background-image: url('images/home/service_3.jpg')">
-                  <a href="#">Digital Center</a>
+
                 </figure>
                 <div class="serviceContent">
                   <h2>
@@ -254,7 +260,7 @@
               </li>
               <li class="clentService">
                 <figure class="imgBlock" style="background-image: url('images/home/service_4.jpg')">
-                  <a href="#">Client Services</a>
+
                 </figure>
                 <div class="serviceContent">
                   <h2>
@@ -740,8 +746,97 @@
     <script src='script/lib/nprogress.js'></script>
     <script src="script/lib/modernizr-custom.js"></script>
     <script src="script/lib/scrollanimation.js"></script>
+    <script src="script/lib/jquery.mb.YTPlayer.js"></script>
     <!--<script src="http://remysharp.com/downloads/jquery.inview.js"></script>-->
   	<script type='text/javascript' src='script/main.min.js'></script>
+
+    <script>
+
+      var myPlayer;
+      jQuery(function () {
+        myPlayer = jQuery("#bgndVideo").YTPlayer({useOnMobile:true, mobileFallbackImage:"assets/ytplayer_img.jpg"});
+
+        /* DEBUG ******************************************************************************************/
+
+        /*var YTPConsole = jQuery("#eventListener");
+        // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
+        myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
+          YTPConsole.append("event: " + e.type + " (" + jQuery("#bgndVideo").YTPGetPlayer().getPlayerState() + ") > time: " + e.time);
+          YTPConsole.append("<br>");
+        });
+
+        // EVENT: YTPChanged
+        myPlayer.on("YTPChanged", function (e) {
+          YTPConsole.html("");
+        });
+
+        myPlayer.on("YTPChangeVideo", function(e){
+          console.debug("YTPChangeVideo", e);
+
+        });
+
+        // EVENT: YTPData
+        myPlayer.on("YTPData", function (e) {
+          $(".dida").html(e.prop.title + "<br>@" + e.prop.channelTitle);
+          $("#videoData").show();
+
+          YTPConsole.append("******************************");
+          YTPConsole.append("<br>");
+          YTPConsole.append(e.type);
+          YTPConsole.append("<br>");
+          YTPConsole.append(e.prop.title);
+          YTPConsole.append("<br>");
+          YTPConsole.append(e.prop.description.replace(/\n/g, "<br/>"));
+          YTPConsole.append("<br>");
+          YTPConsole.append("******************************");
+          YTPConsole.append("<br>");
+        });*/
+
+        // EVENT: YTPTime
+        /*myPlayer.on("YTPTime", function (e) {
+          var currentTime = e.time;
+          var traceLog = currentTime / 5 == Math.floor(currentTime / 5);
+
+          if (traceLog && YTPConsole.is(":visible")) {
+            YTPConsole.append(myPlayer.attr("id")+ " > " + e.type + " > actual time is: " + currentTime);
+            YTPConsole.append("<br>");
+
+
+          }
+        });*/
+
+        /* END DEBUG ******************************************************************************************/
+
+
+
+        /* update applied filters */
+        /*myPlayer.on("YTPFiltersApplied", function(){
+          var filters = myPlayer.get(0).filters;
+
+
+        });*/
+
+        myPlayer.on("YTPPlay", function(){
+          $("#togglePlay").removeClass("play pause");
+          $("#togglePlay").addClass("pause");
+        });
+
+        myPlayer.on("YTPPause", function(){
+          $("#togglePlay").removeClass("play pause");
+          $("#togglePlay").addClass("play");
+        });
+        /* END FILTER SLIDERS ******************************************************************************************/
+      });
+
+      /**
+       *
+       * @param val
+       * @returns {*|number}
+       */
+      function checkForVal(val){
+        return val || 0;
+      }
+    </script>
 
   </body>
 </html>

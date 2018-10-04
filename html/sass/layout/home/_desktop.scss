@@ -1,4 +1,8 @@
 
+
+#wrapper_bgndVideo {
+  min-height: 719px;
+}
 .bannerWrapper {
   min-height: 719px;
   .bannerWrap {
@@ -242,7 +246,7 @@
             font-size: inherit;
           }
         }
-        .lmoBtn {
+        .btnManasq {
           font-size: 12px;
           text-transform: uppercase;
           @include btnstyle();
@@ -300,7 +304,7 @@
       font-size: 10px;
       line-height: 11px;
     }
-    .btnSection {
+    .btnManasq {
       display: inline-block;
       background: #1268e5;
       color: #FFF;
@@ -367,7 +371,7 @@
       margin-bottom: 15px;
       line-height: 21px;
     }
-    .lmo {
+    .btnManasq {
       display: inline-block;
       font-size: 13px;
       font-weight: 700;
@@ -448,7 +452,7 @@
       text-align: center;
     }
   }
-  .lmo {
+  .btnManasq {
     display: inline-block;
     background: #1268e5;
     font-size: 13px;
@@ -465,11 +469,64 @@
 
 .eventsPannel {
   background: #ec2c3a;
+  padding: 41px 0 49px;
   h2 {
     font-weight: 700;
     color: #FFF;
-    font-size: 43px;
+    font-size: 38px;
+    padding-bottom: 41px;
     text-align: center;
+  }
+  ul {
+    li {
+      background: #FFF;
+      padding: 10px 6px 1px;
+      margin-bottom: 14px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .eventHead {
+    display: table;
+    width: 100%;
+    margin-bottom: 2px;
+    .eventLogo {
+      max-width: 103px;
+      float: left;
+    }
+    .followShare {
+      float: right;
+      width: calc(100% - 103px);
+      text-align: right;
+      .follow {
+        font-size: 10px;
+        color: #4287d9;
+        display: inline-block;
+        padding: 3px 8px;
+        border: 1px solid #4287d9;
+        border-radius: 15px;
+      }
+    }
+  }
+  figure {
+    padding: 5px 0 3px;
+  }
+  .eventDetails {
+    padding-top: 5px;
+    p {
+      font-size: 15px;
+      line-height: 16px;
+      a {
+        color: #1361ce;
+      }
+    }
+    .venue {
+      p {
+        font-size: 12px;
+        color: #778593;
+      }
+    }
   }
 }
 
@@ -681,7 +738,7 @@
                 }
               }
             }
-            .lmoBtn {
+            .btnManasq {
               font-weight: 700;
               font-size: 7px;
               padding: 3px 5px;
@@ -743,7 +800,7 @@
         font-size: 12px;
         line-height: 13px;
       }
-      .btnSection {
+      .btnManasq {
         font-size: 12px;
         padding: 3px 18px;
         margin-top: 0;
@@ -912,7 +969,7 @@
         font-size: 16px;
       }
     }
-    .lmo {
+    .btnManasq {
       font-size: 12px;
       padding: 3px 12px;
     }
@@ -921,14 +978,20 @@
   // Events Pannel
 
   .eventsPannel {
-    padding-top: 24px;
-    padding-bottom: 17px;
+    padding: 24px 0 17px;
     h2 {
       font-size: 28px;
-      padding-bottom: 17px;
+      padding-bottom: 18px;
     }
     ul {
-      min-height: 249px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      li {
+        width: 33.13%;
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -1019,6 +1082,9 @@
 
   // Banner
 
+  #wrapper_bgndVideo {
+    min-height: 576px;
+  }
   .bannerWrapper {
     min-height: 576px;
     .bannerImage {
@@ -1090,7 +1156,7 @@
                 line-height: 20px;
               }
             }
-            .lmoBtn {
+            .btnManasq {
               font-size: 10px;
               padding: 6px 11px;
             }
@@ -1128,7 +1194,7 @@
           font-size: inherit;
         }
       }
-      .btnSection {
+      .btnManasq {
         font-size: 15px;
         padding: 5px 21px 6px;
         margin-top: 0;
@@ -1164,7 +1230,8 @@
       }
     }
     .imgBlock {
-      top: 57px;
+      top: 7px;
+      right: 0;
       figure {
         width: 348px;
         height: 348px;
@@ -1224,9 +1291,41 @@
         font-size: 20px;
       }
     }
-    .lmo {
+    .btnManasq {
       font-size: 15px;
       padding: 6px 24px;
+    }
+  }
+
+  // Current Events
+
+  .eventsPannel {
+    padding: 30px 0 33px;
+    h2 {
+      font-size: 35px;
+      padding-bottom: 40px;
+    }
+    .eventHead {
+      margin-bottom: 15px;
+      .eventLogo {
+        max-width: 164px;
+      }
+      .followShare {
+        width: calc(100% - 164px);
+        .follow {
+          font-size: 11px;
+          padding: 4px 14px;
+        }
+      }
+    }
+    .eventDetails {
+
+      .venue {
+        p {
+          font-size: 14px;
+          margin-bottom: 19px;
+        }
+      }
     }
   }
 
@@ -1290,6 +1389,12 @@
 
 @media screen and (min-width: $base) {
 
+  #wrapper_bgndVideo {
+    min-height: 965px;
+  }
+  #controlBar_bgndVideo {
+    display: none !important;
+  }
   .bannerWrapper {
     min-height: 965px;
     .bannerImage {
@@ -1312,12 +1417,37 @@
         max-width: 340px;
         min-height: 336px;
         max-height: 336px;
+        overflow: hidden;
         .imgBlock {
           min-height: 336px;
+          transition: all 0.75s;
+          a {
+            display: block;
+            min-height: 100%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 999999;
+            font-size: 0;
+            color: transparent;
+          }
+        }
+        &:hover {
+          .imgBlock {
+            transform: scale(1.1);
+          }
+          h2 {
+            transform: translateY(-30px);
+          }
         }
         h2 {
           font-size: 43px;
           line-height: 37px;
+          transition: all 0.75s;
         }
         &.personalBank,
         &.didgitalCenter {
@@ -1352,6 +1482,7 @@
           }
         }
         &.kasasa {
+          overflow: visible;
           .serviceContent {
             .detailBlock {
               width: 202px;
@@ -1362,7 +1493,7 @@
                 line-height: 29px;
               }
             }
-            .lmoBtn {
+            .btnManasq {
               font-size: 13px;
               padding: 10px 27px;
             }
@@ -1403,7 +1534,7 @@
         font-size: 18px;
         line-height: 22px;
       }
-      .btnSection {
+      .btnManasq {
         font-size: 19px;
         padding: 12px 22px;
         border-radius: 23px;
@@ -1464,7 +1595,7 @@
         font-size: 18px;
         margin-bottom: 30px;
       }
-      .lmo {
+      .btnManasq {
         font-size: 19px;
         padding: 10px 37px;
         border-radius: 20px;
@@ -1532,10 +1663,53 @@
         min-height: 112px;
       }
     }
-    .lmo {
+    .btnManasq {
       font-size: 17px;
       padding: 11px 44px;
       border-radius: 22px;
+    }
+  }
+
+  // Current Events
+
+  .eventsPannel {
+    padding: 37px 0 58px;
+    h2 {
+      font-size: 47px;
+      padding-bottom: 45px;
+    }
+    ul {
+      li {
+        width: 32.73%;
+        padding: 13px 8px 1px;
+      }
+    }
+    figure {
+      padding-bottom: 4px;
+    }
+    .eventHead {
+      margin-bottom: 4px;
+      .eventLogo {
+        max-width: 148px;
+      }
+      .followShare {
+        width: calc(100% - 148px);
+        .follow {
+          font-size: 11px;
+          padding: 7px 23px;
+        }
+      }
+    }
+    .eventDetails {
+      p {
+        font-size: 18px;
+        line-height: 20px;
+      }
+      .venue {
+        p {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 

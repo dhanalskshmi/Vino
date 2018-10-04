@@ -360,6 +360,45 @@ a[href^=tel] {
     z-index: 99;
   }
 }
+button {
+  span {
+    position: relative;
+    z-index: 99;
+  }
+}
+
+.btnManasq,
+button {
+  position: relative;
+  overflow: hidden;
+  span {
+    position: relative;
+    z-index: 99;
+  }
+  &::before,
+  &::after {
+    content: '';
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	z-index: 1;
+  	background-color: rgba(0, 0, 0, 0.25);
+  	transition: all 0.3s;
+  	transform: translate(0,-100%);
+  	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  &::after {
+    transition-delay: 0.2s;
+  }
+  &:hover {
+    &::before,
+    &::after {
+      transform: translate(0,0);
+    }
+  }
+}
 
 
 
