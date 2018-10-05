@@ -1,0 +1,300 @@
+.mediaCenter {
+    .heroBlock {
+        h2 {
+            margin-bottom: 12px;
+            @include bp(landscape) {
+                margin-bottom: 25px;
+            }
+            @include bp(tablet) {
+                margin-bottom: 17px;
+            }
+        }
+        p {
+            @include bp(landscape) {
+                margin-bottom: 11px;
+            }
+            @include bp(mobile) {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+        .bgWrap {
+            padding: 42px 106px 23px 106px;
+            @include bp(landscape) {
+                padding: 42px 84px 8px 84px;
+            }
+            @include bp(tablet) {
+                padding: 42px 61px 8px 61px;
+            }
+            @include bp(mobile) {
+                padding: 27px 11px 8px 11px;
+            }
+            .mediaForm {
+                display: flex;
+                @include bp(tablet) {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                @include bp(mobile) {
+                    margin-top: 40px;
+                    justify-content: center;
+                }
+                .form-group {
+                    width: 280px;
+                    margin-right: 20px;
+                    @include bp(landscape) {
+                        width: 190px;
+                        margin-right: 10px;
+                    }
+                    @include bp(tablet) {
+                        width: 46%;
+                        margin: 0px;
+                        margin-bottom: 20px;
+                    }
+                    @include bp(mobile) {
+                        width: 100%;
+                    }
+                    .form-control {
+                        height: 46px;
+                        font-size: 18px;
+                        @include bp(landscape) {
+                            height: 30px;
+                        }
+                        @include bp(tablet) {
+                            height: 45px;
+                            padding-left: 21px;
+                        }
+                    }
+                    input {
+                        &::placeholder {
+                            color: #666666;
+                        }
+                    }
+                    &.searchBtn {
+                        width: auto;
+                        margin-right: 0;
+                        .btn-mansq {
+                            margin: 0;
+                            width: 165px;
+                            padding: 13px 40px;
+                            font-size: 24px;
+                            @include bp(landscape) {
+                                width: 120px;
+                                padding: 6px 0px;
+                                font-size: 18px;
+                                margin-left: 16px;
+                            }
+                            @include bp(landscape) {
+                                width: 164px;
+                                padding: 12px 0;
+                                font-size: 22px;
+                            }
+                            @include bp(mobile) {
+                                margin: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.newsWrap {
+    margin-bottom: 72px;
+    @include bp(landscape) {
+        margin-bottom: 60px;
+    }
+    @include bp(tablet) {
+        margin-bottom: 41px;
+    }
+    .bgWrap {
+        padding: 57px 62px 40px 62px;
+        @include bp(landscape) {
+            padding: 45px 22px 40px 22px;
+        }
+        @include bp(tablet) {
+            padding: 38px 22px 40px 22px;
+        }
+        .newsFlexWrap {
+            .newsFlex {
+                display: flex;
+                margin-bottom: 72px;
+                @include bp(landscape) {
+                    margin-bottom: 39px;
+                }
+                @include bp(mobile) {
+                    flex-direction: column;
+                }
+                .newsFlexImg {
+                    width: 300px;
+                    margin-right: 21px;
+                    @include bp(landscape) {
+                        min-width: 228px;
+                        margin-right: 34px;
+                    }
+                    @include bp(landscape) {
+                        min-width: 200px;
+                        margin-right: 19px;
+                    }
+                    img {
+                        @include bp(landscape) {
+                            margin-right: 32px;
+                        }
+                    }
+                }
+                .newsFlexContent {
+                    h4 {
+                        color: #3d3d3d;
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        margin-bottom: 7px;
+                        @include bp(landscape) {
+                            font-size: 18px;
+                            margin-bottom: 4px;
+                        }
+                        @include bp(tablet) {
+                            margin-bottom: 0px;
+                        }
+                        a {
+                            &:hover {
+                                color: inherit;
+                            }
+                        }
+                    }
+                    p {
+                        color: #3d3d3d;
+                        font-size: 18px;
+                        line-height: 22px;
+                        margin-bottom: 15px;
+                        @include bp(landscape) {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                    h5 {
+                        font-size: 20px;
+                        font-weight: normal;
+                        margin-bottom: 42px;
+                        @include bp(landscape) {
+                            font-size: 16px;
+                            margin-bottom: 32px;
+                        }
+                        .newsDate {
+                            color: #666666;
+                            margin-right: 10px;
+                        }
+                        .newsType {
+                            color: #1268e5;
+                        }
+                    }
+                    .btn-readMore {
+                        display: inline-block;
+                        color: #666666;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        @include bp(landscape) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 52px;
+                }
+            }
+        }
+        .newsPagination {
+            display: block;
+            text-align: right;
+            p {
+                display: inline-block;
+                font-size: 20px;
+                @include bp(tablet) {
+                    font-size: 18px;
+                }
+                b {
+                    font-size: inherit;
+                }
+                img {
+                    height: auto;
+                    top: 0;
+                    vertical-align: top;
+                    margin-top: 2px;
+                    width: 18px;
+                    display: inline-block;
+                    @include bp(tablet) {
+                        margin-top: 4px;
+                        width: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.realAlerts {
+    margin-bottom: 117px;
+    @include bp(landscape) {
+        margin-bottom: 59px;
+    }
+    @include bp(tablet) {
+        margin-bottom: 40px;
+    }
+    .bgWrap {
+        background: url("../images/media-center/realTime.jpg");
+        height: 501px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fff;
+        padding: 58px 65px;
+        @include bp(landscape) {
+            height: 345px;
+            padding: 53px 60px;
+        }
+        @include bp(tablet) {
+            height: 278px;
+            padding: 43px 41px;
+        }
+        h4 {
+            font-size: 39px;
+            text-transform: uppercase;
+            font-weight: normal;
+            @include bp(landscape) {
+                font-size: 24px;
+            }
+            @include bp(tablet) {
+                font-size: 22px;
+            }
+        }
+        p {
+            margin-top: 112px;
+            font-size: 36px;
+            max-width: 501px;
+            line-height: 42px;
+            @include bp(landscape) {
+                font-size: 18px;
+                max-width: 300px;
+                margin-top: 90px;
+                line-height: 23px;
+            }
+            @include bp(tablet) {
+                margin-top: 59px;
+            }
+        }
+        .btn-mansq {
+            margin-top: 49px;
+            min-width: 203px;
+            font-size: 22px;
+            padding: 14px 20px;
+            border: 1px solid #fff;
+            text-align: center;
+            @include bp(landscape) {
+                margin-top: 10px;
+                font-size: 16px;
+                padding: 8px 16px;
+                min-width: 134px;
+            }
+        }
+    }
+}

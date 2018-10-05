@@ -559,13 +559,16 @@
                         font-size: 16px;
                         line-height: 20px;
                     }
-                    @include bp(mobile){
+                    @include bp(mobile) {
                         text-align: center;
                     }
                 }
             }
             .browsePosRgt {
-                @include bp(mobile){
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @include bp(mobile) {
                     text-align: center;
                 }
                 .btn-mansq {
@@ -577,6 +580,7 @@
                     font-size: 24px;
                     color: #fff;
                     text-decoration: none;
+                    display: inline-block;
                     @include bp(landscape) {
                         margin-left: 54px;
                         margin-top: 11px;
@@ -587,7 +591,7 @@
                         font-size: 20px;
                         padding: 18px 14px;
                     }
-                    @include bp(mobile){
+                    @include bp(mobile) {
                         display: inline-block;
                         margin: auto;
                     }
@@ -606,6 +610,18 @@
             @include bp(mobile) {
                 margin: 0;
             }
+            h4 {
+                color: #1c3d6d;
+                font-size: 24px;
+                margin-bottom: 19px;
+                @include bp(tablet) {
+                    margin-bottom: 8px;
+                }
+                @include bp(mobile) {
+                    margin-top: 24px;
+                    font-size: 22px;
+                }
+            }
             .empStoryImg {
                 min-width: 360px;
                 margin-right: 40px;
@@ -615,23 +631,31 @@
                     min-width: auto;
                     max-width: 256px;
                 }
+                @include bp(mobile) {
+                    min-width: auto;
+                    max-width: 100%;
+                    margin-right: 0;
+                }
                 img {
                     margin: 45px 0px;
                     @include bp(landscape) {
                         margin-bottom: 0;
                     }
+                    @include bp(mobile) {
+                        margin: 10px 0px;
+                        margin-bottom: 20px;
+                    }
                 }
             }
             .empStoryCont {
                 color: #666666;
-                display: initial;
-                h4 {
-                    color: #1c3d6d;
-                    font-size: 24px;
-                    margin-bottom: 19px;
-                    @include bp(tablet) {
-                        margin-bottom: 8px;
-                    }
+                display: inline-block;
+                width: calc(100% - 400px);
+                @include bp(tablet) {
+                    width: calc(100% - 296px);
+                }
+                @include bp(mobile) {
+                    width: 100%;
                 }
                 h5 {
                     font-size: 20px;
@@ -644,6 +668,10 @@
                     }
                     @include bp(tablet) {
                         font-size: 16px;
+                    }
+                    @include bp(mobile) {
+                        margin-top: 0;
+                        margin-bottom: 30px;
                     }
                 }
                 p {
@@ -683,7 +711,7 @@
             .cultureSingle {
                 display: flex; // border-bottom: 1px solid #666666;
                 // padding-bottom: 56px;
-                @include bp(mobile){
+                @include bp(mobile) {
                     flex-direction: column;
                 }
                 .cultureImg {
@@ -696,6 +724,7 @@
                         margin-right: 0px;
                         min-width: auto;
                         order: 1;
+                        margin-bottom: 19px;
                     }
                 }
                 .cultureContent {
