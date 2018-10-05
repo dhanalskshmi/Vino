@@ -14,7 +14,7 @@
           font-style: normal;
           display: block;
           opacity: 0;
-          animation-delay: 1s;
+          //animation-delay: 1s;
         }
       }
     }
@@ -82,16 +82,16 @@
       li {
         opacity: 0;
         transform: scale(0);
-        transition-delay: 2.3s;
-        transition: all .75s cubic-bezier(.175,.885,.32,1.275);
+        //transition-delay: 2.3s;
+        transition: all .6s cubic-bezier(.175,.885,.32,1.275);
         &:nth-child(2) {
-          transition-delay: 0.6s;
+          transition-delay: 0.3s;
         }
         &:nth-child(3) {
-          transition-delay: 0.9s;
+          transition-delay: 0.6s;
         }
         &:nth-child(4) {
-          transition-delay: 1.2s;
+          transition-delay: 0.9s;
         }
       }
     }
@@ -308,7 +308,7 @@
 
 }
 
-.bankingServices {
+/*.bankingServices {
   ul {
     li {
       &.bunisessBank {
@@ -342,7 +342,7 @@
 
     }
   }
-}
+}*/
 @keyframes lftRgt {
     0% { opacity: 0; transform: translateX(-12%); }
     30% { opacity: 0; transform: translateX(-12%); }

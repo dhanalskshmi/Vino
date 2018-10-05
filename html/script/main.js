@@ -671,14 +671,27 @@ if (isSafari) console.log("You are using Safari!");
 
 $(document).ready(function() {
 	setTimeout(function(){
-		$('.bannerWrapper, .bankingServices ul').addClass('animateIt');
-	},1900);
+		$('.bannerWrapper').addClass('animateIt');
+	},1250);
 	$('.bannerWrapper').bind('inview', function (event, visible) {
   if (visible == true) {
     alert('visible');
   } else {
     // element has gone out of viewport
   }
+});
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+		$("header").removeClass("fixed");
+     //>=, not <=
+    if (scroll >= 150) {
+        //clearHeader, not clearheader - caps H
+        $("header").addClass("fixed");
+    }
+		else {
+
+		}
+
 });
 	$(function () {
 
