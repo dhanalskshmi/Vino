@@ -6,7 +6,7 @@
 // .aboutUs {
     .containerWrapper {
         @include bp(landscape) {
-            padding: 0 53px;
+            padding: 0 60px;
         }
         @include bp(tablet) {
             padding: 0 20px;
@@ -29,9 +29,6 @@
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 1px;
-    &:hover{
-        background: #0e53b7;
-    }
 }
 
 .heroBanner {
@@ -100,11 +97,11 @@
         margin-bottom: 22px;
         @include bp(landscape) {
             font-size: 36px;
-            margin-bottom: 22px;
+            margin-bottom: 10px;
         }
         @include bp(tablet) {
             font-size: 24px;
-            margin-bottom: 16px;
+            margin-bottom: 5px;
         }
         @include bp(mobile) {
             font-size: 32px;
@@ -123,7 +120,7 @@
             margin-bottom: 22px;
         }
         @include bp(tablet) {
-            line-height: 25px;
+            line-height: 22px;
             margin-bottom: 16px;
         }
         @include bp(mobile) {
