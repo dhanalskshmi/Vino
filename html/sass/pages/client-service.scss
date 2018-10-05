@@ -1,0 +1,146 @@
+.service-section {
+	margin-top:59px;
+	margin-bottom:66px;
+	@include bp(tablandscape) {
+		margin-bottom:59px;
+	}
+	@include bp(tabportrait) {
+		margin-top:39px;
+		margin-bottom:39px;
+	}
+	@include bp(mobile) {
+		margin-top:39px;
+		margin-bottom:39px;
+	}
+	.bgWrap {
+		background:#e0e8f4;
+		padding:29px 41px 43px 41px;
+		@include bp(tablandscape) {
+			padding: 16px 22px 24px 25px;
+		}
+		@include bp(tabportrait) {		
+    		padding: 19px 14px 13px 14px;
+		}
+		@include bp(mobile) {
+			padding:19px 39px 19px;
+		}
+		h2 {
+			font-family: "opensans";
+			font-size:40px;
+			font-weight:700;
+			color:#616161;
+			text-align:center;
+			text-transform: uppercase;
+			margin-bottom:44px;
+			@include bp(tablandscape) {
+				font-size:24px;
+				margin-bottom: 24px;
+			}
+			@include bp(tabportrait) {
+				font-size:22px;
+				margin-bottom: 16px;
+			}
+			@include bp(mobile) {
+				font-size:22px;
+				margin-bottom:16px;
+			}
+		}
+		ul {
+		    display: flex;
+		    flex-wrap: wrap;
+			li {
+    			width: 20.834%;
+    			margin-top:50px;
+    			margin-right: 5.55%;
+				@include bp(tablandscape) {
+					width: 22.834%;
+					margin-right: 2.165%;
+				}
+				@include bp(tabportrait) {
+					width: 20.8%;
+					margin-right: 5.6%;
+				}
+				@include bp(mobile) {
+					width:100%;
+					margin-right:0%;
+					margin-top:38px;
+				}
+				a {
+					figure {
+						img {
+							display: block;
+    						margin: 0 auto;
+    						@include bp(tablandscape) {
+    							width:110px;
+    						}
+    						@include bp(tabportrait) {
+    							width:90px;
+    						}
+    						@include bp(mobile) {
+    							width:110px;
+    						}
+						}
+					}
+					span {
+						font-family: "manasquan";
+    					font-size: 21px;
+    					font-weight: 400;
+    					color:#616161;
+    					display:block;
+    					text-align:center;
+    					text-transform: uppercase;
+    					margin-top: 38px;
+    					@include bp(tablandscape) {
+    						font-size:16px;
+    						margin-top: 20px;
+    					}
+    					@include bp(tabportrait) {
+    						font-size:15px;
+    						margin-top:20px;
+    					}
+    					@include bp(mobile) {
+    						font-size:16px;
+    						margin-top:22px;
+    					}
+					}
+				}
+				&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4) {
+					margin-top:0px;
+				}
+				&:nth-child(4n) {
+					margin-right:0px;
+				}
+				@include bp(mobile) {
+					&:nth-child(2),&:nth-child(3),&:nth-child(4) {
+					margin-top:38px;
+				}
+				}
+			}
+		}
+
+		&.clients {
+			background:#c5d8f4;
+			margin-top:0px;
+		}
+		&.help-info {
+			background:#adc6eb;
+			margin-top:0px;
+		}
+	}
+	&.clients {
+		.bgWrap {
+			background:#c5d8f4;
+		}
+	}
+	&.help-info {
+		.bgWrap {
+			background:#adc6eb;
+		}
+	}
+}
+.servie-bluePannel {
+	margin-bottom:99px;
+	@include bp(desktop) {
+		margin-bottom:81px;
+	}
+}
