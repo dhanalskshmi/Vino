@@ -746,4 +746,3 @@ $(document).ready(function(){
 
 });
 
-$( "#careerInput" ).selectmenu();
