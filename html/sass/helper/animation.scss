@@ -62,7 +62,7 @@
   }
   &.communityPannel {
     .imgBlock {
-      opacity: 0;
+      //opacity: 0.6;
       transform: translateX(-13%);
       transition-delay: 2.5s;
       transition: all 1.5s;
