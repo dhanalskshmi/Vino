@@ -28,8 +28,28 @@
       text-align: center;
       text-transform: uppercase;
       span {
+        &:nth-child(1) {
+          letter-spacing: 1px;
+        }
+        &:nth-child(2) {
+          letter-spacing: -0.5px;
+        }
+
+      }
+      strong {
         font-weight: 700;
         display: inline-block;
+        span {
+          &:nth-child(1) {
+            letter-spacing: 1.8px;
+          }
+          &:nth-child(2) {
+            letter-spacing: 1.2px;
+          }
+          &:nth-child(3) {
+            letter-spacing: 3px;
+          }
+        }
       }
     }
   }
@@ -335,7 +355,7 @@
   .imgBlock {
     padding-bottom: 23px;
     figure {
-      background-size: cover;
+      background-size: auto 101%;
       background-repeat: no-repeat;
       background-position: center;
       width: 257px;
@@ -376,12 +396,11 @@
       display: inline-block;
       font-size: 13px;
       font-weight: 700;
-      color: #484848;
-      background: #FFF;
+      color: #FFF;
+      background: #1268e5;
       padding: 8px 17px;
       text-transform: uppercase;
-      border: 1px solid #484848;
-      border-radius: 10px;
+      border-radius: 25px;
     }
   }
 }
@@ -573,6 +592,7 @@
       label {
         display: inline-block;
         vertical-align: middle;
+        cursor: pointer;
       }
       label {
         font-size: 21px;
@@ -633,7 +653,7 @@
 
 @media screen and (min-width: $tab-port-min) {
 
-  .bannerWrapper{
+  .bannerWrapper {
     min-height: 432px;
     .loginBlocks {
       display: none;
@@ -647,6 +667,27 @@
         font-size: 31px;
         line-height: 33px;
         text-align: left;
+        span {
+          &:nth-child(1) {
+            letter-spacing: 1.5px;
+          }
+          &:nth-child(2) {
+            letter-spacing: -0.4px;
+          }
+        }
+        strong {
+          span {
+            &:nth-child(1) {
+              letter-spacing: 2.7px;
+            }
+            &:nth-child(2) {
+              letter-spacing: 1.9px;
+            }
+            &:nth-child(3) {
+              letter-spacing: 4px;
+            }
+          }
+        }
       }
     }
   }
@@ -672,6 +713,20 @@
         }
         .imgBlock {
           min-height: 154px;
+          a {
+            display: block;
+            min-height: 100%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 999999;
+            font-size: 0;
+            color: transparent;
+          }
         }
         &.bunisessBank {
           border-right: none;
@@ -826,14 +881,15 @@
     position: relative;
     /*padding-left: 60px;
     padding-right: 60px;*/
-    margin-bottom: 57px;
+    margin-bottom: 42px;
     .bgWraps {
       padding-top: 36px;
+      padding-bottom: 11px;
     }
     .imgBlock {
       position: absolute;
       right: 20px;
-      top: 46px;
+      top: 16px;
       z-index: 99;
       figure {
         width: 280px;
@@ -1041,7 +1097,8 @@
         }
         &.groupCheckbox {
           width: 100%;
-          max-width: 96.6%;
+          //max-width: 96.6%;
+          max-width: 100%;
           display: flex;
           flex-wrap: wrap;
           align-items: top;
@@ -1096,6 +1153,27 @@
       h1 {
         font-size: 38px;
         line-height: 44px;
+        span {
+          &:nth-child(1) {
+            letter-spacing: normal;
+          }
+          &:nth-child(2) {
+            letter-spacing: -1.8px;
+          }
+        }
+        strong {
+          span {
+            &:nth-child(1) {
+              letter-spacing: 1.5px;
+            }
+            &:nth-child(2) {
+              letter-spacing: 0.7px;
+            }
+            &:nth-child(3) {
+              letter-spacing: 3.3px;
+            }
+          }
+        }
       }
     }
   }
@@ -1208,10 +1286,15 @@
   // Community Pannel
 
   .communityPannel {
+    margin-bottom: 45px;
+    .bgWraps {
+      padding-top: 30px;
+      padding-bottom: 18px;
+    }
     .titleBlock,
     .redBlock {
       max-width: calc(100% - 305px);
-      padding: 14px 0 7px;
+      padding: 14px 0 9px;
       margin: 0 59px;
       h2 {
         font-size: 38px;
@@ -1219,6 +1302,8 @@
       }
     }
     .titleBlock {
+      padding-bottom: 0;
+      margin-bottom: -4px;
       h2 {
         padding-left: 0;
       }
@@ -1231,7 +1316,7 @@
       }
     }
     .imgBlock {
-      top: 7px;
+      top: 18px;
       right: 0;
       figure {
         width: 348px;
@@ -1355,6 +1440,12 @@
               width: 16px;
               height: 16px;
               top: -8px;
+              &::after {
+                width: 6px;
+                height: 10px;
+                left: 5px;
+                top: 1px;
+              }
             }
           }
         }
@@ -1376,6 +1467,9 @@
 
   .communityPannel {
     .titleBlock {
+      h2 {
+        padding-left: 60px;
+      }
       .containerWrapper {
         padding: 0;
       }
@@ -1406,6 +1500,24 @@
       h1 {
         font-size: 63px;
         line-height: 68px;
+        span {
+          &:nth-child(2) {
+            letter-spacing: -3.3px;
+          }
+        }
+        strong {
+          span {
+            &:nth-child(1) {
+              letter-spacing: 2px;
+            }
+            &:nth-child(2) {
+              letter-spacing: 1px;
+            }
+            &:nth-child(3) {
+              letter-spacing: 5.1px;
+            }
+          }
+        }
       }
     }
   }
@@ -1422,20 +1534,6 @@
         .imgBlock {
           min-height: 336px;
           transition: all 0.75s;
-          a {
-            display: block;
-            min-height: 100%;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            z-index: 999999;
-            font-size: 0;
-            color: transparent;
-          }
         }
         &:hover {
           .imgBlock {
@@ -1511,7 +1609,7 @@
   //Blue Pannel
 
   .bluePannel {
-    margin-bottom: 51px;
+    margin-bottom: 57px;
     .detailsWrap {
       max-width: calc(50% - 81.5px);
       padding-bottom: 89px;
@@ -1553,9 +1651,10 @@
   // Community Pannel
 
   .communityPannel {
-    margin-bottom: 163px;
+    margin-bottom: 128px;
     .bgWraps {
       max-width: 1280px;
+      padding-bottom: 30px;
       margin: 0 auto;
       position: relative;
     }
@@ -1603,7 +1702,7 @@
       }
     }
     .imgBlock {
-      top: 30px;
+      top: 24px;
       right: 0;
       figure {
         width: 501px;
@@ -1744,6 +1843,13 @@
             .checkbox {
               width: 24px;
               height: 24px;
+              &::after {
+                width: 8px;
+                height: 14px;
+                left: 8px;
+                top: 3px;
+                border-width: 0 3px 3px 0;
+              }
             }
           }
         }

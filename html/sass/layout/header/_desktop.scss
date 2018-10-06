@@ -206,6 +206,63 @@ header {
 				a {
 					color: #1c3d6d;
 				}
+				&.iWantto {
+					padding-right: 14px;
+					margin-right: 5px;
+					position: relative;
+					a {
+						position: relative;
+						&::after {
+							content: '';
+							background-image: url('#{$img}/icon_1.jpg');
+							width: 8px;
+							height: 6px;
+							position: absolute;
+							top: 4px;
+					    right: -13px;
+						}
+					}
+					.subNav {
+						opacity: 0;
+						visibility: hidden;
+						min-width: 180px;
+						padding: 0 1px;
+						background: #FFF;
+						font-size: 11px;
+						position: absolute;
+						top: 17px;
+						left: -4px;
+						z-index: 99;
+						transition: all 0.3s;
+						li {
+							display: block;
+							padding: 0 3px;
+							border-bottom: 1px solid #e5e5e5;
+							&:last-child {
+								border-bottom: none;
+							}
+							a {
+								font-size: 12px;
+								display: block;
+								color: #3d3d3d;
+								padding: 6px 9px 8px;
+								&::after {
+									display: none;
+								}
+								&:hover {
+									background: #1c3d6d;
+									color: #FFF;
+								}
+							}
+						}
+					}
+					&:hover {
+						ul {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -311,6 +368,16 @@ header {
 				float: right;
 				li {
 					padding-right: 21px;
+					&.iWantto {
+						.subNav {
+							left: -15px;
+							li {
+								a {
+									font-size: 12px;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -366,7 +433,7 @@ header {
 
 	header {
 		margin-top: 22px;
-		transition: background, margin 0.3s;
+		transition: background, margin 0.25s;
 		&.fixed {
 			position: fixed;
 			background: rgba(255,255,255,.92);
@@ -505,6 +572,13 @@ header {
 				ul {
 					li {
 						padding-right: 38px;
+						&.iWantto {
+							a {
+								&::after {
+									top: 8px;
+								}
+							}
+						}
 					}
 				}
 			}

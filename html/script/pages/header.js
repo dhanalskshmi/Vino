@@ -686,7 +686,7 @@ $(window).scroll(function() {
      //>=, not <=
     if (scroll >= 150) {
         //clearHeader, not clearheader - caps H
-        $("header").addClass("fixed");
+        //$("header").addClass("fixed");
     }
 		else {
 

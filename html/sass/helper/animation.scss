@@ -9,8 +9,7 @@
         br {
           display: none;
         }
-        i,
-        b {
+        span {
           font-style: normal;
           display: block;
           opacity: 0;
@@ -100,7 +99,7 @@
     &.bannerWrapper {
       .bannerContent {
         h1 {
-          i {
+          span {
             animation: lftRgt .5s forwards;
             animation-delay: 1s;
             opacity: 0;
@@ -112,7 +111,7 @@
 
 
           }
-          span {
+          strong {
             display: block;
             b {
               animation: lftRgt 1.1s forwards;
@@ -265,7 +264,7 @@
       br {
         display: none;
       }
-      i,
+      span,
       b {
         font-style: normal;
         display: block;
@@ -276,7 +275,7 @@
   &.animateIt {
     .bannerContent {
       h1 {
-        i {
+        span {
           animation: lftRgt .5s forwards;
           opacity: 0;
           &:nth-child(2) {
@@ -286,9 +285,9 @@
 
 
         }
-        span {
+        strong {
           display: block;
-          b {
+          span {
             animation: lftRgt 1.1s forwards;
             opacity: 0;
             &:nth-child(2) {
