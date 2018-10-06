@@ -2,8 +2,10 @@
 
 #wrapper_bgndVideo {
   min-height: 719px;
-  background-image: url('images/banner/banner_bg.jpg');
+  //background-image: url('images/banner/banner_bg.jpg');
+  z-index: 9 !important;
 }
+
 .bannerWrapper {
   min-height: 719px;
   .bannerWrap {
@@ -20,6 +22,7 @@
   .bannerContent {
     padding-top: 87px;
     position: relative;
+    z-index: 9;
     h1 {
       font-weight: 400;
       font-size: 23px;
@@ -126,6 +129,7 @@
 .bankingServices {
   margin-top: -67px;
   position: relative;
+  z-index: 9999;
   ul {
     display: flex;
     flex-wrap: wrap;

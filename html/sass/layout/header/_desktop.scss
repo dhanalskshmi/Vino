@@ -214,7 +214,7 @@ header {
 						position: relative;
 						&::after {
 							content: '';
-							background-image: url('#{$img}/icon_1.jpg');
+							background-image: url('#{$img}/icon_1.png');
 							width: 8px;
 							height: 6px;
 							position: absolute;
@@ -463,14 +463,12 @@ header {
 			font-size: 16px;
 			margin-right: 0;
 			padding-right: 10px;
-			ul {
-				li {
-					padding-right: 30px;
-					&.iWantto {
-						a {
-							&::after {
-								top: 8px;
-							}
+			li {
+				padding-right: 30px;
+				&.iWantto {
+					a {
+						&::after {
+							top: 7px;
 						}
 					}
 				}
