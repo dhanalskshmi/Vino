@@ -172,7 +172,7 @@ a[href^=tel] {
     width: 100%;
     text-align: center;
     img {
-      max-width: 20%;
+      max-width: 70%;
     }
   }
 }
@@ -553,6 +553,13 @@ p {
     padding: 0 20px;
     max-width: 100%;
   }
+  .loaderBlock {
+    .loaderWrap {
+      img {
+        max-width: 50%;
+      }
+    }
+  }
 
   h1 {
     font-size: 32px;
@@ -580,9 +587,17 @@ p {
   }
 }
 @media screen and (min-width: $tab-lands-min) {
+
   .containerWrapper {
     padding: 0 53px;
     max-width: 1100px;
+  }
+  .loaderBlock {
+    .loaderWrap {
+      img {
+        max-width: 30%;
+      }
+    }
   }
 
   h1 {
@@ -623,6 +638,13 @@ p {
 
   .siteWrap {
     height: 100%;
+  }
+  .loaderBlock {
+    .loaderWrap {
+      img {
+        max-width: 20%;
+      }
+    }
   }
 
   .containerWrapper {

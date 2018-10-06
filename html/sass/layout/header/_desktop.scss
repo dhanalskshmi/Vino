@@ -233,6 +233,7 @@ header {
 						top: 17px;
 						left: -4px;
 						z-index: 99;
+				    transform: translateY(10px);
 						transition: all 0.3s;
 						li {
 							display: block;
@@ -259,6 +260,7 @@ header {
 					&:hover {
 						ul {
 							opacity: 1;
+					    transform: translateY(0);
 							visibility: visible;
 						}
 					}
@@ -464,6 +466,13 @@ header {
 			ul {
 				li {
 					padding-right: 30px;
+					&.iWantto {
+						a {
+							&::after {
+								top: 8px;
+							}
+						}
+					}
 				}
 			}
 		}
