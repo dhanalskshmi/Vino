@@ -34,7 +34,7 @@
 .heroBanner {
     min-height: 830px;
     @include bp(landscape) {
-        min-height: 671px;
+        min-height: 571px;
     }
     @include bp(tablet) {
         min-height: 500px;
@@ -51,7 +51,7 @@
         left: 0;
         width: 100%;
         @include bp(landscape) {
-            min-height: 671px;
+            min-height: 571px;
         }
         @include bp(tablet) {
             min-height: 500px;
@@ -68,7 +68,10 @@
     width: 100%;
 
     @include bp(landscape) {
-        margin-top: -286px;
+        margin-top: -186px;
+    }
+    @include bp(tablet) {
+        margin-top: -116px;
     }
     @include bp(mobile) {
         margin-top: -116px;

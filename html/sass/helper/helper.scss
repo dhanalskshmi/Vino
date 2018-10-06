@@ -5,8 +5,14 @@
   @else if $point == landscape {
     @media (max-width: 1279px) { @content; }
   }
+  @else if $point == tablandscape {
+    @media (min-width: 1024px) and (max-width: 1279px)  { @content; }
+  }
   @else if $point == tablet {
     @media (max-width: 991px)  { @content; }
+  }
+  @else if $point == tabportrait {
+    @media (min-width: 768px) and (max-width: 1023px)  { @content; }
   }
   @else if $point == mobile {
     @media (max-width: 767px)  { @content; }
@@ -15,6 +21,7 @@
     @media (min-width: 475px) and (max-width: 767px)  { @content; }
   }
 }
+
 $base: 1280px;
 $tab-lands-max: 1279px;
 $tab-lands-min: 1024px;
