@@ -64,6 +64,10 @@
                             height: 45px;
                             padding-left: 21px;
                         }
+                        @include bp(mobile) {
+                            padding-left: 10px;
+                            // font-size: 25px;
+                        }
                     }
                     input {
                         &::placeholder {
@@ -84,7 +88,7 @@
                                 font-size: 18px;
                                 margin-left: 16px;
                             }
-                            @include bp(landscape) {
+                            @include bp(tablet) {
                                 width: 164px;
                                 padding: 12px 0;
                                 font-size: 22px;
@@ -108,6 +112,9 @@
     @include bp(tablet) {
         margin-bottom: 41px;
     }
+    @include bp(mobile) {
+        margin-top: 26px;
+    }
     .bgWrap {
         padding: 57px 62px 40px 62px;
         @include bp(landscape) {
@@ -115,6 +122,9 @@
         }
         @include bp(tablet) {
             padding: 38px 22px 40px 22px;
+        }
+        @include bp(mobile) {
+            padding: 12px 11px 40px 11px;
         }
         .newsFlexWrap {
             .newsFlex {
@@ -127,19 +137,29 @@
                     flex-direction: column;
                 }
                 .newsFlexImg {
-                    width: 300px;
+                    min-width: 300px;
                     margin-right: 21px;
                     @include bp(landscape) {
                         min-width: 228px;
                         margin-right: 34px;
                     }
-                    @include bp(landscape) {
+                    @include bp(tablet) {
                         min-width: 200px;
                         margin-right: 19px;
+                    }
+                    @include bp(mobile) {
+                        width: auto;
+                        min-width: auto;
+                        max-width: 100%;
+                        margin: auto;
+                        margin-bottom: 12px;
                     }
                     img {
                         @include bp(landscape) {
                             margin-right: 32px;
+                        }
+                        @include bp(mobile) {
+                            margin: auto;
                         }
                     }
                 }
@@ -149,12 +169,17 @@
                         font-size: 24px;
                         text-transform: uppercase;
                         margin-bottom: 7px;
+                        font-weight: normal;
                         @include bp(landscape) {
                             font-size: 18px;
                             margin-bottom: 4px;
                         }
                         @include bp(tablet) {
                             margin-bottom: 0px;
+                        }
+                        @include bp(mobile) {
+                            font-size: 20px;
+                            line-height: 23px;
                         }
                         a {
                             &:hover {
@@ -180,12 +205,23 @@
                             font-size: 16px;
                             margin-bottom: 32px;
                         }
+                        @include bp(mobile) {
+                            margin-bottom: 20px;
+                        }
                         .newsDate {
                             color: #666666;
                             margin-right: 10px;
+                            @include bp(mobile) {
+                                display: block;
+                            }
                         }
                         .newsType {
                             color: #1268e5;
+                            @include bp(mobile) {
+                                text-transform: uppercase;
+                                margin-top: 4px;
+                                display: inline-block;
+                            }
                         }
                     }
                     .btn-readMore {
@@ -241,20 +277,33 @@
     @include bp(tablet) {
         margin-bottom: 40px;
     }
+    @include bp(mobile) {
+        margin-bottom: 97px;
+    }
     .bgWrap {
-        background: url("../images/media-center/realTime.jpg");
+        background-image: url("../images/media-center/real_image_bg.png");
         height: 501px;
         background-size: cover;
         background-repeat: no-repeat;
+        background-position-y: -182px;
+        background-size: 127%;
         color: #fff;
         padding: 58px 65px;
         @include bp(landscape) {
             height: 345px;
+            background-position-y: -117px;
             padding: 53px 60px;
         }
         @include bp(tablet) {
             height: 278px;
             padding: 43px 41px;
+            background-position-y: -94px;
+        }
+        @include bp(mobile) {
+            height: 596px;
+            padding: 31px 23px;
+            background-position: center;
+            background-size: cover;
         }
         h4 {
             font-size: 39px;
@@ -265,6 +314,9 @@
             }
             @include bp(tablet) {
                 font-size: 22px;
+            }
+            @include bp(mobile) {
+                font-size: 26px;
             }
         }
         p {
@@ -281,6 +333,10 @@
             @include bp(tablet) {
                 margin-top: 59px;
             }
+            @include bp(mobile) {
+                margin-top: 249px;
+                max-width: 138px;
+            }
         }
         .btn-mansq {
             margin-top: 49px;
@@ -289,11 +345,15 @@
             padding: 14px 20px;
             border: 1px solid #fff;
             text-align: center;
+            color: #fff;
             @include bp(landscape) {
                 margin-top: 10px;
                 font-size: 16px;
                 padding: 8px 16px;
                 min-width: 134px;
+            }
+            @include bp(mobile) {
+                margin-top: 51px;
             }
         }
     }
