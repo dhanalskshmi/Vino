@@ -550,8 +550,11 @@ p {
 @media screen and (min-width: $tab-port-min) {
 
   .containerWrapper {
-    padding: 0 20px;
-    max-width: 100%;
+    //padding: 0 20px;
+    //max-width: 100%;
+    max-width: 728px;
+    padding: 0;
+    margin: 0 auto;
   }
   .loaderBlock {
     .loaderWrap {
@@ -589,8 +592,9 @@ p {
 @media screen and (min-width: $tab-lands-min) {
 
   .containerWrapper {
-    padding: 0 53px;
-    max-width: 1100px;
+    //padding: 0 53px;
+    //max-width: 1100px;
+    max-width: 904px;
   }
   .loaderBlock {
     .loaderWrap {
@@ -626,7 +630,7 @@ p {
 }
 @media screen and (min-width: 1101px) {
   .containerWrapper {
-    max-width: $base;
+    //max-width: $base;
   }
 }
 @media screen and (min-width: $base) {

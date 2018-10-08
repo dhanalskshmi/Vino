@@ -245,32 +245,35 @@ footer {
             color: transparent;
             display: block;
             width: 15px;
-            height: 16px;
+            height: 15px;
           }
           &.linkedIn {
             a {
-              background-position: -13px -18px;
-              background-size: 41px 238px;
+              background-position: -14px -18px;
+              background-size: 42px 239px;
             }
           }
           &.fb {
             a {
-              background-position: -12px -52px;
-              background-size: 39px 247px;
+              background-position: -14px -50px;
+              background-size: 42px 239px;
             }
           }
           &.uTube {
             a {
-              background-position: -9px -75px;
-              background-size: 33px 223px;
-              height: 16px;
-              width: 16px;
+              background-position: -11px -83px;
+              background-size: 42px 239px;
+              width: 20px;
+              height: 14px;
             }
           }
           &.tweet {
             a {
-              background-position: -13px -19px;
-              background-size: 41px 257px;
+              background-position: -12px -115px;
+              background-size: 42px 239px;
+              width: 18px;
+              height: 12px;
+              margin-top: 2px;
             }
           }
         }
@@ -440,8 +443,8 @@ footer {
           }
           &.uTube {
             a {
-              background-position: -9px -91px;
-              background-size: 37px 260px;
+              background-position: -12px -95px;
+              background-size: 43px 272px;
               height: 16px;
               width: 20px;
               margin-top: 4px;
@@ -449,8 +452,10 @@ footer {
           }
           &.tweet {
             a {
-              background-position: -19px -136px;
-              background-size: 53px 289px;
+              background-position: -16px -167px;
+              background-size: 49px 348px;
+              width: 20px;
+              height: 18px;
             }
           }
         }
@@ -623,14 +628,14 @@ footer {
     }
     .partnersBlock {
       .fdic {
-        background-position: 0 -278px;
-        background-size: 84px 460px;
+        background-position: 0 -290px;
+        background-size: auto;
         width: 84px;
         height: 49px;
       }
       .lender {
-        background-position: -8px -821px;
-        background-size: 82px 460px;
+        background-position: -8px -375px;
+        background-size: auto;
         width: 67px;
         height: 67px;
       }

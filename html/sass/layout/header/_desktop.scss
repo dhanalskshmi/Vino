@@ -115,8 +115,10 @@ header {
 	.headerWrapper {
 		background: rgba(255,255,255,1);
 		display: table;
-		width: calc(100% - 40px);
-		margin: 0 20px;
+		//width: calc(100% - 40px);
+		//margin: 0 20px;
+		width: 100%;
+		margin: 0 auto;
 	}
 	.mobileSearch,
 	.hamburger {
@@ -198,7 +200,7 @@ header {
 			li {
 				display: inline-block;
 				vertical-align: top;
-				padding-right: 8px;
+				padding-right: 7px;
 		    letter-spacing: 1px;
 				&:last-child {
 					padding-right: 0;
@@ -208,7 +210,7 @@ header {
 				}
 				&.iWantto {
 					padding-right: 14px;
-					margin-right: 5px;
+					margin-right: 7px;
 					position: relative;
 					a {
 						position: relative;
@@ -297,7 +299,7 @@ header {
 					width: 1px;
 					height: 28px;
 					position: absolute;
-					top: 1px;
+					top: 2px;
 					right: 0;
 				}
 				&:first-child {
@@ -356,8 +358,8 @@ header {
 @media screen and (min-width: $tab-lands-min) {
 
 	.headerWrapper {
-		width: calc(100% - 106px);
-    margin: 0 53px;
+		//width: calc(100% - 106px);
+    //margin: 0 53px;
 	}
 	.logo {
 		max-width: 216px;
@@ -431,7 +433,7 @@ header {
 
 }
 
-@media screen and (min-width: $base - 16px) {
+@media screen and (min-width: $base) {
 
 	header {
 		margin-top: 22px;
@@ -547,7 +549,7 @@ header {
 		}
 		ul {
 			li {
-				padding-right: 22px;
+				padding-right: 19px;
 				&::after {
 					height: 49px;
 					right: 5px;

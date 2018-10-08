@@ -200,6 +200,10 @@
       left: 0;
       width: 100%;
       z-index: 999;
+      .title {
+        float: right;
+        text-align: right;
+      }
     }
     h2 {
       font-size: 32px;
@@ -209,7 +213,7 @@
       padding-bottom: 9px;
       line-height: 30px;
       text-transform: uppercase;
-      text-align: right;
+      text-align: left;
       bold {
         display: block;
         font-weight: 700;
@@ -710,7 +714,7 @@
     }
   }
   .bankingServices {
-    max-width: 614px;
+    max-width: calc(100% - 152px);
     padding-bottom: 69px;
     margin: -40px auto 0;
     .containerWrapper {
@@ -720,7 +724,8 @@
       display: table;
       width: 100%;
       li {
-        max-width: 171px;
+        //max-width: 171px;
+        max-width: 27.923%;
         min-height: 154px;
         max-height: 154px;
         float: left;
@@ -728,6 +733,7 @@
         border: 1px solid #FFF;
         h2 {
           font-size: 20px;
+          line-height: 19px;
         }
         .imgBlock {
           min-height: 154px;
@@ -744,7 +750,8 @@
         }
         &.personalBank,
         &.didgitalCenter {
-          max-width: 271px;
+          //max-width: 271px;
+          max-width: 44.123%;
           min-height: 166px;
           max-height: 166px;
           figure {
@@ -766,7 +773,7 @@
             bold {
               font-size: 40px;
               padding-left: 0;
-              margin-top: 15px;
+              margin-top: 17px;
               line-height: 22px;
               letter-spacing: -1px;
               span {
@@ -889,6 +896,9 @@
     .bgWraps {
       padding-top: 36px;
       padding-bottom: 11px;
+      max-width: 728px;
+      margin: 0 auto;
+      position: relative;
     }
     .imgBlock {
       position: absolute;
@@ -915,12 +925,14 @@
       }
     }
     .titleBlock {
+      //max-width: calc(100% - 210px);
+      //margin: 0 20px -4px;
       h2 {
         line-height: 28px;
       }
     }
     .redBlock {
-      margin: 0 20px;
+      //margin: 0 20px;
       .containerWrapper {
         padding: 0;
       }
@@ -1157,6 +1169,7 @@
       h1 {
         font-size: 38px;
         line-height: 44px;
+        padding-left: 44px;
         span {
           &:nth-child(1) {
             letter-spacing: normal;
@@ -1185,14 +1198,16 @@
   // Services
 
   .bankingServices {
-    max-width: 861px;
+    //max-width: 861px;
+    max-width: 83.593%;
     margin-top: -92px;
     .containerWrapper {
       padding: 0;
     }
     ul {
       li {
-        max-width: 243px;
+        //max-width: 243px;
+        max-width: 28.224%;
         min-height: 223px;
         max-height: 223px;
         .imgBlock {
@@ -1208,7 +1223,8 @@
         }
         &.personalBank,
         &.didgitalCenter {
-          max-width: 374px;
+          //max-width: 374px;
+          max-width: 43.438%;
           min-height: 239px;
           max-height: 239px;
           .imgBlock {
@@ -1294,12 +1310,13 @@
     .bgWraps {
       padding-top: 30px;
       padding-bottom: 18px;
+      max-width: 904px;
     }
     .titleBlock,
     .redBlock {
       max-width: calc(100% - 305px);
       padding: 14px 0 9px;
-      margin: 0 59px;
+      //margin: 0 59px;
       h2 {
         font-size: 38px;
         line-height: 34px;
@@ -1308,9 +1325,6 @@
     .titleBlock {
       padding-bottom: 0;
       margin-bottom: -4px;
-      h2 {
-        padding-left: 0;
-      }
     }
     .detailBlock {
       padding-top: 11px;
@@ -1504,6 +1518,7 @@
       h1 {
         font-size: 63px;
         line-height: 68px;
+        padding-left: 0;
         span {
           &:nth-child(2) {
             letter-spacing: -3.3px;
@@ -1527,11 +1542,11 @@
   }
 
   .bankingServices {
-    max-width: 1242px;
+    max-width: 1240px;
     margin-top: -161px;
     ul {
       li {
-        max-width: 340px;
+        max-width: 328px;
         min-height: 336px;
         max-height: 336px;
         overflow: hidden;
@@ -1554,7 +1569,7 @@
         }
         &.personalBank,
         &.didgitalCenter {
-          max-width: 557px;
+          max-width: 584px;
           min-height: 352px;
           max-height: 352px;
           .imgBlock {
@@ -1868,4 +1883,17 @@
   }
 
 
+}
+
+
+@media screen and (min-width: 1360px) {
+
+  .bankingServices {
+    max-width: 1280px;
+    ul {
+      li {
+        max-width: 348px;
+      }
+    }
+  }
 }

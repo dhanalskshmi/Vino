@@ -6,10 +6,10 @@
 // .aboutUs {
     .containerWrapper {
         @include bp(landscape) {
-            padding: 0 60px;
+            //padding: 0 60px;
         }
         @include bp(tablet) {
-            padding: 0 20px;
+            //padding: 0 20px;
         }
         @include bp(mobile) {
             padding: 0 15px;
