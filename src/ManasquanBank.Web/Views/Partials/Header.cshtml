@@ -1,0 +1,152 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models;
+@{
+	
+	var logo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("siteLogo");
+	var primaryNavigation = Model.Content.AncestorOrSelf(1).GetPropertyValue<IEnumerable<IPublishedContent>>("primaryNavigation");
+	var secondaryNavigation = Model.Content.AncestorOrSelf(1).GetPropertyValue<IEnumerable<IPublishedContent>>("secondaryNavigation");
+    var SearchKeyword = Request.QueryString["q"];
+
+}
+<header>
+    <div class="containerWrapper">
+        <div class="headerWrapper">
+			<a href="/" class="logo">
+				<img src="@logo.Url" alt="Manasquan Bank" />
+			</a>
+			<a href="#" class="hamburger"><span class="lines"></span></a>
+			<div class="mobileSearch">
+				<form class="" action="index.html" method="post">
+					<input type="text" name="search" value="Search" class="txtBox">
+					<span class="submit">
+					<i></i>
+					</span>
+				</form>
+			</div>
+            <div class="menuWrapper">
+                <div class="loginBlocks">
+					<div class="personalLogin">
+						<h3>Personal login </h3>
+						<form class="" action="index.html" method="post">
+							<input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
+							<input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
+							<button type="button" name="button"> <span>Login </span></button>
+							<p>
+							<a href="#">Sign Up </a>
+							<a href="#">Forgot Password </a>
+							</p>
+						</form>
+					</div>
+					<div class="businessLogin">
+						<h3>Business login </h3>
+						<form class="" action="index.html" method="post">
+							<input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
+							<input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
+							<button type="button" name="button"> <span>Login </span></button>
+							<p>
+							<a href="#">Forgot Password </a>
+							</p>
+						</form>
+					</div>
+                </div>
+				<div class="headerNav">
+					<div class="topNav">
+						<ul>
+							@if (Model.Content.AncestorOrSelf(1).HasValue("secondaryNavigation"))
+	                        {
+	                            foreach (var secondNav in secondaryNavigation)
+	                            {
+	                                var secondaryLink = secondNav.GetPropertyValue<Link>("secondaryLink");
+	                                var secondaryTitle = secondNav.GetPropertyValue<string>("secondaryTitle");
+	                                var subMenu = secondNav.GetPropertyValue<IEnumerable<IPublishedContent>>("subMenu");
+	                                var menuClass = "";
+	                                if (subMenu != null)
+                                    {
+                                    	menuClass = "iWantto";
+                                    }
+									<li class="@menuClass">
+	                                	@if (secondaryLink != null)
+		                                {
+		                                    if (secondaryLink.Target == "_blank")
+		                                    {
+		                                        <a href="@secondaryLink.Url" target="_blank" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+		                                    }
+		                                    else
+		                                    {
+		                                        <a href="@secondaryLink.Url" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+		                                    }
+
+		                                }
+	                                	@if (subMenu != null)
+                                    	{
+											<ul class="subNav">
+												@foreach (var sub in subMenu)
+                                            	{
+	                                                var submenuLink = sub.GetPropertyValue<Link>("submenuLink");
+	                                                var submenuTitle = sub.GetPropertyValue<string>("submenuTitle");
+	                                                <li>
+		                                                @if (submenuLink != null)
+	                                                    {
+	                                                        if (submenuLink.Target == "_blank")
+	                                                        {
+	                                                            <a href="@submenuLink.Url" target="_blank" title="@submenuLink.Name" aria-label="@submenuLink.Name">@submenuTitle </a>
+	                                                        }
+	                                                        else
+	                                                        {
+	                                                            <a href="@submenuLink.Url" title="@submenuLink.Name" aria-label="@submenuLink.Name">@submenuTitle </a>
+	                                                        }
+
+	                                                    }
+                                                    </li>
+												
+												}
+											</ul>
+										}
+									</li>
+	                            }
+	                        }
+						</ul>
+					</div>
+					<div class="mainNav">
+						<ul>
+							@if (Model.Content.AncestorOrSelf(1).HasValue("primaryNavigation"))
+	                        {
+	                            foreach (var primaryNav in primaryNavigation)
+	                            {
+	                                var primaryTitleLink = primaryNav.GetPropertyValue<Link>("primaryTitleLink");
+	                                var primaryTitle = primaryNav.GetPropertyValue<string>("primaryTitle");
+	                                <li>
+	                                @if (primaryTitleLink != null)
+	                                {
+	                                    if (primaryTitleLink.Target == "_blank")
+	                                    {
+	                                        <a href="@primaryTitleLink.Url" target="_blank" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name">@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </a>
+	                                    }
+	                                    else
+	                                    {
+	                                        <a href="@primaryTitleLink.Url" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name">@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </a>
+	                                    }
+
+	                                }
+
+	                                </li>
+	                            }
+	                        }
+							<li class="search">
+								<form class="" action="index.html" method="post">
+									<label class="screen-reader-text" for="search">Search </label>
+									<input type="text" name="search" id="search" value="Search" class="txtBox">
+									<span class="submit">
+									<i></i>
+									</span>
+								</form>
+							</li>
+						</ul>
+					</div>
+                </div>
+
+          	</div>
+        </div>
+	</div>
+</header>

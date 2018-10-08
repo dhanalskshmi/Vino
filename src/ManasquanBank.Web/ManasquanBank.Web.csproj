@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\UmbracoCms.7.12.2\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.12.2\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -177,6 +178,10 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="RJP.MultiUrlPicker, Version=2.2.0.17550, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RJP.MultiUrlPicker.dll</HintPath>
+    </Reference>
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
     </Reference>
@@ -307,8 +312,103 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="css\lib\bootstrap.min.css" />
+    <Content Include="css\lib\bootstrap.min.js" />
+    <Content Include="css\lib\jquery-ui-select-menu.css" />
+    <Content Include="css\lib\jquery-ui.css" />
+    <Content Include="css\lib\jquery-ui.min-cptt.css" />
+    <Content Include="css\lib\jquery-ui.min.css" />
+    <Content Include="css\lib\jquery.mb.YTPlayer.min.css" />
+    <Content Include="css\lib\nprogress.css" />
+    <Content Include="css\lib\swiper.min.css" />
+    <Content Include="css\lib\YouTubePopUp.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style.min.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\about\about-footer.jpg" />
+    <Content Include="images\about\about_links.png" />
+    <Content Include="images\about\call-us.png" />
+    <Content Include="images\about\client-services.png" />
+    <Content Include="images\about\content_1.jpg" />
+    <Content Include="images\about\content_2.jpg" />
+    <Content Include="images\about\find-us.png" />
+    <Content Include="images\about\mail_icon.png" />
+    <Content Include="images\about\user_icon.png" />
+    <Content Include="images\banner\about_bg.jpg" />
+    <Content Include="images\banner\banner_bg.jpg" />
+    <Content Include="images\banner\client_service_bg.jpg" />
+    <Content Include="images\banner\mediacenter_bg.jpg" />
+    <Content Include="images\bio\back_arrow.png" />
+    <Content Include="images\bio\bio.jpg" />
+    <Content Include="images\bio\phone_icon.png" />
+    <Content Include="images\careers\career-para.png" />
+    <Content Include="images\careers\career2.jpg" />
+    <Content Include="images\careers\cultureImg1.png" />
+    <Content Include="images\careers\down-arrow.png" />
+    <Content Include="images\careers\EmpStory.jpg" />
+    <Content Include="images\client-service\client-icon1.png" />
+    <Content Include="images\client-service\client-icon2.png" />
+    <Content Include="images\client-service\client-icon3.png" />
+    <Content Include="images\client-service\client-icon4.png" />
+    <Content Include="images\client-service\expert-icon.png" />
+    <Content Include="images\client-service\info-icon1.png" />
+    <Content Include="images\client-service\info-icon2.png" />
+    <Content Include="images\client-service\info-icon3.png" />
+    <Content Include="images\client-service\info-icon4.png" />
+    <Content Include="images\client-service\mail-icon.png" />
+    <Content Include="images\client-service\service-icon1.png" />
+    <Content Include="images\client-service\service-icon2.png" />
+    <Content Include="images\client-service\service-icon3.png" />
+    <Content Include="images\client-service\service-icon4.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\footer\f_applestore.jpg" />
+    <Content Include="images\footer\f_googlestore.jpg" />
+    <Content Include="images\footer\f_logo.jpg" />
+    <Content Include="images\footer\sprite_img.png" />
+    <Content Include="images\header\icon_1.jpg" />
+    <Content Include="images\header\icon_1.png" />
+    <Content Include="images\header\logo.png" />
+    <Content Include="images\header\search_icon.png" />
+    <Content Include="images\home\apple_app.png" />
+    <Content Include="images\home\app_img.png" />
+    <Content Include="images\home\demo_icon.png" />
+    <Content Include="images\home\google_app.png" />
+    <Content Include="images\home\img_or.png" />
+    <Content Include="images\home\prdinfo_icon.png" />
+    <Content Include="images\home\security_icon.png" />
+    <Content Include="images\home\service_1.jpg" />
+    <Content Include="images\home\service_2.jpg" />
+    <Content Include="images\home\service_3.jpg" />
+    <Content Include="images\home\service_4.jpg" />
+    <Content Include="images\home\service_img.png" />
+    <Content Include="images\home\tweets.jpg" />
+    <Content Include="images\home\video_icon.png" />
+    <Content Include="images\media-center\arrow-right.png" />
+    <Content Include="images\media-center\news1.jpg" />
+    <Content Include="images\media-center\news2.jpg" />
+    <Content Include="images\media-center\realTime.jpg" />
+    <Content Include="images\media-center\real_image_bg.png" />
+    <Content Include="scripts\lib\jquery-3.2.1.min.js" />
+    <Content Include="scripts\lib\jquery-ui.js" />
+    <Content Include="scripts\lib\modernizr-custom.js" />
+    <Content Include="scripts\lib\nprogress.js" />
+    <Content Include="scripts\lib\scrollanimation.js" />
+    <Content Include="scripts\lib\swiper.min.js" />
+    <Content Include="scripts\lib\waypoints.min.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\main.min.js" />
+    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Web.config" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -339,17 +439,10 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -365,8 +458,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
-    <Folder Include="scripts\" />
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
