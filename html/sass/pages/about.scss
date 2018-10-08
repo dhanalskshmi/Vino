@@ -3,19 +3,17 @@
     float: left;
 }
 
-// .aboutUs {
-    .containerWrapper {
-        @include bp(landscape) {
-            padding: 0 60px;
-        }
-        @include bp(tablet) {
-            padding: 0 20px;
-        }
-        @include bp(mobile) {
-            padding: 0 15px;
-        }
+.containerWrapper {
+    @include bp(landscape) {
+        padding: 0 60px;
     }
-// }
+    @include bp(tablet) {
+        padding: 0 20px;
+    }
+    @include bp(mobile) {
+        padding: 0 15px;
+    }
+}
 
 .btn-mansq {
     display: inline-block;
@@ -66,7 +64,6 @@
     position: relative;
     margin-top: -230px;
     width: 100%;
-
     @include bp(landscape) {
         margin-top: -186px;
     }
@@ -78,7 +75,6 @@
     }
     .bgWrap {
         width: 100%;
-
         background: #f1f1f1;
         padding: 50px 65px 40px 65px;
         @include bp(landscape) {
@@ -133,6 +129,22 @@
         }
     }
 }
+.aboutUs{
+    .heroBlock{
+        .bgWrap{
+            padding: 90px 100px 40px 100px;
+            @include bp(landscape){
+                padding: 45px 85px 20px 85px;
+            }
+            @include bp(tablet){
+                padding: 42px 60px 20px 60px;
+            }
+            @include bp(mobile){
+                padding: 50px 10px 0 10px;
+            }
+        }
+    }
+}
 
 .heroLinks {
     text-align: center;
@@ -178,7 +190,7 @@
                 height: 55px;
                 left: 14px;
                 top: 14px;
-                img{
+                img {
                     max-height: 100%;
                     max-width: 100%;
                 }
@@ -226,7 +238,6 @@
 
 .ContentBlk1 {
     width: 100%;
-
     .bgWrap {
         padding: 45px 0px;
         background: #dcdada;
@@ -344,11 +355,11 @@
                 }
             }
             .ContentParaWrap {
-                padding: 30px 0 0px 35px;
+                padding: 30px 10px 0px 35px;
                 width: 56%;
                 float: left;
                 @include bp(landscape) {
-                    padding: 20px 0 0 30px;
+                    padding: 20px 30px 0 30px;
                 }
                 @include bp(tablet) {
                     width: 66%;
@@ -356,7 +367,7 @@
                 }
                 @include bp(mobile) {
                     width: 100%;
-                    padding: 42px 0 0 10px;
+                    padding: 42px 10px 0 10px;
                 }
                 .SingleContentBlk {
                     margin-bottom: 20px;
@@ -517,7 +528,7 @@
 .boardDirectors {
     .bgWrap {
         background: #1268e5;
-        padding: 35px 65px 35px 100px;
+        padding: 35px 100px 35px 100px;
         @include bp(landscape) {
             padding: 22px 85px;
         }
@@ -638,9 +649,9 @@
             }
         }
         background: #3b88f7;
-        padding: 35px 65px 35px 100px;
+        padding: 35px 100px 35px 100px;
         @include bp(landscape) {
-            padding: 22px 25px 35px 84px;
+            padding: 22px 84px 35px 84px;
         }
         @include bp(tablet) {
             padding: 21px 40px 19px 40px;
@@ -669,10 +680,10 @@
     }
     .bgWrap {
         background: #cce1ff;
-        padding: 35px 65px 35px 100px;
+        padding: 35px 100px 35px 100px;
         color: #1a3d6e;
         @include bp(landscape) {
-            padding: 23px 65px 35px 85px;
+            padding: 23px 85px 35px 85px;
         }
         @include bp(tablet) {
             padding: 21px 40px 0px 40px;
