@@ -14,7 +14,9 @@
   <link rel="shortcut icon" href="@favicon.Url" type="image/x-icon">
   <link href="~/css/lib/nprogress.css" rel="stylesheet" />
   <link href="~/css/lib/bootstrap.min.css" rel="stylesheet" />
+  <link href="~/css/lib/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="~/css/style.min.css">
+  @RenderSection("InnerTopStyle", false)
 </head>
 <body style="display: none">
     <div class="loaderBlock">
@@ -41,8 +43,9 @@
     <script src="~/scripts/lib/modernizr-custom.js"></script>
     <script src="~/scripts/lib/scrollanimation.js"></script>
     <!--<script src="http://remysharp.com/downloads/jquery.inview.js"></script>-->
+    <script src="~/scripts/lib/jquery.mb.YTPlayer.js"></script>
   	<script type="text/javascript" src="~/scripts/main.min.js"></script>
-
+    @RenderSection("InnerBottomScript", false)
 </body>
 </html>
 

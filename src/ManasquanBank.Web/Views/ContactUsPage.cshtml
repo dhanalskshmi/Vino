@@ -1,0 +1,36 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Master.cshtml";
+}
+  <section class="heroBanner">
+                <figure class="bannerImage" style="background-image: url('images/banner/about_bg.jpg')"></figure>
+            </section>
+            <section class="heroBlock">
+                <div class="containerWrapper">
+                    <div class="bgWrap">
+                        <h2>Contact Us</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor
+                            tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi. Nam ipsum
+                            tortor, tempor aliquam ante non, condimentum finibus tortor. Suspendisse eleifend orci
+                            lorem, quis euismod lectus molestie eu. </p>
+                        <p><b>For Customer Service or to report a lost or stolen ATM/Debit card or PIN please call
+                                1-844-626-2265.</b></p>
+                        <ul class="heroLinks">
+                            <li class="find-us"><a href=""><span class="heroLinksImage"><img src="images/about/find-us.png"></span>Find<br>
+                                    Us</a></li>
+                            <li class="call-us"><a href=""><span class="heroLinksImage"><img src="images/about/call-us.png"></span>Call<br>
+                                    Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+</section>
+<section class="greyPanel">
+
+    @Html.Partial("Form/ContactUs")
+</section>

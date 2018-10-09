@@ -422,7 +422,7 @@ ul {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 a:focus, a:hover {
   text-decoration: none;
@@ -433,7 +433,7 @@ button, input, textarea {
   border: none;
   outline: none;
   border-radius: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -443,7 +443,7 @@ button {
 
 a {
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 a:active, a:focus {
   -webkit-transition: all 0.3s;
@@ -510,17 +510,6 @@ h3 {
 p {
   font-size: 16px;
   line-height: 22px;
-}
-
-.openAccount {
-  display: none;
-}
-.openAccount a {
-  background: #eb2837;
-  font-size: 14px;
-  font-weight: 700;
-  color: #FFF;
-  padding: 8px 12px 7px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1675,7 +1664,6 @@ header + .loginBlocks .businessLogin p a {
     margin-top: 17px;
     margin-right: 7px;
     margin-left: 7px;
-    text-transform: uppercase;
   }
   .mainNav a {
     display: inline-block;
@@ -2813,8 +2801,8 @@ footer {
 }
 .bankingServices li .imgBlock::after {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.45)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.45)));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.45) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   position: absolute;
   bottom: 0;
@@ -4880,7 +4868,7 @@ footer {
   max-width: 255px;
   border: 3px solid #fff;
   color: #fff;
-  padding: 38px 46px;
+  padding: 27px 46px;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
@@ -4964,7 +4952,7 @@ footer {
   }
 }
 .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk {
@@ -5038,6 +5026,9 @@ footer {
     padding: 0;
   }
 }
+.ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap {
+  min-height: 523px;
+}
 @media (max-width: 1279px) {
   .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap {
     min-height: 330px;
@@ -5050,7 +5041,6 @@ footer {
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
-    min-height: 330px;
     width: 33%;
   }
 }
@@ -5724,11 +5714,11 @@ footer {
   }
 }
 .contactForm .form-group .checkbox {
-  margin-top: 27px;
+  margin-top: 10px;
 }
 @media (max-width: 991px) {
   .contactForm .form-group .checkbox {
-    margin-top: 33px;
+    margin-top: 10px;
   }
 }
 @media (max-width: 767px) {
@@ -5763,13 +5753,14 @@ footer {
   position: absolute;
   top: 17px;
   right: -7px;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background: #a41f36;
   border-radius: 50%;
   color: #fff;
-  font-size: 31px;
+  font-size: 48px;
   text-align: center;
+  line-height: 48px;
 }
 .contactForm .form-group .errorSpan.f-success {
   background: #4caf50;
@@ -7967,7 +7958,8 @@ footer {
   font-size: 18px;
   margin-bottom: 2px;
 }
-.bioPage .heroBlock .bgWrap .back-btn {
+
+.back-btn {
   font-size: 18px;
   text-transform: uppercase;
   text-decoration: none;
@@ -7975,22 +7967,22 @@ footer {
   display: inline-block;
 }
 @media (max-width: 1279px) {
-  .bioPage .heroBlock .bgWrap .back-btn {
+  .back-btn {
     margin-bottom: 0;
     margin-top: 56px;
   }
 }
 @media (max-width: 991px) {
-  .bioPage .heroBlock .bgWrap .back-btn {
+  .back-btn {
     margin-top: 10px;
   }
 }
 @media (max-width: 767px) {
-  .bioPage .heroBlock .bgWrap .back-btn {
+  .back-btn {
     font-size: 16px;
   }
 }
-.bioPage .heroBlock .bgWrap .back-btn img {
+.back-btn img {
   vertical-align: baseline;
 }
 
@@ -7999,4 +7991,40 @@ footer {
 }
 .locationPage .heroBlock .bgWrap .map-section {
   height: 385px;
+}
+
+.proDetail .heroBlock {
+  margin-bottom: 97px;
+}
+.proDetail .heroBlock .bgWrap {
+  padding: 45px 68px 22px 68px;
+}
+.proDetail .heroBlock .bgWrap h4 {
+  font-size: 24px;
+  color: #666666;
+  margin-top: 61px;
+}
+.proDetail .heroBlock .bgWrap ul {
+  list-style: disc;
+  padding: 12px 0 0 55px;
+}
+.proDetail .heroBlock .bgWrap ul li {
+  display: list-item;
+  color: #666666;
+  font-size: 20px;
+  padding-left: 17px;
+  margin-bottom: 2px;
+}
+.proDetail .heroBlock .bgWrap .btn-mansq {
+  margin-top: 68px;
+  margin-bottom: 75px;
+  font-size: 28px;
+  padding: 20px 30px;
+  min-width: 249px;
+  text-align: center;
+  color: #fff;
+}
+.proDetail .heroBlock .bgWrap .back-btn {
+  font-weight: bold;
+  margin-top: 28px;
 }
