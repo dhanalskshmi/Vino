@@ -9,6 +9,7 @@ module.exports = function(grunt) {
     dist: {
       src: [
 				'script/pages/header.js',
+				'script/pages/home.js',
 				'script/pages/contact.js'
 			],
       dest: 'script/main.js',
