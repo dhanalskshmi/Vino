@@ -501,6 +501,10 @@ $(document).ready(function() {
 
 
 
+  $('.mainNav .submit').click(function(e) {
+		$(this).toggleClass('active');
+		$('.mainNav .search').toggleClass('active');
+	});
   $('.mLogin a').click(function(e) {
 		$(this).toggleClass('active');
 		$('.loginBlocks').toggleClass('active');
