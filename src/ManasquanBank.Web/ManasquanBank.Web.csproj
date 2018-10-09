@@ -185,6 +185,10 @@
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
     </Reference>
+    <Reference Include="SpectrumColourPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpectrumColourPicker.1.0.0.0\lib\net45\SpectrumColourPicker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.6820.12887, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.2\lib\net45\SQLCE4Umbraco.dll</HintPath>
     </Reference>

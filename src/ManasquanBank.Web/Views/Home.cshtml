@@ -1,140 +1,119 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models;
 @{
 	Layout = "Master.cshtml";
+    var bannerImage = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage");
+    var backgroundVideo = Model.Content.GetPropertyValue<string>("backgroundVideo");
+    var bannerText = Model.Content.GetPropertyValue<string>("bannerText");
+    /*Promotion Text */
+    var promotionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("promotionPanel");
+    string [] classes = new string[]  {"bunisessBank", "serviceContent", "personalBank", "mortage", "kasasa", "didgitalCenter", "clentService"};
+
 }
 
-        <section class="bannerWrapper">
-          <div class="bannerWrap">
-            <figure class="bannerImage" style="background-image: url('images/banner/banner_bg.jpg')">
-
-            </figure>
-            <div class="bannerContent">
-              <div class="containerWrapper">
-                <h1>
-                  <span>Respecting</span>
-                  <span>the past and</span>
-                  <strong>
-                    <span>embracing</span>
-                    <span>the future</span>
-                    <span>SINCE 1874</span>
-                  </strong>
-                </h1>
-                <div class="loginBlocks">
-                  <div class="personalLogin">
-                    <h3>Personal login</h3>
-                    <form class="" action="index.html" method="post">
-                      <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
-                      <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-                      <button type="button" name="button"> <span>Login</span></button>
-                      <p>
-                        <a href="#">Sign Up</a>
-                        <a href="#">Forgot Password</a>
-                      </p>
-                    </form>
-                  </div>
-                  <div class="businessLogin">
-                    <h3>Business login</h3>
-                    <form class="" action="index.html" method="post">
-                      <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
-                      <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-                      <button type="button" name="button"> <span>Login</span></button>
-                      <p>
-                        <a href="#">Forgot Password</a>
-                      </p>
-                    </form>
-                  </div>
-
+<section class="bannerWrapper">
+    <div class="bannerWrap">
+    @if(!string.IsNullOrEmpty(backgroundVideo))
+    {
+        <div class="player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:1, mute:false, opacity:1, addRaster:true, optimizeDisplay:true}">
+            <figure class="bannerImage" style="background-image: url('@bannerImage.Url')"></figure>
+            <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+                <div class="goto">
+                    <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
                 </div>
-              </div>
-
             </div>
-          </div>
-        </section>
-        <section class="bankingServices animatable">
-          <div class="containerWrapper">
-            <ul>
-              <li class="bunisessBank">
-                <figure class="imgBlock" style="background-image: url('images/home/service_1.jpg')">
-                  <a href="#">Business Banking</a>
-                </figure>
-                <div class="serviceContent">
-                  <h2>
-                    BUSINESS
-                    <bold>banking</bold>
-                  </h2>
+        </div>
+    }
+    else{
+    
+        <figure class="bannerImage" style="background-image: url('@bannerImage.Url')"></figure>
+    }
+        
+        <div class="bannerContent">
+            <div class="containerWrapper">
+               @if (!string.IsNullOrEmpty(bannerText))
+                {
+                    @Html.Raw(bannerText)
+                }
+                <div class="loginBlocks">
+                    <div class="personalLogin">
+                        <h3>Personal login</h3>
+                        <form class="" action="index.html" method="post">
+                            <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
+                            <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
+                            <button type="button" name="button"> <span>Login</span></button>
+                            <p>
+                            <a href="#">Sign Up</a>
+                            <a href="#">Forgot Password</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="businessLogin">
+                        <h3>Business login</h3>
+                        <form class="" action="index.html" method="post">
+                            <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
+                            <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
+                            <button type="button" name="button"> <span>Login</span></button>
+                            <p>
+                            <a href="#">Forgot Password</a>
+                            </p>
+                        </form>
+                    </div>
                 </div>
-              </li>
-              <li class="personalBank">
-                <figure class="imgBlock" style="background-image: url('images/home/service_2.jpg')">
-                  <a href="#">Personal Banking</a>
-                </figure>
-                <div class="serviceContent">
-                  <h2>
-                    personal
-                    <bold>banking</bold>
-                  </h2>
-                </div>
-              </li>
-              <li class="mortage" style="background: #ec2c3a">
-                <div class="serviceContent">
-                  <h3>
-                    <span>Mortgage Rates</span>
-                    10 YEAr <br>
-                      Fixed
-                      <bold>
-                      4.0
-                      <span>%</span>
-                    </bold>
-                  </h3>
-                </div>
-              </li>
-              <li class="kasasa" style="background: #1268e5">
-                <div class="serviceContent">
-                  <div class="detailBlock">
-                    <h3>
-                      College<br>
-                       Students<br>
-                      Save More <br>with <bold>Kasasa</bold><br>
-                      Cash Back <sup>®</sup><br>
-                      <bold>Free <br>Checking</bold>
-                    </h3>
-                    <a href="#" class="btnManasq">
-                      <span>
-                        LEARN MORE
-                      </span>
-                    </a>
-                  </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                </div>
-                <figure>
-                  <img src="images/home/service_img.png" alt="">
-                </figure>
-              </li>
-              <li class="didgitalCenter">
-                <figure class="imgBlock" style="background-image: url('images/home/service_3.jpg')">
-                  <a href="#">Digital Center</a>
-                </figure>
-                <div class="serviceContent">
-                  <h2>
-                    DIGITAL
-                    <bold>CENTER</bold>
-                  </h2>
-                </div>
-              </li>
-              <li class="clentService">
-                <figure class="imgBlock" style="background-image: url('images/home/service_4.jpg')">
-                  <a href="#">Client Services</a>
-                </figure>
-                <div class="serviceContent">
-                  <h2>
-                    CLIENT
-                    <bold>SERVICES</bold>
-                  </h2>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+
+<section class="bankingServices animatable">
+    <div class="containerWrapper">
+        <ul>
+        @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))
+        {
+            int i = 1;
+            foreach (var promotion in promotionPanel)
+            {
+                var promotionTitle = promotion.GetPropertyValue<string>("promotionTitle");
+                var backgroundColor = promotion.GetPropertyValue<string>("backgroundColor");
+                var description = promotion.GetPropertyValue<string>("description");
+                var backgroundImage = promotion.GetPropertyValue<IPublishedContent>("backgroundImage");
+                var cTAButton = promotion.GetPropertyValue<Link>("cTAButton");
+                @i
+
+                if(i == 4){
+
+                    <li class="@classes[i]" style="background: @backgroundColor">
+                        <div class="serviceContent">
+                            <div class="detailBlock">
+                                @Html.Raw(promotionTitle)
+                                @if (cTAButton.Target == "_blank")
+                                {
+                                    <a class="btnManasq" href="@cTAButton.Url" target="_blank" title="@cTAButton.Name"><span>@cTAButton.Name </span></a>
+                                }
+                                else
+                                {
+                                    <a class="btnManasq" href="@cTAButton.Url" title="@cTAButton.Name"><span>@cTAButton.Name </span></a>
+                                }
+                               
+                            </div>
+                        </div>
+                        <figure>
+                            <img src="@backgroundImage.Url" alt="@Html.Raw(promotionTitle)">
+                        </figure>
+                    </li>
+                }
+                
+
+                i++;
+            }
+        }
+        </ul>
+    </div>
+</section>
+
+
         <section class="bluePannel animatable">
           <div class="containerWrapper">
             <div class="bgWrap">
@@ -178,6 +157,8 @@
             </div>
           </div>
         </section>
+
+
         <section class="communityPannel animatable">
           <div class="bgWraps">
             <div class="imgBlock">
@@ -408,79 +389,22 @@
             </ul>
           </div>
         </section>
-        <section class="joinEmail">
-          <div class="containerWrapper">
-            <h2>
-               JOIN OUR<br>
-               EMAIL LIST
-            </h2>
-            <form class="" action="index.html" method="post">
-              <div>
-                <label>
-                  First Name
-                </label>
-                <input type="text" name="fname" value="" id="fname" class="txtBox">
-              </div>
-              <div>
-                <label>
-                  last Name
-                </label>
-                <input type="text" name="lname" value="" id="lname" class="txtBox">
-              </div>
-              <div>
-                <label>
-                  Email
-                </label>
-                <input type="text" name="email" value="" id="email" class="txtBox">
-              </div>
-              <div class="groupCheckbox">
-                <div>
-                  <label>
-                    <span>Personal Banking</span>
-                    <input type="checkbox" name="personalbanking" value="" id="personalbanking" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <span>Business Banking</span>
-                    <input type="checkbox" name="businessbanking" value="" id="businessbanking" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <span>Digital Services</span>
-                    <input type="checkbox" name="digitalservices" value="" id="digitalservices" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <span>Loans</span>
-                    <input type="checkbox" name="loans" value="" id="loans" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <span>Work at Manasquan Bank</span>
-                    <input type="checkbox" name="work" value="" id="work" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <span>Other</span>
-                    <input type="checkbox" name="other" value="" id="other" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="submit">
-                <button type="button" name="button"><span><span>Join</span></span></button>
-              </div>
-            </form>
-          </div>
-        </section>
+@section InnerBottomScript {
+<script>
 
+  var myPlayer;
+  jQuery(function () {
+    myPlayer = jQuery("#bgndVideo").YTPlayer();
+    // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
+    myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
+     if(e.type=='YTPPlay'){
+     jQuery('#bgndVideo').YTPToggleVolume()
+     }
+    });
+  });
+
+  function checkForVal(val){
+    return val || 0;
+  }
+</script>
+}
