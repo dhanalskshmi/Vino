@@ -204,6 +204,12 @@
             font-size: 48px;
             text-align: center;
             line-height: 48px;
+            @include bp(tablet){
+                width: 20px;
+                height: 20px;
+                line-height: 38px;
+                font-size: 38px;
+            }
             &.f-success {
                 background: #4caf50;
             }
