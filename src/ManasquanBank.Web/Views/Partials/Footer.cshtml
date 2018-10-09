@@ -1,0 +1,156 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models;
+@{
+	var footerLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("footerLogo");
+	var mobileIconsApple = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsApple");
+	var mobileIconAppleIconLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAppleIconLink");
+	var mobileIconsAndroid = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsAndroid");
+	var mobileIconAndroidLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAndroidLink");
+	var brandDescription = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("brandDescription");
+	var address = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("address");
+	var phoneNumber = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("phoneNumber");
+	var routingNumber = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("routingNumber");
+	var bankCopyrightText = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("bankCopyrightText");
+	var primaryFooter = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("primaryFooter");
+	var copyTextLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("copyTextLink");
+	var linkedIn = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("linkedIn");
+	var facebook = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebook");
+	var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
+	var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
+
+}
+ <footer>
+          <div class="containerWrapper">
+            <div class="footerWraps">
+              <div class="fMenu">
+                <ul>
+	                @if (primaryFooter.Count() > 0)
+	                {
+	                	foreach (var priFooter in primaryFooter)
+	                    {
+	                    	if (priFooter.Target == "_blank")
+	                        {
+	                            <li><a href="@priFooter.Url" target="_blank" title="@priFooter.Name">@priFooter.Name </a></li>
+	                        }
+	                        else
+	                        {
+	                            <li><a href="@priFooter.Url" title="@priFooter.Name">@priFooter.Name </a></li>
+	                        }
+	                    }
+	                }
+                </ul>
+              </div>
+              <div class="fCols">
+                <figure>
+                  <a href="/"><img src="@footerLogo.Url" alt="Manasquan Bank Footer Logo"></a>
+                </figure>
+                <div class="detailsWrap">
+                 	@if (!string.IsNullOrEmpty(brandDescription))
+	                {
+	                    @Html.Raw(brandDescription)
+	                }
+                 	
+	                <ul>
+	                	@if (!string.IsNullOrEmpty(linkedIn))
+		                {	
+		                <li class="linkedIn"><a href="@linkedIn" target="_blank">LinkedIn</a></li>
+		                }
+		                @if (!string.IsNullOrEmpty(facebook))
+		                {	
+		                <li class="fb"><a href="@facebook" target="_blank">Facebook</a></li>
+		                }
+		                @if (!string.IsNullOrEmpty(youtube))
+		                {	
+		                <li class="uTube"><a href="@youtube" target="_blank">Youtube</a></li>
+		                }
+		                @if (!string.IsNullOrEmpty(twitter))
+		                {	
+		                <li class="tweet"><a href="@twitter" target="_blank">Tweeter</a></li>
+		                }
+	                </ul>
+                </div>
+              </div>
+              <div class="fCols2">
+              	@if (!string.IsNullOrEmpty(address))
+                {	
+                	<h3>Address:</h3>
+                    @Html.Raw(address)
+                }
+                @if (!string.IsNullOrEmpty(phoneNumber))
+                {	
+                	<h3>Phone:</h3>
+                    <p><a href="tel:@phoneNumber">@phoneNumber </a></p>
+                }
+                @if (!string.IsNullOrEmpty(routingNumber))
+                {	
+                	<h3>Routing Number:</h3>
+                    <p>@routingNumber </p>
+                }
+              </div>
+              <div class="fCols3">
+                <figure>
+                @if (mobileIconAppleIconLink != null)
+                {
+                    if (mobileIconAppleIconLink.Target == "_blank")
+                    {
+                        <a href="@mobileIconAppleIconLink.Url" target="_blank" title="@mobileIconAppleIconLink.Name" aria-label="@mobileIconAppleIconLink.Name"><img src="@mobileIconsApple.Url" alt="Mobile Icons Apple"></a>
+                    }
+                    else
+                    {
+                        <a href="@mobileIconAppleIconLink.Url" title="@mobileIconAppleIconLink.Name" aria-label="@mobileIconAppleIconLink.Name"><img src="@mobileIconsApple.Url" alt="Mobile Icons Apple"></a>
+                    }
+
+                }
+                </figure>
+                <figure>
+                @if (mobileIconAndroidLink != null)
+                {
+                    if (mobileIconAndroidLink.Target == "_blank")
+                    {
+                        <a href="@mobileIconAndroidLink.Url" target="_blank" title="@mobileIconAndroidLink.Name" aria-label="@mobileIconAndroidLink.Name"><img src="@mobileIconsAndroid.Url" alt="Mobile Icons Android" /></a>
+                    }
+                    else
+                    {
+                        <a href="@mobileIconAndroidLink.Url" title="@mobileIconAndroidLink.Name" aria-label="@mobileIconAndroidLink.Name"><img src="@mobileIconsAndroid.Url" alt="Mobile Icons Android" /></a>
+                    }
+
+                }
+                </figure>
+                <div class="partnersBlock">
+                  <a href="#" class="fdic">Member FDIC</a>
+                  <a href="#" class="lender">Lender</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fRow">
+            <div class="containerWrapper">
+              <ul>
+                <li>@Html.Raw(bankCopyrightText)</li>
+                @if (copyTextLink.Count() > 0)
+	            {
+                	foreach (var copyText in copyTextLink)
+                    {
+                    	if (copyText.Target == "_blank")
+                        {
+                            <li class="fLink"><a href="@copyText.Url" target="_blank" title="@copyText.Name">@copyText.Name </a></li>
+                        }
+                        else
+                        {
+                            <li class="fLink"><a href="@copyText.Url" title="@copyText.Name">@copyText.Name </a></li>
+                        }
+                    }
+	            }
+                <li>
+                  Site Designed and Developed by
+                  <a href="https://www.multimediasolutions.com/" target="_blank">
+                    Multimedia Solutions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </footer>
+
