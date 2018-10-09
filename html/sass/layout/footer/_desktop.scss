@@ -318,6 +318,13 @@ footer {
     }
     .partnersBlock {
       margin-top: 14px;
+      a {
+        opacity: 0.4;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
       .fdic {
         background-position: 0 -355px;
         width: 39px;
@@ -503,6 +510,9 @@ footer {
       li {
         font-size: 16px;
         padding-right: 26px;
+        &::after {
+          height: 24px;
+        }
       }
     }
   }
@@ -574,6 +584,9 @@ footer {
           a {
             width: 29px;
             height: 29px;
+            &:hover {
+              opacity: 0.6;
+            }
           }
           &.linkedIn {
             a {
@@ -627,6 +640,12 @@ footer {
       margin-top: 29px;
     }
     .partnersBlock {
+      a {
+        opacity: 1;
+        &:hover {
+          opacity: 0.4;
+        }
+      }
       .fdic {
         background-position: 0 -290px;
         background-size: auto;

@@ -83,14 +83,26 @@ $img: '../images';
 @font-face {
     font-family: "manasquan";
     font-style: normal;
-    font-weight: 700;
-    src: url("../fonts/archivonarrowBold.woff2") format("woff2"), url("../fonts/archivonarrowBold.woff") format("woff");
+    font-weight: 400;
+    src: url("../fonts/archivonarrowRegular.woff2") format("woff2"), url("../fonts/archivonarrowRegular.woff") format("woff"), url('../archivonarrowRegular.ttf') format('truetype'), url('archivonarrowRegular.svg#archivonarrowRegular') format('svg');;
 }
 @font-face {
     font-family: "manasquan";
     font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/archivonarrowRegular.woff2") format("woff2"), url("../fonts/archivonarrowRegular.woff") format("woff");
+    font-weight: 500;
+    src: url("../fonts/archivonarrowMedium.woff2") format("woff2"), url("../fonts/archivonarrowMedium.woff") format("woff"), url('../archivonarrowMedium.ttf') format('truetype'), url('archivonarrowMedium.svg#archivonarrowMedium') format('svg');;
+}
+@font-face {
+    font-family: "manasquan";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/archivonarrowSemibold.woff2") format("woff2"), url("../fonts/archivonarrowSemibold.woff") format("woff"), url('../archivonarrowSemibold.ttf') format('truetype'), url('archivonarrowSemibold.svg#archivonarrowSemibold') format('svg');;
+}
+@font-face {
+    font-family: "manasquan";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/archivonarrowBold.woff2") format("woff2"), url("../fonts/archivonarrowBold.woff") format("woff"), url('../archivonarrowBold.ttf') format('truetype'), url('archivonarrowBold.svg#archivonarrowBold') format('svg');
 }
 /*@include filter-gradient(#00000000, #a6000000, vertical);
 @include background-image(linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%));*/
@@ -175,6 +187,20 @@ a[href^=tel] {
       max-width: 70%;
     }
   }
+}
+
+// ADA Fixes
+
+.screen-reader-text {
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal!important;
+    border: 0 none;
 }
 
 
@@ -506,9 +532,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .menuOpened {
-  overflow: hidden;
+  //overflow: hidden;
   body {
-    overflow: hidden;
+    //overflow: hidden;
   }
   .overlay {
     display: block;

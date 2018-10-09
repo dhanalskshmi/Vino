@@ -443,7 +443,7 @@ $(document).ready(function() {
   $('.msubMenu').click(function(e) {
   	e.preventDefault();
     var $this = $(this);
-    // // $($this).parent().removeClass('mainActive').addClass('mainActive');
+     //$($this).parent().removeClass('mainActive').addClass('mainActive');
      $(this).parent().parent().find('.hov').not($(this).parent()).removeClass('mainActive');
      $(this).parent().parent().find('.hov').each(function(){
         $(this).find("ul").not($this.next()).slideUp();
@@ -501,29 +501,17 @@ $(document).ready(function() {
 
 
 
-  $(document).click(function(e) {
-
-	if(!$(event.target).closest('.menusearchBlock a').length) {
-    //$('.menusearchBlock').removeClass('act');
-  }
-	/*if(!$(event.target).closest('.mobilehamBurger').length) {
-    $('html').removeClass('menuOpened');
-    $('.mobilehamBurger, .mnavWrapper').removeClass('active');
-  }*/
-
-
-	if(!$(event.target).closest('.loginBtn').length) {
-    //$('.mloginWrapper, .loginBtn').removeClass('active');
-  }
-	if(!$(event.target).closest('.mainNavigation li').length) {
-    $('.mainNavigation li').removeClass('active');
-  }
+  $('.mLogin a').click(function(e) {
+		$(this).toggleClass('active');
+		$('.loginBlocks').toggleClass('active');
+		$('.hamburger, .mnavWrapper').removeClass('active');
+		$('html').removeClass('menuOpened');
 });
 // Hide events when scroll
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     if (scrollTop > 200) {
-        $('.menusearchBlock, .mainNavigation li').removeClass('active');
+        $('.loginBlocks, .mLogin a').removeClass('active');
     }
 });
 
@@ -535,6 +523,8 @@ $(window).scroll(function() {
 		$(this).toggleClass('active');
     $('html').toggleClass('menuOpened');
 		$('.mnavWrapper').toggleClass('active');
+		$('.loginBlocks, .mLogin a').removeClass('active');
+
 	});
 
 

@@ -7,13 +7,13 @@
 }
 
 .bannerWrapper {
-  min-height: 719px;
+  min-height: 422px;
   .bannerWrap {
   }
   .bannerImage {
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 719px;
+    min-height: 422px;
     position: absolute;
     top: 0;
     left: 0;
@@ -59,6 +59,22 @@
 }
 .loginBlocks {
   margin-top: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -9;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  &.active {
+    display: block;
+    padding: 0 12px;
+    top: 74px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 99999;
+  }
   .personalLogin {
     background: #1268e5;
   }
@@ -129,7 +145,7 @@
 .bankingServices {
   margin-top: -67px;
   position: relative;
-  z-index: 9999;
+  //z-index: 9999;
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -1112,7 +1128,7 @@
           text-align: center;
         }
         &.groupCheckbox {
-          width: 100%;
+          width: 79%;
           //max-width: 96.6%;
           max-width: 100%;
           display: flex;
@@ -1307,6 +1323,14 @@
 
   .communityPannel {
     margin-bottom: 45px;
+    .titleBlock,
+    .redBlock,
+    .detailBlock {
+      h2,
+      .wraps {
+        padding-left: 72px;
+      }
+    }
     .bgWraps {
       padding-top: 30px;
       padding-bottom: 18px;
@@ -1445,12 +1469,18 @@
       font-size: 21px;
       margin-bottom: 2px;
     }
+    .txtBox {
+      height: 41px;
+    }
     form {
       div {
+        width: 30.239%;
         margin-right: 39px;
         margin-bottom: 21px;
         &.groupCheckbox {
+          width: 100%;
           div {
+            width: auto;
             label {
               padding-left: 27px;
             }
@@ -1692,11 +1722,11 @@
         padding: 0;
       }
       h2 {
-        padding-left: 80px;
+        padding-left: 103px;
       }
     }
     .redBlock {
-      max-width: 1150px;
+      max-width: 1113px;
       padding-bottom: 24px;
       margin: 0 auto;
       transform: translateX(-64px);
@@ -1707,7 +1737,7 @@
     .detailBlock {
       padding-top: 26px;
       .wraps {
-        margin-left: 103px;
+        margin-left: 116px;
         padding-left: 0;
       }
       p {
