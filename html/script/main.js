@@ -731,7 +731,13 @@ if ($('#contactForm').length > 0) {
                 $(selector).parent().removeClass("errorForm");
                 $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
                 $(selector).parent().addClass("successForm");
+                $('input[type="text"]').each(function () {
+                    if ($(this).val() == "") {
+                        $(this).parent().removeClass("successForm");
+                    }
+                });
             },
+            errorPlacement: function (error, element) { }
         });
         jQuery("#cntTelePhone").length > 0 && document.getElementById("cntTelePhone").addEventListener("input", function (e) {
             var t = e.target.value.replace(/\D/g, "").match(/(\d{0,3})(\d{0,3})(\d{0,4})/);

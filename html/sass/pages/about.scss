@@ -328,7 +328,7 @@
                     max-width: 255px;
                     border: 3px solid #fff;
                     color: #fff;
-                    padding: 38px 46px;
+                    padding: 27px 46px;
                     @include bp(landscape) {
                         padding: 40px 48px;
                         max-width: 61%;
@@ -392,7 +392,7 @@
                     padding: 42px 10px 0 10px;
                 }
                 .SingleContentBlk {
-                    margin-bottom: 20px;
+                    margin-bottom: 15px;
                     @include bp(landscape) {
                         margin-bottom: 14px;
                     }
@@ -453,13 +453,13 @@
             }
             .flexWrapper {
                 .ContentImageWrap {
+                    min-height: 523px;
                     @include bp(landscape) {
                         min-height: 330px;
                         width: 31.8%;
                     }
                     @include bp(tablet) {
                         order: 1;
-                        min-height: 330px;
                         width: 33%;
                     }
                     @include bp(mobile) {

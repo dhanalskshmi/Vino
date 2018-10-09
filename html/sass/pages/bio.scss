@@ -197,26 +197,27 @@
                     }
                 }
             }
-            .back-btn {
-                font-size: 18px;
-                text-transform: uppercase;
-                text-decoration: none;
-                color: inherit;
-                display: inline-block;
-                @include bp(landscape) {
-                    margin-bottom: 0;
-                    margin-top: 56px;
-                }
-                @include bp(tablet) {
-                    margin-top: 10px;
-                }
-                @include bp(mobile) {
-                    font-size: 16px;
-                }
-                img {
-                    vertical-align: baseline;
-                }
-            }
         }
+    }
+}
+
+.back-btn {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    @include bp(landscape) {
+        margin-bottom: 0;
+        margin-top: 56px;
+    }
+    @include bp(tablet) {
+        margin-top: 10px;
+    }
+    @include bp(mobile) {
+        font-size: 16px;
+    }
+    img {
+        vertical-align: baseline;
     }
 }

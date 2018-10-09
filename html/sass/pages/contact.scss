@@ -84,7 +84,7 @@
     @include bp(tablet) {
         margin-top: 34px;
     }
-    @include bp(mobile){
+    @include bp(mobile) {
         margin-top: 38px;
     }
     .bgWrap {
@@ -165,9 +165,9 @@
             margin-bottom: 9px;
         }
         .checkbox {
-            margin-top: 27px;
+            margin-top: 10px;
             @include bp(tablet) {
-                margin-top: 33px;
+                margin-top: 10px;
             }
             @include bp(mobile) {
                 margin-top: 6px;
@@ -196,13 +196,14 @@
             position: absolute;
             top: 17px;
             right: -7px;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             background: #a41f36;
             border-radius: 50%;
             color: #fff;
-            font-size: 31px;
+            font-size: 48px;
             text-align: center;
+            line-height: 48px;
             &.f-success {
                 background: #4caf50;
             }
@@ -313,7 +314,7 @@
         @include bp(tablet) {
             padding-bottom: 21px;
         }
-        @include bp(mobile){
+        @include bp(mobile) {
             padding-bottom: 0;
         }
         .titleWrap {
