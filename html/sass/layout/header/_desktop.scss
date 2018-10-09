@@ -17,16 +17,16 @@ header {
 .logo {
 	display: inline-block;
 	padding: 7px 0 10px 7px;
-	margin-right: 17px;
+	margin-right: 13px;
 	max-width: 198px;
 	float: left;
 }
 .headerWrapper {
 	background: rgba(255,255,255,0.87);
-	margin: 0 12px;
+	margin: 0 14px;
 	position: relative;
 	display: table;
-  width: calc(100% - 24px);
+  width: calc(100% - 29px);
 }
 .mLogin {
 	float: right;
@@ -136,9 +136,9 @@ header {
 // Mobile Menu
 
 .mnavWrapper {
-  width: calc(100% - 25px);
+  width: calc(100% - 29px);
   min-height: 100%;
-  margin: 0 12px;
+  margin: 0 14px;
   overflow: hidden;
   //position: fixed;
   position: absolute;
@@ -150,7 +150,7 @@ header {
   }
   .wraps {
     min-height: 100%;
-		max-width: 386px;
+		max-width: 382px;
 		margin: 0 auto;
 		overflow: visible;
 		.marginWrap {
