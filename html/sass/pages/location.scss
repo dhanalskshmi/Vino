@@ -1,14 +1,325 @@
-.locationPage{
-    .heroBlock{
-        .bgWrap{
-            .titleWrap{
-                h2{
-                    text-align: center;
-                }
-            }
-            .map-section{
-                height: 385px;
-            }
-        }
-    }
+.locationSection {
+	padding-bottom: 33px;
+    padding-top: 37px;
+	.locationBgWrap {
+		.locationBox {
+			display: flex;
+    		flex-wrap: wrap;
+    		justify-content: space-between;
+			width:100%;
+			.locationDetail {
+				width: 24.532%;
+				/*margin-right: 13.204%;*/
+    			float: left;
+    			margin-top:50px;
+    			@include bp(mobile) {
+					width:100%;
+					margin-right:0%;
+					margin-top: 30px;
+				}
+				h3 {
+					font-size:25px;
+					font-weight: 700;
+					color:#666666;
+					text-transform:uppercase;
+					margin-top: 11px;
+					margin-bottom: 1px;
+					@include bp(tabportrait) {
+						font-size:20px;
+					}
+					@include bp(mobile) {
+						font-size:18px;
+					}
+				}
+				p {
+					font-size:20px;
+					color:#666666;
+					margin-bottom: -8px;
+					@include bp(tablandscape) {
+						margin-bottom:-5px;
+					}
+					@include bp(tabportrait) {
+						font-size:18px;
+						margin-bottom: -3px;
+					}
+					@include bp(mobile) {
+						margin-bottom:0px;
+						font-size:16px;
+					}
+				}
+				.directionLink {
+					font-size:20px;
+					font-weight:700;
+					color:#666666;
+					text-transform:uppercase;
+					display: block;
+					margin-top: 36px;
+					margin-bottom: 15px;
+					@include bp(tabportrait) {
+						font-size:18px;
+					}
+					@include bp(mobile) {
+						font-size:16px;
+					}
+					a {
+						color:inherit;
+						img {
+							margin-left: 1px;
+    						position: relative;
+    						top: -2px;
+						}
+					} 				
+				}
+				.viewButtonLink {
+					background:#1268e5;
+					color:#fff;
+					font-size:14px;
+					font-weight:800;
+					font-family: "opensans";
+					text-transform: uppercase;
+					display: inline-block;
+					padding: 4px 17px 6px 20px;
+					border-radius: 16px;
+					@include bp(mobile) {
+						font-size:12px;
+					}
+				}
+				&:nth-child(3n+3) {
+					margin-right:0%;
+				}
+				@include bp(desktop) {
+					&:nth-child(1), &:nth-child(2),&:nth-child(3){
+					margin-top:0px;
+					}
+				}
+				@include bp(tablandscape) {
+					&:nth-child(1), &:nth-child(2),&:nth-child(3){
+					margin-top:0px;
+					}
+				}
+				@include bp(tabportrait) {
+					&:nth-child(1), &:nth-child(2),&:nth-child(3){
+					margin-top:0px;
+					}
+				}
+				@include bp(mobile) {
+					&:nth-child(1){
+					margin-top:0px;
+					}
+				}
+			}
+		}
+	}
+	&.grey {
+		background: #f1f1f1;
+	}
+}
+.branchService {
+	margin-top: 23px;
+	.serviceBgWrap {
+		background:#f1f1f1;
+		display:table;
+		width:100%;
+		padding: 37px 30px 38px 92px;
+		@include bp(mobile) {
+			padding: 25px 20px 35px 20px;
+		}
+		h2 {
+			font-family: "opensans";
+			font-size:48px;
+			font-weight:700;
+			color:#1268e5;
+			text-align:center;
+			text-transform: uppercase;
+			margin-bottom:46px;
+			@include bp(mobile) {
+				font-size:18px;
+				margin-bottom:25px;
+			}
+		}
+		.serviceContent {
+			display:flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width:100%;
+			.serviceDetail {
+				width: 276px;
+				float: left;
+				margin-top: 71px;
+				@include bp(mobile) {
+					width:100%;
+					margin-right:0%;
+					margin-top: 40px;
+				}
+				img {
+					display:block;
+					margin:0 auto ;
+				}
+				h4 {
+					font-size:24px;
+					font-weight:700;
+					color:#666666;
+					text-transform: uppercase;
+					margin-top:32px;
+					margin-bottom:10px;
+					text-align:center;
+					@include bp(mobile) {
+						font-size:18px;
+					}
+				}
+				p {
+					font-size:20px;
+					color:#666666;
+					@include bp(mobile) {
+						font-size:17px;
+					}
+				}
+				&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4) {
+					margin-top:0px;
+				}
+			}
+		}
+	}
+}
+.branchMangers {
+    margin-top:46px;
+	margin-bottom: 49px;
+	@include bp(tablandscape) {
+		margin-top:60px;
+		margin-bottom:100px;
+	}
+	.mangerBgWrap {
+		background:#f1f1f1;
+		display:table;
+		width:100%;
+		padding: 45px 98px 65px 121px;
+		@include bp(tablandscape) {
+			padding:45px 30px 65px 30px;
+		}
+		@include bp(tabportrait) {
+			padding:45px 99px 65px 100px;
+		}
+		@include bp(mobile) {
+			padding:25px 20px 35px 20px;
+		}
+		h2 {
+			font-family: "opensans";
+			font-size:48px;
+			font-weight:700;
+			color:#1268e5;
+			text-align:center;
+			text-transform: uppercase;
+			margin-bottom:85px;
+			@include bp(tablandscape) {
+				font-size:20px;
+				margin-bottom:35px;
+			}
+			@include bp(tabportrait) {
+				font-size:20px;
+				margin-bottom:35px;
+			}
+			@include bp(mobile) {
+				font-size:18px;
+				margin-bottom:25px;
+			}
+		}
+		.managerContent {
+			display:flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width:100%;
+			@include bp(mobile) {
+				display:block;
+			}
+			.managerDetail {
+				width: 27.318%;
+				margin-top: 89px;
+				@include bp(tablandscape) {
+					width: 31.318%;
+				}
+				@include bp(tabportrait) {
+					width: 45.318%;
+					margin-top:50px;
+				}
+				@include bp(mobile) {
+					width:100%;
+					margin-right:0%;
+					margin-top:30px;
+				}
+				h4 {
+					font-size:20px;
+					font-weight:bold;
+					color:#666666;
+					margin-bottom: 1px;
+					@include bp(tablandscape) {
+						font-size:18px;
+					}
+					@include bp(tabportrait) {
+						font-size:17px;
+					}
+					@include bp(mobile) {
+						font-size:16px;
+					}
+				}
+				p {
+					font-size:20px;
+					color:#666666;
+					@include bp(tablandscape) {
+						font-size:18px;
+					}
+					@include bp(tabportrait) {
+						font-size:17px;
+					}
+					@include bp(mobile) {
+						font-size:16px;
+					}
+				}
+				span {
+					font-size:20px;
+					color:#666666;
+					display:block;
+					line-height: 24px;
+					@include bp(tablandscape) {
+						font-size:18px;
+					}
+					@include bp(tabportrait) {
+						font-size:17px;
+					}
+					@include bp(mobile) {
+						font-size:16px;
+					}
+					a {
+						display: inline-block;
+						margin-right:16px;
+						margin-top: 4px;
+					}
+				}
+				p + span {
+					a {
+						margin-top:0px;
+					}
+				}
+				@include bp(desktop) {
+					&:nth-child(1),&:nth-child(2),&:nth-child(3) {
+					margin-top:0px;
+					}
+				}
+				@include bp(tablandscape) {
+					&:nth-child(1),&:nth-child(2),,&:nth-child(3) {
+						margin-top:0px;
+					}
+				}
+				@include bp(tabportrait) {
+					&:nth-child(1),&:nth-child(2) {
+						margin-top:0px;
+					}
+				}
+				@include bp(phone) {
+					&:nth-child(1) {
+						margin-top:0px;
+					}
+				}
+			}
+		}
+	}
 }
