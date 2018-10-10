@@ -3,6 +3,9 @@
     @include bp(landscape) {
         padding: 45px 21px 24px 21px;
     }
+    @include bp(tablet) {
+        padding: 41px 21px 24px 21px;
+    }
     @include bp(mobile) {
         padding: 32px 11px 25px 11px;
     }
@@ -39,9 +42,9 @@
             @include bp(mobile) {
                 font-size: 16px;
                 line-height: 20px;
-                margin-bottom: 18px;
+                margin-bottom: 22px;
             }
-            b {
+            b,strong {
                 font-size: 24px;
                 @include bp(landscape) {
                     font-size: 18px;
@@ -60,6 +63,10 @@
                     margin: 0 28px;
                     @include bp(landscape) {
                         margin: 0 14px;
+                    }
+                    @include bp(mobile){
+                        margin-left: auto;
+                        margin-right: auto;
                     }
                 }
                 &:first-child {
@@ -94,9 +101,9 @@
         padding-bottom: 60px;
         @include bp(landscape) {
             padding-top: 21px;
-            padding-bottom: 38px;
+            padding-bottom: 40px;
         }
-        @include bp(landscape) {
+        @include bp(tablet) {
             padding-bottom: 20px;
         }
         p {
@@ -139,7 +146,7 @@
 
 .contactForm {
     padding: 5px 30px;
-    padding-bottom: 13px;
+    padding-bottom: 0px;
     width: 86%;
     margin: auto;
     margin-top: 30px;
@@ -157,12 +164,16 @@
     @include bp(mobile) {
         width: calc(100% + 20px);
         margin-left: -10px;
+        margin-top: 20px;
         padding: 21px 10px;
     }
     .form-group {
         position: relative;
         @include bp(tablet) {
             margin-bottom: 9px;
+        }
+        @include bp(mobile) {
+            margin-bottom: 13px;
         }
         .checkbox {
             margin-top: 10px;
@@ -205,9 +216,9 @@
             text-align: center;
             line-height: 48px;
             @include bp(tablet){
-                width: 20px;
-                height: 20px;
-                line-height: 38px;
+                width: 22px;
+                height: 22px;
+                line-height: 40px;
                 font-size: 38px;
             }
             &.f-success {
@@ -242,7 +253,7 @@
             height: 32px;
         }
         &.txtArea {
-            height: auto;
+            height: 110px;
             resize: none;
             @include bp(tablet) {
                 max-height: 91px;
@@ -252,7 +263,7 @@
     .lftfield {
         padding-right: 47px;
         @include bp(landscape) {
-            padding-right: 41px;
+            padding-right: 38px;
         }
         @include bp(tablet) {
             padding-right: 32px;
@@ -262,10 +273,13 @@
         }
     }
     .rtfield {
-        padding-left: 37px;
-        padding-right: 26px;
+        padding-left: 35px;
+        padding-right: 28px;
         @include bp(landscape) {
             padding-left: 25px;
+        }
+        @include bp(tablet){
+            padding-left: 19px;
         }
         @include bp(mobile) {
             padding-left: 15px;
@@ -298,13 +312,16 @@
         @extend .btn-mansq;
         min-height: 48px;
         min-width: 200px;
-        font-size: 20px;
+        font-size: 18px;
         margin-right: 30px;
+        font-weight: 700;
+        margin-top: 5px;
         @include bp(tablet) {
             min-height: auto;
-            min-width: 157px;
+            min-width: 160px;
             font-size: 14px;
             margin-top: 7px;
+            border-radius: 13px;
         }
         @include bp(mobile) {
             max-width: max-content;
@@ -315,7 +332,7 @@
 }
 
 .specNeed {
-    margin-bottom: 94px;
+    margin-bottom: 100px;
     .bgWrap {
         padding-bottom: 44px;
         @include bp(tablet) {
@@ -336,6 +353,11 @@
             padding-top: 28px;
             @include bp(landscape) {
                 padding-top: 21px;
+            }
+        }
+        p{
+            @include bp(mobile){
+                margin-bottom: 24px;
             }
         }
     }
