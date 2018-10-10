@@ -278,8 +278,8 @@
     <Reference Include="umbraco.MacroEngines, Version=1.0.6820.12892, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.2\lib\net45\umbraco.MacroEngines.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.ModelsBuilder">
-      <HintPath>..\..\..\RWA\src\ConnecticutRegionalWater.Web\bin\Umbraco.ModelsBuilder.dll</HintPath>
+    <Reference Include="Umbraco.ModelsBuilder, Version=3.0.10.102, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.3.0.10\lib\Umbraco.ModelsBuilder.dll</HintPath>
     </Reference>
     <Reference Include="umbraco.providers, Version=1.0.6820.12887, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.2\lib\net45\umbraco.providers.dll</HintPath>
@@ -327,6 +327,28 @@
     <Content Include="App_Plugins\PerplexMail\style.min.css" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.html" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.js" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\da-DK.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\de-DE.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\en-GB.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\en-US.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\es-ES.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\fr-FR.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\he-IL.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\it-IT.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\ja-JP.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\nl-NL.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\pl-PL.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\pt-BR.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\ru-RU.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\sv-SE.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\tr-TR.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\zh-CN.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lang\zh-TW.xml" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lib\prevalue\preferredFormat.html" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lib\spectrum\spectrum.css" />
+    <Content Include="App_Plugins\SpectrumColorPicker\lib\spectrum\spectrum.js" />
+    <Content Include="App_Plugins\SpectrumColorPicker\SpectrumColorPicker.controller.js" />
+    <Content Include="App_Plugins\SpectrumColorPicker\SpectrumColorPicker.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -346,7 +368,6 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
-    <Content Include="config\smtp.config" />
     <Content Include="css\lib\bootstrap.min.css" />
     <Content Include="css\lib\bootstrap.min.js" />
     <Content Include="css\lib\jquery-ui-select-menu.css" />
@@ -433,6 +454,9 @@
     <Content Include="scripts\lib\waypoints.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\main.min.js" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
@@ -443,6 +467,7 @@
     <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -477,9 +502,6 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
-    <Content Include="config\connectionStrings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Plugins\PerplexMail\AjaxLoader.css.map" />
     <Content Include="App_Plugins\PerplexMail\AjaxLoader.less" />
     <Content Include="App_Plugins\PerplexMail\DatepickerStyle.css.map" />
@@ -487,11 +509,28 @@
     <Content Include="App_Plugins\PerplexMail\package.manifest" />
     <Content Include="App_Plugins\PerplexMail\style.css.map" />
     <Content Include="App_Plugins\PerplexMail\style.less" />
+    <Content Include="App_Plugins\SpectrumColorPicker\package.manifest" />
+    <Content Include="fonts\archivonarrowBold.ttf" />
+    <Content Include="fonts\archivonarrowBold.woff" />
+    <Content Include="fonts\archivonarrowBold.woff2" />
+    <Content Include="fonts\archivonarrowRegular.ttf" />
+    <Content Include="fonts\archivonarrowRegular.woff" />
+    <Content Include="fonts\archivonarrowRegular.woff2" />
+    <Content Include="fonts\opensans-bold.ttf" />
+    <Content Include="fonts\opensans-bold.woff" />
+    <Content Include="fonts\opensans-bold.woff2" />
+    <Content Include="fonts\opensans-exbold.ttf" />
+    <Content Include="fonts\opensans-exbold.woff" />
+    <Content Include="fonts\opensans-exbold.woff2" />
+    <Content Include="fonts\opensans-light.ttf" />
+    <Content Include="fonts\opensans-light.woff" />
+    <Content Include="fonts\opensans-light.woff2" />
+    <Content Include="fonts\opensans-semibold.woff" />
+    <Content Include="fonts\opensans-semibold.woff2" />
+    <Content Include="fonts\opensans.ttf" />
+    <Content Include="fonts\opensans.woff" />
+    <Content Include="fonts\opensans.woff2" />
     <None Include="packages.config" />
-    <Content Include="Views\Home.cshtml" />
-    <Content Include="Views\Master.cshtml" />
-    <Content Include="Views\Partials\Footer.cshtml" />
-    <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\ContactUsPage.cshtml" />
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
     <None Include="Web.Debug.config">

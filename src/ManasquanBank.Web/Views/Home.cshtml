@@ -9,6 +9,8 @@
     /*Promotion Text */
     var promotionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("promotionPanel");
     string [] classes = new string[]  {"bunisessBank", "serviceContent", "personalBank", "mortage", "kasasa", "didgitalCenter", "clentService"};
+    /* Action Panel */
+    var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
 
 }
 
@@ -80,11 +82,44 @@
                 var description = promotion.GetPropertyValue<string>("description");
                 var backgroundImage = promotion.GetPropertyValue<IPublishedContent>("backgroundImage");
                 var cTAButton = promotion.GetPropertyValue<Link>("cTAButton");
-                @i
+               
 
-                if(i == 4){
+                if(i == 1){
 
-                    <li class="@classes[i]" style="background: @backgroundColor">
+                     <li class="bunisessBank">
+                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                          <a href="#">Business Banking</a>
+                        </figure>
+                        <div class="serviceContent">
+                          <div class="title">
+                            @Html.Raw(promotionTitle)
+                          </div>
+                        </div>
+                      </li>
+                }
+                else if(i == 2){
+                   <li class="personalBank">
+                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                          <a href="#">Personal Banking</a>
+                        </figure>
+                        <div class="serviceContent">
+                          <div class="title">
+                            @Html.Raw(promotionTitle)
+                          </div>
+                        </div>
+                    </li>
+                }
+                else if(i == 3){
+
+                    <li class="mortage" style="background: @backgroundColor">
+                        <div class="serviceContent">
+                          @Html.Raw(promotionTitle)
+                        </div>
+                    </li>
+                }
+                else if(i == 4){
+
+                     <li class="@classes[i]" style="background: @backgroundColor">
                         <div class="serviceContent">
                             <div class="detailBlock">
                                 @Html.Raw(promotionTitle)
@@ -104,186 +139,234 @@
                         </figure>
                     </li>
                 }
-                
+                else if(i == 5){
+                    <li class="didgitalCenter">
+                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                          <a href="#">Digital Center</a>
+                        </figure>
+                        <div class="serviceContent">
+                          <div class="title">
+                            @Html.Raw(promotionTitle)
+                          </div>
+                        </div>
+                      </li>
 
+                }
+                else{
+
+                    <li class="clentService">
+                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                          <a href="#">Client Services</a>
+                        </figure>
+                        <div class="serviceContent">
+                          <div class="title">
+                            @Html.Raw(promotionTitle)
+                          </div>
+                        </div>
+                    </li>
+                }
                 i++;
             }
         }
         </ul>
     </div>
 </section>
-
-
-        <section class="bluePannel animatable">
-          <div class="containerWrapper">
-            <div class="bgWrap">
-              <div class="detailsWrap">
-                <div class="wraps">
-                  <h2>
-                    Let's get started
-                  </h2>
-                  <h3>
-                    OPEN AN ACCOUNT ONLINE TODAY
-                  </h3>
-                  <p>
-                    Finding the right account to achieve your financial goals
-                    is important - and also really easy.
-                  </p>
+<section class="bluePannel animatable">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+        @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
+        {
+            int j = 1;
+            foreach (var action in actionPanel)
+            {
+                var actionTitle = action.GetPropertyValue<string>("actionTitle");
+                var actionDescription = action.GetPropertyValue<string>("actionDescription");
+                var tagLineSentence = action.GetPropertyValue<string>("tagLineSentence");
+                var actioncTAButton = action.GetPropertyValue<Link>("actioncTAButton");
+                <div class="detailsWrap">
+                    <div class="wraps">
+                        @if (!string.IsNullOrEmpty(actionTitle))
+                        {
+                            <h2>@actionTitle </h2>
+                        }
+                        @if (!string.IsNullOrEmpty(tagLineSentence))
+                        {
+                            <h3>@tagLineSentence </h3>
+                        }
+                        @if (!string.IsNullOrEmpty(actionDescription))
+                        {
+                            @Html.Raw(actionDescription)
+                        }
+                    </div>
+                    @if (actioncTAButton.Target == "_blank")
+                    {
+                        <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                    }
+                    else
+                    {
+                        <a class="btnManasq" href="@actioncTAButton.Url" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                    }
+                    
                 </div>
-                <a href="#" class="btnManasq">
-                  <span>
-                    OPEN AN ACCOUNT
-                  </span>
-                </a>
-              </div>
-              <figure>
-                <img src="images/home/img_or.png" alt="">
-              </figure>
-              <div class="detailsWrap">
-                <div class="wraps">
-                  <h2>
-                    TIMETRADE WITH DIGITAL EXPERTS
-                  </h2>
-                  <p>
-                    Connect with a Digital Expert or Local Branch Manager.
-                  </p>
-                </div>
-                <a href="#" class="btnManasq">
-                  <span>
-                    Book an Appointment
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+                if(j == 1){
 
+                    <figure>
+                        <img src="~/images/home/img_or.png" alt="OR">
+                    </figure>
+                }
+                j++;
+            }
 
-        <section class="communityPannel animatable">
-          <div class="bgWraps">
-            <div class="imgBlock">
-              <div class="containerWrapper">
-                <figure style="background-image: url('images/banner/banner_bg.jpg')">
+        }
+        </div>
+    </div>
+</section>
+@{
+
+    var foundationbackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
+    var titleText = Model.Content.GetPropertyValue<string>("titleText");
+    var foundationTaglineText = Model.Content.GetPropertyValue<string>("foundationTaglineText");
+    var foundationDescription = Model.Content.GetPropertyValue<string>("foundationDescription");
+    var foundationcTAButton = Model.Content.GetPropertyValue<Link>("cTAButton");
+}
+<section class="communityPannel animatable">
+    <div class="bgWraps">
+        <div class="imgBlock">
+            <div class="containerWrapper">
+                <figure style="background-image: url('@foundationbackgroundImage.Url')">
                 </figure>
-              </div>
             </div>
-            <div class="titleBlock">
-              <div class="containerWrapper">
+        </div>
+        <div class="titleBlock">
+            <div class="containerWrapper">
+                @if (!string.IsNullOrEmpty(titleText))
+                {
+                    <h2>@Html.Raw(titleText.Replace( " ", "</br>" )) </h2>
+                }
                 <h2>
-                  BUILDING<br>
-                  COMMUNITY
-                </h2>
-              </div>
+                
             </div>
-            <div class="redBlock">
-              <div class="containerWrapper">
-                <h2>
-                  THROUGH<br>
-                  CHARITABLE<br>
-                  GIVING
-                </h2>
-              </div>
+        </div>
+        <div class="redBlock">
+            <div class="containerWrapper">
+                @if (!string.IsNullOrEmpty(foundationTaglineText))
+                {
+                    <h2>@Html.Raw(foundationTaglineText.Replace( " ", "</br>" )) </h2>
+                }
             </div>
-            <div class="detailBlock">
-              <div class="containerWrapper">
+        </div>
+        <div class="detailBlock">
+            <div class="containerWrapper">
                 <div class="wraps">
-                  <p>
-                    The Charitable Foundation
-                    is a private foundation
-                    designed to support local communities through
-                    grants and other funding. See what Manasquan
-                    Bank's Charitable Foundation does to strengthen
-                    the communities it serves.
-                  </p>
-                  <a href="#" class="btnManasq">
-                    <span>LEARN MORE</span>
-                  </a>
+                    @if (!string.IsNullOrEmpty(foundationDescription))
+                    {
+                        @Html.Raw(foundationDescription)
+                    }
+                    @if (foundationcTAButton.Target == "_blank")
+                    {
+                        <a class="btnManasq" href="@foundationcTAButton.Url" target="_blank" title="@foundationcTAButton.Name"><span>@foundationcTAButton.Name </span></a>
+                    }
+                    else
+                    {
+                        <a class="btnManasq" href="@foundationcTAButton.Url" title="@foundationcTAButton.Name"><span>@foundationcTAButton.Name </span></a>
+                    }
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
-        <section class="appPannel animatable">
-          <div class="containerWrapper">
-            <div class="bgWraps">
-              <div class="appDetails">
-                <h2>
-                  DOWNLOAD
-                  OUR APP
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit
-                  amet, consecteturadi<br>
-                  piscing elitPellentesq
-                  ue nonvulputate justo<br>
-                  ullamcorper pellente
-                  sque ligula
-                </p>
+        </div>
+    </div>
+</section>
+@{
+    var appTitle = Model.Content.GetPropertyValue<string>("appTitle");
+    var appleStoreLink = Model.Content.GetPropertyValue<string>("appleStoreLink");
+    var googlePlayStoreLink = Model.Content.GetPropertyValue<string>("googlePlayStoreLink");
+    var appDescription = Model.Content.GetPropertyValue<string>("appDescription");
+    var appcTAButton = Model.Content.GetPropertyValue<Link>("appcTAButton");
+}
+
+<section class="appPannel animatable">
+    <div class="containerWrapper">
+        <div class="bgWraps">
+            <div class="appDetails">
+                @if (!string.IsNullOrEmpty(appTitle))
+                {
+                    <h2>@appTitle </h2>
+                }
+                @if (!string.IsNullOrEmpty(appDescription))
+                {
+                    @Html.Raw(appDescription)
+                }
                 <div class="appStores">
-                  <figure class="">
-                    <a href="#" target="_blank">
-                      <img src="images/home/apple_app.png" alt="">
+                    <figure class="">
+                    <a href="@appleStoreLink" target="_blank">
+                      <img src="~/images/home/apple_app.png" alt="App Store Icon">
                     </a>
-                  </figure>
-                  <figure>
-                    <a href="#" target="_blank">
-                      <img src="images/home/google_app.png" alt="">
+                    </figure>
+                    <figure>
+                    <a href="@googlePlayStoreLink" target="_blank">
+                      <img src="~/images/home/google_app.png" alt="Play Store Icon">
                     </a>
-                  </figure>
+                    </figure>
                 </div>
-              </div>
-              <figure class="imgDesg">
-                <img src="images/home/app_img.png" alt="">
-              </figure>
             </div>
-          </div>
-        </section>
-        <section class="knowledgePannel animatable">
-          <div class="containerWrapper">
-            <div class="bgWraps">
-              <h2>
-                knowledge center
-              </h2>
-              <ul>
-                <li>
-                  <figure>
-                    <img src="images/home/video_icon.png" alt="">
-                  </figure>
-                  <h4>
-                    How to Videos
-                  </h4>
-                </li>
-                <li>
-                  <figure>
-                    <img src="images/home/security_icon.png" alt="">
-                  </figure>
-                  <h4>
-                    Security Awareness
-                  </h4>
-                </li>
-                <li>
-                  <figure>
-                    <img src="images/home/demo_icon.png" alt="">
-                  </figure>
-                  <h4>
-                    Security Awareness
-                  </h4>
-                </li>
-                <li>
-                  <figure>
-                    <img src="images/home/prdinfo_icon.png" alt="">
-                  </figure>
-                  <h4>
-                    Product Info
-                  </h4>
-                </li>
-              </ul>
-              <a href="#" class="btnManasq">
-                <span>learn more</span>
-              </a>
-            </div>
-          </div>
-        </section>
+            <figure class="imgDesg">
+                <img src="~/images/home/app_img.png" alt="Mobile Icon">
+            </figure>
+        </div>
+    </div>
+</section>
+@{
+    var knowledgeTitle = Model.Content.GetPropertyValue<string>("knowledgeTitle");
+    var knowledgeBackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("knowledgeBackgroundImage");
+    var featureDescription = Model.Content.GetPropertyValue<string>("featureDescription");
+    var featurecTAButton = Model.Content.GetPropertyValue<Link>("featurecTAButton");
+    var featureLists = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("featureLists");
+}
+<section class="knowledgePannel animatable">
+    <div class="containerWrapper">
+        <div class="bgWraps">
+            @if (!string.IsNullOrEmpty(knowledgeTitle))
+            {
+                <h2>@knowledgeTitle </h2>
+            }
+            @if (!string.IsNullOrEmpty(featureDescription))
+            {
+                @Html.Raw(featureDescription)
+            }  
+            @if (Model.Content.AncestorOrSelf(1).HasValue("featureLists"))
+            {
+                <ul>
+                @foreach (var feature in featureLists)
+                {
+                    var featureTitle = feature.GetPropertyValue<string>("featureTitle");
+                    var featureImage = feature.GetPropertyValue<IPublishedContent>("featureImage");
+                    <li>
+                        <figure>
+                        <img src="@featureImage.Url" alt="@featureTitle">
+                        </figure>
+                        @if (!string.IsNullOrEmpty(featureTitle))
+                        {
+                            <h4>@featureTitle </h4>
+                        }
+                    </li>
+                }
+                </ul>
+            }
+            
+
+                @if (featurecTAButton.Target == "_blank")
+                {
+                <a class="btnManasq" href="@featurecTAButton.Url" target="_blank" title="@featurecTAButton.Name"><span>@featurecTAButton.Name </span></a>
+                }
+                else
+                {
+                <a class="btnManasq" href="@featurecTAButton.Url" title="@featurecTAButton.Name"><span>@featurecTAButton.Name </span></a>
+                }
+
+        </div>
+    </div>
+</section>
+
+
         <section class="eventsPannel">
           <div class="containerWrapper">
             <h2>
