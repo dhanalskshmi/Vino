@@ -288,13 +288,14 @@
                 order: 2;
             }
         }
-        .btn-mansq {
+        .btnManasq {
             @include bp(mobile) {
                 order: 3;
             }
         }
     }
-    .btn-mansq {
+    .btnManasq {
+        @extend .btn-mansq;
         min-height: 48px;
         min-width: 200px;
         font-size: 20px;

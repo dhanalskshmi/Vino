@@ -17,7 +17,7 @@
                 padding: 40px 58px 5px 40px;
             }
             @include bp(mobile) {
-                padding: 10px 10px 5px 10px;
+                padding: 10px 10px 1px 10px;
             }
             .bioFlex {
                 display: flex;
@@ -111,7 +111,8 @@
                             }
                         }
                     }
-                    .btn-mansq {
+                    .btnManasq {
+                        @extend .btn-mansq;
                         margin-top: 49px;
                         height: 60px;
                         font-size: 24px;
@@ -214,6 +215,19 @@
                             font-size: 16px;
                         }
                     }
+                }
+            }
+            .back-btn{
+                margin-top: 40px;
+                @include bp(landscape){
+                    margin-bottom: 9px;
+                }
+                @include bp(tablet){
+                    margin-top: 13px;
+                }
+                @include bp(mobile){
+                    margin-top: 17px;
+                    margin-bottom: 0;
                 }
             }
         }
