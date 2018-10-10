@@ -3,15 +3,15 @@
     @include bp(landscape) {
         padding: 45px 21px 24px 21px;
     }
+    @include bp(tablet) {
+        padding: 41px 21px 24px 21px;
+    }
     @include bp(mobile) {
         padding: 32px 11px 25px 11px;
     }
 }
 
 .contactUs {
-    p {
-        color: #3d3d3d;
-    }
     .heroBlock {
         h1,
         h2 {
@@ -39,9 +39,10 @@
             @include bp(mobile) {
                 font-size: 16px;
                 line-height: 20px;
-                margin-bottom: 18px;
+                margin-bottom: 22px;
             }
-            b {
+            b,
+            strong {
                 font-size: 24px;
                 @include bp(landscape) {
                     font-size: 18px;
@@ -60,6 +61,10 @@
                     margin: 0 28px;
                     @include bp(landscape) {
                         margin: 0 14px;
+                    }
+                    @include bp(mobile) {
+                        margin-left: auto;
+                        margin-right: auto;
                     }
                 }
                 &:first-child {
@@ -94,9 +99,9 @@
         padding-bottom: 60px;
         @include bp(landscape) {
             padding-top: 21px;
-            padding-bottom: 38px;
+            padding-bottom: 40px;
         }
-        @include bp(landscape) {
+        @include bp(tablet) {
             padding-bottom: 20px;
         }
         p {
@@ -137,9 +142,9 @@
     }
 }
 
-.contactForm {
+.contactFormWrap {
     padding: 5px 30px;
-    padding-bottom: 13px;
+    padding-bottom: 0px;
     width: 86%;
     margin: auto;
     margin-top: 30px;
@@ -157,164 +162,186 @@
     @include bp(mobile) {
         width: calc(100% + 20px);
         margin-left: -10px;
+        margin-top: 20px;
         padding: 21px 10px;
     }
-    .form-group {
-        position: relative;
-        @include bp(tablet) {
-            margin-bottom: 9px;
-        }
-        .checkbox {
-            margin-top: 10px;
+    .contactForm {
+        .form-group {
+            position: relative;
             @include bp(tablet) {
-                margin-top: 10px;
+                margin-bottom: 9px;
             }
             @include bp(mobile) {
-                margin-top: 6px;
+                margin-bottom: 13px;
             }
-            label {
-                margin-bottom: 11px;
-                position: relative;
+            .checkbox {
+                margin-top: 10px;
                 @include bp(tablet) {
-                    margin-bottom: 7px;
+                    margin-top: 10px;
+                }
+                @include bp(mobile) {
+                    margin-top: 6px;
+                }
+                label {
+                    margin-bottom: 11px;
+                    position: relative;
+                    @include bp(tablet) {
+                        margin-bottom: 7px;
+                    }
+                }
+                input {
+                    opacity: 0;
                 }
             }
-            input {
-                opacity: 0;
+            label {
+                font-size: 18px;
+                color: #626262;
+                font-weight: normal;
+                display: block;
+                @include bp(tablet) {
+                    font-size: 16px;
+                }
+            }
+            .errorSpan {
+                position: absolute;
+                top: 17px;
+                right: -7px;
+                width: 25px;
+                height: 25px;
+                background: #a41f36;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 48px;
+                text-align: center;
+                line-height: 48px;
+                @include bp(tablet) {
+                    width: 22px;
+                    height: 22px;
+                    line-height: 40px;
+                    font-size: 38px;
+                }
+                &.f-success {
+                    background: #4caf50;
+                }
+            }
+            label {
+                &.error {
+                    color: #a41f36;
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+            }
+            &.successForm {
+                .form-control {
+                    border-color: #4caf50;
+                }
+            }
+            &.errorForm {
+                .form-control {
+                    border-color: #a41f36;
+                }
             }
         }
-        label {
+        .form-control {
+            border-radius: 0;
+            border: 1px solid transparent;
+            height: 42px;
             font-size: 18px;
-            color: #626262;
-            font-weight: normal;
-            display: block;
+            box-shadow: none;
             @include bp(tablet) {
-                font-size: 16px;
+                height: 32px;
             }
-        }
-        .errorSpan {
-            position: absolute;
-            top: 17px;
-            right: -7px;
-            width: 25px;
-            height: 25px;
-            background: #a41f36;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 48px;
-            text-align: center;
-            line-height: 48px;
-            @include bp(tablet){
-                width: 20px;
-                height: 20px;
-                line-height: 38px;
-                font-size: 38px;
-            }
-            &.f-success {
-                background: #4caf50;
-            }
-        }
-        label {
-            &.error {
-                color: #a41f36;
-                font-size: 14px;
-                margin-top: 5px;
-            }
-        }
-        &.successForm {
-            .form-control {
-                border-color: #4caf50;
-            }
-        }
-        &.errorForm {
-            .form-control {
-                border-color: #a41f36;
-            }
-        }
-    }
-    .form-control {
-        border-radius: 0;
-        border: 1px solid transparent;
-        height: 42px;
-        font-size: 18px;
-        box-shadow: none;
-        @include bp(tablet) {
-            height: 32px;
-        }
-        &.txtArea {
-            height: auto;
-            resize: none;
-            @include bp(tablet) {
-                max-height: 91px;
-            }
-        }
-    }
-    .lftfield {
-        padding-right: 47px;
-        @include bp(landscape) {
-            padding-right: 41px;
-        }
-        @include bp(tablet) {
-            padding-right: 32px;
-        }
-        @include bp(mobile) {
-            padding-right: 15px;
-        }
-    }
-    .rtfield {
-        padding-left: 37px;
-        padding-right: 26px;
-        @include bp(landscape) {
-            padding-left: 25px;
-        }
-        @include bp(mobile) {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    }
-    .mob-flex {
-        @include bp(mobile) {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-        .rtfield {
-            @include bp(mobile) {
-                order: 1;
+            &.txtArea {
+                height: 110px;
+                resize: none;
+                @include bp(tablet) {
+                    max-height: 91px;
+                }
             }
         }
         .lftfield {
+            padding-right: 47px;
+            @include bp(landscape) {
+                padding-right: 38px;
+            }
+            @include bp(tablet) {
+                padding-right: 32px;
+            }
             @include bp(mobile) {
-                order: 2;
+                padding-right: 15px;
             }
         }
-        .btn-mansq {
+        .rtfield {
+            padding-left: 35px;
+            padding-right: 28px;
+            @include bp(landscape) {
+                padding-left: 25px;
+            }
+            @include bp(tablet) {
+                padding-left: 19px;
+            }
             @include bp(mobile) {
-                order: 3;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        .mob-flex {
+            @include bp(mobile) {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+            .rtfield {
+                @include bp(mobile) {
+                    order: 1;
+                }
+            }
+            .lftfield {
+                @include bp(mobile) {
+                    order: 2;
+                }
+            }
+            .btnManasq {
+                @include bp(mobile) {
+                    order: 3;
+                }
+            }
+        }
+        .btnManasq {
+            @extend .btn-mansq;
+            min-height: 48px;
+            min-width: 200px;
+            font-size: 18px;
+            margin-right: 30px;
+            font-weight: 700;
+            margin-top: 5px;
+            @include bp(tablet) {
+                min-height: auto;
+                min-width: 160px;
+                font-size: 14px;
+                margin-top: 7px;
+                border-radius: 13px;
+            }
+            @include bp(mobile) {
+                max-width: max-content;
+                margin: auto;
+                margin-top: 30px;
             }
         }
     }
-    .btn-mansq {
-        min-height: 48px;
-        min-width: 200px;
-        font-size: 20px;
-        margin-right: 30px;
-        @include bp(tablet) {
-            min-height: auto;
-            min-width: 157px;
-            font-size: 14px;
-            margin-top: 7px;
-        }
-        @include bp(mobile) {
-            max-width: max-content;
-            margin: auto;
-            margin-top: 30px;
+    .success-msg {
+        h4{
+            text-align: center;
+            color: #1268e5;
+            font-size: 23px;
+            padding: 25px 30px;
+            display: none;
         }
     }
 }
 
 .specNeed {
-    margin-bottom: 94px;
+    margin-bottom: 100px;
     .bgWrap {
         padding-bottom: 44px;
         @include bp(tablet) {
@@ -335,6 +362,11 @@
             padding-top: 28px;
             @include bp(landscape) {
                 padding-top: 21px;
+            }
+        }
+        p {
+            @include bp(mobile) {
+                margin-bottom: 24px;
             }
         }
     }

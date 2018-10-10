@@ -472,6 +472,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Models\ContactUsModel.cs" />
+    <Compile Include="Models\RecaptchaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -544,6 +548,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\ContactUs\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>

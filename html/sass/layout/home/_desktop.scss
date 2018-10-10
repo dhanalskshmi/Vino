@@ -20,7 +20,7 @@
     width: 100%;
   }
   .bannerContent {
-    padding-top: 167px;
+    padding-top: 161px;
     position: relative;
     z-index: 9;
     h1 {
@@ -61,16 +61,20 @@
   margin-top: 12px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
   z-index: -9;
   opacity: 0;
   visibility: hidden;
+  transition: all .3s;
+  min-width: 291px;
+  max-width: 410px;
+  transform: translateX(-50%);
   transition: all 0.3s;
   &.active {
     display: block;
     padding: 0 12px;
-    top: 74px;
+    top: 72px;
     opacity: 1;
     visibility: visible;
     z-index: 99999;
@@ -224,10 +228,12 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      z-index: 999;
+      z-index: 9;
       .title {
         float: right;
         text-align: right;
+        min-width: 173px;
+        margin-bottom: 25px;
       }
     }
     h2 {
@@ -253,19 +259,20 @@
       }
     }
 
-
     &.mortage {
       .serviceContent {
-        padding: 31px 22px 17px;
+        padding: 31px 20px 17px;
+        margin-bottom: 5px;
       }
       h3 {
         font-size: 29px;
-        font-weight: 400;
+        font-weight: 700;
         color: #FFF;
         text-transform: uppercase;
+        line-height: 27px;
         span {
           display: block;
-          font-weight: 700;
+          font-weight: 400;
         }
         i {
           display: inline-block;
@@ -283,8 +290,8 @@
           span {
             font-size: 62px;
             vertical-align: top;
-            margin-top: -27px;
-            margin-left: -12px;
+            margin-top: -22px;
+            margin-left: -5px;
             display: inline-block;
             width: 26px;
           }
@@ -307,7 +314,7 @@
         }
         h3 {
           font-size: 20px;
-          margin-bottom: 13px;
+          margin-bottom: 12px;
           line-height: 20px;
           text-transform: uppercase;
           strong {
@@ -318,6 +325,8 @@
           font-size: 12px;
           text-transform: uppercase;
           @include btnstyle();
+          padding: 6px 30px;
+          border-radius: 10px;
         }
       }
       figure {
@@ -336,14 +345,14 @@
 // Blue bluePannel
 .bluePannel {
   background: #1b3d6e;
-  padding: 26px 18px;
-  margin-bottom: 39px;
+  padding: 22px 18px;
+  //margin-bottom: 41px;
   .wraps {
-    padding: 16px 19px 0;
+    padding: 12px 19px 0;
   }
   .detailsWrap {
     color: #FFF;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     border: 1px solid #FFF;
     border-radius: 15px;
     position: relative;
@@ -351,10 +360,10 @@
       font-weight: 700;
       font-size: 19px;
       color: #FFF;
-      margin-bottom: -10px;
+      line-height: 23px;
       text-transform: uppercase;
       + p {
-        margin-top: 9px;
+        margin-top: 3px;
       }
       a {
         color: inherit;
@@ -364,13 +373,15 @@
       font-weight: 400;
       font-size: 16px;
       color: #FFF;
+      margin-bottom: 3px;
+      line-height: 17px;
       text-transform: uppercase;
       position: relative;
     }
     p {
       font-weight: 400;
       font-size: 10px;
-      line-height: 11px;
+      line-height: 12px;
     }
     .btnManasq {
       display: inline-block;
@@ -378,8 +389,8 @@
       color: #FFF;
       font-weight: 700;
       font-size: 10px;
-      padding: 3px 14px;
-      margin-top: 13px;
+      padding: 4px 14px;
+      margin-top: 12px;
       min-width: 125px;
       border: 1px solid #FFF;
       border-radius: 10px;
@@ -395,9 +406,12 @@
   }
 }
 
+// Community Pannel
+
 .communityPannel {
   .bgWraps {
     background: #fafafa;
+    padding-top: 42px;
   }
   .imgBlock {
     padding-bottom: 23px;
@@ -412,13 +426,14 @@
     }
   }
   .titleBlock {
-    margin-bottom: -4px;
+    margin-bottom: -5px;
     h2 {
       font-weight: 700;
       font-size: 39px;
       color: #ec2c3a;
+      padding-left: 20px;
       text-transform: uppercase;
-      line-height: 36px;
+      line-height: 35px;
     }
   }
   .redBlock {
@@ -428,15 +443,19 @@
       font-weight: 400;
       font-size: 39px;
       color: #FFF;
+      padding-left: 20px;
       line-height: 32px;
     }
   }
   .detailBlock {
-    padding: 9px 0 50px;
+    padding: 10px 0 46px;
+    .wraps {
+      padding-left: 22px;
+    }
     p {
       font-size: 18px;
       color: #17140e;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
       line-height: 21px;
     }
     .btnManasq {
@@ -456,7 +475,10 @@
 
 .appPannel {
   background: #ec2c3a;
-  padding: 36px 0 81px;
+  padding: 38px 0 81px;
+  .bgWraps {
+    padding: 0 15px;
+  }
   h2 {
     font-size: 47px;
     font-weight: 400;
@@ -467,6 +489,7 @@
   }
   p {
     color: #FFF;
+    line-height: 18px;
   }
   .appStores {
     padding: 24px 0 2px;
@@ -476,6 +499,9 @@
       margin-bottom: 25px;
       a {
         display: block;
+      }
+      &:last-child {
+        margin-bottom: 12px;
       }
     }
   }
@@ -489,7 +515,7 @@
 
 .knowledgePannel {
   background: #1b3d6e;
-  padding: 68px 0;
+  padding: 68px 0 49px;
   text-align: center;
   h2 {
     font-size: 42px;
@@ -500,16 +526,16 @@
     text-transform: uppercase;
   }
   ul {
-    padding: 104px 0 55px;
+    padding: 102px 0 53px;
     text-align: center;
     li {
-      margin-bottom: 58px;
+      margin-bottom: 56px;
       &:last-child {
         margin-bottom: 0;
       }
     }
     figure {
-      padding-bottom: 25px;
+      padding-bottom: 27px;
     }
     h4 {
       font-size: 24px;
@@ -536,12 +562,13 @@
 
 .eventsPannel {
   background: #ec2c3a;
-  padding: 41px 0 49px;
+  padding: 40px 0 49px;
   h2 {
     font-weight: 700;
     color: #FFF;
-    font-size: 38px;
-    padding-bottom: 41px;
+    font-size: 43px;
+    line-height: 40px;
+    padding-bottom: 38px;
     text-align: center;
   }
   ul {
@@ -602,14 +629,14 @@
 
 .joinEmail {
   background: #969696;
-  padding: 53px 0;
+  padding: 50px 0 17px;
   h2 {
     font-weight: 700;
-    font-size: 42px;
+    font-size: 43px;
     color: #FFF;
-    padding-bottom: 63px;
+    padding-bottom: 61px;
     text-align: center;
-    line-height: 32px;
+    line-height: 41px;
   }
   label {
     display: block;
@@ -639,11 +666,15 @@
     }
   }
   .groupCheckbox {
+    margin-top: -6px;
+    margin-bottom: 49px;
     div {
+      margin-bottom: 29px;
       label {
         display: inline-block;
         vertical-align: middle;
         cursor: pointer;
+        margin-bottom: 0;
       }
       label {
         font-size: 21px;
@@ -656,7 +687,7 @@
         width: 24px;
         height: 24px;
         position: absolute;
-        top: -7px;
+        top: -11px;
         left: 0;
         transition: all 0.55s;
         &::after {
@@ -707,7 +738,7 @@
   .bannerWrapper {
     min-height: 432px;
     .loginBlocks {
-      display: none;
+
     }
     .bannerImage {
       min-height: 432px;
@@ -871,9 +902,10 @@
       position: relative;
     }
     .detailsWrap {
-      max-width: calc(50% - 48.5px);
+      //max-width: calc(50% - 48.5px);
       //max-width: 43.165%;
       //max-width: 45.965%;
+      max-width: 293px;
       display: inline-block;
       vertical-align: top;
       padding-bottom: 48px;
@@ -911,6 +943,7 @@
       align-items: center;
       + .detailsWrap {
         margin-left: 3px;
+        margin-right: 0px;
       }
     }
   }
@@ -1307,6 +1340,7 @@
       padding: 28px 19px 0;
     }
     .detailsWrap {
+      max-width: 379px;
       padding-bottom: 54px;
       h2 {
         font-size: 26px;

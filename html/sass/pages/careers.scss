@@ -229,7 +229,8 @@
                     border-radius: 0px;
                 }
             }
-            .btn-mansq {
+            .btnManasq {
+                @extend .btn-mansq;
                 border: 3px solid #fff;
                 font-size: 24px;
                 font-weight: normal;
@@ -571,7 +572,8 @@
                 @include bp(mobile) {
                     text-align: center;
                 }
-                .btn-mansq {
+                .btnManasq {
+                    @extend .btn-mansq;
                     padding: 26px 24px 20px 24px;
                     margin-top: 2px;
                     margin-left: 12px;
