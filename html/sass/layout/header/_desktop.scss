@@ -16,17 +16,17 @@ header {
 }
 .logo {
 	display: inline-block;
-	padding: 7px 0 10px 7px;
+	padding: 11px 0 10px 7px;
 	margin-right: 13px;
-	max-width: 198px;
+	max-width: 205px;
 	float: left;
 }
 .headerWrapper {
 	background: rgba(255,255,255,0.87);
-	margin: 0 14px;
+	margin: 0 12px;
 	position: relative;
 	display: table;
-  width: calc(100% - 29px);
+  width: calc(100% - 22px);
 }
 .mLogin {
 	float: right;
@@ -40,20 +40,20 @@ header {
 		font-size: 11px;
 		color: #FFF;
 		display: inline-block;
-		padding: 4px 17px;
+		padding: 3px 18px 2px;
 		border-radius: 25px;
 		text-transform: uppercase;
 	}
 }
 .mobileSearchwrap {
 	display: table;
-	padding-bottom: 3px;
+	padding-bottom: 2px;
 }
 .mobileSearch {
 	float: right;
-	margin-top: 16px;
+	margin-top: 13px;
 	margin-right: 4px;
-	max-width: 35px;
+	max-width: 34px;
 	.txtBox {
 		width: 0%;
 	}
@@ -62,11 +62,11 @@ header {
 		i {
 			display: block;
 			background-image: url('#{$img}/search_icon.png');
-			background-size: cover;
+			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
 			width: 25px;
-			height: 23px;
+			height: 24px;
 		}
 	}
 }
@@ -79,7 +79,7 @@ header {
 	width: 32px;
 	height: 22px;
 	float: right;
-	margin-top: 17px;
+	margin-top: 14px;
 	margin-right: 7px;
   text-align: right;
 	transition: 0.3s;
@@ -90,7 +90,7 @@ header {
 		height: 4px;
 		background: #1b3d6e;
 		position: absolute;
-		top: 0;
+		top: 8px;
 		left: 0;
 		transition: 0.18s;
 	}
@@ -110,10 +110,35 @@ header {
 			transition: 0.3s;
 		}
 		&::before {
-			top: -2px;
+			top: -10px;
 		}
 		&::after {
 			top: 6px;
+		}
+	}
+	&.active {
+		//transform: translateX(-25%);
+		&::before {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+		.lines {
+			background: transparent;
+			margin-right: 37px;
+			margin-top: 0;
+			&::before,
+			&::after {
+				transform-origin: 50% 50%;
+				top: 0;
+				width: 34px;
+				height: 4px;
+			}
+			&::before {
+				transform: rotate3d(0, 0, 1, 45deg);
+			}
+			&::after {
+				transform: rotate3d(0, 0, 1, -45deg);
+			}
 		}
 	}
 }
@@ -375,6 +400,9 @@ header {
 		margin-top: 20px;
 		z-index: 9999;
 	}
+	.loginBlocks {
+		//display: none; // Mobile Login Block
+	}
 
 	.headerWrapper {
 		background: rgba(255,255,255,1);
@@ -421,11 +449,16 @@ header {
 			position: static;
 			opacity: 1;
 			visibility: visible;
+			left: 0;
+      min-width: auto;
+      max-width: 100%;
+      transform: translateX(0);
 			.personalLogin,
 			.businessLogin {
 				float: left;
 				padding: 1px 5px 0;
 				min-width: 98px;
+				max-width: 98px;
 				h3 {
 					font-size: 8px;
 					line-height: 12px;
@@ -589,7 +622,7 @@ header {
 			width: 100%;
 			li {
 				float: left;
-				padding: 0 8px 6px 10px;
+				padding: 0 8px 5px 10px;
 				/*display: inline-block;
 				vertical-align: top;*/
 				//width: 78px;
@@ -813,6 +846,7 @@ header {
 			.personalLogin,
 			.businessLogin {
 				min-width: 122px;
+				max-width: 122px;
 				h3 {
 					font-size: 10px;
 				}
@@ -1045,7 +1079,7 @@ header {
 			&.active {
 				.txtBox {
 					width: 545px;
-			    height: 52px;
+			    height: 53px;
 				}
 				.submit {
 					//margin-top: 6px;

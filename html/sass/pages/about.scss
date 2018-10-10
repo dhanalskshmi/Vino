@@ -11,7 +11,7 @@
         //padding: 0 20px;
     }
     @include bp(mobile) {
-        padding: 0 15px;
+        //padding: 0 15px;
     }
 }
 
@@ -296,9 +296,9 @@
                 }
                 &:hover{
                     .contentImg{
-                        transform: scale(1.5);    
-                        transition: .2s all;    
-                    }       
+                        transform: scale(1.5);
+                        transition: .2s all;
+                    }
                 }
                 &:after {
                     position: absolute;

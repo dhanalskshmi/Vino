@@ -48,7 +48,7 @@ footer {
     text-transform: uppercase;
     li {
       font-size: 20px;
-      padding-bottom: 5px;
+      padding-bottom: 2px;
       a {
         color: #FFF;
       }
@@ -59,12 +59,12 @@ footer {
 .fCols {
   order: 1;
   .detailsWrap {
-    padding-top: 15px;
+    padding-top: 17px;
     margin-left: calc(100% - 136% / 2);
     p {
       font-size: 16px;
       color: #828282;
-      line-height: 21px;
+      line-height: 19px;
     }
     ul {
       display: none;
@@ -76,7 +76,7 @@ footer {
   padding-left: calc(100% - 136% / 2);
 }
 .fCols2 {
-  padding-top: 36px;
+  padding-top: 39px;
   padding-bottom: 29px;
   h3 {
     font-size: 22px;
@@ -113,14 +113,15 @@ footer {
     }
     .fdic {
       background-position: 0 -290px;
-      height: 50px;
+      width: 84px;
+      height: 49px;
       margin-right: 32px;
       margin-top: 17px;
     }
     .lender {
       background-position: 0 -298px;
-      height: 55px;
       width: 67px;
+      height: 55px;
       margin-top: 12px;
     }
   }
@@ -128,7 +129,7 @@ footer {
 
 .fRow {
   background: #292a2d;
-  padding: 21px 0 34px;
+  padding: 22px 0 34px;
   ul {
     padding-left: calc(100% - 221px);
     li {
@@ -136,7 +137,10 @@ footer {
       color: #FFF;
       line-height: 18px;
       &:first-child {
-        padding-bottom: 22px;
+        padding-bottom: 21px;
+      }
+      &:last-child {
+        padding-top: 13px;
       }
       a {
         color: #FFF;
@@ -144,7 +148,7 @@ footer {
       &.fLink {
         margin-bottom: 9px;
         + li {
-          margin-top: 22px;
+          //margin-top: 22px;
         }
       }
     }
