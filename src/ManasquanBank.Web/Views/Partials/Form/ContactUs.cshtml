@@ -1,179 +1,74 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-                <div class="containerWrapper">
-                    <div class="bgWrap">
-                        <div class="titleWrap">
-                            <h3>Please enter your information</h3>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor
-                            tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi. Nam ipsum
-                            tortor, tempor aliquam ante non, condimentum finibus tortor. Suspendisse eleifend orci
-                            lorem, quis euismod lectus molestie eu. </p>
-                        <form action="" class="contactForm" id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 lftfield">
-                                    <div class="form-group">
-                                        <label for="firstName">First Name</label>
-                                        <input type="text" class="form-control " required name="firstName" id="firstName">
-                                        <span class="errorSpan vd f-error">*</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control requiredFld" required name="lastName" id="lastName">
-                                        <span class="errorSpan vd f-error">*</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 rtfield">
-                                    <div class="form-group">
-                                        <label for="cntTelePhone">Telephone</label>
-                                        <input type="text" class="form-control" name="cntTelePhone" id="cntTelePhone">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cntEmail">Email</label>
-                                        <input type="email" class="form-control" required name="cntEmail" id="cntEmail">
-                                        <span class="errorSpan vd f-error">*</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mob-flex">
-                                <div class="col-md-6 col-sm-6 lftfield">
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" class="checkbox" value="">
-                                                <span class="checkmark"></span>
-                                                Open an account
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" class="checkbox" value="">
-                                                <span class="checkmark"></span>
-                                                Get more information about a product
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" class="checkbox" value="">
-                                                <span class="checkmark"></span>
-                                                Report and issue with the website and services
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" class="checkbox" value="">
-                                                <span class="checkmark"></span>
-                                                Send Feedback
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" class="checkbox" value="">
-                                                <span class="checkmark"></span>
-                                                Work at Manasquan Bank
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" class="checkbox" value="">
-                                                <span class="checkmark"></span>
-                                                Other
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 rtfield">
-                                    <div class="form-group">
-                                        <label for="cntComments">Questions/Comments</label>
-                                        <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
-                                    </div>
-                                </div>
-                                <button class="btn-mansq pull-right btnManasq"><span>SUBMIT</span></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <section class="greyPanel specNeed">
-                <div class="containerWrapper">
-                    <div class="bgWrap">
-                        <div class="titleWrap">
-                            <h3>Do you have a specific need?</h3>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor
-                            tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi. Nam ipsum
-                            tortor, tempor aliquam ante non, condimentum finibus tortor. Suspendisse eleifend orci
-                            lorem, quis euismod lectus molestie eu. </p>
-                        <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor
-                                tristique.</b></p>
-                        <ul class="heroLinks">
-                            <li class="client-service"><a href=""><span class="heroLinksImage"><img src="images/about/client-services.png"></span>Client<br>
-                                    Services</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="joinEmail">
-                <div class="containerWrapper">
-                  <h2>
-                     JOIN OUR<br>
-                     EMAIL LIST
-                  </h2>
-                  <form class="" action="index.html" method="post">
-                    <div>
-                      <label>
-                        First Name
-                      </label>
-                      <input type="text" name="fname" value="" id="fname" class="txtBox">
-                    </div>
-                    <div>
-                      <label>
-                        last Name
-                      </label>
-                      <input type="text" name="lname" value="" id="lname" class="txtBox">
-                    </div>
-                    <div>
-                      <label>
-                        Email
-                      </label>
-                      <input type="text" name="email" value="" id="email" class="txtBox">
-                    </div>
-                    <div class="groupCheckbox">
-                      <div>
-                        <label>
-                          <span>Personal Banking</span>
-                          <input type="checkbox" name="personalbanking" value="" id="personalbanking" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Business Banking</span>
-                          <input type="checkbox" name="businessbanking" value="" id="businessbanking" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Digital Services</span>
-                          <input type="checkbox" name="digitalservices" value="" id="digitalservices" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Loans</span>
-                          <input type="checkbox" name="loans" value="" id="loans" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Work at Manasquan Bank</span>
-                          <input type="checkbox" name="work" value="" id="work" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Other</span>
-                          <input type="checkbox" name="other" value="" id="other" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="submit">
-                      <button type="button" name="button">Join</button>
-                    </div>
-                  </form>
-                </div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 lftfield">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control " required name="firstName" id="firstName">
+            <span class="errorSpan vd f-error">*</span>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control requiredFld" required name="lastName" id="lastName">
+            <span class="errorSpan vd f-error">*</span>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 rtfield">
+        <div class="form-group">
+            <label for="cntTelePhone">Telephone</label>
+            <input type="text" class="form-control" name="cntTelePhone" id="cntTelePhone">
+        </div>
+        <div class="form-group">
+            <label for="cntEmail">Email</label>
+            <input type="email" class="form-control" required name="cntEmail" id="cntEmail">
+            <span class="errorSpan vd f-error">*</span>
+        </div>
+    </div>
+</div>
+<div class="row mob-flex">
+    <div class="col-md-6 col-sm-6 lftfield">
+        <div class="form-group">
+            <div class="checkbox">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="checkbox" value="">
+                    <span class="checkmark"></span>
+                    Open an account
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="checkbox" value="">
+                    <span class="checkmark"></span>
+                    Get more information about a product
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="checkbox" value="">
+                    <span class="checkmark"></span>
+                    Report and issue with the website and services
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="checkbox" value="">
+                    <span class="checkmark"></span>
+                    Send Feedback
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="checkbox" value="">
+                    <span class="checkmark"></span>
+                    Work at Manasquan Bank
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="checkbox" value="">
+                    <span class="checkmark"></span>
+                    Other
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 rtfield">
+        <div class="form-group">
+            <label for="cntComments">Questions/Comments</label>
+            <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
+        </div>
+    </div>
+    <button class="btn-mansq pull-right btnManasq"><span>SUBMIT</span></button>
+</div>
+
+
