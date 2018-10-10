@@ -367,6 +367,8 @@ button span {
 .btnManasq, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply,
 button {
   position: relative;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
   overflow: hidden;
 }
 .btnManasq span, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply span,
@@ -404,6 +406,17 @@ button:hover::after {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
+}
+
+.error {
+  -webkit-animation: error 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: error 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .visibilityHide {
@@ -512,6 +525,30 @@ p {
   line-height: 22px;
 }
 
+.openAccount {
+  display: none;
+  position: fixed;
+  top: 20%;
+  right: 0;
+  z-index: 999;
+}
+.openAccount a {
+  background: #eb2837;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFF;
+  padding: 3px 7px 2px;
+  text-transform: uppercase;
+  -webkit-transform: perspective(1px) rotate(-90deg) translateY(-10px) translate3d(0, 0, 0);
+          transform: perspective(1px) rotate(-90deg) translateY(-10px) translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: block;
+  -webkit-transform-origin: right center;
+      -ms-transform-origin: right center;
+          transform-origin: right center;
+}
+
 @media screen and (min-width: 768px) {
   .containerWrapper {
     max-width: 728px;
@@ -547,6 +584,10 @@ p {
     font-size: 16px;
     line-height: 22px;
   }
+
+  .openAccount {
+    display: block;
+  }
 }
 @media screen and (min-width: 1024px) {
   .containerWrapper {
@@ -575,6 +616,14 @@ p {
   p {
     font-size: 18px;
     line-height: 24px;
+  }
+
+  .openAccount {
+    top: 13.4%;
+  }
+  .openAccount a {
+    font-size: 17px;
+    padding: 1px 10px 10px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -617,6 +666,14 @@ p {
   p {
     font-size: 18px;
     line-height: 32px;
+  }
+
+  .openAccount {
+    top: 16.3%;
+  }
+  .openAccount a {
+    font-size: 24px;
+    padding: 4px 14px 24px;
   }
 }
 @media screen and (min-width: 1360px) {
@@ -1156,18 +1213,18 @@ header .containerWrapper {
 .logo {
   display: inline-block;
   padding: 7px 0 10px 7px;
-  margin-right: 17px;
+  margin-right: 13px;
   max-width: 198px;
   float: left;
 }
 
 .headerWrapper {
   background: rgba(255, 255, 255, 0.87);
-  margin: 0 12px;
+  margin: 0 14px;
   position: relative;
   display: table;
-  width: -webkit-calc(100% - 24px);
-  width: calc(100% - 24px);
+  width: -webkit-calc(100% - 29px);
+  width: calc(100% - 29px);
 }
 
 .mLogin {
@@ -1271,10 +1328,10 @@ header .containerWrapper {
 }
 
 .mnavWrapper {
-  width: -webkit-calc(100% - 25px);
-  width: calc(100% - 25px);
+  width: -webkit-calc(100% - 29px);
+  width: calc(100% - 29px);
   min-height: 100%;
-  margin: 0 12px;
+  margin: 0 14px;
   overflow: hidden;
   position: absolute;
   z-index: 9;
@@ -1291,7 +1348,7 @@ header .containerWrapper {
 }
 .mnavWrapper .wraps {
   min-height: 100%;
-  max-width: 386px;
+  max-width: 382px;
   margin: 0 auto;
   overflow: visible;
 }
@@ -1453,6 +1510,9 @@ header + .loginBlocks .personalLogin p:last-child,
 header + .loginBlocks .businessLogin p:last-child {
   margin-left: 0 !important;
 }
+header + .loginBlocks .businessLogin p {
+  display: block;
+}
 header + .loginBlocks .businessLogin p a {
   margin-left: 0;
 }
@@ -1460,6 +1520,7 @@ header + .loginBlocks .businessLogin p a {
 @media screen and (min-width: 768px) {
   header {
     margin-top: 20px;
+    z-index: 9999;
   }
 
   .headerWrapper {
@@ -1521,6 +1582,17 @@ header + .loginBlocks .businessLogin p a {
   .menuWrapper .loginBlocks .personalLogin p,
   .menuWrapper .loginBlocks .businessLogin p {
     line-height: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .menuWrapper .loginBlocks .personalLogin p a:last-child,
   .menuWrapper .loginBlocks .businessLogin p a:last-child {
@@ -1554,12 +1626,12 @@ header + .loginBlocks .businessLogin p a {
   }
   .headerNav .topNav ul {
     float: right;
-    margin-right: 13px;
+    margin-right: 5px;
   }
   .headerNav .topNav li {
     display: inline-block;
     vertical-align: top;
-    padding-right: 7px;
+    padding-right: 10px;
     letter-spacing: 1px;
     position: relative;
   }
@@ -1586,7 +1658,7 @@ header + .loginBlocks .businessLogin p a {
             transition: all 0.75s;
   }
   .headerNav .topNav li.iWantto {
-    padding-right: 14px;
+    padding-right: 16px;
     margin-right: 7px;
     position: relative;
   }
@@ -1608,13 +1680,13 @@ header + .loginBlocks .businessLogin p a {
   .headerNav .topNav li.iWantto .subNav {
     opacity: 0;
     visibility: hidden;
-    min-width: 180px;
+    min-width: 100px;
     padding: 0 1px;
     background: #FFF;
     font-size: 11px;
     position: absolute;
-    top: 23px;
-    left: -4px;
+    top: 18px;
+    left: -20px;
     z-index: 99;
     -webkit-transform: translateY(10px);
         -ms-transform: translateY(10px);
@@ -1664,6 +1736,7 @@ header + .loginBlocks .businessLogin p a {
     margin-top: 17px;
     margin-right: 7px;
     margin-left: 7px;
+    text-transform: uppercase;
   }
   .mainNav a {
     display: inline-block;
@@ -1677,22 +1750,50 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     float: left;
-    padding: 0 8px 0 10px;
+    padding: 0 8px 6px 10px;
     /*display: inline-block;
     vertical-align: top;*/
+    cursor: pointer;
+  }
+  .mainNav ul li a {
     position: relative;
   }
-  .mainNav ul li::after {
+  .mainNav ul li a span {
+    display: block;
+    position: relative;
+  }
+  .mainNav ul li a span:after {
+    content: '';
+    background: #eb2837;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transition: all .75s;
+    transition: all .75s;
+  }
+  .mainNav ul li a::after {
     content: '';
     background: #262626;
     width: 1px;
     height: 28px;
     position: absolute;
     top: 2px;
-    right: 0;
+    right: -8px;
   }
   .mainNav ul li:first-child {
     padding-left: 0;
+  }
+  .mainNav ul li:hover a span::after {
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+            transform: scaleY(1);
   }
   .mainNav .search {
     width: 27px;
@@ -1705,10 +1806,11 @@ header + .loginBlocks .businessLogin p a {
   .mainNav .search .txtBox {
     width: 0;
     position: absolute;
-    right: 0;
-    top: 0;
-    -webkit-transition: all 0.55s;
-            transition: all 0.55s;
+    right: 196px;
+    margin-top: -7px;
+    opacity: 0;
+    -webkit-transition: all .55s;
+            transition: all .55s;
   }
   .mainNav .search .submit {
     display: inline-block;
@@ -1725,14 +1827,79 @@ header + .loginBlocks .businessLogin p a {
     height: 16px;
   }
   .mainNav .search.active .txtBox {
-    width: 361px;
-    background: #FFF;
-    height: 45px;
-    padding: 20px;
-    border: 1px solid #1b3d6e;
+    background: #eeeeee;
+    color: #666666;
+    width: 355px;
+    height: 31px;
+    padding: 0 20px;
+    opacity: 1;
   }
-  .mainNav .search.active .submit i {
-    margin-top: 10px;
+
+  .mainNav ul li:hover .SubmenuWrapper {
+    display: block;
+  }
+
+  .SubmenuWrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 83px;
+    display: none;
+  }
+  .SubmenuWrapper .borderLine {
+    display: none;
+  }
+  .SubmenuWrapper .bgWrap {
+    background: #e1edfe;
+    padding: 20px 30px;
+  }
+  .SubmenuWrapper .flexBox {
+    height: 454px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .SubmenuWrapper .flexBox .cols {
+    width: -webkit-calc( 100% / 3 );
+    width: calc( 100% / 3 );
+  }
+  .SubmenuWrapper h2 {
+    font-size: 22px;
+    color: #0066e4;
+    padding-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .SubmenuWrapper h3 {
+    font-size: 19px;
+    color: #3d3d3d;
+    text-transform: uppercase;
+  }
+  .SubmenuWrapper ul {
+    font-size: 17px;
+    padding-top: 5px;
+    text-transform: capitalize;
+  }
+  .SubmenuWrapper ul li {
+    float: none;
+    padding: 3px 12px 0 0;
+  }
+  .SubmenuWrapper ul li a::after {
+    display: none;
+  }
+  .SubmenuWrapper .cols {
+    padding-bottom: 20px;
+  }
+  .SubmenuWrapper .cols:last-child {
+    padding-bottom: 0;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1746,12 +1913,13 @@ header + .loginBlocks .businessLogin p a {
   }
   .headerNav .topNav ul {
     float: right;
+    margin-right: 9px;
   }
   .headerNav .topNav li {
-    padding-right: 18px;
+    padding-right: 19px;
   }
   .headerNav .topNav li.iWantto {
-    padding-right: 24px;
+    padding-right: 25px;
   }
   .headerNav .topNav li.iWantto .subNav {
     left: -15px;
@@ -1801,9 +1969,56 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     padding-right: 15px;
+    padding-bottom: 5px;
   }
-  .mainNav ul li::after {
-    right: 3px;
+  .mainNav ul li a::after {
+    right: -12px;
+  }
+  .mainNav .search .txtBox {
+    right: 250px;
+    margin-top: -7px;
+  }
+  .mainNav .search.active .txtBox {
+    width: 410px;
+    height: 31px;
+    padding: 0 15px;
+  }
+
+  .SubmenuWrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 83px;
+  }
+  .SubmenuWrapper .bgWrap {
+    padding: 30px 49px 0;
+  }
+  .SubmenuWrapper .flexBox {
+    height: 508px;
+  }
+  .SubmenuWrapper .flexBox .cols {
+    width: -webkit-calc( 100% / 3 );
+    width: calc( 100% / 3 );
+  }
+  .SubmenuWrapper h2 {
+    font-size: 24px;
+    padding-bottom: 25px;
+  }
+  .SubmenuWrapper h3 {
+    font-size: 20px;
+  }
+  .SubmenuWrapper ul {
+    font-size: 18px;
+    padding-top: 9px;
+  }
+  .SubmenuWrapper ul li {
+    padding: 7px 12px 0 0;
+  }
+  .SubmenuWrapper .cols {
+    padding-bottom: 36px;
+  }
+  .SubmenuWrapper .cols:last-child {
+    padding-bottom: 0;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1841,21 +2056,25 @@ header + .loginBlocks .businessLogin p a {
   .headerNav .topNav {
     font-size: 16px;
     margin-right: 0;
-    padding-right: 20px;
+    padding-right: 7px;
+  }
+  .headerNav .topNav ul {
+    margin-right: 0;
   }
   .headerNav .topNav li {
-    padding-right: 21px;
+    padding-right: 26px;
   }
   .headerNav .topNav li.iWantto {
-    padding-right: 26px;
+    padding-right: 36px;
   }
   .headerNav .topNav li.iWantto a::before {
     top: 7px;
     right: -16px;
   }
   .headerNav .topNav li.iWantto .subNav {
-    min-width: 237px;
+    min-width: 135px;
     padding-top: 4px;
+    top: 24px;
   }
   .headerNav .topNav li.iWantto .subNav li a {
     font-size: 16px;
@@ -1920,6 +2139,10 @@ header + .loginBlocks .businessLogin p a {
     margin-bottom: 11px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     text-align: right;
   }
   .menuWrapper .loginBlocks .businessLogin p a:last-child {
@@ -1939,17 +2162,98 @@ header + .loginBlocks .businessLogin p a {
     margin-top: 11px;
     padding-left: 10px;
   }
+  .mainNav .search .txtBox {
+    right: 346px;
+    margin-top: -11px;
+  }
+  .mainNav .search .submit {
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
   .mainNav .search .submit i {
     width: 26px;
     height: 24px;
   }
+  .mainNav .search.active .txtBox {
+    width: 545px;
+    height: 52px;
+  }
   .mainNav ul li {
     padding-right: 19px;
+    padding-bottom: 35px;
   }
-  .mainNav ul li::after {
+  .mainNav ul li a::after {
     height: 49px;
-    right: 5px;
+    right: -22px;
     top: 4px;
+  }
+  .mainNav ul li a span::after {
+    height: 8px;
+    bottom: -28px;
+  }
+
+  .SubmenuWrapper {
+    top: 153px;
+  }
+  .SubmenuWrapper .bgWrap {
+    padding: 23px 19px 0;
+  }
+  .SubmenuWrapper .borderLine {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .SubmenuWrapper .borderLine i {
+    background: #b3b3b3;
+    width: 1px;
+    min-height: 338px;
+    position: absolute;
+    top: 65px;
+  }
+  .SubmenuWrapper .borderLine i:nth-child(1) {
+    left: 19.8%;
+  }
+  .SubmenuWrapper .borderLine i:nth-child(2) {
+    left: 39.7%;
+  }
+  .SubmenuWrapper .borderLine i:nth-child(3) {
+    left: 59.6%;
+  }
+  .SubmenuWrapper .borderLine i:nth-child(4) {
+    left: 79.5%;
+  }
+  .SubmenuWrapper .flexBox {
+    height: 372px;
+  }
+  .SubmenuWrapper .flexBox .cols {
+    width: 230px;
+  }
+  .SubmenuWrapper .flexBox .cols.extWidth {
+    width: 235px;
+  }
+  .SubmenuWrapper h2 {
+    padding-bottom: 17px;
+  }
+  .SubmenuWrapper h2,
+  .SubmenuWrapper h3 {
+    padding-left: 10px;
+  }
+  .SubmenuWrapper ul {
+    padding-top: 9px;
+  }
+  .SubmenuWrapper ul li {
+    padding-top: 0;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .SubmenuWrapper ul li a {
+    display: block;
+    padding: 3px 11px 0;
+  }
+  .SubmenuWrapper ul li a:hover {
+    background: #1c3d6d;
+    color: #FFF;
   }
 }
 @media screen and (min-width: 1300px) {
@@ -1971,13 +2275,13 @@ header + .loginBlocks .businessLogin p a {
     padding-top: 26px;
   }
   .headerNav .topNav {
-    padding-right: 45px;
+    padding-right: 17px;
   }
   .headerNav .topNav ul li {
-    padding-right: 23px;
+    padding-right: 33px;
   }
   .headerNav .topNav ul li.iWantto {
-    padding-right: 34px;
+    padding-right: 45px;
   }
 
   .mainNav {
@@ -1985,6 +2289,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     padding-right: 27px;
+    padding-bottom: 27px;
   }
   .mainNav ul li a {
     line-height: 25px;
@@ -1993,6 +2298,42 @@ header + .loginBlocks .businessLogin p a {
     background-size: contain;
     width: 25px;
     height: 24px;
+  }
+  .mainNav .search.active .txtBox {
+    width: 585px;
+  }
+
+  .SubmenuWrapper .borderLine {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .SubmenuWrapper .borderLine i {
+    background: #b3b3b3;
+    width: 1px;
+    min-height: 338px;
+    position: absolute;
+    top: 65px;
+  }
+  .SubmenuWrapper .borderLine i:nth-child(1) {
+    left: -webkit-calc(100% - 952px);
+    left: calc(100% - 952px);
+  }
+  .SubmenuWrapper .borderLine i:nth-child(2) {
+    left: -webkit-calc(100% - 716px);
+    left: calc(100% - 716px);
+  }
+  .SubmenuWrapper .borderLine i:nth-child(3) {
+    left: -webkit-calc(100% - 480px);
+    left: calc(100% - 480px);
+  }
+  .SubmenuWrapper .borderLine i:nth-child(4) {
+    left: -webkit-calc(100% - 243px);
+    left: calc(100% - 243px);
+  }
+  .SubmenuWrapper .flexBox .cols.extWidth {
+    width: 290px;
   }
 }
 /*@import "tabletLandscape";
@@ -2605,7 +2946,7 @@ footer {
   width: 100%;
 }
 .bannerWrapper .bannerContent {
-  padding-top: 87px;
+  padding-top: 167px;
   position: relative;
   z-index: 9;
 }
@@ -2707,6 +3048,11 @@ footer {
   height: 36px;
   margin-bottom: 15px;
 }
+.loginBlocks .personalLogin .txtBox.error,
+.loginBlocks .businessLogin .txtBox.error {
+  background: #f2dede;
+  border: 1px solid red;
+}
 .loginBlocks .personalLogin ::-webkit-input-placeholder,
 .loginBlocks .businessLogin ::-webkit-input-placeholder {
   color: #363636;
@@ -2731,6 +3077,9 @@ footer {
   height: 36px;
   border: 1px solid #FFF;
   text-transform: uppercase;
+}
+.loginBlocks .businessLogin p {
+  display: block;
 }
 
 .bankingServices {
@@ -2845,7 +3194,7 @@ footer {
   text-transform: uppercase;
   text-align: left;
 }
-.bankingServices li h2 bold {
+.bankingServices li h2 strong {
   display: block;
   font-weight: 700;
 }
@@ -2854,7 +3203,7 @@ footer {
   font-weight: 400;
   color: #FFF;
 }
-.bankingServices li h3 bold {
+.bankingServices li h3 strong {
   font-weight: 700;
 }
 .bankingServices li.mortage .serviceContent {
@@ -2874,7 +3223,7 @@ footer {
   display: inline-block;
   font-style: normal;
 }
-.bankingServices li.mortage h3 bold {
+.bankingServices li.mortage h3 strong {
   font-size: 113px;
   display: inline-block;
   font-weight: 400;
@@ -2884,7 +3233,7 @@ footer {
   padding-left: 75px;
   width: 274px;
 }
-.bankingServices li.mortage h3 bold span {
+.bankingServices li.mortage h3 strong span {
   font-size: 62px;
   vertical-align: top;
   margin-top: -27px;
@@ -2914,7 +3263,7 @@ footer {
   line-height: 20px;
   text-transform: uppercase;
 }
-.bankingServices li.kasasa .serviceContent h3 bold {
+.bankingServices li.kasasa .serviceContent h3 strong {
   font-size: inherit;
 }
 .bankingServices li.kasasa .serviceContent .btnManasq, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply {
@@ -3223,6 +3572,9 @@ footer {
   color: #676767;
   padding: 0 15px;
 }
+.joinEmail .txtBox.error {
+  background: #f2dede;
+}
 .joinEmail div {
   margin-bottom: 32px;
 }
@@ -3386,14 +3738,14 @@ footer {
     font-size: 20px;
     line-height: 20px;
   }
-  .bankingServices ul li.mortage h3 bold {
+  .bankingServices ul li.mortage h3 strong {
     font-size: 40px;
     padding-left: 0;
     margin-top: 17px;
     line-height: 22px;
     letter-spacing: -1px;
   }
-  .bankingServices ul li.mortage h3 bold span {
+  .bankingServices ul li.mortage h3 strong span {
     font-size: 30px;
     margin-top: -9px;
     margin-left: -9px;
@@ -3412,7 +3764,7 @@ footer {
     line-height: 16px;
     margin-bottom: 6px;
   }
-  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 bold {
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
     font-weight: 700;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 sup {
@@ -3839,7 +4191,7 @@ footer {
     font-size: 28px;
     line-height: 27px;
   }
-  .bankingServices ul li.mortage h3 bold {
+  .bankingServices ul li.mortage h3 strong {
     font-size: 56px;
     margin-top: 32px;
   }
@@ -4163,12 +4515,12 @@ footer {
   .bankingServices ul li.mortage h3 span {
     font-weight: 400;
   }
-  .bankingServices ul li.mortage h3 bold {
+  .bankingServices ul li.mortage h3 strong {
     font-size: 126px;
     margin-top: 37px;
     text-align: right;
   }
-  .bankingServices ul li.mortage h3 bold span {
+  .bankingServices ul li.mortage h3 strong span {
     font-size: 66px;
     margin-top: -23px;
     margin-left: -30px;
@@ -5761,6 +6113,14 @@ footer {
   font-size: 48px;
   text-align: center;
   line-height: 48px;
+}
+@media (max-width: 991px) {
+  .contactForm .form-group .errorSpan {
+    width: 20px;
+    height: 20px;
+    line-height: 38px;
+    font-size: 38px;
+  }
 }
 .contactForm .form-group .errorSpan.f-success {
   background: #4caf50;
@@ -7690,15 +8050,13 @@ footer {
 .bioPage .heroBlock {
   margin-bottom: 99px;
 }
-@media (max-width: 1279px) {
-  .bioPage .heroBlock {
-    margin-bottom: 108px;
-  }
-}
 @media (max-width: 767px) {
   .bioPage .heroBlock {
     margin-bottom: 92px;
   }
+}
+.bioPage .heroBlock p {
+  color: #3d3d3d;
 }
 .bioPage .heroBlock .bgWrap {
   padding: 99px 140px 5px 140px;
@@ -7853,6 +8211,7 @@ footer {
   .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .phoneNo img {
     margin-right: 8px;
     vertical-align: middle;
+    width: 20px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btn-mansq {
@@ -7866,6 +8225,8 @@ footer {
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  border-radius: 15px;
+  line-height: 15px;
 }
 @media (max-width: 991px) {
   .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btn-mansq {
@@ -7875,6 +8236,7 @@ footer {
     width: 223px;
     margin-left: 10px;
     padding: 17px 30px;
+    line-height: 22px;
   }
 }
 @media (max-width: 767px) {
@@ -7887,6 +8249,8 @@ footer {
     margin-left: auto;
     margin-right: auto;
     display: inherit;
+    font-weight: bold;
+    line-height: 20px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioContent {
@@ -7901,6 +8265,7 @@ footer {
 @media (max-width: 767px) {
   .bioPage .heroBlock .bgWrap .bioContent {
     margin-top: 22px;
+    margin-bottom: 25px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioContent p {
@@ -7911,14 +8276,6 @@ footer {
   .bioPage .heroBlock .bgWrap .bioContent p {
     font-size: 16px;
     line-height: 19px;
-  }
-}
-.bioPage .heroBlock .bgWrap .bioInfos {
-  margin-bottom: 52px;
-}
-@media (max-width: 1279px) {
-  .bioPage .heroBlock .bgWrap .bioInfos {
-    margin-bottom: 29px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioInfos h5 {
@@ -7937,15 +8294,31 @@ footer {
   line-height: 22px;
   margin-bottom: 4px;
 }
+@media (max-width: 991px) {
+  .bioPage .heroBlock .bgWrap .bioInfos p {
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 767px) {
   .bioPage .heroBlock .bgWrap .bioInfos p {
     line-height: 20px;
-    margin-bottom: 11px;
+    font-size: 16px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioInfos ul {
   list-style: disc;
-  padding-left: 52px;
+  padding-left: 56px;
+  margin-bottom: 52px;
+}
+@media (max-width: 991px) {
+  .bioPage .heroBlock .bgWrap .bioInfos ul {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1279px) {
+  .bioPage .heroBlock .bgWrap .bioInfos ul {
+    margin-bottom: 29px;
+  }
 }
 @media (max-width: 767px) {
   .bioPage .heroBlock .bgWrap .bioInfos ul {
@@ -7958,6 +8331,16 @@ footer {
   font-size: 18px;
   margin-bottom: 2px;
 }
+@media (max-width: 991px) {
+  .bioPage .heroBlock .bgWrap .bioInfos ul li {
+    margin-bottom: -1px;
+  }
+}
+@media (max-width: 767px) {
+  .bioPage .heroBlock .bgWrap .bioInfos ul li {
+    font-size: 16px;
+  }
+}
 
 .back-btn {
   font-size: 18px;
@@ -7965,6 +8348,7 @@ footer {
   text-decoration: none;
   color: inherit;
   display: inline-block;
+  font-weight: bold;
 }
 @media (max-width: 1279px) {
   .back-btn {
@@ -7984,6 +8368,9 @@ footer {
 }
 .back-btn img {
   vertical-align: baseline;
+}
+.back-btn:hover {
+  color: #3d3d3d;
 }
 
 .locationPage .heroBlock .bgWrap .titleWrap h2 {
