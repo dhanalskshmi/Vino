@@ -11,7 +11,7 @@
         //padding: 0 20px;
     }
     @include bp(mobile) {
-        padding: 0 15px;
+        // padding: 0 15px;
     }
 }
 
@@ -149,27 +149,30 @@
 .heroLinks {
     text-align: center;
     padding-top: 22px;
+    display: flex;
+    justify-content: center;
     @include bp(landscape) {
         padding-top: 18px;
     }
+    @include bp(mobile){
+        flex-direction: column;
+    }
     li {
-        display: inline-block;
         a {
             position: relative;
             background: #1268e5;
-            min-width: 238px;
+            display: flex;
+            min-width: 240px;
             min-height: 83px;
-            font-size: 28px;
+            font-size: 27px;
             color: #fff;
-            padding: 6px 22px 10px 90px;
+            padding: 6px 22px 10px 105px;
             text-align: left;
             font-weight: bold;
             text-transform: uppercase;
             margin: 0px 11px;
-            color: #fff;
             text-decoration: none;
-            display: inline-block;
-            line-height: 35px;
+            line-height: 33px;
             letter-spacing: 1px;
             @include bp(landscape) {
                 font-size: 18px;
@@ -183,13 +186,23 @@
             @include bp(mobile) {
                 line-height: 25px;
                 margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                width: max-content;
+            }
+            &:hover{
+                background: #1552ab;
+            }
+            .heroLinksText{
+                display: flex;
+                align-items: center;
             }
             .heroLinksImage {
                 position: absolute;
-                width: 57px;
-                height: 55px;
-                left: 14px;
-                top: 14px;
+                width: 60px;
+                height: 60px;
+                left: 20px;
+                top: 11px;
                 img {
                     max-height: 100%;
                     max-width: 100%;
@@ -212,25 +225,17 @@
     }
     .find-us {
         a {
-            padding-left: 140px;
             background: #1a3d6e;
-            @include bp(landscape) {
-                padding-left: 70px;
-            }
-            @include bp(mobile) {
-                padding-left: 72px;
+            &:hover{
+                background: #0f2b52;
             }
         }
     }
     .call-us {
         a {
-            padding-left: 128px;
             background: #eb2837;
-            @include bp(landscape) {
-                padding-left: 70px;
-            }
-            @include bp(mobile) {
-                padding-left: 72px;
+            &:hover{
+                background: #b71b27;
             }
         }
     }
