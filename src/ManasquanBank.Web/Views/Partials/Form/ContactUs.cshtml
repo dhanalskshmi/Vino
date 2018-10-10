@@ -1,5 +1,15 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using ManasquanBank.Web.Models;
 
+@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm" }))
+{
+    if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
+    {
+        <div class="alert alert-warning">
+            <strong>Warning!</strong> @ViewBag.ErrorMessage
+        </div>
+    }
+    //string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
+    //string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
 <div class="row">
     <div class="col-md-6 col-sm-6 lftfield">
         <div class="form-group">
@@ -30,32 +40,32 @@
         <div class="form-group">
             <div class="checkbox">
                 <label class="custom-checkbox">
-                    <input type="checkbox" class="checkbox" value="">
+                    <input type="checkbox" class="checkbox" value="Open an account" name="checkboxs" id="checkbox1">
                     <span class="checkmark"></span>
                     Open an account
                 </label>
                 <label class="custom-checkbox">
-                    <input type="checkbox" class="checkbox" value="">
+                    <input type="checkbox" class="checkbox" value="Get more information about a product" name="checkboxs" id="checkbox2">
                     <span class="checkmark"></span>
                     Get more information about a product
                 </label>
                 <label class="custom-checkbox">
-                    <input type="checkbox" class="checkbox" value="">
+                    <input type="checkbox" class="checkbox" value="Report and issue with the website and services" name="checkboxs" id="checkbox3">
                     <span class="checkmark"></span>
                     Report and issue with the website and services
                 </label>
                 <label class="custom-checkbox">
-                    <input type="checkbox" class="checkbox" value="">
+                    <input type="checkbox" class="checkbox" value="Send Feedback" name="checkboxs" id="checkbox4">
                     <span class="checkmark"></span>
                     Send Feedback
                 </label>
                 <label class="custom-checkbox">
-                    <input type="checkbox" class="checkbox" value="">
+                    <input type="checkbox" class="checkbox" value="Work at Manasquan Bank" name="checkboxs" id="checkbox1">
                     <span class="checkmark"></span>
                     Work at Manasquan Bank
                 </label>
                 <label class="custom-checkbox">
-                    <input type="checkbox" class="checkbox" value="">
+                    <input type="checkbox" class="checkbox" value="Other" name="checkboxs" id="checkbox6">
                     <span class="checkmark"></span>
                     Other
                 </label>
@@ -69,6 +79,9 @@
         </div>
     </div>
     <button class="btn-mansq pull-right btnManasq"><span>SUBMIT</span></button>
+    <input type="hidden" id="adminEmail" name="AdminEmail" value="@Model.AdminEmail" />
+    <input type="hidden" id="confirmationEmail" name="ConfirmationEmail" value="@Model.ConfirmationEmail" />
 </div>
+}
 
 
