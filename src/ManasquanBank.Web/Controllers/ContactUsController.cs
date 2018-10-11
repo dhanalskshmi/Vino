@@ -65,7 +65,7 @@ namespace ManasquanBank.Web.Controllers
                 }
 
                 ModelState.Clear();
-                ViewBag.SuccessMessage = "Thank you for contacting us. We'll get back to you soon.";
+                ViewBag.SuccessMessage = "Thank you for contacting Manasquan Bank. Your message was sent successfully.";
             }
             catch (Exception ex)
             {
