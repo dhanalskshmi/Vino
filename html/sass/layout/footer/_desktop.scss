@@ -144,6 +144,9 @@ footer {
       }
       a {
         color: #FFF;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &.fLink {
         margin-bottom: 9px;
@@ -179,13 +182,13 @@ footer {
 
   footer {
     position: absolute;
-    padding: 18px 0 0;
+    padding: 17px 0 0;
   }
 
   .footerWraps {
     display: block;
-    margin: 0 49px;
-    padding-bottom: 23px;
+      margin: 0 50px;
+    padding-bottom: 22px;
     .fCols,
     .fCols2,
     .fCols3 {
@@ -209,10 +212,10 @@ footer {
   }
   .footerWraps {
     .fCols {
-      width: 49.367%;
+      width: 47.067%;
     }
     .fCols2 {
-      width: 32.382%;
+      width: 34.882%;
     }
     .fCols3 {
       width: 16%;
@@ -230,7 +233,7 @@ footer {
       p {
         font-size: 12px;
         line-height: 13px;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
       }
       ul {
         display: block;
@@ -265,10 +268,11 @@ footer {
           }
           &.uTube {
             a {
-              background-position: -11px -83px;
-              background-size: 42px 239px;
-              width: 20px;
+              background-position: -9px -76px;
+              background-size: 32px 219px;
+              width: 15px;
               height: 14px;
+              margin-top: 2px;
             }
           }
           &.tweet {
@@ -290,12 +294,14 @@ footer {
   }
 
   .fMenu {
-    padding-top: 19px;
+    padding-top: 0;
     margin-bottom: 18px;
+    max-width: 608px;
+    margin: 0 auto 18px;
     ul {
       li {
         font-size: 15px;
-        padding-bottom: 9px;
+        padding-bottom: 8px;
       }
     }
   }
@@ -321,7 +327,7 @@ footer {
       margin-top: 19px;
     }
     .partnersBlock {
-      margin-top: 14px;
+      margin-top: 9px;
       a {
         opacity: 0.4;
         transition: all 0.3s;
@@ -346,7 +352,7 @@ footer {
   }
 
   .fRow {
-    padding: 9px 0 5px;
+    padding: 10px 0 5px;
     ul {
       padding-left: 0;
       text-align: center;
@@ -379,6 +385,7 @@ footer {
           margin-top: 0;
           + li {
             margin-top: 0;
+            padding-top: 0;
           }
         }
       }
@@ -407,30 +414,35 @@ footer {
     }
   }
   .footerWraps {
-    padding-bottom: 10px;
+    padding-bottom: 29px;
+    margin: 0 26px;
   }
 
   .fMenu {
+    max-width: 814px;
     padding-top: 0;
     margin-bottom: 25px;
     ul {
       li {
         font-size: 20px;
-        padding-bottom: 11px;
+        padding-bottom: 9px;
       }
     }
   }
 
 
   .fCols {
+    width: 49.267%;
     figure {
       max-width: 282px;
     }
     .detailsWrap {
       margin-left: 88px;
+      margin-top: -3px;
       max-width: 234px;
       p {
         font-size: 16px;
+        font-weight: 700;
         line-height: 20px;
       }
       ul {
@@ -475,6 +487,8 @@ footer {
   }
 
   .fCols2 {
+    width: 34.299%;
+    padding-top: 10px;
     h3 {
       font-size: 18px;
       margin-bottom: -2px;
@@ -488,6 +502,7 @@ footer {
     }
   }
   .fCols3 {
+    width: 15.846%;
     figure {
       margin-top: 26px;
     }
@@ -509,13 +524,14 @@ footer {
     }
   }
   .fRow {
-    padding: 15px 0 13px;
+    padding: 16px 0 11px;
     ul {
       li {
         font-size: 16px;
         padding-right: 26px;
         &::after {
           height: 24px;
+          top: -6px;
         }
       }
     }
@@ -557,7 +573,7 @@ footer {
     padding: 30px 0 0;
   }
   .footerWraps {
-    padding-bottom: 37px;
+    padding-bottom: 38px;
     margin: 0;
   }
 
@@ -565,10 +581,11 @@ footer {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 42px;
+    max-width: 100%;
     ul {
       li {
         font-size: 24px;
-        padding-bottom: 26px;
+        padding-bottom: 25px;
       }
     }
   }
@@ -578,11 +595,14 @@ footer {
       max-width: 418px;
     }
     .detailsWrap {
-      padding-top: 8px;
+      padding-top: 10px;
       margin-left: 134px;
       max-width: 227px;
+      p {
+        line-height: 21px;
+      }
       ul {
-        margin-top: 31px;
+        margin-top: 27px;
         li {
           margin-right: 20px;
           a {
@@ -626,9 +646,10 @@ footer {
     }
   }
   .fCols2 {
+    padding-top: 20px;
     h3 {
       font-size: 23px;
-      margin-bottom: 13px;
+      margin-bottom: 6px;
     }
     p {
       font-size: 23px;
@@ -641,9 +662,10 @@ footer {
 
   .fCols3 {
     figure {
-      margin-top: 29px;
+      margin-top: 39px;
     }
     .partnersBlock {
+      margin-top: 50px;
       a {
         opacity: 1;
         &:hover {
@@ -655,12 +677,25 @@ footer {
         background-size: auto;
         width: 84px;
         height: 49px;
+        margin-top: 26px;
       }
       .lender {
         background-position: -8px -375px;
         background-size: auto;
         width: 67px;
         height: 67px;
+      }
+    }
+  }
+  .fRow {
+    padding: 23px 0 33px;
+    ul {
+      li {
+        font-size: 14px;
+        &::after {
+          height: 16px;
+          top: 0;
+        }
       }
     }
   }

@@ -539,7 +539,7 @@
     }
     h4 {
       font-size: 24px;
-      font-weight: 400;
+      font-weight: 700;
       color: #FFF;
       text-transform: uppercase;
       text-align: center;
@@ -744,7 +744,7 @@
       min-height: 432px;
     }
     .bannerContent {
-      padding-top: 157px;
+      padding-top: 154px;
       h1 {
         font-size: 31px;
         line-height: 33px;
@@ -775,7 +775,7 @@
   }
   .bankingServices {
     max-width: calc(100% - 152px);
-    padding-bottom: 69px;
+    padding-bottom: 61px;
     margin: -40px auto 0;
     .containerWrapper {
       padding: 0;
@@ -798,6 +798,13 @@
         .imgBlock {
           min-height: 154px;
         }
+        .serviceContent {
+          .title {
+            min-width: 107px;
+            max-width: 107px;
+            margin-bottom: 0;
+          }
+        }
         &.bunisessBank {
           border-right: none;
         }
@@ -819,6 +826,12 @@
           }
           h2 {
             padding-right: 34px;
+          }
+          .serviceContent {
+            .title {
+              min-width: 128px;
+              max-width: 128px;
+            }
           }
         }
         &.mortage {
@@ -850,11 +863,11 @@
             .detailBlock {
               width: 112px;
               padding-right: 5px;
-              padding-top: 11px;
+              padding-top: 13px;
               h3 {
                 font-weight: 400;
                 font-size: 18px;
-                line-height: 16px;
+                line-height: 15px;
                 margin-bottom: 6px;
                 strong {
                   font-weight: 700;
@@ -898,7 +911,7 @@
       //align-items: center
     }
     .wraps {
-      padding: 20px 24px 0;
+      padding: 22px 24px 0;
       position: relative;
     }
     .detailsWrap {
@@ -908,25 +921,26 @@
       max-width: 293px;
       display: inline-block;
       vertical-align: top;
-      padding-bottom: 48px;
+      padding-bottom: 44px;
       margin-right: 3px;
       border-radius: 24px;
       h2 {
         font-size: 21px;
-        margin-bottom: -4px;
-        line-height: 24px;
+        margin-bottom: 1px;
+        line-height: 26px;
         + p {
-          margin-top: 3px;
+          margin-top: -3px;
         }
       }
       h3 {
+        margin-bottom: 4px;
         + p {
           margin-top: -1px;
         }
       }
       p {
         font-size: 12px;
-        line-height: 13px;
+        line-height: 14px;
       }
       .btnManasq {
         font-size: 12px;
@@ -954,13 +968,16 @@
     position: relative;
     /*padding-left: 60px;
     padding-right: 60px;*/
-    margin-bottom: 42px;
+    margin-bottom: 38px;
     .bgWraps {
       padding-top: 36px;
-      padding-bottom: 11px;
+      padding-bottom: 13px;
       max-width: 728px;
       margin: 0 auto;
       position: relative;
+    }
+    .titleBlock {
+      margin-bottom: -3px;
     }
     .imgBlock {
       position: absolute;
@@ -977,7 +994,7 @@
     .detailBlock {
       h2,
       .wraps {
-        padding-left: 60px;
+        padding-left: 62px;
       }
     }
     .redBlock,
@@ -990,7 +1007,7 @@
       //max-width: calc(100% - 210px);
       //margin: 0 20px -4px;
       h2 {
-        line-height: 28px;
+        line-height: 27px;
       }
     }
     .redBlock {
@@ -1007,10 +1024,11 @@
       max-width: calc(100% - 210px);
     }
     .detailBlock {
-      padding-top: 7px;
+      padding-top: 11px;
       padding-bottom: 0;
       .wraps {
         max-width: 332px;
+        padding-left: 60px;
       }
       p {
         font-size: 15px;
@@ -1024,9 +1042,10 @@
 
   .appPannel {
     background: none;
+    padding-bottom: 86px;
     .bgWraps {
       background: #ec2c3a;
-      padding-bottom: 25px;
+      padding-bottom: 15px;
       position: relative;
     }
     .imgDesg {
@@ -1036,7 +1055,7 @@
       left: -23px;
     }
     .appStores {
-      padding: 12px 0 4px 0;
+      padding: 14px 0 4px 0;
       figure {
         display: inline-block;
         max-width: 108px;
@@ -1045,23 +1064,26 @@
         text-align: right;
         &:last-child {
           margin-right: 0;
+          margin-left: 10px;
         }
       }
     }
     .appDetails {
-      max-width: 496px;
-      padding-top: 16px;
-      padding-right: 40px;
+      max-width: 502px;
+      padding-top: 22px;
+      padding-right: 24px;
       margin-left: auto; // TO align right
       text-align: right;
     }
     h2 {
-      font-size: 45px;
-      padding-bottom: 12px;
+      font-size: 52px;
+      font-weight: 700;
+      padding-bottom: 11px;
     }
     p {
       font-size: 15px;
-      line-height: 20px;
+      line-height: 18px;
+      font-weight: 700;
     }
   }
 
@@ -1070,20 +1092,21 @@
   .knowledgePannel {
     background: none;
     padding: 0;
-    margin-bottom: 46px;
+    margin-bottom: 44px;
     .bgWraps {
       background: #1b3d6e;
-      padding: 17px 0;
+      padding: 29px 0 17px;
     }
     h2 {
-      font-size: 25px;
+      font-size: 28px;
+      line-height: 19px;
     }
     ul {
-      padding: 29px 59px 17px;
+      padding: 29px 49px 15px;
       display: flex;
       flex-wrap: wrap;
       align-items: top;
-      justify-content: space-around;
+      justify-content: space-between;
       overflow: hidden;
       text-align: center;
       li {
@@ -1098,7 +1121,7 @@
         max-width: 69px;
         margin: 0 auto;
         padding: 0;
-        min-height: 63px;
+        min-height: 67px;
       }
       h4 {
         font-size: 16px;
@@ -1106,17 +1129,17 @@
     }
     .btnManasq {
       font-size: 12px;
-      padding: 3px 12px;
+      padding: 4px 19px;
     }
   }
 
   // Events Pannel
 
   .eventsPannel {
-    padding: 24px 0 17px;
+    padding: 19px 0 17px;
     h2 {
       font-size: 28px;
-      padding-bottom: 18px;
+      padding-bottom: 13px;
     }
     ul {
       display: flex;
@@ -1134,28 +1157,28 @@
   // Join Our Email
 
   .joinEmail {
-    padding: 29px 0 25px;
+    padding: 24px 0 25px;
     h2 {
       font-size: 23px;
-      padding-bottom: 7px;
+      padding-bottom: 1px;
       br {
         display: none;
       }
     }
     label {
       font-size: 16px;
-      margin-bottom: 0;
+      margin-bottom: -1px;
     }
     .txtBox {
       font-size: 16px;
       height: 31px;
     }
     .submit {
-      margin-top: 13px;
+      margin-top: 8px;
       margin-bottom: 0;
       button {
         font-size: 12px;
-        padding: 2px 21px 4px;
+        padding: 2px 21px 1px;
       }
     }
     form {
@@ -1164,7 +1187,7 @@
         vertical-align: top;
         width: 30.03%;
         margin-right: 33px;
-        margin-bottom: 16px;
+        margin-bottom: 3px;
         &:nth-child(3) {
           margin-right: 0;
         }
@@ -1183,7 +1206,7 @@
           justify-content: space-between;
           margin: 0 auto;
           div {
-            margin-bottom: 8px;
+            margin-bottom: 9px;
             margin-right: 0;
             .checkbox {
               width: 12px;
@@ -1227,10 +1250,10 @@
       min-height: 576px;
     }
     .bannerContent {
-      padding-top: 204px;
+      padding-top: 195px;
       h1 {
         font-size: 38px;
-        line-height: 44px;
+        line-height: 43px;
         padding-left: 44px;
         span {
           &:nth-child(1) {
@@ -1263,6 +1286,8 @@
     //max-width: 861px;
     max-width: 83.593%;
     margin-top: -92px;
+    padding-bottom: 0;
+    margin-bottom: 52px;
     .containerWrapper {
       padding: 0;
     }
@@ -1272,12 +1297,19 @@
         max-width: 28.224%;
         min-height: 223px;
         max-height: 223px;
+        .serviceContent {
+          .title {
+            min-width: 150px;
+            max-width: 150px;
+          }
+        }
         .imgBlock {
           min-height: 223px;
         }
         h2 {
           font-size: 28px;
-          line-height: 27px;
+          line-height: 26px;
+          padding-bottom: 13px;
         }
         &.bunisessBank,
         &.mortage {
@@ -1289,6 +1321,12 @@
           max-width: 43.438%;
           min-height: 239px;
           max-height: 239px;
+          .serviceContent {
+            .title {
+              min-width: 170px;
+              max-width: 170px;
+            }
+          }
           .imgBlock {
             min-height: 239px;
           }
@@ -1297,12 +1335,13 @@
           }
         }
         &.mortage {
+          padding: 30px 0 0;
           h3 {
             font-size: 28px;
             line-height: 27px;
             strong {
               font-size: 56px;
-              margin-top: 32px;
+              margin-top: 33px;
             }
           }
         }
@@ -1311,6 +1350,7 @@
           .serviceContent {
             .detailBlock {
               width: 150px;
+              padding-top: 19px;
               h3 {
                 font-size: 25px;
                 margin-bottom: 5px;
@@ -1319,7 +1359,8 @@
             }
             .btnManasq {
               font-size: 10px;
-              padding: 6px 11px;
+              padding: 5px 12px;
+              border-radius: 20px;
             }
           }
 
@@ -1335,19 +1376,27 @@
   // Blue Pannel
 
   .bluePannel {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    .bgWraps {
+      padding: 31px 29px;
+    }
     .wraps {
-      padding: 28px 19px 0;
+      padding: 26px 19px 0;
     }
     .detailsWrap {
-      max-width: 379px;
+      max-width: 377px;
       padding-bottom: 54px;
       h2 {
         font-size: 26px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+        line-height: 30px;
+        + p {
+          margin-top: -7px;
+        }
       }
       h3 {
         font-size: 21px;
+        margin-bottom: 5px;
       }
       p {
         font-size: 16px;
@@ -1358,9 +1407,10 @@
       }
       .btnManasq {
         font-size: 15px;
-        padding: 5px 21px 6px;
+        padding: 5px 27px;
         margin-top: 0;
         bottom: 16px;
+        border-radius: 25px;
       }
     }
   }
@@ -1369,13 +1419,13 @@
   // Community Pannel
 
   .communityPannel {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
     .titleBlock,
     .redBlock,
     .detailBlock {
       h2,
       .wraps {
-        padding-left: 72px;
+        padding-left: 70px;
       }
     }
     .bgWraps {
@@ -1390,7 +1440,7 @@
       //margin: 0 59px;
       h2 {
         font-size: 38px;
-        line-height: 34px;
+        line-height: 33px;
       }
     }
     .titleBlock {
@@ -1398,10 +1448,11 @@
       margin-bottom: -4px;
     }
     .detailBlock {
-      padding-top: 11px;
+      padding-top: 12px;
       p {
         font-size: 18px;
         line-height: 19px;
+        margin-bottom: 14px;
       }
     }
     .imgBlock {
@@ -1412,55 +1463,66 @@
         height: 348px;
       }
     }
+    .redBlock {
+      padding-top: 15px;
+      padding-bottom: 6px;
+      h2 {
+        line-height: 39px;
+      }
+    }
   }
 
   // App Pannel
 
   .appPannel {
-    padding-bottom: 102px;
+    padding-bottom: 108px;
     .bgWraps {
       padding-bottom: 30px;
+      margin-left: 34px;
     }
     .appDetails {
       max-width: 551px;
+      padding-top: 32px;
       padding-right: 0;
-      margin-right: 54px;
+      margin-right: 34px;
     }
     h2 {
-      font-weight: 700;
       font-size: 62px;
+      padding-bottom: 17px;
     }
     p {
       font-size: 18px;
-      line-height: 22px;
+      line-height: 21px;
     }
     .appStores {
       padding-top: 17px;
       figure {
         max-width: 126px;
-        margin-right: 6px;
+        margin-right: 0;
       }
     }
     .imgDesg {
       max-width: 278px;
       top: -31px;
+      left: -36px;
     }
   }
 
   // Knowledge Pannel
 
   .knowledgePannel {
+    margin-bottom: 41px;
     .bgWraps {
-      padding: 26px 0 25px;
+      padding: 40px 0 22px;
     }
     h2 {
       font-size: 35px;
     }
     ul {
-      padding: 29px 30px 21px;
+      padding: 46px 59px 20px;
       figure {
         max-width: 84px;
-        min-height: 81px;
+        min-height: 83px;
       }
       h4 {
         font-size: 20px;
@@ -1475,10 +1537,10 @@
   // Current Events
 
   .eventsPannel {
-    padding: 30px 0 33px;
+    padding: 28px 0 34px;
     h2 {
       font-size: 35px;
-      padding-bottom: 40px;
+      padding-bottom: 37px;
     }
     .eventHead {
       margin-bottom: 15px;
@@ -1507,14 +1569,15 @@
   // Join Email
 
   .joinEmail {
-    padding: 45px 0 30px;
+    padding: 40px 0 30px;
     h2 {
       font-size: 30px;
-      padding-bottom: 14px;
+      padding-bottom: 9px;
     }
     label {
       font-size: 21px;
-      margin-bottom: 2px;
+      margin-bottom: 0;
+      line-height: 20px;
     }
     .txtBox {
       height: 41px;
@@ -1523,7 +1586,7 @@
       div {
         width: 30.239%;
         margin-right: 39px;
-        margin-bottom: 21px;
+        margin-bottom: 14px;
         &.groupCheckbox {
           width: 100%;
           div {
@@ -1534,7 +1597,7 @@
             .checkbox {
               width: 16px;
               height: 16px;
-              top: -8px;
+              top: -10px;
               &::after {
                 width: 6px;
                 height: 10px;
@@ -1545,7 +1608,7 @@
           }
         }
         &.submit {
-          margin-top: 20px;
+          margin-top: 17px;
           button {
             font-size: 16px;
             padding: 2px 29px 3px;
@@ -1558,6 +1621,14 @@
 
 }
 
+@media screen and (min-width: 1263px) {
+
+  .bluePannel {
+    .detailsWrap {
+      max-width: calc(50% - 77px);
+    }
+  }
+}
 @media screen and (min-width: $base - 16px) {
 
   .communityPannel {
@@ -1591,10 +1662,10 @@
       min-height: 965px;
     }
     .bannerContent {
-      padding-top: 284px;
+      padding-top: 288px;
       h1 {
         font-size: 63px;
-        line-height: 68px;
+        line-height: 66px;
         padding-left: 0;
         span {
           &:nth-child(2) {
@@ -1621,6 +1692,7 @@
   .bankingServices {
     max-width: 1240px;
     margin-top: -161px;
+    margin-bottom: 112px;
     ul {
       li {
         max-width: 328px;
@@ -1630,6 +1702,12 @@
         .imgBlock {
           min-height: 336px;
           transition: all 0.75s;
+        }
+        .serviceContent {
+          .title {
+            min-width: 203px;
+            max-width: 203px;
+          }
         }
         &:hover {
           .imgBlock {
@@ -1653,9 +1731,25 @@
             min-height: 352px;
           }
         }
+        &.personalBank {
+          .serviceContent {
+            .title {
+              min-width: 253px;
+              max-width: 253px;
+            }
+          }
+        }
+        &.didgitalCenter {
+          .serviceContent {
+            .title {
+              min-width: 205px;
+              max-width: 205px;
+            }
+          }
+        }
         &.mortage {
           .serviceContent {
-            padding: 42px 0 0;
+            padding: 15px 0 0 27px;
           }
           h3 {
             font-weight: 700;
@@ -1666,8 +1760,9 @@
             }
             strong {
               font-size: 126px;
-              margin-top: 37px;
-              text-align: right;
+              padding-left: 60px;
+              margin-top: 43px;
+              text-align: left;
               span {
                 font-size: 66px;
                 margin-top: -23px;
@@ -1705,14 +1800,20 @@
   //Blue Pannel
 
   .bluePannel {
-    margin-bottom: 57px;
+    margin-bottom: 55px;
+    .bgWraps {
+      padding: 49px 41px 55px;
+    }
+    .wraps {
+      padding: 31px 45px 0;
+    }
     .detailsWrap {
       max-width: calc(50% - 81.5px);
-      padding-bottom: 89px;
+      padding-bottom: 95px;
       margin-right: 5px;
       h2 {
         font-size: 36px;
-        line-height: 44px;
+        line-height: 43px;
         margin-bottom: -1px;
         + p {
           margin-top: 5px;
@@ -1721,6 +1822,7 @@
       h3 {
         font-size: 31px;
         margin-bottom: 9px;
+        line-height: 32px;
         + p {
           margin-top: 0;
         }
@@ -1731,7 +1833,7 @@
       }
       .btnManasq {
         font-size: 19px;
-        padding: 12px 22px;
+        padding: 8px 41px 9px;
         border-radius: 23px;
         bottom: 25px;
       }
@@ -1758,12 +1860,13 @@
     .redBlock {
       h2 {
         font-size: 63px;
-        line-height: 53px;
+        line-height: 55px;
       }
     }
     .titleBlock {
+      padding-top: 16px;
       padding-bottom: 0;
-      margin: 0 20px -4px;
+      margin: 0 20px -7px;
       max-width: 100%;
       .containerWrapper {
         padding: 0;
@@ -1774,22 +1877,24 @@
     }
     .redBlock {
       max-width: 1113px;
-      padding-bottom: 24px;
+      padding-top: 18px;
+      padding-bottom: 21px;
       margin: 0 auto;
       transform: translateX(-64px);
       h2 {
         padding-left: 104px;
+        line-height: 51px;
       }
     }
     .detailBlock {
       padding-top: 26px;
       .wraps {
         margin-left: 116px;
-        padding-left: 0;
+        padding-left: 2px;
       }
       p {
         font-size: 18px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
       .btnManasq {
         font-size: 19px;
@@ -1810,19 +1915,21 @@
   // App Pannel
 
   .appPannel {
-    margin-bottom: 90px;
+    margin-bottom: 154px;
     padding-top: 0;
+    padding-bottom: 0;
     .bgWraps {
-      padding-bottom: 46px;
+      padding-bottom: 38px;
     }
     h2 {
       font-size: 81px;
-      padding-top: 50px;
-      padding-bottom: 42px;
+      font-weight: 400;
+      padding-top: 20px;
+      padding-bottom: 37px;
     }
     p {
       font-size: 26px;
-      line-height: 25px;
+      line-height: 26px;
     }
     .appDetails {
       max-width: 731px;
@@ -1830,9 +1937,10 @@
     .imgDesg {
       max-width: 408px;
       top: -56px;
+      left: -55px;
     }
     .appStores {
-      padding-top: 41px;
+      padding-top: 40px;
       figure {
         max-width: 185px;
       }
@@ -1844,13 +1952,13 @@
   .knowledgePannel {
     margin-bottom: 73px;
     .bgWraps {
-      padding: 35px 0;
+      padding: 49px 0 31px;
     }
     h2 {
       font-size: 50px;
     }
     ul {
-      padding: 66px 38px 41px;
+      padding: 89px 86px 40px;
       h4 {
         font-size: 24px;
       }
@@ -1869,7 +1977,7 @@
   // Current Events
 
   .eventsPannel {
-    padding: 37px 0 58px;
+    padding: 38px 0 58px;
     h2 {
       font-size: 47px;
       padding-bottom: 45px;
@@ -1912,14 +2020,14 @@
   // Join Email
 
   .joinEmail {
-    padding: 34px 0 32px;
+    padding: 43px 0 32px;
     h2 {
       font-size: 47px;
       padding-bottom: 32px;
     }
     label {
       font-size: 24px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .txtBox {
       height: 60px;
@@ -1927,7 +2035,7 @@
     form {
       div {
         width: 31.03%;
-        margin-bottom: 35px;
+        margin-bottom: 32px;
         &.groupCheckbox {
           width: 100%;
           margin: 0;
@@ -1939,6 +2047,7 @@
             .checkbox {
               width: 24px;
               height: 24px;
+              top: -14px;
               &::after {
                 width: 8px;
                 height: 14px;
@@ -1950,6 +2059,7 @@
           }
         }
         &.submit {
+          margin-top: 31px;
           button {
             font-size: 28px;
             padding: 3px 43px 5px;
