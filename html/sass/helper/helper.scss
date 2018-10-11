@@ -593,6 +593,9 @@ p {
     backface-visibility: hidden;
     display: block;
     transform-origin: right center;
+    &:hover {
+      background: #de0d1d;
+    }
   }
 }
 

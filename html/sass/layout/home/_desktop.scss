@@ -156,7 +156,7 @@
 }
 
 .bankingServices {
-  margin-top: -67px;
+  margin-top: -62px;
   position: relative;
   //z-index: 9999;
   ul {
@@ -238,7 +238,7 @@
     }
     h2 {
       font-size: 32px;
-      font-weight: 400;
+      font-weight: 700;
       color: #FFF;
       padding-right: 31px;
       padding-bottom: 9px;
@@ -247,7 +247,7 @@
       text-align: left;
       strong {
         display: block;
-        font-weight: 700;
+        font-weight: 400;
       }
     }
     h3 {
@@ -258,7 +258,14 @@
         font-weight: 700;
       }
     }
-
+    &.didgitalCenter,
+    &.bunisessBank {
+      .serviceContent {
+        .title {
+          min-width: 177px;
+        }
+      }
+    }
     &.mortage {
       .serviceContent {
         padding: 31px 20px 17px;
@@ -352,7 +359,7 @@
   }
   .detailsWrap {
     color: #FFF;
-    padding-bottom: 12px;
+    padding-bottom: 14px;
     border: 1px solid #FFF;
     border-radius: 15px;
     position: relative;
@@ -814,6 +821,23 @@
         &.bunisessBank,
         &.mortage {
           margin-top: 12px;
+        }
+        &.didgitalCenter,
+        &.bunisessBank {
+          .serviceContent {
+            .title {
+              min-width: 105px;
+              max-width: 105px;
+            }
+          }
+        }
+        &.clentService {
+          .serviceContent {
+            .title {
+              min-width: 103px;
+              max-width: 103px;
+            }
+          }
         }
         &.personalBank,
         &.didgitalCenter {
@@ -1334,8 +1358,17 @@
             padding-right: 47px;
           }
         }
+        &.clentService,
+        &.bunisessBank {
+          .serviceContent {
+            .title {
+              min-width: 149px;
+              max-width: 149px;
+            }
+          }
+        }
         &.mortage {
-          padding: 30px 0 0;
+          padding: 29px 0 0;
           h3 {
             font-size: 28px;
             line-height: 27px;
@@ -1343,6 +1376,9 @@
               font-size: 56px;
               margin-top: 33px;
             }
+          }
+          .serviceContent {
+            padding: 0 35px 0;
           }
         }
         &.kasasa {
@@ -1696,11 +1732,11 @@
     ul {
       li {
         max-width: 328px;
-        min-height: 336px;
-        max-height: 336px;
+        min-height: 338px;
+        max-height: 338px;
         overflow: hidden;
         .imgBlock {
-          min-height: 336px;
+          min-height: 338px;
           transition: all 0.75s;
         }
         .serviceContent {
@@ -1719,16 +1755,25 @@
         }
         h2 {
           font-size: 43px;
-          line-height: 37px;
+          line-height: 39px;
           transition: all 0.75s;
+        }
+        &.clentService,
+        &.bunisessBank {
+          .serviceContent {
+            .title {
+              min-width: 205px;
+              max-width: 205px;
+            }
+          }
         }
         &.personalBank,
         &.didgitalCenter {
           max-width: 584px;
-          min-height: 352px;
-          max-height: 352px;
+          min-height: 354px;
+          max-height: 354px;
           .imgBlock {
-            min-height: 352px;
+            min-height: 354px;
           }
         }
         &.personalBank {
@@ -1740,10 +1785,11 @@
           }
         }
         &.didgitalCenter {
+          border-top: none;
           .serviceContent {
             .title {
-              min-width: 205px;
-              max-width: 205px;
+              min-width: 252px;
+              max-width: 252px;
             }
           }
         }
@@ -1773,6 +1819,7 @@
         }
         &.kasasa {
           overflow: visible;
+          border-top: none;
           .serviceContent {
             .detailBlock {
               width: 202px;
@@ -1903,7 +1950,7 @@
       }
     }
     .imgBlock {
-      top: 24px;
+      top: 27px;
       right: 0;
       figure {
         width: 501px;

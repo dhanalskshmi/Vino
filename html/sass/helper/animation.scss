@@ -1,200 +1,22 @@
 // Open Animation
 
 
-.animatable {
-  //transition: all 0.35s;
-  &.bannerWrapper {
-    .bannerContent {
-      h1 {
-        br {
-          display: none;
-        }
-        span {
-          font-style: normal;
-          display: block;
-          opacity: 0;
-          //animation-delay: 1s;
-        }
-      }
-    }
-  }
-  .bankingServices {
-    ul {
-      li {
-        &.bunisessBank {
-          opacity: 0;
-          transform: scale(1.1) translateX(-50px) translateY(-50px);
-          transition: all 1s;
-        }
-        &.mortage {
-          opacity: 0;
-          transform: scale(1.1) translateX(50px) translateY(-50px);
-          transition: all 1s;
-        }
-        &.personalBank {
-          opacity: 0;
-          transform: translateY(15%);
-          transition: all 0.75s;
-        }
-      }
-      &.animateIt {
-        li {
-          &.bunisessBank,
-          &.mortage {
-            opacity: 1;
-            transform: scale(1) translateX(0) translateY(0);
-          }
-          &.personalBank {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+@media screen and (min-width: $base) {
 
-      }
-    }
-  }
-  &.bluePannel {
-    opacity: 0;
-    transform: translateY(20%) scale(0.95);
-    transition-delay: 2s;
-    transition: all 0.75s;
-  }
-  &.communityPannel {
-    .imgBlock {
-      //opacity: 0.6;
-      transform: translateX(-13%);
-      transition-delay: 2.5s;
-      transition: all 1.5s;
-    }
-  }
-  &.appPannel {
-    .imgDesg {
-      opacity: 0;
-      transform: translateX(20%);
-      transform-origin: 0% 34%;
-      transition-delay: 2s;
-      transition: all 2s cubic-bezier(.175,.885,.32,1.275);
-    }
-  }
-  &.knowledgePannel {
-    ul {
-      li {
-        opacity: 0;
-        transform: scale(0);
-        //transition-delay: 2.3s;
-        transition: all .6s cubic-bezier(.175,.885,.32,1.275);
-        &:nth-child(2) {
-          transition-delay: 0.3s;
-        }
-        &:nth-child(3) {
-          transition-delay: 0.6s;
-        }
-        &:nth-child(4) {
-          transition-delay: 0.9s;
-        }
-      }
-    }
-  }
-  &.animate-in {
+  .animatable {
+    //transition: all 0.35s;
     &.bannerWrapper {
       .bannerContent {
         h1 {
+          br {
+            display: none;
+          }
           span {
-            animation: lftRgt .5s forwards;
-            animation-delay: 1s;
-            opacity: 0;
-            &:nth-child(2) {
-              animation: lftRgt .8s forwards;
-              animation-delay: 1s;
-              opacity: 0;
-            }
-
-
-          }
-          strong {
+            font-style: normal;
             display: block;
-            b {
-              animation: lftRgt 1.1s forwards;
-              animation-delay: 1s;
-              opacity: 0;
-              &:nth-child(2) {
-                animation: lftRgt 1.4s forwards;
-                animation-delay: 1s;
-                opacity: 0;
-              }
-              &:nth-child(3) {
-                animation: lftRgt 1.7s forwards;
-                animation-delay: 1s;
-                opacity: 0;
-              }
-            }
-
+            opacity: 0;
+            //animation-delay: 1s;
           }
-        }
-      }
-    }
-    &.bankingServices {
-      ul {
-        li {
-          &.bunisessBank,
-          &.mortage {
-            opacity: 1;
-            transform: scale(1) translateX(0) translateY(0);
-          }
-          &.personalBank {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      }
-    }
-    /*
-    li {
-      &.bunisessBank,
-      &.mortage {
-        opacity: 1;
-        transform: scale(1) translateX(0) translateY(0);
-      }
-      &.personalBank {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    */
-
-    &.bluePannel {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    &.communityPannel {
-      .imgBlock {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    &.appPannel {
-      .imgDesg {
-        opacity: 1;
-        transform: translateX(0);
-        transform-origin: center;
-      }
-    }
-    &.knowledgePannel {
-      ul {
-        li {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    }
-
-  }
-  &.animate-out {
-    &.bannerWrapper {
-      .bannerContent {
-        h1 {
-          opacity: 0;
         }
       }
     }
@@ -235,14 +57,16 @@
     }
     &.bluePannel {
       opacity: 0;
-      transform: translateY(20%);
+      transform: translateY(20%) scale(0.95);
+      transition-delay: 2s;
       transition: all 0.75s;
     }
     &.communityPannel {
       .imgBlock {
-        opacity: 1;
-        transform: translateX(0);
-        transition: all 0.75s;
+        //opacity: 0.6;
+        transform: translateX(-13%);
+        transition-delay: 2.5s;
+        transition: all 1.5s;
       }
     }
     &.appPannel {
@@ -250,83 +74,83 @@
         opacity: 0;
         transform: translateX(20%);
         transform-origin: 0% 34%;
-        transition: all 0.75s;
+        transition-delay: 2s;
+        transition: all 2s cubic-bezier(.175,.885,.32,1.275);
       }
     }
-  }
-
-}
-
-
-.bannerWrapper {
-  .bannerContent {
-    h1 {
-      br {
-        display: none;
-      }
-      span,
-      b {
-        font-style: normal;
-        display: block;
-        opacity: 0;
-      }
-    }
-  }
-  &.animateIt {
-    .bannerContent {
-      h1 {
-        span {
-          animation: lftRgt .5s forwards;
+    &.knowledgePannel {
+      ul {
+        li {
           opacity: 0;
+          transform: scale(0);
+          //transition-delay: 2.3s;
+          transition: all .6s cubic-bezier(.175,.885,.32,1.275);
           &:nth-child(2) {
-            animation: lftRgt .8s forwards;
-            opacity: 0;
+            transition-delay: 0.3s;
           }
-
-
-        }
-        strong {
-          display: block;
-          span {
-            animation: lftRgt 1.1s forwards;
-            opacity: 0;
-            &:nth-child(2) {
-              animation: lftRgt 1.4s forwards;
-              opacity: 0;
-            }
-            &:nth-child(3) {
-              animation: lftRgt 1.7s forwards;
-              opacity: 0;
-            }
+          &:nth-child(3) {
+            transition-delay: 0.6s;
           }
-
+          &:nth-child(4) {
+            transition-delay: 0.9s;
+          }
         }
       }
     }
-  }
+    &.animate-in {
+      &.bannerWrapper {
+        .bannerContent {
+          h1 {
+            span {
+              animation: lftRgt .5s forwards;
+              animation-delay: 1s;
+              opacity: 0;
+              &:nth-child(2) {
+                animation: lftRgt .8s forwards;
+                animation-delay: 1s;
+                opacity: 0;
+              }
 
-}
 
-/*.bankingServices {
-  ul {
-    li {
-      &.bunisessBank {
-        opacity: 0;
-        transform: scale(1.1) translateX(-50px) translateY(-50px);
-        transition: all 1s;
+            }
+            strong {
+              display: block;
+              b {
+                animation: lftRgt 1.1s forwards;
+                animation-delay: 1s;
+                opacity: 0;
+                &:nth-child(2) {
+                  animation: lftRgt 1.4s forwards;
+                  animation-delay: 1s;
+                  opacity: 0;
+                }
+                &:nth-child(3) {
+                  animation: lftRgt 1.7s forwards;
+                  animation-delay: 1s;
+                  opacity: 0;
+                }
+              }
+
+            }
+          }
+        }
       }
-      &.mortage {
-        opacity: 0;
-        transform: scale(1.1) translateX(50px) translateY(-50px);
-        transition: all 1s;
+      &.bankingServices {
+        ul {
+          li {
+            &.bunisessBank,
+            &.mortage {
+              opacity: 1;
+              transform: scale(1) translateX(0) translateY(0);
+            }
+            &.personalBank {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
       }
-      &.personalBank {
-        opacity: 0;
-        transform: translateY(15%);
-        transition: all 0.75s;
-      }
-    }
-    &.animateIt {
+      /*
       li {
         &.bunisessBank,
         &.mortage {
@@ -339,9 +163,190 @@
         }
       }
 
+      */
+
+      &.bluePannel {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      &.communityPannel {
+        .imgBlock {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      &.appPannel {
+        .imgDesg {
+          opacity: 1;
+          transform: translateX(0);
+          transform-origin: center;
+        }
+      }
+      &.knowledgePannel {
+        ul {
+          li {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+
     }
+    &.animate-out {
+      &.bannerWrapper {
+        .bannerContent {
+          h1 {
+            opacity: 0;
+          }
+        }
+      }
+      .bankingServices {
+        ul {
+          li {
+            &.bunisessBank {
+              opacity: 0;
+              transform: scale(1.1) translateX(-50px) translateY(-50px);
+              transition: all 1s;
+            }
+            &.mortage {
+              opacity: 0;
+              transform: scale(1.1) translateX(50px) translateY(-50px);
+              transition: all 1s;
+            }
+            &.personalBank {
+              opacity: 0;
+              transform: translateY(15%);
+              transition: all 0.75s;
+            }
+          }
+          &.animateIt {
+            li {
+              &.bunisessBank,
+              &.mortage {
+                opacity: 1;
+                transform: scale(1) translateX(0) translateY(0);
+              }
+              &.personalBank {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+          }
+        }
+      }
+      &.bluePannel {
+        opacity: 0;
+        transform: translateY(20%);
+        transition: all 0.75s;
+      }
+      &.communityPannel {
+        .imgBlock {
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 0.75s;
+        }
+      }
+      &.appPannel {
+        .imgDesg {
+          opacity: 0;
+          transform: translateX(20%);
+          transform-origin: 0% 34%;
+          transition: all 0.75s;
+        }
+      }
+    }
+
   }
-}*/
+
+
+  .bannerWrapper {
+    .bannerContent {
+      h1 {
+        br {
+          display: none;
+        }
+        span,
+        b {
+          font-style: normal;
+          display: block;
+          opacity: 0;
+        }
+      }
+    }
+    &.animateIt {
+      .bannerContent {
+        h1 {
+          span {
+            animation: lftRgt .5s forwards;
+            opacity: 0;
+            &:nth-child(2) {
+              animation: lftRgt .8s forwards;
+              opacity: 0;
+            }
+
+
+          }
+          strong {
+            display: block;
+            span {
+              animation: lftRgt 1.1s forwards;
+              opacity: 0;
+              &:nth-child(2) {
+                animation: lftRgt 1.4s forwards;
+                opacity: 0;
+              }
+              &:nth-child(3) {
+                animation: lftRgt 1.7s forwards;
+                opacity: 0;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+
+  /*.bankingServices {
+    ul {
+      li {
+        &.bunisessBank {
+          opacity: 0;
+          transform: scale(1.1) translateX(-50px) translateY(-50px);
+          transition: all 1s;
+        }
+        &.mortage {
+          opacity: 0;
+          transform: scale(1.1) translateX(50px) translateY(-50px);
+          transition: all 1s;
+        }
+        &.personalBank {
+          opacity: 0;
+          transform: translateY(15%);
+          transition: all 0.75s;
+        }
+      }
+      &.animateIt {
+        li {
+          &.bunisessBank,
+          &.mortage {
+            opacity: 1;
+            transform: scale(1) translateX(0) translateY(0);
+          }
+          &.personalBank {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+      }
+    }
+  }*/
+  
+}
+
 @keyframes lftRgt {
     0% { opacity: 0; transform: translateX(-12%); }
     30% { opacity: 0; transform: translateX(-12%); }

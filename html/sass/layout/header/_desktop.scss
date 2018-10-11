@@ -51,7 +51,7 @@ header {
 }
 .mobileSearch {
 	float: right;
-	margin-top: 13px;
+	margin-top: 12px;
 	margin-right: 4px;
 	max-width: 34px;
 	.txtBox {
@@ -79,7 +79,7 @@ header {
 	width: 32px;
 	height: 22px;
 	float: right;
-	margin-top: 14px;
+	margin-top: 13px;
 	margin-right: 7px;
   text-align: right;
 	transition: 0.3s;
@@ -730,6 +730,9 @@ header {
 				&:hover {
 					.SubmenuWrapper {
 						display: block;
+						.bgWrap {
+							opacity: 1;
+						}
 					}
 				}
 			}
@@ -748,6 +751,8 @@ header {
 		.bgWrap {
 			background: #e1edfe;
 			padding: 20px 30px;
+			opacity: 0;
+			transition: all 0.3s;
 		}
 		.flexBox {
 			height: 454px;
@@ -768,7 +773,13 @@ header {
 		h3 {
 			font-size: 19px;
 			color: #3d3d3d;
+			line-height: 22px;
 			text-transform: uppercase;
+			a {
+				&::after {
+					display: none;
+				}
+			}
 		}
 		ul {
 			font-size: 17px;
@@ -921,10 +932,10 @@ header {
 		position: absolute;
 		width: 100%;
 		left: 0;
-		top: 83px;
+		top: 105px;
 		//display: none;
 		.bgWrap {
-			padding: 30px 49px 0;
+			padding: 29px 49px 0;
 		}
 		.flexBox {
 			height: 508px;
@@ -938,6 +949,7 @@ header {
 		}
 		h3 {
 			font-size: 20px;
+			line-height: 24px;
 		}
 		ul {
 			font-size: 18px;
@@ -1186,6 +1198,7 @@ header {
 		}
 		h3 {
 			//color: #3d3d3d;
+			line-height: 23px
 		}
 		h2,
 		h3 {
