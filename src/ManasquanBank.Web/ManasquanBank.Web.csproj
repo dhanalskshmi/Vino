@@ -533,6 +533,7 @@
     <None Include="packages.config" />
     <Content Include="Views\ContactUsPage.cshtml" />
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
+    <Content Include="Views\ClientService.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
