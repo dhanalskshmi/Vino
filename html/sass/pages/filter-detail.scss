@@ -1,0 +1,106 @@
+.filterDetail{
+    .heroBlock{
+        margin-bottom: 100px;
+        @include bp(tablet){
+            margin-bottom: 40px;
+        }
+        @include bp(tablet){
+            margin-bottom: 100px;
+        }
+        .bgWrap{
+            padding: 44px 40px 37px 40px;
+            @include bp(landscape){
+                padding: 29px 20px 37px 20px;
+            }
+            @include bp(tablet){
+                padding: 19px 20px 37px 20px;
+            }
+            @include bp(mobile){
+                padding: 22px 10px 20px 10px;
+            }
+            h2{
+                color: #1c3d6d;
+                font-size: 36px;
+                font-weight: normal;
+                margin-bottom: 7px;
+                @include bp(landscape){
+                    font-size: 24px;
+                }
+                @include bp(tablet){
+                    font-size: 20px;
+                }
+                @include bp(mobile){
+                    font-size: 16px;
+                    line-height: 19px;
+                    margin-bottom: 2px;
+                }
+            }
+            h5{
+                font-size: 20px;
+                color: #aaa8a8;
+                font-weight: normal;
+                @include bp(tablet){
+                    font-size: 18px;
+                }
+                @include bp(mobile){
+                    text-align: center;
+                }
+            }
+            p{
+                font-size: 18px;
+                margin-bottom: 20px;
+                @include bp(mobile){
+                    font-size: 16px;
+                    line-height: 18px;
+                }
+            }
+            figure{
+                height: auto;
+                width: 500px;
+                margin: 42px auto 82px auto;
+                @include bp(tablet){
+                    margin: 39px auto 43px auto;
+                }
+                @include bp(mobile){
+                    margin: 18px auto 21px auto;
+                    width: 100%;
+                }
+                img{
+                    max-width: 100%;
+                    max-height: auto;
+                }
+            }
+            .heroFoot{
+                margin-top: 128px;
+                @include bp(landscape){
+                    margin-top: 39px;
+                }
+                @include bp(tablet){
+                    margin-top: -5px;
+                }
+                @include bp(mobile){
+                    margin-top: 47px;
+                }
+                .back-btn{
+                    display: inline-block;
+                    margin-top: 0;
+                }
+                .sharePanel{
+                    display: inline-block;
+                    float: right;
+                    a{
+                        width: 72px;
+                        height: 20px;
+                        display: flex;
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 12px;
+                        color: #fff;
+                        background-color: #1c3d6d;
+                    }
+                }
+            }
+        }
+    }
+}
