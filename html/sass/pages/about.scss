@@ -31,14 +31,18 @@
 
 .heroBanner {
     min-height: 830px;
+    margin-bottom: -230px;
     @include bp(landscape) {
         min-height: 571px;
+        margin-bottom: -186px;
     }
     @include bp(tablet) {
         min-height: 500px;
+        margin-bottom: -116px;
     }
     @include bp(mobile) {
         min-height: 420px;
+        margin-bottom: -116px;
     }
     .bannerImage {
         min-height: 830px;
@@ -62,17 +66,7 @@
 
 .heroBlock {
     position: relative;
-    margin-top: -230px;
     width: 100%;
-    @include bp(landscape) {
-        margin-top: -186px;
-    }
-    @include bp(tablet) {
-        margin-top: -116px;
-    }
-    @include bp(mobile) {
-        margin-top: -116px;
-    }
     .bgWrap {
         width: 100%;
         background: #f1f1f1;
@@ -402,13 +396,6 @@
                     padding: 42px 10px 0 10px;
                 }
                 .SingleContentBlk {
-                    margin-bottom: 15px;
-                    @include bp(landscape) {
-                        margin-bottom: 14px;
-                    }
-                    @include bp(mobile) {
-                        margin-bottom: 30px;
-                    }
                     h4 {
                         font-size: 23px;
                         font-weight: bold;
@@ -428,11 +415,14 @@
                     p {
                         font-size: 17px;
                         line-height: 19px;
+                        margin-bottom: 15px;
                         @include bp(landscape) {
                             line-height: 20px;
+                            margin-bottom: 14px;
                         }
                         @include bp(mobile) {
                             line-height: 19px;
+                            margin-bottom: 30px;
                         }
                     }
                 }
@@ -709,18 +699,6 @@
 }
 
 .snrManage {
-    margin-bottom: -140px;
-    position: relative;
-    z-index: 1;
-    @include bp(landscape) {
-        margin-bottom: -80px;
-    }
-    @include bp(tablet) {
-        margin-bottom: -89px;
-    }
-    @include bp(mobile) {
-        margin-bottom: -20px;
-    }
     .bgWrap {
         background: #cce1ff;
         padding: 35px 100px 35px 100px;
@@ -769,14 +747,20 @@
     background-repeat: no-repeat;
     display: table;
     width: 100%;
+    margin-top: -140px;
+    position: relative;
+    z-index: -1;
     @include bp(landscape) {
         min-height: 690px;
+        margin-top: -80px;
     }
     @include bp(tablet) {
         min-height: 508px;
+        margin-top: -89px;
     }
     @include bp(mobile) {
         min-height: 215px;
+        margin-top: -20px;
     }
     .bgWrap {
         .titleWrap {

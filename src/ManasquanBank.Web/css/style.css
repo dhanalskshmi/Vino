@@ -127,7 +127,6 @@ body {
   font-weight: 400;
   background: #FFF;
   color: #17140e;
-  overflow-x: hidden;
 }
 
 a[href^=tel] {
@@ -550,6 +549,15 @@ p {
   background: #de0d1d;
 }
 
+@media screen and (max-width: 767px) {
+  html,
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 @media screen and (min-width: 768px) {
   .containerWrapper {
     max-width: 728px;
@@ -1358,10 +1366,10 @@ header .containerWrapper {
 }
 
 .mnavWrapper {
-  width: -webkit-calc(100% - 29px);
-  width: calc(100% - 29px);
+  width: -webkit-calc(100% - 21px);
+  width: calc(100% - 21px);
   min-height: 100%;
-  margin: 0 14px;
+  margin: 0 12px;
   overflow: hidden;
   position: absolute;
   z-index: 9;
@@ -2046,8 +2054,11 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav .search.active .txtBox {
     width: 410px;
-    height: 31px;
+    height: 40px;
     padding: 0 15px;
+  }
+  .mainNav .search.active .submit {
+    margin-top: 4px;
   }
 
   .SubmenuWrapper {
@@ -2293,7 +2304,7 @@ header + .loginBlocks .businessLogin p a {
     left: 79.5%;
   }
   .SubmenuWrapper .flexBox {
-    height: 372px;
+    height: 315px;
   }
   .SubmenuWrapper .flexBox .cols {
     width: 230px;
@@ -2415,7 +2426,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .openAccount {
-    top: 16.3%;
+    top: 25.3%;
   }
 }
 /*@import "tabletLandscape";
@@ -3083,6 +3094,9 @@ footer {
   text-align: center;
   text-transform: uppercase;
 }
+.bannerWrapper .bannerContent h1 span {
+  display: block;
+}
 .bannerWrapper .bannerContent h1 span:nth-child(1) {
   letter-spacing: 1px;
 }
@@ -3416,7 +3430,7 @@ footer {
   border: 1px solid #FFF;
   border-radius: 25px;
   padding: 6px 30px;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 .bankingServices li.kasasa .serviceContent .btnManasq span, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply span, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply span {
   position: relative;
@@ -5034,7 +5048,7 @@ footer {
     height: 60px;
   }
   .joinEmail form div {
-    width: 31.03%;
+    width: 31.18%;
     margin-bottom: 32px;
   }
   .joinEmail form div.groupCheckbox {
@@ -5094,20 +5108,24 @@ footer {
 
 .heroBanner {
   min-height: 830px;
+  margin-bottom: -230px;
 }
 @media (max-width: 1279px) {
   .heroBanner {
     min-height: 571px;
+    margin-bottom: -186px;
   }
 }
 @media (max-width: 991px) {
   .heroBanner {
     min-height: 500px;
+    margin-bottom: -116px;
   }
 }
 @media (max-width: 767px) {
   .heroBanner {
     min-height: 420px;
+    margin-bottom: -116px;
   }
 }
 .heroBanner .bannerImage {
@@ -5137,23 +5155,7 @@ footer {
 
 .heroBlock {
   position: relative;
-  margin-top: -230px;
   width: 100%;
-}
-@media (max-width: 1279px) {
-  .heroBlock {
-    margin-top: -186px;
-  }
-}
-@media (max-width: 991px) {
-  .heroBlock {
-    margin-top: -116px;
-  }
-}
-@media (max-width: 767px) {
-  .heroBlock {
-    margin-top: -116px;
-  }
 }
 .heroBlock .bgWrap {
   width: 100%;
@@ -5606,19 +5608,6 @@ footer {
     padding: 42px 10px 0 10px;
   }
 }
-.ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk {
-  margin-bottom: 15px;
-}
-@media (max-width: 1279px) {
-  .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk {
-    margin-bottom: 14px;
-  }
-}
-@media (max-width: 767px) {
-  .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk {
-    margin-bottom: 30px;
-  }
-}
 .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk h4 {
   font-size: 23px;
   font-weight: bold;
@@ -5642,15 +5631,18 @@ footer {
 .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk p {
   font-size: 17px;
   line-height: 19px;
+  margin-bottom: 15px;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk p {
     line-height: 20px;
+    margin-bottom: 14px;
   }
 }
 @media (max-width: 767px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentParaWrap .SingleContentBlk p {
     line-height: 19px;
+    margin-bottom: 30px;
   }
 }
 .ContentBlk1.ltAlign .bgWrap {
@@ -6012,26 +6004,6 @@ footer {
   color: #fff;
 }
 
-.snrManage {
-  margin-bottom: -140px;
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 1279px) {
-  .snrManage {
-    margin-bottom: -80px;
-  }
-}
-@media (max-width: 991px) {
-  .snrManage {
-    margin-bottom: -89px;
-  }
-}
-@media (max-width: 767px) {
-  .snrManage {
-    margin-bottom: -20px;
-  }
-}
 .snrManage .bgWrap {
   background: #cce1ff;
   padding: 35px 100px 35px 100px;
@@ -6091,20 +6063,26 @@ footer {
   background-repeat: no-repeat;
   display: table;
   width: 100%;
+  margin-top: -140px;
+  position: relative;
+  z-index: -1;
 }
 @media (max-width: 1279px) {
   .historyTimeline {
     min-height: 690px;
+    margin-top: -80px;
   }
 }
 @media (max-width: 991px) {
   .historyTimeline {
     min-height: 508px;
+    margin-top: -89px;
   }
 }
 @media (max-width: 767px) {
   .historyTimeline {
     min-height: 215px;
+    margin-top: -20px;
   }
 }
 .historyTimeline .bgWrap .titleWrap {
@@ -10121,4 +10099,150 @@ footer {
   .proDetail .heroBlock .bgWrap .back-btn {
     margin-top: 32px;
   }
+}
+
+.filterDetail .heroBlock {
+  margin-bottom: 100px;
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock {
+    margin-bottom: 100px;
+  }
+}
+.filterDetail .heroBlock .bgWrap {
+  padding: 44px 40px 37px 40px;
+}
+@media (max-width: 1279px) {
+  .filterDetail .heroBlock .bgWrap {
+    padding: 29px 20px 37px 20px;
+  }
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock .bgWrap {
+    padding: 19px 20px 37px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .filterDetail .heroBlock .bgWrap {
+    padding: 22px 10px 20px 10px;
+  }
+}
+.filterDetail .heroBlock .bgWrap h2 {
+  color: #1c3d6d;
+  font-size: 36px;
+  font-weight: normal;
+  margin-bottom: 7px;
+}
+@media (max-width: 1279px) {
+  .filterDetail .heroBlock .bgWrap h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock .bgWrap h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .filterDetail .heroBlock .bgWrap h2 {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 2px;
+  }
+}
+.filterDetail .heroBlock .bgWrap h5 {
+  font-size: 20px;
+  color: #aaa8a8;
+  font-weight: normal;
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock .bgWrap h5 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .filterDetail .heroBlock .bgWrap h5 {
+    text-align: center;
+  }
+}
+.filterDetail .heroBlock .bgWrap p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .filterDetail .heroBlock .bgWrap p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+.filterDetail .heroBlock .bgWrap figure {
+  height: auto;
+  width: 500px;
+  margin: 42px auto 82px auto;
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock .bgWrap figure {
+    margin: 39px auto 43px auto;
+  }
+}
+@media (max-width: 767px) {
+  .filterDetail .heroBlock .bgWrap figure {
+    margin: 18px auto 21px auto;
+    width: 100%;
+  }
+}
+.filterDetail .heroBlock .bgWrap figure img {
+  max-width: 100%;
+  max-height: auto;
+}
+.filterDetail .heroBlock .bgWrap .heroFoot {
+  margin-top: 128px;
+}
+@media (max-width: 1279px) {
+  .filterDetail .heroBlock .bgWrap .heroFoot {
+    margin-top: 39px;
+  }
+}
+@media (max-width: 991px) {
+  .filterDetail .heroBlock .bgWrap .heroFoot {
+    margin-top: -5px;
+  }
+}
+@media (max-width: 767px) {
+  .filterDetail .heroBlock .bgWrap .heroFoot {
+    margin-top: 47px;
+  }
+}
+.filterDetail .heroBlock .bgWrap .heroFoot .back-btn {
+  display: inline-block;
+  margin-top: 0;
+}
+.filterDetail .heroBlock .bgWrap .heroFoot .sharePanel {
+  display: inline-block;
+  float: right;
+}
+.filterDetail .heroBlock .bgWrap .heroFoot .sharePanel a {
+  width: 72px;
+  height: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 12px;
+  color: #fff;
+  background-color: #1c3d6d;
 }
