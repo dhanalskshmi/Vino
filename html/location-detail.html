@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link href='css/lib/nprogress.css' rel='stylesheet' />
     <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
-	<link href='css/lib/animate.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 
@@ -220,12 +219,25 @@
 							</div>
 						</div>
                     </div>
+					<div class="cloneTimeHrs">
+						<div class="containerWrapper">
+							<div class="timeWrap">
+							</div>
+						</div>
+					</div>
                 </div>
             </section>
+			
+			<section class="loacationMap">
+				<div class="containerWrapper">
+					
+				</div>
+			</section>
 			<section class="mapSection">
 				<div class="containerWrapper">
-					<img src="images/location-detail/map.jpg" alt="map"/>
-				</div>
+					<div id="map_div"></div>
+					<!--<img src="images/location-detail/map.jpg" alt="map"/> -->
+				</div> 
 			</section>
 			<section class="alertSection">
 				<div class="containerWrapper">
@@ -240,7 +252,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="bluePannel animatable">
+			<section class="bluePannel lcdetailPannel animatable">
 				<div class="containerWrapper">
 					<div class="bgWrap">
 					  <div class="detailsWrap">
@@ -478,8 +490,14 @@
     <script src='script/lib/nprogress.js'></script>
     <script src="script/lib/modernizr-custom.js"></script>
 	<script src="script/lib/scrollanimation.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
-
+	<script>
+	$(document).ready(function(){
+		
+	});
+	</script>
+	
 </body>
 
 </html>

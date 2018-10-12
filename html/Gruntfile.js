@@ -10,7 +10,9 @@ module.exports = function(grunt) {
       src: [
 				'script/pages/header.js',
 				'script/pages/home.js',
-				'script/pages/contact.js'
+				'script/pages/contact.js',
+				'script/pages/location-detail.js',
+				'script/pages/location.js'
 			],
       dest: 'script/main.js',
     },
