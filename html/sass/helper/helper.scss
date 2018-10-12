@@ -608,6 +608,8 @@ p {
   body {
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 }
 @media screen and (min-width: $tab-port-min) {
