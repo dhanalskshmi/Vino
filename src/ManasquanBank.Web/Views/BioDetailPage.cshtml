@@ -1,0 +1,156 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var bgImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var profileImage = Model.Content.GetPropertyValue<IPublishedContent>("ProfileImage");
+    var name = Model.Content.GetPropertyValue<string>("employeeName");
+    var employeeTitle = Model.Content.GetPropertyValue<string>("employeeTitle");
+    var license = Model.Content.GetPropertyValue<string>("license");
+    var address1 = Model.Content.GetPropertyValue<string>("address1");
+    var address2 = Model.Content.GetPropertyValue<string>("address2");
+    var officeNumber = Model.Content.GetPropertyValue<string>("officeNumber");
+    var phoneNumber = Model.Content.GetPropertyValue<string>("phoneNumber");
+    var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
+    var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
+
+}
+<div class="bioPage">
+    <section class="heroBanner">
+        @if (bgImage != null)
+        {
+            <figure class="bannerImage" style="background-image: url(@bgImage.Url)"></figure>
+        }
+
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="bioFlex">
+                    @if (profileImage != null)
+                    {
+                        <figure class="bioFlexImg" style="background-image: url(@profileImage.Url)"></figure>
+                    }
+                    <div class="bioFlexContent">
+                        @if (!string.IsNullOrEmpty(name))
+                        {
+                            <h5>@name</h5>
+                        }
+                        @if (!string.IsNullOrEmpty(employeeTitle))
+                        {
+                            <p class="cmpTitle">@employeeTitle</p>
+                        }
+                        @if (!string.IsNullOrEmpty(address1))
+                        {
+                            <p class="cmpAddr1">@address1</p>
+                        }
+                        @if (!string.IsNullOrEmpty(address2))
+                        {
+                            <p class="cmpAddr2">
+                                @Html.Raw(address2)
+                            </p>
+                        }
+                        @if (!string.IsNullOrEmpty(officeNumber))
+                        {
+                            <p class="phoneNo"><img src="images/bio/phone_icon.png" alt="">Office: <a href="tel:@officeNumber">@officeNumber</a></p>
+                        }
+                        @if (!string.IsNullOrEmpty(phoneNumber))
+                        {
+                            <p class="phoneNo"><img src="images/bio/phone_icon.png" alt="">Cell Phone: <a href="tel:@phoneNumber">@phoneNumber</a></p>
+                        }
+                        @if (Model.Content.HasValue("cTAButton"))
+                        {
+                            foreach (var item in cTAButton)
+                            {
+                                var cTAtitle = item.GetPropertyValue<string>("title");
+                                var link = item.GetPropertyValue<Link>("link");
+                                if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a class="btnManasq" href="@link.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                <span>Contact Me</span>
+                                            }
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btnManasq" href="@link.Url">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                <span>Contact Me</span>
+                                            }
+                                        </a>
+                                    }
+                                }
+                                else
+                                {
+                                    <a class="btnManasq" href="">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            <span>Contact Me</span>
+                                        }
+                                    </a>
+
+                                }
+
+
+                            }
+                        }
+
+                    </div>
+                </div>
+                <div class="bioContent">
+                    @if (!string.IsNullOrEmpty(bodyText))
+                    {
+                        @Html.Raw(bodyText)
+                    }
+                    @*<p>
+                                Ralph G. Tancredi, Sr. has over 20-years experience with mortgage banking and also holds
+                                a CPA license. He is committed to meeting his clients’ needs and ensuring they receive
+                                superior customer service. Ralph works with a full range of borrowers but especially
+                                enjoys the opportunity to work with first-time homebuyers to make sure they fully
+                                understand the mortgage transaction process and have a positive experience. Whether
+                                you’re refinancing a mortgage or buying a property or building lot, Ralph provides you
+                                with the smooth and personable transaction that you deserve. He resides in Wall
+                                Township with his wife, Gail and two children.
+                            </p>
+                        </div>
+                        <div class="bioInfos">
+                            <h5>Professional Background:</h5>
+                            <p>
+                                Ralph is a graduate of Seton Hall Preparatory School and Seton Hall University. He
+                                started his career as an accountant with Russo, Delaura & Bielski and expanded his
+                                financial expertise to mortgage lending. Ralph remains deeply committed to his
+                                community, serving as:
+                            </p>
+                            <ul>
+                                <li>Treasurer, The Keith E. Neumann Foundation, 1989 – Present</li>
+                                <li>Vice President, South Wall Fire Company No. 1, 2006 – Present</li>
+                                <li>Fire Commissioner for District No. 3, Wall Township, NJ 2006 – Present</li>
+                                <li>Volunteer Firefighter for South Wall Fire Co. No. 1, 2002 – Present</li>
+                                <li>Treasurer of South Wall Fire Co. No. 1, 2003 – 2005</li>
+                            </ul>
+                        </div>
+                        <div class="bioInfos">
+                            <h5>Affiliations:</h5>
+                            <ul>
+                                <li>Licensed New Jersey State Certified Public Accountant, 1991 – Present</li>
+                                <li>Federal Mortgage Loan Originator</li>
+                                <li>Jersey Shore Chamber of Commerce</li>
+                            </ul>
+                        </div>*@
+                    <p><a href="#" class="back-btn"><img src="images/bio/back_arrow.png" alt=""> Back</a></p>
+                </div>
+            </div>
+    </section>
+</div>
