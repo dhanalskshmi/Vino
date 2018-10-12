@@ -918,8 +918,11 @@ header {
 			&.active {
 				.txtBox {
 					width: 410px;
-			    height: 31px;
+			    height: 40px;
 					padding: 0 15px;
+				}
+				.submit {
+					margin-top: 4px;
 				}
 			}
 		}
@@ -1339,7 +1342,7 @@ header {
 	}
 
 	.openAccount {
-    top: 16.3%;
+    top: 25.3%;
 	}
 
 
