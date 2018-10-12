@@ -572,6 +572,8 @@
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
     <Content Include="scripts\lib\jquery.validate.min.js" />
     <Content Include="Views\Partials\SocialMedia.cshtml" />
+    <Content Include="Views\BioDetailPage.cshtml" />
+    <Content Include="Views\AboutUs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

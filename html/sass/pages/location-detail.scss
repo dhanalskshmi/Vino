@@ -5,113 +5,622 @@
 			h2 {
 				margin-left:50px;
 				margin-bottom: 43px;
+				@include bp(tabportrait) {
+					margin-left:18px;
+					margin-bottom: 15px;
+				}
+				@include bp(mobile) {
+					margin-left:0px;
+					margin-bottom:19px;
+				}
 			}
 			.contentSection {
-				display:table;
+				display:flex;
+				flex-wrap: wrap;
 				width:100%;
+				clear: both;
 				.imgSection {
 					width: 53.204%;
 					float: left;
-
+					background: url(../images/location-detail/location-hero-image.jpg) no-repeat;
+					background-size: cover;
+					min-height:749px;
+					img {
+						display:none;
+					}
+					@include bp(tablandscape) {
+						width: 47.456%;
+						min-height: 475px;
+					}
+					@include bp(tabportrait) {
+						width: 60.577%;
+						min-height: 489px;
+					}
+					@include bp(mobile) {
+						width:100%;
+						min-height: 319px;
+					}
 				}
 				.addrSection {
 					width:46.796%;
 					float: left;
-					.lftSec {
-						width:51%;
-						float:left;
-						padding-left: 34px;
-						p {
-							font-size:20px;
-							color:#666666;
-							&.pnoneNum {
-								&::before {
-									content: "";
-								    display: inline-block;
-								    background: url(../images/location-detail/phone-icon.png) no-repeat top right;
-								    width: 40px;
-								    height: 40px;
-								    margin: 0 20px 0 0;
-								    float: left;
-								    position: relative;
+					@include bp(tablandscape) {
+						width: 52.544%;
+					}
+					@include bp(tabportrait) {
+						width: 39.423%;
+						min-height: 489px;
+					}
+					@include bp(mobile) {
+						width:100%;
+					}
+					.fullWrap {
+						display:table;
+						width:100%;
+						.lftSec {
+							width:51%;
+							float:left;
+							padding-left: 34px;
+							@include bp(tablandscape) {
+								width:55%;
+								padding-left:19px;
+							}
+							@include bp(tabportrait) {
+								width:100%;
+								margin-bottom:93px;
+								padding-left: 19px;
+							}
+							@include bp(mobile) {
+								width:100%;
+								padding: 20px 20px 32px;
+							}
+							p {
+								font-size:20px;
+								color:#666666;
+								@include bp(tablandscape) {
+									font-size:16px;
 								}
-								a {
-									position:relative;
-									top:10px;
+								@include bp(tabportrait) {
+									font-size:16px;
+								}
+								@include bp(mobile) {
+									font-size:16px;
+								}
+								&.pnoneNum {
+									&:before {
+										content: "";
+									    display: inline-block;
+									    background: url(../images/location-detail/phone-icon.png) no-repeat top right;
+									    background-size: cover;
+									    width:32px;
+									    height:32px;
+									    margin: 0 9px 0 0; 
+									    float: left;
+									    position: relative;
+									    @include bp(desktop) {
+									    	width: 40px;
+									    	height: 40px;
+									    	margin: 0 20px 0 0;
+									    }
+									}
+									a {
+										position:relative;
+										top:10px;
+										@include bp(tablandscape) {
+											top: 7px;
+										}
+										@include bp(tabportrait) {
+											top: 6px;
+										}
+										@include bp(mobile) {
+											top: 8px;
+										}
+									}
+								}
+								&.locationAddr {
+									margin-top:38px;
+									@include bp(tablandscape) {
+										margin-top:39px;
+									}
+									@include bp(tabportrait) {
+										margin-top:29px;
+									}
+									@include bp(mobile) {
+										margin-top:21px;
+									}
+									&:before {
+										@extend .pnoneNum, :before;
+									    background: url(../images/location-detail/address-icon.png) no-repeat top right;
+									    top: 1px;
+									    background-size: cover;
+									}
+									span {
+										display:block;
+										position: relative;
+	    								top: 0px;
+	    								padding-left: 60px;
+	    								@include bp(tablandscape) {
+									    	margin-bottom: -5px;
+									    	padding-left: 41px;
+									    }
+									    @include bp(tabportrait) {
+									    	padding-left: 40px;
+									    	top:1px;
+									    	margin-bottom: -5px;
+									    }
+									    @include bp(mobile) {
+									    	padding-left: 41px;
+									    	margin-bottom: -4px;
+									    }
+									}
+								}
+								&.mailMember {
+									margin-top: 66px;
+									@include bp(tablandscape) {
+									   	margin-top: 30px;
+									   	margin-bottom: 21px;
+									}
+									@include bp(tabportrait) {
+									   	margin-top: 22px;
+									   	margin-bottom: 12px;
+									}
+									@include bp(mobile) {
+										margin-top: 19px;
+										margin-bottom: 11px;
+									}
+									&:before {
+										@extend .pnoneNum, :before;
+									    background: url(../images/location-detail/mail-icon.png) no-repeat top right;
+									    background-size: cover;
+									    top:1px;
+									}
+									strong {
+										display:block;
+										padding-left: 60px;
+										position: relative;
+									    top: -1px;
+									    margin-bottom: 2px;
+									    @include bp(tablandscape) {
+									    	padding-left:41px;
+									    	margin-bottom: -5px;
+									    }
+									    @include bp(tabportrait) {
+									    	padding-left: 40px;
+									    	top:0px;
+									    	margin-bottom: -5px;
+									    }
+									    @include bp(mobile) {
+									    	padding-left: 41px;
+									    	margin-bottom: -4px;
+									    }
+									}
+									span {
+										display:block;
+										padding-left: 60px;
+										margin-bottom: 3px;
+										@include bp(tablandscape) {
+									    	padding-left:41px;
+									    	margin-bottom:1px;
+									    }
+									    @include bp(tabportrait) {
+									    	padding-left: 40px;
+									    }
+									    @include bp(mobile) {
+									    	padding-left: 41px;
+									    	margin-bottom: 2px;
+									    }
+									}
+								}
+								&.printIcon {
+									margin-top: 0px;
+									@include bp(desktop) {
+										margin-top: 67px;
+									}
+									@include bp(tablandscape) {
+										margin-top: 21px;
+									}
+									&:before {
+										@extend .pnoneNum, :before;
+									    background: url(../images/location-detail/print-icon.png) no-repeat top right;
+									    background-size: cover;
+									    top: 4px;
+									}
+									a {
+										position:relative;
+										top:11px;
+										@include bp(tabportrait) {
+									    	top:12px;
+									    }
+									    @include bp(mobile) {
+									    	top: 11px;
+									    }
+									}
 								}
 							}
-							&.locationAddr {
-								margin-top:38px;
-								&::before {
-									content: "";
-								    display: inline-block;
-								    background: url(../images/location-detail/address-icon.png) no-repeat top right;
-								    width: 40px;
-								    height: 40px;
-								    margin: 0 20px 0 0;
-								    float: left;
-								    position: relative;
-								    top: 1px;
-								}
-								span {
-									display:block;
-									position: relative;
-    								top: 0px;
-    								padding-left: 60px;
-								}
+						}
+						.rgtSec {
+							width:49%;
+							float:left;
+							padding-left: 42px;
+							@include bp(tablandscape) {
+		    					width:45%;
+		    					padding-left: 13px;
+		    				}
+		    				@include bp(tabportrait) {
+		    					width:100%;
+		    					padding-left: 18px;
+		    				}
+		    				@include bp(mobile) {
+								width:100%;
+								padding-left:19px;
 							}
-							&.mailMember {
-								margin-top: 66px;
-								&::before {
-									content: "";
-								    display: inline-block;
-								    background: url(../images/location-detail/mail-icon.png) no-repeat top right;
-								    width: 40px;
-								    height: 40px;
-								    margin: 0 20px 0 0;
-								    float: left;
-								    position: relative;
-								    top:1px;
+							p {
+								font-size:18px;
+								color: #ababab;
+	    						text-transform: uppercase;
+	    						@include bp(tablandscape) {
+	    							font-size:16px;
+	    						}
+	    						@include bp(tabportrait) {
+	    							font-size:16px;
+		    					}
+		    					@include bp(mobile) {
+	    							font-size:16px;
+		    					}
+								&.walkAtm {
+									margin-top:3px;
+									@include bp(tablandscape) {
+	    								margin-top:0px;
+	    							}
+									&::before {
+										content: "";
+									    display: inline-block;
+									    background: url(../images/location-detail/atm-icon.png) no-repeat top right;
+									    background-size: cover; 
+									    width:34px;
+									   	height:34px;
+									    margin: 0 19px 0 0;
+									    float: left;
+									    position: relative;
+									    @include bp(desktop) {
+									    	width:42px;
+									    	height:42px;
+									    }
+									    @include bp(tablandscape) {
+									    	margin: 0 9px 0 0;
+									    }
+									}
+									a {
+										position:relative;
+										top:9px;
+									}
 								}
-								strong {
-									display:block;
-									padding-left: 60px;
-									position: relative;
-								    top: -1px;
-								    margin-bottom: 2px;
+								&.hoursSec {
+									@extend .walkAtm;
+									margin-top:36px;
+									@include bp(tablandscape) {
+	    								margin-top:39px;
+	    							}
+	    							@include bp(tabportrait) {
+	    								margin-top:31px;
+	    							}
+	    							@include bp(mobile) {
+	    								margin-top:21px;
+	    							}
+									&::before {
+										background: url(../images/location-detail/hours-icon.png) no-repeat top right;
+										background-size: cover;
+									}
 								}
-								span {
-									display:block;
-									padding-left: 60px;
-									margin-bottom: 3px;
-								}
-							}
-							&.printIcon {
-								margin-top: 67px;
-								&::before {
-									content: "";
-								    display: inline-block;
-								    background: url(../images/location-detail/print-icon.png) no-repeat top right;
-								    width: 40px;
-								    height: 40px;
-								    margin: 0 20px 0 0;
-								    float: left;
-								    position: relative;
-								    top: 4px;
-								}
-								a {
-									position:relative;
-									top:14px;
+								&.boxSec {
+									@extend .walkAtm;
+									@extend .hoursSec;
+									@include bp(tablandscape) {
+										margin-top:40px;
+									}
+									@include bp(tabportrait) {
+										margin-top:30px;
+									}
+									@include bp(mobile) {
+										margin-top:20px;
+									}
+									&::before {
+										background: url(../images/location-detail/box-icon.png) no-repeat top right;
+										background-size: cover;
+									}
 								}
 							}
 						}
 					}
-					.rgtSect {
-						width:49%;
-						float:left;
+					.timehrsSection {
+						display: table;
+    					width: 100%;
+						background:#1268e5;
+						padding: 23px 20px 39px 60px;
+						margin-top: 61px;
+						@include bp(tablandscape) {
+							margin-top: 8px;
+							padding: 20px 20px 28px 19px;
+						}
+						@include bp(tabportrait) {
+							display:none;
+						}
+						@include bp(mobile) {
+							margin-top:15px;
+							padding: 20px 20px 17px 20px;
+						}
+						.lobbbyHrs {
+							width: 50%;
+    						float: left;
+    						@include bp(mobile) {
+								width:100%;
+							}
+    						h4 {
+    							font-size:20px;
+    							color:#ffffff;
+    							margin-bottom: 24px;
+    							@include bp(tablandscape) {
+    								font-size:16px;
+    								margin-bottom:11px;
+    							}
+    							@include bp(mobile) {
+    								font-size:16px;
+    								margin-bottom: 0px;
+    							}
+    						}
+    						table {
+    							tbody {
+    								tr {
+    									td {
+    										display:block;
+    										color:#fff;
+    										font-size:20px;
+    										padding: 0px;
+    										@include bp(tablandscape) {
+			    								font-size:16px;
+			    								margin-bottom:-3.4px;
+			    							}
+			    							@include bp(mobile) {
+    											font-size:16px;
+    										}
+    									}
+    								}
+    							}
+    						}
+						}
+						.driveHrs {
+							@extend .lobbbyHrs;
+							padding-left:13px;
+							@include bp(tablandscape) {
+								padding-left: 39px;
+							}
+							@include bp(mobile) {
+								padding-left: 0px;
+								margin-top: 34px;
+							}
+						}
 					}
 				}
 			}
 		}
+		.cloneTimeHrs {
+			.timehrsSection {
+				display: table;
+    			width: 100%;
+				background:#1268e5;
+				padding: 23px 20px 39px 60px;
+				@include bp(desktop) {
+					display:none;
+				}
+				@include bp(tablandscape) {
+					display:none;
+				}
+				@include bp(tabportrait) {
+					padding: 19px 77px 15px 140px;
+				}
+				@include bp(mobile) {
+					display:none;
+				}
+				.lobbbyHrs {
+					width: 50%;
+    				float: left;
+    				h4 {
+    					font-size:20px;
+    					color:#ffffff;
+    					margin-bottom: 24px;
+    					@include bp(tablandscape) {
+    						font-size:16px;
+    						margin-bottom:11px;
+    					}
+    					@include bp(tabportrait) {
+    						font-size:16px;
+    						margin-bottom: 15px;
+    					}
+    				}
+    				table {
+    					tbody {
+    						tr {
+    							td {
+    								display:block;
+    								color:#fff;
+    								font-size:20px;
+    								padding: 0px;
+    								@include bp(tablandscape) {
+			    					font-size:16px;
+			    					margin-bottom:-3.4px;
+			    					}
+			    					@include bp(tabportrait) {
+    									font-size:16px;
+    									margin-bottom: -1px;
+    								}
+    							}
+    						}
+    					}
+    				}
+				}
+				.driveHrs {
+					@extend .lobbbyHrs;
+					padding-left:13px;
+					@include bp(tablandscape) {
+						padding-left: 39px;
+					}
+				}
+			}
+		}
+	}
+}
+.mapSection {
+	margin-top: 73px;
+    margin-bottom: 73px;
+    @include bp(tablandscape) {
+    	margin-top: 60px;
+    	margin-bottom: 60px;
+    }
+    @include bp(tabportrait) {
+    	margin-top: 40px;
+    	margin-bottom: 40px;
+    }
+    @include bp(mobile) {
+    	margin-top: 40px;
+  		margin-bottom: 40px;
+    }
+    #map_div {
+    	height:548px;
+    	@include bp(tablandscape) {
+    		height:412px;
+    	}
+    	@include bp(tabportrait) {
+    		height:412px;
+    	}
+    	@include bp(mobile) {
+    		height:163px;
+    	}
+    }
+	img {
+		width:100%;
+	}
+}
+.alertSection {
+	margin-bottom:84px;
+	@include bp(tablandscape) {
+		margin-bottom: 60px;
+	}
+	@include bp(tabportrait) {
+		margin-bottom: 40px;
+	}
+	@include bp(mobile) {
+		margin-bottom: 40px;
+	}
+	.bgWrap {
+		background: url(../images/location-detail/alertImage.jpg) no-repeat;
+		background-size:cover;
+		width:100%;
+		min-height:487px;
+		padding:44px 30px 30px 60px;
+		@include bp(tablandscape) {
+			background-position: 76% 56%;
+			min-height:344px;
+			padding:58px 30px 30px 60px;
+		}
+		@include bp(tabportrait) {
+			background-position: 65% 78%;
+			min-height: 278px;
+			padding:40px 30px 30px 60px;
+		}
+		@include bp(mobile) {
+			min-height: 592px;
+			background-size:cover;
+			background-position: 62% 0%;
+			padding:29px 20px 30px 20px;
+		}
+		.contentSec {
+			display:table;
+			width:40%;
+			@include bp(tabportrait) {
+				width: 40.7%;
+			}
+			@include bp(mobile) {
+				width:100%;
+			}
+			h2 {
+				font-size:36px;
+				font-weight:bold;
+				color:#fff;
+				margin-bottom:96px;
+				text-transform: uppercase;
+				@include bp(tablandscape) {
+					font-size:24px;
+					margin-bottom:83px;
+				}
+				@include bp(tabportrait) {
+					font-size:22px;
+					margin-bottom: 55px;
+				}
+				@include bp(mobile) {
+					font-size:26px;
+					margin-bottom:257px;
+				}
+			}
+			p {
+				font-size:34px;
+				color:#ffffff;
+				margin-bottom: 44px;
+				&:last-child {
+					margin-bottom:44px;
+				}
+				@include bp(tablandscape) {
+					font-size:18px;
+					margin-bottom:11px;
+				}
+				@include bp(tabportrait) {
+					font-size:18px;
+					margin-bottom: 13px;
+				}
+				@include bp(mobile) {
+					width: 60%;
+					font-size:20px;
+					margin-bottom: 49px;
+				}
+			}
+			a {
+				font-size:19px;
+				font-weight:800;
+				color:#fff;
+				background:#1268e5;
+				display:inline-block;
+				padding: 9px 28px 9px 30px;
+				border:1px solid #fff;
+				border-radius:21px;
+				text-transform: uppercase;
+				@include bp(tablandscape) {
+					font-size:17px;
+					padding: 7px 19px 5px 19px;
+				}
+				@include bp(tabportrait) {
+					font-size:17px;
+					padding:9px 28px 4px 30px;
+				}
+				@include bp(mobile) {
+					font-size:17px;
+					padding:8px 21px 7px 20px;
+				}
+			}
+		}
+	}
+}
+
+.lcdetailPannel {
+	@include bp(tabportrait) {
+		margin-bottom:100px;
+	}
+	@include bp(mobile) {
+		margin-bottom:40px;
+	}
+}
+
+.loacationMap {
+	.mapBlock {
+		height: 464px;
+    	width: 100%;
 	}
 }
