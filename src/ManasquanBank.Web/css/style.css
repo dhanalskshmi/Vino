@@ -1938,9 +1938,13 @@ header + .loginBlocks .businessLogin p a {
 }
 @media screen and (min-width: 1024px) {
   .logo {
-    max-width: 216px;
+    max-width: 227px;
+    padding: 14px 0 10px 11px;
   }
 
+  .headerNav {
+    padding-top: 16px;
+  }
   .headerNav .topNav {
     font-size: 12px;
     margin-right: 12px;
@@ -1950,10 +1954,10 @@ header + .loginBlocks .businessLogin p a {
     margin-right: 9px;
   }
   .headerNav .topNav li {
-    padding-right: 19px;
+    padding-right: 17px;
   }
   .headerNav .topNav li.iWantto {
-    padding-right: 25px;
+    padding-right: 23px;
   }
   .headerNav .topNav li.iWantto .subNav {
     left: -15px;
@@ -1963,8 +1967,8 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .menuWrapper {
-    width: -webkit-calc(100% - 224px);
-    width: calc(100% - 224px);
+    width: -webkit-calc(100% - 235px);
+    width: calc(100% - 235px);
   }
   .menuWrapper .headerNav {
     width: -webkit-calc(100% - 244px);
@@ -1978,18 +1982,24 @@ header + .loginBlocks .businessLogin p a {
   .menuWrapper .loginBlocks .businessLogin {
     min-width: 122px;
     max-width: 122px;
+    padding: 5px 7px 0;
   }
   .menuWrapper .loginBlocks .personalLogin h3,
   .menuWrapper .loginBlocks .businessLogin h3 {
     font-size: 10px;
+    margin-bottom: 4px;
   }
   .menuWrapper .loginBlocks .personalLogin .txtBox,
   .menuWrapper .loginBlocks .businessLogin .txtBox {
     font-size: 10px;
+    height: 17px;
+    margin-bottom: 6px;
   }
   .menuWrapper .loginBlocks .personalLogin button,
   .menuWrapper .loginBlocks .businessLogin button {
     font-size: 9px;
+    margin-bottom: 6px;
+    height: 17px;
   }
   .menuWrapper .loginBlocks .personalLogin p a,
   .menuWrapper .loginBlocks .businessLogin p a {
@@ -2000,14 +2010,23 @@ header + .loginBlocks .businessLogin p a {
     font-size: 16px;
     float: right;
     margin-left: 0;
+    margin-top: 20px;
     margin-right: 12px;
   }
+  .mainNav a {
+    line-height: 18px;
+  }
   .mainNav ul li {
-    padding-right: 15px;
-    padding-bottom: 2px;
+    padding-right: 13px;
+    padding-bottom: 18px;
   }
   .mainNav ul li a::after {
+    top: 3px;
     right: -12px;
+    height: 35px;
+  }
+  .mainNav .search .submit i {
+    height: 17px;
   }
   .mainNav .search .txtBox {
     right: 250px;
@@ -2058,9 +2077,7 @@ header + .loginBlocks .businessLogin p a {
 }
 @media screen and (min-width: 1280px) {
   header {
-    margin-top: 22px;
-    -webkit-transition: background, margin 0.25s;
-            transition: background, margin 0.25s;
+    margin-top: 26px;
   }
   header.fixed {
     position: fixed;
@@ -2086,7 +2103,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .headerNav {
-    padding-top: 22px;
+    padding-top: 26px;
   }
   .headerNav .topNav {
     font-size: 16px;
@@ -2132,12 +2149,12 @@ header + .loginBlocks .businessLogin p a {
   .menuWrapper .loginBlocks .businessLogin {
     max-width: 173px;
     min-width: 173px;
-    padding: 8px 10px 4px;
+    padding: 9px 10px 4px;
   }
   .menuWrapper .loginBlocks .personalLogin h3,
   .menuWrapper .loginBlocks .businessLogin h3 {
     font-size: 12px;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .personalLogin p,
   .menuWrapper .loginBlocks .businessLogin p {
@@ -2171,7 +2188,11 @@ header + .loginBlocks .businessLogin p a {
   .menuWrapper .loginBlocks .businessLogin .txtBox,
   .menuWrapper .loginBlocks .businessLogin button {
     height: 24px;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
+  }
+  .menuWrapper .loginBlocks .personalLogin button,
+  .menuWrapper .loginBlocks .businessLogin button {
+    margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
     -webkit-box-pack: end;
@@ -2215,12 +2236,12 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     padding-right: 19px;
-    padding-bottom: 35px;
+    padding-bottom: 26px;
   }
   .mainNav ul li a::after {
     height: 49px;
-    right: -22px;
-    top: 4px;
+    right: -16px;
+    top: 2px;
   }
   .mainNav ul li a span::after {
     height: 8px;
@@ -2228,7 +2249,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .SubmenuWrapper {
-    top: 153px;
+    top: 148px;
   }
   .SubmenuWrapper .bgWrap {
     padding: 23px 19px 0;
@@ -2290,6 +2311,10 @@ header + .loginBlocks .businessLogin p a {
     background: #1c3d6d;
     color: #FFF;
   }
+
+  .openAccount {
+    top: 30%;
+  }
 }
 @media screen and (min-width: 1300px) {
   .headerWrapper {
@@ -2324,10 +2349,13 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     padding-right: 27px;
-    padding-bottom: 27px;
+    padding-bottom: 22px;
   }
   .mainNav ul li a {
     line-height: 25px;
+  }
+  .mainNav ul li a span::after {
+    bottom: -23px;
   }
   .mainNav .search .submit i {
     background-size: contain;
@@ -2369,6 +2397,10 @@ header + .loginBlocks .businessLogin p a {
   }
   .SubmenuWrapper .flexBox .cols.extWidth {
     width: 290px;
+  }
+
+  .openAccount {
+    top: 16.3%;
   }
 }
 /*@import "tabletLandscape";
@@ -2532,6 +2564,9 @@ footer {
 .fRow ul li a {
   color: #FFF;
 }
+.fRow ul li a:hover {
+  text-decoration: underline;
+}
 .fRow ul li.fLink {
   margin-bottom: 9px;
 }
@@ -2543,13 +2578,13 @@ footer {
 
   footer {
     position: absolute;
-    padding: 18px 0 0;
+    padding: 17px 0 0;
   }
 
   .footerWraps {
     display: block;
-    margin: 0 49px;
-    padding-bottom: 23px;
+    margin: 0 50px;
+    padding-bottom: 22px;
   }
   .footerWraps .fCols,
   .footerWraps .fCols2,
@@ -2581,10 +2616,10 @@ footer {
   }
 
   .footerWraps .fCols {
-    width: 49.367%;
+    width: 47.067%;
   }
   .footerWraps .fCols2 {
-    width: 32.382%;
+    width: 34.882%;
   }
   .footerWraps .fCols3 {
     width: 16%;
@@ -2603,7 +2638,7 @@ footer {
   .fCols .detailsWrap p {
     font-size: 12px;
     line-height: 13px;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
   }
   .fCols .detailsWrap ul {
     display: block;
@@ -2635,10 +2670,11 @@ footer {
     background-size: 42px 239px;
   }
   .fCols .detailsWrap ul li.uTube a {
-    background-position: -11px -83px;
-    background-size: 42px 239px;
-    width: 20px;
+    background-position: -9px -76px;
+    background-size: 32px 219px;
+    width: 15px;
     height: 14px;
+    margin-top: 2px;
   }
   .fCols .detailsWrap ul li.tweet a {
     background-position: -12px -115px;
@@ -2654,12 +2690,14 @@ footer {
   }
 
   .fMenu {
-    padding-top: 19px;
+    padding-top: 0;
     margin-bottom: 18px;
+    max-width: 608px;
+    margin: 0 auto 18px;
   }
   .fMenu ul li {
     font-size: 15px;
-    padding-bottom: 9px;
+    padding-bottom: 8px;
   }
 
   .fCols2 {
@@ -2684,7 +2722,7 @@ footer {
     margin-top: 19px;
   }
   .fCols3 .partnersBlock {
-    margin-top: 14px;
+    margin-top: 9px;
   }
   .fCols3 .partnersBlock a {
     opacity: 0.4;
@@ -2709,7 +2747,7 @@ footer {
   }
 
   .fRow {
-    padding: 9px 0 5px;
+    padding: 10px 0 5px;
   }
   .fRow ul {
     padding-left: 0;
@@ -2746,6 +2784,7 @@ footer {
   }
   .fRow ul li.fLink + li {
     margin-top: 0;
+    padding-top: 0;
   }
 }
 @media screen and (min-width: 800px) {
@@ -2759,27 +2798,34 @@ footer {
   }
 
   .footerWraps {
-    padding-bottom: 10px;
+    padding-bottom: 29px;
+    margin: 0 26px;
   }
 
   .fMenu {
+    max-width: 814px;
     padding-top: 0;
     margin-bottom: 25px;
   }
   .fMenu ul li {
     font-size: 20px;
-    padding-bottom: 11px;
+    padding-bottom: 9px;
   }
 
+  .fCols {
+    width: 49.267%;
+  }
   .fCols figure {
     max-width: 282px;
   }
   .fCols .detailsWrap {
     margin-left: 88px;
+    margin-top: -3px;
     max-width: 234px;
   }
   .fCols .detailsWrap p {
     font-size: 16px;
+    font-weight: 700;
     line-height: 20px;
   }
   .fCols .detailsWrap ul {
@@ -2811,6 +2857,10 @@ footer {
     height: 18px;
   }
 
+  .fCols2 {
+    width: 34.299%;
+    padding-top: 10px;
+  }
   .fCols2 h3 {
     font-size: 18px;
     margin-bottom: -2px;
@@ -2823,6 +2873,9 @@ footer {
     padding-top: 7px;
   }
 
+  .fCols3 {
+    width: 15.846%;
+  }
   .fCols3 figure {
     margin-top: 26px;
   }
@@ -2844,7 +2897,7 @@ footer {
   }
 
   .fRow {
-    padding: 15px 0 13px;
+    padding: 16px 0 11px;
   }
   .fRow ul li {
     font-size: 16px;
@@ -2852,6 +2905,7 @@ footer {
   }
   .fRow ul li::after {
     height: 24px;
+    top: -6px;
   }
 
   footer {
@@ -2871,7 +2925,7 @@ footer {
   }
 
   .footerWraps {
-    padding-bottom: 37px;
+    padding-bottom: 38px;
     margin: 0;
   }
 
@@ -2879,22 +2933,26 @@ footer {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 42px;
+    max-width: 100%;
   }
   .fMenu ul li {
     font-size: 24px;
-    padding-bottom: 26px;
+    padding-bottom: 25px;
   }
 
   .fCols figure {
     max-width: 418px;
   }
   .fCols .detailsWrap {
-    padding-top: 8px;
+    padding-top: 10px;
     margin-left: 134px;
     max-width: 227px;
   }
+  .fCols .detailsWrap p {
+    line-height: 21px;
+  }
   .fCols .detailsWrap ul {
-    margin-top: 31px;
+    margin-top: 27px;
   }
   .fCols .detailsWrap ul li {
     margin-right: 20px;
@@ -2930,9 +2988,12 @@ footer {
     height: 24px;
   }
 
+  .fCols2 {
+    padding-top: 20px;
+  }
   .fCols2 h3 {
     font-size: 23px;
-    margin-bottom: 13px;
+    margin-bottom: 6px;
   }
   .fCols2 p {
     font-size: 23px;
@@ -2943,7 +3004,10 @@ footer {
   }
 
   .fCols3 figure {
-    margin-top: 29px;
+    margin-top: 39px;
+  }
+  .fCols3 .partnersBlock {
+    margin-top: 50px;
   }
   .fCols3 .partnersBlock a {
     opacity: 1;
@@ -2956,12 +3020,24 @@ footer {
     background-size: auto;
     width: 84px;
     height: 49px;
+    margin-top: 26px;
   }
   .fCols3 .partnersBlock .lender {
     background-position: -8px -375px;
     background-size: auto;
     width: 67px;
     height: 67px;
+  }
+
+  .fRow {
+    padding: 23px 0 33px;
+  }
+  .fRow ul li {
+    font-size: 14px;
+  }
+  .fRow ul li::after {
+    height: 16px;
+    top: 0;
   }
 }
 #wrapper_bgndVideo {
@@ -3529,7 +3605,7 @@ footer {
 }
 .knowledgePannel ul h4 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
   color: #FFF;
   text-transform: uppercase;
   text-align: center;
@@ -3725,7 +3801,7 @@ footer {
     min-height: 432px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 157px;
+    padding-top: 154px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 31px;
@@ -3751,7 +3827,7 @@ footer {
   .bankingServices {
     max-width: -webkit-calc(100% - 152px);
     max-width: calc(100% - 152px);
-    padding-bottom: 69px;
+    padding-bottom: 61px;
     margin: -40px auto 0;
   }
   .bankingServices .containerWrapper {
@@ -3776,6 +3852,11 @@ footer {
   .bankingServices ul li .imgBlock {
     min-height: 154px;
   }
+  .bankingServices ul li .serviceContent .title {
+    min-width: 107px;
+    max-width: 107px;
+    margin-bottom: 0;
+  }
   .bankingServices ul li.bunisessBank {
     border-right: none;
   }
@@ -3795,6 +3876,10 @@ footer {
   }
   .bankingServices ul li.personalBank h2, .bankingServices ul li.didgitalCenter h2 {
     padding-right: 34px;
+  }
+  .bankingServices ul li.personalBank .serviceContent .title, .bankingServices ul li.didgitalCenter .serviceContent .title {
+    min-width: 128px;
+    max-width: 128px;
   }
   .bankingServices ul li.mortage {
     padding: 0 26px;
@@ -3825,12 +3910,12 @@ footer {
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
     width: 112px;
     padding-right: 5px;
-    padding-top: 11px;
+    padding-top: 13px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
     font-weight: 400;
     font-size: 18px;
-    line-height: 16px;
+    line-height: 15px;
     margin-bottom: 6px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
@@ -3872,31 +3957,34 @@ footer {
             flex-wrap: wrap;
   }
   .bluePannel .wraps {
-    padding: 20px 24px 0;
+    padding: 22px 24px 0;
     position: relative;
   }
   .bluePannel .detailsWrap {
     max-width: 293px;
     display: inline-block;
     vertical-align: top;
-    padding-bottom: 48px;
+    padding-bottom: 44px;
     margin-right: 3px;
     border-radius: 24px;
   }
   .bluePannel .detailsWrap h2 {
     font-size: 21px;
-    margin-bottom: -4px;
-    line-height: 24px;
+    margin-bottom: 1px;
+    line-height: 26px;
   }
   .bluePannel .detailsWrap h2 + p {
-    margin-top: 3px;
+    margin-top: -3px;
+  }
+  .bluePannel .detailsWrap h3 {
+    margin-bottom: 4px;
   }
   .bluePannel .detailsWrap h3 + p {
     margin-top: -1px;
   }
   .bluePannel .detailsWrap p {
     font-size: 12px;
-    line-height: 13px;
+    line-height: 14px;
   }
   .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
     font-size: 12px;
@@ -3926,14 +4014,17 @@ footer {
     position: relative;
     /*padding-left: 60px;
     padding-right: 60px;*/
-    margin-bottom: 42px;
+    margin-bottom: 38px;
   }
   .communityPannel .bgWraps {
     padding-top: 36px;
-    padding-bottom: 11px;
+    padding-bottom: 13px;
     max-width: 728px;
     margin: 0 auto;
     position: relative;
+  }
+  .communityPannel .titleBlock {
+    margin-bottom: -3px;
   }
   .communityPannel .imgBlock {
     position: absolute;
@@ -3951,14 +4042,14 @@ footer {
   .communityPannel .redBlock .wraps,
   .communityPannel .detailBlock h2,
   .communityPannel .detailBlock .wraps {
-    padding-left: 60px;
+    padding-left: 62px;
   }
   .communityPannel .redBlock h2,
   .communityPannel .titleBlock h2 {
     font-size: 30px;
   }
   .communityPannel .titleBlock h2 {
-    line-height: 28px;
+    line-height: 27px;
   }
   .communityPannel .redBlock .containerWrapper {
     padding: 0;
@@ -3972,11 +4063,12 @@ footer {
     max-width: calc(100% - 210px);
   }
   .communityPannel .detailBlock {
-    padding-top: 7px;
+    padding-top: 11px;
     padding-bottom: 0;
   }
   .communityPannel .detailBlock .wraps {
     max-width: 332px;
+    padding-left: 60px;
   }
   .communityPannel .detailBlock p {
     font-size: 15px;
@@ -3986,10 +4078,11 @@ footer {
 
   .appPannel {
     background: none;
+    padding-bottom: 86px;
   }
   .appPannel .bgWraps {
     background: #ec2c3a;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     position: relative;
   }
   .appPannel .imgDesg {
@@ -3999,7 +4092,7 @@ footer {
     left: -23px;
   }
   .appPannel .appStores {
-    padding: 12px 0 4px 0;
+    padding: 14px 0 4px 0;
   }
   .appPannel .appStores figure {
     display: inline-block;
@@ -4010,37 +4103,41 @@ footer {
   }
   .appPannel .appStores figure:last-child {
     margin-right: 0;
+    margin-left: 10px;
   }
   .appPannel .appDetails {
-    max-width: 496px;
-    padding-top: 16px;
-    padding-right: 40px;
+    max-width: 502px;
+    padding-top: 22px;
+    padding-right: 24px;
     margin-left: auto;
     text-align: right;
   }
   .appPannel h2 {
-    font-size: 45px;
-    padding-bottom: 12px;
+    font-size: 52px;
+    font-weight: 700;
+    padding-bottom: 11px;
   }
   .appPannel p {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 18px;
+    font-weight: 700;
   }
 
   .knowledgePannel {
     background: none;
     padding: 0;
-    margin-bottom: 46px;
+    margin-bottom: 44px;
   }
   .knowledgePannel .bgWraps {
     background: #1b3d6e;
-    padding: 17px 0;
+    padding: 29px 0 17px;
   }
   .knowledgePannel h2 {
-    font-size: 25px;
+    font-size: 28px;
+    line-height: 19px;
   }
   .knowledgePannel ul {
-    padding: 29px 59px 17px;
+    padding: 29px 49px 15px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4052,9 +4149,10 @@ footer {
     -webkit-align-items: top;
         -ms-flex-align: top;
             align-items: top;
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     overflow: hidden;
     text-align: center;
   }
@@ -4066,22 +4164,22 @@ footer {
     max-width: 69px;
     margin: 0 auto;
     padding: 0;
-    min-height: 63px;
+    min-height: 67px;
   }
   .knowledgePannel ul h4 {
     font-size: 16px;
   }
   .knowledgePannel .btnManasq, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply {
     font-size: 12px;
-    padding: 3px 12px;
+    padding: 4px 19px;
   }
 
   .eventsPannel {
-    padding: 24px 0 17px;
+    padding: 19px 0 17px;
   }
   .eventsPannel h2 {
     font-size: 28px;
-    padding-bottom: 18px;
+    padding-bottom: 13px;
   }
   .eventsPannel ul {
     display: -webkit-box;
@@ -4106,37 +4204,37 @@ footer {
   }
 
   .joinEmail {
-    padding: 29px 0 25px;
+    padding: 24px 0 25px;
   }
   .joinEmail h2 {
     font-size: 23px;
-    padding-bottom: 7px;
+    padding-bottom: 1px;
   }
   .joinEmail h2 br {
     display: none;
   }
   .joinEmail label {
     font-size: 16px;
-    margin-bottom: 0;
+    margin-bottom: -1px;
   }
   .joinEmail .txtBox {
     font-size: 16px;
     height: 31px;
   }
   .joinEmail .submit {
-    margin-top: 13px;
+    margin-top: 8px;
     margin-bottom: 0;
   }
   .joinEmail .submit button {
     font-size: 12px;
-    padding: 2px 21px 4px;
+    padding: 2px 21px 1px;
   }
   .joinEmail form div {
     display: inline-block;
     vertical-align: top;
     width: 30.03%;
     margin-right: 33px;
-    margin-bottom: 16px;
+    margin-bottom: 3px;
   }
   .joinEmail form div:nth-child(3) {
     margin-right: 0;
@@ -4167,7 +4265,7 @@ footer {
     margin: 0 auto;
   }
   .joinEmail form div.groupCheckbox div {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     margin-right: 0;
   }
   .joinEmail form div.groupCheckbox div .checkbox {
@@ -4200,11 +4298,11 @@ footer {
     min-height: 576px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 204px;
+    padding-top: 195px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 38px;
-    line-height: 44px;
+    line-height: 43px;
     padding-left: 44px;
   }
   .bannerWrapper .bannerContent h1 span:nth-child(1) {
@@ -4226,6 +4324,8 @@ footer {
   .bankingServices {
     max-width: 83.593%;
     margin-top: -92px;
+    padding-bottom: 0;
+    margin-bottom: 52px;
   }
   .bankingServices .containerWrapper {
     padding: 0;
@@ -4235,12 +4335,17 @@ footer {
     min-height: 223px;
     max-height: 223px;
   }
+  .bankingServices ul li .serviceContent .title {
+    min-width: 150px;
+    max-width: 150px;
+  }
   .bankingServices ul li .imgBlock {
     min-height: 223px;
   }
   .bankingServices ul li h2 {
     font-size: 28px;
-    line-height: 27px;
+    line-height: 26px;
+    padding-bottom: 13px;
   }
   .bankingServices ul li.bunisessBank, .bankingServices ul li.mortage {
     margin-top: 16px;
@@ -4250,11 +4355,18 @@ footer {
     min-height: 239px;
     max-height: 239px;
   }
+  .bankingServices ul li.personalBank .serviceContent .title, .bankingServices ul li.didgitalCenter .serviceContent .title {
+    min-width: 170px;
+    max-width: 170px;
+  }
   .bankingServices ul li.personalBank .imgBlock, .bankingServices ul li.didgitalCenter .imgBlock {
     min-height: 239px;
   }
   .bankingServices ul li.personalBank h2, .bankingServices ul li.didgitalCenter h2 {
     padding-right: 47px;
+  }
+  .bankingServices ul li.mortage {
+    padding: 30px 0 0;
   }
   .bankingServices ul li.mortage h3 {
     font-size: 28px;
@@ -4262,13 +4374,14 @@ footer {
   }
   .bankingServices ul li.mortage h3 strong {
     font-size: 56px;
-    margin-top: 32px;
+    margin-top: 33px;
   }
   .bankingServices ul li.kasasa {
     border-right: none;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
     width: 150px;
+    padding-top: 19px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
     font-size: 25px;
@@ -4277,7 +4390,8 @@ footer {
   }
   .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply {
     font-size: 10px;
-    padding: 6px 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
   }
   .bankingServices ul li.kasasa figure {
     width: 117px;
@@ -4285,21 +4399,29 @@ footer {
   }
 
   .bluePannel {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+  .bluePannel .bgWraps {
+    padding: 31px 29px;
   }
   .bluePannel .wraps {
-    padding: 28px 19px 0;
+    padding: 26px 19px 0;
   }
   .bluePannel .detailsWrap {
-    max-width: 379px;
+    max-width: 377px;
     padding-bottom: 54px;
   }
   .bluePannel .detailsWrap h2 {
     font-size: 26px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+    line-height: 30px;
+  }
+  .bluePannel .detailsWrap h2 + p {
+    margin-top: -7px;
   }
   .bluePannel .detailsWrap h3 {
     font-size: 21px;
+    margin-bottom: 5px;
   }
   .bluePannel .detailsWrap p {
     font-size: 16px;
@@ -4310,13 +4432,14 @@ footer {
   }
   .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
     font-size: 15px;
-    padding: 5px 21px 6px;
+    padding: 5px 27px;
     margin-top: 0;
     bottom: 16px;
+    border-radius: 25px;
   }
 
   .communityPannel {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
   }
   .communityPannel .titleBlock h2,
   .communityPannel .titleBlock .wraps,
@@ -4324,7 +4447,7 @@ footer {
   .communityPannel .redBlock .wraps,
   .communityPannel .detailBlock h2,
   .communityPannel .detailBlock .wraps {
-    padding-left: 72px;
+    padding-left: 70px;
   }
   .communityPannel .bgWraps {
     padding-top: 30px;
@@ -4340,18 +4463,19 @@ footer {
   .communityPannel .titleBlock h2,
   .communityPannel .redBlock h2 {
     font-size: 38px;
-    line-height: 34px;
+    line-height: 33px;
   }
   .communityPannel .titleBlock {
     padding-bottom: 0;
     margin-bottom: -4px;
   }
   .communityPannel .detailBlock {
-    padding-top: 11px;
+    padding-top: 12px;
   }
   .communityPannel .detailBlock p {
     font-size: 18px;
     line-height: 19px;
+    margin-bottom: 14px;
   }
   .communityPannel .imgBlock {
     top: 18px;
@@ -4361,50 +4485,63 @@ footer {
     width: 348px;
     height: 348px;
   }
+  .communityPannel .redBlock {
+    padding-top: 15px;
+    padding-bottom: 6px;
+  }
+  .communityPannel .redBlock h2 {
+    line-height: 39px;
+  }
 
   .appPannel {
-    padding-bottom: 102px;
+    padding-bottom: 108px;
   }
   .appPannel .bgWraps {
     padding-bottom: 30px;
+    margin-left: 34px;
   }
   .appPannel .appDetails {
     max-width: 551px;
+    padding-top: 32px;
     padding-right: 0;
-    margin-right: 54px;
+    margin-right: 34px;
   }
   .appPannel h2 {
-    font-weight: 700;
     font-size: 62px;
+    padding-bottom: 17px;
   }
   .appPannel p {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 21px;
   }
   .appPannel .appStores {
     padding-top: 17px;
   }
   .appPannel .appStores figure {
     max-width: 126px;
-    margin-right: 6px;
+    margin-right: 0;
   }
   .appPannel .imgDesg {
     max-width: 278px;
     top: -31px;
+    left: -36px;
   }
 
+  .knowledgePannel {
+    margin-bottom: 41px;
+  }
   .knowledgePannel .bgWraps {
-    padding: 26px 0 25px;
+    padding: 40px 0 22px;
   }
   .knowledgePannel h2 {
     font-size: 35px;
   }
   .knowledgePannel ul {
-    padding: 29px 30px 21px;
+    padding: 46px 59px 20px;
   }
   .knowledgePannel ul figure {
     max-width: 84px;
-    min-height: 81px;
+    min-height: 83px;
   }
   .knowledgePannel ul h4 {
     font-size: 20px;
@@ -4415,11 +4552,11 @@ footer {
   }
 
   .eventsPannel {
-    padding: 30px 0 33px;
+    padding: 28px 0 34px;
   }
   .eventsPannel h2 {
     font-size: 35px;
-    padding-bottom: 40px;
+    padding-bottom: 37px;
   }
   .eventsPannel .eventHead {
     margin-bottom: 15px;
@@ -4441,15 +4578,16 @@ footer {
   }
 
   .joinEmail {
-    padding: 45px 0 30px;
+    padding: 40px 0 30px;
   }
   .joinEmail h2 {
     font-size: 30px;
-    padding-bottom: 14px;
+    padding-bottom: 9px;
   }
   .joinEmail label {
     font-size: 21px;
-    margin-bottom: 2px;
+    margin-bottom: 0;
+    line-height: 20px;
   }
   .joinEmail .txtBox {
     height: 41px;
@@ -4457,7 +4595,7 @@ footer {
   .joinEmail form div {
     width: 30.239%;
     margin-right: 39px;
-    margin-bottom: 21px;
+    margin-bottom: 14px;
   }
   .joinEmail form div.groupCheckbox {
     width: 100%;
@@ -4471,7 +4609,7 @@ footer {
   .joinEmail form div.groupCheckbox div .checkbox {
     width: 16px;
     height: 16px;
-    top: -8px;
+    top: -10px;
   }
   .joinEmail form div.groupCheckbox div .checkbox::after {
     width: 6px;
@@ -4480,11 +4618,17 @@ footer {
     top: 1px;
   }
   .joinEmail form div.submit {
-    margin-top: 20px;
+    margin-top: 17px;
   }
   .joinEmail form div.submit button {
     font-size: 16px;
     padding: 2px 29px 3px;
+  }
+}
+@media screen and (min-width: 1263px) {
+  .bluePannel .detailsWrap {
+    max-width: -webkit-calc(50% - 77px);
+    max-width: calc(50% - 77px);
   }
 }
 @media screen and (min-width: 1264px) {
@@ -4515,11 +4659,11 @@ footer {
     min-height: 965px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 284px;
+    padding-top: 288px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 63px;
-    line-height: 68px;
+    line-height: 66px;
     padding-left: 0;
   }
   .bannerWrapper .bannerContent h1 span:nth-child(2) {
@@ -4538,6 +4682,7 @@ footer {
   .bankingServices {
     max-width: 1240px;
     margin-top: -161px;
+    margin-bottom: 112px;
   }
   .bankingServices ul li {
     max-width: 328px;
@@ -4549,6 +4694,10 @@ footer {
     min-height: 336px;
     -webkit-transition: all 0.75s;
             transition: all 0.75s;
+  }
+  .bankingServices ul li .serviceContent .title {
+    min-width: 203px;
+    max-width: 203px;
   }
   .bankingServices ul li:hover .imgBlock {
     -webkit-transform: scale(1.1);
@@ -4574,8 +4723,16 @@ footer {
   .bankingServices ul li.personalBank .imgBlock, .bankingServices ul li.didgitalCenter .imgBlock {
     min-height: 352px;
   }
+  .bankingServices ul li.personalBank .serviceContent .title {
+    min-width: 253px;
+    max-width: 253px;
+  }
+  .bankingServices ul li.didgitalCenter .serviceContent .title {
+    min-width: 205px;
+    max-width: 205px;
+  }
   .bankingServices ul li.mortage .serviceContent {
-    padding: 42px 0 0;
+    padding: 15px 0 0 27px;
   }
   .bankingServices ul li.mortage h3 {
     font-weight: 700;
@@ -4587,8 +4744,9 @@ footer {
   }
   .bankingServices ul li.mortage h3 strong {
     font-size: 126px;
-    margin-top: 37px;
-    text-align: right;
+    padding-left: 60px;
+    margin-top: 43px;
+    text-align: left;
   }
   .bankingServices ul li.mortage h3 strong span {
     font-size: 66px;
@@ -4617,17 +4775,23 @@ footer {
   }
 
   .bluePannel {
-    margin-bottom: 57px;
+    margin-bottom: 55px;
+  }
+  .bluePannel .bgWraps {
+    padding: 49px 41px 55px;
+  }
+  .bluePannel .wraps {
+    padding: 31px 45px 0;
   }
   .bluePannel .detailsWrap {
     max-width: -webkit-calc(50% - 81.5px);
     max-width: calc(50% - 81.5px);
-    padding-bottom: 89px;
+    padding-bottom: 95px;
     margin-right: 5px;
   }
   .bluePannel .detailsWrap h2 {
     font-size: 36px;
-    line-height: 44px;
+    line-height: 43px;
     margin-bottom: -1px;
   }
   .bluePannel .detailsWrap h2 + p {
@@ -4636,6 +4800,7 @@ footer {
   .bluePannel .detailsWrap h3 {
     font-size: 31px;
     margin-bottom: 9px;
+    line-height: 32px;
   }
   .bluePannel .detailsWrap h3 + p {
     margin-top: 0;
@@ -4646,7 +4811,7 @@ footer {
   }
   .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
     font-size: 19px;
-    padding: 12px 22px;
+    padding: 8px 41px 9px;
     border-radius: 23px;
     bottom: 25px;
   }
@@ -4669,11 +4834,12 @@ footer {
   .communityPannel .titleBlock h2,
   .communityPannel .redBlock h2 {
     font-size: 63px;
-    line-height: 53px;
+    line-height: 55px;
   }
   .communityPannel .titleBlock {
+    padding-top: 16px;
     padding-bottom: 0;
-    margin: 0 20px -4px;
+    margin: 0 20px -7px;
     max-width: 100%;
   }
   .communityPannel .titleBlock .containerWrapper {
@@ -4684,7 +4850,8 @@ footer {
   }
   .communityPannel .redBlock {
     max-width: 1113px;
-    padding-bottom: 24px;
+    padding-top: 18px;
+    padding-bottom: 21px;
     margin: 0 auto;
     -webkit-transform: translateX(-64px);
         -ms-transform: translateX(-64px);
@@ -4692,17 +4859,18 @@ footer {
   }
   .communityPannel .redBlock h2 {
     padding-left: 104px;
+    line-height: 51px;
   }
   .communityPannel .detailBlock {
     padding-top: 26px;
   }
   .communityPannel .detailBlock .wraps {
     margin-left: 116px;
-    padding-left: 0;
+    padding-left: 2px;
   }
   .communityPannel .detailBlock p {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   .communityPannel .detailBlock .btnManasq, .communityPannel .detailBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .communityPannel .detailBlock .btn-carApply {
     font-size: 19px;
@@ -4719,20 +4887,22 @@ footer {
   }
 
   .appPannel {
-    margin-bottom: 90px;
+    margin-bottom: 154px;
     padding-top: 0;
+    padding-bottom: 0;
   }
   .appPannel .bgWraps {
-    padding-bottom: 46px;
+    padding-bottom: 38px;
   }
   .appPannel h2 {
     font-size: 81px;
-    padding-top: 50px;
-    padding-bottom: 42px;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 37px;
   }
   .appPannel p {
     font-size: 26px;
-    line-height: 25px;
+    line-height: 26px;
   }
   .appPannel .appDetails {
     max-width: 731px;
@@ -4740,9 +4910,10 @@ footer {
   .appPannel .imgDesg {
     max-width: 408px;
     top: -56px;
+    left: -55px;
   }
   .appPannel .appStores {
-    padding-top: 41px;
+    padding-top: 40px;
   }
   .appPannel .appStores figure {
     max-width: 185px;
@@ -4752,13 +4923,13 @@ footer {
     margin-bottom: 73px;
   }
   .knowledgePannel .bgWraps {
-    padding: 35px 0;
+    padding: 49px 0 31px;
   }
   .knowledgePannel h2 {
     font-size: 50px;
   }
   .knowledgePannel ul {
-    padding: 66px 38px 41px;
+    padding: 89px 86px 40px;
   }
   .knowledgePannel ul h4 {
     font-size: 24px;
@@ -4774,7 +4945,7 @@ footer {
   }
 
   .eventsPannel {
-    padding: 37px 0 58px;
+    padding: 38px 0 58px;
   }
   .eventsPannel h2 {
     font-size: 47px;
@@ -4810,7 +4981,7 @@ footer {
   }
 
   .joinEmail {
-    padding: 34px 0 32px;
+    padding: 43px 0 32px;
   }
   .joinEmail h2 {
     font-size: 47px;
@@ -4818,14 +4989,14 @@ footer {
   }
   .joinEmail label {
     font-size: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .joinEmail .txtBox {
     height: 60px;
   }
   .joinEmail form div {
     width: 31.03%;
-    margin-bottom: 35px;
+    margin-bottom: 32px;
   }
   .joinEmail form div.groupCheckbox {
     width: 100%;
@@ -4838,6 +5009,7 @@ footer {
   .joinEmail form div.groupCheckbox div .checkbox {
     width: 24px;
     height: 24px;
+    top: -14px;
   }
   .joinEmail form div.groupCheckbox div .checkbox::after {
     width: 8px;
@@ -4845,6 +5017,9 @@ footer {
     left: 8px;
     top: 3px;
     border-width: 0 3px 3px 0;
+  }
+  .joinEmail form div.submit {
+    margin-top: 31px;
   }
   .joinEmail form div.submit button {
     font-size: 28px;
@@ -6364,7 +6539,6 @@ footer {
   color: #1268e5;
   font-size: 23px;
   padding: 25px 30px;
-  display: none;
 }
 
 .specNeed {
