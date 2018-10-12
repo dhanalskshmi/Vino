@@ -391,6 +391,15 @@ header {
 		}
 	}
 }
+.mobileSearch {
+	display: none;
+	.txtBox {
+		background-color: #e3e3e3;
+	}
+	&.active {
+		display: block;
+	}
+}
 
 @media screen and (min-width: $tab-port-min) {
 }
