@@ -51,6 +51,7 @@
                     foreach (var CTA in CTAButton1)
                     {
                         var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
                         var link = CTA.GetPropertyValue<Link>("link");
 
                         <li class="find-us">
@@ -59,12 +60,22 @@
                                 if (link.Target == "_blank")
                                 {
                                     <a href="@link.Url" target="_blank">
-                                        <span class="heroLinksImage"><img src="/images/about/find-us.png"></span>
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url">
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/about/find-us.png">
+                                            }
+                                        
+                                        </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
                                             {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
+                                                
+                                                @Html.Raw(cTAtitle)
                                             }
                                         </span>
 
@@ -73,12 +84,20 @@
                                 else
                                 {
                                     <a href="@link.Url">
-                                        <span class="heroLinksImage"><img src="/images/about/find-us.png"></span>
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url">
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/about/find-us.png">
+                                            }
+                                        </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
                                             {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
+                                                @Html.Raw(cTAtitle)
                                             }
                                         </span>
 </a>
@@ -87,12 +106,20 @@
                             }
                             else
                             {
-                                <span class="heroLinksImage"><img src="/images/about/find-us.png"></span>
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                    {
+                                        <img src="@iconImage.Url">
+                                    }
+                                    else
+                                    {
+                                        <img src="/images/about/find-us.png">
+                                    }
+                                </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
                                     {
-                                        var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                        @Html.Raw(replacetitle)
+                                        @Html.Raw(cTAtitle)
                                     }
                                 </span>
                             }
@@ -106,6 +133,7 @@
                     foreach (var CTA in CTAButton2)
                     {
                         var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
                         var link = CTA.GetPropertyValue<Link>("link");
 
                         <li class="call-us">
@@ -114,12 +142,20 @@
                                 if (link.Target == "_blank")
                                 {
                                     <a href="@link.Url" target="_blank">
-                                        <span class="heroLinksImage"><img src="/images/about/call-us.png"></span>
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url">
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/about/call-us.png">
+                                            }
+                                        </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
                                             {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
+                                                @Html.Raw(cTAtitle)
                                             }
                                         </span>
 
@@ -128,12 +164,20 @@
                                 else
                                 {
                                     <a href="@link.Url">
-                                        <span class="heroLinksImage"><img src="/images/about/call-us.png"></span>
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url">
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/about/call-us.png">
+                                            }
+                                        </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
                                             {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
+                                                @Html.Raw(cTAtitle)
                                             }
                                         </span>
                                     </a>
@@ -142,12 +186,20 @@
                             }
                             else
                             {
-                                <span class="heroLinksImage"><img src="/images/about/call-us.png"></span>
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                    {
+                                        <img src="@iconImage.Url">
+                                    }
+                                    else
+                                    {
+                                        <img src="/images/about/call-us.png">
+                                    }
+                                </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
                                     {
-                                        var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                        @Html.Raw(replacetitle)
+                                        @Html.Raw(cTAtitle)
                                     }
                                 </span>
                             }
@@ -179,7 +231,7 @@
 
                 
                 @if (String.IsNullOrEmpty(ViewBag.SuccessMessage) == false)
-            {
+                {
                 if (!string.IsNullOrEmpty(thankYouMessage.ToString()))
                 {
                         <div class="success-msg">
@@ -226,6 +278,7 @@
                     foreach (var CTA in CTAButton)
                     {
                         var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
                         var link = CTA.GetPropertyValue<Link>("link");
 
                         <li class="client-service">
@@ -234,12 +287,20 @@
                         if (link.Target == "_blank")
                         {
                                     <a href="@link.Url" target="_blank">
-                                        <span class="heroLinksImage"><img src="/images/about/client-services.png"></span>
+                                        <span class="heroLinksImage">
+                                        @if (iconImage != null)
+                                        {
+                                            <img src="@iconImage.Url">
+                                        }
+                                        else
+                                        {
+                                            <img src="images/about/client-services.png">
+                                        }
+                                        </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
                                             {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
+                                               @Html.Raw(cTAtitle)
                                             }
                                         </span>
                                     </a>
@@ -247,12 +308,20 @@
                                 else
                                 {
                                     <a href="@link.Url">
-                                        <span class="heroLinksImage"><img src="/images/about/client-services.png"></span>
+                                        <span class="heroLinksImage">
+                                        @if (iconImage != null)
+                                        {
+                                            <img src="@iconImage.Url">
+                                        }
+                                        else
+                                        {
+                                            <img src="images/about/client-services.png">
+                                        }
+                                        </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
                                             {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
+                                                @Html.Raw(cTAtitle)
                                             }
                                         </span>
                                     </a>
@@ -261,12 +330,20 @@
                             }
                             else
                             {
-                                <span class="heroLinksImage"><img src="/images/about/client-services.png"></span>
+                                <span class="heroLinksImage">
+                                @if (iconImage != null)
+                                {
+                                    <img src="@iconImage.Url">
+                                }
+                                else
+                                {
+                                    <img src="images/about/client-services.png">
+                                }
+                                </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
                                     {
-                                        var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                        @Html.Raw(replacetitle)
+                                        @Html.Raw(cTAtitle)
                                     }
                                 </span>
                             }
