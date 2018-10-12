@@ -1,3 +1,32 @@
+.heroBlock {
+	.bgWrap {
+		&.mapLocation {
+			@include bp(mobile) {
+				padding: 29px 0px 1px 0px;
+			}
+			#map_div2 {
+				height:384px;
+				margin-top: 29px;
+				margin-bottom: 25px;
+				@include bp(tablandscape) {
+					height: 244px;
+					margin-top: 22px;
+					margin-bottom: 20px;
+				}
+				@include bp(tabportrait) {
+					height: 225px;
+    				margin-top: 19px;
+    				margin-bottom: 0px;
+				}
+				@include bp(mobile) {
+					height: 261px;
+    				margin-top: -4px;
+    				margin-bottom: 18px;
+				}
+			}
+		}
+	}
+}
 .locationSection {
 	padding-bottom: 33px;
     padding-top: 37px;
@@ -12,6 +41,9 @@
 				/*margin-right: 13.204%;*/
     			float: left;
     			margin-top:50px;
+    			@include bp(tablandscape) {
+    				width: 30.974%;
+    			}
     			@include bp(mobile) {
 					width:100%;
 					margin-right:0%;
@@ -24,6 +56,9 @@
 					text-transform:uppercase;
 					margin-top: 11px;
 					margin-bottom: 1px;
+					@include bp(tablandscape) {
+						font-size:18px;
+					}
 					@include bp(tabportrait) {
 						font-size:20px;
 					}
@@ -37,6 +72,7 @@
 					margin-bottom: -8px;
 					@include bp(tablandscape) {
 						margin-bottom:-5px;
+						font-size:14px;
 					}
 					@include bp(tabportrait) {
 						font-size:18px;
@@ -55,6 +91,9 @@
 					display: block;
 					margin-top: 36px;
 					margin-bottom: 15px;
+					@include bp(tablandscape) {
+						font-size:13px;
+					}
 					@include bp(tabportrait) {
 						font-size:18px;
 					}
@@ -80,6 +119,9 @@
 					display: inline-block;
 					padding: 4px 17px 6px 20px;
 					border-radius: 16px;
+					@include bp(landscape) {
+						font-size:12px;
+					}
 					@include bp(mobile) {
 						font-size:12px;
 					}
