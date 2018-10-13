@@ -167,12 +167,17 @@
                         line-height: 19px;
                     }
                 }
-            }
-            .bioInfos {
                 h5 {
                     font-size: 18px;
                     text-transform: uppercase;
+                    margin-top: 52px;
                     margin-bottom: 22px;
+                    @include bp(tablet){
+                        margin-top: 10px;
+                    }
+                    @include bp(landscape) {
+                        margin-top: 29px;
+                    }
                     @include bp(mobile) {
                         margin-bottom: 0;
                         font-size: 16px;
@@ -193,12 +198,8 @@
                 ul {
                     list-style: disc;
                     padding-left: 56px;
-                    margin-bottom: 52px;
                     @include bp(tablet){
                         margin-top: 10px;
-                    }
-                    @include bp(landscape) {
-                        margin-bottom: 29px;
                     }
                     @include bp(mobile) {
                         padding-left: 44px;
@@ -216,6 +217,9 @@
                         }
                     }
                 }
+            }
+            .bioInfos {
+               
             }
             .back-btn{
                 margin-top: 40px;

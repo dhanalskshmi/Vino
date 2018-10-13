@@ -136,7 +136,7 @@ body {
   font-weight: 400;
   background: #FFF;
   color: #17140e;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 a[href^=tel] {
@@ -603,6 +603,15 @@ p {
 
 
 
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 @media screen and (min-width: $tab-port-min) {
 
   .containerWrapper {

@@ -161,9 +161,9 @@ header {
 // Mobile Menu
 
 .mnavWrapper {
-  width: calc(100% - 29px);
+  width: calc(100% - 21px);
   min-height: 100%;
-  margin: 0 14px;
+  margin: 0 12px;
   overflow: hidden;
   //position: fixed;
   position: absolute;
@@ -389,6 +389,15 @@ header {
 				}
 			}
 		}
+	}
+}
+.mobileSearch {
+	display: none;
+	.txtBox {
+		background-color: #e3e3e3;
+	}
+	&.active {
+		display: block;
 	}
 }
 
@@ -918,8 +927,11 @@ header {
 			&.active {
 				.txtBox {
 					width: 410px;
-			    height: 31px;
+			    height: 40px;
 					padding: 0 15px;
+				}
+				.submit {
+					margin-top: 4px;
 				}
 			}
 		}
@@ -1183,7 +1195,7 @@ header {
 			}
 		}
 		.flexBox {
-			height: 372px;
+			height: 315px;
 			.cols {
 				//width: calc(100% / 5);
 				width: 230px;
@@ -1339,7 +1351,7 @@ header {
 	}
 
 	.openAccount {
-    top: 16.3%;
+    top: 25.3%;
 	}
 
 

@@ -31,14 +31,18 @@
 
 .heroBanner {
     min-height: 830px;
+    margin-bottom: -230px;
     @include bp(landscape) {
         min-height: 571px;
+        margin-bottom: -186px;
     }
     @include bp(tablet) {
         min-height: 500px;
+        margin-bottom: -116px;
     }
     @include bp(mobile) {
         min-height: 420px;
+        margin-bottom: -116px;
     }
     .bannerImage {
         min-height: 830px;
@@ -62,17 +66,7 @@
 
 .heroBlock {
     position: relative;
-    margin-top: -230px;
     width: 100%;
-    @include bp(landscape) {
-        margin-top: -186px;
-    }
-    @include bp(tablet) {
-        margin-top: -116px;
-    }
-    @include bp(mobile) {
-        margin-top: -116px;
-    }
     .bgWrap {
         width: 100%;
         background: #f1f1f1;
@@ -129,17 +123,18 @@
         }
     }
 }
-.aboutUs{
-    .heroBlock{
-        .bgWrap{
+
+.aboutUs {
+    .heroBlock {
+        .bgWrap {
             padding: 90px 100px 40px 100px;
-            @include bp(landscape){
+            @include bp(landscape) {
                 padding: 45px 85px 20px 85px;
             }
-            @include bp(tablet){
+            @include bp(tablet) {
                 padding: 42px 60px 20px 60px;
             }
-            @include bp(mobile){
+            @include bp(mobile) {
                 padding: 50px 10px 0 10px;
             }
         }
@@ -154,7 +149,7 @@
     @include bp(landscape) {
         padding-top: 18px;
     }
-    @include bp(mobile){
+    @include bp(mobile) {
         flex-direction: column;
     }
     li {
@@ -174,6 +169,7 @@
             text-decoration: none;
             line-height: 33px;
             letter-spacing: 1px;
+            transition: all 0.3s;
             @include bp(landscape) {
                 font-size: 18px;
                 min-width: 160px;
@@ -190,12 +186,16 @@
                 margin-right: auto;
                 width: max-content;
             }
-            &:hover{
-                background: #1552ab;
-            }
-            .heroLinksText{
+            .heroLinksText {
                 display: flex;
                 align-items: center;
+                transition: all 0.3s;
+            }
+            &:hover {
+                background: #1b3d6e;
+                .heroLinksText {
+                    transform: translateX(5px);
+                }
             }
             .heroLinksImage {
                 position: absolute;
@@ -226,7 +226,7 @@
     .find-us {
         a {
             background: #1a3d6e;
-            &:hover{
+            &:hover {
                 background: #0f2b52;
             }
         }
@@ -234,8 +234,8 @@
     .call-us {
         a {
             background: #eb2837;
-            &:hover{
-                background: #b71b27;
+            &:hover {
+                background: #cd2a3e;
             }
         }
     }
@@ -281,13 +281,13 @@
                     min-height: 238px;
                     display: flex;
                 }
-                .contentImg{
+                .contentImg {
                     padding: 100px 0px;
                     width: 100%;
                     height: 100%;
                     background-size: cover;
                     background-position: center;
-                    transition: .2s all;
+                    transition: .55s all;
                     @include bp(landscape) {
                         padding: 40px 0;
                     }
@@ -299,10 +299,9 @@
                         height: 238px;
                     }
                 }
-                &:hover{
-                    .contentImg{
-                        transform: scale(1.5);
-                        transition: .2s all;
+                &:hover {
+                    .contentImg {
+                        transform: scale(1.1);
                     }
                 }
                 &:after {
@@ -397,13 +396,6 @@
                     padding: 42px 10px 0 10px;
                 }
                 .SingleContentBlk {
-                    margin-bottom: 15px;
-                    @include bp(landscape) {
-                        margin-bottom: 14px;
-                    }
-                    @include bp(mobile) {
-                        margin-bottom: 30px;
-                    }
                     h4 {
                         font-size: 23px;
                         font-weight: bold;
@@ -423,11 +415,14 @@
                     p {
                         font-size: 17px;
                         line-height: 19px;
+                        margin-bottom: 15px;
                         @include bp(landscape) {
                             line-height: 20px;
+                            margin-bottom: 14px;
                         }
                         @include bp(mobile) {
                             line-height: 19px;
+                            margin-bottom: 30px;
                         }
                     }
                 }
@@ -472,7 +467,7 @@
                         order: 1;
                         min-height: 400px;
                     }
-                    .contentImg{
+                    .contentImg {
                         padding: 57px 0 71px 0px;
                         @include bp(landscape) {
                             padding: 30px 0px;
@@ -704,18 +699,6 @@
 }
 
 .snrManage {
-    margin-bottom: -140px;
-    position: relative;
-    z-index: 1;
-    @include bp(landscape) {
-        margin-bottom: -80px;
-    }
-    @include bp(tablet) {
-        margin-bottom: -89px;
-    }
-    @include bp(mobile) {
-        margin-bottom: -20px;
-    }
     .bgWrap {
         background: #cce1ff;
         padding: 35px 100px 35px 100px;
@@ -764,14 +747,20 @@
     background-repeat: no-repeat;
     display: table;
     width: 100%;
+    margin-top: -140px;
+    position: relative;
+    z-index: -1;
     @include bp(landscape) {
         min-height: 690px;
+        margin-top: -80px;
     }
     @include bp(tablet) {
         min-height: 508px;
+        margin-top: -89px;
     }
     @include bp(mobile) {
         min-height: 215px;
+        margin-top: -20px;
     }
     .bgWrap {
         .titleWrap {
