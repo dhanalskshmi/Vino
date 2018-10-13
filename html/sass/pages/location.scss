@@ -1,160 +1,284 @@
 .heroBlock {
-	.bgWrap {
-		&.mapLocation {
-			@include bp(mobile) {
-				padding: 29px 0px 1px 0px;
-			}
-			#map_div2 {
-				height:384px;
-				margin-top: 29px;
-				margin-bottom: 25px;
-				@include bp(tablandscape) {
-					height: 244px;
-					margin-top: 22px;
-					margin-bottom: 20px;
-				}
+	&.locationBlk {
+		.bgWrap {
+			&.mapLocation {
 				@include bp(tabportrait) {
-					height: 225px;
-    				margin-top: 19px;
-    				margin-bottom: 0px;
+					padding: 41px 18px 21px 20px;
+
 				}
 				@include bp(mobile) {
-					height: 261px;
-    				margin-top: -4px;
-    				margin-bottom: 18px;
+					padding: 33px 0px 1px 0px;
+				}
+				#map_div2 {
+					height:384px;
+					margin-top: 29px;
+					margin-bottom: 25px;
+					@include bp(tablandscape) {
+						height: 244px;
+						margin-top: 22px;
+						margin-bottom: 20px;
+					}
+					@include bp(tabportrait) {
+						height: 225px;
+	    				margin-top: 15px;
+	    				margin-bottom: 0px;
+					}
+					@include bp(mobile) {
+						height: 261px;
+	    				margin-top: -3px;
+	    				margin-bottom: 18px;
+					}
 				}
 			}
 		}
 	}
 }
 .locationSection {
-	padding-bottom: 33px;
-    padding-top: 37px;
-	.locationBgWrap {
-		.locationBox {
-			display: flex;
-    		flex-wrap: wrap;
-    		justify-content: space-between;
-			width:100%;
-			.locationDetail {
-				width: 24.532%;
-				/*margin-right: 13.204%;*/
-    			float: left;
-    			margin-top:50px;
-    			@include bp(tablandscape) {
-    				width: 30.974%;
-    			}
-    			@include bp(mobile) {
-					width:100%;
-					margin-right:0%;
-					margin-top: 30px;
-				}
-				h3 {
-					font-size:25px;
-					font-weight: 700;
-					color:#666666;
-					text-transform:uppercase;
-					margin-top: 11px;
-					margin-bottom: 1px;
-					@include bp(tablandscape) {
-						font-size:18px;
+	&.dlview {
+		padding-bottom: 33px;
+	    padding-top: 37px;
+	    @include bp(tablandscape) {
+	    	padding-bottom: 60px;
+	    	padding-top: 60px;
+	    }
+	    @include bp(tabportrait) {
+	    	display:none;
+	    }
+	    @include bp(mobile) {
+	    	display:none;
+	    }
+		.locationBgWrap {
+			.locationBox {
+				display: flex;
+	    		flex-wrap: wrap;
+	    		justify-content: space-between;
+				width:100%;
+				.locationDetail {
+					width: 24.532%;
+					/*margin-right: 13.204%;*/
+	    			float: left;
+	    			margin-top:50px;
+	    			@include bp(tablandscape) {
+	    				width: 30.974%;
+	    			}
+	    			@include bp(mobile) {
+						width:100%;
+						margin-right:0%;
+						margin-top: 39px;
 					}
-					@include bp(tabportrait) {
-						font-size:20px;
-					}
-					@include bp(mobile) {
-						font-size:18px;
-					}
-				}
-				p {
-					font-size:20px;
-					color:#666666;
-					margin-bottom: -8px;
-					@include bp(tablandscape) {
-						margin-bottom:-5px;
-						font-size:14px;
-					}
-					@include bp(tabportrait) {
-						font-size:18px;
-						margin-bottom: -3px;
-					}
-					@include bp(mobile) {
-						margin-bottom:0px;
-						font-size:16px;
-					}
-				}
-				.directionLink {
-					font-size:20px;
-					font-weight:700;
-					color:#666666;
-					text-transform:uppercase;
-					display: block;
-					margin-top: 36px;
-					margin-bottom: 15px;
-					@include bp(tablandscape) {
-						font-size:13px;
-					}
-					@include bp(tabportrait) {
-						font-size:18px;
-					}
-					@include bp(mobile) {
-						font-size:16px;
-					}
-					a {
-						color:inherit;
-						img {
-							margin-left: 1px;
-    						position: relative;
-    						top: -2px;
+					h3 {
+						font-size:25px;
+						font-weight: 700;
+						color:#666666;
+						text-transform:uppercase;
+						margin-top: 11px;
+						margin-bottom: 1px;
+						@include bp(tablandscape) {
+							font-size:22px;
+							margin-bottom: 4px;
 						}
-					} 				
-				}
-				.viewButtonLink {
-					background:#1268e5;
-					color:#fff;
-					font-size:14px;
-					font-weight:800;
-					font-family: "opensans";
-					text-transform: uppercase;
-					display: inline-block;
-					padding: 4px 17px 6px 20px;
-					border-radius: 16px;
-					@include bp(landscape) {
-						font-size:12px;
+						@include bp(tabportrait) {
+							font-size:20px;
+						}
+						@include bp(mobile) {
+							font-size:18px;
+						}
+					}
+					p {
+						font-size:20px;
+						color:#666666;
+						margin-bottom: -8px;
+						@include bp(tablandscape) {
+							margin-bottom:-4px;
+							font-size:18px;
+						}
+						@include bp(tabportrait) {
+							font-size:18px;
+							margin-bottom: -3px;
+						}
+						@include bp(mobile) {
+							margin-bottom:0px;
+							font-size:16px;
+						}
+					}
+					.directionLink {
+						font-size:20px;
+						font-weight:700;
+						color:#666666;
+						text-transform:uppercase;
+						display: block;
+						margin-top: 36px;
+						margin-bottom: 15px;
+						@include bp(tablandscape) {
+							font-size: 18px;
+							margin-top: 29px;
+							margin-bottom: 8px;
+						}
+						@include bp(tabportrait) {
+							font-size:18px;
+						}
+						@include bp(mobile) {
+							font-size:16px;
+						}
+						a {
+							color:inherit;
+							img {
+								margin-left: 1px;
+	    						position: relative;
+	    						top: -2px;
+	    						@include bp(tablandscape) {
+	    							margin-left:0px;
+	    							    top: -3px;
+	    						}
+							}
+						} 				
+					}
+					.viewButtonLink {
+						background:#1268e5;
+						color:#fff;
+						font-size:14px;
+						font-weight:800;
+						font-family: "opensans";
+						text-transform: uppercase;
+						display: inline-block;
+						padding: 4px 17px 6px 20px;
+						border-radius: 16px;
+						@include bp(landscape) {
+							font-size:16px;
+							padding:3px 15px 3px 15px;
+						}
+						@include bp(mobile) {
+							font-size:12px;
+						}
+					}
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+					@include bp(desktop) {
+						&:nth-child(1), &:nth-child(2),&:nth-child(3){
+						margin-top:0px;
+						}
+					}
+					@include bp(tablandscape) {
+						&:nth-child(1), &:nth-child(2),&:nth-child(3){
+						margin-top:0px;
+						}
+					}
+					@include bp(tabportrait) {
+						&:nth-child(1), &:nth-child(2),&:nth-child(3){
+						margin-top:0px;
+						}
 					}
 					@include bp(mobile) {
-						font-size:12px;
-					}
-				}
-				&:nth-child(3n+3) {
-					margin-right:0%;
-				}
-				@include bp(desktop) {
-					&:nth-child(1), &:nth-child(2),&:nth-child(3){
-					margin-top:0px;
-					}
-				}
-				@include bp(tablandscape) {
-					&:nth-child(1), &:nth-child(2),&:nth-child(3){
-					margin-top:0px;
-					}
-				}
-				@include bp(tabportrait) {
-					&:nth-child(1), &:nth-child(2),&:nth-child(3){
-					margin-top:0px;
-					}
-				}
-				@include bp(mobile) {
-					&:nth-child(1){
-					margin-top:0px;
+						&:nth-child(1){
+						margin-top:0px;
+						}
 					}
 				}
 			}
 		}
+		&.grey {
+			background: #f1f1f1;
+			padding-bottom: 40px;
+	    	padding-top: 20px;
+		}
 	}
-	&.grey {
-		background: #f1f1f1;
+	&.pmView {
+		@extend .dlview;
+		padding-top: 59px;
+    	padding-bottom: 39px;
+		@include bp(desktop) {
+			display:none;
+		}
+		@include bp(tablandscape) {
+			display:none;
+		}
+		@include bp(tabportrait) {
+			display:block;
+			padding-left: 69px;
+    		padding-right: 67px;
+    		padding-bottom: 41px;
+		}
+		@include bp(mobile) {
+			display:block;
+			padding-top:20px;
+		}
+		.locationBgWrap {
+			.locationBox {
+				.locationDetail {
+					@include bp(tabportrait) {
+						width: 44.304%;
+					}
+					@include bp(mobile) {
+						width: 100%;
+					}
+					h3 {
+						@include bp(tabportrait) {
+							font-size:22px;
+							margin-bottom: 7px;
+						}
+						@include bp(mobile) {
+							font-size:22px;
+							margin-bottom: 7px;
+						}
+					}
+					p {
+						@include bp(tabportrait) {
+							margin-bottom:-1px;
+							font-size:18px;
+						}
+						@include bp(mobile) {
+							margin-bottom:-1px;
+							font-size:18px;
+						}
+					}
+					.directionLink {
+						@include bp(tabportrait) {
+							font-size: 18px;
+							margin-top: 28px;
+							margin-bottom: 8px;
+							img {
+								margin-left: 0px;
+								top: -3px;
+							}
+						}
+						@include bp(mobile) {
+							font-size: 18px;
+							margin-top: 28px;
+							margin-bottom: 8px;
+							img {
+								margin-left: 0px;
+								top: -3px;
+							}
+						}
+					}
+					.viewButtonLink {
+						@include bp(tabportrait) {
+							font-size:16px;
+							padding:3px 14px 3px 14px;
+						}
+						@include bp(mobile) {
+							font-size:16px;
+							padding:3px 14px 3px 14px;
+						}
+					}
+				}
+			}
+		}
+		&.grey {
+			padding-bottom: 40px;
+    		padding-top: 20px;
+    		@include bp(mobile) {
+    			padding-top: 22px;
+    		}
+		}
 	}
+}
+.locationSection.pmView.grey+section.branchService {
+	margin-top: 40px;
+}
+.locationSection.pmView+section.branchService {
+	margin-top: 0px;
 }
 .branchService {
 	margin-top: 23px;
@@ -163,8 +287,14 @@
 		display:table;
 		width:100%;
 		padding: 37px 30px 38px 92px;
+		@include bp(tablandscape) {
+			padding:19px 24px 35px 30px;
+		}
+		@include bp(tabportrait) {
+			padding:21px 73px 34px 80px;
+		}
 		@include bp(mobile) {
-			padding: 25px 20px 35px 20px;
+			padding: 61px 23px 17px 23px;
 		}
 		h2 {
 			font-family: "opensans";
@@ -174,9 +304,18 @@
 			text-align:center;
 			text-transform: uppercase;
 			margin-bottom:46px;
+			@include bp(tablandscape) {
+				font-size:24px;
+				margin-bottom: 55px;
+			}
+			@include bp(tabportrait) {
+				font-size:24px;
+				margin-top:0px;
+				margin-bottom: 33px;
+			}
 			@include bp(mobile) {
-				font-size:18px;
-				margin-bottom:25px;
+				font-size:24px;
+				margin-bottom:38px;
 			}
 		}
 		.serviceContent {
@@ -184,14 +323,30 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 			width:100%;
+			@include bp(tablandscape) {
+				justify-content: normal;
+			}
 			.serviceDetail {
 				width: 276px;
 				float: left;
 				margin-top: 71px;
+				@include bp(tablandscape) {
+					width: 30%;
+					margin-top: 74px;
+					margin-right: 5%;
+
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(tabportrait) {
+					width: 44%;
+					margin-top: 56px;
+				}
 				@include bp(mobile) {
 					width:100%;
 					margin-right:0%;
-					margin-top: 40px;
+					margin-top: 39px;
 				}
 				img {
 					display:block;
@@ -205,19 +360,45 @@
 					margin-top:32px;
 					margin-bottom:10px;
 					text-align:center;
+					@include bp(tablandscape) {
+						margin-top: 25px;
+    					margin-bottom: 45px;
+					}
+					@include bp(tabportrait) {
+						margin-top: 23px;
+    					margin-bottom: 46px;
+    					line-height: 26px;
+					}
 					@include bp(mobile) {
-						font-size:18px;
+						font-size:20px;
+						margin-top:22px;
+						margin-bottom: 33px;
 					}
 				}
 				p {
 					font-size:20px;
 					color:#666666;
 					@include bp(mobile) {
-						font-size:17px;
+						font-size:18px;
 					}
 				}
 				&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4) {
 					margin-top:0px;
+				}
+				@include bp(tablandscape) {
+					&:nth-child(4) { 
+						margin-top:74px;
+					}
+				}
+				@include bp(tabportrait) {
+					&:nth-child(3),&:nth-child(4) {
+						margin-top: 56px;
+					}
+				}
+				@include bp (mobile) {
+					&:nth-child(2),&:nth-child(3),&:nth-child(4) {
+					margin-top:39px;
+				}
 				}
 			}
 		}
@@ -230,19 +411,26 @@
 		margin-top:60px;
 		margin-bottom:100px;
 	}
+	@include bp(tabportrait) {
+		margin-bottom:100px;
+	}
+	@include bp(mobile) {
+		margin-top:40px;
+		margin-bottom:100px;
+	}
 	.mangerBgWrap {
 		background:#f1f1f1;
 		display:table;
 		width:100%;
 		padding: 45px 98px 65px 121px;
 		@include bp(tablandscape) {
-			padding:45px 30px 65px 30px;
+			padding:18px 24px 61px 30px;
 		}
 		@include bp(tabportrait) {
-			padding:45px 99px 65px 100px;
+			padding:32px 99px 40px 100px;
 		}
 		@include bp(mobile) {
-			padding:25px 20px 35px 20px;
+			padding:21px 14px 20px 14px;
 		}
 		h2 {
 			font-family: "opensans";
@@ -253,16 +441,16 @@
 			text-transform: uppercase;
 			margin-bottom:85px;
 			@include bp(tablandscape) {
-				font-size:20px;
+				font-size:24px;
 				margin-bottom:35px;
 			}
 			@include bp(tabportrait) {
-				font-size:20px;
-				margin-bottom:35px;
+				font-size:24px;
+				margin-bottom:36px;
 			}
 			@include bp(mobile) {
-				font-size:18px;
-				margin-bottom:25px;
+				font-size:24px;
+				margin-bottom:38px;
 			}
 		}
 		.managerContent {
@@ -278,15 +466,20 @@
 				margin-top: 89px;
 				@include bp(tablandscape) {
 					width: 31.318%;
+					margin-top: 58px;
 				}
 				@include bp(tabportrait) {
 					width: 45.318%;
-					margin-top:50px;
+					margin-top:60px;
 				}
 				@include bp(mobile) {
 					width:100%;
 					margin-right:0%;
-					margin-top:30px;
+					margin-top:41px;
+
+					&:nth-child(1) {
+						margin-top: 30px;
+					}
 				}
 				h4 {
 					font-size:20px;
@@ -294,23 +487,26 @@
 					color:#666666;
 					margin-bottom: 1px;
 					@include bp(tablandscape) {
-						font-size:18px;
+						font-size:16px;
+						margin-bottom: -2px;
 					}
 					@include bp(tabportrait) {
-						font-size:17px;
+						font-size:16px;
+						margin-bottom: -1px;
 					}
 					@include bp(mobile) {
 						font-size:16px;
+						margin-bottom: 1px;
 					}
 				}
 				p {
 					font-size:20px;
 					color:#666666;
 					@include bp(tablandscape) {
-						font-size:18px;
+						font-size:16px;
 					}
 					@include bp(tabportrait) {
-						font-size:17px;
+						font-size:16px;
 					}
 					@include bp(mobile) {
 						font-size:16px;
@@ -323,17 +519,26 @@
 					line-height: 24px;
 					@include bp(tablandscape) {
 						font-size:18px;
+						line-height: 17px;
 					}
 					@include bp(tabportrait) {
 						font-size:17px;
+						line-height:16px;
 					}
 					@include bp(mobile) {
 						font-size:16px;
+						line-height:17px;
 					}
 					a {
 						display: inline-block;
 						margin-right:16px;
-						margin-top: 4px;
+						margin-top: 19px;
+						@include bp(tablandscape) {
+							margin-top:18px;
+						}
+						@include bp(mobile) {
+							margin-right: 15.5px;
+						}
 					}
 				}
 				p + span {
