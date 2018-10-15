@@ -20,7 +20,28 @@
     var safetyDepositBox = Model.Content.GetPropertyValue<string>("safetyDepositBox");
     var hourAtm = Model.Content.GetPropertyValue<string>("hourAtm");
     var walkUpAtm = Model.Content.GetPropertyValue<string>("walkUpAtm");
+    var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
+    var advTitle = Model.Content.GetPropertyValue<string>("advTitle");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var learnMore = Model.Content.GetPropertyValue<Link>("learnMore");
 
+    ///* icon */
+
+    //var addressIcon = Model.Content.AncestorOrSelf(2).GetPropertyValue<string>("addressIcon");
+
+}
+
+@section InnerTopStyle {
+<style>
+    p.printIcon:before {
+        background: url(../images/location-detail/phone-icon.png) no-repeat top right;
+    }
+
+    .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .lftSec div.locationAddr::before {
+            background: url(../images/location-detail/address-icon.png) no-repeat top right;
+    }
+</style>
+}
 }
 <section class="heroBanner">
     @if (heroImage != null)
@@ -47,9 +68,13 @@
                 <div class="addrSection">
                     <div class="fullWrap">
                         <div class="lftSec">
-                            <p class="pnoneNum">
-                                <a class="vino" href="tel:732-295-0004">(732) 295-0004</a>
-                            </p>
+                            <div class="pnoneNum">
+                                @if (!string.IsNullOrEmpty(phoneNumber))
+                                {
+                                  <a class="vino" href="tel:@phoneNumber">@phoneNumber</a>
+                                }
+                                
+                            </div>
                             <div class="locationAddr">
                                 @if (!string.IsNullOrEmpty(address))
                                 {
@@ -61,62 +86,66 @@
                                 {
                                     foreach (var branch in branchOffice)
                                     {
-                                        var designation = branch.GetPropertyValue<string>("");
-                                        <strong>Branch Manager</strong>
-                                        <span>Lisa Colonno</span>
+                                        var designation = branch.GetPropertyValue<string>("designation");
+                                        var name = branch.GetPropertyValue<string>("employeeName");
+                                        if (!string.IsNullOrEmpty(designation))
+                                        {
+                                          <strong>@designation</strong>
+                                        }
+                                        if (!string.IsNullOrEmpty(name))
+                                        {
+                                          <span>@name</span>
+                                        }
+
                                     }
                                 }
                                
                                 
                             </div>
-                            <p class="printIcon">
-                                <a href="tel:732-295-0004">(732) 295-0004</a>
-                            </p>
+
+                            <div class="printIcon">
+                                @if (!string.IsNullOrEmpty(faxNumber))
+                                {
+                                    <a href="tel:@faxNumber">@faxNumber</a>
+                                }
+                                
+                            </div>
                         </div>
                         <div class="rgtSec">
-                            <p class="walkAtm">
-                                <a href="tel:732-295-0004">Walk up atm</a>
-                            </p>
-                            <p class="hoursSec">
-                                <a href="tel:732-295-0004">24 hour Atm</a>
-                            </p>
-                            <p class="boxSec">
-                                <a href="tel:732-295-0004">Safe Deposit Box</a>
-                            </p>
+                            @if (!string.IsNullOrEmpty(walkUpAtm))
+                            {
+                                <div class="walkAtm">
+                                   @walkUpAtm
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(hourAtm))
+                            {
+                                <div class="hoursSec">
+                                   @hourAtm
+                                </div>
+                            }
+                           
+                            @if (!string.IsNullOrEmpty(safetyDepositBox))
+                            {
+                                <div class="boxSec">
+                                    @safetyDepositBox
+                                </div>
+                            }
+                            
                         </div>
                     </div>
                     <div class="timehrsSection">
                         <div class="lobbbyHrs">
-                            <h4>Lobby Hours</h4>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Monday </strong>8:30am – 4:00pm</td>
-                                        <td><strong>Tuesday </strong>8:30am – 4:00pm</td>
-                                        <td><strong>Wednesday </strong>8:30am – 4:00pm</td>
-                                        <td><strong>Thursday </strong>8:30am – 4:00pm</td>
-                                        <td><strong>Friday </strong>8:30am – 6:00pm</td>
-                                        <td><strong>Saturday </strong>9:00am – 1:00pm</td>
-                                        <td><strong>Sunday </strong>CLOSED</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            @if(!string.IsNullOrEmpty(locationsHours))
+                            {
+                                @Html.Raw(locationsHours)
+                            }
                         </div>
                         <div class="driveHrs">
-                            <h4>Drive-Thru Hours</h4>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Monday </strong>8:00am – 6:00pm</td>
-                                        <td><strong>Tuesday </strong>8:00am – 6:00pm</td>
-                                        <td><strong>Wednesday </strong>8:00am – 6:00pm</td>
-                                        <td><strong>Thursday </strong>8:00am – 6:00pm</td>
-                                        <td><strong>Friday </strong>8:00am – 6:00pm</td>
-                                        <td><strong>Saturday </strong>9:00am – 1:00pm</td>
-                                        <td><strong>Sunday </strong>CLOSED</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                           @if(!string.IsNullOrEmpty(driveThruHours))
+                           {
+                             @Html.Raw(driveThruHours)
+                           }
                         </div>
                     </div>
                 </div>
@@ -148,9 +177,24 @@
             <div class="contentSec">
                 <h2>real time alerts</h2>
                 <p>Setting up your alerts only takes a few minutes, and you can easily adjust your preferences at any time.</p>
-                <a href="#" class="btnManasq">
-                    <span>learn more</span>
-                </a>
+                @if (learnMore != null)
+                {
+                    if (learnMore.Target == "_blank")
+                    {
+                        <a href="@learnMore.Url" target="_blank" class="btnManasq">
+                            <span>@learnMore.Name</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="#" class="btnManasq">
+                            <span>@learnMore.Name</span>
+                        </a>
+                    }
+
+                }
+                
+
             </div>
         </div>
     </div>
@@ -158,43 +202,51 @@
 <section class="bluePannel lcdetailPannel animatable">
     <div class="containerWrapper">
         <div class="bgWrap">
-            <div class="detailsWrap">
-                <div class="wraps">
-                    <h2>
-                        Let's get started
-                    </h2>
-                    <h3>
-                        OPEN AN ACCOUNT ONLINE TODAY
-                    </h3>
-                    <p>
-                        Finding the right account to achieve your financial goals
-                        is important - and also really easy.
-                    </p>
-                </div>
-                <a href="#" class="btnManasq">
-                    <span>
-                        OPEN AN ACCOUNT
-                    </span>
-                </a>
-            </div>
-            <figure>
-                <img src="images/home/img_or.png" alt="">
-            </figure>
-            <div class="detailsWrap">
-                <div class="wraps">
-                    <h2>
-                        TIMETRADE WITH DIGITAL EXPERTS
-                    </h2>
-                    <p>
-                        Connect with a Digital Expert or Local Branch Manager.
-                    </p>
-                </div>
-                <a href="#" class="btnManasq">
-                    <span>
-                        Book an Appointment
-                    </span>
-                </a>
-            </div>
+            @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
+            {
+                int j = 1;
+                foreach (var action in actionPanel)
+                {
+                    var actionTitle = action.GetPropertyValue<string>("actionTitle");
+                    var actionDescription = action.GetPropertyValue<string>("actionDescription");
+                    var tagLineSentence = action.GetPropertyValue<string>("tagLineSentence");
+                    var actioncTAButton = action.GetPropertyValue<Link>("actioncTAButton");
+                    <div class="detailsWrap">
+                        <div class="wraps">
+                            @if (!string.IsNullOrEmpty(actionTitle))
+                            {
+                                <h2>@actionTitle </h2>
+                            }
+                            @if (!string.IsNullOrEmpty(tagLineSentence))
+                            {
+                                <h3>@tagLineSentence </h3>
+                            }
+                            @if (!string.IsNullOrEmpty(actionDescription))
+                            {
+                                @Html.Raw(actionDescription)
+                            }
+                        </div>
+                        @if (actioncTAButton.Target == "_blank")
+                    {
+                            <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                        }
+                        else
+                        {
+                            <a class="btnManasq" href="@actioncTAButton.Url" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                        }
+
+                    </div>
+                    if (j == 1)
+                    {
+
+                        <figure>
+                            <img src="~/images/home/img_or.png" alt="OR">
+                        </figure>
+                    }
+                    j++;
+                }
+
+            }
         </div>
     </div>
 </section>
