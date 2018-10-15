@@ -8,7 +8,7 @@
 	var secondaryNavigation = Model.Content.AncestorOrSelf(1).GetPropertyValue<IEnumerable<IPublishedContent>>("secondaryNavigation");
     var SearchKeyword = Request.QueryString["q"];
     string largeClass = string.Empty;
-    int k = 0;
+    
 
 }
 <header>
@@ -127,6 +127,7 @@
 	                                var primaryTitleLink = primaryNav.GetPropertyValue<Link>("primaryTitleLink");
 	                                var primaryTitle = primaryNav.GetPropertyValue<string>("primaryTitle");
 	                                var megaMenuPanel = primaryNav.GetPropertyValue<IEnumerable<IPublishedContent>>("megaMenuPanel");
+	                                int k = 0;
 	                            <li>
 	                                @if (primaryTitleLink != null)
 	                                {
@@ -197,6 +198,7 @@
 	                                					</div>
 	                                					k++;
 	                                				}
+	                                				
 	                                				</div>
 	                            				</div>
 	                          				</div>

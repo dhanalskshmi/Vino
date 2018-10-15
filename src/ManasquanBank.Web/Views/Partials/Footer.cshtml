@@ -1,6 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
+@using Skybrud.Social.Twitter;
+@using Skybrud.Social.Twitter.OAuth;
+@using Skybrud.Social.Twitter.Responses;
 @{
 	var footerLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("footerLogo");
 	var mobileIconsApple = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsApple");
@@ -18,7 +21,6 @@
 	var facebook = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebook");
 	var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
 	var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
-
 }
 <section class="joinEmail">
           <div class="containerWrapper">

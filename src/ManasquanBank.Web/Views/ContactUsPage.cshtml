@@ -359,3 +359,22 @@
         </div>
     </section>
  </div>
+@section InnerBottomScript {
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+@*<script>
+
+        var onSuccess = function(response) {
+            debugger;
+            var errorDivs = document.getElementsByClassName("recaptcha-error");
+            if (errorDivs.length) {
+                errorDivs[0].className = "";
+            }
+            var errorMsgs = document.getElementsByClassName("recaptcha-error-message");
+            if (errorMsgs.length) {
+                errorMsgs[0].parentNode.removeChild(errorMsgs[0]);
+            }
+            var clickButton = document.getElementById("<%= Button1.ClientID %>");
+            clickButton.click();
+        };
+</script>*@  
+}

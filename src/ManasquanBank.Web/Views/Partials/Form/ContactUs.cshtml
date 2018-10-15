@@ -8,8 +8,8 @@
             <strong>Warning!</strong> @ViewBag.ErrorMessage
         </div>
     }
-    //string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
-    //string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
+    string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
+    string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
 <div class="row">
     <div class="col-md-6 col-sm-6 lftfield">
         <div class="form-group">
@@ -78,6 +78,11 @@
             <label for="cntComments">Questions/Comments</label>
             <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
         </div>
+    </div>
+    <div class="captchaBlock">
+        <div class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
+        <p class="form1_error hide">The captcha is required and can't be empty.</p>
+        
     </div>
     <button class="btn-mansq pull-right btnManasq"><span>SUBMIT</span></button>
     <input type="hidden" id="adminEmail" name="AdminEmail" value="@Model.AdminEmail" />

@@ -1,4 +1,7 @@
 // Form moduleA
+function onSubmit(token) {
+  document.getElementById('contactForm').submit();
+}
 if ($('#contactForm').length > 0) {
     $(document).ready(function () {
         jQuery.validator.addMethod("EmailVal", function (e, t) {
@@ -36,6 +39,9 @@ if ($('#contactForm').length > 0) {
                     }
                 });
             },
+            submitHandler: function (form) {
+                grecaptcha.execute();
+            },
             errorPlacement: function (error, element) { }
         });
         jQuery("#cntTelePhone").length > 0 && document.getElementById("cntTelePhone").addEventListener("input", function (e) {
@@ -56,4 +62,3 @@ $(document).ready(function () {
     }
 
 });
-
