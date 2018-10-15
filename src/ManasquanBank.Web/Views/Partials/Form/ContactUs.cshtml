@@ -1,5 +1,4 @@
 ﻿@using ManasquanBank.Web.Models;
-
 @using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm" }))
 {
     if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
