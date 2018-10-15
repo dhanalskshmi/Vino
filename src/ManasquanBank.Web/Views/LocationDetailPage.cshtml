@@ -1,0 +1,255 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var branchTitle = Model.Content.GetPropertyValue<string>("branchTitle");
+    var image = Model.Content.GetPropertyValue<IPublishedContent>("image");
+    var address = Model.Content.GetPropertyValue<string>("address");
+    var phoneNumber = Model.Content.GetPropertyValue<string>("phoneNumber");
+    var faxNumber = Model.Content.GetPropertyValue<string>("faxNumber");
+    var locationsHours = Model.Content.GetPropertyValue<string>("locationsHours");
+    var driveThruHours = Model.Content.GetPropertyValue<string>("driveThruHours");
+    var branchOffice = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("branchOffice");
+    var safetyDepositBox = Model.Content.GetPropertyValue<string>("safetyDepositBox");
+    var hourAtm = Model.Content.GetPropertyValue<string>("hourAtm");
+    var walkUpAtm = Model.Content.GetPropertyValue<string>("walkUpAtm");
+    var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
+    var advTitle = Model.Content.GetPropertyValue<string>("advTitle");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var learnMore = Model.Content.GetPropertyValue<Link>("learnMore");
+
+    ///* icon */
+
+    //var addressIcon = Model.Content.AncestorOrSelf(2).GetPropertyValue<string>("addressIcon");
+
+}
+
+@section InnerTopStyle {
+<style>
+    p.printIcon:before {
+        background: url(../images/location-detail/phone-icon.png) no-repeat top right;
+    }
+
+    .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .lftSec div.locationAddr::before {
+            background: url(../images/location-detail/address-icon.png) no-repeat top right;
+    }
+</style>
+}
+}
+<section class="heroBanner">
+    @if (heroImage != null)
+    {
+      <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+    }
+    
+</section>
+<section class="heroBlock locationDetailBlk">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if (!string.IsNullOrEmpty(branchTitle))
+            {
+              <h2>@branchTitle</h2>
+            }
+            <div class="contentSection">
+                <div class="imgSection">
+                    @if (image != null)
+                    {
+                        <img src="@image.Url" alt="@image.Name" />
+                    }
+                    
+                </div>
+                <div class="addrSection">
+                    <div class="fullWrap">
+                        <div class="lftSec">
+                            <div class="pnoneNum">
+                                @if (!string.IsNullOrEmpty(phoneNumber))
+                                {
+                                  <a class="vino" href="tel:@phoneNumber">@phoneNumber</a>
+                                }
+                                
+                            </div>
+                            <div class="locationAddr">
+                                @if (!string.IsNullOrEmpty(address))
+                                {
+                                  @Html.Raw(address)
+                                }
+                            </div>
+                            <div class="mailMember">
+                                @if (Model.Content.HasValue("branchOffice"))
+                                {
+                                    foreach (var branch in branchOffice)
+                                    {
+                                        var designation = branch.GetPropertyValue<string>("designation");
+                                        var name = branch.GetPropertyValue<string>("employeeName");
+                                        if (!string.IsNullOrEmpty(designation))
+                                        {
+                                          <strong>@designation</strong>
+                                        }
+                                        if (!string.IsNullOrEmpty(name))
+                                        {
+                                          <span>@name</span>
+                                        }
+
+                                    }
+                                }
+                               
+                                
+                            </div>
+
+                            <div class="printIcon">
+                                @if (!string.IsNullOrEmpty(faxNumber))
+                                {
+                                    <a href="tel:@faxNumber">@faxNumber</a>
+                                }
+                                
+                            </div>
+                        </div>
+                        <div class="rgtSec">
+                            @if (!string.IsNullOrEmpty(walkUpAtm))
+                            {
+                                <div class="walkAtm">
+                                   @walkUpAtm
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(hourAtm))
+                            {
+                                <div class="hoursSec">
+                                   @hourAtm
+                                </div>
+                            }
+                           
+                            @if (!string.IsNullOrEmpty(safetyDepositBox))
+                            {
+                                <div class="boxSec">
+                                    @safetyDepositBox
+                                </div>
+                            }
+                            
+                        </div>
+                    </div>
+                    <div class="timehrsSection">
+                        <div class="lobbbyHrs">
+                            @if(!string.IsNullOrEmpty(locationsHours))
+                            {
+                                @Html.Raw(locationsHours)
+                            }
+                        </div>
+                        <div class="driveHrs">
+                           @if(!string.IsNullOrEmpty(driveThruHours))
+                           {
+                             @Html.Raw(driveThruHours)
+                           }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cloneTimeHrs">
+            <div class="containerWrapper">
+                <div class="timeWrap">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="loacationMap">
+    <div class="containerWrapper">
+
+    </div>
+</section>
+<section class="mapSection">
+    <div class="containerWrapper">
+        <div id="map_div"></div>
+        <!--<img src="images/location-detail/map.jpg" alt="map"/> -->
+    </div>
+</section>
+<section class="alertSection">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            <div class="contentSec">
+                <h2>real time alerts</h2>
+                <p>Setting up your alerts only takes a few minutes, and you can easily adjust your preferences at any time.</p>
+                @if (learnMore != null)
+                {
+                    if (learnMore.Target == "_blank")
+                    {
+                        <a href="@learnMore.Url" target="_blank" class="btnManasq">
+                            <span>@learnMore.Name</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="#" class="btnManasq">
+                            <span>@learnMore.Name</span>
+                        </a>
+                    }
+
+                }
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bluePannel lcdetailPannel animatable">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
+            {
+                int j = 1;
+                foreach (var action in actionPanel)
+                {
+                    var actionTitle = action.GetPropertyValue<string>("actionTitle");
+                    var actionDescription = action.GetPropertyValue<string>("actionDescription");
+                    var tagLineSentence = action.GetPropertyValue<string>("tagLineSentence");
+                    var actioncTAButton = action.GetPropertyValue<Link>("actioncTAButton");
+                    <div class="detailsWrap">
+                        <div class="wraps">
+                            @if (!string.IsNullOrEmpty(actionTitle))
+                            {
+                                <h2>@actionTitle </h2>
+                            }
+                            @if (!string.IsNullOrEmpty(tagLineSentence))
+                            {
+                                <h3>@tagLineSentence </h3>
+                            }
+                            @if (!string.IsNullOrEmpty(actionDescription))
+                            {
+                                @Html.Raw(actionDescription)
+                            }
+                        </div>
+                        @if (actioncTAButton.Target == "_blank")
+                    {
+                            <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                        }
+                        else
+                        {
+                            <a class="btnManasq" href="@actioncTAButton.Url" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                        }
+
+                    </div>
+                    if (j == 1)
+                    {
+
+                        <figure>
+                            <img src="~/images/home/img_or.png" alt="OR">
+                        </figure>
+                    }
+                    j++;
+                }
+
+            }
+        </div>
+    </div>
+</section>
+@section InnerBottomScript {
+<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
+}

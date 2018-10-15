@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Master.cshtml";
+
+    var backgroundHeroImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundHeroImage");
+    var productDetailTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
+    var productDetailContent = Model.Content.GetPropertyValue<string>("productDetailContent");
+    var parent = Model.Content.Parent;
+}
+<div class="proDetail">
+<section class="heroBanner">
+    <figure class="bannerImage" style="background-image: url('@backgroundHeroImage.Url')"></figure>
+</section>
+<section class="heroBlock">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if(!string.IsNullOrEmpty(productDetailTitle))
+            {
+            <h2>@productDetailTitle</h2>
+            }
+            @if(!string.IsNullOrEmpty(productDetailContent))
+            {
+                @Html.Raw(productDetailContent)
+            }
+            <a href="@parent.Url" class="back-btn"> < Back</a>
+        </div>
+    </div>
+</section>
+</div>

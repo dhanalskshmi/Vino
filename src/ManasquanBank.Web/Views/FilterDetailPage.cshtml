@@ -1,0 +1,61 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models;
+@{
+	Layout = "Master.cshtml";
+    var filterBannerHeroImage = Model.Content.GetPropertyValue<IPublishedContent>("filterBannerHeroImage");
+    var detailImage = Model.Content.GetPropertyValue<IPublishedContent>("detailImage");
+    var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
+    var filterDetailTitle = Model.Content.GetPropertyValue<string>("filterDetailTitle");
+    var filterDate = Model.Content.GetPropertyValue<string>("filterDate");
+    var filtercTAButton = Model.Content.GetPropertyValue<Link>("filtercTAButton");
+    var parent = Model.Content.Parent;
+}
+<div class="filterDetail">
+    <section class="heroBanner">
+        <figure class="bannerImage" style="background-image: url('@filterBannerHeroImage.Url')"></figure>
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if(!string.IsNullOrEmpty(filterDetailTitle))
+                {
+                <h2>@filterDetailTitle</h2>
+                }
+                <h5>@library.FormatDateTime(@filterDate, "MMMM dd, yyyy")</h5>
+                @if(detailImage != null)
+                {
+                <figure>
+                    <img src="@detailImage.Url" alt="@filterDetailTitle">
+                </figure>
+                }
+                @if(!string.IsNullOrEmpty(bodyText))
+                {
+                    @Html.Raw(bodyText)
+                }
+                <div class="heroFoot">
+                    @if(filtercTAButton != null){
+                        if (filtercTAButton.Target == "_blank")
+                        {
+                        <a class="back-btn" href="@filtercTAButton.Url" target="_blank" title="@filtercTAButton.Name"> < @filtercTAButton.Name </a>
+                        }
+                        else
+                        {
+                        <a class="back-btn" href="@filtercTAButton.Url" title="@filtercTAButton.Name"> <  @filtercTAButton.Name </a>
+                        }
+                    }
+                    else{
+                        <a href="@parent.Url" class="back-btn"> < Back</a>
+                    }
+                    <div class="sharePanel">
+                        <a href="">+ share</a>
+                    </div>
+                    <div class="sharethis-inline-share-buttons sharePanel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section InnerBottomScript {
+<script async src="//platform-api.sharethis.com/js/sharethis.js#property=5bc48fddddd6040011604895&product=" inline-share-buttons"></script>
+}

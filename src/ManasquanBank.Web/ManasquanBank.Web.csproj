@@ -574,6 +574,13 @@
     <Content Include="Views\Partials\SocialMedia.cshtml" />
     <Content Include="Views\BioDetailPage.cshtml" />
     <Content Include="Views\AboutUs.cshtml" />
+    <Content Include="Views\LocationLandingPage.cshtml" />
+    <Content Include="Views\LocationDetailPage.cshtml" />
+    <Content Include="Views\RedirectLocationPage.cshtml" />
+    <Content Include="Views\CategoryDetailPage.cshtml" />
+    <Content Include="Views\CategoryLandingPage.cshtml" />
+    <Content Include="Views\ProductDetailPage.cshtml" />
+    <Content Include="Views\FilterDetailPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
