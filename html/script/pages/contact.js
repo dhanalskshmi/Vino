@@ -1,4 +1,7 @@
 // Form moduleA
+function onSubmit(token) {
+  document.getElementById('contactForm').submit();
+}
 if ($('#contactForm').length > 0) {
     $(document).ready(function () {
         jQuery.validator.addMethod("EmailVal", function (e, t) {
