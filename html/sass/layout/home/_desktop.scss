@@ -154,6 +154,13 @@
       display: block;
     }
   }
+  .personalLogin {
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
 }
 
 .bankingServices {
@@ -738,6 +745,12 @@
       border: 1px solid #FFF;
       text-transform: uppercase;
     }
+  }
+}
+.mobileSearchfield {
+  display: none;
+  &.active {
+    display: block;
   }
 }
 

@@ -1,0 +1,203 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var branchTitle = Model.Content.GetPropertyValue<string>("branchTitle");
+    var image = Model.Content.GetPropertyValue<IPublishedContent>("image");
+    var address = Model.Content.GetPropertyValue<string>("address");
+    var phoneNumber = Model.Content.GetPropertyValue<string>("phoneNumber");
+    var faxNumber = Model.Content.GetPropertyValue<string>("faxNumber");
+    var locationsHours = Model.Content.GetPropertyValue<string>("locationsHours");
+    var driveThruHours = Model.Content.GetPropertyValue<string>("driveThruHours");
+    var branchOffice = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("branchOffice");
+    var safetyDepositBox = Model.Content.GetPropertyValue<string>("safetyDepositBox");
+    var hourAtm = Model.Content.GetPropertyValue<string>("hourAtm");
+    var walkUpAtm = Model.Content.GetPropertyValue<string>("walkUpAtm");
+
+}
+<section class="heroBanner">
+    @if (heroImage != null)
+    {
+      <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+    }
+    
+</section>
+<section class="heroBlock locationDetailBlk">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if (!string.IsNullOrEmpty(branchTitle))
+            {
+              <h2>@branchTitle</h2>
+            }
+            <div class="contentSection">
+                <div class="imgSection">
+                    @if (image != null)
+                    {
+                        <img src="@image.Url" alt="@image.Name" />
+                    }
+                    
+                </div>
+                <div class="addrSection">
+                    <div class="fullWrap">
+                        <div class="lftSec">
+                            <p class="pnoneNum">
+                                <a class="vino" href="tel:732-295-0004">(732) 295-0004</a>
+                            </p>
+                            <div class="locationAddr">
+                                @if (!string.IsNullOrEmpty(address))
+                                {
+                                  @Html.Raw(address)
+                                }
+                            </div>
+                            <div class="mailMember">
+                                @if (Model.Content.HasValue("branchOffice"))
+                                {
+                                    foreach (var branch in branchOffice)
+                                    {
+                                        var designation = branch.GetPropertyValue<string>("");
+                                        <strong>Branch Manager</strong>
+                                        <span>Lisa Colonno</span>
+                                    }
+                                }
+                               
+                                
+                            </div>
+                            <p class="printIcon">
+                                <a href="tel:732-295-0004">(732) 295-0004</a>
+                            </p>
+                        </div>
+                        <div class="rgtSec">
+                            <p class="walkAtm">
+                                <a href="tel:732-295-0004">Walk up atm</a>
+                            </p>
+                            <p class="hoursSec">
+                                <a href="tel:732-295-0004">24 hour Atm</a>
+                            </p>
+                            <p class="boxSec">
+                                <a href="tel:732-295-0004">Safe Deposit Box</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timehrsSection">
+                        <div class="lobbbyHrs">
+                            <h4>Lobby Hours</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Monday </strong>8:30am – 4:00pm</td>
+                                        <td><strong>Tuesday </strong>8:30am – 4:00pm</td>
+                                        <td><strong>Wednesday </strong>8:30am – 4:00pm</td>
+                                        <td><strong>Thursday </strong>8:30am – 4:00pm</td>
+                                        <td><strong>Friday </strong>8:30am – 6:00pm</td>
+                                        <td><strong>Saturday </strong>9:00am – 1:00pm</td>
+                                        <td><strong>Sunday </strong>CLOSED</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="driveHrs">
+                            <h4>Drive-Thru Hours</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Monday </strong>8:00am – 6:00pm</td>
+                                        <td><strong>Tuesday </strong>8:00am – 6:00pm</td>
+                                        <td><strong>Wednesday </strong>8:00am – 6:00pm</td>
+                                        <td><strong>Thursday </strong>8:00am – 6:00pm</td>
+                                        <td><strong>Friday </strong>8:00am – 6:00pm</td>
+                                        <td><strong>Saturday </strong>9:00am – 1:00pm</td>
+                                        <td><strong>Sunday </strong>CLOSED</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cloneTimeHrs">
+            <div class="containerWrapper">
+                <div class="timeWrap">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="loacationMap">
+    <div class="containerWrapper">
+
+    </div>
+</section>
+<section class="mapSection">
+    <div class="containerWrapper">
+        <div id="map_div"></div>
+        <!--<img src="images/location-detail/map.jpg" alt="map"/> -->
+    </div>
+</section>
+<section class="alertSection">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            <div class="contentSec">
+                <h2>real time alerts</h2>
+                <p>Setting up your alerts only takes a few minutes, and you can easily adjust your preferences at any time.</p>
+                <a href="#" class="btnManasq">
+                    <span>learn more</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bluePannel lcdetailPannel animatable">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            <div class="detailsWrap">
+                <div class="wraps">
+                    <h2>
+                        Let's get started
+                    </h2>
+                    <h3>
+                        OPEN AN ACCOUNT ONLINE TODAY
+                    </h3>
+                    <p>
+                        Finding the right account to achieve your financial goals
+                        is important - and also really easy.
+                    </p>
+                </div>
+                <a href="#" class="btnManasq">
+                    <span>
+                        OPEN AN ACCOUNT
+                    </span>
+                </a>
+            </div>
+            <figure>
+                <img src="images/home/img_or.png" alt="">
+            </figure>
+            <div class="detailsWrap">
+                <div class="wraps">
+                    <h2>
+                        TIMETRADE WITH DIGITAL EXPERTS
+                    </h2>
+                    <p>
+                        Connect with a Digital Expert or Local Branch Manager.
+                    </p>
+                </div>
+                <a href="#" class="btnManasq">
+                    <span>
+                        Book an Appointment
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+@section InnerBottomScript {
+<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
+}

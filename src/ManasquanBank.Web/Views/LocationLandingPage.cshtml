@@ -1,0 +1,407 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Master.cshtml";
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
+}
+<section class="heroBanner">
+    @if (heroImage != null)
+    {
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+    }
+ </section>
+<section class="heroBlock locationBlk">
+    <div class="containerWrapper">
+        <div class="bgWrap mapLocation">
+            @if (!string.IsNullOrEmpty(title))
+            {
+              <h2>@title</h2>
+            }
+            
+            <div id="map_div2"></div>
+            @if (!string.IsNullOrEmpty(bodyText))
+            {
+                @Html.Raw(bodyText)
+            }
+            
+        </div>
+    </div>
+</section>
+<!---- Branch address Desktop and Landscape View Start----->
+<section class="locationSection dlview grey">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locationSection dlview">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locationSection dlview grey">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locationSection dlview ">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---- Branch address Portrait and Mobile View Start----->
+<section class="locationSection pmView grey">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locationSection pmView">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locationSection pmView grey">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locationSection pmView">
+    <div class="containerWrapper">
+        <div class="locationBgWrap">
+            <div class="locationBox">
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+                <div class="locationDetail">
+                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
+                    <h3>Wall Townnship (hq)</h3>
+                    <p>221 Landmark Place</p>
+                    <p>P.O. E, Wall, NJ -8736</p>
+                    <p>(732) - 292-8400</p>
+                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                    <a class="viewButtonLink" href="#">View Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="branchService">
+    <div class="containerWrapper">
+        <div class="serviceBgWrap">
+            <h2>Branch Services</h2>
+            <div class="serviceContent">
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Wire Transfers</h4>
+                    <p>We are a member of Fedline. Depositors can wire funds to other banks within and outside of the United States. Please obtain wire transfer instructions from the receiving bank. Call your local branch for additional details.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Change of address</h4>
+                    <p>To protect the security of your information, we require an original signed form to change your address. Download it here. Then stop by a local branch or drop it in the mail to make the change.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Cash Advances</h4>
+                    <p>Visa, MasterCard and Discover Card cash advances are available at all branch locations.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Self-Service Coin Counting</h4>
+                    <p>Turn your loose change into dollars! The coin counting machines are free for all bank customers and available at each branch.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Debit Card Instant Issue</h4>
+                    <p>Is your debit card lost or damaged?  No worries, we’ll replace it instantly at any one of our branch locations.  It only takes minutes to get you back up and running! You’ll leave with your new card in hand, activated and ready to use! To report a lost/stolen card or PIN, please call 1-800-554-8969.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Night Depository</h4>
+                    <p>All of our branch locations offer a secure, 24-hour night deposit for our business customers. Simply place your deposit in our night safe and we will credit your account on the next business day. We will provide you with a night deposit bag accompanied with two keys, one to lock the bag and the other to access the night depository.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Safe Deposit Boxes</h4>
+                    <p>We offer safe deposit box rentals to secure important personal documents and possessions.All of our branches, except Bay Head, offer a range of safe deposit box sizes. Boxes are subject to availability. Please call your local branch to check availability and current rates.</p>
+                    <p>The valuable contents of your safe deposit box are not insured by us or the FDIC.  Insurance is now available for as little as $25 per year.  To learn more and purchase safe deposit box insurance today, click here.</p>
+                </div>
+                <div class="serviceDetail">
+                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
+                    <h4>Savings Bond Redemption</h4>
+                    <p>U.S. Savings Bonds can be redeemed at your local branch. However, paper savings bonds are no longer sold at financial institutions and must be purchased online via the Treasury Direct website. To calculate the value of your paper savings bond, use this handy online calculator.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="branchMangers">
+    <div class="containerWrapper">
+        <div class="mangerBgWrap">
+            <h2>Branch Managers</h2>
+            <div class="managerContent">
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+                <div class="managerDetail">
+                    <h4>Lisa Colonno</h4>
+                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
+                    <span>
+                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section InnerBottomScript {
+<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_mhIzW3YXtosbabjZDzgeQcgoOC4PJ5M"></script>
+}
+

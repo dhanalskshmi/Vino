@@ -17,7 +17,6 @@ header {
 .logo {
 	display: inline-block;
 	padding: 11px 0 10px 7px;
-	margin-right: 13px;
 	max-width: 205px;
 	float: left;
 }
@@ -48,11 +47,13 @@ header {
 .mobileSearchwrap {
 	display: table;
 	padding-bottom: 2px;
+
 }
 .mobileSearch {
 	float: right;
 	margin-top: 12px;
-	margin-right: 4px;
+	margin-right: 11px;
+	margin-left: 6px;
 	max-width: 34px;
 	.txtBox {
 		width: 0%;
@@ -68,6 +69,12 @@ header {
 			width: 25px;
 			height: 24px;
 		}
+		&.active {
+			i {
+				background-image: url('#{$img}/search_close.png');
+				background-size: cover;
+			}
+		}
 	}
 }
 .searchloginWrap {
@@ -80,7 +87,7 @@ header {
 	height: 22px;
 	float: right;
 	margin-top: 13px;
-	margin-right: 7px;
+	margin-right: 0;
   text-align: right;
 	transition: 0.3s;
   position: relative;
@@ -391,10 +398,13 @@ header {
 		}
 	}
 }
-.mobileSearch {
-	display: none;
+.mobileSearchfield {
 	.txtBox {
-		background-color: #e3e3e3;
+		background: #e3e3e3 url('#{$img}/search_icon.png') 98% center no-repeat;
+		font-size: 16px;
+		padding: 0 36px 0 6px;
+		width: 100%;
+		height: 35px;
 	}
 	&.active {
 		display: block;
@@ -424,7 +434,9 @@ header {
 	.mnavWrapper,
 	.mLogin,
 	.mobileSearchwrap,
-	.hamburger {
+	.hamburger,
+	.mobileSearch,
+	.mobileSearchfield {
 		display: none;
 	}
 	.logo {
@@ -496,6 +508,11 @@ header {
 					a {
 						font-size: 7px;
 					}
+				}
+			}
+			.businessLogin {
+				p {
+					justify-content: flex-end;
 				}
 			}
 		}
@@ -1137,7 +1154,7 @@ header {
 		ul {
 			li {
 				padding-right: 19px;
-				padding-bottom: 26px;
+				padding-bottom: 25px;
 				a {
 					&::after {
 						height: 49px;
@@ -1277,7 +1294,7 @@ header {
 		ul {
 			li {
 				padding-right: 27px;
-		    padding-bottom: 22px;
+		    padding-bottom: 21px;
 				a {
 					line-height: 25px;
 					span {
