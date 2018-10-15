@@ -16,11 +16,11 @@ namespace ManasquanBank.Web.Controllers
         [HttpPost]
         public ActionResult SubmitForm(ContactUsModel contact)
         {
-            //DataHelper validate = new DataHelper();
-            //var response = Request["g-recaptcha-response"];
-            //if (validate.GoogleCaptchaValidate(response))
-            //{
-            try
+            DataHelper validate = new DataHelper();
+            var response = Request["g-recaptcha-response"];
+            if (validate.GoogleCaptchaValidate(response))
+            {
+                try
             {
                 if (contact.AdminEmail > 0 || contact.ConfirmationEmail >= 0)
                 {
@@ -72,11 +72,11 @@ namespace ManasquanBank.Web.Controllers
                 LogHelper.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, ex.Message, ex.InnerException);
                 ViewBag.ErrorMessage = "There is some problem, please try again later";
             }
-            //}
-            //else
-            //{
-            //    ViewBag.ErrorMessage = "We're sorry, an recaptcha error has occured, please reload the page and try again";
-            //}
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "We're sorry, an recaptcha error has occured, please reload the page and try again";
+            }
 
             return CurrentUmbracoPage();
         }
