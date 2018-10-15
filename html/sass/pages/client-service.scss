@@ -15,7 +15,7 @@
 	}
 	.bgWrap {
 		background:#e0e8f4;
-		padding:28px 16px 45px 38px;
+		padding:28px 16px 44px 38px;
 		@include bp(tablandscape) {
 			padding: 16px 22px 25px 27px;
 		}
@@ -52,7 +52,8 @@
 			li {
     			width: 20.834%;
     			margin-top:50px;
-    			margin-right: 5.55%;
+    			/*margin-right: 5.55%;*/
+    			margin-right: 4.98%;
 				@include bp(tablandscape) {
 					width: 22.834%;
 					margin-right: 2.33%;
@@ -86,12 +87,12 @@
 					span {
 						font-family: "manasquan";
     					font-size: 21px;
-    					font-weight: 400;
+    					font-weight: 600;
     					color:#616161;
     					display:block;
     					text-align:center;
     					text-transform: uppercase;
-    					margin-top: 41px;
+    					margin-top: 40px;
     					transition: all .3s;
     					@include bp(tablandscape) {
     						font-size:16px;
