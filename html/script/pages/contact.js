@@ -36,6 +36,9 @@ if ($('#contactForm').length > 0) {
                     }
                 });
             },
+            submitHandler: function (form) {
+                grecaptcha.execute();
+            },
             errorPlacement: function (error, element) { }
         });
         jQuery("#cntTelePhone").length > 0 && document.getElementById("cntTelePhone").addEventListener("input", function (e) {
@@ -56,4 +59,3 @@ $(document).ready(function () {
     }
 
 });
-
