@@ -577,6 +577,7 @@
     <Content Include="Views\CategoryDetailPage.cshtml" />
     <Content Include="Views\CategoryLandingPage.cshtml" />
     <Content Include="Views\ProductDetailPage.cshtml" />
+    <Content Include="Views\FilterDetailPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
