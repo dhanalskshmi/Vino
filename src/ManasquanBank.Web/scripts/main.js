@@ -948,3 +948,33 @@ $(document).ready(function() {
         });
     }
 });
+
+$(document).ready(function(){
+
+    $('.contactForm').validate({
+        meta: "validate",
+        ignore: [],
+        errorPlacement: function (error, element) {
+            return true;
+        },
+        highlight: function (element, errorClass) {
+
+            var selector = "#" + element.id;
+
+            $(selector).addClass(errorClass);
+            $(selector).parent().find("span.vd").removeClass('f-important').removeClass('f-success').addClass('f-error');
+
+        },
+        unhighlight: function (element, errorClass) {
+
+            var selector = "#" + element.id;
+            $(selector).removeClass(errorClass);
+            $(selector).parent().find("span.vd").removeClass('f-error').addClass('f-success');
+
+        },
+
+        submitHandler: function (form) {
+            grecaptcha.execute();
+        }
+    });
+});
