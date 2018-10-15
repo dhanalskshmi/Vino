@@ -1,10 +1,13 @@
 .filterDetail{
     .heroBlock{
         margin-bottom: 100px;
+        @include bp(landscape){
+            margin-bottom: 60px;
+        }
         @include bp(tablet){
             margin-bottom: 40px;
         }
-        @include bp(tablet){
+         @include bp(mobile){
             margin-bottom: 100px;
         }
         .bgWrap{
@@ -16,15 +19,16 @@
                 padding: 19px 20px 37px 20px;
             }
             @include bp(mobile){
-                padding: 22px 10px 20px 10px;
+                padding: 22px 10px 17px 10px;
             }
-            h2{
+            h2,h1{
                 color: #1c3d6d;
                 font-size: 36px;
                 font-weight: normal;
                 margin-bottom: 7px;
                 @include bp(landscape){
                     font-size: 24px;
+                    margin-bottom: 5px;
                 }
                 @include bp(tablet){
                     font-size: 20px;
@@ -39,6 +43,7 @@
                 font-size: 20px;
                 color: #aaa8a8;
                 font-weight: normal;
+                text-transform: uppercase;
                 @include bp(tablet){
                     font-size: 18px;
                 }
@@ -58,6 +63,9 @@
                 height: auto;
                 width: 500px;
                 margin: 42px auto 82px auto;
+                @include bp(landscape){
+                    margin: 37px auto 43px auto;
+                }
                 @include bp(tablet){
                     margin: 39px auto 43px auto;
                 }
@@ -79,7 +87,7 @@
                     margin-top: -5px;
                 }
                 @include bp(mobile){
-                    margin-top: 47px;
+                    margin-top: 50px;
                 }
                 .back-btn{
                     display: inline-block;
@@ -96,6 +104,7 @@
                         align-items: center;
                         justify-content: center;
                         font-size: 12px;
+                        font-weight: 600;
                         color: #fff;
                         background-color: #1c3d6d;
                     }
