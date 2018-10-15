@@ -468,6 +468,7 @@ $(document).ready(function() {
 
 
 
+
 	// Mobile Footer Toogle
 
 	if ($(window).width() <= 767) {
@@ -508,7 +509,7 @@ $(document).ready(function() {
   $('.mLogin a').click(function(e) {
 		$(this).toggleClass('active');
 		$('.loginBlocks').toggleClass('active');
-		$('.hamburger, .mnavWrapper').removeClass('active');
+		$('.hamburger, .mnavWrapper, .mobileSearchfield, .mobileSearch .submit').removeClass('active');
 		$('html').removeClass('menuOpened');
 });
 // Hide events when scroll
@@ -527,12 +528,20 @@ $(window).scroll(function() {
 		$(this).toggleClass('active');
     $('html').toggleClass('menuOpened');
 		$('.mnavWrapper').toggleClass('active');
-		$('.loginBlocks, .mLogin a').removeClass('active');
+		$('.loginBlocks, .mLogin a, .mobileSearchfield, .mobileSearch .submit').removeClass('active');
 
 	});
 
 
-  //Login Validation
+  //Mobile Search
+
+	$('.mobileSearch .submit').click(function(e) {
+		$(this).toggleClass('active');
+		$('.mobileSearchfield').toggleClass('active');
+		$('html').removeClass('menuOpened');
+		$('.hamburger, .mnavWrapper').removeClass('active');
+		$('.loginBlocks, .mLogin a').removeClass('active');
+	});
 
 
 
