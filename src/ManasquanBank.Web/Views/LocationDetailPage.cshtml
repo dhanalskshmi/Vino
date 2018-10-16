@@ -1,10 +1,13 @@
-﻿@using Umbraco.Core.Logging
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using umbraco.MacroEngines
-@using RJP.MultiUrlPicker.Models
 @using Newtonsoft.Json
+@using RJP.MultiUrlPicker.Models
+@using umbraco.NodeFactory
+@using ContentModels = Umbraco.Web.PublishedContentModels
+@using umbraco.cms.businesslogic.web
 @using Umbraco.Web.Extensions
 @using System.Linq
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Web.Script.Serialization;
 @{
     Layout = "Master.cshtml";
     var title = Model.Content.GetPropertyValue<string>("title");
@@ -25,11 +28,51 @@
     var content = Model.Content.GetPropertyValue<string>("content");
     var learnMore = Model.Content.GetPropertyValue<Link>("learnMore");
 
+    var map = Model.Content.GetPropertyValue<AngularGoogleMaps.Model>("locationMap");
+    var googleMapKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("googleMapKey");
+    List<Locations> MapLocations = new List<Locations>();
+
     ///* icon */
 
     //var addressIcon = Model.Content.AncestorOrSelf(2).GetPropertyValue<string>("addressIcon");
 
 }
+@functions
+{
+    public class Locations
+    {
+        public decimal lat { get; set; }
+        public decimal lng { get; set; }
+        public int key { get; set; }
+        public int zoom { get; set; }
+        public string title { get; set; }
+        public string getdirection { get; set; }
+
+    }
+}
+@{
+
+
+    Locations objlocations = new Locations();
+
+    System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex("<[^>]*>");
+    address = rx.Replace(address, "");
+
+    decimal lat = map.Latitude;
+    decimal lng = map.Longitude;
+    var zoom = map.Zoom;
+    objlocations.lat = lat;
+    objlocations.lng = lng;
+    objlocations.zoom = zoom;
+    objlocations.title = title;
+    objlocations.getdirection = address;
+    MapLocations.Add(objlocations);
+
+    var jsonSerialiser = new JavaScriptSerializer();
+    var json = jsonSerialiser.Serialize(MapLocations);
+
+}
+
 
 @section InnerTopStyle {
 <style>
@@ -168,6 +211,7 @@
 <section class="mapSection">
     <div class="containerWrapper">
         <div id="map_div"></div>
+        <input type="hidden" name="map_value" id="map_value" value="@json" />
         <!--<img src="images/location-detail/map.jpg" alt="map"/> -->
     </div>
 </section>
@@ -251,5 +295,130 @@
     </div>
 </section>
 @section InnerBottomScript {
-<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
+<script>
+function initMap() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var llocdata = jQuery("section.mapSection").find("#map_value").val();
+  	var llocdata = jQuery.parseJSON(llocdata);
+  	var firstLat,firstLang,infoWindowContent = [];
+
+  	for (var i = 0; i < llocdata.length; i++) {
+  		var firstJSON = llocdata[i];
+  		if(i == 0){
+
+  			firstLat = firstJSON["lat"];
+  			firstLang = firstJSON["lng"];
+  			firstZoom = firstJSON["zoom"];
+  		}
+  	}
+
+  	var uluru = {lat: firstLat, lng: firstLang};
+  	var latlng = new google.maps.LatLng(firstLat, firstLang);
+
+    console.log(llocdata);
+
+    var myOptions = {
+	   center: latlng,
+	   zoom: firstZoom,
+	   mapTypeControl: false,
+	   draggable: true,
+	   scaleControl: false,
+	   scrollwheel: false,
+	   navigationControl: false,
+	   streetViewControl: false,
+	   disableDefaultUI: false,
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+
+
+
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map_div"), myOptions);
+    //map.setTilt(45);
+
+
+
+    // Display multiple markers on a map
+
+    if($(window).width() > 767){
+
+      var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
+    }
+    else{
+
+      var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
+    }
+
+    // Loop through our array of markers & place each one on the map
+    for( i = 0; i < llocdata.length; i++ ) {
+
+  		  var lat = llocdata[i]["lat"];
+  		  var Longitude = llocdata[i]["lng"];
+        var position = new google.maps.LatLng(lat, Longitude);
+        //bounds.extend(position);
+
+        infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["title"]+"</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr="+llocdata[i]["getdirection"]+"'>Get Direction</a></p></div>";
+
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: llocdata[i]["name"]
+        });
+
+        marker.setTitle(llocdata[i]["name"]);
+        // Allow each marker to have an info window
+
+        if($(window).width() > 1200){
+
+            google.maps.event.addListener(marker, "mouseover", (function(marker, i) {
+                return function() {
+                  if(infoWindowContent[i]!=infoWindow.getContent())
+                  {
+                    infoWindow.setContent(infoWindowContent[i]);
+                    infoWindow.open(map, marker);
+                    map.setCenter(marker.getPosition());
+                  }
+                }
+
+            })(marker, i));
+
+             /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
+                return function() {
+                    infoWindow.close(map, marker);
+                }
+
+            })(marker, i));*/
+
+
+        }
+        else{
+
+            google.maps.event.addListener(marker, "click", (function(marker, i) {
+                return function() {
+                  if(infoWindowContent[i]!=infoWindow.getContent())
+                  {
+                    infoWindow.setContent(infoWindowContent[i]);
+                    infoWindow.open(map, marker);
+                    map.setCenter(marker.getPosition());
+                  }
+                }
+
+            })(marker, i));
+        }
+
+
+
+
+    }
+
+
+
 }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=@googleMapKey&callback=initMap">
+</script>
+}
+

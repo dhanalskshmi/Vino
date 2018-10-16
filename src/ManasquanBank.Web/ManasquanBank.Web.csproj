@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngularGoogleMaps, Version=2.0.2.45, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\AngularGoogleMaps.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
@@ -490,6 +494,13 @@
     <Content Include="images\media-center\news2.jpg" />
     <Content Include="images\media-center\realTime.jpg" />
     <Content Include="images\media-center\real_image_bg.png" />
+    <Content Include="scripts\angular-google-maps-street-view.js" />
+    <Content Include="scripts\angular-google-maps-street-view.min.js" />
+    <Content Include="scripts\angular-google-maps.js" />
+    <Content Include="scripts\angular-google-maps.min.js" />
+    <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\lib\jquery-3.2.1.min.js" />
     <Content Include="scripts\lib\jquery-ui.js" />
     <Content Include="scripts\lib\modernizr-custom.js" />
@@ -497,6 +508,8 @@
     <Content Include="scripts\lib\scrollanimation.js" />
     <Content Include="scripts\lib\swiper.min.js" />
     <Content Include="scripts\lib\waypoints.min.js" />
+    <Content Include="scripts\lodash.js" />
+    <Content Include="scripts\lodash.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\main.min.js" />
     <Content Include="Views\ClientService.cshtml" />
@@ -581,6 +594,7 @@
     <Content Include="Views\CategoryLandingPage.cshtml" />
     <Content Include="Views\ProductDetailPage.cshtml" />
     <Content Include="Views\FilterDetailPage.cshtml" />
+    <Content Include="scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
