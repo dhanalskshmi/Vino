@@ -77,7 +77,8 @@
                     &.searchBtn {
                         width: auto;
                         margin-right: 0;
-                        .btn-mansq {
+                        .btnManasq {
+                            @extend .btn-mansq;
                             margin: 0;
                             width: 165px;
                             padding: 13px 40px;
@@ -338,7 +339,8 @@
                 max-width: 138px;
             }
         }
-        .btn-mansq {
+        .btnManasq {
+            @extend .btn-mansq;
             margin-top: 49px;
             min-width: 203px;
             font-size: 22px;

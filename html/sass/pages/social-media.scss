@@ -43,12 +43,18 @@
 	margin-top: 50px;
 	.bgWrap{
 		background: #1268e5;
-		padding: 30px;
-		.flexPanelWrap{
+		padding: 15px 20px;
+		.filtr-container{
+			z-index: 1;
+			.filtr-item{
+			width: 33.3%;
+			}
+			.flexPanelWrap{
 			display: flex;
 			flex-direction: column;
-			width: 403px;
+			//width: 403px;
 			padding: 10px;
+			margin: 16px 5px 16px 5px;
 			background: #fff;
 			.flexPanelHead{
 				display: flex;
@@ -92,6 +98,14 @@
 					line-height: initial;
 				}
 			}
+			.flexPanelFoot{
+				width: 100%;
+				margin-top: 60px;
+				.flexIcon{
+					float: right;
+				}
+			}
+		}
 		}
 	}
 }
