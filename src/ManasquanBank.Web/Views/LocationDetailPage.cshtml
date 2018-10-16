@@ -29,6 +29,7 @@
     var learnMore = Model.Content.GetPropertyValue<Link>("learnMore");
 
     var map = Model.Content.GetPropertyValue<AngularGoogleMaps.Model>("locationMap");
+    var googleMapKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("googleMapKey");
     List<Locations> MapLocations = new List<Locations>();
 
     ///* icon */
