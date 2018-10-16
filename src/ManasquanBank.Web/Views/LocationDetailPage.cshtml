@@ -53,20 +53,23 @@
 @{
 
 
-        Locations objlocations = new Locations();
-       
-        decimal lat = map.Latitude;
-        decimal lng = map.Longitude;
-        var zoom = map.Zoom;
-        objlocations.lat = lat;
-        objlocations.lng = lng;
-        objlocations.zoom = zoom;
-        objlocations.title = title;
-        objlocations.getdirection = address;
-        MapLocations.Add(objlocations);
-  
-        var jsonSerialiser = new JavaScriptSerializer();
-        var json = jsonSerialiser.Serialize(MapLocations);
+    Locations objlocations = new Locations();
+
+    System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex("<[^>]*>");
+    address = rx.Replace(address, "");
+
+    decimal lat = map.Latitude;
+    decimal lng = map.Longitude;
+    var zoom = map.Zoom;
+    objlocations.lat = lat;
+    objlocations.lng = lng;
+    objlocations.zoom = zoom;
+    objlocations.title = title;
+    objlocations.getdirection = address;
+    MapLocations.Add(objlocations);
+
+    var jsonSerialiser = new JavaScriptSerializer();
+    var json = jsonSerialiser.Serialize(MapLocations);
 
 }
 
