@@ -43,7 +43,9 @@
 				}
 				.addrSection {
 					width:46.796%;
+					min-height:749px;
 					float: left;
+					position: relative;
 					@include bp(tablandscape) {
 						width: 52.544%;
 					}
@@ -74,174 +76,77 @@
 								width:100%;
 								padding: 20px 20px 32px;
 							}
-							p {
-								font-size:20px;
-								color:#666666;
-								@include bp(tablandscape) {
-									font-size:16px;
+							.pnoneNumber {
+								display:table;
+								width:100%;
+								margin-bottom:22px;
+								img {
+									float:left;
 								}
-								@include bp(tabportrait) {
-									font-size:16px;
-								}
-								@include bp(mobile) {
-									font-size:16px;
-								}
-								&.pnoneNum {
-									&:before {
-										content: "";
-									    display: inline-block;
-									    background: url(../images/location-detail/phone-icon.png) no-repeat top right;
-									    background-size: cover;
-									    width:32px;
-									    height:32px;
-									    margin: 0 9px 0 0; 
-									    float: left;
-									    position: relative;
-									    @include bp(desktop) {
-									    	width: 40px;
-									    	height: 40px;
-									    	margin: 0 20px 0 0;
-									    }
-									}
-									a {
-										position:relative;
-										top:10px;
-										@include bp(tablandscape) {
-											top: 7px;
-										}
-										@include bp(tabportrait) {
-											top: 6px;
-										}
-										@include bp(mobile) {
-											top: 8px;
-										}
-									}
-								}
-								&.locationAddr {
-									margin-top:38px;
-									@include bp(tablandscape) {
-										margin-top:39px;
-									}
-									@include bp(tabportrait) {
-										margin-top:29px;
-									}
-									@include bp(mobile) {
-										margin-top:21px;
-									}
-									&:before {
-										@extend .pnoneNum, :before;
-									    background: url(../images/location-detail/address-icon.png) no-repeat top right;
-									    top: 1px;
-									    background-size: cover;
-									}
-									span {
+								div {
+									&.detail {
 										display:block;
-										position: relative;
-	    								top: 0px;
-	    								padding-left: 60px;
-	    								@include bp(tablandscape) {
-									    	margin-bottom: -5px;
-									    	padding-left: 41px;
-									    }
-									    @include bp(tabportrait) {
-									    	padding-left: 40px;
-									    	top:1px;
-									    	margin-bottom: -5px;
-									    }
-									    @include bp(mobile) {
-									    	padding-left: 41px;
-									    	margin-bottom: -4px;
-									    }
+										width: 85%;
+										float:left;
+										padding-left: 20px;
+										padding-top: 10px;
+										p {
+											margin-bottom:0px;
+											line-height: 23px;
+											@include bp(tablandscape) {
+												font-size:16px;
+											}
+											@include bp(tabportrait) {
+												font-size:16px;
+											}
+											@include bp(mobile) {
+												font-size:16px;
+											}
+											strong {
+												display:block;
+												margin-bottom: 1px;
+											}
+											a {
+												text-decoration:none;
+												&:hover {
+													color:inherit;
+												}
+											}
+										}
+										p+p strong {
+											margin-top:7px;
+										}
 									}
 								}
-								&.mailMember {
-									margin-top: 66px;
-									@include bp(tablandscape) {
-									   	margin-top: 30px;
-									   	margin-bottom: 21px;
-									}
-									@include bp(tabportrait) {
-									   	margin-top: 22px;
-									   	margin-bottom: 12px;
-									}
-									@include bp(mobile) {
-										margin-top: 19px;
-										margin-bottom: 11px;
-									}
-									&:before {
-										@extend .pnoneNum, :before;
-									    background: url(../images/location-detail/mail-icon.png) no-repeat top right;
-									    background-size: cover;
-									    top:1px;
-									}
-									strong {
-										display:block;
-										padding-left: 60px;
-										position: relative;
-									    top: -1px;
-									    margin-bottom: 2px;
-									    @include bp(tablandscape) {
-									    	padding-left:41px;
-									    	margin-bottom: -5px;
-									    }
-									    @include bp(tabportrait) {
-									    	padding-left: 40px;
-									    	top:0px;
-									    	margin-bottom: -5px;
-									    }
-									    @include bp(mobile) {
-									    	padding-left: 41px;
-									    	margin-bottom: -4px;
-									    }
-									}
-									span {
-										display:block;
-										padding-left: 60px;
-										margin-bottom: 3px;
-										@include bp(tablandscape) {
-									    	padding-left:41px;
-									    	margin-bottom:1px;
-									    }
-									    @include bp(tabportrait) {
-									    	padding-left: 40px;
-									    }
-									    @include bp(mobile) {
-									    	padding-left: 41px;
-									    	margin-bottom: 2px;
-									    }
+							}
+							.locationAddr {
+								@extend .pnoneNumber;
+								div {
+									&.detail {
+										padding-top: 0px;
+    									margin-top: -1px;
 									}
 								}
-								&.printIcon {
-									margin-top: 0px;
-									@include bp(desktop) {
-										margin-top: 67px;
-									}
-									@include bp(tablandscape) {
-										margin-top: 21px;
-									}
-									&:before {
-										@extend .pnoneNum, :before;
-									    background: url(../images/location-detail/print-icon.png) no-repeat top right;
-									    background-size: cover;
-									    top: 4px;
-									}
-									a {
-										position:relative;
-										top:11px;
-										@include bp(tabportrait) {
-									    	top:12px;
-									    }
-									    @include bp(mobile) {
-									    	top: 11px;
-									    }
+							}
+							.mailMember {
+								@extend .pnoneNumber;
+								margin-top: 70px;
+								div {
+									&.detail {
+										padding-top:0px;
 									}
 								}
+							}
+							.printIcon {
+								@extend .pnoneNumber;
+								margin-top: 73px;
 							}
 						}
 						.rgtSec {
 							width:49%;
 							float:left;
 							padding-left: 42px;
+							padding-right:20px;
 							@include bp(tablandscape) {
 		    					width:45%;
 		    					padding-left: 13px;
@@ -253,6 +158,44 @@
 		    				@include bp(mobile) {
 								width:100%;
 								padding-left:19px;
+							}
+							.walkAtm {
+								display:table;
+								width:100%;
+								margin-bottom:15px;
+								img {
+									float:left;
+									margin-top:3px;
+								}
+								div {
+									&.detail {
+										display:block;
+										width: 81.8%;
+										float:left;
+										padding-left: 18px;
+										padding-top: 16px;
+										p {
+											margin-bottom:0px;
+											line-height: 23px;
+											strong {
+												display:block;
+												margin-bottom: 1px;
+											}
+											a {
+												text-decoration:none;
+											}
+										}
+										p+p strong {
+											margin-top:7px;
+										}
+									}
+								}
+							}
+							.hoursSec {
+								@extend .walkAtm;
+							}
+							.boxSec {
+								@extend .walkAtm;
 							}
 							p {
 								font-size:18px;
@@ -336,8 +279,10 @@
 						display: table;
     					width: 100%;
 						background:#1268e5;
-						padding: 23px 20px 39px 60px;
+						padding: 23px 22px 48px 61px;
 						margin-top: 61px;
+						position:absolute;
+						bottom:0;
 						@include bp(tablandscape) {
 							margin-top: 8px;
 							padding: 20px 20px 28px 19px;
@@ -368,23 +313,16 @@
     								margin-bottom: 0px;
     							}
     						}
-    						table {
-    							tbody {
-    								tr {
-    									td {
-    										display:block;
-    										color:#fff;
-    										font-size:20px;
-    										padding: 0px;
-    										@include bp(tablandscape) {
-			    								font-size:16px;
-			    								margin-bottom:-3.4px;
-			    							}
-			    							@include bp(mobile) {
-    											font-size:16px;
-    										}
-    									}
-    								}
+    						p {
+    							color:#fff;
+    							font-size:20px;
+    							margin-bottom:-1px;
+    							@include bp(tablandscape) {
+			    					font-size:16px;
+			    					margin-bottom:-3.4px;
+			    				}
+			    				@include bp(mobile) {
+    								font-size:16px;
     							}
     						}
 						}
