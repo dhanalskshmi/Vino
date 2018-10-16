@@ -15,6 +15,7 @@
     var branchTitle = Model.Content.GetPropertyValue<string>("branchTitle");
     var image = Model.Content.GetPropertyValue<IPublishedContent>("image");
     var address = Model.Content.GetPropertyValue<string>("address");
+    var locationaAddress = Model.Content.GetPropertyValue<string>("address");
     var phoneNumber = Model.Content.GetPropertyValue<string>("phoneNumber");
     var faxNumber = Model.Content.GetPropertyValue<string>("faxNumber");
     var locationsHours = Model.Content.GetPropertyValue<string>("locationsHours");
@@ -74,30 +75,30 @@
 
 
 @section InnerTopStyle {
-<style>
-    p.printIcon:before {
-        background: url(../images/location-detail/phone-icon.png) no-repeat top right;
-    }
+    <style>
+        p.printIcon:before {
+            background: url(../images/location-detail/phone-icon.png) no-repeat top right;
+        }
 
-    .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .lftSec div.locationAddr::before {
+        .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .lftSec div.locationAddr::before {
             background: url(../images/location-detail/address-icon.png) no-repeat top right;
-    }
-</style>
+        }
+    </style>
 }
 }
 <section class="heroBanner">
     @if (heroImage != null)
     {
-      <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
     }
-    
+
 </section>
 <section class="heroBlock locationDetailBlk">
     <div class="containerWrapper">
         <div class="bgWrap">
             @if (!string.IsNullOrEmpty(branchTitle))
             {
-              <h2>@branchTitle</h2>
+                <h2>@branchTitle</h2>
             }
             <div class="contentSection">
                 <div class="imgSection">
@@ -105,89 +106,119 @@
                     {
                         <img src="@image.Url" alt="@image.Name" />
                     }
-                    
+
                 </div>
                 <div class="addrSection">
                     <div class="fullWrap">
                         <div class="lftSec">
-                            <div class="pnoneNum">
+                            <div class="pnoneNumber">
+                                <img src="/images/location-detail/phone-icon.png" alt="phone-icon" />
                                 @if (!string.IsNullOrEmpty(phoneNumber))
                                 {
-                                  <a class="vino" href="tel:@phoneNumber">@phoneNumber</a>
+                                    <div class="detail">
+
+                                        <p><a class="vino" href="tel:@phoneNumber">@phoneNumber</a></p>
+</div>
                                 }
-                                
+
                             </div>
                             <div class="locationAddr">
-                                @if (!string.IsNullOrEmpty(address))
-                                {
-                                  @Html.Raw(address)
-                                }
+                                <img src="/images/location-detail/address-icon.png" alt="address-icon" />
+                                <div class="detail">
+
+                                    @if (!string.IsNullOrEmpty(locationaAddress))
+                                    {
+                                        @Html.Raw(locationaAddress)
+                                    }
+                                </div>
                             </div>
                             <div class="mailMember">
-                                @if (Model.Content.HasValue("branchOffice"))
-                                {
-                                    foreach (var branch in branchOffice)
-                                    {
-                                        var designation = branch.GetPropertyValue<string>("designation");
-                                        var name = branch.GetPropertyValue<string>("employeeName");
-                                        if (!string.IsNullOrEmpty(designation))
-                                        {
-                                          <strong>@designation</strong>
-                                        }
-                                        if (!string.IsNullOrEmpty(name))
-                                        {
-                                          <span>@name</span>
-                                        }
+                                <img src="/images/location-detail/mail-icon.png" alt="mail-icon" />
+                                <div class="detail">
 
+                                    @if (Model.Content.HasValue("branchOffice"))
+                                    {
+                                        foreach (var branch in branchOffice)
+                                        {
+                                            var designation = branch.GetPropertyValue<string>("designation");
+                                            var name = branch.GetPropertyValue<string>("employeeName");
+                                            if (!string.IsNullOrEmpty(designation))
+                                            {
+                                                <p>
+                                                    <strong>@designation</strong>
+                                                </p>
+                                            }
+                                            if (!string.IsNullOrEmpty(name))
+                                            {
+                                                <p>@name</p>
+                                            }
+
+                                        }
                                     }
-                                }
-                               
-                                
+                                </div>
+
+
                             </div>
 
                             <div class="printIcon">
-                                @if (!string.IsNullOrEmpty(faxNumber))
-                                {
-                                    <a href="tel:@faxNumber">@faxNumber</a>
-                                }
-                                
-                            </div>
+                                <img src="/images/location-detail/print-icon.png" alt="print-icon" />
+                                <div class="detail">
+
+                                    @if (!string.IsNullOrEmpty(faxNumber))
+                                    {
+                                        <p><a href="tel:@faxNumber">@faxNumber</a></p>
+                                    }
+                                    </div>
+
+                                </div>
                         </div>
                         <div class="rgtSec">
                             @if (!string.IsNullOrEmpty(walkUpAtm))
                             {
                                 <div class="walkAtm">
-                                   @walkUpAtm
-                                </div>
+                                    <img src="/images/location-detail/atm-icon.png" alt="atm-icon" />
+                                    <div class="detail">
+
+                                        <p>@walkUpAtm</p>
+                                     </div>
+                                    </div>
                             }
                             @if (!string.IsNullOrEmpty(hourAtm))
                             {
                                 <div class="hoursSec">
-                                   @hourAtm
-                                </div>
+                                    <img src="/images/location-detail/hours-icon.png" alt="hours-icon" />
+                                    <div class="detail">
+
+                                        <p>@hourAtm</p>
+                                        </div>
+                                    </div>
                             }
-                           
+
                             @if (!string.IsNullOrEmpty(safetyDepositBox))
                             {
                                 <div class="boxSec">
-                                    @safetyDepositBox
-                                </div>
+                                    <img src="/images/location-detail/box-icon.png" alt="box-icon" />
+                                    <div class="detail">
+
+                                        <p>@safetyDepositBox</p>
+                                    </div>
+                                    </div>
                             }
-                            
+
                         </div>
                     </div>
                     <div class="timehrsSection">
                         <div class="lobbbyHrs">
-                            @if(!string.IsNullOrEmpty(locationsHours))
+                            @if (!string.IsNullOrEmpty(locationsHours))
                             {
                                 @Html.Raw(locationsHours)
                             }
                         </div>
                         <div class="driveHrs">
-                           @if(!string.IsNullOrEmpty(driveThruHours))
-                           {
-                             @Html.Raw(driveThruHours)
-                           }
+                            @if (!string.IsNullOrEmpty(driveThruHours))
+                            {
+                                @Html.Raw(driveThruHours)
+                            }
                         </div>
                     </div>
                 </div>
@@ -218,7 +249,14 @@
     <div class="containerWrapper">
         <div class="bgWrap">
             <div class="contentSec">
-                <h2>real time alerts</h2>
+                @if (!string.IsNullOrEmpty(advTitle))
+                {
+                    <h2>@advTitle</h2>
+                }
+                @if(!string.IsNullOrEmpty(content))
+                {
+                    @Html.Raw(content)
+                }
                 <p>Setting up your alerts only takes a few minutes, and you can easily adjust your preferences at any time.</p>
                 @if (learnMore != null)
                 {
@@ -236,7 +274,7 @@
                     }
 
                 }
-                
+
 
             </div>
         </div>
@@ -294,130 +332,128 @@
     </div>
 </section>
 @section InnerBottomScript {
-<script>
-function initMap() {
-    var map;
-    var bounds = new google.maps.LatLngBounds();
-    var llocdata = jQuery("section.mapSection").find("#map_value").val();
-  	var llocdata = jQuery.parseJSON(llocdata);
-  	var firstLat,firstLang,infoWindowContent = [];
+    <script>
+        function initMap() {
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var llocdata = jQuery("section.mapSection").find("#map_value").val();
+            var llocdata = jQuery.parseJSON(llocdata);
+            var firstLat, firstLang, infoWindowContent = [];
 
-  	for (var i = 0; i < llocdata.length; i++) {
-  		var firstJSON = llocdata[i];
-  		if(i == 0){
+            for (var i = 0; i < llocdata.length; i++) {
+                var firstJSON = llocdata[i];
+                if (i == 0) {
 
-  			firstLat = firstJSON["lat"];
-  			firstLang = firstJSON["lng"];
-  			firstZoom = firstJSON["zoom"];
-  		}
-  	}
+                    firstLat = firstJSON["lat"];
+                    firstLang = firstJSON["lng"];
+                    firstZoom = firstJSON["zoom"];
+                }
+            }
 
-  	var uluru = {lat: firstLat, lng: firstLang};
-  	var latlng = new google.maps.LatLng(firstLat, firstLang);
+            var uluru = { lat: firstLat, lng: firstLang };
+            var latlng = new google.maps.LatLng(firstLat, firstLang);
 
-    console.log(llocdata);
+            console.log(llocdata);
 
-    var myOptions = {
-	   center: latlng,
-	   zoom: firstZoom,
-	   mapTypeControl: false,
-	   draggable: true,
-	   scaleControl: false,
-	   scrollwheel: false,
-	   navigationControl: false,
-	   streetViewControl: false,
-	   disableDefaultUI: false,
-     mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-
-
-
-    // Display a map on the page
-    map = new google.maps.Map(document.getElementById("map_div"), myOptions);
-    //map.setTilt(45);
+            var myOptions = {
+                center: latlng,
+                zoom: firstZoom,
+                mapTypeControl: false,
+                draggable: true,
+                scaleControl: false,
+                scrollwheel: false,
+                navigationControl: false,
+                streetViewControl: false,
+                disableDefaultUI: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
 
 
 
-    // Display multiple markers on a map
+            // Display a map on the page
+            map = new google.maps.Map(document.getElementById("map_div"), myOptions);
+            //map.setTilt(45);
 
-    if($(window).width() > 767){
 
-      var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
-    }
-    else{
 
-      var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
-    }
+            // Display multiple markers on a map
 
-    // Loop through our array of markers & place each one on the map
-    for( i = 0; i < llocdata.length; i++ ) {
+            if ($(window).width() > 767) {
 
-  		  var lat = llocdata[i]["lat"];
-  		  var Longitude = llocdata[i]["lng"];
-        var position = new google.maps.LatLng(lat, Longitude);
-        //bounds.extend(position);
+                var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
+            }
+            else {
 
-        infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["title"]+"</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr="+llocdata[i]["getdirection"]+"'>Get Direction</a></p></div>";
+                var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
+            }
 
-        marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            title: llocdata[i]["name"]
-        });
+            // Loop through our array of markers & place each one on the map
+            for (i = 0; i < llocdata.length; i++) {
 
-        marker.setTitle(llocdata[i]["name"]);
-        // Allow each marker to have an info window
+                var lat = llocdata[i]["lat"];
+                var Longitude = llocdata[i]["lng"];
+                var position = new google.maps.LatLng(lat, Longitude);
+                //bounds.extend(position);
 
-        if($(window).width() > 1200){
+                infoWindowContent[i] = "<div class='map-infoContent'><p>" + llocdata[i]["title"] + "</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr=" + llocdata[i]["getdirection"] + "'>Get Direction</a></p></div>";
 
-            google.maps.event.addListener(marker, "mouseover", (function(marker, i) {
-                return function() {
-                  if(infoWindowContent[i]!=infoWindow.getContent())
-                  {
-                    infoWindow.setContent(infoWindowContent[i]);
-                    infoWindow.open(map, marker);
-                    map.setCenter(marker.getPosition());
-                  }
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    title: llocdata[i]["name"]
+                });
+
+                marker.setTitle(llocdata[i]["name"]);
+                // Allow each marker to have an info window
+
+                if ($(window).width() > 1200) {
+
+                    google.maps.event.addListener(marker, "mouseover", (function (marker, i) {
+                        return function () {
+                            if (infoWindowContent[i] != infoWindow.getContent()) {
+                                infoWindow.setContent(infoWindowContent[i]);
+                                infoWindow.open(map, marker);
+                                map.setCenter(marker.getPosition());
+                            }
+                        }
+
+                    })(marker, i));
+
+                    /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
+                       return function() {
+                           infoWindow.close(map, marker);
+                       }
+
+                   })(marker, i));*/
+
+
+                }
+                else {
+
+                    google.maps.event.addListener(marker, "click", (function (marker, i) {
+                        return function () {
+                            if (infoWindowContent[i] != infoWindow.getContent()) {
+                                infoWindow.setContent(infoWindowContent[i]);
+                                infoWindow.open(map, marker);
+                                map.setCenter(marker.getPosition());
+                            }
+                        }
+
+                    })(marker, i));
                 }
 
-            })(marker, i));
 
-             /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
-                return function() {
-                    infoWindow.close(map, marker);
-                }
 
-            })(marker, i));*/
+
+            }
+
 
 
         }
-        else{
-
-            google.maps.event.addListener(marker, "click", (function(marker, i) {
-                return function() {
-                  if(infoWindowContent[i]!=infoWindow.getContent())
-                  {
-                    infoWindow.setContent(infoWindowContent[i]);
-                    infoWindow.open(map, marker);
-                    map.setCenter(marker.getPosition());
-                  }
-                }
-
-            })(marker, i));
-        }
-
-
-
-
-    }
-
-
-
-}
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=@googleMapKey&callback=initMap">
-</script>
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=@googleMapKey&callback=initMap">
+    </script>
 }
 
