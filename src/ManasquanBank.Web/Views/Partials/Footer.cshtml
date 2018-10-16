@@ -4,99 +4,126 @@
 @using Skybrud.Social.Twitter;
 @using Skybrud.Social.Twitter.OAuth;
 @using Skybrud.Social.Twitter.Responses;
+@using ManasquanBank.Web.Models;
 @{
-	var footerLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("footerLogo");
-	var mobileIconsApple = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsApple");
-	var mobileIconAppleIconLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAppleIconLink");
-	var mobileIconsAndroid = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsAndroid");
-	var mobileIconAndroidLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAndroidLink");
-	var brandDescription = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("brandDescription");
-	var address = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("address");
-	var phoneNumber = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("phoneNumber");
-	var routingNumber = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("routingNumber");
-	var bankCopyrightText = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("bankCopyrightText");
-	var primaryFooter = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("primaryFooter");
-	var copyTextLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("copyTextLink");
-	var linkedIn = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("linkedIn");
-	var facebook = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebook");
-	var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
-	var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
+    var footerLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("footerLogo");
+    var mobileIconsApple = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsApple");
+    var mobileIconAppleIconLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAppleIconLink");
+    var mobileIconsAndroid = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsAndroid");
+    var mobileIconAndroidLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAndroidLink");
+    var brandDescription = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("brandDescription");
+    var address = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("address");
+    var phoneNumber = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("phoneNumber");
+    var routingNumber = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("routingNumber");
+    var bankCopyrightText = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("bankCopyrightText");
+    var primaryFooter = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("primaryFooter");
+    var copyTextLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("copyTextLink");
+    var linkedIn = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("linkedIn");
+    var facebook = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebook");
+    var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
+    var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
+
+    var newsLetterAdminEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterAdminEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterAdminEmail") : 0;
+    var newsLetterConfirmationEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterConfirmationEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterConfirmationEmail") : 0;
 }
+
+
+
 <section class="joinEmail">
-          <div class="containerWrapper">
-            <h2>
-               JOIN OUR<br>
-               EMAIL LIST
-            </h2>
-            <form class="" action="index.html" method="post">
-              <div>
+    <div class="containerWrapper">
+        <h2>
+            JOIN OUR<br />
+            EMAIL LIST
+        </h2>
+        @using (Html.BeginUmbracoForm("SubmitForm", "NewsLetter", FormMethod.Post, new { id = "NewsLetter", @class = "NewsLetter" }))
+        {
+            if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
+            {
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> @ViewBag.ErrorMessage
+                </div>
+            }
+            string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
+            string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
+            <div>
                 <label>
-                  First Name
+                    First Name
                 </label>
-                <input type="text" name="fname" value="" id="fname" class="txtBox">
-              </div>
-              <div>
+                <input type="text" name="newsLetterFirstName" value="" id="newsLetterFirstName" class="txtBox">
+            </div>
+            <div>
                 <label>
-                  last Name
+                    last Name
                 </label>
-                <input type="text" name="lname" value="" id="lname" class="txtBox">
-              </div>
-              <div>
+                <input type="text" name="newsLetterLastName" value="" id="newsLetterLastName" class="txtBox">
+            </div>
+            <div>
                 <label>
-                  Email
+                    Email
                 </label>
-                <input type="text" name="email" value="" id="email" class="txtBox">
-              </div>
-              <div class="groupCheckbox">
+                <input type="text" name="newsLetteremail" value="" id="newsLetteremail" class="txtBox">
+            </div>
+            <div class="groupCheckbox">
                 <div>
-                  <label>
-                    <span>Personal Banking</span>
-                    <input type="checkbox" name="personalbanking" value="" id="personalbanking" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
+                    <label>
+                        <span>Personal Banking</span>
+                        <input type="checkbox" name="newsLetterCheckboxs" value="Personal Banking" id="personalbanking" class="chkBox">
+                        <span class="checkbox"></span>
+                    </label>
                 </div>
                 <div>
-                  <label>
-                    <span>Business Banking</span>
-                    <input type="checkbox" name="businessbanking" value="" id="businessbanking" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
+                    <label>
+                        <span>Business Banking</span>
+                        <input type="checkbox" name="newsLetterCheckboxs" value="Business Banking" id="businessbanking" class="chkBox">
+                        <span class="checkbox"></span>
+                    </label>
                 </div>
                 <div>
-                  <label>
-                    <span>Digital Services</span>
-                    <input type="checkbox" name="digitalservices" value="" id="digitalservices" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
+                    <label>
+                        <span>Digital Services</span>
+                        <input type="checkbox" name="newsLetterCheckboxs" value="Digital Services" id="digitalservices" class="chkBox">
+                        <span class="checkbox"></span>
+                    </label>
                 </div>
                 <div>
-                  <label>
-                    <span>Loans</span>
-                    <input type="checkbox" name="loans" value="" id="loans" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
+                    <label>
+                        <span>Loans</span>
+                        <input type="checkbox" name="newsLetterCheckboxs" value="Loans" id="loans" class="chkBox">
+                        <span class="checkbox"></span>
+                    </label>
                 </div>
                 <div>
-                  <label>
-                    <span>Work at Manasquan Bank</span>
-                    <input type="checkbox" name="work" value="" id="work" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
+                    <label>
+                        <span>Work at Manasquan Bank</span>
+                        <input type="checkbox" name="newsLetterCheckboxs" value="Work at Manasquan Bank" id="work" class="chkBox">
+                        <span class="checkbox"></span>
+                    </label>
                 </div>
                 <div>
-                  <label>
-                    <span>Other</span>
-                    <input type="checkbox" name="other" value="" id="other" class="chkBox">
-                    <span class="checkbox"></span>
-                  </label>
+                    <label>
+                        <span>Other</span>
+                        <input type="checkbox" name="newsLetterCheckboxs" value="Other" id="other" class="chkBox">
+                        <span class="checkbox"></span>
+                    </label>
                 </div>
-              </div>
-              <div class="submit">
-                <button type="button" name="button"><span><span>Join</span></span></button>
-              </div>
-            </form>
-          </div>
-        </section>
+            </div>
+            <div class="captchaBlock">
+                <div class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmitNews" data-size="invisible"></div>
+                <p class="form2_error hide">The captcha is required and can't be empty.</p>
+
+            </div>
+            <div class="submit">
+                <button><span><span>Join</span></span></button>
+                <input type="hidden" id="adminEmail" name="NewsAdminEmail" value="@newsLetterAdminEmail" />
+                <input type="hidden" id="confirmationEmail" name="NewsConfirmationEmail" value="@newsLetterConfirmationEmail" />
+            </div>
+        
+        }
+      
+    </div>
+</section>
+
+
  <footer>
           <div class="containerWrapper">
             <div class="footerWraps">

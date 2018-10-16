@@ -532,6 +532,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\NewsLetterController.cs" />
     <Compile Include="Controllers\SocialFeedController.cs" />
     <Compile Include="Controllers\SocialStreamFacebook.cs" />
     <Compile Include="Controllers\SocialStreamFaceBookData.cs" />
@@ -539,6 +540,7 @@
     <Compile Include="Controllers\SocialStreamFacebookFeed.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
+    <Compile Include="Models\NewsLetterModel.cs" />
     <Compile Include="Models\RecaptchaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -612,6 +614,7 @@
   <ItemGroup>
     <Folder Include="Views\ContactUs\" />
     <Folder Include="Views\MacroPartials\" />
+    <Folder Include="Views\NewsLetter\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
