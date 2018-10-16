@@ -490,6 +490,13 @@
     <Content Include="images\media-center\news2.jpg" />
     <Content Include="images\media-center\realTime.jpg" />
     <Content Include="images\media-center\real_image_bg.png" />
+    <Content Include="scripts\angular-google-maps-street-view.js" />
+    <Content Include="scripts\angular-google-maps-street-view.min.js" />
+    <Content Include="scripts\angular-google-maps.js" />
+    <Content Include="scripts\angular-google-maps.min.js" />
+    <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\lib\jquery-3.2.1.min.js" />
     <Content Include="scripts\lib\jquery-ui.js" />
     <Content Include="scripts\lib\modernizr-custom.js" />
@@ -497,6 +504,8 @@
     <Content Include="scripts\lib\scrollanimation.js" />
     <Content Include="scripts\lib\swiper.min.js" />
     <Content Include="scripts\lib\waypoints.min.js" />
+    <Content Include="scripts\lodash.js" />
+    <Content Include="scripts\lodash.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\main.min.js" />
     <Content Include="Views\ClientService.cshtml" />
@@ -581,6 +590,7 @@
     <Content Include="Views\CategoryLandingPage.cshtml" />
     <Content Include="Views\ProductDetailPage.cshtml" />
     <Content Include="Views\FilterDetailPage.cshtml" />
+    <Content Include="scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
