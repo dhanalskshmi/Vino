@@ -1,407 +1,468 @@
-﻿@using Umbraco.Core.Logging
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using umbraco.MacroEngines
-@using RJP.MultiUrlPicker.Models
 @using Newtonsoft.Json
+@using RJP.MultiUrlPicker.Models
+@using umbraco.NodeFactory
+@using ContentModels = Umbraco.Web.PublishedContentModels
+@using umbraco.cms.businesslogic.web
 @using Umbraco.Web.Extensions
 @using System.Linq
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Web.Script.Serialization;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
+    var locations = Model.Content.AncestorOrSelf(2).Children();
+
+    var googleMapKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("googleMapKey");
+    List<Locations> MapLocations = new List<Locations>();
+}
+@functions
+{
+    public class Locations
+    {
+        public decimal lat { get; set; }
+        public decimal lng { get; set; }
+        public int key { get; set; }
+        public int zoom { get; set; }
+        public string title { get; set; }
+        public string getdirection { get; set; }
+
+    }
+}
+@{
+
+    foreach (var child in locations.Where(x => x.DocumentTypeAlias == "locationDetailPage"))
+    {
+
+        Locations objlocations = new Locations();
+        var locateTitle = child.GetPropertyValue<string>("title");
+        var getDirectionAddressText = child.GetPropertyValue<string>("address");
+        System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex("<[^>]*>");
+        getDirectionAddressText = rx.Replace(getDirectionAddressText, "");
+
+        var map = child.GetPropertyValue<AngularGoogleMaps.Model>("locationMap");
+        decimal lat = map.Latitude;
+        decimal lng = map.Longitude;
+        var zoom = map.Zoom;
+        objlocations.lat = lat;
+        objlocations.lng = lng;
+        objlocations.zoom = zoom;
+        objlocations.title = locateTitle;
+        objlocations.getdirection = getDirectionAddressText;
+        MapLocations.Add(objlocations);
+    }
+
+    var jsonSerialiser = new JavaScriptSerializer();
+    var json = jsonSerialiser.Serialize(MapLocations);
+
 }
 <section class="heroBanner">
     @if (heroImage != null)
     {
         <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
     }
- </section>
+</section>
 <section class="heroBlock locationBlk">
     <div class="containerWrapper">
         <div class="bgWrap mapLocation">
             @if (!string.IsNullOrEmpty(title))
             {
-              <h2>@title</h2>
+                <h2>@title</h2>
             }
-            
+
             <div id="map_div2"></div>
+            <input type="hidden" name="map_value" id="map_value" value="@json" />
             @if (!string.IsNullOrEmpty(bodyText))
             {
                 @Html.Raw(bodyText)
             }
-            
+
         </div>
     </div>
 </section>
 <!---- Branch address Desktop and Landscape View Start----->
-<section class="locationSection dlview grey">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
+@if (locations != null)
+{
+    int i = 0;
+    int count = locations.Where(y => y.DocumentTypeAlias == "locationDetailPage").Count();
+    var flag = false;
+    foreach (var loc in locations.Where(x => x.DocumentTypeAlias == "locationDetailPage"))
+    {
+        var image = loc.GetPropertyValue<IPublishedContent>("image");
+        var address = loc.GetPropertyValue<string>("address");
+        var getDirectionAddressText = loc.GetPropertyValue<string>("address");
+        var locationtitle = loc.GetPropertyValue<string>("title");
+        var phone = loc.GetPropertyValue<string>("phoneNumber");
+
+        System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex("<[^>]*>");
+        getDirectionAddressText = rx.Replace(getDirectionAddressText, "");
+
+        string sectionStr = "";
+        if (i % 3 == 0)
+        {
+            sectionStr = "";
+            if (flag == false)
+            {
+                sectionStr += "<section class='locationSection dlview grey'><div class='containerWrapper'><div class='locationBgWrap'><div class='locationBox'>";
+                flag = true;
+            }
+            else if (flag == true)
+            {
+                sectionStr += "<section class='locationSection dlview'><div class='containerWrapper'><div class='locationBgWrap'><div class='locationBox'>";
+                flag = false;
+            }
+
+            @Html.Raw(sectionStr)
+
+        }
+
+        <div class="locationDetail">
+            @if (image != null)
+            {
+                <img src="@image.Url" alt="@image.Name" />
+            }
+            @if (!string.IsNullOrEmpty(locationtitle))
+            {
+                <h3>@locationtitle</h3>
+            }
+            @if (!string.IsNullOrEmpty(address))
+            {
+                @Html.Raw(address)
+            }
+            @if (!string.IsNullOrEmpty(phone))
+            {
+                <p>@phone</p>
+            }
+            <span class="directionLink"><a href="http://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+            <a class="viewButtonLink" href="@loc.Url">View Detail</a>
         </div>
-    </div>
-</section>
-<section class="locationSection dlview">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="locationSection dlview grey">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="locationSection dlview ">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        if (i % 3 == 2)
+        {
+            sectionStr = "";
+            sectionStr += " </div></div></div></section>";
+            @Html.Raw(sectionStr)
+        }
+        if (i == (count - 1))
+        {
+            if (count % 3 == 0 || count % 3 == 1)
+            {
+                sectionStr = "";
+                sectionStr += " </div></div></div></section>";
+                @Html.Raw(sectionStr)
+            }
+        }
+
+        i++;
+    }
+
+}
 <!---- Branch address Portrait and Mobile View Start----->
-<section class="locationSection pmView grey">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
+@if (locations != null)
+            {
+                int i = 0;
+                int count = locations.Where(y => y.DocumentTypeAlias == "locationDetailPage").Count();
+                var flag1 = false;
+                foreach (var loc in locations.Where(x => x.DocumentTypeAlias == "locationDetailPage"))
+                {
+                    var image = loc.GetPropertyValue<IPublishedContent>("image");
+                    var address = loc.GetPropertyValue<string>("address");
+                    var locationtitle = loc.GetPropertyValue<string>("title");
+                    var phone = loc.GetPropertyValue<string>("phoneNumber");
+                    string sectionStr = "";
+                    if (i % 2 == 0)
+                    {
+                        sectionStr = "";
+                        if (flag1 == false)
+                        {
+                            sectionStr += "<section class='locationSection pmView grey'><div class='containerWrapper'><div class='locationBgWrap'><div class='locationBox'>";
+                            flag1 = true;
+                        }
+                        else if (flag1 == true)
+                        {
+                            sectionStr += "<section class='locationSection pmView'><div class='containerWrapper'><div class='locationBgWrap'><div class='locationBox'>";
+                            flag1 = false;
+                        }
+
+                        @Html.Raw(sectionStr)
+
+        }
+
+        <div class="locationDetail">
+            @if (image != null)
+            {
+                <img src="@image.Url" alt="@image.Name" />
+            }
+            @if (!string.IsNullOrEmpty(locationtitle))
+            {
+                <h3>@locationtitle</h3>
+            }
+            @if (!string.IsNullOrEmpty(address))
+            {
+                @Html.Raw(address)
+            }
+            @if (!string.IsNullOrEmpty(phone))
+            {
+                <p>@phone</p>
+            }
+            <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+            <a class="viewButtonLink" href="@loc.Url">View Detail</a>
         </div>
-    </div>
-</section>
-<section class="locationSection pmView">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="locationSection pmView grey">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="locationSection pmView">
-    <div class="containerWrapper">
-        <div class="locationBgWrap">
-            <div class="locationBox">
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-                <div class="locationDetail">
-                    <img src="images/location/branch-location1.jpg" alt="branch-location1" />
-                    <h3>Wall Townnship (hq)</h3>
-                    <p>221 Landmark Place</p>
-                    <p>P.O. E, Wall, NJ -8736</p>
-                    <p>(732) - 292-8400</p>
-                    <span class="directionLink"><a href="#">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-                    <a class="viewButtonLink" href="#">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="branchService">
-    <div class="containerWrapper">
-        <div class="serviceBgWrap">
-            <h2>Branch Services</h2>
-            <div class="serviceContent">
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Wire Transfers</h4>
-                    <p>We are a member of Fedline. Depositors can wire funds to other banks within and outside of the United States. Please obtain wire transfer instructions from the receiving bank. Call your local branch for additional details.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Change of address</h4>
-                    <p>To protect the security of your information, we require an original signed form to change your address. Download it here. Then stop by a local branch or drop it in the mail to make the change.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Cash Advances</h4>
-                    <p>Visa, MasterCard and Discover Card cash advances are available at all branch locations.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Self-Service Coin Counting</h4>
-                    <p>Turn your loose change into dollars! The coin counting machines are free for all bank customers and available at each branch.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Debit Card Instant Issue</h4>
-                    <p>Is your debit card lost or damaged?  No worries, we’ll replace it instantly at any one of our branch locations.  It only takes minutes to get you back up and running! You’ll leave with your new card in hand, activated and ready to use! To report a lost/stolen card or PIN, please call 1-800-554-8969.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Night Depository</h4>
-                    <p>All of our branch locations offer a secure, 24-hour night deposit for our business customers. Simply place your deposit in our night safe and we will credit your account on the next business day. We will provide you with a night deposit bag accompanied with two keys, one to lock the bag and the other to access the night depository.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Safe Deposit Boxes</h4>
-                    <p>We offer safe deposit box rentals to secure important personal documents and possessions.All of our branches, except Bay Head, offer a range of safe deposit box sizes. Boxes are subject to availability. Please call your local branch to check availability and current rates.</p>
-                    <p>The valuable contents of your safe deposit box are not insured by us or the FDIC.  Insurance is now available for as little as $25 per year.  To learn more and purchase safe deposit box insurance today, click here.</p>
-                </div>
-                <div class="serviceDetail">
-                    <img src="images/location/serviceIcon.png" alt="serviceIcon" />
-                    <h4>Savings Bond Redemption</h4>
-                    <p>U.S. Savings Bonds can be redeemed at your local branch. However, paper savings bonds are no longer sold at financial institutions and must be purchased online via the Treasury Direct website. To calculate the value of your paper savings bond, use this handy online calculator.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="branchMangers">
-    <div class="containerWrapper">
-        <div class="mangerBgWrap">
-            <h2>Branch Managers</h2>
-            <div class="managerContent">
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-                <div class="managerDetail">
-                    <h4>Lisa Colonno</h4>
-                    <span>Vice President, Retail Branch Manager & Solution Center Manager</span>
-                    <span>
-                        <a href="#"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
-                        <a href="#"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-@section InnerBottomScript {
-<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_mhIzW3YXtosbabjZDzgeQcgoOC4PJ5M"></script>
+        if (i % 2 == 1)
+        {
+            sectionStr = "";
+            sectionStr += " </div></div></div></section>";
+            @Html.Raw(sectionStr)
+        }
+        if (i == (count - 1))
+        {
+            if (count % 2 == 1)
+            {
+                sectionStr = "";
+                sectionStr += " </div></div></div></section>";
+                @Html.Raw(sectionStr)
+            }
+        }
+
+        i++;
+    }
+
 }
 
+<!---- Branch Services----->
+@if (locations != null)
+{       <section class="branchService">
+        <div class="containerWrapper">
+            <div class="serviceBgWrap">
+                @foreach (var item in locations.Where(x => x.DocumentTypeAlias == "branchServiceLandingPage"))
+                {
+                    var locationschild = item.Children;
+
+                    <h2>@item.Name</h2>
+                    <div class="serviceContent">
+                        @foreach (var location in locationschild.Where(x => x.DocumentTypeAlias == "brachServiceDetailPage"))
+                        {
+                            var locationTitle = location.GetPropertyValue<string>("title");
+                            var locationIcon = location.GetPropertyValue<IPublishedContent>("icon");
+                            var locationDescription = location.GetPropertyValue<string>("description");
+
+
+                            <div class="serviceDetail">
+                                @if (locationIcon != null)
+                                {
+                                    <img src="@locationIcon.Url" alt="@locationIcon.Name" />
+                                }
+
+                                @if (!string.IsNullOrEmpty(locationTitle))
+                                {
+                                    <h4>@locationTitle</h4>
+                                }
+                                @if (!string.IsNullOrEmpty(locationDescription))
+                                {
+                                    @Html.Raw(locationDescription)
+                                }
+                            </div>
+
+                        }
+
+
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+}
+<!---- Branch Managers ----->
+
+@if (locations != null)
+{
+    <section class="branchMangers">
+        <div class="containerWrapper">
+            <div class="mangerBgWrap">
+                @foreach (var item in locations.Where(x => x.DocumentTypeAlias == "branchManagerLandingPage"))
+                {
+                    var locationschild = item.Children;
+
+                    <h2>@item.Name</h2>
+
+                    <div class="managerContent">
+                        @foreach (var location in locationschild.Where(x => x.DocumentTypeAlias == "branchManagerDetailPage"))
+                        {
+                            var managerName = location.GetPropertyValue<string>("managername");
+                            var department = location.GetPropertyValue<string>("department");
+                            var branchLocation = location.GetPropertyValue<Link>("branchLocation");
+                            var email = location.GetPropertyValue<string>("email");
+
+                                <div class="managerDetail">
+                                    @if (!string.IsNullOrEmpty(managerName))
+                                    {
+                                        <h4>@managerName</h4>
+                                    }
+                                    @if (!string.IsNullOrEmpty(department))
+                                    {
+                                        <span>@department</span>
+                                    }
+                                   
+                                    
+                                <span>
+                                    @if (branchLocation != null)
+                                    {
+                                        if (branchLocation.Target == "_blank")
+                                        {
+                                            <a href="@branchLocation.Url" target="_blank"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@branchLocation.Url"><img src="images/location/homeIcon.png" alt="homeIcon" /></a>
+                                        }
+
+                                    }
+                                    @if (!string.IsNullOrEmpty(email))
+                                    {
+                                        <a href="mailto:@email"><img src="images/location/mailIcon.png" alt="mailIcon.png" /></a>
+                                    }
+                                    else
+                                    {
+                                       <img src="images/location/mailIcon.png" alt="mailIcon.png" />
+                                    }
+
+                                </span>
+                            </div>
+                        }
+
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+}
+@section InnerBottomScript {
+    <script>
+function initMap() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var llocdata = jQuery("section.heroBlock").find("#map_value").val();
+  	var llocdata = jQuery.parseJSON(llocdata);
+  	var firstLat,firstLang,infoWindowContent = [];
+
+  	for (var i = 0; i < llocdata.length; i++) {
+  		var firstJSON = llocdata[i];
+  		if(i == 0){
+
+  			firstLat = firstJSON["lat"];
+  			firstLang = firstJSON["lng"];
+  			firstZoom = firstJSON["zoom"];
+  		}
+  	}
+
+  	var uluru = {lat: firstLat, lng: firstLang};
+  	var latlng = new google.maps.LatLng(firstLat, firstLang);
+
+    console.log(llocdata);
+
+    var myOptions = {
+	   center: latlng,
+	   zoom: firstZoom,
+	   mapTypeControl: false,
+	   draggable: true,
+	   scaleControl: false,
+	   scrollwheel: false,
+	   navigationControl: false,
+	   streetViewControl: false,
+	   disableDefaultUI: false,
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+
+
+
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map_div2"), myOptions);
+    //map.setTilt(45);
+
+
+
+    // Display multiple markers on a map
+
+    if($(window).width() > 767){
+
+      var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
+    }
+    else{
+
+      var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
+    }
+
+    // Loop through our array of markers & place each one on the map
+    for( i = 0; i < llocdata.length; i++ ) {
+
+  		  var lat = llocdata[i]["lat"];
+  		  var Longitude = llocdata[i]["lng"];
+        var position = new google.maps.LatLng(lat, Longitude);
+        //bounds.extend(position);
+
+        infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["title"]+"</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr="+llocdata[i]["getdirection"]+"'>Get Direction</a></p></div>";
+
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: llocdata[i]["name"]
+        });
+
+        marker.setTitle(llocdata[i]["name"]);
+        // Allow each marker to have an info window
+
+        if($(window).width() > 1200){
+
+            google.maps.event.addListener(marker, "mouseover", (function(marker, i) {
+                return function() {
+                  if(infoWindowContent[i]!=infoWindow.getContent())
+                  {
+                    infoWindow.setContent(infoWindowContent[i]);
+                    infoWindow.open(map, marker);
+                    map.setCenter(marker.getPosition());
+                  }
+                }
+
+            })(marker, i));
+
+             /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
+                return function() {
+                    infoWindow.close(map, marker);
+                }
+
+            })(marker, i));*/
+
+
+        }
+        else{
+
+            google.maps.event.addListener(marker, "click", (function(marker, i) {
+                return function() {
+                  if(infoWindowContent[i]!=infoWindow.getContent())
+                  {
+                    infoWindow.setContent(infoWindowContent[i]);
+                    infoWindow.open(map, marker);
+                    map.setCenter(marker.getPosition());
+                  }
+                }
+
+            })(marker, i));
+        }
+
+
+
+
+    }
+
+
+
+}
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=@googleMapKey&callback=initMap">
+    </script>
+}
