@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="siteWrap">
-        <div class="siteInner proDetail">
+        <div class="siteInner">
             <!-- Header -->
             <header>
               <div class="containerWrapper">
@@ -581,12 +581,12 @@
                     <div class="bgWrap">
                         <h2>Social Media</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi. Nam ipsum tortor, tempor aliquam ante non, condimentum finibus tortor. Suspendisse eleifend orci lorem, quis euismod lectus molestie eu. </p>
-                        <ul>
-                          <li><a href="javascript:void(0)" data-filter="all">All</a></li>
-                          <li><a href="javascript:void(0)" data-filter="fb">Facebook</a></li>
-                          <li><a href="javascript:void(0)" data-filter="tw">Twitter</a></li>
-                          <li><a href="javascript:void(0)" data-filter="yt">Youtube</a></li>
-                          <li><a href="javascript:void(0)" data-filter="ig">Instagram</a></li>
+                        <ul id="masFilter">
+                          <li class="active" data-filter="all">All</li>
+                          <li data-filter="fb">Facebook</li>
+                          <li data-filter="tw">Twitter</li>
+                          <li data-filter="yt">Youtube</li>
+                          <li data-filter="ig">Instagram</li>
                         </ul>
                     </div>
                 </div>
@@ -645,7 +645,7 @@
                           <div class="flexPanelFoot">
                             <div class="flexIcon">
                               <figure>
-                                <img src="images/social/twitter.png" alt="Twitter">
+                                <img src="images/social/facebook.png" alt="Twitter">
                               </figure>
                             </div>
                           </div>
@@ -701,7 +701,7 @@
                           <div class="flexPanelFoot">
                             <div class="flexIcon">
                               <figure>
-                                <img src="images/social/twitter.png" alt="Twitter">
+                                <img src="images/social/facebook.png" alt="Twitter">
                               </figure>
                             </div>
                           </div>
@@ -810,7 +810,7 @@
                           <div class="flexPanelFoot">
                             <div class="flexIcon">
                               <figure>
-                                <img src="images/social/twitter.png" alt="Twitter">
+                                <img src="images/social/facebook.png" alt="Twitter">
                               </figure>
                             </div>
                           </div>
@@ -866,7 +866,7 @@
                           <div class="flexPanelFoot">
                             <div class="flexIcon">
                               <figure>
-                                <img src="images/social/twitter.png" alt="Twitter">
+                                <img src="images/social/facebook.png" alt="Twitter">
                               </figure>
                             </div>
                           </div>
@@ -1075,7 +1075,8 @@
     <script src="script/lib/modernizr-custom.js"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
     <script>
-        // Default options
+      $(window).on("load resize",function(e){
+            // Default options
 var options = {
    animationDuration: 0.5, // in seconds
    filter: 'all', // Initial filter
@@ -1097,6 +1098,15 @@ var options = {
 var filterizd = $('.filtr-container').filterizr(options);
 // If you have already instantiated your Filterizr then call...
 filterizd.filterizr('setOptions', options);
+
+});
+
+$(document).ready(function(){
+    $("#masFilter li").click(function(){
+        $("#masFilter li").removeClass("active");
+        $(this).addClass("active");
+    });
+});
 
     </script>
 

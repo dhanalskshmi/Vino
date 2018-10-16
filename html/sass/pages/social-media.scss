@@ -2,19 +2,42 @@
 	.heroBlock{
 		h2,h1{
 			margin-bottom: 12px;
+			@include bp(landscape){
+				margin-bottom: 20px;
+			}
+			@include bp(tablet){
+				margin-bottom: 16px;
+			}
+			@include bp(mobile){
+				margin-bottom: 23px;
+			}
 		}
 		.bgWrap{
 			padding: 41px 141px 40px 138px;
+			@include bp(landscape){
+				padding: 45px 20px 22px 20px;
+			}
+			@include bp(tablet){
+				padding: 41px 20px 0px 20px;
+			}
+			@include bp(mobile){
+				padding: 25px 10px 0 10px;
+			}
 			ul{
 				margin-bottom: 0;
 				list-style: none;
 				padding: 0;
 				display: flex;
     			justify-content: space-between;
+    			@include bp(tablet){
+    				flex-wrap: wrap;
+    				justify-content: flex-start;
+    			}
+    			@include bp(mobile){
+    				justify-content: center;
+    			}
 				li{
-					display: inline-block;
 					padding: 0;
-					a{
 						color: #fff;
 						display: flex;
 						align-items: center;
@@ -25,13 +48,26 @@
 						text-align: center;
 						font-size: 24px;
 						color: #1268e5;
+						cursor: pointer;
 						transition: all .3s;
-					}
+						@include bp(landscape){
+							min-width: 151px;
+							min-height: 38px;
+							font-size: 20px;
+						}
+						@include bp(tablet){
+							min-width: 181px;
+							min-height: 45px;
+							margin-bottom: 20px;
+							margin-right: 40px;
+						}
+						@include bp(mobile){
+							min-width: 180px;
+							margin-right: 0px;
+						}
 					&.active,&:hover{
-						a{
 							background: #1268e5;
 							color: #fff;
-						}
 					}
 				}
 			}
@@ -40,34 +76,76 @@
 }
 
 .socialPanel{
-	margin-top: 50px;
+	margin-top: 80px;
+	margin-bottom: 100px;
+	@include bp(landscape){
+		margin-top: 60px;
+	}
+	@include bp(tablet){
+	margin-top: 37px;
+	}
+	@include bp(mobile){
+	margin-top: 40px;
+	}
 	.bgWrap{
 		background: #1268e5;
-		padding: 15px 20px;
+		padding: 15px 20px 45px 20px;
+		@include bp(landscape){
+			padding: 15px 10px 15px 10px;
+		}
+		@include bp(tablet){
+			padding: 7px 2px 13px 2px;
+		}
+		@include bp(mobile){
+			padding: 12px 0px 15px 0px;
+		}
 		.filtr-container{
 			z-index: 1;
 			.filtr-item{
-			width: 33.3%;
+				width: 33.3%;
+				@include bp(landscape){
+					width: 50%;
+				}
+				@include bp(mobile){
+					width: 100%;
+				}
 			}
 			.flexPanelWrap{
 			display: flex;
 			flex-direction: column;
-			//width: 403px;
 			padding: 10px;
 			margin: 16px 5px 16px 5px;
 			background: #fff;
+			@include bp(landscape){
+				margin: 16px 18px 16px 18px;
+			}
+			@include bp(tablet){
+				margin: 13px 16px 13px 16px;
+				padding: 8px;
+			}
+			@include bp(mobile){
+				margin: 15px 16px 15px 16px;
+				padding: 6px;
+			}
 			.flexPanelHead{
 				display: flex;
 			    justify-content: space-between;
 			    align-items: center;
 			    width: 100%;
 			    margin-bottom: 10px;
+			    @include bp(mobile){
+			    	margin-bottom: 8px;
+			    }
 				.headLogo{
 					display: flex;
 					align-items: center;
 					figure{
 						width: 40px;
 						height: 40px;
+						@include bp(mobile){
+							width: 34px;
+							height: 34px;
+						}
 						img{
 							max-width: 100%;
 							max-height: 100%;
@@ -78,17 +156,26 @@
 						color: #14171a;
 						font-size: 19px;
 						font-weight: bold;
+						@include bp(tablet){
+						font-size: 17px;
+						}
 					}
 				}
 				.headDate{
 					color: #c7c7c7;
 					font-size: 15px;
 					font-weight: bold;
+					@include bp(tablet){
+						font-size: 13px;
+					}
 				}
 			}
 			.flexPanelBody{
 				figure{
 					margin-bottom: 10px;
+					@include bp(mobile){
+						margin-bottom: 6px;
+					}
 					img{
 						border: 1px solid #d6d6d6;
 					}
@@ -96,13 +183,28 @@
 				p{
 					font-size: 15px;
 					line-height: initial;
+					@include bp(tablet){
+						font-size: 16px;
+					}
 				}
 			}
 			.flexPanelFoot{
 				width: 100%;
 				margin-top: 60px;
+				@include bp(tablet){
+					margin-top: 24px;
+				}
+				@include bp(mobile){
+					margin-top: 5px;
+				}
 				.flexIcon{
 					float: right;
+					figure{
+						max-width: 25px;
+						@include bp(tablet){
+							max-width: 20px;
+						}
+					}
 				}
 			}
 		}
