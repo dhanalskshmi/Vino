@@ -344,7 +344,8 @@
 function initMap() {
     var map;
     var bounds = new google.maps.LatLngBounds();
-    var llocdata = jQuery("section.heroBlock locationBlk").find("#map_value").val();
+    var llocdata = jQuery("section.heroBlock").find("#map_value").val();
+    
   	var llocdata = jQuery.parseJSON(llocdata);
   	var firstLat,firstLang,infoWindowContent = [];
 
