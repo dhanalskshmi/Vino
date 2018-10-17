@@ -747,6 +747,12 @@ if ($('#personalLogin, #businessLogin, #mpersonalLogin, #mbusinessLogin').length
 }
 
 
+function onSubmit(token) {
+    document.getElementById('contactForm').submit();
+}
+function onSubmitNews(token) {
+    document.getElementById('joinemailForm').submit();
+}
 
 if ($('.joinEmail').length > 0) {
   $(document).ready(function() {
@@ -782,6 +788,9 @@ if ($('.joinEmail').length > 0) {
                     $(this).parent().removeClass("successForm");
                 }
             });
+        },   
+        submitHandler: function (form) {
+            grecaptcha.execute();
         },
         errorPlacement: function (error, element) { }
     });

@@ -704,7 +704,7 @@
                                 <button class="pull-right btnManasq"><span>SUBMIT</span></button>
                             </div>
                         </form>
-                        <div class="success-msg" style="display: none;">
+                        <div class="success-msg">
                           <h4>Thank you for contacting Manasquan Bank. Your message was sent successfully</h4>
                         </div>
                         </div>
@@ -730,80 +730,83 @@
                 </div>
             </section>
             <section class="joinEmail">
-                <div class="containerWrapper">
-                  <h2>
-                     JOIN OUR<br>
-                     EMAIL LIST
-                  </h2>
-                  <form class="" action="index.html" method="post">
-                    <div>
-                      <label>
-                        First Name
-                      </label>
-                      <input type="text" name="fname" value="" id="fname" class="txtBox">
-                    </div>
-                    <div>
-                      <label>
-                        last Name
-                      </label>
-                      <input type="text" name="lname" value="" id="lname" class="txtBox">
-                    </div>
-                    <div>
-                      <label>
-                        Email
-                      </label>
-                      <input type="text" name="email" value="" id="email" class="txtBox">
-                    </div>
-                    <div class="groupCheckbox">
-                      <div>
-                        <label>
-                          <span>Personal Banking</span>
-                          <input type="checkbox" name="personalbanking" value="" id="personalbanking" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Business Banking</span>
-                          <input type="checkbox" name="businessbanking" value="" id="businessbanking" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Digital Services</span>
-                          <input type="checkbox" name="digitalservices" value="" id="digitalservices" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Loans</span>
-                          <input type="checkbox" name="loans" value="" id="loans" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Work at Manasquan Bank</span>
-                          <input type="checkbox" name="work" value="" id="work" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <span>Other</span>
-                          <input type="checkbox" name="other" value="" id="other" class="chkBox">
-                          <span class="checkbox"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="submit">
-                      <button type="button" name="button">Join</button>
-                    </div>
-                  </form>
+          <div class="containerWrapper">
+            <h2>
+               JOIN OUR<br>
+               EMAIL LIST
+            </h2>
+            <form id="joinemailForm" action="" method="post">
+              <div>
+                <label for="fname">
+                  First Name
+                </label>
+                <input type="text" name="fname" value="" id="fname" class="txtBox" required >
+                <span class="errorSpan vd f-error"></span>
+              </div>
+              <div>
+                <label for="lname">
+                  last Name
+                </label>
+                <input type="text" name="lname" value="" id="lname" class="txtBox" required >
+                <span class="errorSpan vd f-error"></span>
+              </div>
+              <div>
+                <label for="email">
+                  Email
+                </label>
+                <input type="text" name="email" value="" id="email" class="txtBox" required >
+                <span class="errorSpan vd f-error"></span>
+              </div>
+              <div class="groupCheckbox">
+                <div>
+                  <label>
+                    <span>Personal Banking</span>
+                    <input type="checkbox" name="personalbanking" value="" id="personalbanking" class="chkBox">
+                    <span class="checkbox"></span>
+                  </label>
                 </div>
-              </section>
+                <div>
+                  <label>
+                    <span>Business Banking</span>
+                    <input type="checkbox" name="businessbanking" value="" id="businessbanking" class="chkBox">
+                    <span class="checkbox"></span>
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <span>Digital Services</span>
+                    <input type="checkbox" name="digitalservices" value="" id="digitalservices" class="chkBox">
+                    <span class="checkbox"></span>
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <span>Loans</span>
+                    <input type="checkbox" name="loans" value="" id="loans" class="chkBox">
+                    <span class="checkbox"></span>
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <span>Work at Manasquan Bank</span>
+                    <input type="checkbox" name="work" value="" id="work" class="chkBox">
+                    <span class="checkbox"></span>
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <span>Other</span>
+                    <input type="checkbox" name="other" value="" id="other" class="chkBox">
+                    <span class="checkbox"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="submit">
+                <button type="submit" name="button"><span><span>Join</span></span></button>
+              </div>
+            </form>
+          </div>
+        </section>
             <footer>
                 <div class="containerWrapper">
                   <div class="footerWraps">
@@ -925,6 +928,15 @@
     <script src="script/lib/modernizr-custom.js"></script>
     <script src="script/lib/jquery.validate.min.js"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
+    <script>
+$(document).ready(function() {
+    $("#contactSucc").length > 0 && $("html, body").animate({
+        scrollTop: $(".contactFormWrap").offset().top - 200
+    }, "slow")
+});
+
+
+    </script>
 
 </body>
 
