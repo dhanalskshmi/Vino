@@ -35,7 +35,7 @@
             JOIN OUR<br />
             EMAIL LIST
         </h2>
-        @using (Html.BeginUmbracoForm("SubmitForm", "NewsLetter", FormMethod.Post, new { id = "NewsLetter", @class = "NewsLetter" }))
+        @using (Html.BeginUmbracoForm("SubmitForm", "NewsLetter", FormMethod.Post, new { id = "joinemailForm", @class = "joinemailForm" }))
         {
             if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
             {
@@ -49,19 +49,19 @@
                 <label>
                     First Name
                 </label>
-                <input type="text" name="newsLetterFirstName" value="" id="newsLetterFirstName" class="txtBox">
+                <input type="text" name="newsLetterFirstName" value="" id="newsLetterFirstName" class="txtBox" required>
             </div>
             <div>
                 <label>
                     last Name
                 </label>
-                <input type="text" name="newsLetterLastName" value="" id="newsLetterLastName" class="txtBox">
+                <input type="text" name="newsLetterLastName" value="" id="newsLetterLastName" class="txtBox" required>
             </div>
             <div>
                 <label>
                     Email
                 </label>
-                <input type="text" name="newsLetteremail" value="" id="newsLetteremail" class="txtBox">
+                <input type="text" name="newsLetteremail" value="" id="newsLetteremail" class="txtBox" required>
             </div>
             <div class="groupCheckbox">
                 <div>
