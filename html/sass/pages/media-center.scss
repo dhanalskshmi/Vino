@@ -1,9 +1,9 @@
 .mediaCenter {
     .heroBlock {
-        h2 {
+        h2,h1 {
             margin-bottom: 12px;
             @include bp(landscape) {
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
             @include bp(tablet) {
                 margin-bottom: 17px;
@@ -19,15 +19,15 @@
             }
         }
         .bgWrap {
-            padding: 42px 106px 23px 106px;
+            padding: 42px 103px 23px 103px;
             @include bp(landscape) {
-                padding: 42px 84px 8px 84px;
+                padding: 46px 84px 8px 84px;
             }
             @include bp(tablet) {
-                padding: 42px 61px 8px 61px;
+                padding: 42px 61px 0px 61px;
             }
             @include bp(mobile) {
-                padding: 27px 11px 8px 11px;
+                padding: 27px 11px 0px 11px;
             }
             .mediaForm {
                 display: flex;
@@ -69,6 +69,25 @@
                             // font-size: 25px;
                         }
                     }
+                    .ui-selectmenu-button{
+                        width: 100%;
+                        height: 46px;
+                        font-size: 18px;
+                        @include bp(landscape) {
+                            height: 30px;
+                        }
+                        @include bp(tablet) {
+                            height: 45px;
+                        }
+                        .ui-selectmenu-text{
+                            @include bp(landscape){
+                                padding: 0.1em 2.1em 0.1em .7em;
+                            }
+                            @include bp(tablet){
+                                padding: 0.6em 2.1em 0.6em .7em;
+                            }
+                        }
+                    }
                     input {
                         &::placeholder {
                             color: #666666;
@@ -80,9 +99,10 @@
                         .btnManasq {
                             @extend .btn-mansq;
                             margin: 0;
-                            width: 165px;
+                            width: 170px;
                             padding: 13px 40px;
                             font-size: 24px;
+                            border: 3px solid #fff;
                             @include bp(landscape) {
                                 width: 120px;
                                 padding: 6px 0px;
@@ -117,7 +137,7 @@
         margin-top: 26px;
     }
     .bgWrap {
-        padding: 57px 62px 40px 62px;
+        padding: 45px 62px 32px 62px;
         @include bp(landscape) {
             padding: 45px 22px 40px 22px;
         }
@@ -138,11 +158,11 @@
                     flex-direction: column;
                 }
                 .newsFlexImg {
-                    min-width: 300px;
+                    width: 300px;
                     margin-right: 21px;
                     @include bp(landscape) {
-                        min-width: 228px;
-                        margin-right: 34px;
+                        width: 230px;
+                        margin-right: 30px;
                     }
                     @include bp(tablet) {
                         min-width: 200px;
@@ -165,6 +185,16 @@
                     }
                 }
                 .newsFlexContent {
+                    width: calc(100% - 321px);
+                    @include bp(landscape){
+                        width: calc(100% - 321px);
+                    }
+                    @include bp(tablet){
+                        width: calc(100% - 260px);
+                    }
+                    @include bp(mobile){
+                        width: 100%;
+                    }
                     h4 {
                         color: #3d3d3d;
                         font-size: 24px;
@@ -271,7 +301,7 @@
 }
 
 .realAlerts {
-    margin-bottom: 117px;
+    margin-bottom: 112px;
     @include bp(landscape) {
         margin-bottom: 59px;
     }
@@ -279,7 +309,7 @@
         margin-bottom: 40px;
     }
     @include bp(mobile) {
-        margin-bottom: 97px;
+        margin-bottom: 100px;
     }
     .bgWrap {
         background-image: url("../images/media-center/real_image_bg.png");
@@ -309,7 +339,7 @@
         h4 {
             font-size: 39px;
             text-transform: uppercase;
-            font-weight: normal;
+            font-weight: 700;
             @include bp(landscape) {
                 font-size: 24px;
             }
@@ -344,6 +374,7 @@
             margin-top: 49px;
             min-width: 203px;
             font-size: 22px;
+            font-weight: 600;
             padding: 14px 20px;
             border: 1px solid #fff;
             text-align: center;
