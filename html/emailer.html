@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Manasquan Bank</title>
+        <!-- Font Css -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+        <style type="text/css">
+			@font-face {
+			font-family: "aller";
+			font-style: normal;
+			font-weight: 400;
+			src: url("http://dev.ikomettech.in/RWA/fonts/AllerLtIt.woff2") format("woff2"), url("http://dev.ikomettech.in/RWA/fonts/AllerLtIt.woff") format("woff");
+		}
+			.address a
+			{
+				color:#fff;
+				text-decoration:none;
+			}
+            body
+			{
+            background-color:#fff;
+            width:100%
+            }
+            @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+            /* CLIENT-SPECIFIC STYLES */
+			.phone-number{font-family: 'Open Sans', sans-serif;font-weight:600;color:#ffffff;font-size:18px;}
+            #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+            .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+            body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+            table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+            img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+            /* RESET STYLES */
+            body{margin:0; padding:0;}
+            img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+            table{
+              border-collapse:collapse !important;
+              padding: 15px;}
+            body{height:100% !important; margin:0; padding:0; width:100% !important;}
+            /* iOS BLUE LINKS */
+            .appleBody a {color:#68440a; text-decoration: none;}
+            .appleFooter a {color:#666666; text-decoration: none;}
+            .number-section
+            {
+            text-align:right;
+            width: 130px;
+            }
+			td
+			{
+			    font-family: 'Open Sans', sans-serif;
+			}
+			.others-font span
+			{
+			font-size:3px;
+			display:none;
+			}
+
+			.others-font2 span
+			{
+			font-size:3px;
+			display:none;
+			}
+
+			@media yahoo
+			{
+			.block
+			{
+			display:block !important;
+			}
+			.others-font span
+			{
+			display:block !important;
+			font-size:7px !important;
+			}
+
+			.others-font2 span
+			{
+			display:block !important;
+			font-size:6px !important;
+			}
+
+			}
+
+			.img-margin
+			{
+			margin-right:6px;
+			}
+
+
+
+
+            .number-section p
+            {
+            font-size:18px;
+            }
+            .box-width
+            {
+            width:640px;
+            }
+            .left-head
+            {
+            padding-top:11px;
+            padding-bottom:11px;
+            padding-left:18px;
+            }
+            .right-head
+            {
+            padding-top:11px;
+            padding-bottom:11px;
+            padding-right:25px;
+            }
+            /* MOBILE STYLES */
+            @media screen and (max-width: 767px)
+            {
+            .box-width
+            {
+            width:100%;
+            }
+            .number-section
+            {
+            text-align:right;
+            width: 30%;
+            }
+            .number-section p
+            {
+            {
+            font-size:15px;
+            }
+            img
+            {
+            max-width:100%;
+            }
+            }
+    
+          
+
+			.phone-number{font-weight:600;color:#ffffff;font-size:12px;}
+
+            /* ALLOWS FOR FLUID TABLES */
+            table[class="wrapper"]{
+            width:100% !important;
+            }
+            /* ADJUSTS LAYOUT OF LOGO IMAGE */
+            td[class="logo"]{
+            text-align: left;
+            padding: 20px 0 20px 0 !important;
+            }
+            td[class="logo"] img{
+            margin:0 auto!important;
+            }
+            /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+            td[class="mobile-hide"]{
+            display:none;}
+            img[class="mobile-hide"]{
+            display: none !important;
+            }
+            img[class="img-max"]{
+            max-width: 100% !important;
+            height:auto !important;
+            }
+            /* FULL-WIDTH TABLES */
+            table[class="responsive-table"]{
+            width:100%!important;
+            }
+            /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+            td[class="padding"]{
+            padding: 10px 5% 15px 5% !important;
+            }
+            td[class="padding-copy"]{
+            /*padding: 10px 5% 10px 5% !important;
+            text-align: center;*/
+            }
+            td[class="padding-meta"]{
+            padding: 30px 5% 0px 5% !important;
+            text-align: center;
+            }
+            td[class="no-pad"]{
+            padding: 0 0 20px 0 !important;
+            }
+            td[class="no-padding"]{
+            padding: 0 !important;
+            }
+            td[class="section-padding"]{
+            padding: 50px 15px 50px 15px !important;
+            }
+            td[class="section-header"]{
+            /* padding: 10px 15px 10px 15px !important;*/
+            }
+            td[class="section-padding-bottom-image"]{
+            padding: 50px 15px 0 15px !important;
+            }
+            /* ADJUST BUTTONS ON MOBILE */
+            td[class="mobile-wrapper"]{
+            padding: 10px 5% 15px 5% !important;
+            }
+            table[class="mobile-button-container"]{
+            margin:0 auto;
+            width:100% !important;
+            }
+            a[class="mobile-button"]{
+            width:80% !important;
+            padding: 15px !important;
+            border: 0 !important;
+            font-size: 16px !important;
+            }
+            td[class="heading"] {
+            font-size:15px !important;
+            }
+            .heading {font-size:15px !important;}
+            }
+            @media screen { /* hides this rule from unsupported clients */
+            .body-text {
+            font-family: "Open Sans", Helvetica, arial, sans-serif !important;
+            color: #555;
+            }
+            }
+        </style>
+        <!-- HEADER -->
+    </head>
+    <body class="body-text" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="font-family: 'Open Sans', sans-serif;">
+        <tr>
+          <td>
+            <table width="566" border="0" cellpadding="0" cellspacing="0" align="center" style="font-size:13px; font-family:'Futura Heavy', Century Gothic, Georgia, Times New Roman, Times, serif; background-color:#FFF;">
+              <tr>
+                <td>
+                  <table style="background-color:#fff;" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#fff" align="center">
+                      <tbody>
+                          <tr>
+                              <td style="padding: 0px; background-color:#fff" class="section-header" align="center">
+                              <table class="responsive-table" style="margin-top: 72px;" width="566" cellspacing="0" cellpadding="0" border="0">
+                                  <!-- LOGO/PREHEADER TEXT -->
+                                  <tbody>
+                                      <tr>
+                                          <td>
+                                          <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-bottom: 10px solid #e62838;">
+                                              <tbody>
+                                                  <tr>
+                                                      <td style="padding:30px 15px 30px 15px;">
+													  <a href="https://www.manasquanbank.com/" target="_blank" >
+													  <img src="http://manasquanbank.activitystaging.com/html/images/footer/mail_logo.jpg">
+													  </a>                                                      </td>
+                                                  </tr>
+
+
+
+
+
+                                              </tbody>
+                                          </table>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <!-- ONE COLUMN SECTION -->
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tbody>
+                          <tr>
+                              <td class="section-padding body-text" bgcolor="#fff" align="center">
+                              <table class="responsive-table" width="566" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                      <tr>
+                                          <td>
+                                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                              <tbody>
+
+                                                  <tr>
+                                                      <td>
+                                                      <!-- COPY -->
+                                                      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td style="padding:38px 15px 43px; font-size: 16px; line-height: 24px; font-family: aller; color:#555; text-align: left;background-color: #fff;font-weight:400;" class="padding-copy body-text" align="center">
+                                                                  <p style="margin-top: 0px;">Hello <strong>FirstName</strong>,</p>
+                                                                  <p style="margin-top: 24px;margin-bottom: 0px;">Thank you for contacting Manasquan Bank. <br>
+                                                                    A team member will be in touch with you as soon as possible regarding your inquiry. We look forward to staying in contact with you.</p>
+          														<p style="margin-top: 24px;margin-bottom: 0px;">For additional information, please visit our site or you can also call us directly at <a style="color:#171d65;font-size: 16px;text-decoration:none;" href="tel:XXX-XXX-XXXX">XXX-XXX-XXXX</a>.</p>
+          														<p style="margin-top: 24px;margin-bottom:0px;">Sincerely,</p>
+          														<p style="font-weight:bold;text-transform:uppercase;color:#171d65;font-size:16px;margin-top: 0px;margin-bottom:0px;"><a href="https://www.manasquanbank.com/" target="_blank" style="color:#171d65;font-size:16px;text-decoration:none;">www.manasquanbank.com</a></p>
+                                                                  </td>
+                                                              </tr>
+                                                          </tbody>
+                                                      </table>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <!-- Footer -->
+				  <table class="" width="566" cellpadding="0" cellspacing="0" border="0" style="width:566px">
+                        <tbody><tr style="padding:0px;">
+                            <td class="" valign="top" style="border-bottom: 10px solid #353535;background:#353535;">
+                   
+                                <!-- Containing Table -->	
+                                <table class="responsive-table" width="566" cellspacing="0" cellpadding="0" border="0" style="margin:0 auto !important;" align="center">
+                                         <tbody>
+                                             <tr>
+                                                 <td>
+                                                 <!-- UNSUBSCRIBE COPY -->
+                                                 <table class="responsive-table" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                     <tbody>
+                                                         <tr>
+                                                             <td class="padding-copy" style="padding:2px 12px 7px 12px;">
+                                                           <table width="100%" border="0">
+                                                             <tbody><tr>
+                                                               <td width="56%" rowspan="2" align="top"><table width="100%" border="0">
+                                                                 <tbody><tr>
+                                                                
+                                                                   <td width="100%" height="40" valign="top" style="color:#231f20;font-size:14px;padding-top:0px;    line-height: 24px;">&nbsp;</td>
+                                                                 </tr><tr>
+                                                                
+                                                                   <td width="100%" valign="top" style="color:#231f20;font-size:14px;padding-top:0px;    line-height: 24px;"><a style="color:#fff;">2221 Landmark Place, <br>Wall, NJ 08736
+                                                                  </a></td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                   <td valign="top"><a href="#" style="color:#0072b4; text-decoration:none;font-size:16px;    line-height: 24px;"><strong></strong></a> &nbsp;&nbsp;</td>
+                                                                 </tr>
+                                                               </tbody></table></td>
+                                                               <td width="40%" align="top"><table width="100%" border="0">
+                                                                 <tbody><tr>
+                                                                  
+                                                                   <td style="padding-top:12px;text-align: right;"><span  style="color:#fff; text-decoration:none;    font-size: 20px;    line-height: 24px;  text-align:right;">Call</span> <a style="color:#fff;text-decoration:none !important;font-size: 20px;" href="tel:18446262265">1-844 -626-2265</a></td>
+                                                                 </tr>
+                                                               </tbody></table></td>
+                                                             </tr>
+                                                             <tr>
+         <td height="56"><table width="100%" border="0">
+                   <tbody><tr>
+         <td align="right" style="padding-left:0px;">
+                <a href="#" target="_blank"><img style="" src="http://manasquanbank.activitystaging.com/html/images/footer/linkedin.jpg" alt="Linkedin"></a>
+       <a href="#" target="_blank"><img style="" src="http://manasquanbank.activitystaging.com/html/images/footer/fb.jpg" alt="Facebook"></a>
+       <a href="#" target="_blank"><img src="http://manasquanbank.activitystaging.com/html/images/footer/utube.jpg" alt="Youtube"></a>
+       <a href="#" target="_blank"><img style="" src="http://manasquanbank.activitystaging.com/html/images/footer/tweet.jpg" alt="Twitter"></a>
+       </td>
+                                                                 </tr>
+                                                               </tbody></table></td>
+                                                             </tr>
+                                                           </tbody></table></td>
+                                                            </tr>
+       
+       
+                                         
+                                                     </tbody>
+                                                 </table>
+                                                 </td>
+                                             </tr>
+                                         </tbody>
+                                     </table>
+                                <!-- Containing Table END-->
+                               <!--[if gte mso 9]>
+                             </div></v:fill></v:rect><![endif]-->
+                            </td>
+                        </tr>
+                     </tbody></table>
+
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+    </body>
+</html>
