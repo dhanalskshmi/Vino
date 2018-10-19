@@ -14,6 +14,9 @@
   @else if $point == tabportrait {
     @media (min-width: 768px) and (max-width: 1023px)  { @content; }
   }
+  @else if $point == tabmax {
+    @media (min-width: 320px) and (max-width: 1023px)  { @content; }
+  }
   @else if $point == mobile {
     @media (max-width: 767px)  { @content; }
   }
