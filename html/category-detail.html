@@ -61,7 +61,7 @@
                             </p>
                           </form>
                         </div>
-      
+
                       </div>
                       <div class="headerNav">
                         <div class="topNav">
@@ -131,10 +131,10 @@
                           </ul>
                         </div>
                       </div>
-      
+
                     </div>
                   </div>
-      
+
                 </div>
 			</header>
             <section class="heroBanner">
@@ -146,7 +146,7 @@
                         <h2>Business checking</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa tellus, euismod sed fermentum sed, pellentesque varius lectus. Proin gravida orci sed aliquam aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa tellus, euismod sed fermentum sed, pellentesque varius lectus. Proin gravida orci sed aliquam aliquet.</p>
 						<div class="tableSection">
-							<div class="table-responsive">  
+							<div class="table-responsive">
 								<table class="table checking">
 									<thead>
 									  <tr>
@@ -192,7 +192,7 @@
 									</tbody>
 								</table>
 							</div>
-						</div>				
+						</div>
 						<ul class="heroLinks">
 							<li class="find-us"><a href=""><span class="heroLinksImage"><img src="images/about/find-us.png"></span><span class="heroLinksText">Find A <br> Branch<span></span></a></li>
                             <li class="client-service"><a href=""><span class="heroLinksImage"><img src="images/about/client-services.png"></span><span class="heroLinksText">Client <br> Services</span></a></li>
@@ -379,7 +379,7 @@
 				  </div>
 				</div>
 			</section>
-			
+
 			<section class="joinEmail">
                 <div class="containerWrapper">
                   <h2>
@@ -576,7 +576,7 @@
     <script src="script/lib/modernizr-custom.js"></script>
 	<script src="script/lib/scrollanimation.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
-    <script type='text/javascript' src='script/main.min.js'></script>	
+    <script type='text/javascript' src='script/main.min.js'></script>
 	<script>
 		    $(document).ready(function(){
       if ($('.checking').length > 0) {
@@ -633,7 +633,6 @@
                             var vTr;
                             $('<table />', { 'class': 'responsive_table noheader_table', 'id': 'tablemobile' + i + j }).insertAfter(vInsertAfter);
                             $(this).find('td').each(function () {
-
                                 if ($(this).html().trim() != '&nbsp;')
                                 {
                                     if (k / 2 == 0)
@@ -656,12 +655,25 @@
             if ($(window).width() <= 1023) {
                 $("[id*='tablenormal']").hide();
                 $("[id*='tablemobile']").show();
+
             }
             else {
                 $("[id*='tablemobile']").hide();
                 $("[id*='tablenormal']").show();
             }
           });
+
+          if ($(window).width() <= 767) {
+            $(window).on("load resize",function(e){
+              $(".responsive_table tr:first-child").each(function() {
+               $(this).addClass('blueBg')
+               $(this).addClass('blueBg')
+              });
+
+            });
+
+          }
+
         }
 
         /*$(window).resize(function () {
@@ -675,6 +687,11 @@
             }
         });*/
 };
+if ($(window).width() <= 767) {
+  $(".responsive_table tr:first-child").each(function() {
+   $(this).addClass('blueBg');
+  });
+}
     });
 
 	</script>
