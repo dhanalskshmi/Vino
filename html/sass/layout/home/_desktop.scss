@@ -360,7 +360,7 @@
 // Blue bluePannel
 .bluePannel {
   background: #1b3d6e;
-  padding: 22px 18px;
+  padding: 40px 18px;
   //margin-bottom: 41px;
   .wraps {
     padding: 12px 19px 0;
@@ -1427,8 +1427,8 @@
 
   .bluePannel {
     margin-bottom: 50px;
-    .bgWraps {
-      padding: 31px 29px;
+    .bgWrap {
+      padding: 32px 29px;
     }
     .wraps {
       padding: 26px 19px 0;
@@ -1862,8 +1862,8 @@
 
   .bluePannel {
     margin-bottom: 55px;
-    .bgWraps {
-      padding: 49px 41px 55px;
+    .bgWrap {
+      padding: 50px 41px;
     }
     .wraps {
       padding: 31px 45px 0;
@@ -1872,6 +1872,7 @@
       max-width: calc(50% - 81.5px);
       padding-bottom: 95px;
       margin-right: 5px;
+      border-radius: 35px;
       h2 {
         font-size: 36px;
         line-height: 43px;
@@ -1897,6 +1898,7 @@
         padding: 8px 41px 9px;
         border-radius: 23px;
         bottom: 25px;
+        margin-left: 45px;
       }
     }
     figure {
@@ -1927,7 +1929,7 @@
     .titleBlock {
       padding-top: 16px;
       padding-bottom: 0;
-      margin: 0 20px -7px;
+      margin: 0 20px -7px 2px;
       max-width: 100%;
       .containerWrapper {
         padding: 0;
@@ -1937,7 +1939,7 @@
       }
     }
     .redBlock {
-      max-width: 1113px;
+      max-width: 1149px;
       padding-top: 18px;
       padding-bottom: 21px;
       margin: 0 auto;
