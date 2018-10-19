@@ -10,13 +10,37 @@
 			height: 325px;
 			margin-bottom: 43px;
 			.flexLinks{
+				transition: .3s all;
 				.flexImage{
 					width: 361px;
 					height: 325px;
+					position: relative;
+					&:after{
+						position: absolute;
+						content: '';
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						width: 100%;
+						height: 100%;
+						background: linear-gradient(to bottom, rgba(0,0,0,.5));
+						opacity: .58;
+						transition: .3s all;
+					}
 				}	
+				&:hover{
+					.flexImage{
+						&:after{
+							opacity: 0;
+						}
+					}
+				}
 			} 
 			.heroFlexheading{
-
+				padding: 6px 20px;
+				font-size: 24px;
+				bottom: 25px;
 			}
 		}
 	}
@@ -24,12 +48,26 @@
 		margin: 75px 0px;
 	}
 	.realAlerts{
+		margin-bottom: 100px;
 		.bgWrap{
+			padding: 34px 65px;
 			h4{
 				font-size: 53px;
+				line-height: initial;
 			}
 			p{
 				font-size: 23px;
+				margin-top: 10px;
+				line-height: initial;
+			}
+			figure{
+				margin-top: 33px;
+			}
+			.btnManasq{
+				margin-top: 52px;
+				min-width: 245px;
+				padding: 19px 20px;
+				font-size: 27px;
 			}
 		}
 	}
