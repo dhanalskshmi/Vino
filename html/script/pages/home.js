@@ -40,7 +40,7 @@ if ($('.joinEmail').length > 0) {
                     $(this).parent().removeClass("successForm");
                 }
             });
-        },   
+        },
         submitHandler: function (form) {
             grecaptcha.execute();
         },
@@ -49,3 +49,19 @@ if ($('.joinEmail').length > 0) {
 
   });
 }
+
+// Home PopUP
+
+setTimeout(function() {
+  $('html.pop').addClass('popUpOpen');
+  if ($('html.popUpOpen').hasClass('popUpOpen')) {
+    //console.log('open');
+    setTimeout(function(){
+      $('.popupWrap .wrap').addClass('Open');
+    },100);
+  }
+},3500);
+$('.close').click(function() {
+  $('html.pop').removeClass('popUpOpen');
+  $('.popupWrap .wrap').removeClass('Open');
+});
