@@ -16,11 +16,11 @@ namespace ManasquanBank.Web.Controllers
         [HttpPost]
         public ActionResult SubmitForm(NewsLetterModel detail)
         {
-            //DataHelper validate = new DataHelper();
-            //var response = Request["g-recaptcha-response"];
-            //if (validate.GoogleCaptchaValidate(response))
-            //{
-            try
+            DataHelper validate = new DataHelper();
+            var response = Request["g-recaptcha-response"];
+            if (validate.GoogleCaptchaValidate(response))
+            {
+                try
             {
                 if (detail.NewsAdminEmail > 0 || detail.NewsConfirmationEmail >= 0)
                 {
@@ -64,18 +64,18 @@ namespace ManasquanBank.Web.Controllers
                 }
 
                 ModelState.Clear();
-                ViewBag.SuccessMessage = "Thank you for contacting Manasquan Bank. Your message was sent successfully.";
+                ViewBag.JoinSuccessMessage = "Thank you for contacting Manasquan Bank. Your message was sent successfully.";
             }
             catch (Exception ex)
             {
                 LogHelper.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, ex.Message, ex.InnerException);
-                ViewBag.ErrorMessage = "There is some problem, please try again later";
+                ViewBag.JoinErrorMessage = "There is some problem, please try again later";
             }
-            //}
-            //else
-            //{
-            //    ViewBag.ErrorMessage = "We're sorry, an recaptcha error has occured, please reload the page and try again";
-            //}
+            }
+            else
+            {
+                ViewBag.JoinErrorMessage = "We're sorry, an recaptcha error has occured, please reload the page and try again";
+            }
 
             return CurrentUmbracoPage();
         }

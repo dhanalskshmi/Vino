@@ -22,6 +22,7 @@
     var facebook = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebook");
     var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
     var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
+    var thankYouMessageJoin = Model.Content.AncestorOrSelf(1).GetProperty("newsLetterThankYouMessage").HasValue ? Model.Content.GetProperty("newsLetterThankYouMessage").Value : "";
 
     var newsLetterAdminEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterAdminEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterAdminEmail") : 0;
     var newsLetterConfirmationEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterConfirmationEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterConfirmationEmail") : 0;
@@ -31,20 +32,48 @@
 
 <section class="joinEmail">
     <div class="containerWrapper">
-        <h2>
+        @if (String.IsNullOrEmpty(ViewBag.JoinErrorMessage) == false)
+        {
+        <div class="alert alert-warning">
+            <strong>Warning!</strong> @ViewBag.JoinErrorMessage
+        </div>
+        }
+         <h2>
             JOIN OUR<br />
             EMAIL LIST
         </h2>
         @using (Html.BeginUmbracoForm("SubmitForm", "NewsLetter", FormMethod.Post, new { id = "joinemailForm", @class = "joinemailForm" }))
         {
-            if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
+
+            if (String.IsNullOrEmpty(ViewBag.JoinSuccessMessage) == false)
             {
-                <div class="alert alert-warning">
-                    <strong>Warning!</strong> @ViewBag.ErrorMessage
-                </div>
+                if (!string.IsNullOrEmpty(thankYouMessageJoin.ToString()))
+                {
+                    <div id="joinSuccess">
+                        @Html.Raw(thankYouMessageJoin)
+                    </div>
+                }
+                else
+                {
+                    <div id="joinSuccess">
+                        @ViewBag.JoinSuccessMessage;
+                    </div>
+                }
+
             }
-            string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
-            string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
+            else
+            {
+
+
+
+                string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
+                string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
+
+
+
+
+
+
             <div>
                 <label>
                     First Name
@@ -117,9 +146,9 @@
                 <input type="hidden" id="adminEmail" name="NewsAdminEmail" value="@newsLetterAdminEmail" />
                 <input type="hidden" id="confirmationEmail" name="NewsConfirmationEmail" value="@newsLetterConfirmationEmail" />
             </div>
-        
+            }
         }
-      
+
     </div>
 </section>
 

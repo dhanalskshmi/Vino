@@ -1,7 +1,147 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Master.cshtml";
-}
+    Layout = "Master.cshtml";
+    var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var desription = Model.Content.GetPropertyValue<string>("desription");
+    var mobileWalletImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
+    var mobileWalletTitle = Model.Content.GetPropertyValue<string>("mobileWalletTitle");
+    var mobiledescription = Model.Content.GetPropertyValue<string>("description");
 
-@* the fun starts here *@
+    var categoryDetails = Model.Content.AncestorOrSelf(2).Children();
+
+}
+<div class="catLanding">
+    <section class="heroBanner">
+        @if (heroImage != null)
+        {
+            <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+        }
+        
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(title))
+                {
+                    <h2>@title</h2>
+                }
+                @if (!string.IsNullOrEmpty(desription))
+                {
+                   @Html.Raw(desription)
+                }
+                
+                <div class="heroFlex">
+
+                    @if (categoryDetails != null)
+                                {
+                                    foreach (var catdetail in categoryDetails)
+                                    {
+                                        var detailTitle = catdetail.GetPropertyValue<string>("productTitle");
+                                        var detailImage = catdetail.GetPropertyValue<IPublishedContent>("heroImage");
+
+                            <div class="flexLinkWrap">
+                                <a href="@catdetail.Url" class="flexLinks">
+                                    @if (detailImage != null)
+                                    {
+                                        <figure class="flexImage" style="background-image: url(@detailImage.Url)"></figure>
+                                    }
+                                    @if (!string.IsNullOrEmpty(detailTitle))
+                                    {
+                                        <span class="heroFlexheading">@detailTitle</span>
+                                    }
+                                    
+                                </a>
+                            </div>
+                        }
+                    }
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bluePannel">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
+                {
+                    int j = 1;
+                    foreach (var action in actionPanel)
+                    {
+                        var actionTitle = action.GetPropertyValue<string>("actionTitle");
+                        var actionDescription = action.GetPropertyValue<string>("actionDescription");
+                        var tagLineSentence = action.GetPropertyValue<string>("tagLineSentence");
+                        var actioncTAButton = action.GetPropertyValue<Link>("actioncTAButton");
+                        <div class="detailsWrap">
+                            <div class="wraps">
+                                @if (!string.IsNullOrEmpty(actionTitle))
+                                {
+                                    <h2>@actionTitle </h2>
+                                }
+                                @if (!string.IsNullOrEmpty(tagLineSentence))
+                                {
+                                    <h3>@tagLineSentence </h3>
+                                }
+                                @if (!string.IsNullOrEmpty(actionDescription))
+                                {
+                                    @Html.Raw(actionDescription)
+                                }
+                            </div>
+                            @if (actioncTAButton.Target == "_blank")
+                    {
+                                <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                            }
+                            else
+                            {
+                                <a class="btnManasq" href="@actioncTAButton.Url" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
+                            }
+
+                        </div>
+                        if (j == 1)
+                        {
+
+                            <figure>
+                                <img src="~/images/home/img_or.png" alt="OR">
+                            </figure>
+                        }
+                        j++;
+                    }
+
+                }
+            </div>
+        </div>
+    </section>
+    <section class="realAlerts">
+        <div class="containerWrapper">
+            @if (mobileWalletImage != null)
+            {
+
+            <div class="bgWrap" style="background-image: url(@mobileWalletImage.Url)">
+                @if (!string.IsNullOrEmpty(mobileWalletTitle))
+                {
+                    <h4>@mobileWalletTitle</h4>
+                }
+                @if (!string.IsNullOrEmpty(mobiledescription))
+                {
+                   @Html.Raw(mobiledescription)
+                }
+                
+                <figure>
+                    <img src="images/category-landing/payment.png">
+                </figure>
+                <a href="" class="btnManasq"><span>Learn More</span></a>
+            </div>
+            }
+        </div>
+    </section>
+</div>
 
