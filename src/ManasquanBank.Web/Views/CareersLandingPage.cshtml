@@ -1,0 +1,586 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+    //var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var imageBadge = Model.Content.GetPropertyValue<IPublishedContent>("imageBadge");
+    var careersTitle = Model.Content.GetPropertyValue<string>("panelTitle");
+    var careersDescription = Model.Content.GetPropertyValue<string>("panelDescription");
+    var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
+    var cTAButtonText = Model.Content.GetPropertyValue<string>("cTAButtonText");
+    var filterTitle = Model.Content.GetPropertyValue<string>("filterTitle");
+    var featurepositon = Model.Content.AncestorOrSelf(2).Children();
+    var wCUTitle = Model.Content.GetPropertyValue<string>("wCUTitle");
+    var featuredescription = Model.Content.GetPropertyValue<string>("description");
+    var featureList = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("featureList");
+    var browsePosition = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("browsePosition");
+    var featurepanelTitle = Model.Content.GetPropertyValue<string>("featurepanelTitle");
+    var featurepanelImage = Model.Content.GetPropertyValue<IPublishedContent>("featureEmpStoryImage");
+    var featureDescription = Model.Content.GetPropertyValue<string>("storyExcerptdescription");
+    var fullName = Model.Content.GetPropertyValue<string>("fullName");
+    var jobTitle = Model.Content.GetPropertyValue<string>("jobTitle");
+    var ourcultureTitle = Model.Content.GetPropertyValue<string>("ourcultureTitle");
+
+    var cultureList = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cultureList");
+    var cultureBrowsePositions = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cultureBrowsePositions");
+    var cultureImages = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cultureImages");
+    var culturedescription = Model.Content.GetPropertyValue<string>("culturedescription");
+
+    var positionType = Model.Content.Children.DescendantsOrSelf("positionType").ToList();
+    var PostionList = Model.Content.AncestorOrSelf(2).Children.Where(item => item.DocumentTypeAlias == "careersDetailPage").ToList();
+    List<IPublishedContent> filteredData = new List<IPublishedContent>();
+
+    foreach (var data in PostionList)
+    {
+
+        var newsCategory = data.GetPropertyValue<int>("openPosition");
+
+        bool categoryFilterStatus = true;
+
+        if (string.IsNullOrEmpty(Request.QueryString["position"]) == false)
+        {
+            string queryid = Request.QueryString["position"].ToString();
+            if (newsCategory.ToString() != Request.QueryString["position"].ToString() && Request.QueryString["position"].ToString() != "0")
+            {
+                categoryFilterStatus = false;
+            }
+        }
+        if (categoryFilterStatus)
+        {
+            filteredData.Add(data);
+        }
+    }
+
+    PostionList = filteredData;
+    PostionList = PostionList.ToList();
+
+}
+<div class="careers">
+    <section class="heroBanner">
+        @if (heroImage != null)
+        {
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+        }
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(careersTitle))
+                {
+                    <h2>@careersTitle</h2>
+                }
+                <div class="heroCareer">
+                    @if (imageBadge != null)
+                    {
+                        <img src="@imageBadge.Url" class="" alt="@imageBadge.Name">
+                    }
+                    @if (!string.IsNullOrEmpty(careersDescription))
+                    {
+                        @Html.Raw(careersDescription)
+                    }
+
+                </div>
+                <div class="heroFlex">
+                    @if (Model.Content.HasValue("cTAButton"))
+                    {
+                        foreach (var item in cTAButton)
+                        {
+                            var title = item.GetPropertyValue<string>("careersTitle");
+                            var image = item.GetPropertyValue<IPublishedContent>("careersImage");
+                            var link = item.GetPropertyValue<Link>("careersLink");
+
+                            <div class="flexLinkWrap">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" class="flexLinks" target="_blank">
+                                            @if (image != null)
+                                            {
+                                                <figure class="flexImage" style="background-image: url(@image.Url)"></figure>
+                                            }
+                                            @if (!string.IsNullOrEmpty(title))
+                                            {
+                                                <span class="heroFlexheading">@title</span>
+                                            }
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url" class="flexLinks">
+                                            @if (image != null)
+                                            {
+                                                <figure class="flexImage" style="background-image: url(@image.Url)"></figure>
+                                            }
+                                            @if (!string.IsNullOrEmpty(title))
+                                            {
+                                                <span class="heroFlexheading">@title</span>
+                                            }
+                                        </a>
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (image != null)
+                                    {
+                                        <figure class="flexImage" style="background-image: url(@image.Url)"></figure>
+                                    }
+                                    if (!string.IsNullOrEmpty(title))
+                                    {
+                                        <span class="heroFlexheading">@title</span>
+                                    }
+                                }
+
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="openPosition">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="titleWrap">
+                    @if (!string.IsNullOrEmpty(filterTitle))
+                    {
+                        <h3>@filterTitle</h3>
+                    }
+                    <div class="careerSearch">
+                        <div class="form-group">
+
+                            <select name="careerInput" id="careerInput" class="form-control">
+                                @if (featurepositon != null)
+                                {
+                                    bool hasKeys = Request.QueryString.HasKeys();
+                                    if (!hasKeys)
+                                    {
+                                        <option value="">SELECT A OPEN POSITION</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="0">ALL</option>
+                                    }
+
+                                    foreach (var Items in positionType)
+                                    {
+                                        if (hasKeys == true)
+                                        {
+                                            if (Request.QueryString["position"].ToString() == Items.Id.ToString())
+                                            {
+                                            <option value="@Items.Id" selected="selected">@Items.Name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@Items.Id">@Items.Name</option>
+                                            }
+                                        }
+                                        else
+                                        {
+                                           <option value="@Items.Id">@Items.Name</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                        @if (!string.IsNullOrEmpty(cTAButtonText))
+                        {
+                            <button class="btnManasq" onclick="return positionSearch()"><span>@cTAButtonText</span></button>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @if (featurepositon != null)
+    {
+        foreach (var feature in PostionList.Where(x => x.DocumentTypeAlias == "careersDetailPage"))
+        {
+            var title = feature.GetPropertyValue<string>("title");
+            var location = feature.GetPropertyValue<string>("location");
+            var teaserText = feature.GetPropertyValue<string>("teaserText");
+            var description = feature.GetPropertyValue<string>("description");
+            var applyNowButton = feature.GetPropertyValue<Link>("applyNowButton");
+            var learnMore = feature.GetPropertyValue<string>("learnMore");
+
+
+
+            <section class="bluePanel">
+                <div class="containerWrapper">
+                    <div class="bgWrap">
+                        <div class="bluePanelInner">
+                            <div class="carblk">
+                                <div class="carLft">
+                                    @if (!string.IsNullOrEmpty(title))
+                                    {
+                                        <h4>@title</h4>
+                                    }
+                                    @if (!string.IsNullOrEmpty(location))
+                                    {
+                                        <p>@location</p>
+                                    }
+
+                                </div>
+                                <div class="carRgt">
+                                    @if (!string.IsNullOrEmpty(teaserText))
+                                    {
+                                        @Html.Raw(teaserText)
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="carblk carLst" style="display: none;">
+                                @if (!string.IsNullOrEmpty(description))
+                                {
+                                    @Html.Raw(description)
+                                }
+                            </div>
+                            <div class="carblk carApply">
+                                <div class="carLft">
+                                    @if (applyNowButton != null)
+                                    {
+                                        if (applyNowButton.Target == "_blank")
+                                        {
+                                            <a href="@applyNowButton.Url" class="btn-carApply" target="_blank"><span>Apply</span></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@applyNowButton.Url" class="btn-carApply"><span>Apply</span></a>
+                                        }
+                                    }
+
+                                </div>
+                                <div class="carRgt">
+                                    @if (!string.IsNullOrEmpty(learnMore))
+                                    {
+                                        <button class="btn-Lmore">@learnMore</button>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+
+    }
+
+    <section class="greyPanel careerGrey">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="titleWrap">
+                    @if (!string.IsNullOrEmpty(wCUTitle))
+                    {
+                        <h3>@wCUTitle</h3>
+                    }
+                </div>
+                @if (!string.IsNullOrEmpty(featuredescription))
+                {
+                    @Html.Raw(featuredescription)
+                }
+
+                <div class="chooseList">
+                    @if (Model.Content.HasValue("featureList"))
+                    {<ul>
+                        @foreach (var feature in featureList)
+                        {
+                            var featuredTitle = feature.GetPropertyValue<string>("featuredTitle");
+
+                            if (!string.IsNullOrEmpty(featuredTitle))
+                            {
+                                <li>@featuredTitle</li>
+                            }
+
+                        }
+                    </ul>
+                    }
+
+
+                </div>
+                @if (Model.Content.HasValue("browsePosition"))
+                {
+                    foreach (var browse in browsePosition)
+                    {
+                        var positionDescription = browse.GetPropertyValue<string>("positionDescription");
+                        var browsePositions = browse.GetPropertyValue<Link>("browsePositions");
+
+                        <div class="browsePos">
+                            <div class="browsePosLft">
+                                @if (!string.IsNullOrEmpty(positionDescription))
+                                {
+                                    @Html.Raw(positionDescription)
+                                }
+
+                            </div>
+                            <div class="browsePosRgt">
+                                @if (browsePositions != null)
+                                {
+                                    if (browsePositions.Target == "_blank")
+                                    {
+                                        <a href="@browsePositions.Url" target="_blank" class="btn-mansq btnManasq"><span>@browsePositions.Name</span></a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@browsePositions.Url" class="btn-mansq btnManasq"><span>@browsePositions.Name</span></a>
+                                    }
+
+                                }
+
+                            </div>
+                        </div>
+                    }
+
+                }
+
+                <div class="empStory">
+                    @if (!string.IsNullOrEmpty(featurepanelTitle))
+                    {
+                        <h4 class="visible-xs">@featurepanelTitle</h4>
+                    }
+
+                    <figure class="empStoryImg">
+                        @if (featurepanelImage != null)
+                        {
+                            <img src="@featurepanelImage.Url" alt="@featurepanelImage.Name">
+                        }
+
+                    </figure>
+                    <div class="empStoryCont">
+                        @if (!string.IsNullOrEmpty(featurepanelTitle))
+                        {
+                            <h4 class="hidden-xs">@featurepanelTitle</h4>
+                        }
+                        @if (!string.IsNullOrEmpty(featureDescription))
+                        {
+                            @Html.Raw(featureDescription)
+                        }
+                        @if (!string.IsNullOrEmpty(fullName))
+                        {
+                            <h5>@fullName</h5>
+                        }
+                        @if (!string.IsNullOrEmpty(jobTitle))
+                        {
+                            @Html.Raw(jobTitle)
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="greyPanel cultureWrap">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="titleWrap">
+                    @if (!string.IsNullOrEmpty(ourcultureTitle))
+                    {
+                        <h3>@ourcultureTitle</h3>
+                    }
+
+                </div>
+                <div class="cultureBlk">
+
+                    @if (Model.Content.HasValue("cultureList"))
+                    {
+
+                        int count = cultureList.Count();
+                        var flag = false;
+                        int i = 0;
+                        foreach (var culturelst in cultureList)
+                        {
+                            var image = culturelst.GetPropertyValue<IPublishedContent>("cultureImage");
+                            var cultureDescription = culturelst.GetPropertyValue<string>("cultureDescription");
+
+                            if (flag == false)
+                            {
+                                <div class="cultureSingle">
+                                    @if (image != null)
+                                    {
+                                        <div class="cultureImg">
+
+                                            <img src="@image.Url" alt="">
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(cultureDescription))
+                                    {
+                                        <div class="cultureContent">
+                                            @Html.Raw(cultureDescription)
+                                        </div>
+                                    }
+
+                                </div>
+                                if (i != count - 1)
+                                {
+                                    <span class="br-line"></span>
+                                }
+
+
+                                flag = true;
+                            }
+                            else if (flag == true)
+                            {
+                                <div class="cultureSingle">
+                                    @if (image != null)
+                                    {
+                                        <div class="cultureImg">
+
+                                            <img src="@image.Url" alt="">
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(cultureDescription))
+                                    {
+                                        <div class="cultureContent">
+                                            @Html.Raw(cultureDescription)
+                                        </div>
+                                    }
+
+                                </div>
+                                if (i != count - 1)
+                                {
+                                    <span class="br-line"></span>
+                                }
+
+
+                                flag = false;
+                            }
+
+                            i++;
+                        }
+                    }
+
+
+
+                    @*<div class="cultureSingle imgRgt">
+                            <div class="cultureContent">
+                                <p>
+                                    <b>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non
+                                        vulputate
+                                        justo, ullamcorper pellentesque ligula. Etiam efficitur volutpat libero, ac
+                                        dignissim magna bibendum ac. Pellentesque habitant morbi tristique senectus
+                                        et
+                                        netus et malesuada fames ac turpis egestas. Mauris sed laoreet eros, sed
+                                        consequat
+                                        sapien. Phasellus , metus at pulvinar venenatis, sem sem fringilla libero,
+                                        a
+                                        molestie mauris sem rhoncus.“Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing
+                                        elit. Pellentesque non vulputate justo, ullamcorper pellentesque ligula.
+                                        Etiam
+                                        efficitur volutpat libero, ac dignissim magna bibendum ac. Pellentesque
+                                        habitant
+                                        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                        Mauris sed
+                                        laoreet eros, sed consequat sapien. Phasellus , metus at pulvinar
+                                        venenatis, sem
+                                        sem fringilla libero, a molestie mauris sem rhoncus.”
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="cultureImg">
+                                <img src="images/careers/EmpStory.jpg" alt="">
+                            </div>
+                        </div>*@
+                    @if (Model.Content.HasValue("cultureBrowsePositions"))
+                    {
+                        foreach (var browse in cultureBrowsePositions)
+                        {
+                            var positionDescription = browse.GetPropertyValue<string>("positionDescription");
+                            var browsePositions = browse.GetPropertyValue<Link>("browsePositions");
+
+                            <div class="browsePos">
+                                <div class="browsePosLft">
+                                    @if (!string.IsNullOrEmpty(positionDescription))
+                                    {
+                                        @Html.Raw(positionDescription)
+                                    }
+
+                                </div>
+                                <div class="browsePosRgt">
+                                    @if (browsePositions != null)
+                                    {
+                                        if (browsePositions.Target == "_blank")
+                                        {
+                                            <a href="@browsePositions.Url" target="_blank" class="btn-mansq btnManasq"><span>@browsePositions.Name</span></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@browsePositions.Url" class="btn-mansq btnManasq"><span>@browsePositions.Name</span></a>
+                                        }
+
+                                    }
+
+                                </div>
+                            </div>
+                        }
+                    }
+                    @if (Model.Content.HasValue("cultureImages"))
+                    {
+                        <div class="cultImgWrap">
+                            @foreach (var image in cultureImages)
+                            {
+                                var images = image.GetPropertyValue<IPublishedContent>("careersImageList");
+                                <div class="cultImg">
+                                    <figure>
+                                        @if (images != null)
+                                        {
+                                            <img src="@images.Url" alt="@images.Name" class="img-responsive">
+                                        }
+
+                                    </figure>
+                                </div>
+                            }
+                        </div>
+                    }
+
+
+
+                    <div>
+                        @if (!string.IsNullOrEmpty(culturedescription))
+                        {
+                            @Html.Raw(culturedescription)
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section InnerBottomScript {
+    <script>
+        $(document).ready(function () {
+            $(".btn-Lmore").click(function () {
+                $(this).closest(".bluePanelInner").find(".carLst").slideToggle();
+                var text = $(this).text() == 'Learn More' ? 'Less' : 'Learn More';
+                $(this).text(text).toggleClass("active");
+            });
+        });
+
+        $("#careerInput").selectmenu();
+    </script>
+    <script>
+       
+        function positionSearch()
+        {
+            var currentURL = window.location.href.split('?')[0];
+          
+            var position = $("#careerInput").val();
+            
+            window.location.href = currentURL + "?position=" + position;
+        }
+
+    </script>
+
+}

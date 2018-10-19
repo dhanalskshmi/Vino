@@ -597,6 +597,7 @@
     <Content Include="Views\ProductDetailPage.cshtml" />
     <Content Include="Views\FilterDetailPage.cshtml" />
     <Content Include="scripts\angular.min.js.map" />
+    <Content Include="Views\CareersLandingPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

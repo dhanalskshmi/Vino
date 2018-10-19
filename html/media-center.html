@@ -8,7 +8,9 @@
         shrink-to-fit='no' />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link href='css/lib/nprogress.css' rel='stylesheet' />
+     <link href='css/lib/jquery-ui.css' rel='stylesheet' />
     <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
+    <link href='css/lib/datepicker.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 
@@ -614,13 +616,18 @@
                                 community. </p>
                             <form action="" class="mediaForm">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Type of resource">
+                                    <!-- <input type="text" class="form-control" placeholder="Type of resource"> -->
+                                    <select class="form-control" id="resourceType" name="resourceType">
+                                      <option value="">- Resource type -</option>
+                                      <option value="2">Resource type1</option>
+                                      <option value="3">Resource type2</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="date">
+                                    <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="keyholder">
+                                    <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder">
                                 </div>
                                 <div class="form-group searchBtn">
                                     <button class="btnManasq"><span>Search</span></button>
@@ -876,7 +883,19 @@
     <script type='text/javascript' src='script/lib/jquery.js'></script>
     <script src='script/lib/nprogress.js'></script>
     <script src="script/lib/modernizr-custom.js"></script>
+    <script src="script/lib/jquery-ui.js"></script>
+    <script src="script/lib/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
+    <script>
+     $( function() {
+        $("#resourceType").selectmenu();
+        $('#newDate').datepicker({
+          format: "yyyy",
+          viewMode: "years", 
+          minViewMode: "years"
+        });
+      });
+    </script>
 
 </body>
 
