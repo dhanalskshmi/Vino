@@ -3,6 +3,9 @@
         .bgWrap {
             padding: 0;
         }
+        &.bContent {
+            margin-bottom: 60px;
+        }
     }
     .flexWrapper {
         display: flex;
@@ -37,15 +40,11 @@
                 margin-bottom: 23px;
             }
         }
-        &.bContent {
-            margin-bottom: 60px;
-        }
     }
     .profDisplayWrap {
-		display: flex;
-		flex-wrap: wrap;
-		padding-bottom: 20px;
-		border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
         .profDisplay {
             width: 222px;
             margin: 0 2.6%;
@@ -77,10 +76,38 @@
                     color: #666;
                     font-size: 18px;
                 }
-			}
-			&:nth-child(4n){
-				margin-right: 0;
-			}
+            }
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+    .homeStartWrap {
+        padding: 0px 34px;
+        .homeStart {
+            display: flex;
+            justify-content: space-between;
+            border-top: 3px solid #ababab;
+            padding: 34px 0px;
+            .homeStartCont {
+                width: 55%;
+                h4 {
+                    font-size: 48px;
+                    display: flex;
+                    align-items: baseline;
+                    color: #1c3d6d;
+                    margin-bottom: 16px;
+                }
+            }
+            .homeStartBtn {
+                display: flex;
+                align-items: flex-end;
+                a {
+                    @extend .btn-mansq;
+                    font-size: 26px;
+                    padding: 21px 47px;
+                }
+            }
         }
     }
 }
