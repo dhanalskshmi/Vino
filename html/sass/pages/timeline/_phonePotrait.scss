@@ -15,7 +15,7 @@
 	    display: none;
 		}
 		.timelineselectNav {
-			float: right;
+			//float: right;
 			display:block;
 			background: #1b3d6e;
 			border: 0px;
@@ -23,7 +23,7 @@
 			width: calc(100% - 15px);
 			max-width: 200px;
 			padding: 5px 0 8px;
-			margin-right: -10px;
+			margin-left: calc(100% - 190px);
 			display:table-cell;
 			vertical-align:middle;
 			box-sizing: border-box;
