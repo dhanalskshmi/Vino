@@ -368,10 +368,12 @@ $('.backtoTop').click(function(event) {
 $(window).on("load resize",function(e) {
 
 			 if ($(window).width() >= 768) {
+				 $('.loginBlocks.active').removeClass('active');
 		 		//footer height fixes
 		 		//$('.siteInner').css({'padding-bottom': $('footer').outerHeight()});
 		 		$(window).on('resize', function(){
 		 			//$('.siteInner').css({'padding-bottom': $('footer').outerHeight()});
+					$('.loginBlocks.active').removeClass('active')
 		 		});
 			}
 			else {

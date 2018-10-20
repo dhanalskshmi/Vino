@@ -422,6 +422,11 @@ header {
 	.loginBlocks {
 		//display: none; // Mobile Login Block
 	}
+	.loginBlocks{
+		&.active {
+			display: none;
+		}
+	}
 
 	.headerWrapper {
 		background: rgba(255,255,255,1);
@@ -482,6 +487,7 @@ header {
 				max-width: 98px;
 				h3 {
 					font-size: 8px;
+					font-weight: 700;
 					line-height: 12px;
 				}
 				p {
@@ -538,15 +544,15 @@ header {
 					padding-right: 0;
 				}
 				a {
-					color: #1c3d6d;
+					color: #1b3d6e;
 					position: relative;
 					&::after {
 						content: '';
 						background: #eb2837;
 						width: 100%;
-						height: 5px;
+						height: 9px;
 						position: absolute;
-						bottom: -4px;
+						bottom: -9px;
 						left: 0;
 						opacity: 0;
 				    transform: scaleY(0);
@@ -775,7 +781,7 @@ header {
 			display: none;
 		}
 		.bgWrap {
-			background: #e1edfe;
+			background: #FFF;
 			padding: 20px 30px;
 			opacity: 0;
 			transition: all 0.3s;
@@ -792,7 +798,7 @@ header {
 		}
 		h2 {
 			font-size: 22px;
-			color: #0066e4;
+			color: #1c3d6d;
 			padding-bottom: 14px;
 			text-transform: uppercase;
 		}
@@ -1029,7 +1035,7 @@ header {
 		padding: 0;
 	}
 	.headerNav {
-		padding-top: 26px;
+		padding-top: 23px;
 		.topNav {
 			font-size: 16px;
 			margin-right: 0;
@@ -1050,7 +1056,7 @@ header {
 					.subNav {
 						min-width: 135px;
 						padding-top: 4px;
-						top: 24px;
+						top: 30px;
 						li {
 							a {
 								font-size: 16px;
@@ -1164,7 +1170,7 @@ header {
 					}
 					span {
 						&::after {
-							height: 8px;
+							height: 9px;
 							bottom: -28px;
 						}
 					}
@@ -1191,7 +1197,7 @@ header {
 				background: #b3b3b3;
 				//background: #e5e5e5;
 				width: 1px;
-				min-height: 338px;
+				min-height: 275px;
 				position: absolute;
 				top: 65px;
 				&:nth-child(1) {
@@ -1213,7 +1219,7 @@ header {
 			}
 		}
 		.flexBox {
-			height: 315px;
+			height: 304px;
 			.cols {
 				//width: calc(100% / 5);
 				width: 230px;
@@ -1271,7 +1277,7 @@ header {
 		width: calc(100% - 333px);
 	}
 	.headerNav {
-		padding-top: 26px;
+		padding-top: 23px;
 		.topNav {
 			padding-right: 17px;
 			ul {
