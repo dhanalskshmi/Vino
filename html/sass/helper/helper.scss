@@ -5,6 +5,9 @@
   @else if $point == landscape {
     @media (max-width: 1279px) { @content; }
   }
+  @else if $point == macview {
+    @media (min-width: 1280px) and (max-width: 1359px)  { @content; }
+  }
   @else if $point == tablandscape {
     @media (min-width: 1024px) and (max-width: 1279px)  { @content; }
   }

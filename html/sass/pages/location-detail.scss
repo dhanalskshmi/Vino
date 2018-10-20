@@ -5,6 +5,9 @@
 			h2 {
 				margin-left:50px;
 				margin-bottom: 43px;
+				@include bp(tablandscape) {
+					margin-bottom: 28px;
+				}
 				@include bp(tabportrait) {
 					margin-left:18px;
 					margin-bottom: 15px;
@@ -64,7 +67,9 @@
 							width:51%;
 							float:left;
 							padding-left: 34px;
-							
+							@include bp(macview) {
+								padding-left:28px;
+							}
 							.pnoneNumber {
 								display:table;
 								width:100%;
@@ -104,14 +109,17 @@
 										}
 										@include bp(tabportrait) {
 											padding-top:10px;
+											padding-left:9px;
 										}
 										@include bp(mobile) {
 											width:87.5%;
 											padding-top:11px;
+											padding-left:9px;
 										}
 										p {
 											margin-bottom:0px;
 											line-height: 23px;
+											color:#666666;
 											@include bp(tablandscape) {
 												font-size:16px;
 												line-height:17px;
@@ -127,6 +135,9 @@
 											strong {
 												display:block;
 												margin-bottom: 1px;
+												@include bp(desktop) {
+													margin-bottom:0px;
+												}
 												@include bp(tablandscape) {
 													margin-bottom: 2px;
 												}
@@ -236,6 +247,9 @@
 							float:left;
 							padding-left: 42px;
 							padding-right:20px;
+							@include bp(macview) {
+								padding-left:22px;
+							}
 							@include bp(tablandscape) {
 		    					width:45%;
 		    					padding-left: 13px;
@@ -290,9 +304,11 @@
 										}
 										@include bp(tabportrait) {
 											padding-top: 10px;
+											padding-left: 10px;
 										}
 										@include bp(mobile) {
 											padding-top: 13px;
+											padding-left: 10px;
 										}
 										p {
 											font-size:18px;
@@ -392,14 +408,15 @@
     						h4 {
     							font-size:20px;
     							color:#ffffff;
-    							margin-bottom: 24px;
+    							margin-bottom: 23px;
+    							font-weight: 400;
     							@include bp(tablandscape) {
     								font-size:16px;
     								margin-bottom:11px;
     							}
     							@include bp(mobile) {
     								font-size:16px;
-    								margin-bottom: 0px;
+    								margin-bottom: -1px;
     							}
     						}
     						p {
@@ -443,7 +460,7 @@
 					display:none;
 				}
 				@include bp(tabportrait) {
-					padding: 19px 77px 15px 140px;
+					padding: 19px 108px 15px 140px;
 				}
 				@include bp(mobile) {
 					display:none;
@@ -457,7 +474,7 @@
     					margin-bottom: 24px;
     					@include bp(tabportrait) {
     						font-size:16px;
-    						margin-bottom: 15px;
+    						margin-bottom: 14px;
     					}
     				}
     				p {
@@ -533,7 +550,7 @@
 		@include bp(tabportrait) {
 			background-position: 65% 78%;
 			min-height: 278px;
-			padding:40px 30px 30px 60px;
+			padding:40px 30px 30px 40px;
 		}
 		@include bp(mobile) {
 			min-height: 592px;
@@ -554,7 +571,7 @@
 				font-size:36px;
 				font-weight:bold;
 				color:#fff;
-				margin-bottom:96px;
+				margin-bottom:92px;
 				text-transform: uppercase;
 				@include bp(tablandscape) {
 					font-size:24px;
@@ -566,7 +583,7 @@
 				}
 				@include bp(mobile) {
 					font-size:26px;
-					margin-bottom:257px;
+					margin-bottom:247px;
 				}
 			}
 			p {
@@ -575,6 +592,10 @@
 				margin-bottom: 44px;
 				&:last-child {
 					margin-bottom:44px;
+				}
+				@include bp(desktop) {
+					line-height: 40px;
+    				margin-bottom: 0px;
 				}
 				@include bp(tablandscape) {
 					font-size:18px;
@@ -596,21 +617,26 @@
 				color:#fff;
 				background:#1268e5;
 				display:inline-block;
-				padding: 9px 28px 9px 30px;
+				padding: 8px 28px 8px 31px;
 				border:1px solid #fff;
 				border-radius:21px;
 				text-transform: uppercase;
+				@include bp(desktop) {
+					margin-top: 40px;
+				}
 				@include bp(tablandscape) {
 					font-size:17px;
 					padding: 7px 19px 5px 19px;
 				}
 				@include bp(tabportrait) {
 					font-size:17px;
-					padding:9px 28px 4px 30px;
+					padding:8px 20.4px 3.2px 20px;
+					font-weight:500;
 				}
 				@include bp(mobile) {
 					font-size:17px;
-					padding:8px 21px 7px 20px;
+					padding:7px 21px 6px 20px;
+					font-weight:500;
 				}
 			}
 		}
@@ -618,11 +644,17 @@
 }
 
 .lcdetailPannel {
-	@include bp(tabportrait) {
+	@include bp(desktop) {
 		margin-bottom:100px;
 	}
+	@include bp(landscape) {
+		margin-bottom:59px;
+	}
+	@include bp(tabportrait) {
+		margin-bottom:39px;
+	}
 	@include bp(mobile) {
-		margin-bottom:40px;
+		margin-bottom:99px;
 	}
 }
 
