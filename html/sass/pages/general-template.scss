@@ -1,35 +1,83 @@
+.generalBanner {
+	@extend .general-template;
+	.bgWrap {
+		.tableSection {
+			+ul {
+				&.normalList {
+					margin-top:-39px;
+				}
+				&.dotlist {
+					margin-top:-39px;
+				}
+				&.arrowList {
+					margin-top:-39px;
+				}
+			}
+		}
+		ul {
+
+		}
+	}
+}
 .generalBanner + .general-template {
 	margin-top:50px;
 	@extend .general-template;
 }
-.generalBanner {
-	@extend .general-template;
-}
+
 .general-template {
 	h1 {
 		text-transform:uppercase;
 		color: #666666;
 		font-size:52px;
 		&+p {
-			margin-top:4px;
+			margin-top:14px;
 		}
 	}
 	h2 {
-		font-size: 30px;
+		font-size: 48px;
 	    line-height: 40px;
 	    text-transform: uppercase;
 	    color: #666;
 	    &+ul {
 	    	margin-top: 6px;
 	    }
+	    &+p {
+	    	margin-top: 13px;
+	    }
 	}
 	h3 {
 		font-size: 36px;
 		text-transform:uppercase;
+		color: #666666;
+		&+p {
+			margin-top: 13px;
+		}
+	}
+	h4 {
+		font-size: 23px;
+		text-transform:uppercase;
+		color: #666666;
+		&+p {
+			margin-top: 3px;
+		}
+	}
+	h5 {
+		font-size: 20px;
+		text-transform:uppercase;
+		color: #666666;
 	}
 	p {
 		&+h2 {
-			margin-top: 11px;
+			margin-top: 22px;
+		}
+		&+h3 {
+			margin-top: 23px;
+		}
+		&+h4 {
+			margin-top: 21px;
+		}
+		+.ContentBlk1 {
+			margin-top: 25px;
 		}
 	}
 	ul {
@@ -100,6 +148,18 @@
     	}
     	&+ul {
     		margin-top: -14px;
+    	}
+    	&+h2{
+    		margin-top: -3px;
+    	}
+    	&+h3{
+    		margin-top: -3px;
+    	}
+    	&+h4{
+    		margin-top: -3px;
+    	}
+    	&+h5{
+    		margin-top: -3px;
     	}
 	}
 	
