@@ -1,0 +1,144 @@
+@media only screen and (max-width: $tab-port-max) and (min-width: $tab-port-min) {
+
+
+
+	.timeline {
+		>li {
+			&.timeline-inverted {
+				>.timeline-badge {
+					left: -7px;
+				}
+			}
+			> .timeline-badge {
+				width: 15px;
+				height: 15px;
+				right: -7px;
+				a {
+					&::after {
+						width: 19px;
+						top: 6px;
+					}
+				}
+			}
+		}
+	}
+	.decade-wrapper {
+		&.sticky {
+			max-width: 727px;
+		}
+		ul {
+			li {
+				//width: 9.03%;
+				height:35px;
+				border-left: 1px solid transparent;
+				a {
+					width:100%;
+					font-size: 17px;
+					padding-top: 7px;
+				}
+				&::after {
+					top: 2px;
+				}
+			}
+		}
+	}
+	.timeline-wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.timeline-body {
+		p {
+			&.date {
+				font-size: 18px;
+				margin-bottom: 6px;
+			}
+		}
+		h2 {
+			font-size: 22px;
+			line-height: 26px
+		}
+		h3 {
+			font-size: 18px;
+			margin-bottom: 6px;
+		}
+		.contentBlock {
+			font-size: 16px;
+		}
+	}
+	.timeline-heading{
+		//margin-bottom:10px;
+	}
+	.timeline {
+		padding: 10px 0 0;
+		&.invert-order {
+			&.active {
+				display: block;
+			}
+		}
+		&.flex-order {
+			&.active{
+				display: block;
+			}
+		}
+		&::before {
+			/*left: -22px;
+			top: 0;
+			height: calc(100% + 214px);*/
+		}
+		li {
+      margin-bottom: 30px;
+      position: relative;
+      //width:100%;
+      float: left;
+      clear: right;
+			.timeline-panel {
+				float: left;
+				margin-left: 2px;
+				width: 93%;
+				//padding: 7px;
+				&::before {
+					border-left-width: 0;
+          border-right-width: 15px;
+          left: -15px;
+          right: auto;
+        }
+				&::after {
+					border-left-width: 0;
+          border-right-width: 14px;
+          left: -14px;
+          right: auto;
+        }
+			}
+
+			&.timeline-inverted {
+				/*float: right;
+			  clear: right;*/
+				margin-bottom:30px;
+				//margin-top: 0;
+				.timeline-badge{
+				  //left: -31px;
+				}
+				.timeline-panel {
+					float: left;
+					margin-left: 20px;
+
+				}
+			}
+			.timeline-badge {
+				/*left: -31px;
+				margin-left: 0;
+				top: 16px;*/
+			}
+    }
+	}
+
+	.timeline-body {
+		padding: 11px 12px 9px;
+		p {
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+
+
+}
