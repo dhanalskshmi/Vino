@@ -628,7 +628,11 @@ $img: '../images/home';
       font-size: 15px;
       line-height: 16px;
       a {
-        color: #1361ce;
+        color: #00aced;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
     .venue {
