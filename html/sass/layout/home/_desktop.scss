@@ -1449,9 +1449,9 @@ $img: '../images/home';
           text-align: center;
         }
         &.groupCheckbox {
-          width: 79%;
-          //max-width: 96.6%;
+          width: 100%;
           max-width: 100%;
+          //max-width: 96.6%;
           display: flex;
           flex-wrap: wrap;
           align-items: top;
