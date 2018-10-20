@@ -378,6 +378,7 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="css\lib\bootstrap.min.css" />
     <Content Include="css\lib\bootstrap.min.js" />
+    <Content Include="css\lib\datepicker.css" />
     <Content Include="css\lib\jquery-ui-select-menu.css" />
     <Content Include="css\lib\jquery-ui.css" />
     <Content Include="css\lib\jquery-ui.min-cptt.css" />
@@ -501,8 +502,11 @@
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\lib\bootstrap-datepicker.js" />
     <Content Include="scripts\lib\jquery-3.2.1.min.js" />
     <Content Include="scripts\lib\jquery-ui.js" />
+    <Content Include="scripts\lib\jquery.mb.YTPlayer.js" />
+    <Content Include="scripts\lib\jquery3.1.0.min.js" />
     <Content Include="scripts\lib\modernizr-custom.js" />
     <Content Include="scripts\lib\nprogress.js" />
     <Content Include="scripts\lib\scrollanimation.js" />
@@ -598,6 +602,8 @@
     <Content Include="Views\FilterDetailPage.cshtml" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="Views\CareersLandingPage.cshtml" />
+    <Content Include="Views\GeneralContentPage.cshtml" />
+    <Content Include="Views\MediaCenterLandingPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

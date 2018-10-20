@@ -1,0 +1,367 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using umbraco.MacroEngines
+@using Newtonsoft.Json
+@using RJP.MultiUrlPicker.Models
+@using umbraco.NodeFactory
+@using ContentModels = Umbraco.Web.PublishedContentModels
+@using umbraco.cms.businesslogic.web
+@using Umbraco.Web.Extensions
+@using System.Linq
+@using System.Web.Script.Serialization;
+@{
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("mediacenterTitle");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var appTitle = Model.Content.GetPropertyValue<string>("appTitle");
+    var description = Model.Content.GetPropertyValue<string>("description");
+    var cTAButton1 = Model.Content.GetPropertyValue<Link>("cTAButton1");
+    var filterDetail = Model.Content.AncestorOrSelf(2).Children();
+    var ResourceList = Model.Content.AncestorOrSelf(2).Children.Where(item => item.DocumentTypeAlias == "filterDetailPage").ToList();
+    List<IPublishedContent> filteredData = new List<IPublishedContent>();
+
+    var resourceType = Model.Content.Children.DescendantsOrSelf("resouceType").ToList();
+
+    foreach (var data in ResourceList)
+    {
+        var Year = data.GetPropertyValue<DateTime>("filterDate").ToString("yyyy");
+        var resourceCategory = data.GetPropertyValue<int>("typeOfResource");
+
+
+        var filterTitle = data.GetPropertyValue<string>("filterDetailTitle");
+        var filterTeaser = data.GetPropertyValue<string>("teaserText");
+        var filterbodyTest = data.GetPropertyValue<string>("bodyText");
+
+
+
+        bool keyFilterStatus = true;
+        bool yearFilterStatus = true;
+        bool categoryFilterStatus = true;
+        if (string.IsNullOrEmpty(Request.QueryString["newDate"]) == false)
+        {
+            if (Year != Request.QueryString["newDate"])
+            {
+                yearFilterStatus = false;
+            }
+        }
+        if (string.IsNullOrEmpty(Request.QueryString["resourceType"]) == false)
+        {
+            string queryid = Request.QueryString["resourceType"].ToString();
+            if (resourceCategory.ToString() != Request.QueryString["resourceType"].ToString() && Request.QueryString["resourceType"].ToString() != "0")
+            {
+                categoryFilterStatus = false;
+            }
+        }
+        if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
+        {
+            var keySearch = Request.QueryString["newkey"].ToString();
+            if (filterTitle.Contains(keySearch) || filterTeaser.Contains(keySearch) || filterbodyTest.Contains(keySearch))
+            {
+                keyFilterStatus = true;
+            }
+            else
+            {
+                keyFilterStatus = false;
+            }
+
+        }
+
+        if (yearFilterStatus && categoryFilterStatus && keyFilterStatus)
+        {
+            filteredData.Add(data);
+        }
+    }
+
+    ResourceList = filteredData;
+    ResourceList = ResourceList.ToList();
+
+
+
+    int DefaultDisplayCount = 10;
+    var Count = 0;
+    int PageNum = 1;
+    var PagiUrl = "";
+    string htmlstr = "";
+    int CurrentPage;
+    bool CurrentPageBool = int.TryParse(Request["page"], out CurrentPage);
+    if (CurrentPageBool == false)
+    {
+        CurrentPage = 1;
+    }
+
+    Count = ResourceList.Count;
+
+    int TotalPages = (Count - 1) / DefaultDisplayCount + 1;
+
+    var PageCount = 0;
+    if (Count % DefaultDisplayCount == 0)
+    {
+        PageCount = Count / DefaultDisplayCount;
+    }
+    else
+    {
+        PageCount = (Count / DefaultDisplayCount) + 1;
+    }
+
+    if (ResourceList.Count > 0)
+    {
+        if (!int.TryParse(Request.QueryString["page"], out PageNum))
+        {
+            PageNum = 1;
+        }
+    }
+
+
+}
+@section InnerTopStyle {
+
+    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/lib/datepicker.css" rel="stylesheet" />
+}
+<div class="mediaCenter">
+
+    <section class="heroWrapper">
+        <div class="heroBanner">
+            @if (heroImage != null)
+            {
+                <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+            }
+        </div>
+        <div class="heroBlock">
+            <div class="containerWrapper">
+                <div class="bgWrap">
+                    @if (!string.IsNullOrEmpty(title))
+                    {
+                        <h2>@title</h2>
+                    }
+                    @if (!string.IsNullOrEmpty(content))
+                    {
+                        @Html.Raw(content)
+                    }
+                    <form action="" class="mediaForm">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" placeholder="Type of resource"> -->
+                            <select class="form-control" id="resourceType" name="resourceType">
+                                @if (resourceType != null)
+                                {
+                                    bool hasKeys = Request.QueryString.HasKeys();
+                                    if (!hasKeys)
+                                    {
+                                        <option value="">SELECT A RESOURCE</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="0">ALL</option>
+                                    }
+
+                                    foreach (var Items in resourceType)
+                                    {
+                                        if (hasKeys == true)
+                                        {
+                                            if (Request.QueryString.AllKeys.Contains("resourceType"))
+                                            {
+                                                if (Request.QueryString["resourceType"].ToString() == Items.Id.ToString())
+                                                {
+                                                    <option value="@Items.Id" selected="selected">@Items.Name</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@Items.Id">@Items.Name</option>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <option value="@Items.Id">@Items.Name</option>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <option value="@Items.Id">@Items.Name</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            @if (string.IsNullOrEmpty(Request.QueryString["newDate"]) == false)
+                            {
+                                <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -" value="@Request.QueryString["newDate"]">
+                            }
+                            else
+                            {
+                                <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
+                            }
+                        </div>
+                        <div class="form-group">
+                            @if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
+                            {
+                                <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder" value="@Request.QueryString["newkey"]">
+                            }
+                            else
+                            {
+                                <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder">
+                            }
+                            <input type="hidden" name="page" value="" />
+                        </div>
+                        <div class="form-group searchBtn">
+                            <button class="btnManasq"><span>Search</span></button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="greyPanel newsWrap">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="newsFlexWrap">
+
+                    @{
+                        ResourceList = ResourceList.Skip((PageNum - 1) * DefaultDisplayCount).Take(DefaultDisplayCount).ToList();
+                    }
+
+                    @if (ResourceList.Count > 0)
+                    {
+                        foreach (var resource in ResourceList)
+                        {
+
+                            var teaserText = resource.GetPropertyValue<string>("teaserText");
+                            var filterDetailTitle = resource.GetPropertyValue<string>("filterDetailTitle");
+                            var typeofResource = resource.GetPropertyValue<IPublishedContent>("typeOfResource");
+
+                            var date = resource.GetPropertyValue<DateTime>("filterDate").ToString("MMM dd, yyyy");
+
+                            <div class="newsFlex">
+                                <figure class="newsFlexImg">
+                                    <a href=""> <img src="images/media-center/news1.jpg" alt="Media Image" title="Media Image"></a>
+                                </figure>
+                                <div class="newsFlexContent">
+                                    @if (!string.IsNullOrEmpty(filterDetailTitle))
+                                    {
+                                        <h4><a href="@resource.Url">@filterDetailTitle</a></h4>
+                                    }
+                                    <h5>
+                                        @if (date != null)
+                                        {
+                                            <span class="newsDate">@date</span>
+                                        }
+                                        @if (typeofResource != null)
+                                        {
+                                            <a href="@resource.Url" class="newsType">
+                                                @typeofResource.Name
+                                            </a>
+                                        }
+
+                                    </h5>
+                                    @if (!string.IsNullOrEmpty(teaserText))
+                                    {
+                                        @Html.Raw(teaserText)
+                                    }
+
+                                    <a href="@resource.Url" class="btn-readMore">Read More ></a>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h2>No Records Found</h2>
+                    }
+                </div>
+                @if (PageCount > 1)
+                {
+                    <div class="paginationWrap">
+                        <div class="pagination">
+                            <p>
+                                @if (PageNum > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
+                                {
+                                    PagiUrl = "?page=" + (PageNum - 1);
+
+                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Media Image"></a>
+                                }
+                                
+                                <b>@PageNum of 10</b>
+                               
+                                @Html.Raw(htmlstr)
+                               
+                                @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
+                                {
+                                    PagiUrl = "?page=" + (PageNum + 1);
+                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
+
+                                }
+                            </p>
+                        </div>
+                    </div>
+                }
+                @*<div class="newsPagination">
+                        <b>1</b> of 10 <a href="#"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
+                    </div>*@
+            </div>
+        </div>
+    </section>
+    <section class="realAlerts">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(appTitle))
+                {
+                    <h4>@appTitle</h4>
+                }
+                @if (!string.IsNullOrEmpty(description))
+                {
+                    @Html.Raw(description)
+                }
+                @if (cTAButton1 != null)
+                {
+                    if (cTAButton1.Target == "_blank")
+                    {
+                        <a href="@cTAButton1.Url" class="btnManasq" target="_blank"><span>@cTAButton1.Name</span></a>
+                    }
+                    else
+                    {
+                        <a href="@cTAButton1.Url" class="btnManasq"><span>@cTAButton1.Name</span></a>
+                    }
+                }
+
+            </div>
+        </div>
+    </section>
+</div>
+@section InnerBottomScript {
+    <script src="~/scripts/lib/jquery-ui.js"></script>
+    <script src="~/scripts/lib/bootstrap-datepicker.js"></script>
+    <script>
+        $(function () {
+            $("#resourceType").selectmenu();
+            $('#newDate').datepicker({
+                format: "yyyy",
+                viewMode: "years",
+                minViewMode: "years"
+            });
+        });
+    </script>
+    <script>
+        $('.pagination a').click(function (e) {
+            e.preventDefault();
+            var page = $(this).data("page");
+           
+            $(".heroWrapper").find("input[name='page']").val(page);
+
+            $(".heroWrapper")
+           .find('input[name],select[name]')
+           .filter(function () {
+               return !this.value;
+           })
+           .prop('name', '');
+            $(".heroWrapper").find("form").submit();
+        });
+
+    </script>
+
+
+}
+
+@* the fun starts here *@
+
