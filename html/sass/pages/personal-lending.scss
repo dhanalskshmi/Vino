@@ -5,13 +5,16 @@
         }
         &.bContent {
             margin-bottom: 60px;
-            @include bp(tablet){
+            @include bp(tablet) {
                 margin: 45px 0px;
             }
         }
     }
     .flexWrapper {
         display: flex;
+        @include bp(mobile){
+            flex-direction: column;
+        }
         .flexImage {
             background-image: url("../images/personal-lending/lending1.jpg");
             background-size: cover;
@@ -21,6 +24,10 @@
             @include bp(landscape) {
                 width: 343px;
                 height: 237px;
+            }
+            @include bp(mobile) {
+                width: 100%;
+                height: 200px;
             }
             &:after {
                 position: absolute;
@@ -46,15 +53,27 @@
                 width: calc(100% - 343px);
                 padding-top: 27px;
             }
+            @include bp(mobile) {
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
             h3 {
                 text-transform: uppercase;
                 color: #666;
                 font-size: 36px;
                 margin-bottom: 19px;
+                @include bp(tablet) {
+                    font-size: 30px;
+                }
+                @include bp(mobile){
+                    line-height: initial;
+                }
             }
             p {
                 color: #666;
                 margin-bottom: 23px;
+                font-weight: 500;
             }
             ul {
                 display: list-item;
@@ -76,6 +95,9 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 60px;
+        @include bp(mobile){
+
+        }
         .profDisplay {
             width: 222px;
             margin: 0 2.6%;
@@ -90,6 +112,10 @@
             @include bp(tablet) {
                 margin: 0 7%;
                 margin-right: -1.7%;
+            }
+            @include bp(mobile){
+                margin: auto;
+                padding-bottom: 25px;
             }
             .profImage {
                 width: 100%;
@@ -153,6 +179,9 @@
             }
             &:nth-child(4n) {
                 margin-right: 0;
+                @include bp(mobile){
+                    margin: auto;
+                }
             }
         }
     }
@@ -163,12 +192,15 @@
             margin-left: -26px;
             margin-right: -26px;
         }
-        @include bp(tablet){
+        @include bp(tablet) {
             margin: 0;
         }
     }
     .homeStartWrap {
         padding: 0px 34px;
+        @include bp(mobile){
+            padding: 0px 10px;
+        }
         h4 {
             font-size: 48px;
             display: flex;
@@ -176,9 +208,22 @@
             color: #1c3d6d;
             margin-bottom: 16px;
             padding-top: 34px;
+            @include bp(tablet) {
+                font-size: 40px;
+            }
+            @include bp(mobile) {
+                align-items: flex-start;
+            }
             img {
                 @include bp(landscape) {
                     max-width: 63px;
+                }
+                @include bp(tablet) {
+                    margin-right: 20px;
+                }
+                @include bp(mobile){
+                    max-width: 60px;
+                    margin-right: 15px;
                 }
             }
         }
@@ -200,10 +245,12 @@
                 @include bp(landscape) {
                     width: 67%;
                 }
-                @include bp(tablet){
+                @include bp(tablet) {
                     width: 100%;
                 }
                 p {
+                    font-weight: 500;
+                    color: #666;
                     @include bp(landscape) {
                         font-size: 18px;
                     }
@@ -230,12 +277,22 @@
         @include bp(landscape) {
             margin-top: 30px;
         }
+        @include bp(mobile){
+            flex-direction: column;
+            margin-top: 0;
+        }
         .flexDisCont {
             width: 533px;
             padding-left: 33px;
-            @include bp(tablet){
+            @include bp(tablet) {
                 width: 420px;
                 padding-left: 25px;
+            }
+            @include bp(mobile) {
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 25px;
             }
             h5 {
                 font-weight: 700;
@@ -244,7 +301,7 @@
                 margin-bottom: 23px;
             }
             p {
-                font-weight: 600;
+                font-weight: 500;
                 font-size: 20px;
                 color: #1c3d6d;
                 margin-bottom: 23px;
@@ -279,14 +336,41 @@
             padding-bottom: 34px;
             width: calc(100% - 533px);
             margin-top: 0;
-            @include bp(tablet){
+            @include bp(tablet) {
                 width: calc(100% - 420px);
                 justify-content: center;
                 padding-left: 26px;
                 padding-bottom: 0;
             }
+            @include bp(mobile){
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
             .profDisplay {
                 margin: 0;
+            }
+        }
+    }
+    .spanel {
+        .flexWrapper {
+            .flexImage {
+                @include bp(tablet) {
+                    width: 295px;
+                    height: 240px;
+                }
+                @include bp(mobile) {
+                    width: 100%;
+                    height: 230px;
+                }
+            }
+            .flexContent{
+                @include bp(tablet){
+                    width: calc(100% - 295px);
+                }
+                @include bp(mobile){
+                    width: 100%;
+                }
             }
         }
     }
