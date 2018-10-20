@@ -1,0 +1,91 @@
+@media only screen and (max-width: $tab-lands-max) and (min-width: $tab-lands-min) {
+
+	.timelinePage header {
+		margin-bottom: 51px;
+	}
+	.historyBlock {
+		padding-top: 25px;
+	}
+	.timelineWrapper {
+		margin-top: 26px;
+	}
+	.decade-wrapper {
+		&.sticky {
+			max-width: 905px;
+		}
+		ul {
+			li {
+				height: 36px;
+				a {
+					width:100%;
+					font-size: 19px;
+					padding-top: 5px;
+				}
+				&:after {
+					top: 3px;
+				}
+			}
+		}
+	}
+	.timeline-wrapper{
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	 ul.timeline {
+		 > li {
+			 > .timeline-panel {
+				 //padding:7px;
+		    }
+		 }
+	 }
+	.timeline-heading {
+		//margin-bottom:10px;
+	}
+	.timeline-body {
+		p {
+			font-size: 17px;
+			margin-bottom: 0;
+			line-height: 20px;
+			&.date {
+				font-size: 20px;
+			}
+		}
+		h2 {
+			font-size: 24px;
+			line-height: 28px;
+	  }
+		h3 {
+			font-size: 20px;
+			margin-bottom: 6px;
+		}
+	}
+	.timeline {
+		padding: 20px 0 0;
+		> li,
+		.timeline {
+			> li.timeline-inverted {
+				margin-bottom: 60px;
+				}
+			}
+			&.invert-order {
+				&.active {
+			    display: block;
+				}
+			}
+			&.flex-order.active{
+				display: none;
+			}
+		}
+		.timeline {
+			>li {
+				>.timeline-badge {
+					a {
+						&::after {
+							width: 65px;
+						}
+					}
+				}
+			}
+		}
+	}
