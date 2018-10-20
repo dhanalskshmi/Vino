@@ -639,7 +639,7 @@ header {
 		text-transform: uppercase;
 		a {
 			display: inline-block;
-			color: #4c4c4c;
+			color: #262626;
 			line-height: 16px;
 	    letter-spacing: 1px;
 		}
@@ -675,7 +675,7 @@ header {
 					}
 					&::after {
 						content: '';
-						background: #262626;
+						background: #d3d3d3;
 						width: 1px;
 						height: 28px;
 						position: absolute;
