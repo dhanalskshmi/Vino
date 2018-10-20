@@ -604,6 +604,7 @@
     <Content Include="Views\CareersLandingPage.cshtml" />
     <Content Include="Views\GeneralContentPage.cshtml" />
     <Content Include="Views\MediaCenterLandingPage.cshtml" />
+    <Content Include="Views\PersonalLendingPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

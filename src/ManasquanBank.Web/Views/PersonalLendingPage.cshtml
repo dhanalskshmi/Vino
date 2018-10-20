@@ -1,0 +1,519 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using umbraco.MacroEngines
+@using Newtonsoft.Json
+@using RJP.MultiUrlPicker.Models
+@using umbraco.NodeFactory
+@using ContentModels = Umbraco.Web.PublishedContentModels
+@using umbraco.cms.businesslogic.web
+@using Umbraco.Web.Extensions
+@using System.Linq
+@using System.Web.Script.Serialization;
+@{
+    Layout = "Master.cshtml";
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
+    var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
+    var constructionpanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("constructionPanel");
+    var otherLending = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("otherLending");
+
+}
+<div class="persLending">
+    <section class="heroBanner">
+        @if (heroImage != null)
+        {
+            <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+        }
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(title))
+                {
+                    <h2>@title</h2>
+                }
+                @if(!string.IsNullOrEmpty(content))
+                {
+                    @Html.Raw(content)
+                }
+                <ul class="heroLinks">
+                    @if (Model.Content.HasValue("cTAButton1"))
+                    {
+                        foreach (var CTA in cTAButton1)
+                        {
+                            var cTAtitle = CTA.GetPropertyValue<string>("title");
+                            var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                            var link = CTA.GetPropertyValue<Link>("link");
+
+                            <li class="find-us">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                }
+                                                else
+                                                {
+                                                    <img src="/images/about/find-us.png" alt="find-us">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                }
+                                                else
+                                                {
+                                                    <img src="/images/about/find-us.png" alt="find-us">
+                                                }
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <span class="heroLinksImage">
+                                        @if (iconImage != null)
+                                        {
+                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                        }
+                                        else
+                                        {
+                                            <img src="/images/about/find-us.png" alt="find-us">
+                                        }
+                                    </span>
+                                    <span class="heroLinksText">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            @Html.Raw(cTAtitle)
+                                        }
+                                    </span>
+                                }
+
+                            </li>
+                        }
+
+                    }
+                    @if (Model.Content.HasValue("cTAButton2"))
+                    {
+                        foreach (var CTA in cTAButton2)
+                        {
+                            var cTAtitle = CTA.GetPropertyValue<string>("title");
+                            var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                            var link = CTA.GetPropertyValue<Link>("link");
+
+                            <li class="call-us">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                }
+                                                else
+                                                {
+                                                    <img src="/images/about/call-us.png" alt="call-us">
+                                                }
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                }
+                                                else
+                                                {
+                                                    <img src="/images/about/call-us.png" alt="call-us">
+                                                }
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <span class="heroLinksImage">
+                                        @if (iconImage != null)
+                                        {
+                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                        }
+                                        else
+                                        {
+                                            <img src="/images/about/call-us.png" alt="call-us">
+                                        }
+                                    </span>
+                                    <span class="heroLinksText">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            @Html.Raw(cTAtitle)
+                                        }
+                                    </span>
+                                }
+
+                            </li>
+                        }
+
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </section>
+   @{ 
+       var homestartTitle = Model.Content.GetPropertyValue<string>("homeStartTitle");
+       var description = Model.Content.GetPropertyValue<string>("description");
+       var image = Model.Content.GetPropertyValue<IPublishedContent>("image");
+       var tiles = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("tiles");
+       var programTitle = Model.Content.GetPropertyValue<string>("programTitle");
+       var programDescription = Model.Content.GetPropertyValue<string>("programDescription");
+       var cTAButton3 = Model.Content.GetPropertyValue<Link>("programCTAButton");
+
+    }
+    <section class="greyPanel">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="flexWrapper bContent">
+                    @if (image != null)
+                    {
+                      <figure class="flexImage" style="background-image: url(@image.Url)"></figure>
+                    }
+                    
+                    <div class="flexContent">
+                        @if (!string.IsNullOrEmpty(homestartTitle))
+                        {
+                            <h3>@homestartTitle</h3>
+                        }
+                        @if(!string.IsNullOrEmpty(description))
+                        {
+                            @Html.Raw(description)
+                        }
+                       
+                    </div>
+                </div>
+                <div class="profDisplayWrap">
+                    @if (tiles != null)
+                                {
+                                    foreach (var item in tiles)
+                                    {
+                                        var profileImage = item.GetPropertyValue<IPublishedContent>("profileImage");
+                                        var consultWithAgent = item.GetPropertyValue<Link>("consultWithAgent");
+                                        var contactName = item.GetPropertyValue<string>("contactName");
+                                        var employeeTitle = item.GetPropertyValue<string>("employeeTitle");
+                                        var licenseText = item.GetPropertyValue<string>("licenseText");
+                                        var officeNo = item.GetPropertyValue<string>("officeNo");
+                                        var cellPhone = item.GetPropertyValue<string>("cellPhone");
+
+
+                                <div class="profDisplay">
+                                    @if (profileImage != null)
+                                    {
+                                        <figure class="profImage" style="background-image: url(@profileImage.Url)"></figure>
+                                    }
+                                
+                                <div class="consult-btn">
+                                    @if (consultWithAgent != null)
+                                    {
+                                        if (consultWithAgent.Target == "_blank")
+                                        {
+                                            <a href="@consultWithAgent.Url" class="btnManasq" target="_blank"><span>@consultWithAgent.Name</span></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@consultWithAgent.Url" class="btnManasq"><span>@consultWithAgent.Name</span></a>
+                                        }
+                                    }
+                                    
+                                </div>
+                                <div class="profContent">
+                                    @if (!string.IsNullOrEmpty(contactName))
+                                    {
+                                        <h5>@contactName</h5>
+                                    }
+                                   
+                                    @if (!string.IsNullOrEmpty(employeeTitle))
+                                    {
+                                            <p>
+                                                @employeeTitle
+                                            </p>
+                                    }
+                                      @if (!string.IsNullOrEmpty(licenseText))
+                                      {
+                                          <p>@licenseText</p>
+                                      }
+
+                                    @if (!string.IsNullOrEmpty(officeNo))
+                                    {
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office:@officeNo</p>
+                                    }
+                                    @if (!string.IsNullOrEmpty(cellPhone))
+                                    {
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Cell Phone: @cellPhone</p>
+                                    }
+                                    
+                                </div>
+                            </div>
+                        }
+                    }
+                    
+                </div>
+                <div class="homeStartWrap">
+                    <span class="div-line"></span>
+                    @if (!string.IsNullOrEmpty(programTitle))   
+                    {
+                        <h4><img src="/images/personal-lending/home-icon.png">@programTitle</h4>
+                    }
+                    
+                    <div class="homeStart">
+                        <div class="homeStartCont">
+                            @if(!string.IsNullOrEmpty(programDescription))
+                            {
+                                @Html.Raw(programDescription)
+                            }
+                            
+                        </div>
+                        <div class="homeStartBtn">
+                            @if (cTAButton3 != null)
+                            {
+
+                                if (cTAButton3.Target == "_blank")
+                                {
+                                    <a href="" class="@cTAButton3.Url" target="_blank"><span>@cTAButton3.Name</span></a>
+                                }
+                                else
+                                {
+                                    <a href="" class="@cTAButton3.Url"><span>@cTAButton3.Name</span></a>
+                                }
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @*<section class="greyPanel bContent">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="flexWrapper">
+                    <figure class="flexImage"></figure>
+                    <div class="flexContent">
+                        <h3>Home Equity</h3>
+                        <p>
+                            Manasquan Bank has unparalleled experience, expertise and flexibility to help locals get the home
+                            lending they need for their Jersey Shore dream homes. Our mortgage lending team has made their home
+                            here for decades, and are particularly suited to handcraft a mortgage loan for any borrower’s
+                            needs.
+                        </p>
+                        <p>
+                            We know the mortgage and refinance process can be complicated. Rest assured you’ll always have
+                            someone to call directly and meet face-to-face at our Wall Township headquarters. Our Residential
+                            Business Development
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+
+    
+
+    @if (constructionpanel != null)
+    {
+        foreach (var construction in constructionpanel)
+        {
+            var constructionimage = construction.GetPropertyValue<IPublishedContent>("constructionImage");
+            var constructionTitle = construction.GetPropertyValue<string>("constructionTitle");
+            var constructionDescription = construction.GetPropertyValue<string>("constructionDescription");
+            var contructionFeaturesList = construction.GetPropertyValue<string>("contructionFeaturesList");
+            var employeeImage = construction.GetPropertyValue<IPublishedContent>("employeeImage");
+            var constructionCTAButton = construction.GetPropertyValue<Link>("constructionCTAButton");
+            var constructioContactName = construction.GetPropertyValue<string>("constructioContactName");
+            var ConstructioemployeeTitle = construction.GetPropertyValue<string>("ConstructioemployeeTitle");
+            var constructionLicenseText = construction.GetPropertyValue<string>("constructionLicenseText");
+            var constructionOfficeNo = construction.GetPropertyValue<string>("constructionOfficeNo");
+            var constructionCellPhone = construction.GetPropertyValue<string>("constructionCellPhone");
+            var featureListDisable = construction.GetPropertyValue<bool>("featureListDisable");
+
+            <section class="greyPanel bContent">
+                <div class="containerWrapper">
+                    <div class="bgWrap">
+                        <div class="flexWrapper">
+                            @if (constructionimage != null)
+                            {
+                                <figure class="flexImage" style="background-image: url(@constructionimage.Url)"></figure>
+                            }
+
+                            <div class="flexContent">
+                                @if (!string.IsNullOrEmpty(constructionTitle))
+                                {
+                                    <h3>@constructionTitle</h3>
+                                }
+                                @if(!string.IsNullOrEmpty(constructionDescription))
+                                {
+                                    @Html.Raw(constructionDescription)
+                                }
+                                
+                            </div>
+                        </div>
+                        @if (!featureListDisable)
+                        {
+                          <div class="flexDisWrap">
+                            <div class="flexDisCont">
+                                @if(!string.IsNullOrEmpty(contructionFeaturesList))
+                                {
+                                    @Html.Raw(contructionFeaturesList)
+                                }
+                            </div>
+                            <div class="profDisplayWrap">
+                                <div class="profDisplay">
+                                    @if(employeeImage != null)
+                                    {
+                                        <figure class="profImage" style="background-image: url(@employeeImage.Url)"></figure>
+                                    }
+                                    
+                                    <div class="consult-btn">
+                                        @if (constructionCTAButton != null)
+                                        {
+                                            if (constructionCTAButton.Target == "_blank")
+                                            {
+                                                <a href="@constructionCTAButton.Url" class="btnManasq" target="_blank"><span>@constructionCTAButton.Name</span></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@constructionCTAButton.Url" class="btnManasq"><span>@constructionCTAButton.Name</span></a>
+                                            }
+                                        }
+                                        
+                                    </div>
+                                    <div class="profContent">
+                                        @if (!string.IsNullOrEmpty(constructioContactName))
+                                        {
+                                            <h5>@constructioContactName</h5>
+                                        }
+                                        @if(!string.IsNullOrEmpty(ConstructioemployeeTitle))
+                                        {
+                                            <p>@ConstructioemployeeTitle</p>
+                                        }
+                                        @if(!string.IsNullOrEmpty(constructionLicenseText))
+                                        {
+                                            <p>@constructionLicenseText</p>
+                                        }
+                                        @if (!string.IsNullOrEmpty(constructionOfficeNo))
+                                        {
+                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office: @constructionOfficeNo</p>
+                                        }
+                                        @if (!string.IsNullOrEmpty(constructionCellPhone))
+                                        {
+                                            <p class="profPhone">
+                                                <img src="/images/personal-lending/phone-icon.png"> Cell Phone: @constructionCellPhone
+                                            </p>
+                                        }
+
+
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </section>
+        }
+    }
+
+    
+    @if (otherLending != null)
+                {
+                    foreach (var others in otherLending)
+                    {
+                        var otherLendingImage = others.GetPropertyValue<IPublishedContent>("otherLendingImage");
+                        var otherLendingTitle = others.GetPropertyValue<string>("otherLendingTitle");
+                        var otherLendingDescription = others.GetPropertyValue<string>("otherLendingDescription");
+                        var otherLendingBodyText = others.GetPropertyValue<string>("otherLendingBodyText");
+
+
+                <section class="greyPanel bContent">
+                <div class="containerWrapper">
+                    <div class="bgWrap">
+                        <div class="flexWrapper">
+                            @if(otherLendingImage != null)
+                            {
+                                <figure class="flexImage" style="background-image: url(@otherLendingImage.Url)"></figure>
+                            }
+                           <div class="flexContent">
+                                @if (!string.IsNullOrEmpty(otherLendingTitle))
+                                {
+                                    <h3>@otherLendingTitle</h3>
+                                }
+                                @if(!string.IsNullOrEmpty(otherLendingDescription))
+                                {
+                                    @Html.Raw(otherLendingDescription)
+                                }
+                           </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(otherLendingBodyText))
+                        {
+                            <div class="flexDisWrap">
+                                <div class="flexDisCont full-width">
+                                   @Html.Raw(otherLendingBodyText)
+                                </div>
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </section>
+        }
+    }
+
+   
+    
+</div>
