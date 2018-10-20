@@ -2053,6 +2053,7 @@ $img: '../images/home';
           transition: all 0.75s;
         }
         .serviceContent {
+          bottom: 16px;
           .title {
             min-width: 203px;
             max-width: 203px;
@@ -2100,6 +2101,7 @@ $img: '../images/home';
         &.didgitalCenter {
           border-top: none;
           .serviceContent {
+            bottom: 32px;
             .title {
               min-width: 252px;
               max-width: 252px;
@@ -2134,6 +2136,7 @@ $img: '../images/home';
           overflow: visible;
           border-top: none;
           .serviceContent {
+            bottom: 0;
             .detailBlock {
               width: 202px;
               padding-top: 20px;
