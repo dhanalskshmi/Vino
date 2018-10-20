@@ -110,4 +110,18 @@
             }
         }
     }
+    .flexDisWrap{
+        display: flex;
+        margin-top: 52px;
+        .flexDisCont{
+            width: 533px;
+        }
+        .profDisplayWrap{
+            padding-left: 40px;
+            width: calc(100% - 533px);
+            .profDisplay{
+                margin: 0;
+            }
+        }
+    }
 }
