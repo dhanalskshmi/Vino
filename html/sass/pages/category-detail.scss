@@ -119,7 +119,28 @@
 							}
 						}
 					}
+					&.checking
+					{
+						&.responsive_table {
+							@include bp(desktop)
+							{
+								display:block;
+							}
+							@include bp(tablandscape)
+							{
+								display:block;
+							}
+						}
+					}
 					&.responsive_table {
+						@include bp(desktop)
+						{
+							display:none;
+						}
+						@include bp(tablandscape)
+						{
+							display:none;
+						}
 						@include bp(tabmax) {
 							background:#2c5aa7;
 							margin-bottom:20px;
