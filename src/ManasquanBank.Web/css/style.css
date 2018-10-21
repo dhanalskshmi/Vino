@@ -6583,9 +6583,13 @@ footer {
   display: none;
 }
 
-.captchaBlock {
+.joinEmail .captchaBlock {
   visibility: hidden;
   position: absolute;
+}
+
+#joinSuccess {
+  width: 100%;
 }
 
 .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {

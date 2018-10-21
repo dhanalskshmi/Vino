@@ -821,7 +821,10 @@
     z-index: 10;
     display: none;
 }
-.captchaBlock{
+.joinEmail .captchaBlock{
     visibility: hidden;
     position: absolute;
+}
+#joinSuccess{
+    width: 100%;
 }
