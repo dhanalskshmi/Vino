@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
     var filterBannerHeroImage = Model.Content.GetPropertyValue<IPublishedContent>("filterBannerHeroImage");
     var detailImage = Model.Content.GetPropertyValue<IPublishedContent>("detailImage");
     var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
@@ -18,37 +18,46 @@
     <section class="heroBlock">
         <div class="containerWrapper">
             <div class="bgWrap">
-                @if(!string.IsNullOrEmpty(filterDetailTitle))
+                @if (!string.IsNullOrEmpty(filterDetailTitle))
                 {
-                <h2>@filterDetailTitle</h2>
+                    <h2>@filterDetailTitle</h2>
                 }
                 <h5>@library.FormatDateTime(@filterDate, "MMMM dd, yyyy")</h5>
-                @if(detailImage != null)
+                @if (detailImage != null)
                 {
-                <figure>
-                    <img src="@detailImage.Url" alt="@filterDetailTitle">
-                </figure>
+                    <figure>
+                        <img src="@detailImage.Url" alt="@filterDetailTitle">
+                    </figure>
                 }
-                @if(!string.IsNullOrEmpty(bodyText))
+                @if (!string.IsNullOrEmpty(bodyText))
                 {
                     @Html.Raw(bodyText)
                 }
                 <div class="heroFoot">
-                    @if(filtercTAButton != null){
+                    @if (filtercTAButton != null)
+                    {
                         if (filtercTAButton.Target == "_blank")
                         {
-                        <a class="back-btn" href="@filtercTAButton.Url" target="_blank" title="@filtercTAButton.Name"> < @filtercTAButton.Name </a>
+                            <a class="back-btn" href="@filtercTAButton.Url" target="_blank" title="@filtercTAButton.Name"> < @filtercTAButton.Name </a>
                         }
                         else
                         {
-                        <a class="back-btn" href="@filtercTAButton.Url" title="@filtercTAButton.Name"> <  @filtercTAButton.Name </a>
+                            <a class="back-btn" href="@filtercTAButton.Url" title="@filtercTAButton.Name"> <  @filtercTAButton.Name </a>
                         }
                     }
-                    else{
+                    else
+                    {
                         <a href="@parent.Url" class="back-btn"> < Back</a>
                     }
                     <div class="sharePanel">
-                        <a href="javascript:void(0);" st_url="@Model.Content.Url" st_title="@filterDetailTitle" st_image="@detailImage.Url" class="st_sharethis_large" displaytext="ShareThis">+ share</a>
+                        @if (detailImage != null)
+                        {
+                            <a href="javascript:void(0);" st_url="@Model.Content.Url" st_title="@filterDetailTitle" st_image="@detailImage.Url" class="st_sharethis_large" displaytext="ShareThis">+ share</a>
+                        }
+                        else
+                        {
+                            <a href="javascript:void(0);" st_url="@Model.Content.Url" st_title="@filterDetailTitle" class="st_sharethis_large" displaytext="ShareThis">+ share</a>
+                        }
                     </div>
                 </div>
             </div>
@@ -57,9 +66,9 @@
 </div>
 
 @section InnerBottomScript {
-<!--Responsive ShareThis Starts-->
-<script type="text/javascript">if (document.documentElement.clientWidth > 599) { var switchTo5x = true; } else { var switchTo5x = false; }</script>
-<script type="text/javascript" src="//ws.sharethis.com/button/buttons.js" defer></script>
-<script type="text/javascript" src="//ss.sharethis.com/loader.js" defer></script>
-<!--Responsive ShareThis Ends-->
+    <!--Responsive ShareThis Starts-->
+    <script type="text/javascript">if (document.documentElement.clientWidth > 599) { var switchTo5x = true; } else { var switchTo5x = false; }</script>
+    <script type="text/javascript" src="//ws.sharethis.com/button/buttons.js" defer></script>
+    <script type="text/javascript" src="//ss.sharethis.com/loader.js" defer></script>
+    <!--Responsive ShareThis Ends-->
 }
