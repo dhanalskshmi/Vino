@@ -79,7 +79,7 @@
                         @include bp(tablet) {
                             height: 45px;
                         }
-                        .ui-selectmenu-text{
+                        .ui-selectmenu-text{color: #666;
                             @include bp(landscape){
                                 padding: 0.1em 2.1em 0.1em .7em;
                             }
@@ -127,11 +127,14 @@
 
 .newsWrap {
     margin-bottom: 72px;
+    margin-top: 80px;
     @include bp(landscape) {
         margin-bottom: 60px;
+        margin-top: 60px;
     }
     @include bp(tablet) {
         margin-bottom: 41px;
+        margin-top: 34px;
     }
     @include bp(mobile) {
         margin-top: 26px;
@@ -165,7 +168,7 @@
                         margin-right: 30px;
                     }
                     @include bp(tablet) {
-                        min-width: 200px;
+                        width: 200px;
                         margin-right: 19px;
                     }
                     @include bp(mobile) {
@@ -277,6 +280,7 @@
             p {
                 display: inline-block;
                 font-size: 20px;
+                color: #666;
                 @include bp(tablet) {
                     font-size: 18px;
                 }

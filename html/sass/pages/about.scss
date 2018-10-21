@@ -819,4 +819,9 @@
 }
 .grecaptcha-badge{
     z-index: 10;
+    display: none;
+}
+.captchaBlock{
+    visibility: hidden;
+    position: absolute;
 }

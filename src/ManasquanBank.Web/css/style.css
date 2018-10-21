@@ -1355,8 +1355,9 @@ header .containerWrapper {
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-  top: 0;
-  width: 34px;
+  top: -1px;
+  left: 2px;
+  width: 32px;
   height: 4px;
 }
 .hamburger.active .lines::before {
@@ -1373,8 +1374,8 @@ header .containerWrapper {
 }
 
 .mnavWrapper {
-  width: -webkit-calc(100% - 21px);
-  width: calc(100% - 21px);
+  width: -webkit-calc(100% - 22px);
+  width: calc(100% - 22px);
   min-height: 100%;
   margin: 0 12px;
   overflow: hidden;
@@ -1865,7 +1866,7 @@ header + .loginBlocks .businessLogin p a {
   .mainNav ul li:first-child {
     padding-left: 0;
   }
-  .mainNav ul li:hover a span::after {
+  .mainNav ul li.active a span::after, .mainNav ul li:hover a span::after {
     opacity: 1;
     -webkit-transform: scaleY(1);
         -ms-transform: scaleY(1);
@@ -1911,10 +1912,10 @@ header + .loginBlocks .businessLogin p a {
     opacity: 1;
   }
 
-  .mainNav ul li:hover .SubmenuWrapper {
+  .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
     display: block;
   }
-  .mainNav ul li:hover .SubmenuWrapper .bgWrap {
+  .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
     opacity: 1;
   }
 
@@ -2435,25 +2436,25 @@ header + .loginBlocks .businessLogin p a {
   .SubmenuWrapper .borderLine i {
     background: #b3b3b3;
     width: 1px;
-    min-height: 338px;
+    min-height: 274px;
     position: absolute;
     top: 65px;
   }
   .SubmenuWrapper .borderLine i:nth-child(1) {
-    left: -webkit-calc(100% - 952px);
-    left: calc(100% - 952px);
+    left: -webkit-calc(100% - 950px);
+    left: calc(100% - 950px);
   }
   .SubmenuWrapper .borderLine i:nth-child(2) {
-    left: -webkit-calc(100% - 716px);
-    left: calc(100% - 716px);
+    left: -webkit-calc(100% - 714px);
+    left: calc(100% - 714px);
   }
   .SubmenuWrapper .borderLine i:nth-child(3) {
-    left: -webkit-calc(100% - 480px);
-    left: calc(100% - 480px);
+    left: -webkit-calc(100% - 477px);
+    left: calc(100% - 477px);
   }
   .SubmenuWrapper .borderLine i:nth-child(4) {
-    left: -webkit-calc(100% - 243px);
-    left: calc(100% - 243px);
+    left: -webkit-calc(100% - 241px);
+    left: calc(100% - 241px);
   }
   .SubmenuWrapper .flexBox .cols.extWidth {
     width: 290px;
@@ -2524,6 +2525,11 @@ footer {
 }
 .fMenu ul li a {
   color: #FFF;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+.fMenu ul li a:hover {
+  color: #969696;
 }
 
 .fCols {
@@ -2987,12 +2993,24 @@ footer {
     padding-bottom: 38px;
     margin: 0;
   }
+  .footerWraps .fCols {
+    width: 51.067%;
+  }
+  .footerWraps .fCols2 {
+    width: 29.882%;
+  }
 
   .fMenu {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 42px;
     max-width: 100%;
+    border-bottom: 1px solid #fff;
+  }
+  .fMenu ul {
+    border-bottom: none;
+    max-width: 722px;
+    margin: 0 auto;
   }
   .fMenu ul li {
     font-size: 24px;
@@ -6562,6 +6580,12 @@ footer {
 
 .grecaptcha-badge {
   z-index: 10;
+  display: none;
+}
+
+.captchaBlock {
+  visibility: hidden;
+  position: absolute;
 }
 
 .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
@@ -8440,6 +8464,9 @@ footer {
     height: 45px;
   }
 }
+.mediaCenter .heroBlock .bgWrap .mediaForm .form-group .ui-selectmenu-button .ui-selectmenu-text {
+  color: #666;
+}
 @media (max-width: 1279px) {
   .mediaCenter .heroBlock .bgWrap .mediaForm .form-group .ui-selectmenu-button .ui-selectmenu-text {
     padding: 0.1em 2.1em 0.1em .7em;
@@ -8493,15 +8520,18 @@ footer {
 
 .newsWrap {
   margin-bottom: 72px;
+  margin-top: 80px;
 }
 @media (max-width: 1279px) {
   .newsWrap {
     margin-bottom: 60px;
+    margin-top: 60px;
   }
 }
 @media (max-width: 991px) {
   .newsWrap {
     margin-bottom: 41px;
+    margin-top: 34px;
   }
 }
 @media (max-width: 767px) {
@@ -8560,7 +8590,7 @@ footer {
 }
 @media (max-width: 991px) {
   .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg {
-    min-width: 200px;
+    width: 200px;
     margin-right: 19px;
   }
 }
@@ -8700,6 +8730,7 @@ footer {
 .newsWrap .bgWrap .newsPagination p {
   display: inline-block;
   font-size: 20px;
+  color: #666;
 }
 @media (max-width: 991px) {
   .newsWrap .bgWrap .newsPagination p {
@@ -9073,6 +9104,7 @@ footer {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #666;
 }
 @media (max-width: 991px) {
   .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
@@ -13979,6 +14011,10 @@ footer {
   width: 100%;
 }
 
+.decade-wrapper.sticky + .timeline-wrapper .timeline.active {
+  padding-top: 85px;
+}
+
 @media only screen and (max-width: 1279px) and (min-width: 1024px) {
   .timelinePage header {
     margin-bottom: 51px;
@@ -14156,6 +14192,10 @@ footer {
   .timeline-body p {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  .decade-wrapper.sticky + .timeline-wrapper .timeline.active {
+    padding-top: 55px;
   }
 }
 @media (max-width: 767px) {
