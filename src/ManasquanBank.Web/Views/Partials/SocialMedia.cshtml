@@ -5,12 +5,12 @@
 @using System.Text.RegularExpressions
 @inherits UmbracoTemplatePage
 @{
-   
-SocialFeedController t = new SocialFeedController();
-var twitterFeeds=t.GetTwitterTimeline();
-var instaFeed = t.GetInstagramTimeline();
-var jArray = JArray.Parse(twitterFeeds);
-//@Html.Raw(jArray);
+
+    SocialFeedController t = new SocialFeedController();
+    var twitterFeeds=t.GetTwitterTimeline();
+    //var instaFeed = t.GetInstagramTimeline();
+    var jArray = JArray.Parse(twitterFeeds);
+    //@Html.Raw(jArray);
 }
 <section class="eventsPannel">
 <div class="containerWrapper">
