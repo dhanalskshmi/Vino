@@ -23,7 +23,7 @@
     var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
     var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
     var thankYouMessageJoin = Model.Content.AncestorOrSelf(1).GetProperty("newsLetterThankYouMessage").HasValue ? Model.Content.AncestorOrSelf(1).GetProperty("newsLetterThankYouMessage").Value : "";
-
+    string thankYouMessageJoin1 = thankYouMessageJoin.ToString().Replace("<p>","").Replace("</p>","");
     var newsLetterAdminEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterAdminEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterAdminEmail") : 0;
     var newsLetterConfirmationEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterConfirmationEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterConfirmationEmail") : 0;
 }
@@ -50,7 +50,7 @@
                 if (!string.IsNullOrEmpty(thankYouMessageJoin.ToString()))
                 {
                     <div id="joinSuccess">
-                        <h4>@Html.Raw(thankYouMessageJoin)</h4>
+                        <h4>@Html.Raw(thankYouMessageJoin1)</h4>
                     </div>
                 }
                 else
