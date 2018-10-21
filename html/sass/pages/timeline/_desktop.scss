@@ -258,6 +258,12 @@ transition: all 0.4s ease;
 .timeline-body {
 
 }
+.timelineWrapper {
+  .sticky-wrapper {
+
+  }
+}
+
 .timeline-heading {
 }
 .timeline-body {
@@ -433,6 +439,18 @@ display: inline;
 			width:100%;
 
 			}
+      .decade-wrapper {
+        &.sticky {
+          + .timeline-wrapper {
+            .timeline {
+              &.active {
+                padding-top: 85px;
+              }
+            }
+
+          }
+        }
+      }
 
 @import "tabletLandscape";
 @import "tabletPotrait";

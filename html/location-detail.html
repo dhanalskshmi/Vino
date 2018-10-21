@@ -63,7 +63,7 @@
                             </p>
                           </form>
                         </div>
-      
+
                       </div>
                       <div class="headerNav">
                         <div class="topNav">
@@ -133,10 +133,10 @@
                           </ul>
                         </div>
                       </div>
-      
+
                     </div>
                   </div>
-      
+
                 </div>
 			</header>
             <section class="heroBanner">
@@ -157,7 +157,7 @@
 											<img src="images/location-detail/phone-icon.png" alt="phone-icon"/>
 											<div class="detail">
 												<p><a  href="tel:732-295-0004">(732) 295-0004</a></p>
-											</div>											
+											</div>
 										</div>
 										<div class="locationAddr">
 											<img src="images/location-detail/address-icon.png" alt="address-icon"/>
@@ -186,19 +186,19 @@
 											<img src="images/location-detail/atm-icon.png" alt="atm-icon"/>
 											<div class="detail">
 												<p><a  href="#">Walk up atm</a></p>
-											</div>											
+											</div>
 										</div>
 										<div class="hoursSec">
 											<img src="images/location-detail/hours-icon.png" alt="hours-icon"/>
 											<div class="detail">
 												<p><a  href="#">24 hour Atm</a></p>
-											</div>											
+											</div>
 										</div>
 										<div class="boxSec">
 											<img src="images/location-detail/box-icon.png" alt="box-icon"/>
 											<div class="detail">
 												<p><a  href="#">Safe Deposit Box</a></p>
-											</div>											
+											</div>
 										</div>
 									</div>
 								</div>
@@ -235,17 +235,17 @@
 					</div>
                 </div>
             </section>
-			
+
 			<section class="loacationMap">
 				<div class="containerWrapper">
-					
+
 				</div>
 			</section>
 			<section class="mapSection">
 				<div class="containerWrapper">
 					<div id="map_div"></div>
 					<!--<img src="images/location-detail/map.jpg" alt="map"/> -->
-				</div> 
+				</div>
 			</section>
 			<section class="alertSection">
 				<div class="containerWrapper">
@@ -501,11 +501,62 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
 	<script>
-	$(document).ready(function(){
-		
-	});
+  $(document).ready(function() {
+  	$(".timehrsSection").clone().appendTo($(".cloneTimeHrs"));
+
+      if ($('.mapSection').length > 0) {
+          var map;
+          google.maps.event.addDomListener(window, "load", function() {
+              var map = new google.maps.Map(document.getElementById("map_div"), {
+                  center: new google.maps.LatLng(40.137508, -74.089629),
+                  zoom: 11,
+                  zoomControl: false,
+                  scrollwheel: false,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              });
+              var infoWindow = new google.maps.InfoWindow();
+
+              /*
+               * marker creater function (acts as a closure for html parameter)
+               */
+              function createMarker(options, html) {
+                  var marker = new google.maps.Marker(options);
+                  if (html) {
+                      google.maps.event.addListener(marker, "click", function() {
+                          infoWindow.setContent(html);
+                          infoWindow.open(options.map, this);
+                      });
+                  }
+                  return marker;
+              }
+              /*add markers to map*/
+              var marker0 = createMarker({
+                  position: new google.maps.LatLng(40.137508, -74.089629),
+                  map: map,
+              });
+
+              var marker1 = createMarker({
+                  position: new google.maps.LatLng(40.070730, -74.046798),
+                  map: map,
+              });
+
+              var marker2 = createMarker({
+                  position: new google.maps.LatLng(40.069431, -74.128023),
+                  map: map,
+              });
+              var marker3 = createMarker({
+                  position: new google.maps.LatLng(40.201300, -74.255699),
+                  map: map,
+              });
+              var marker4 = createMarker({
+                  position: new google.maps.LatLng(40.120684, -74.144013),
+                  map: map,
+              });
+          });
+      }
+  });
 	</script>
-	
+
 </body>
 
 </html>

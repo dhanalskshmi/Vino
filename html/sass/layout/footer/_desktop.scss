@@ -51,6 +51,10 @@ footer {
       padding-bottom: 2px;
       a {
         color: #FFF;
+        transition: all 0.3s;
+        &:hover {
+          color: #969696;
+        }
       }
     }
   }
@@ -575,6 +579,12 @@ footer {
   .footerWraps {
     padding-bottom: 38px;
     margin: 0;
+    .fCols {
+      width: 51.067%;
+    }
+    .fCols2 {
+      width: 29.882%;
+    }
   }
 
   .fMenu {
@@ -582,7 +592,11 @@ footer {
     margin-right: 0;
     margin-bottom: 42px;
     max-width: 100%;
+    border-bottom: 1px solid #fff;
     ul {
+      border-bottom: none;
+      max-width: 722px;
+      margin: 0 auto;
       li {
         font-size: 24px;
         padding-bottom: 25px;

@@ -479,7 +479,8 @@ $(document).ready(function() {
   var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "click");
 	var wwidth = $(window).width()
 	if (wwidth <= 1100) {
-	    $('.mainNavigation li').bind(clickHandler, function() {
+	    $('.mainNav li').bind(clickHandler, function() {
+				$(this).addClass('active')
 			});
 
       $('.mainNavigation li').click(function() {
@@ -519,6 +520,7 @@ $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     if (scrollTop > 200) {
         $('.loginBlocks, .mLogin a').removeClass('active');
+
     }
 });
 

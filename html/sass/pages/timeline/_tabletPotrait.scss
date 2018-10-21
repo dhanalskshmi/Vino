@@ -140,5 +140,18 @@
 		}
 	}
 
+	.decade-wrapper {
+		&.sticky {
+			+ .timeline-wrapper {
+				.timeline {
+					&.active {
+						padding-top: 55px;
+					}
+				}
+
+			}
+		}
+	}
+
 
 }
