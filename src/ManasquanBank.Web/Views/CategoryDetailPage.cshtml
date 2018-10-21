@@ -8,7 +8,7 @@
 @{
     Layout = "Master.cshtml";
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
-    var Title = Model.Content.GetPropertyValue<string>("productTitle");
+    var Title = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
     var Description = Model.Content.GetPropertyValue<string>("productDescription");
     var comparisonChart = Model.Content.GetPropertyValue<string>("comparisonChart");
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
