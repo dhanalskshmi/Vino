@@ -794,7 +794,7 @@ if ($('.joinEmail').length > 0) {
         submitHandler: function (form) {
             var reCaptchaID = GetReCaptchaID("capt_join");
             grecaptcha.reset(reCaptchaID);
-            grecaptcha.execute(capt_join);
+            grecaptcha.execute(reCaptchaID);
         },
         errorPlacement: function (error, element) { }
     });
@@ -840,7 +840,7 @@ $(".grecaptcha-badge").hide();
 if ($('form.wpcf7-form').length > 0) {
     $(window).on("load resize scroll", function(e) {
         var visibleATview = false;
-        $('form.wpcf7-form').each(function() {
+        $('form.wpcf7-form,form .wpcf7-form').each(function() {
             if (isInView($(this))) {
                 visibleATview = true;
             }
