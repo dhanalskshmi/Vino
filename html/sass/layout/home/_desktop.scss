@@ -18,7 +18,9 @@ $dbannerhgt: 965px;
   }
   .bannerWrap {
     &.player {
+      padding-bottom: 100% !important;
       min-height: $mbannerhgt;
+      height: $mbannerhgt !important;
       z-index: 0;
     }
   }
@@ -989,6 +991,7 @@ $dbannerhgt: 965px;
     &.player {
       min-height: $tpbannerhgt;
       max-height: $tpbannerhgt;
+      height: $tpbannerhgt  !important;
     }
     .loginBlocks {
 
@@ -1573,6 +1576,7 @@ $dbannerhgt: 965px;
     &.player {
       min-height: $tlbannerhgt;
       max-height: $tlbannerhgt;
+      height: $tlbannerhgt !important;
     }
     .bannerImage {
       min-height: $tlbannerhgt;
@@ -2029,6 +2033,7 @@ $dbannerhgt: 965px;
     &.player {
       min-height: $dbannerhgt;
       max-height: $dbannerhgt;
+      height: $dbannerhgt !important;
       z-index: 0;
     }
     .bannerImage {
