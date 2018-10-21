@@ -48,14 +48,18 @@
                         <a href="@parent.Url" class="back-btn"> < Back</a>
                     }
                     <div class="sharePanel">
-                        <a href="">+ share</a>
+                        <a href="javascript:void(0);" st_url="@Model.Content.Url" st_title="@filterDetailTitle" st_image="@detailImage.Url" class="st_sharethis_large" displaytext="ShareThis">+ share</a>
                     </div>
-                    <div class="sharethis-inline-share-buttons sharePanel"></div>
                 </div>
             </div>
         </div>
     </section>
 </div>
+
 @section InnerBottomScript {
-<script async src="//platform-api.sharethis.com/js/sharethis.js#property=5bc48fddddd6040011604895&product=" inline-share-buttons"></script>
+<!--Responsive ShareThis Starts-->
+<script type="text/javascript">if (document.documentElement.clientWidth > 599) { var switchTo5x = true; } else { var switchTo5x = false; }</script>
+<script type="text/javascript" src="//ws.sharethis.com/button/buttons.js" defer></script>
+<script type="text/javascript" src="//ss.sharethis.com/loader.js" defer></script>
+<!--Responsive ShareThis Ends-->
 }

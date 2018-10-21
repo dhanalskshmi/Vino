@@ -42,7 +42,9 @@ if ($('.joinEmail').length > 0) {
             });
         },
         submitHandler: function (form) {
-            grecaptcha.execute();
+            var reCaptchaID = GetReCaptchaID("capt_join");
+            grecaptcha.reset(reCaptchaID);
+            grecaptcha.execute(reCaptchaID);
         },
         errorPlacement: function (error, element) { }
     });
@@ -73,7 +75,7 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     $("#joinSuccess").length > 0 && $("html, body").animate({
-        scrollTop: $(".joinEmail").offset().top - 200
+        scrollTop: $(".joinEmail").offset().top
     }, "slow")
 });
 function isInView(el) {
@@ -88,7 +90,7 @@ $(".grecaptcha-badge").hide();
 if ($('form.wpcf7-form').length > 0) {
     $(window).on("load resize scroll", function(e) {
         var visibleATview = false;
-        $('form.wpcf7-form').each(function() {
+        $('form.wpcf7-form,form .wpcf7-form').each(function() {
             if (isInView($(this))) {
                 visibleATview = true;
             }
@@ -100,3 +102,16 @@ if ($('form.wpcf7-form').length > 0) {
         }
     });
 }
+function GetReCaptchaID(containerID) {
+    var retval = -1;
+    $(".g-recaptcha").each(function(index) {
+        if(this.id == containerID)
+        {
+            retval = index;
+            return;
+        }
+     });
+ 
+     return retval;
+}
+

@@ -2070,7 +2070,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     padding-right: 13px;
-    padding-bottom: 18px;
+    padding-bottom: 15px;
   }
   .mainNav ul li a::after {
     top: 3px;
@@ -3117,6 +3117,18 @@ footer {
 .bannerWrapper {
   min-height: 422px;
 }
+.bannerWrapper .inline-YTPlayer {
+  max-width: 100% !important;
+  max-height: 422px;
+}
+.bannerWrapper #wrapper_bgndVideo {
+  min-height: 422px;
+}
+.bannerWrapper .bannerWrap.player {
+  min-height: 422px;
+  height: 422px !important;
+  z-index: 0;
+}
 .bannerWrapper .bannerImage {
   background-repeat: no-repeat;
   background-size: cover;
@@ -4118,6 +4130,17 @@ footer {
   .bannerWrapper {
     min-height: 432px;
   }
+  .bannerWrapper #wrapper_bgndVideo {
+    min-height: 432px;
+  }
+  .bannerWrapper .inline-YTPlayer {
+    max-height: 432px;
+  }
+  .bannerWrapper .bannerWrap.player {
+    min-height: 432px;
+    max-height: 432px;
+    height: 432px !important;
+  }
   .bannerWrapper .bannerImage {
     min-height: 432px;
   }
@@ -4150,6 +4173,8 @@ footer {
     max-width: calc(100% - 152px);
     padding-bottom: 61px;
     margin: -40px auto 0;
+    position: relative;
+    z-index: 99;
   }
   .bankingServices .containerWrapper {
     padding: 0;
@@ -4663,6 +4688,17 @@ footer {
   .bannerWrapper {
     min-height: 576px;
   }
+  .bannerWrapper #wrapper_bgndVideo {
+    min-height: 576px;
+  }
+  .bannerWrapper .inline-YTPlayer {
+    max-height: 576px;
+  }
+  .bannerWrapper .bannerWrap.player {
+    min-height: 576px;
+    max-height: 576px;
+    height: 576px !important;
+  }
   .bannerWrapper .bannerImage {
     min-height: 576px;
   }
@@ -5050,6 +5086,18 @@ footer {
 
   .bannerWrapper {
     min-height: 965px;
+  }
+  .bannerWrapper #wrapper_bgndVideo {
+    min-height: 965px;
+  }
+  .bannerWrapper .inline-YTPlayer {
+    max-height: 965px;
+  }
+  .bannerWrapper .bannerWrap.player {
+    min-height: 965px;
+    max-height: 965px;
+    height: 965px !important;
+    z-index: 0;
   }
   .bannerWrapper .bannerImage {
     min-height: 965px;
@@ -6510,6 +6558,10 @@ footer {
 
 .joinEmail form .grecaptcha-badge {
   margin-right: 0;
+}
+
+.grecaptcha-badge {
+  z-index: 10;
 }
 
 .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
@@ -8999,6 +9051,39 @@ footer {
     display: inherit;
     font-weight: bold;
     line-height: 20px;
+  }
+}
+.bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec h5 {
+  margin-bottom: 5px;
+}
+.bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .cmpTitle {
+  margin-bottom: 5px;
+}
+.bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
+  min-height: 256px;
+  font-style: italic;
+  line-height: initial;
+  text-transform: initial;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 991px) {
+  .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
+    min-height: 212px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
+    min-height: initial;
+    font-size: 16px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioContent {

@@ -92,6 +92,15 @@
 
     Count = ResourceList.Count;
 
+    var pagecnt = Count % 10;
+
+    int paginationcount = Count / 10;
+
+    if(pagecnt != 0)
+    {
+        paginationcount = paginationcount + 1;
+    }
+
     int TotalPages = (Count - 1) / DefaultDisplayCount + 1;
 
     var PageCount = 0;
@@ -282,7 +291,7 @@
                                     <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Media Image"></a>
                                 }
                                 
-                                <b>@PageNum of 10</b>
+                                <b>@PageNum of @paginationcount</b>
                                
                                 @Html.Raw(htmlstr)
                                

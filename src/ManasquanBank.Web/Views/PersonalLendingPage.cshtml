@@ -379,7 +379,7 @@
             var constructionLicenseText = construction.GetPropertyValue<string>("constructionLicenseText");
             var constructionOfficeNo = construction.GetPropertyValue<string>("constructionOfficeNo");
             var constructionCellPhone = construction.GetPropertyValue<string>("constructionCellPhone");
-            var featureListDisable = construction.GetPropertyValue<bool>("featureListDisable");
+            //var featureListDisable = construction.GetPropertyValue<bool>("featureListDisable");
 
             <section class="greyPanel bContent">
                 <div class="containerWrapper">
@@ -402,7 +402,7 @@
                                 
                             </div>
                         </div>
-                        @if (!featureListDisable)
+                        @if (construction.HasValue("contructionFeaturesList") && construction.HasValue("employeeImage") && construction.HasValue("constructionCTAButton") && construction.HasValue("constructioContactName") && construction.HasValue("ConstructioemployeeTitle") && construction.HasValue("constructionLicenseText") && construction.HasValue("constructionOfficeNo") && construction.HasValue("constructionCellPhone") && construction.HasValue("constructionCellPhone"))
                         {
                           <div class="flexDisWrap">
                             <div class="flexDisCont">

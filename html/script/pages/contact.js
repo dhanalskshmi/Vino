@@ -40,7 +40,9 @@ if ($('#contactForm').length > 0) {
                 });
             },
             submitHandler: function (form) {
-                grecaptcha.execute();
+                var reCaptchaID = GetReCaptchaID("capt_contact");
+                grecaptcha.reset(reCaptchaID);
+                grecaptcha.execute(reCaptchaID);
             },
             errorPlacement: function (error, element) { }
         });

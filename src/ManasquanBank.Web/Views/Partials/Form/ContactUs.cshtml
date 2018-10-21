@@ -1,5 +1,5 @@
 ﻿@using ManasquanBank.Web.Models;
-@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
+@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm" }))
 {
     if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
     {
@@ -11,6 +11,7 @@
     string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
 <div class="row">
     <div class="col-md-6 col-sm-6 lftfield">
+    <span class="wpcf7-form"></span>
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control " required name="firstName" id="firstName">
@@ -79,13 +80,14 @@
         </div>
     </div>
     <div class="captchaBlock">
-        <div class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
+        <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
         <p class="form1_error hide">The captcha is required and can't be empty.</p>
         
     </div>
     <button class="btn-mansq pull-right btnManasq"><span>SUBMIT</span></button>
     <input type="hidden" id="adminEmail" name="AdminEmail" value="@Model.AdminEmail" />
     <input type="hidden" id="confirmationEmail" name="ConfirmationEmail" value="@Model.ConfirmationEmail" />
+    <span class="wpcf7-form"></span>
 </div>
 }
 
