@@ -16,6 +16,9 @@ $dbannerhgt: 965px;
     max-width: 100% !important;
     max-height: $mbannerhgt;
   }
+  #wrapper_bgndVideo {
+    min-height: $mbannerhgt;
+  }
   .bannerWrap {
     &.player {
       //padding-bottom: 100% !important;
@@ -988,11 +991,20 @@ $dbannerhgt: 965px;
 
   .bannerWrapper {
     min-height: $tpbannerhgt;
-    &.player {
+    #wrapper_bgndVideo {
       min-height: $tpbannerhgt;
-      max-height: $tpbannerhgt;
-      height: $tpbannerhgt  !important;
     }
+    .inline-YTPlayer {
+      max-height: $tpbannerhgt;
+    }
+    .bannerWrap {
+      &.player {
+        min-height: $tpbannerhgt;
+        max-height: $tpbannerhgt;
+        height: $tpbannerhgt  !important;
+      }
+    }
+
     .loginBlocks {
 
     }
@@ -1575,11 +1587,20 @@ $dbannerhgt: 965px;
   }
   .bannerWrapper {
     min-height: $tlbannerhgt;
-    &.player {
+    #wrapper_bgndVideo {
       min-height: $tlbannerhgt;
-      max-height: $tlbannerhgt;
-      height: $tlbannerhgt !important;
     }
+    .inline-YTPlayer {
+      max-height: $tlbannerhgt;
+    }
+    .bannerWrap {
+      &.player {
+        min-height: $tlbannerhgt;
+        max-height: $tlbannerhgt;
+        height: $tlbannerhgt !important;
+      }
+    }
+
     .bannerImage {
       min-height: $tlbannerhgt;
     }
@@ -2032,12 +2053,21 @@ $dbannerhgt: 965px;
   }
   .bannerWrapper {
     min-height: $dbannerhgt;
-    &.player {
+    #wrapper_bgndVideo {
       min-height: $dbannerhgt;
-      max-height: $dbannerhgt;
-      height: $dbannerhgt !important;
-      z-index: 0;
     }
+    .inline-YTPlayer {
+      max-height: $dbannerhgt;
+    }
+    .bannerWrap {
+      &.player {
+        min-height: $dbannerhgt;
+        max-height: $dbannerhgt;
+        height: $dbannerhgt !important;
+        z-index: 0;
+      }
+    }
+
     .bannerImage {
       min-height: $dbannerhgt;
     }
