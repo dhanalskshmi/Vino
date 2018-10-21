@@ -24,25 +24,34 @@
               <a href="index.html" class="logo">
                 <img src="images/header/logo.png" alt="Manasquan Bank" />
               </a>
-              <a href="#" class="hamburger">
-    						<span class="lines"></span>
-    					</a>
-              <div class="mobileSearch">
+              <div class="searchloginWrap">
+                <div class="mLogin">
+                  <a href="#">Login</a>
+                </div>
+                <div class="mobileSearchwrap">
+                  <a href="#" class="hamburger">
+        						<span class="lines"></span>
+        					</a>
+                  <div class="mobileSearch">
+                    <span class="submit">
+                      <i></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="mobileSearchfield">
                 <form class="" action="index.html" method="post">
-                  <input type="text" name="search" value="Search" class="txtBox">
-                  <span class="submit">
-                    <i></i>
-                  </span>
+                  <input type="text" name="search" value="" placeholder="Search" class="txtBox">
                 </form>
               </div>
               <div class="menuWrapper">
                 <div class="loginBlocks">
                   <div class="personalLogin">
-                    <h3>Personal login</h3>
-                    <form class="" action="index.html" method="post">
-                      <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
-                      <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-                      <button type="button" name="button"> <span>Login</span></button>
+                    <h3>PERSONAL BANKING</h3>
+                    <form id="personalLogin" action="" method="post">
+                      <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID" required >
+                      <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password" required >
+                      <button type="submit" name="button"> <span>Login</span></button>
                       <p>
                         <a href="#">Sign Up</a>
                         <a href="#">Forgot Password</a>
@@ -50,11 +59,11 @@
                     </form>
                   </div>
                   <div class="businessLogin">
-                    <h3>Business login</h3>
-                    <form class="" action="index.html" method="post">
-                      <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
-                      <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-                      <button type="button" name="button"> <span>Login</span></button>
+                    <h3>BUSINESS BANKING</h3>
+                    <form id="businessLogin" action="" method="post">
+                      <input type="text" name="businessaccessid" id="businessaccessid" value="" class="txtBox" placeholder="Access ID" required >
+                      <input type="password" name="businesspassword" id="businesspassword" value="" class="txtBox" placeholder="Password" required >
+                      <button type="submit" name="button"> <span>Login</span></button>
                       <p>
                         <a href="#">Forgot Password</a>
                       </p>
@@ -113,31 +122,325 @@
                     <ul>
                       <li>
                         <a href="#">
-                          PERSONAL<br>
-                          BANKING
+                          <span>
+                            PERSONAL<br>
+                            BANKING
+                          </span>
+                        </a>
+                        <div class="SubmenuWrapper">
+                          <div class="containerWrapper">
+                            <div class="bgWrap">
+                              <div class="borderLine">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                              </div>
+                              <h2>
+                                Personal BANKING
+                              </h2>
+                              <div class="flexBox">
+                                <div class="cols extWidth">
+                                  <h3>
+                                    CHECKING
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Kasasa Cash</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Kasasa Cash Back</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Business Now/Super Now Checking</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols extWidth">
+                                  <h3>
+                                    Savings
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Regular Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Money Market Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Certificate od Deposit (CD)</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    merchant services
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Regular Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Money Market Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Certificate of Deposit (CD)</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    TOTAL COMMERCIAL
+                                    SOLUTIONS
+                                  </h3>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    lending
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Commercial Real Estate</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Commercial Lines of Credit</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Commercial Term Loans</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Equipment Financing</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    RATES
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Checking</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Money Market</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Cash Management</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Lending</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    cash management
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Merchant Services</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Total Commercial Solutions</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Remote Deposit Capture</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Safe Deposit Box</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Night Depository</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Account Reconciliation</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Remote Wire Transfer</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Positive Pay</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span>
+                            BUSINESS<br>
+                            BANKING
+                          </span>
+                        </a>
+                        <div class="SubmenuWrapper">
+                          <div class="containerWrapper">
+                            <div class="bgWrap">
+                              <div class="borderLine">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                              </div>
+                              <h2>
+                                BUSINESS BANKING
+                              </h2>
+                              <div class="flexBox">
+                                <div class="cols extWidth">
+                                  <h3>
+                                    CHECKING
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Kasasa Cash</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Kasasa Cash Back</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Business Now/Super Now Checking</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols extWidth">
+                                  <h3>
+                                    Savings
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Regular Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Money Market Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Certificate od Deposit (CD)</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    merchant services
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Regular Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Money Market Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Certificate of Deposit (CD)</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    TOTAL COMMERCIAL
+                                    SOLUTIONS
+                                  </h3>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    lending
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Commercial Real Estate</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Commercial Lines of Credit</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Commercial Term Loans</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Equipment Financing</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    RATES
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Checking</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Savings</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Money Market</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Cash Management</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Lending</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="cols">
+                                  <h3>
+                                    cash management
+                                  </h3>
+                                  <ul>
+                                    <li>
+                                      <a href="#">Merchant Services</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Total Commercial Solutions</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Remote Deposit Capture</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Safe Deposit Box</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Night Depository</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Account Reconciliation</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Remote Wire Transfer</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Positive Pay</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span>
+                            DIGITAL<br>
+                            CENTER
+                          </span>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          BUSINESS<br>
-                          BANKING
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          DIGITAL<br>
-                          CENTER
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          CLIENT<br>
-                          SERVICES
+                          <span>
+                            CLIENT<br>
+                            SERVICES
+                          </span>
                         </a>
                       </li>
                       <li class="search">
                         <form class="" action="index.html" method="post">
-                          <input type="text" name="search" value="Search" class="txtBox">
+                          <input type="text" name="search" value="" placeholder="Search" class="txtBox">
                           <span class="submit">
                             <i></i>
                           </span>
@@ -151,7 +454,292 @@
             </div>
 
           </div>
+          <div class="mnavWrapper">
+            <div class="wraps">
+              <div class="marginWrap">
+                <ul>
+                  <li>
+                    <a href="#"  class="msubMenu">
+                      Personal Banking
+                    </a>
+                    <ul class="inner" style="display: none;">
+                      <li>
+                        <a href="#"  class="msubMenu">
+                          checking
+                        </a>
+                        <ul class="inner" style="display: none;">
+                          <li>
+                            <a href="#">
+                              Basic Business Checking
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Premier Business Checking
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Business Now/Super Now Checking
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#"  class="msubMenu">
+                          MERCHANT SERVICES
+                        </a>
+                        <ul class="inner" style="display: none;">
+                          <li>
+                            <a href="#">
+                              Regular Savings
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Money Market Savings
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Certificate of Deposit (CD)
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <!--<li>
+                        <a href="#"  class="msubMenu">
+                          LENDING
+                        </a>
+                        <ul class="inner" style="display: none;">
+                          <li>
+                            <a href="#">
+                              Commercial Real Estate
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Commercial Lines of Credit
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Commercial Term Loans
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Equipment Financing
+                            </a>
+                          </li>
+                        </ul>
+                      </li>-->
+                      <li>
+                        <a href="#"  class="msubMenu">
+                          RATES
+                        </a>
+                        <ul class="inner" style="display: none;">
+                          <li>
+                            <a href="#">
+                              Checking
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Savings
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Money Market
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Cash Management
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Lending
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <!--<li>
+                        <a href="#"  class="msubMenu">
+                          CASH MANAGEMENT
+                        </a>
+                        <ul class="inner" style="display: none;">
+                          <li>
+                            <a href="#">
+                              Merchant Services
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Total Commercial Solutions
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Remote Deposit Capture
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Safe Deposit Box
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Night Depository
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Account Reconciliation
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Remote Wire Transfer
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Positive Pay
+                            </a>
+                          </li>
+                        </ul>
+                      </li>-->
+                      <li>
+                        <a href="#"  class="msubMenu">
+                          SAVINGS
+                        </a>
+                        <ul class="inner" style="display: none;">
+                          <li>
+                            <a href="#">
+                              Regular Savings
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Money Market Savings
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              Certificate od Deposit (CD)
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">
+                          TOTAL COMMERCIAL
+                          SOLUTIONS
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#" class="msubMenu">
+                      Business Banking
+                    </a>
+                    <ul class="inner" style="display: none;">
+                      <li>
+                        <a href="#">
+                          Submenu
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Digital Center
+                    </a>
+                  </li>
+                  <li class="mtopNav">
+                    <a href="#" class="msubMenu">
+                      I want to
+                    </a>
+                    <ul class="inner" style="display: none;">
+                      <li>
+                        <a href="#">Open an Account</a>
+                      </li>
+                      <li>
+                        <a href="#">Check Rates</a>
+                      </li>
+                      <li>
+                        <a href="#">Find Branch / ATM</a>
+                      </li>
+                      <li>
+                        <a href="#">Report Lost or Stolen Card</a>
+                      </li>
+                      <li>
+                        <a href="#">Make a Loan Payment</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="mtopNav">
+                    <a href="#">
+                      Media Center
+                    </a>
+                  </li>
+                  <li class="mtopNav">
+                    <a href="#">
+                      Find a Branch
+                    </a>
+                  </li>
+                  <li class="mtopNav">
+                    <a href="#">
+                      Contact Us
+                    </a>
+                  </li>
+                  <li class="mtopNav">
+                    <a href="#">
+                      Careers
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
   			</header>
+        <div class="openAccount">
+          <a href="#">
+            <span>
+              Open an Account
+            </span>
+          </a>
+        </div>
+        <div class="loginBlocks">
+          <div class="personalLogin">
+            <h3>PERSONAL BANKING</h3>
+            <form id="mpersonalLogin" action="" method="post">
+              <input type="text" name="maccessid" id="maccessid" value="" class="txtBox" placeholder="Access ID">
+              <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
+              <button type="submit" name="button"> <span>Login</span></button>
+              <p>
+                <a href="#">Sign Up</a>
+                <a href="#">Forgot Password</a>
+              </p>
+            </form>
+          </div>
+          <div class="businessLogin">
+            <h3>BUSINESS BANKING</h3>
+            <form id="mbusinessLogin" action="" method="post">
+              <input type="text" name="mbusinessaccessid" id="mbusinessaccessid" value="" class="txtBox" placeholder="Access ID">
+              <input type="password" name="mbusinesspassword" id="mbusinesspassword" value="" class="txtBox" placeholder="Password">
+              <button type="button" name="button"> <span>Login</span></button>
+              <p>
+                <a href="#">Forgot Password</a>
+              </p>
+            </form>
+          </div>
+        </div>
         <section class="bannerWrapper">
           <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'_GpwGNm_BFQ',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:1, mute:false, opacity:1, addRaster:true, optimizeDisplay:true}">
             <figure class="bannerImage" style="background-image: url('images/banner/banner_bg.jpg')">
@@ -207,41 +795,45 @@
             </div>
           </div>
         </section>
-        <section class="bankingServices animatable">
+        <section class="bankingServices">
           <div class="containerWrapper">
             <ul>
               <li class="bunisessBank">
                 <figure class="imgBlock" style="background-image: url('images/home/service_1.jpg')">
-
+                  <a href="#">Business Banking</a>
                 </figure>
                 <div class="serviceContent">
-                  <h2>
-                    BUSINESS
-                    <bold>banking</bold>
-                  </h2>
+                  <div class="title">
+                    <h2>
+                      BUSINESS
+                      <strong>banking</strong>
+                    </h2>
+                  </div>
                 </div>
               </li>
               <li class="personalBank">
                 <figure class="imgBlock" style="background-image: url('images/home/service_2.jpg')">
-
+                  <a href="#">Personal Banking</a>
                 </figure>
                 <div class="serviceContent">
-                  <h2>
-                    personal
-                    <bold>banking</bold>
-                  </h2>
+                  <div class="title">
+                    <h2>
+                      personal
+                      <strong>banking</strong>
+                    </h2>
+                  </div>
                 </div>
               </li>
               <li class="mortage" style="background: #ec2c3a">
                 <div class="serviceContent">
                   <h3>
-                    <span>Mortgage Rates</span>
+                    <span>Mortgage <br>Rates</span>
                     10 YEAr <br>
                       Fixed
-                      <bold>
+                      <strong>
                       4.0
                       <span>%</span>
-                    </bold>
+                    </strong>
                   </h3>
                 </div>
               </li>
@@ -251,9 +843,9 @@
                     <h3>
                       College<br>
                        Students<br>
-                      Save More <br>with <bold>Kasasa</bold><br>
+                      Save More <br>with <strong>Kasasa</strong><br>
                       Cash Back <sup>®</sup><br>
-                      <bold>Free <br>Checking</bold>
+                      <strong>Free <br>Checking</strong>
                     </h3>
                     <a href="#" class="btnManasq">
                       <span>
@@ -269,24 +861,28 @@
               </li>
               <li class="didgitalCenter">
                 <figure class="imgBlock" style="background-image: url('images/home/service_3.jpg')">
-
+                  <a href="#">Digital Center</a>
                 </figure>
                 <div class="serviceContent">
-                  <h2>
-                    DIGITAL
-                    <bold>CENTER</bold>
-                  </h2>
+                  <div class="title">
+                    <h2>
+                      DIGITAL
+                      <strong>CENTER</strong>
+                    </h2>
+                  </div>
                 </div>
               </li>
               <li class="clentService">
                 <figure class="imgBlock" style="background-image: url('images/home/service_4.jpg')">
-
+                  <a href="#">Client Services</a>
                 </figure>
                 <div class="serviceContent">
-                  <h2>
-                    CLIENT
-                    <bold>SERVICES</bold>
-                  </h2>
+                  <div class="title">
+                    <h2>
+                      CLIENT
+                      <strong>SERVICES</strong>
+                    </h2>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -472,8 +1068,8 @@
                     <img src="images/header/logo.png" alt="">
                   </a>
                   <div class="followShare">
-                    <a href="#" class="follow">
-                      <span>Follow</span>
+                    <a href="#" target="_blank">
+                      <img src="images/home/tweet.png" alt="">
                     </a>
                     <div class="share">
                       <a href="#"></a>
@@ -484,7 +1080,7 @@
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Ut eu odio et lectus suscipit maximus id sit amet neque.
-                    Aenean vel lacus tempor
+                    <a href="#">@Aenean vel lacus tempor</a>
                   </p>
                   <figure>
                     <img src="images/home/tweets.jpg" alt="">
@@ -504,8 +1100,8 @@
                     <img src="images/header/logo.png" alt="">
                   </a>
                   <div class="followShare">
-                    <a href="#" class="follow">
-                      <span>Follow</span>
+                    <a href="#" target="_blank">
+                      <img src="images/home/tweet.png" alt="">
                     </a>
                     <div class="share">
                       <a href="#"></a>
@@ -515,8 +1111,8 @@
                 <div class="eventDetails">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Ut eu odio et lectus suscipit maximus id sit amet neque.
-                    Aenean vel lacus tempor
+                    Ut eu odio et lectus suscipit maximus id sit amet <a href="#">@neque.
+                    vel lacus tempor</a>
                   </p>
                   <figure>
                     <img src="images/home/tweets.jpg" alt="">
@@ -536,8 +1132,8 @@
                     <img src="images/header/logo.png" alt="">
                   </a>
                   <div class="followShare">
-                    <a href="#" class="follow">
-                      <span>Follow</span>
+                    <a href="#" target="_blank">
+                      <img src="images/home/tweet.png" alt="">
                     </a>
                     <div class="share">
                       <a href="#"></a>
@@ -547,7 +1143,7 @@
                 <div class="eventDetails">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Ut eu odio et lectus suscipit maximus id sit amet neque.
+                    Ut eu odio et <a href="#">@lectus suscipit maximus</a> id sit amet neque.
                     Aenean vel lacus tempor
                   </p>
                   <figure>
@@ -571,24 +1167,27 @@
                JOIN OUR<br>
                EMAIL LIST
             </h2>
-            <form class="" action="index.html" method="post">
+            <form id="joinemailForm" action="" method="post">
               <div>
-                <label>
+                <label for="fname">
                   First Name
                 </label>
-                <input type="text" name="fname" value="" id="fname" class="txtBox">
+                <input type="text" name="fname" value="" id="fname" class="txtBox" required >
+                <span class="errorSpan vd f-error"></span>
               </div>
               <div>
-                <label>
+                <label for="lname">
                   last Name
                 </label>
-                <input type="text" name="lname" value="" id="lname" class="txtBox">
+                <input type="text" name="lname" value="" id="lname" class="txtBox" required >
+                <span class="errorSpan vd f-error"></span>
               </div>
               <div>
-                <label>
+                <label for="email">
                   Email
                 </label>
-                <input type="text" name="email" value="" id="email" class="txtBox">
+                <input type="text" name="email" value="" id="email" class="txtBox" required >
+                <span class="errorSpan vd f-error"></span>
               </div>
               <div class="groupCheckbox">
                 <div>
@@ -635,11 +1234,13 @@
                 </div>
               </div>
               <div class="submit">
-                <button type="button" name="button"><span><span>Join</span></span></button>
+                <button type="submit" name="button"><span><span>Join</span></span></button>
               </div>
             </form>
           </div>
         </section>
+
+
 
         <footer>
           <div class="containerWrapper">
@@ -697,7 +1298,7 @@
                   Phone:
                 </h3>
                 <p>
-                  1-844-626-2265
+                  <a href="tel:18446262265">1-844-626-2265</a>
                 </p>
                 <h3>
                   Routing Number:
@@ -718,8 +1319,12 @@
                   </a>
                 </figure>
                 <div class="partnersBlock">
-                  <a href="#" class="fdic">Member FDIC</a>
-                  <a href="#" class="lender">Lender</a>
+                  <a href="#" class="fdic">
+                    <img src="images/footer/fdic.png" alt="">
+                  </a>
+                  <a href="#" class="lender">
+                    <img src="images/footer/lender.png" alt="">
+                  </a>
                 </div>
               </div>
             </div>

@@ -10,6 +10,9 @@ $img: '../images/home';
 .bannerWrapper {
   min-height: 422px;
   .bannerWrap {
+    &.player {
+      z-index: 0;
+    }
   }
   .bannerImage {
     background-repeat: no-repeat;
