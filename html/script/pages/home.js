@@ -65,3 +65,38 @@ $('.close').click(function() {
   $('html.pop').removeClass('popUpOpen');
   $('.popupWrap .wrap').removeClass('Open');
 });
+
+$(document).ready(function() {
+    $("#contactSucc").length > 0 && $("html, body").animate({
+        scrollTop: $(".contactFormWrap").offset().top - 200
+    }, "slow")
+});
+$(document).ready(function() {
+    $("#joinSuccess").length > 0 && $("html, body").animate({
+        scrollTop: $(".joinEmail").offset().top - 200
+    }, "slow")
+});
+function isInView(el) {
+    if (typeof jQuery !== 'undefined' && el instanceof jQuery) el = el[0];
+    var rect = el.getBoundingClientRect();
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+    return ((rect.left >= 0) && (rect.top >= 0) && ((rect.left + rect.width) <= windowWidth) && ((rect.top + rect.height) <= windowHeight));
+}
+
+$(".grecaptcha-badge").hide();
+if ($('form.wpcf7-form').length > 0) {
+    $(window).on("load resize scroll", function(e) {
+        var visibleATview = false;
+        $('form.wpcf7-form').each(function() {
+            if (isInView($(this))) {
+                visibleATview = true;
+            }
+        });
+        if (visibleATview) {
+            $(".grecaptcha-badge").show();
+        } else {
+            $(".grecaptcha-badge").hide();
+        }
+    });
+}
