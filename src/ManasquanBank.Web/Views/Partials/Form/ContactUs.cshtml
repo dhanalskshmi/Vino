@@ -1,5 +1,5 @@
 ﻿@using ManasquanBank.Web.Models;
-@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm" }))
+@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
 {
     if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
     {

@@ -42,7 +42,7 @@
             JOIN OUR<br />
             EMAIL LIST
         </h2>
-        @using (Html.BeginUmbracoForm("SubmitForm", "NewsLetter", FormMethod.Post, new { id = "joinemailForm", @class = "joinemailForm" }))
+        @using (Html.BeginUmbracoForm("SubmitForm", "NewsLetter", FormMethod.Post, new { id = "joinemailForm", @class = "joinemailForm wpcf7-form" }))
         {
 
             if (String.IsNullOrEmpty(ViewBag.JoinSuccessMessage) == false)

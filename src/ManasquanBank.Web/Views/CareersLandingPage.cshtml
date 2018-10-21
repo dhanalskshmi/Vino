@@ -212,7 +212,7 @@
             var location = feature.GetPropertyValue<string>("location");
             var teaserText = feature.GetPropertyValue<string>("teaserText");
             var description = feature.GetPropertyValue<string>("description");
-            var applyNowButton = feature.GetPropertyValue<Link>("applyNowButton");
+            var applyNowButton = feature.GetPropertyValue<string>("applyNowButton");
             var learnMore = feature.GetPropertyValue<string>("learnMore");
 
 
@@ -249,25 +249,15 @@
                             </div>
                             <div class="carblk carApply">
                                 <div class="carLft">
-                                    @if (applyNowButton != null)
+                                    @if (!string.IsNullOrEmpty(applyNowButton))
                                     {
-                                        if (applyNowButton.Target == "_blank")
-                                        {
-                                            <a href="@applyNowButton.Url" class="btn-carApply" target="_blank"><span>Apply</span></a>
-                                        }
-                                        else
-                                        {
-                                            <a href="@applyNowButton.Url" class="btn-carApply"><span>Apply</span></a>
-                                        }
+                                          <a href="@applyNowButton" class="btn-carApply"><span>Apply</span></a>
+                                        
                                     }
 
                                 </div>
                                 <div class="carRgt">
-                                    @if (!string.IsNullOrEmpty(learnMore))
-                                    {
-                                        <button class="btn-Lmore">@learnMore</button>
-                                    }
-
+                                   <button class="btn-Lmore">Learn More</button>
                                 </div>
                             </div>
                         </div>
