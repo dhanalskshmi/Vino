@@ -50,13 +50,13 @@
                 if (!string.IsNullOrEmpty(thankYouMessageJoin.ToString()))
                 {
                     <div id="joinSuccess">
-                        @Html.Raw(thankYouMessageJoin)
+                        <h4>@Html.Raw(thankYouMessageJoin)</h4>
                     </div>
                 }
                 else
                 {
                     <div id="joinSuccess">
-                        @ViewBag.JoinSuccessMessage
+                        <h4>@ViewBag.JoinSuccessMessage</h4>
                     </div>
                 }
 

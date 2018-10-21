@@ -24,6 +24,7 @@ a {
   text-decoration: none;
   outline: none;
 }
+
 p a {
   color: inherit;
   text-decoration: underline;
@@ -33,9 +34,9 @@ p a:hover {
 }
 
 textarea,
-input[type=text],
-input[type=button],
-input[type=submit] {
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
   -webkit-appearance: none;
   border-radius: 0;
 }
@@ -123,7 +124,7 @@ html .siteWrap .siteInner {
 
 /* common Styles */
 body {
-  font-family: "manasquan";
+  font-family: 'manasquan';
   font-weight: 400;
   background: #FFF;
   color: #17140e;
@@ -242,9 +243,9 @@ a[href^=tel] {
   pointer-events: none;
 }
 
-.btnSection input[type=button],
-.btnSection input[type=reset],
-.btnSection input[type=submit] {
+.btnSection input[type="button"],
+.btnSection input[type="reset"],
+.btnSection input[type="submit"] {
   border: 0;
   font-style: normal;
   font-size: inherit;
@@ -378,7 +379,7 @@ button span {
 .btnManasq::before, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::before, .btnManasq::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::after,
 button::before,
 button::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -439,6 +440,7 @@ a {
 a:focus, a:hover {
   text-decoration: none;
 }
+
 button, input, textarea {
   background: none;
   border: none;
@@ -552,7 +554,7 @@ p {
 
 @media screen and (max-width: 767px) {
   html,
-body {
+  body {
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -638,7 +640,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   body,
-html {
+  html {
     height: 100%;
     min-height: 0;
   }
@@ -943,31 +945,31 @@ html {
             transition-delay: 0.9s;
   }
   .animatable.animate-in {
-    /*
-          li {
-            &.bunisessBank,
-            &.mortage {
-              opacity: 1;
-              transform: scale(1) translateX(0) translateY(0);
-            }
-            &.personalBank {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-    
-          */
+      /*
+      li {
+        &.bunisessBank,
+        &.mortage {
+          opacity: 1;
+          transform: scale(1) translateX(0) translateY(0);
+        }
+        &.personalBank {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      */
   }
   .animatable.animate-in.bannerWrapper .bannerContent h1 span {
-    -webkit-animation: lftRgt 0.5s forwards;
-            animation: lftRgt 0.5s forwards;
+    -webkit-animation: lftRgt .5s forwards;
+            animation: lftRgt .5s forwards;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
     opacity: 0;
   }
   .animatable.animate-in.bannerWrapper .bannerContent h1 span:nth-child(2) {
-    -webkit-animation: lftRgt 0.8s forwards;
-            animation: lftRgt 0.8s forwards;
+    -webkit-animation: lftRgt .8s forwards;
+            animation: lftRgt .8s forwards;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
     opacity: 0;
@@ -1106,19 +1108,19 @@ html {
     display: none;
   }
   .bannerWrapper .bannerContent h1 span,
-.bannerWrapper .bannerContent h1 b {
+  .bannerWrapper .bannerContent h1 b {
     font-style: normal;
     display: block;
     opacity: 0;
   }
   .bannerWrapper.animateIt .bannerContent h1 span {
-    -webkit-animation: lftRgt 0.5s forwards;
-            animation: lftRgt 0.5s forwards;
+    -webkit-animation: lftRgt .5s forwards;
+            animation: lftRgt .5s forwards;
     opacity: 0;
   }
   .bannerWrapper.animateIt .bannerContent h1 span:nth-child(2) {
-    -webkit-animation: lftRgt 0.8s forwards;
-            animation: lftRgt 0.8s forwards;
+    -webkit-animation: lftRgt .8s forwards;
+            animation: lftRgt .8s forwards;
     opacity: 0;
   }
   .bannerWrapper.animateIt .bannerContent h1 strong {
@@ -1141,40 +1143,40 @@ html {
   }
 
   /*.bankingServices {
-      ul {
-        li {
-          &.bunisessBank {
-            opacity: 0;
-            transform: scale(1.1) translateX(-50px) translateY(-50px);
-            transition: all 1s;
-          }
-          &.mortage {
-            opacity: 0;
-            transform: scale(1.1) translateX(50px) translateY(-50px);
-            transition: all 1s;
-          }
-          &.personalBank {
-            opacity: 0;
-            transform: translateY(15%);
-            transition: all 0.75s;
-          }
+    ul {
+      li {
+        &.bunisessBank {
+          opacity: 0;
+          transform: scale(1.1) translateX(-50px) translateY(-50px);
+          transition: all 1s;
         }
-        &.animateIt {
-          li {
-            &.bunisessBank,
-            &.mortage {
-              opacity: 1;
-              transform: scale(1) translateX(0) translateY(0);
-            }
-            &.personalBank {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-  
+        &.mortage {
+          opacity: 0;
+          transform: scale(1.1) translateX(50px) translateY(-50px);
+          transition: all 1s;
+        }
+        &.personalBank {
+          opacity: 0;
+          transform: translateY(15%);
+          transition: all 0.75s;
         }
       }
-    }*/
+      &.animateIt {
+        li {
+          &.bunisessBank,
+          &.mortage {
+            opacity: 1;
+            transform: scale(1) translateX(0) translateY(0);
+          }
+          &.personalBank {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+      }
+    }
+  }*/
 }
 @-webkit-keyframes lftRgt {
   0% {
@@ -1305,7 +1307,7 @@ header .containerWrapper {
   position: relative;
 }
 .hamburger::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 4px;
   background: #1b3d6e;
@@ -1323,7 +1325,7 @@ header .containerWrapper {
   position: relative;
 }
 .hamburger .lines::after, .hamburger .lines::before {
-  content: "";
+  content: '';
   background: #1b3d6e;
   width: 32px;
   height: 4px;
@@ -1416,7 +1418,7 @@ header .containerWrapper {
   position: relative;
 }
 .mnavWrapper ul li a.msubMenu::before {
-  content: "";
+  content: '';
   background: url("../images/header/m_submenu.png") no-repeat;
   width: 12px;
   height: 23px;
@@ -1471,7 +1473,7 @@ header .containerWrapper {
   position: relative;
 }
 .mnavWrapper ul li a.msubMenu::after {
-  content: "";
+  content: '';
   background-image: url("../images/header/mobilearrow_sprite.png");
   background-position: 0 -29px;
   width: 18px;
@@ -1481,7 +1483,7 @@ header .containerWrapper {
   right: 0;
 }
 .mnavWrapper ul li a.msubMenu + ul li .msubMenu::after {
-  content: "";
+  content: '';
   background-position: 0 -69px;
   width: 18px;
   height: 11px;
@@ -1577,6 +1579,10 @@ header + .loginBlocks .businessLogin p a {
     z-index: 9999;
   }
 
+  .loginBlocks.active {
+    display: none;
+  }
+
   .headerWrapper {
     background: white;
     display: table;
@@ -1585,11 +1591,11 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .mnavWrapper,
-.mLogin,
-.mobileSearchwrap,
-.hamburger,
-.mobileSearch,
-.mobileSearchfield {
+  .mLogin,
+  .mobileSearchwrap,
+  .hamburger,
+  .mobileSearch,
+  .mobileSearchfield {
     display: none;
   }
 
@@ -1605,7 +1611,7 @@ header + .loginBlocks .businessLogin p a {
     float: right;
   }
   .menuWrapper .headerNav,
-.menuWrapper .loginBlocks {
+  .menuWrapper .loginBlocks {
     float: right;
   }
 
@@ -1631,19 +1637,20 @@ header + .loginBlocks .businessLogin p a {
             transform: translateX(0);
   }
   .menuWrapper .loginBlocks .personalLogin,
-.menuWrapper .loginBlocks .businessLogin {
+  .menuWrapper .loginBlocks .businessLogin {
     float: left;
     padding: 1px 5px 0;
     min-width: 98px;
     max-width: 98px;
   }
   .menuWrapper .loginBlocks .personalLogin h3,
-.menuWrapper .loginBlocks .businessLogin h3 {
+  .menuWrapper .loginBlocks .businessLogin h3 {
     font-size: 8px;
+    font-weight: 700;
     line-height: 12px;
   }
   .menuWrapper .loginBlocks .personalLogin p,
-.menuWrapper .loginBlocks .businessLogin p {
+  .menuWrapper .loginBlocks .businessLogin p {
     line-height: 15px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1658,23 +1665,23 @@ header + .loginBlocks .businessLogin p a {
             justify-content: space-between;
   }
   .menuWrapper .loginBlocks .personalLogin p a:last-child,
-.menuWrapper .loginBlocks .businessLogin p a:last-child {
+  .menuWrapper .loginBlocks .businessLogin p a:last-child {
     margin-left: 4px;
   }
   .menuWrapper .loginBlocks .personalLogin .txtBox,
-.menuWrapper .loginBlocks .personalLogin button,
-.menuWrapper .loginBlocks .businessLogin .txtBox,
-.menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .personalLogin button,
+  .menuWrapper .loginBlocks .businessLogin .txtBox,
+  .menuWrapper .loginBlocks .businessLogin button {
     font-size: 8px;
     height: 13px;
     padding: 0 6px;
   }
   .menuWrapper .loginBlocks .personalLogin .txtBox,
-.menuWrapper .loginBlocks .businessLogin .txtBox {
+  .menuWrapper .loginBlocks .businessLogin .txtBox {
     margin-bottom: 5px;
   }
   .menuWrapper .loginBlocks .personalLogin p a,
-.menuWrapper .loginBlocks .businessLogin p a {
+  .menuWrapper .loginBlocks .businessLogin p a {
     font-size: 7px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
@@ -1708,16 +1715,16 @@ header + .loginBlocks .businessLogin p a {
     padding-right: 0;
   }
   .headerNav .topNav li a {
-    color: #1c3d6d;
+    color: #1b3d6e;
     position: relative;
   }
   .headerNav .topNav li a::after {
-    content: "";
+    content: '';
     background: #eb2837;
     width: 100%;
-    height: 5px;
+    height: 9px;
     position: absolute;
-    bottom: -4px;
+    bottom: -9px;
     left: 0;
     opacity: 0;
     -webkit-transform: scaleY(0);
@@ -1738,7 +1745,7 @@ header + .loginBlocks .businessLogin p a {
     width: 130%;
   }
   .headerNav .topNav li.iWantto a::before {
-    content: "";
+    content: '';
     background-image: url("../images/header/icon_1.png");
     width: 8px;
     height: 6px;
@@ -1809,7 +1816,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav a {
     display: inline-block;
-    color: #4c4c4c;
+    color: #262626;
     line-height: 16px;
     letter-spacing: 1px;
   }
@@ -1832,7 +1839,7 @@ header + .loginBlocks .businessLogin p a {
     position: relative;
   }
   .mainNav ul li a span:after {
-    content: "";
+    content: '';
     background: #eb2837;
     width: 100%;
     height: 5px;
@@ -1843,12 +1850,12 @@ header + .loginBlocks .businessLogin p a {
     -webkit-transform: scaleY(0);
         -ms-transform: scaleY(0);
             transform: scaleY(0);
-    -webkit-transition: all 0.75s;
-    transition: all 0.75s;
+    -webkit-transition: all .75s;
+    transition: all .75s;
   }
   .mainNav ul li a::after {
-    content: "";
-    background: #262626;
+    content: '';
+    background: #d3d3d3;
     width: 1px;
     height: 28px;
     position: absolute;
@@ -1878,8 +1885,8 @@ header + .loginBlocks .businessLogin p a {
     right: 196px;
     margin-top: -7px;
     opacity: 0;
-    -webkit-transition: all 0.55s;
-            transition: all 0.55s;
+    -webkit-transition: all .55s;
+            transition: all .55s;
   }
   .mainNav .search .submit {
     display: inline-block;
@@ -1900,9 +1907,10 @@ header + .loginBlocks .businessLogin p a {
     color: #666666;
     width: 355px;
     height: 31px;
-    padding: 0 20px;
+    padding: 0 28px 0 15px;
     opacity: 1;
   }
+
   .mainNav ul li:hover .SubmenuWrapper {
     display: block;
   }
@@ -1921,7 +1929,7 @@ header + .loginBlocks .businessLogin p a {
     display: none;
   }
   .SubmenuWrapper .bgWrap {
-    background: #e1edfe;
+    background: #FFF;
     padding: 20px 30px;
     opacity: 0;
     -webkit-transition: all 0.3s;
@@ -1948,7 +1956,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .SubmenuWrapper h2 {
     font-size: 22px;
-    color: #0066e4;
+    color: #1c3d6d;
     padding-bottom: 14px;
     text-transform: uppercase;
   }
@@ -2023,30 +2031,30 @@ header + .loginBlocks .businessLogin p a {
     width: 244px;
   }
   .menuWrapper .loginBlocks .personalLogin,
-.menuWrapper .loginBlocks .businessLogin {
+  .menuWrapper .loginBlocks .businessLogin {
     min-width: 122px;
     max-width: 122px;
     padding: 5px 7px 0;
   }
   .menuWrapper .loginBlocks .personalLogin h3,
-.menuWrapper .loginBlocks .businessLogin h3 {
+  .menuWrapper .loginBlocks .businessLogin h3 {
     font-size: 10px;
     margin-bottom: 4px;
   }
   .menuWrapper .loginBlocks .personalLogin .txtBox,
-.menuWrapper .loginBlocks .businessLogin .txtBox {
+  .menuWrapper .loginBlocks .businessLogin .txtBox {
     font-size: 10px;
     height: 17px;
     margin-bottom: 6px;
   }
   .menuWrapper .loginBlocks .personalLogin button,
-.menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button {
     font-size: 9px;
     margin-bottom: 6px;
     height: 17px;
   }
   .menuWrapper .loginBlocks .personalLogin p a,
-.menuWrapper .loginBlocks .businessLogin p a {
+  .menuWrapper .loginBlocks .businessLogin p a {
     font-size: 9px;
   }
 
@@ -2079,7 +2087,7 @@ header + .loginBlocks .businessLogin p a {
   .mainNav .search.active .txtBox {
     width: 410px;
     height: 40px;
-    padding: 0 15px;
+    padding: 0 28px 0 15px;
   }
   .mainNav .search.active .submit {
     margin-top: 4px;
@@ -2151,7 +2159,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .headerNav {
-    padding-top: 26px;
+    padding-top: 23px;
   }
   .headerNav .topNav {
     font-size: 16px;
@@ -2174,7 +2182,7 @@ header + .loginBlocks .businessLogin p a {
   .headerNav .topNav li.iWantto .subNav {
     min-width: 135px;
     padding-top: 4px;
-    top: 24px;
+    top: 30px;
   }
   .headerNav .topNav li.iWantto .subNav li a {
     font-size: 16px;
@@ -2194,18 +2202,18 @@ header + .loginBlocks .businessLogin p a {
     width: 346px;
   }
   .menuWrapper .loginBlocks .personalLogin,
-.menuWrapper .loginBlocks .businessLogin {
+  .menuWrapper .loginBlocks .businessLogin {
     max-width: 173px;
     min-width: 173px;
     padding: 9px 10px 4px;
   }
   .menuWrapper .loginBlocks .personalLogin h3,
-.menuWrapper .loginBlocks .businessLogin h3 {
+  .menuWrapper .loginBlocks .businessLogin h3 {
     font-size: 12px;
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .personalLogin p,
-.menuWrapper .loginBlocks .businessLogin p {
+  .menuWrapper .loginBlocks .businessLogin p {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2219,27 +2227,27 @@ header + .loginBlocks .businessLogin p a {
             justify-content: space-between;
   }
   .menuWrapper .loginBlocks .personalLogin p a,
-.menuWrapper .loginBlocks .businessLogin p a {
+  .menuWrapper .loginBlocks .businessLogin p a {
     font-size: 11px;
   }
   .menuWrapper .loginBlocks .personalLogin .txtBox,
-.menuWrapper .loginBlocks .businessLogin .txtBox {
+  .menuWrapper .loginBlocks .businessLogin .txtBox {
     font-size: 13px;
   }
   .menuWrapper .loginBlocks .personalLogin button,
-.menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button {
     font-size: 12px;
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .personalLogin .txtBox,
-.menuWrapper .loginBlocks .personalLogin button,
-.menuWrapper .loginBlocks .businessLogin .txtBox,
-.menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .personalLogin button,
+  .menuWrapper .loginBlocks .businessLogin .txtBox,
+  .menuWrapper .loginBlocks .businessLogin button {
     height: 24px;
     margin-bottom: 10px;
   }
   .menuWrapper .loginBlocks .personalLogin button,
-.menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button {
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
@@ -2281,6 +2289,7 @@ header + .loginBlocks .businessLogin p a {
   .mainNav .search.active .txtBox {
     width: 545px;
     height: 53px;
+    padding: 0 58px 0 15px;
   }
   .mainNav ul li {
     padding-right: 19px;
@@ -2292,7 +2301,7 @@ header + .loginBlocks .businessLogin p a {
     top: 2px;
   }
   .mainNav ul li a span::after {
-    height: 8px;
+    height: 9px;
     bottom: -28px;
   }
 
@@ -2311,7 +2320,7 @@ header + .loginBlocks .businessLogin p a {
   .SubmenuWrapper .borderLine i {
     background: #b3b3b3;
     width: 1px;
-    min-height: 338px;
+    min-height: 275px;
     position: absolute;
     top: 65px;
   }
@@ -2328,7 +2337,7 @@ header + .loginBlocks .businessLogin p a {
     left: 79.5%;
   }
   .SubmenuWrapper .flexBox {
-    height: 315px;
+    height: 304px;
   }
   .SubmenuWrapper .flexBox .cols {
     width: 230px;
@@ -2343,7 +2352,7 @@ header + .loginBlocks .businessLogin p a {
     line-height: 23px;
   }
   .SubmenuWrapper h2,
-.SubmenuWrapper h3 {
+  .SubmenuWrapper h3 {
     padding-left: 10px;
   }
   .SubmenuWrapper ul {
@@ -2383,7 +2392,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .headerNav {
-    padding-top: 26px;
+    padding-top: 23px;
   }
   .headerNav .topNav {
     padding-right: 17px;
@@ -2394,6 +2403,7 @@ header + .loginBlocks .businessLogin p a {
   .headerNav .topNav ul li.iWantto {
     padding-right: 45px;
   }
+
   .mainNav {
     margin-top: 29px;
   }
@@ -2557,7 +2567,7 @@ footer {
   line-height: 29px;
 }
 .fCols2 p + h3 {
-  padding-top: 12px;
+  padding-top: 17px;
 }
 
 .fCols3 figure {
@@ -2593,7 +2603,7 @@ footer {
 
 .fRow {
   background: #292a2d;
-  padding: 22px 0 34px;
+  padding: 22px 0 33px;
 }
 .fRow ul {
   padding-left: -webkit-calc(100% - 221px);
@@ -2619,6 +2629,7 @@ footer {
 .fRow ul li.fLink {
   margin-bottom: 9px;
 }
+
 @media screen and (min-width: 768px) {
   .Windows footer {
     position: relative;
@@ -2635,8 +2646,8 @@ footer {
     padding-bottom: 22px;
   }
   .footerWraps .fCols,
-.footerWraps .fCols2,
-.footerWraps .fCols3 {
+  .footerWraps .fCols2,
+  .footerWraps .fCols3 {
     display: inline-block;
     vertical-align: top;
   }
@@ -2733,7 +2744,7 @@ footer {
   }
 
   .fCols2,
-.fCols3 {
+  .fCols3 {
     padding-left: 0;
   }
 
@@ -2809,7 +2820,7 @@ footer {
     padding-right: 21px;
   }
   .fRow ul li::after {
-    content: "";
+    content: '';
     background: #FFF;
     width: 1px;
     height: 18px;
@@ -3160,8 +3171,8 @@ footer {
   z-index: -9;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+  -webkit-transition: all .3s;
+          transition: all .3s;
   min-width: 291px;
   max-width: 410px;
   -webkit-transform: translateX(-50%);
@@ -3191,7 +3202,7 @@ footer {
 .loginBlocks .personalLogin h3,
 .loginBlocks .businessLogin h3 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   color: #FFF;
   margin-bottom: 6px;
   text-transform: uppercase;
@@ -3342,10 +3353,10 @@ footer {
   position: relative;
 }
 .bankingServices li .imgBlock::after {
-  content: "";
+  content: '';
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.45)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#a6000000",GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3406,14 +3417,14 @@ footer {
 }
 .bankingServices li.mortage .serviceContent {
   padding: 31px 20px 17px;
-  margin-bottom: 5px;
+  margin-bottom: -5px;
 }
 .bankingServices li.mortage h3 {
-  font-size: 29px;
+  font-size: 32px;
   font-weight: 700;
   color: #FFF;
   text-transform: uppercase;
-  line-height: 27px;
+  line-height: 30px;
 }
 .bankingServices li.mortage h3 span {
   display: block;
@@ -3753,7 +3764,11 @@ footer {
   line-height: 16px;
 }
 .eventsPannel .eventDetails p a {
-  color: #1361ce;
+  color: #00aced;
+  text-decoration: none;
+}
+.eventsPannel .eventDetails p a:hover {
+  text-decoration: underline;
 }
 .eventsPannel .eventDetails .venue p {
   font-size: 12px;
@@ -3831,7 +3846,7 @@ footer {
           transition: all 0.55s;
 }
 .joinEmail .groupCheckbox div .checkbox::after {
-  content: "";
+  content: '';
   width: 7px;
   height: 12px;
   position: absolute;
@@ -3932,7 +3947,7 @@ footer {
   margin-top: -14px;
 }
 .popUpWrapper .close i::after, .popUpWrapper .close i::before {
-  content: "";
+  content: '';
   background: #1b3d6e;
   width: 3px;
   height: 26px;
@@ -3986,7 +4001,7 @@ footer {
   position: relative;
 }
 .alertsPannel .alertsWrap .wrap::before {
-  content: "";
+  content: '';
   background-image: url("../images/home/alert_icon.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -4023,7 +4038,7 @@ footer {
   position: relative;
 }
 .floatingAlerts .floatWrap .wrap::before {
-  content: "";
+  content: '';
   background-image: url("../images/home/alert_icon.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -4352,15 +4367,15 @@ footer {
     height: 280px;
   }
   .communityPannel .titleBlock h2,
-.communityPannel .titleBlock .wraps,
-.communityPannel .redBlock h2,
-.communityPannel .redBlock .wraps,
-.communityPannel .detailBlock h2,
-.communityPannel .detailBlock .wraps {
+  .communityPannel .titleBlock .wraps,
+  .communityPannel .redBlock h2,
+  .communityPannel .redBlock .wraps,
+  .communityPannel .detailBlock h2,
+  .communityPannel .detailBlock .wraps {
     padding-left: 62px;
   }
   .communityPannel .redBlock h2,
-.communityPannel .titleBlock h2 {
+  .communityPannel .titleBlock h2 {
     font-size: 30px;
   }
   .communityPannel .titleBlock h2 {
@@ -4393,7 +4408,7 @@ footer {
 
   .appPannel {
     background: none;
-    padding-bottom: 86px;
+    padding-bottom: 80px;
   }
   .appPannel .bgWraps {
     background: #ec2c3a;
@@ -4435,7 +4450,6 @@ footer {
   .appPannel p {
     font-size: 15px;
     line-height: 18px;
-    font-weight: 700;
   }
 
   .knowledgePannel {
@@ -4560,7 +4574,7 @@ footer {
     text-align: center;
   }
   .joinEmail form div.groupCheckbox {
-    width: 79%;
+    width: 100%;
     max-width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -4804,11 +4818,11 @@ footer {
     margin-bottom: 50px;
   }
   .communityPannel .titleBlock h2,
-.communityPannel .titleBlock .wraps,
-.communityPannel .redBlock h2,
-.communityPannel .redBlock .wraps,
-.communityPannel .detailBlock h2,
-.communityPannel .detailBlock .wraps {
+  .communityPannel .titleBlock .wraps,
+  .communityPannel .redBlock h2,
+  .communityPannel .redBlock .wraps,
+  .communityPannel .detailBlock h2,
+  .communityPannel .detailBlock .wraps {
     padding-left: 70px;
   }
   .communityPannel .bgWraps {
@@ -4817,13 +4831,13 @@ footer {
     max-width: 904px;
   }
   .communityPannel .titleBlock,
-.communityPannel .redBlock {
+  .communityPannel .redBlock {
     max-width: -webkit-calc(100% - 305px);
     max-width: calc(100% - 305px);
     padding: 14px 0 9px;
   }
   .communityPannel .titleBlock h2,
-.communityPannel .redBlock h2 {
+  .communityPannel .redBlock h2 {
     font-size: 38px;
     line-height: 33px;
   }
@@ -4859,7 +4873,7 @@ footer {
     padding-bottom: 108px;
   }
   .appPannel .bgWraps {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
   .appPannel .appDetails {
     max-width: 551px;
@@ -5077,6 +5091,9 @@ footer {
     -webkit-transition: all 0.75s;
             transition: all 0.75s;
   }
+  .bankingServices ul li .serviceContent {
+    bottom: 16px;
+  }
   .bankingServices ul li .serviceContent .title {
     min-width: 203px;
     max-width: 203px;
@@ -5116,6 +5133,9 @@ footer {
   .bankingServices ul li.didgitalCenter {
     border-top: none;
   }
+  .bankingServices ul li.didgitalCenter .serviceContent {
+    bottom: 32px;
+  }
   .bankingServices ul li.didgitalCenter .serviceContent .title {
     min-width: 252px;
     max-width: 252px;
@@ -5145,6 +5165,9 @@ footer {
   .bankingServices ul li.kasasa {
     overflow: visible;
     border-top: none;
+  }
+  .bankingServices ul li.kasasa .serviceContent {
+    bottom: 0;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
     width: 202px;
@@ -5224,7 +5247,7 @@ footer {
     position: relative;
   }
   .communityPannel .titleBlock h2,
-.communityPannel .redBlock h2 {
+  .communityPannel .redBlock h2 {
     font-size: 63px;
     line-height: 55px;
   }
@@ -5431,7 +5454,7 @@ footer {
   float: left;
 }
 
-.btn-mansq, .persLending .homeStartWrap .homeStart .homeStartBtn a, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .historyTimeline .bgWrap .titleWrap a {
+.btn-mansq, .historyTimeline .bgWrap .titleWrap a, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .persLending .homeStartWrap .homeStart .homeStartBtn a {
   display: inline-block;
   background: #1268e5;
   padding: 10px 45px;
@@ -5526,21 +5549,21 @@ footer {
 }
 @media (max-width: 1279px) {
   .heroBlock h2,
-.heroBlock h1 {
+  .heroBlock h1 {
     font-size: 36px;
     margin-bottom: 10px;
   }
 }
 @media (max-width: 991px) {
   .heroBlock h2,
-.heroBlock h1 {
+  .heroBlock h1 {
     font-size: 24px;
     margin-bottom: 5px;
   }
 }
 @media (max-width: 767px) {
   .heroBlock h2,
-.heroBlock h1 {
+  .heroBlock h1 {
     font-size: 32px;
     margin-bottom: 20px;
     text-align: center;
@@ -5814,8 +5837,8 @@ footer {
   height: 100%;
   background-size: cover;
   background-position: center;
-  -webkit-transition: 0.55s all;
-          transition: 0.55s all;
+  -webkit-transition: .55s all;
+          transition: .55s all;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .contentImg {
@@ -5840,7 +5863,7 @@ footer {
 }
 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap:after {
   position: absolute;
-  content: "";
+  content: '';
   bottom: -25px;
   left: 0;
   width: 120px;
@@ -6485,21 +6508,25 @@ footer {
   }
 }
 
-.contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
+.joinEmail form .grecaptcha-badge {
+  margin-right: 0;
+}
+
+.contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
   padding: 41px 141px 31px 141px;
 }
 @media (max-width: 1279px) {
-  .contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
+  .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
     padding: 45px 21px 24px 21px;
   }
 }
 @media (max-width: 991px) {
-  .contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
+  .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
     padding: 41px 21px 24px 21px;
   }
 }
 @media (max-width: 767px) {
-  .contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
+  .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
     padding: 32px 11px 25px 11px;
   }
 }
@@ -6510,19 +6537,19 @@ footer {
 }
 @media (max-width: 1279px) {
   .contactUs .heroBlock h1,
-.contactUs .heroBlock h2 {
+  .contactUs .heroBlock h2 {
     margin-bottom: 20px;
   }
 }
 @media (max-width: 991px) {
   .contactUs .heroBlock h1,
-.contactUs .heroBlock h2 {
+  .contactUs .heroBlock h2 {
     margin-bottom: 15px;
   }
 }
 @media (max-width: 767px) {
   .contactUs .heroBlock h1,
-.contactUs .heroBlock h2 {
+  .contactUs .heroBlock h2 {
     margin-bottom: 20px;
   }
 }
@@ -6552,7 +6579,7 @@ footer {
 }
 @media (max-width: 1279px) {
   .contactUs .heroBlock p b,
-.contactUs .heroBlock p strong {
+  .contactUs .heroBlock p strong {
     font-size: 18px;
   }
 }
@@ -6997,8 +7024,8 @@ footer {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 44px;
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+  -webkit-transition: all .3s;
+          transition: all .3s;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .service-section .bgWrap h2 {
@@ -7053,8 +7080,8 @@ footer {
   }
 }
 .service-section .bgWrap ul li a figure {
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+  -webkit-transition: all .3s;
+          transition: all .3s;
 }
 .service-section .bgWrap ul li a figure img {
   display: block;
@@ -7084,8 +7111,8 @@ footer {
   text-align: center;
   text-transform: uppercase;
   margin-top: 40px;
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+  -webkit-transition: all .3s;
+          transition: all .3s;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .service-section .bgWrap ul li a span {
@@ -7182,7 +7209,7 @@ footer {
 }
 .ui-menu .ui-menu-item .ui-menu-item-wrapper {
   font-size: 16px;
-  padding: 0.3em 0.7em;
+  padding: .3em .7em;
 }
 .ui-menu .ui-state-active {
   background: #1268e5;
@@ -7196,7 +7223,7 @@ footer {
   font-family: inherit;
 }
 .ui-selectmenu-button.ui-button .ui-selectmenu-text {
-  padding: 0.6em 2.1em 0.6em 0.7em;
+  padding: 0.6em 2.1em 0.6em .7em;
 }
 
 .careers .heroBlock .heroCareer {
@@ -7323,8 +7350,8 @@ footer {
   width: 340px;
   margin-bottom: 50px;
   background-size: cover;
-  -webkit-transition: 0.2s all;
-          transition: 0.2s all;
+  -webkit-transition: .2s all;
+          transition: .2s all;
 }
 @media (max-width: 1279px) {
   .heroFlex .flexLinkWrap .flexLinks .flexImage {
@@ -7373,8 +7400,8 @@ footer {
   -webkit-transform: scale(1.3);
       -ms-transform: scale(1.3);
           transform: scale(1.3);
-  -webkit-transition: 0.3s all;
-          transition: 0.3s all;
+  -webkit-transition: .3s all;
+          transition: .3s all;
 }
 
 .openPosition {
@@ -7945,7 +7972,7 @@ footer {
     text-align: center;
   }
 }
-.careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
+.careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
   padding: 26px 24px 20px 24px;
   margin-top: 2px;
   margin-left: 12px;
@@ -7957,13 +7984,13 @@ footer {
   display: inline-block;
 }
 @media (max-width: 1279px) {
-  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
+  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
     margin-left: 54px;
     margin-top: 11px;
   }
 }
 @media (max-width: 991px) {
-  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
+  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
     margin-left: 44px;
     margin-top: 6px;
     font-size: 20px;
@@ -7971,7 +7998,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
+  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
     display: inline-block;
     margin: auto;
   }
@@ -8363,12 +8390,12 @@ footer {
 }
 @media (max-width: 1279px) {
   .mediaCenter .heroBlock .bgWrap .mediaForm .form-group .ui-selectmenu-button .ui-selectmenu-text {
-    padding: 0.1em 2.1em 0.1em 0.7em;
+    padding: 0.1em 2.1em 0.1em .7em;
   }
 }
 @media (max-width: 991px) {
   .mediaCenter .heroBlock .bgWrap .mediaForm .form-group .ui-selectmenu-button .ui-selectmenu-text {
-    padding: 0.6em 2.1em 0.6em 0.7em;
+    padding: 0.6em 2.1em 0.6em .7em;
   }
 }
 .mediaCenter .heroBlock .bgWrap .mediaForm .form-group input::-webkit-input-placeholder {
@@ -9913,6 +9940,11 @@ footer {
   margin-left: 50px;
   margin-bottom: 43px;
 }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock.locationDetailBlk .bgWrap h2 {
+    margin-bottom: 28px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .heroBlock.locationDetailBlk .bgWrap h2 {
     margin-left: 18px;
@@ -9978,7 +10010,7 @@ footer {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection {
-    width: 39.423%;
+    width: 39.4230%;
     min-height: 489px;
   }
 }
@@ -9996,45 +10028,50 @@ footer {
   float: left;
   padding-left: 34px;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec {
+    padding-left: 28px;
+  }
+}
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
   display: table;
   width: 100%;
   margin-bottom: 22px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
     margin-bottom: 31px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
     margin-bottom: 22px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
     margin-bottom: 11px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
   float: left;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
     width: 32px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
     width: 32px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
     width: 32px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
   display: block;
   width: 85%;
   float: left;
@@ -10042,70 +10079,78 @@ footer {
   padding-top: 10px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
-    width: 83.4%;
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
+    width: 83.40%;
     padding-left: 11px;
     padding-top: 10px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
     padding-top: 10px;
+    padding-left: 9px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
     width: 87.5%;
     padding-top: 11px;
+    padding-left: 9px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
   margin-bottom: 0px;
   line-height: 23px;
+  color: #666666;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
     font-size: 16px;
     line-height: 17px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
     font-size: 16px;
     line-height: 18px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
     font-size: 16px;
     line-height: 17px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
   display: block;
   margin-bottom: 1px;
 }
+@media (min-width: 1280px) {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
+    margin-bottom: 0px;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
     margin-bottom: 2px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
     margin-bottom: -1px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a {
   text-decoration: none;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a:hover {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a:hover {
   color: inherit;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong {
   margin-top: 7px;
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong {
     margin-top: 6px;
   }
 }
@@ -10213,6 +10258,11 @@ footer {
   padding-left: 42px;
   padding-right: 20px;
 }
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec {
+    padding-left: 22px;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1279px) {
   .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec {
     width: 45%;
@@ -10231,48 +10281,48 @@ footer {
     padding-left: 19px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
   display: table;
   width: 100%;
   margin-bottom: 15px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
     margin-bottom: 27px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
     margin-bottom: 18px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
     margin-bottom: 6px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
   float: left;
   margin-top: 3px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
     width: 34px;
     margin-top: 0px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
     width: 34px;
     margin-top: 0px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
     width: 34px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
   display: block;
   width: 81.8%;
   float: left;
@@ -10280,23 +10330,25 @@ footer {
   padding-top: 16px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
     width: 81%;
     padding-left: 9px;
     padding-top: 9px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
     padding-top: 10px;
+    padding-left: 10px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
     padding-top: 13px;
+    padding-left: 10px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
   font-size: 18px;
   color: #ababab;
   text-transform: uppercase;
@@ -10304,28 +10356,28 @@ footer {
   line-height: 23px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
     font-size: 16px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
     font-size: 16px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
     font-size: 16px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p strong {
   display: block;
   margin-bottom: 1px;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p a {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p a {
   text-decoration: none;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p + p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p + p strong {
   margin-top: 7px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -10395,45 +10447,46 @@ footer {
     position: relative;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
   width: 50%;
   float: left;
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
     width: 100%;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
   font-size: 20px;
   color: #ffffff;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
+  font-weight: 400;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
     font-size: 16px;
     margin-bottom: 11px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
     font-size: 16px;
-    margin-bottom: 0px;
+    margin-bottom: -1px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
   color: #fff;
   font-size: 20px;
   margin-bottom: -1px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
     font-size: 16px;
     margin-bottom: -5.6px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
     font-size: 16px;
   }
 }
@@ -10469,7 +10522,7 @@ footer {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection {
-    padding: 19px 77px 15px 140px;
+    padding: 19px 108px 15px 140px;
   }
 }
 @media (max-width: 767px) {
@@ -10477,22 +10530,22 @@ footer {
     display: none;
   }
 }
-.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs {
+.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs {
   width: 50%;
   float: left;
 }
-.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4 {
+.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4 {
   font-size: 20px;
   color: #ffffff;
   margin-bottom: 24px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4 {
+  .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4 {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
   }
 }
-.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p {
+.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs p {
   color: #fff;
   font-size: 16px;
   margin-bottom: -3px;
@@ -10586,7 +10639,7 @@ footer {
   .alertSection .bgWrap {
     background-position: 65% 78%;
     min-height: 278px;
-    padding: 40px 30px 30px 60px;
+    padding: 40px 30px 30px 40px;
   }
 }
 @media (max-width: 767px) {
@@ -10615,7 +10668,7 @@ footer {
   font-size: 36px;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 96px;
+  margin-bottom: 92px;
   text-transform: uppercase;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -10633,7 +10686,7 @@ footer {
 @media (max-width: 767px) {
   .alertSection .bgWrap .contentSec h2 {
     font-size: 26px;
-    margin-bottom: 257px;
+    margin-bottom: 247px;
   }
 }
 .alertSection .bgWrap .contentSec p {
@@ -10643,6 +10696,12 @@ footer {
 }
 .alertSection .bgWrap .contentSec p:last-child {
   margin-bottom: 44px;
+}
+@media (min-width: 1280px) {
+  .alertSection .bgWrap .contentSec p {
+    line-height: 40px;
+    margin-bottom: 0px;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .alertSection .bgWrap .contentSec p {
@@ -10669,10 +10728,15 @@ footer {
   color: #fff;
   background: #1268e5;
   display: inline-block;
-  padding: 9px 28px 9px 30px;
+  padding: 8px 28px 8px 31px;
   border: 1px solid #fff;
   border-radius: 21px;
   text-transform: uppercase;
+}
+@media (min-width: 1280px) {
+  .alertSection .bgWrap .contentSec a {
+    margin-top: 40px;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .alertSection .bgWrap .contentSec a {
@@ -10683,24 +10747,36 @@ footer {
 @media (min-width: 768px) and (max-width: 1023px) {
   .alertSection .bgWrap .contentSec a {
     font-size: 17px;
-    padding: 9px 28px 4px 30px;
+    padding: 8px 20.4px 3.2px 20px;
+    font-weight: 500;
   }
 }
 @media (max-width: 767px) {
   .alertSection .bgWrap .contentSec a {
     font-size: 17px;
-    padding: 8px 21px 7px 20px;
+    padding: 7px 21px 6px 20px;
+    font-weight: 500;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 1280px) {
   .lcdetailPannel {
     margin-bottom: 100px;
   }
 }
+@media (max-width: 1279px) {
+  .lcdetailPannel {
+    margin-bottom: 59px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .lcdetailPannel {
+    margin-bottom: 39px;
+  }
+}
 @media (max-width: 767px) {
   .lcdetailPannel {
-    margin-bottom: 40px;
+    margin-bottom: 99px;
   }
 }
 
@@ -11109,8 +11185,8 @@ footer {
   font-size: 24px;
   color: #1268e5;
   cursor: pointer;
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+  -webkit-transition: all .3s;
+          transition: all .3s;
 }
 @media (max-width: 1279px) {
   .socialMedia .heroBlock .bgWrap ul li {
@@ -11353,36 +11429,40 @@ footer {
     padding: 45px 20px 20px 20px;
   }
 }
+.categoryBlock .bgWrap .heroLinks {
+  padding-top: 14px;
+}
+
 @media (min-width: 1280px) {
-  .categoryBlock .bgWrap .tableSection {
+  .heroBlock .bgWrap .tableSection {
     margin-bottom: 59px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .categoryBlock .bgWrap .tableSection {
+  .heroBlock .bgWrap .tableSection {
     margin-top: -5px;
     margin-bottom: -5px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection {
+  .heroBlock .bgWrap .tableSection {
     margin-top: 17px;
   }
 }
 @media (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection {
+  .heroBlock .bgWrap .tableSection {
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -5px;
   }
 }
 @media (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive {
+  .heroBlock .bgWrap .tableSection .table-responsive {
     border: none;
     margin-bottom: 0px;
   }
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table thead tr th {
+.heroBlock .bgWrap .tableSection .table-responsive table thead tr th {
   border-bottom: 4px solid #f1f1f1;
   border-right: 4px solid #f1f1f1;
   background: #5678bf;
@@ -11394,29 +11474,29 @@ footer {
   font-weight: 500;
 }
 @media (min-width: 1280px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table thead tr th {
+  .heroBlock .bgWrap .tableSection .table-responsive table thead tr th {
     padding: 10px 7px 12px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table thead tr th {
+  .heroBlock .bgWrap .tableSection .table-responsive table thead tr th {
     font-size: 15px;
     padding: 11px 9px 6px 9px;
   }
-  .categoryBlock .bgWrap .tableSection .table-responsive table thead tr th:nth-child(2) {
+  .heroBlock .bgWrap .tableSection .table-responsive table thead tr th:nth-child(2) {
     display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table thead tr th {
+  .heroBlock .bgWrap .tableSection .table-responsive table thead tr th {
     font-size: 20px;
     color: #fff;
   }
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table thead tr th:last-child {
+.heroBlock .bgWrap .tableSection .table-responsive table thead tr th:last-child {
   border-right: 0px;
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td {
+.heroBlock .bgWrap .tableSection .table-responsive table tbody tr td {
   border-bottom: 4px solid #f1f1f1;
   border-right: 4px solid #f1f1f1;
   border-top: 0px;
@@ -11428,68 +11508,59 @@ footer {
   vertical-align: middle;
 }
 @media (min-width: 1280px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td {
+  .heroBlock .bgWrap .tableSection .table-responsive table tbody tr td {
     padding-top: 20px;
     padding-bottom: 18px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td {
+  .heroBlock .bgWrap .tableSection .table-responsive table tbody tr td {
     font-size: 15px;
     padding: 19px 10px;
   }
-  .categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(2) {
+  .heroBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(2) {
     display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td {
+  .heroBlock .bgWrap .tableSection .table-responsive table tbody tr td {
     font-size: 20px;
   }
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(1) {
+.heroBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(1) {
   background: #2d5aa7;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(1) {
+  .heroBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(1) {
     text-align: left;
   }
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(2) {
+.heroBlock .bgWrap .tableSection .table-responsive table tbody tr td:nth-child(2) {
   text-align: left;
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table tbody tr td:last-child {
+.heroBlock .bgWrap .tableSection .table-responsive table tbody tr td:last-child {
   border-right: 0px;
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table tbody tr:nth-child(2) td {
-  /*display:none;
-  @include bp(tablandscape) {
-  	display:block;
-  }
-  @include bp(tabportrait) {
-  	display:block;
-  }*/
-}
-.categoryBlock .bgWrap .tableSection .table-responsive table tbody tr:last-child td {
+.heroBlock .bgWrap .tableSection .table-responsive table tbody tr:last-child td {
   border-bottom: 0px;
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {
     background: #2c5aa7;
     margin-bottom: 20px;
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {
     margin-bottom: 35px;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td {
     font-size: 20px;
     color: #2d5aa7;
     border-bottom: 5px solid #f1f1f1;
@@ -11501,19 +11572,19 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td {
     font-size: 16px;
     padding-top: 17px;
     padding-bottom: 18px;
   }
 }
 @media (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td img {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td img {
     width: 30px;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td:nth-child(1) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td:nth-child(1) {
     color: #fff;
     width: 43.4%;
     text-transform: uppercase;
@@ -11524,7 +11595,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td:nth-child(1) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td:nth-child(1) {
     width: 64.1%;
     padding-left: 10px;
     padding-top: 15px;
@@ -11532,19 +11603,19 @@ footer {
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td:last-child {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td:last-child {
     border-right: 0px;
     text-align: center;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) {
     background: #2c5aa7;
     color: #fff;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td {
     background: #2c5aa7;
     color: #fff;
     border: none;
@@ -11556,32 +11627,48 @@ footer {
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) and (max-width: 767px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td {
     font-size: 20px;
     padding-top: 10px;
     text-align: center;
   }
 }
+
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td:nth-child(1) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td:nth-child(1) {
     display: none;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(2) td {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(2) td {
     display: none;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(3) td {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(3) td {
     border-top: 5px solid #f1f1f1;
   }
 }
-.categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table:last-child {
-  margin-bottom: 0px;
+@media (min-width: 320px) and (max-width: 1023px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr.blueBg {
+    display: table-caption;
+  }
 }
-.categoryBlock .bgWrap .heroLinks {
-  padding-top: 14px;
+@media (min-width: 320px) and (max-width: 1023px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr.blueBg td:nth-child(2) {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+    padding-left: 30px !important;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr.blueBg td:nth-child(2) {
+    padding-left: 10px !important;
+  }
+}
+.heroBlock .bgWrap .tableSection .table-responsive table.responsive_table:last-child {
+  margin-bottom: 0px;
 }
 
 .categorySection {
@@ -11672,7 +11759,7 @@ footer {
   }
 }
 .categorySection .bgWrap .flexWrap .imgSection:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -17px;
   left: 0;
@@ -11740,14 +11827,14 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection h2 {
     font-size: 24px;
-    margin-left: 0px;
+    margin-left: -0px;
     margin-bottom: -2px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap .contentSection h2 {
     font-size: 24px;
-    margin-left: 0px;
+    margin-left: -0px;
     margin-bottom: 1px;
   }
 }
@@ -12011,7 +12098,7 @@ footer {
   padding-left: 17px;
 }
 .categorySection .bgWrap .flexWrap .contentSection a.applyBtn {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans",sans-serif;
   font-size: 27px;
   color: #fff;
   text-transform: uppercase;
@@ -12177,24 +12264,6 @@ footer {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .blueBg {
-    display: table-caption;
-  }
-  .blueBg td:nth-child(2) {
-    display: block;
-    width: 100%;
-    border-collapse: collapse;
-    padding-left: 10px !important;
-  }
-
-  .categoryBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:nth-child(1) td:nth-child(2) {
-    /*display: block;
-    width: 100%;
-    border-collapse: collapse;
-    padding-left: 10px;*/
-  }
-}
 .persLending .greyPanel .bgWrap {
   padding: 0;
 }
@@ -12212,6 +12281,15 @@ footer {
   display: -ms-flexbox;
   display: flex;
 }
+@media (max-width: 767px) {
+  .persLending .flexWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .persLending .flexWrapper .flexImage {
   background-image: url("../images/personal-lending/lending1.jpg");
   background-size: cover;
@@ -12225,9 +12303,15 @@ footer {
     height: 237px;
   }
 }
+@media (max-width: 767px) {
+  .persLending .flexWrapper .flexImage {
+    width: 100%;
+    height: 200px;
+  }
+}
 .persLending .flexWrapper .flexImage:after {
   position: absolute;
-  content: "";
+  content: '';
   bottom: -18px;
   left: 0;
   width: 180px;
@@ -12255,15 +12339,33 @@ footer {
     padding-top: 27px;
   }
 }
+@media (max-width: 767px) {
+  .persLending .flexWrapper .flexContent {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .persLending .flexWrapper .flexContent h3 {
   text-transform: uppercase;
   color: #666;
   font-size: 36px;
   margin-bottom: 19px;
 }
+@media (max-width: 991px) {
+  .persLending .flexWrapper .flexContent h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .persLending .flexWrapper .flexContent h3 {
+    line-height: initial;
+  }
+}
 .persLending .flexWrapper .flexContent p {
   color: #666;
   margin-bottom: 23px;
+  font-weight: 500;
 }
 .persLending .flexWrapper .flexContent ul {
   display: list-item;
@@ -12309,6 +12411,12 @@ footer {
   .persLending .profDisplayWrap .profDisplay {
     margin: 0 7%;
     margin-right: -1.7%;
+  }
+}
+@media (max-width: 767px) {
+  .persLending .profDisplayWrap .profDisplay {
+    margin: auto;
+    padding-bottom: 25px;
   }
 }
 .persLending .profDisplayWrap .profDisplay .profImage {
@@ -12388,6 +12496,11 @@ footer {
 .persLending .profDisplayWrap .profDisplay:nth-child(4n) {
   margin-right: 0;
 }
+@media (max-width: 767px) {
+  .persLending .profDisplayWrap .profDisplay:nth-child(4n) {
+    margin: auto;
+  }
+}
 .persLending .div-line {
   display: block;
   border-top: 3px solid #ababab;
@@ -12406,6 +12519,11 @@ footer {
 .persLending .homeStartWrap {
   padding: 0px 34px;
 }
+@media (max-width: 767px) {
+  .persLending .homeStartWrap {
+    padding: 0px 10px;
+  }
+}
 .persLending .homeStartWrap h4 {
   font-size: 48px;
   display: -webkit-box;
@@ -12420,9 +12538,33 @@ footer {
   margin-bottom: 16px;
   padding-top: 34px;
 }
+@media (max-width: 991px) {
+  .persLending .homeStartWrap h4 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .persLending .homeStartWrap h4 {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
 @media (max-width: 1279px) {
   .persLending .homeStartWrap h4 img {
     max-width: 63px;
+  }
+}
+@media (max-width: 991px) {
+  .persLending .homeStartWrap h4 img {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .persLending .homeStartWrap h4 img {
+    max-width: 60px;
+    margin-right: 15px;
   }
 }
 .persLending .homeStartWrap .homeStart {
@@ -12472,6 +12614,10 @@ footer {
     width: 100%;
   }
 }
+.persLending .homeStartWrap .homeStart .homeStartCont p {
+  font-weight: 500;
+  color: #666;
+}
 @media (max-width: 1279px) {
   .persLending .homeStartWrap .homeStart .homeStartCont p {
     font-size: 18px;
@@ -12509,6 +12655,16 @@ footer {
     margin-top: 30px;
   }
 }
+@media (max-width: 767px) {
+  .persLending .flexDisWrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 0;
+  }
+}
 .persLending .flexDisWrap .flexDisCont {
   width: 533px;
   padding-left: 33px;
@@ -12519,6 +12675,14 @@ footer {
     padding-left: 25px;
   }
 }
+@media (max-width: 767px) {
+  .persLending .flexDisWrap .flexDisCont {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 25px;
+  }
+}
 .persLending .flexDisWrap .flexDisCont h5 {
   font-weight: 700;
   font-size: 20px;
@@ -12526,7 +12690,7 @@ footer {
   margin-bottom: 23px;
 }
 .persLending .flexDisWrap .flexDisCont p {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
   color: #1c3d6d;
   margin-bottom: 23px;
@@ -12578,30 +12742,114 @@ footer {
     padding-bottom: 0;
   }
 }
+@media (max-width: 767px) {
+  .persLending .flexDisWrap .profDisplayWrap {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .persLending .flexDisWrap .profDisplayWrap .profDisplay {
   margin: 0;
+}
+@media (max-width: 991px) {
+  .persLending .spanel .flexWrapper .flexImage {
+    width: 295px;
+    height: 240px;
+  }
+}
+@media (max-width: 767px) {
+  .persLending .spanel .flexWrapper .flexImage {
+    width: 100%;
+    height: 230px;
+  }
+}
+@media (max-width: 991px) {
+  .persLending .spanel .flexWrapper .flexContent {
+    width: -webkit-calc(100% - 295px);
+    width: calc(100% - 295px);
+  }
+}
+@media (max-width: 767px) {
+  .persLending .spanel .flexWrapper .flexContent {
+    width: 100%;
+  }
 }
 
 .catLanding .heroBlock .bgWrap {
   padding: 41px 58px 9px 58px;
+}
+@media (max-width: 1279px) {
+  .catLanding .heroBlock .bgWrap {
+    padding: 21px 35px 9px 35px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .heroBlock .bgWrap {
+    padding: 15px 85px 9px 85px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .heroBlock .bgWrap {
+    padding: 11px 20px 9px 20px;
+  }
 }
 .catLanding .heroFlex .flexLinkWrap {
   width: 361px;
   height: 325px;
   margin-bottom: 43px;
 }
+@media (max-width: 1279px) {
+  .catLanding .heroFlex .flexLinkWrap {
+    width: 262px;
+    height: 240px;
+    margin-bottom: 28px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .heroFlex .flexLinkWrap {
+    width: 177px;
+    height: 160px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .heroFlex .flexLinkWrap {
+    width: 221px;
+    height: 200px;
+    margin-bottom: 15px;
+  }
+}
 .catLanding .heroFlex .flexLinkWrap .flexLinks {
-  -webkit-transition: 0.3s all;
-          transition: 0.3s all;
+  -webkit-transition: .3s all;
+          transition: .3s all;
 }
 .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
   width: 361px;
   height: 325px;
   position: relative;
 }
+@media (max-width: 1279px) {
+  .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
+    width: 262px;
+    height: 240px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
+    width: 177px;
+    height: 160px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
+    width: 221px;
+    height: 200px;
+  }
+}
 .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   bottom: 0;
   left: 0;
@@ -12610,9 +12858,9 @@ footer {
   height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5));
-  opacity: 0.58;
-  -webkit-transition: 0.3s all;
-          transition: 0.3s all;
+  opacity: .58;
+  -webkit-transition: .3s all;
+          transition: .3s all;
 }
 .catLanding .heroFlex .flexLinkWrap .flexLinks:hover .flexImage:after {
   opacity: 0;
@@ -12622,30 +12870,1606 @@ footer {
   font-size: 24px;
   bottom: 25px;
 }
+@media (max-width: 1279px) {
+  .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
+    padding: 3px 10px;
+    font-size: 17px;
+    width: 73%;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
+    font-size: 15px;
+    bottom: 16px;
+  }
+}
 .catLanding .bluePannel {
   margin: 75px 0px;
+}
+@media (max-width: 991px) {
+  .catLanding .bluePannel {
+    margin: 44px 0;
+  }
 }
 .catLanding .realAlerts {
   margin-bottom: 100px;
 }
+@media (max-width: 991px) {
+  .catLanding .realAlerts {
+    margin-bottom: 40px;
+  }
+}
 .catLanding .realAlerts .bgWrap {
   padding: 34px 65px;
+}
+@media (max-width: 1279px) {
+  .catLanding .realAlerts .bgWrap {
+    height: 312px;
+    padding: 24px 65px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .realAlerts .bgWrap {
+    height: 294px;
+    padding: 22px 81px;
+    background-position-y: -176px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .realAlerts .bgWrap {
+    height: 290px;
+    padding: 23px;
+    background-position-y: 0px;
+  }
 }
 .catLanding .realAlerts .bgWrap h4 {
   font-size: 53px;
   line-height: initial;
 }
+@media (max-width: 1279px) {
+  .catLanding .realAlerts .bgWrap h4 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .realAlerts .bgWrap h4 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .realAlerts .bgWrap h4 {
+    font-size: 26px;
+  }
+}
 .catLanding .realAlerts .bgWrap p {
   font-size: 23px;
   margin-top: 10px;
   line-height: initial;
+  max-width: 200px;
+}
+@media (max-width: 1279px) {
+  .catLanding .realAlerts .bgWrap p {
+    font-size: 15px;
+    max-width: 150px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .realAlerts .bgWrap p {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .realAlerts .bgWrap p {
+    font-size: 19px;
+  }
 }
 .catLanding .realAlerts .bgWrap figure {
   margin-top: 33px;
+}
+@media (max-width: 991px) {
+  .catLanding .realAlerts .bgWrap figure {
+    margin-top: 15px;
+  }
+}
+.catLanding .realAlerts .bgWrap figure img {
+  margin-right: 20px;
+}
+@media (max-width: 1279px) {
+  .catLanding .realAlerts .bgWrap figure img:nth-child(1), .catLanding .realAlerts .bgWrap figure img:nth-child(3) {
+    max-width: 50px;
+  }
+}
+@media (max-width: 1279px) {
+  .catLanding .realAlerts .bgWrap figure img:nth-child(2) {
+    max-width: 20px;
+  }
 }
 .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
   margin-top: 52px;
   min-width: 245px;
   padding: 19px 20px;
   font-size: 27px;
+}
+@media (max-width: 1279px) {
+  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
+    font-size: 17px;
+    padding: 10px 17px;
+    min-width: 157px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
+    margin-top: 19px;
+    padding: 8px 17px;
+    min-width: 149px;
+  }
+}
+@media (max-width: 991px) {
+  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
+    min-width: 118px;
+    font-size: 13px;
+    padding: 5px 17px;
+    margin-top: 10px;
+  }
+}
+
+.heroBlock + .general-template {
+  margin-top: 50px;
+}
+.heroBlock p + .lrImg {
+  margin-top: -15px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock p + .lrImg {
+    margin-top: 48px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock p + .lrImg {
+    margin-top: 28px;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock p + .lrImg {
+    margin-top: 19px;
+  }
+}
+.heroBlock p + ul.dotlist {
+  margin-top: 75px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock p + ul.dotlist {
+    margin-top: 39px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock p + ul.dotlist {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock p + ul.dotlist {
+    margin-top: 16px;
+  }
+}
+.heroBlock .lrImg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock .lrImg {
+    display: table;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .lrImg {
+    display: table;
+  }
+}
+.heroBlock .lrImg .imgSec1 {
+  width: 46.783%;
+  float: left;
+  margin-right: 6.259%;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock .lrImg .imgSec1 {
+    width: 48.163%;
+    margin-right: 3.674%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock .lrImg .imgSec1 {
+    width: 100%;
+    margin-right: 0%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .lrImg .imgSec1 {
+    width: 100%;
+    margin-right: 0%;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock .lrImg .imgSec1 img {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .lrImg .imgSec1 img {
+    width: 100%;
+  }
+}
+.heroBlock .lrImg .imgSec2 {
+  width: 46.958%;
+  float: left;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock .lrImg .imgSec2 {
+    width: 48.163%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock .lrImg .imgSec2 {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .lrImg .imgSec2 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock .lrImg .imgSec2 img {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .lrImg .imgSec2 img {
+    width: 100%;
+  }
+}
+.heroBlock .lrImg + p {
+  margin-top: 51px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock .lrImg + p {
+    margin-top: 41px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock .lrImg + p {
+    margin-top: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock .lrImg + p {
+    margin-top: 20px;
+  }
+}
+.heroBlock ul.dotlist {
+  font-size: 20px;
+  color: #3d3d3d;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .heroBlock ul.dotlist {
+    font-size: 18px;
+  }
+}
+.heroBlock ul.dotlist li {
+  padding-left: 10px;
+}
+.heroBlock ul.dotlist li::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #3d3d3d;
+  border-radius: 8px;
+  margin-top: 10px;
+  left: 0;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock ul.dotlist li::before {
+    margin-top: 7px;
+  }
+}
+.heroBlock ul.dotlist li ul {
+  margin-top: 0px;
+}
+.heroBlock ul.dotlist li ul li:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  background: #3d3d3d;
+  margin-top: 12px;
+  left: 0;
+}
+.heroBlock ul.dotlist + .tableSection {
+  margin-top: 95px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock ul.dotlist + .tableSection {
+    margin-top: 32px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock ul.dotlist + .tableSection {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock ul.dotlist + .tableSection {
+    margin-top: 16px;
+  }
+}
+
+.general-template h1 {
+  text-transform: uppercase;
+  color: #1268e5;
+  font-size: 52px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h1 {
+    font-size: 48px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .general-template h1 {
+    font-size: 36px;
+  }
+}
+.general-template h1 + h2, .general-template h1 + h2, .general-template h1 + h3, .general-template h1 + h4, .general-template h1 + h5 {
+  margin-top: 25px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h1 + h2, .general-template h1 + h2, .general-template h1 + h3, .general-template h1 + h4, .general-template h1 + h5 {
+    margin-top: 20px;
+  }
+}
+.general-template h1 + p {
+  margin-top: 14px;
+}
+.general-template h2 {
+  font-size: 48px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #1268e5;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h2 {
+    font-size: 36px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .general-template h2 {
+    font-size: 32px;
+  }
+}
+.general-template h2 + h3 {
+  margin-top: 24px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h2 + h3 {
+    margin-top: 17px;
+  }
+}
+.general-template h2 + h4 {
+  margin-top: 25px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h2 + h4 {
+    margin-top: 18px;
+  }
+}
+.general-template h2 + h5 {
+  margin-top: 23px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h2 + h5 {
+    margin-top: 20px;
+  }
+}
+.general-template h2 + ul {
+  margin-top: 6px;
+}
+.general-template h2 + p {
+  margin-top: 13px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template h2 + p {
+    margin-top: 8px;
+  }
+}
+.general-template h3 {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #666666;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h3 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template h3 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .general-template h3 {
+    font-size: 22px;
+  }
+}
+.general-template h3 + h4 {
+  margin-top: 20px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h3 + h4 {
+    margin-top: 15px;
+  }
+}
+.general-template h3 + h5 {
+  margin-top: 18px;
+}
+.general-template h3 + p {
+  margin-top: 13px;
+}
+.general-template h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #666666;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h4 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template h4 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .general-template h4 {
+    font-size: 18px;
+  }
+}
+.general-template h4 + h5 {
+  margin-top: 8px;
+}
+.general-template h4 + p {
+  margin-top: 3px;
+}
+.general-template h5 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #666666;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .general-template h5 {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template h5 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .general-template h5 {
+    font-size: 16px;
+  }
+}
+.general-template p + h2 {
+  margin-top: 22px;
+}
+.general-template p + h3 {
+  margin-top: 23px;
+}
+.general-template p + h4 {
+  margin-top: 21px;
+}
+.general-template p + .ContentBlk1 {
+  margin-top: 25px;
+}
+.general-template ul {
+  font-size: 18px;
+  margin-top: 19px;
+  margin-bottom: 30px;
+  position: relative;
+    	/*&.arrowList {
+    		li {
+    			padding-left:15px;
+    			&:before {
+    				content: "";
+				    border-top: 5px solid transparent;
+				    border-bottom: 4px solid transparent;
+				    border-left: 8px solid #666666;
+				    position: absolute;
+				    width: 0;
+				    height: 0;
+				    margin-top: 8px;
+				    left: 0;
+				    right: 13px;
+    			}
+    			ul {
+    				margin-top:0px;
+    				li {
+    					&:before {
+    						content: "";
+						    position: absolute;
+						    width: 5px;
+						    height: 1px;
+						    background: #3d3d3d;
+						    margin-top: 12px;
+						    left: 0;
+						    border: none;
+    					}
+    				}
+    			}
+    		}
+    	} */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template ul {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .general-template ul {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+}
+.general-template ul.dotlist li {
+  padding-left: 10px;
+}
+.general-template ul.dotlist li::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #3d3d3d;
+  border-radius: 8px;
+  margin-top: 10px;
+  left: 0;
+}
+.general-template ul.dotlist li ul {
+  margin-top: 0px;
+}
+.general-template ul.dotlist li ul li:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  background: #3d3d3d;
+  margin-top: 12px;
+  left: 0;
+}
+.general-template ul + ul {
+  margin-top: -14px;
+}
+.general-template ul + h2 {
+  margin-top: -3px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template ul + h2 {
+    margin-top: -11px;
+  }
+}
+.general-template ul + h3 {
+  margin-top: -3px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .general-template ul + h3 {
+    margin-top: -4px;
+  }
+}
+.general-template ul + h4 {
+  margin-top: -3px;
+}
+.general-template ul + h5 {
+  margin-top: -3px;
+}
+
+.timelinePage header {
+  margin-bottom: 49px;
+}
+
+.historyBlock {
+  margin-bottom: 60px;
+}
+.historyBlock h1 {
+  font-size: 45px;
+}
+
+.timelineWrapper {
+  margin-top: 30px;
+}
+.timelineWrapper .ui-selectmenu-button.ui-button {
+  display: none;
+}
+
+.sticky {
+  max-width: 1280px;
+  position: fixed !important;
+  top: 0px !important;
+  z-index: 1000;
+  /*animation:slide-down 0.7s;*/
+}
+
+.withoutSticky {
+  -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+
+.sticky + .stickynavEmpty-wrapper {
+  height: 67px;
+}
+
+.decade-wrapper {
+  width: 100%;
+  display: table;
+  position: relative;
+  top: 0;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.decade-wrapper.sticky {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.decade-wrapper ul {
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  border-bottom: 3px solid #3d3d3d;
+  border-top: 3px solid #3d3d3d;
+  text-align: center;
+}
+.decade-wrapper ul li {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 64px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  text-align: center;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+}
+.decade-wrapper ul li::after {
+  content: '';
+  background: #3d3d3d;
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  top: 17px;
+  right: 0;
+}
+.decade-wrapper ul li:first-child {
+  border-left: 0;
+}
+.decade-wrapper ul li:last-child::after {
+  display: none;
+}
+.decade-wrapper ul li a {
+  display: inline-block;
+  vertical-align: middle;
+  background: #f1f1f1;
+  color: #3d3d3d;
+  font-size: 24px;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+  padding-top: 18px;
+}
+.decade-wrapper ul li a:hover, .decade-wrapper ul li a.active {
+  color: #1268e5;
+}
+
+.timeline {
+  display: none;
+  list-style: none;
+  padding: 31px 54px 0;
+  position: relative;
+}
+.timeline::before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #3d3d3d;
+  left: 50%;
+  margin-left: -1px;
+  height: -webkit-calc(100% + 0px);
+  height: calc(100% + 0px);
+}
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+  width: 50%;
+  float: left;
+  clear: right;
+}
+.timeline > li::before, .timeline > li::after {
+  content: " ";
+  display: table;
+}
+.timeline > li::after {
+  clear: both;
+}
+.timeline > li > .timeline-panel {
+  background: #FFF;
+  width: 81%;
+  float: left;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+.timeline > li > .timeline-panel.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.timeline > li > .timeline-badge {
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 41px;
+  right: -10px;
+  background-color: #eb2837;
+  z-index: 1;
+  border-radius: 50%;
+  background-size: cover;
+}
+.timeline > li > .timeline-badge i {
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.timeline > li > .timeline-badge a {
+  color: #C5C7C5 !important;
+  position: relative;
+}
+.timeline > li > .timeline-badge a::after {
+  content: '';
+  background: #eb2837;
+  width: 99px;
+  height: 3px;
+  position: absolute;
+  top: 9px;
+}
+.timeline > li > .timeline-badge a:hover {
+  color: #000 !important;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+}
+.timeline > li.timeline-inverted > .timeline-panel::before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+
+.timeline > li > .timeline-badge a::after {
+  right: 0;
+}
+.timeline > li.timeline-inverted > .timeline-badge a::after {
+  left: 0;
+}
+
+.timeline-body {
+  padding: 11px 21px 9px;
+}
+.timeline-body h3 {
+  color: #666666;
+}
+.timeline-body p {
+  font-size: 20px;
+  color: #181818;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.timeline-body p.date {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+.timeline-body h2 {
+  font-size: 28px;
+  line-height: 32px;
+}
+.timeline-body h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+}
+.timeline-body .contentBlock p + p {
+  margin-bottom: 8px;
+}
+.timeline-body img.text-with-image {
+  max-width: 50%;
+  margin: 7px 10px 10px 0px;
+}
+.timeline-body img.text-with-image.pull-right {
+  margin: 0px 0px 10px 10px;
+}
+.timeline-body > ul {
+  padding: 0px 0px 20px 0;
+  margin-bottom: 0;
+}
+
+.timeline-heading figure {
+  position: relative;
+}
+
+.timeline-footer {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+.timeline-footer > a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1020;
+  display: block;
+  visibility: visible;
+  padding: 5px;
+  font-size: 11px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.tooltip.top {
+  margin-top: -2px;
+}
+
+.tooltip.right {
+  margin-left: 2px;
+}
+
+.tooltip.bottom {
+  margin-top: 2px;
+}
+
+.tooltip.left {
+  margin-left: -2px;
+}
+
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 0;
+  margin-left: 0;
+  border-left: 0 solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 0 solid #000;
+}
+
+.tooltip.left .tooltip-arrow {
+  bottom: 0;
+  left: 0;
+  margin-left: 0;
+  border-left: 0 solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 0 solid #000;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  bottom: 0;
+  left: 0;
+  margin-left: 0;
+  border-left: 0 solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 0 solid #000;
+}
+
+.tooltip.right .tooltip-arrow {
+  bottom: 0;
+  left: 0;
+  margin-left: 0;
+  border-left: 0 solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 0 solid #000;
+}
+
+.tooltip-inner {
+  width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #313131;
+  border-radius: 0px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.timeline > li.timeline-inverted {
+  float: right;
+  clear: left;
+  /*margin-top: 30px;*/
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.timeline > li:nth-child(2) {
+  /*margin-top: 60px;*/
+}
+
+.timeline > li.timeline-inverted > .timeline-badge {
+  left: -10px;
+  top: 16px;
+}
+
+.timeline > li {
+  display: inline;
+}
+
+.timeline.invert-order.active {
+  display: block;
+}
+
+.timeline.flex-order.active {
+  display: none;
+}
+
+.timeline-heading img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 1024px) {
+  .timelinePage header {
+    margin-bottom: 51px;
+  }
+
+  .historyBlock {
+    padding-top: 25px;
+  }
+
+  .timelineWrapper {
+    margin-top: 26px;
+  }
+
+  .decade-wrapper.sticky {
+    max-width: 905px;
+  }
+  .decade-wrapper ul li {
+    height: 36px;
+  }
+  .decade-wrapper ul li a {
+    width: 100%;
+    font-size: 19px;
+    padding-top: 5px;
+  }
+  .decade-wrapper ul li:after {
+    top: 3px;
+  }
+
+  .timeline-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .timeline-body p {
+    font-size: 17px;
+    margin-bottom: 0;
+    line-height: 20px;
+  }
+  .timeline-body p.date {
+    font-size: 20px;
+  }
+  .timeline-body h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .timeline-body h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .timeline {
+    padding: 20px 0 0;
+  }
+  .timeline > li > li.timeline-inverted,
+  .timeline .timeline > li.timeline-inverted {
+    margin-bottom: 60px;
+  }
+  .timeline.invert-order.active {
+    display: block;
+  }
+  .timeline.flex-order.active {
+    display: none;
+  }
+
+  .timeline > li > .timeline-badge a::after {
+    width: 65px;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .timeline > li.timeline-inverted > .timeline-badge {
+    left: -7px;
+  }
+  .timeline > li > .timeline-badge {
+    width: 15px;
+    height: 15px;
+    right: -7px;
+  }
+  .timeline > li > .timeline-badge a::after {
+    width: 19px;
+    top: 6px;
+  }
+
+  .decade-wrapper.sticky {
+    max-width: 727px;
+  }
+  .decade-wrapper ul li {
+    height: 35px;
+    border-left: 1px solid transparent;
+  }
+  .decade-wrapper ul li a {
+    width: 100%;
+    font-size: 17px;
+    padding-top: 7px;
+  }
+  .decade-wrapper ul li::after {
+    top: 2px;
+  }
+
+  .timeline-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .timeline-body p.date {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .timeline-body h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .timeline-body h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .timeline-body .contentBlock {
+    font-size: 16px;
+  }
+
+  .timeline {
+    padding: 10px 0 0;
+  }
+  .timeline.invert-order.active {
+    display: block;
+  }
+  .timeline.flex-order.active {
+    display: block;
+  }
+  .timeline::before {
+    /*left: -22px;
+    top: 0;
+    height: calc(100% + 214px);*/
+  }
+  .timeline li {
+    margin-bottom: 30px;
+    position: relative;
+    float: left;
+    clear: right;
+  }
+  .timeline li .timeline-panel {
+    float: left;
+    margin-left: 2px;
+    width: 93%;
+  }
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+  .timeline li.timeline-inverted {
+    	/*float: right;
+      clear: right;*/
+    margin-bottom: 30px;
+  }
+  .timeline li.timeline-inverted .timeline-panel {
+    float: left;
+    margin-left: 20px;
+  }
+  .timeline li .timeline-badge {
+    /*left: -31px;
+    margin-left: 0;
+    top: 16px;*/
+  }
+
+  .timeline-body {
+    padding: 11px 12px 9px;
+  }
+  .timeline-body p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .timelinePage header {
+    margin-bottom: 33px;
+  }
+
+  .decade-wrapper.sticky {
+    top: 70px !important;
+  }
+  .decade-wrapper.sticky .timelineselectNav {
+    margin-right: 0;
+  }
+  .decade-wrapper ul {
+    display: none;
+  }
+  .decade-wrapper .timelineselectNav {
+    display: block;
+    background: #1b3d6e;
+    border: 0px;
+    border-radius: 0px;
+    width: -webkit-calc(100% - 15px);
+    width: calc(100% - 15px);
+    max-width: 200px;
+    padding: 5px 0 8px;
+    margin-left: -webkit-calc(100% - 190px);
+    margin-left: calc(100% - 190px);
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+  .decade-wrapper .timelineselectNav .ui-selectmenu-text {
+    display: block;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    padding-right: 25px;
+  }
+
+  .timelineWrapper {
+    margin-top: 0;
+  }
+  .timelineWrapper .ui-selectmenu-menu {
+    z-index: 2000;
+  }
+  .timelineWrapper .ui-selectmenu-button.ui-button {
+    display: block;
+  }
+  .timelineWrapper .ui-selectmenu-menu.sticky {
+    position: fixed;
+    top: 65px !important;
+  }
+  .timelineWrapper .ui-widget.ui-widget-content {
+    background: #aaa;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .timelineWrapper .ui-widget.ui-widget-content .ui-menu-item {
+    background: #819199;
+    border-top: 1px solid #fff;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+  .timelineWrapper .ui-widget.ui-widget-content .ui-menu-item .ui-menu-item-wrapper {
+    padding: 3px 1em 6px 15px;
+  }
+  .timelineWrapper .ui-widget.ui-widget-content .ui-menu-item:hover {
+    color: #8f8937;
+    background: #fff;
+  }
+  .timelineWrapper .ui-widget.ui-widget-content .ui-menu-item .ui-state-active {
+    color: #819199;
+    background: #fff;
+    border: 0px;
+    border-radius: 0px;
+  }
+  .timelineWrapper .ui-selectmenu-button-closed .ui-selectmenu-icon,
+  .timelineWrapper .ui-state-hover .ui-icon,
+  .timelineWrapper .ui-state-focus .ui-icon,
+  .timelineWrapper .ui-button:hover .ui-icon,
+  .timelineWrapper .ui-button:focus .ui-icon {
+    background-image: url("../images/history/formdropdown_arrow.png") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% !important;
+    width: 18px;
+    height: 9px;
+    margin-top: 2px;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+  }
+  .timelineWrapper .ui-selectmenu-button-open .ui-selectmenu-icon {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .decade-wrapper {
+    top: 0px;
+    padding: 15px 0px;
+  }
+  .decade-wrapper ul {
+    display: none;
+  }
+  .decade-wrapper ul li {
+    height: 35px;
+  }
+  .decade-wrapper ul li a {
+    width: 98.1%;
+    font-size: 14px;
+    padding-top: 8px;
+  }
+
+  .timeline-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 15px;
+  }
+
+  .timeline-body > p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .timeline-heading {
+    margin-bottom: 11px;
+  }
+
+  .timeline-body h2 {
+    margin-top: 0px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .timeline-body h2.bold {
+    font-size: 16px;
+  }
+  .timeline-body h3 {
+    margin-bottom: 6px;
+  }
+
+  .timeline {
+    padding: 0 0 13px 0;
+  }
+  .timeline::before {
+    left: auto;
+    top: -30px;
+    right: 10px;
+    height: -webkit-calc(100% + 70px);
+    height: calc(100% + 70px);
+  }
+  .timeline > li {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    float: left;
+    clear: left;
+  }
+  .timeline > li > .timeline-panel {
+    float: left;
+    margin-left: 0px;
+  }
+  .timeline > li > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+  .timeline > li > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+  .timeline > li.timeline-inverted {
+    float: left;
+    clear: left;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+  .timeline > li.timeline-inverted > .timeline-badge {
+    left: auto;
+    right: 4px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    float: left;
+    margin-left: 0px;
+  }
+  .timeline > li .timeline-panel {
+    width: 90%;
+    padding: 5px;
+  }
+  .timeline > li > .timeline-badge {
+    margin-left: 0;
+    top: 16px;
+    left: auto;
+    right: 4px;
+  }
+
+  .timeline > li {
+    margin-bottom: 30px;
+  }
+  .timeline > li.timeline-inverted {
+    margin-bottom: 30px;
+    clear: right;
+  }
+  .timeline > li.timeline-inverted > .timeline-badge {
+    left: auto;
+    right: 4px;
+  }
+  .timeline > li .timeline-badge {
+    width: 15px;
+    height: 15px;
+  }
+  .timeline > li .timeline-badge a:after {
+    display: none;
+  }
+  .timeline > li .timeline-badge i {
+    width: 15px;
+    height: 15px;
+  }
+  .timeline.invert-order.active {
+    display: block;
+  }
+  .timeline.flex-order.active {
+    display: block;
+  }
+
+  .timeline-heading img {
+    width: 100%;
+  }
+
+  .timeline-body h2 {
+    margin-top: 0;
+  }
+  .timeline-body p.date {
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding: 0;
+  }
+  .timeline-body .contentBlock p {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  #timeline_dropdown-button {
+    outline: none;
+  }
+
+  .mtimelineLst {
+    margin-top: 1px;
+  }
+  .mtimelineLst.sticky {
+    top: 66px !important;
+  }
+  .mtimelineLst.ui-selectmenu-open.sticky {
+    top: 51px !important;
+    margin-left: 1px;
+  }
+  .mtimelineLst .timeline_dropdown {
+    max-height: 350px;
+    padding-bottom: 0;
+    margin-top: 0;
+    border: none;
+  }
+  .mtimelineLst .timeline_dropdown li {
+    text-align: center;
+  }
+  .mtimelineLst .timeline_dropdown li div {
+    background: #aaa;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFF;
+    padding: 13px 14px;
+    border-bottom: 1px solid #FFF;
+  }
+  .mtimelineLst .timeline_dropdown li div.ui-state-active {
+    background: #1268e5;
+    border-top: 1px solid #FFF;
+  }
+
+  .decade-wrapper.sticky {
+    top: 108px !important;
+  }
+
+  .mtimelineLst.ui-selectmenu-open.sticky {
+    top: 122px !important;
+  }
+
+  .timeline::before {
+    height: -webkit-calc(100% + 30px);
+    height: calc(100% + 30px);
+  }
+}
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+/*@keyframes swing {
+  20% {transform: rotate3d(0,0,1,15deg);}
+  40% {transform: rotate3d(0,0,1,-10deg);}
+  60% {transform: rotate3d(0,0,1,5deg);}
+  80% {transform: rotate3d(0,0,1,-5deg);}
+  to {transform: rotate3d(0,0,1,0deg);}
+}
+.swing {
+  transform-origin: top center;
+  animation-name: swing
+}*/
+@-webkit-keyframes swing {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes swing {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.swing {
+  -webkit-animation-name: swing;
+          animation-name: swing;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: .7;
+  }
+  60% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: .7;
+  }
+  60% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
 }
