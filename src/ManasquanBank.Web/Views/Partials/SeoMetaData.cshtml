@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Epiphany.SeoMetadata
+@{
+        SeoMetadata seoMetaData = null;
+
+        if (Model.Content.HasProperty("seoMetaData"))
+        {
+            seoMetaData = Model.Content.GetPropertyValue<SeoMetadata>("seoMetaData");
+        }
+
+        string Path = HttpContext.Current.Request.Url.AbsolutePath;
+        string host = HttpContext.Current.Request.Url.Host;
+
+        var metaTitle = Model.Content.Name;
+        var metaDescription = string.Empty;
+        
+        @* use the new seo meta values if they exist*@
+        if (seoMetaData != null)
+        {
+            if (!string.IsNullOrEmpty(seoMetaData.Title))
+            {
+                metaTitle = seoMetaData.Title;
+            }
+
+            if (!string.IsNullOrEmpty(seoMetaData.Description))
+            {
+                metaDescription = seoMetaData.Description;
+            }
+        }
+
+        @* special case for insight, event and press release *@
+        //if (Model.Content.DocumentTypeAlias == "insight" || Model.Content.DocumentTypeAlias == "pressRelease")
+        //{
+        //    if (Model.Content.HasValue("title"))
+        //    {
+        //        metaTitle = Model.Content.GetPropertyValue<string>("title");
+        //    }
+
+        //    if (Model.Content.HasProperty("teaserText") && Model.Content.HasValue("teaserText"))
+        //    {
+        //        metaDescription = Model.Content.GetPropertyValue<string>("teaserText");
+        //    }
+        //}
+
+    if(Path != "/")
+    {
+		  <title>@metaTitle | NJ Banks for Personal and Business Needs</title>
+		}
+        else
+        {
+		  <title>@metaTitle</title>
+		}		
+        <meta name="title" content="@metaTitle" />
+        <meta name="description" content="@metaDescription" />
+
+        if (seoMetaData != null)
+        {
+            if (seoMetaData.NoIndex)
+            {
+                <meta name="robots" content="noindex">
+            }
+        }
+}
