@@ -70,6 +70,10 @@
     <Reference Include="controls, Version=1.0.6820.12887, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.2\lib\net45\controls.dll</HintPath>
     </Reference>
+    <Reference Include="Epiphany.SeoMetadata, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Epiphany.SeoMetadata.0.4.0\lib\net40\Epiphany.SeoMetadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Examine, Version=0.1.89.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.0.1.89\lib\net45\Examine.dll</HintPath>
     </Reference>
@@ -305,6 +309,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Epiphany.SeoMetadata\css\epiphany.seo.metadata.css" />
+    <Content Include="App_Plugins\Epiphany.SeoMetadata\js\epiphany.seo.metadata.js" />
+    <Content Include="App_Plugins\Epiphany.SeoMetadata\views\epiphany.seo.metadata.html" />
+    <Content Include="App_Plugins\Epiphany.SeoMetadata\views\serp1.png" />
+    <Content Include="App_Plugins\Epiphany.SeoMetadata\views\serp2.png" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -586,6 +595,7 @@
     <Content Include="fonts\archivonarrowSemibold.ttf" />
     <Content Include="fonts\archivonarrowSemibold.woff" />
     <Content Include="fonts\archivonarrowSemibold.woff2" />
+    <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\ContactUsPage.cshtml" />
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
@@ -605,6 +615,7 @@
     <Content Include="Views\GeneralContentPage.cshtml" />
     <Content Include="Views\MediaCenterLandingPage.cshtml" />
     <Content Include="Views\PersonalLendingPage.cshtml" />
+    <Content Include="Views\Partials\SeoMetaData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
