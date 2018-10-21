@@ -22,7 +22,7 @@
     var facebook = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebook");
     var youtube = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtube");
     var twitter = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitter");
-    var thankYouMessageJoin = Model.Content.AncestorOrSelf(1).GetProperty("newsLetterThankYouMessage").HasValue ? Model.Content.GetProperty("newsLetterThankYouMessage").Value : "";
+    var thankYouMessageJoin = Model.Content.AncestorOrSelf(1).GetProperty("newsLetterThankYouMessage").HasValue ? Model.Content.AncestorOrSelf(1).GetProperty("newsLetterThankYouMessage").Value : "";
 
     var newsLetterAdminEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterAdminEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterAdminEmail") : 0;
     var newsLetterConfirmationEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterConfirmationEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterConfirmationEmail") : 0;
@@ -56,7 +56,7 @@
                 else
                 {
                     <div id="joinSuccess">
-                        @ViewBag.JoinSuccessMessage;
+                        @ViewBag.JoinSuccessMessage
                     </div>
                 }
 
