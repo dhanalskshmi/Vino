@@ -616,6 +616,7 @@
     <Content Include="Views\MediaCenterLandingPage.cshtml" />
     <Content Include="Views\PersonalLendingPage.cshtml" />
     <Content Include="Views\Partials\SeoMetaData.cshtml" />
+    <Content Include="Views\ExecutiveBioDetailPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
