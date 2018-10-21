@@ -147,6 +147,31 @@
                             line-height: 20px;
                         }
                     }
+                    &.profExec{
+                        h5{
+                            margin-bottom: 5px;
+                        }
+                        .cmpTitle{
+                            margin-bottom: 5px;
+                        }
+                        .bioQuote{
+                            min-height: 256px;
+                            font-style: italic;
+                            line-height: initial;
+                            text-transform: initial;
+                            font-size: 24px;
+                            display: flex;
+                            align-items: center;
+                            @include bp(tablet){
+                                min-height: 212px;
+                                font-size: 20px;
+                            }
+                            @include bp(mobile){
+                                min-height: initial;
+                                font-size: 16px;
+                            }
+                        }
+                    }
                 }
             }
             .bioContent {
