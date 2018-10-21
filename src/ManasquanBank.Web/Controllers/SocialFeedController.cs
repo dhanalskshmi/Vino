@@ -25,29 +25,29 @@ namespace ManasquanBank.Web.Controllers
 
     public class SocialFeedController : Umbraco.Web.WebApi.UmbracoApiController
     {
-        public dynamic GetInstagramTimeline()
-        {
+        //public dynamic GetInstagramTimeline()
+        //{
 
-            // Initialize and configure the OAuth client
-            InstagramOAuthClient client = new InstagramOAuthClient
-            {
-                ClientId = "69f652275bc240df890a4a5214e1c2a9",
-                ClientSecret = "03518cfaa2274e37bb2a36b857b6c748",
-                RedirectUri = "http://manasquan.activitystaging.com"
-            };
+        //    // Initialize and configure the OAuth client
+        //    InstagramOAuthClient client = new InstagramOAuthClient
+        //    {
+        //        ClientId = "69f652275bc240df890a4a5214e1c2a9",
+        //        ClientSecret = "03518cfaa2274e37bb2a36b857b6c748",
+        //        RedirectUri = "http://manasquan.activitystaging.com"
+        //    };
 
-            string state = Guid.NewGuid().ToString();
-            string url = client.GetAuthorizationUrl(state);
-            InstagramService service = InstagramService.CreateFromOAuthClient(new InstagramOAuthClient
-            {
-                AccessToken = "1313031959.87552ec.4189d55d32af42baa34f329cb2c1e108",
-            });
+        //    string state = Guid.NewGuid().ToString();
+        //    string url = client.GetAuthorizationUrl(state);
+        //    InstagramService service = InstagramService.CreateFromOAuthClient(new InstagramOAuthClient
+        //    {
+        //        AccessToken = "1313031959.87552ec.4189d55d32af42baa34f329cb2c1e108",
+        //    });
             
-            InstagramUserResponse self = service.Users.GetSelf();
-            InstagramRecentMediaResponse recent = service.Users.GetRecentMedia(self.Body.Data.Id);
-            return recent;
+        //    InstagramUserResponse self = service.Users.GetSelf();
+        //    InstagramRecentMediaResponse recent = service.Users.GetRecentMedia(self.Body.Data.Id);
+        //    return recent;
 
-        }
+        //}
         public dynamic GetTwitterTimeline()
         {
             const string CacheKey = "TwitterTimeline";
