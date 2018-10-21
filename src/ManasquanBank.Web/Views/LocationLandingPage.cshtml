@@ -121,23 +121,27 @@
         <div class="locationDetail">
             @if (image != null)
             {
+                <a href="@loc.Url">
                 <img src="@image.Url" alt="@image.Name" />
-            }
-            @if (!string.IsNullOrEmpty(locationtitle))
-            {
-                <h3>@locationtitle</h3>
-            }
-            @if (!string.IsNullOrEmpty(address))
-            {
-                @Html.Raw(address)
-            }
-            @if (!string.IsNullOrEmpty(phone))
-            {
-                <p>@phone</p>
-            }
-            <span class="directionLink"><a href="http://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
-            <a class="viewButtonLink" href="@loc.Url">View Detail</a>
-        </div>
+                </a>
+                }
+                @if (!string.IsNullOrEmpty(locationtitle))
+                {
+                    <a href="@loc.Url">
+                    <h3>@locationtitle</h3>
+                    </a>
+                }
+                @if (!string.IsNullOrEmpty(address))
+                {
+                    @Html.Raw(address)
+                }
+                @if (!string.IsNullOrEmpty(phone))
+                {
+                    <p>@phone</p>
+                }
+                <span class="directionLink"><a href="http://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText">Get Directions <img src="images/location/directionArrow.png" alt="directionArrow" /></a></span>
+                <a class="viewButtonLink" href="@loc.Url">View Detail</a>
+</div>
         if (i % 3 == 2)
         {
             sectionStr = "";
