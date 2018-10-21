@@ -1,6 +1,9 @@
 //variables
 $img: '../images/home';
-
+$mbannerhgt: 422px;
+$tpbannerhgt: 432px;
+$tlbannerhgt: 576px;
+$dbannerhgt: 965px;
 #wrapper_bgndVideo {
   min-height: 719px;
   //background-image: url('images/banner/banner_bg.jpg');
@@ -8,16 +11,21 @@ $img: '../images/home';
 }
 
 .bannerWrapper {
-  min-height: 422px;
+  min-height: $mbannerhgt;
+  .inline-YTPlayer {
+    max-width: 100% !important;
+    max-height: $mbannerhgt;
+  }
   .bannerWrap {
     &.player {
+      min-height: $mbannerhgt;
       z-index: 0;
     }
   }
   .bannerImage {
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 422px;
+    min-height: $mbannerhgt;
     position: absolute;
     top: 0;
     left: 0;
@@ -977,12 +985,16 @@ $img: '../images/home';
   }
 
   .bannerWrapper {
-    min-height: 432px;
+    min-height: $tpbannerhgt;
+    &.player {
+      min-height: $tpbannerhgt;
+      max-height: $tpbannerhgt;
+    }
     .loginBlocks {
 
     }
     .bannerImage {
-      min-height: 432px;
+      min-height: $tpbannerhgt;
     }
     .bannerContent {
       padding-top: 154px;
@@ -1554,12 +1566,16 @@ $img: '../images/home';
   // Banner
 
   #wrapper_bgndVideo {
-    min-height: 576px;
+    min-height: $tlbannerhgt;
   }
   .bannerWrapper {
-    min-height: 576px;
+    min-height: $tlbannerhgt;
+    &.player {
+      min-height: $tlbannerhgt;
+      max-height: $tlbannerhgt;
+    }
     .bannerImage {
-      min-height: 576px;
+      min-height: $tlbannerhgt;
     }
     .bannerContent {
       padding-top: 195px;
@@ -2003,15 +2019,20 @@ $img: '../images/home';
   }
 
   #wrapper_bgndVideo {
-    min-height: 965px;
+    min-height: $dbannerhgt;
   }
   #controlBar_bgndVideo {
     display: none !important;
   }
   .bannerWrapper {
-    min-height: 965px;
+    min-height: $dbannerhgt;
+    &.player {
+      min-height: $dbannerhgt;
+      max-height: $dbannerhgt;
+      z-index: 0;
+    }
     .bannerImage {
-      min-height: 965px;
+      min-height: $dbannerhgt;
     }
     .bannerContent {
       padding-top: 288px;
