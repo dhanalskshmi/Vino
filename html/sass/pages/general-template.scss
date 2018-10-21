@@ -1,34 +1,185 @@
-.generalBanner {
-	@extend .general-template;
-	.bgWrap {
-		.tableSection {
-			+ul {
-				&.normalList {
-					margin-top:-39px;
+.heroBlock {
+	
+	&+.general-template {
+		margin-top:50px;
+	}
+	p {
+		&+.lrImg {
+			margin-top: -15px;
+			@include bp(tablandscape) {
+				margin-top: 48px;
+			}
+			@include bp(tabportrait) {
+				margin-top: 28px;
+			}
+			@include bp(mobile) {
+				margin-top: 19px;
+			}
+		}
+		&+ul {
+			&.dotlist {
+				margin-top: 75px;
+				@include bp(tablandscape) {
+					margin-top: 39px;
 				}
-				&.dotlist {
-					margin-top:-39px;
+				@include bp(tabportrait) {
+					margin-top: 25px;
 				}
-				&.arrowList {
-					margin-top:-39px;
+				@include bp(mobile) {
+					margin-top: 16px;
 				}
 			}
 		}
-		ul {
-
+	}
+	.lrImg {
+		display:flex;
+		width:100%;
+		@include bp(tabportrait) {
+			display:table;
+		}
+		@include bp(mobile) {
+			display:table;
+		}
+		.imgSec1 {
+			width:46.783%;
+			float:left;
+			margin-right:6.259%;
+			@include bp(tablandscape) {
+				width: 48.163%;
+				margin-right: 3.674%;
+			}
+			@include bp(tabportrait) {
+				width:100%;
+				margin-right:0%;
+				margin-bottom:20px;
+			}
+			@include bp(mobile) {
+				width:100%;
+				margin-right:0%;
+				margin-bottom:20px;
+			}
+			img {
+				@include bp(tabportrait) {
+					width:100%;
+				}
+				@include bp(mobile) {
+					width:100%;
+				}
+			}
+		}
+		.imgSec2 {
+			width:46.958%;
+			float:left;
+			@include bp(tablandscape) {
+				width: 48.163%;
+			}
+			@include bp(tabportrait) {
+				width:100%;
+			}
+			@include bp(mobile) {
+				width:100%;
+			}
+			img {
+				@include bp(tabportrait) {
+					width:100%;
+				}
+				@include bp(mobile) {
+					width:100%;
+				}
+			}
+		}
+		&+p {
+			margin-top: 51px;
+			@include bp(tablandscape) {
+				margin-top: 41px;
+			}
+			@include bp(tabportrait) {
+				margin-top: 22px;
+			}
+			@include bp(mobile) {
+				margin-top: 20px;
+			}
 		}
 	}
-}
-.generalBanner + .general-template {
-	margin-top:50px;
-	@extend .general-template;
+	ul {
+
+    	&.dotlist {
+    		font-size:20px;
+			color: #3d3d3d;
+			position:relative;
+			@include bp(tabportriat) {
+				font-size:18px;
+			}
+			@include bp(mobile) {
+				font-size:18px;
+			}
+    		li {
+    			padding-left: 10px;
+    			&::before {
+    				content: "";
+				    position: absolute;
+				    width: 5px;
+				    height: 5px;
+				    background: #3d3d3d;
+				    border-radius: 8px;
+				    margin-top: 10px;
+				    left: 0;
+				    @include bp(tabportrait) {
+				    	margin-top: 7px;
+				    }
+    			}
+    			ul {
+    				margin-top:0px;
+    				li {
+    					&:before {
+    						content: "";
+						    position: absolute;
+						    width: 5px;
+						    height: 1px;
+						    background: #3d3d3d;
+						    margin-top: 12px;
+						    left: 0;
+    					}
+    				}
+    			}
+    		}
+    		&+.tableSection {
+			    margin-top: 95px;
+			    @include bp(tablandscape) {
+			    	margin-top: 32px;
+			    }
+			    @include bp(tabportrait) {
+			    	margin-top: 15px;
+			    }
+			    @include bp(mobile) {
+			    	margin-top: 16px;
+			    }
+			}
+    	}
+	}
 }
 
 .general-template {
 	h1 {
 		text-transform:uppercase;
-		color: #666666;
+		color: #1268e5;
 		font-size:52px;
+		@include bp(tablandscape) {
+			font-size:48px;
+		}
+		@include bp(tabportrait) {
+			font-size:36px;
+		}
+		@include bp(mobile) {
+			font-size:36px;
+		}
+		&+h2 , &+h2 , &+h3 , &+h4 , &+h5{
+			margin-top: 25px;
+			@include bp(tablandscape) {
+				margin-top: 20px;
+			}
+		}
+
 		&+p {
 			margin-top:14px;
 		}
@@ -37,34 +188,104 @@
 		font-size: 48px;
 	    line-height: 40px;
 	    text-transform: uppercase;
-	    color: #666;
+	    color: #1268e5;
+	    @include bp(tablandscape) {
+			font-size:36px;
+		}
+		@include bp(tabportrait) {
+			font-size:24px;
+		}
+		@include bp(mobile) {
+			font-size:32px;
+		}
+	    &+h3 {
+	    	margin-top:24px;
+	    	@include bp(tablandscape) {
+				margin-top: 17px;
+			}
+	    }
+	    &+h4 {
+	    	margin-top:25px;
+	    	@include bp(tablandscape) {
+				margin-top: 18px;
+			}
+	    }
+	    &+h5 {
+	    	margin-top:23px;
+	    	@include bp(tablandscape) {
+				margin-top: 20px;
+			}
+	    }
 	    &+ul {
 	    	margin-top: 6px;
 	    }
 	    &+p {
 	    	margin-top: 13px;
+	    	@include bp(tabportrait) {
+	    		margin-top: 8px;
+	    	}
 	    }
 	}
 	h3 {
 		font-size: 36px;
 		text-transform:uppercase;
 		color: #666666;
+		@include bp(tablandscape) {
+			font-size:24px;
+		}
+		@include bp(tabportrait) {
+			font-size:22px;
+		}
+		@include bp(mobile) {
+			font-size:22px;
+		}
+		&+h4 {
+			margin-top: 20px;
+			@include bp(tablandscape) {
+				margin-top: 15px;
+			}
+		}
+		&+h5 {
+			margin-top: 18px;
+		}
 		&+p {
 			margin-top: 13px;
 		}
 	}
 	h4 {
-		font-size: 23px;
+		font-size: 16px;
 		text-transform:uppercase;
 		color: #666666;
+		@include bp(tablandscape) {
+			font-size:18px;
+		}
+		@include bp(tabportrait) {
+			font-size:18px;
+		}
+		@include bp(mobile) {
+			font-size:18px;
+		}
+		&+h5 {
+			margin-top:8px;
+		}
 		&+p {
 			margin-top: 3px;
 		}
+
 	}
 	h5 {
 		font-size: 20px;
 		text-transform:uppercase;
 		color: #666666;
+		@include bp(tablandscape) {
+			font-size: 16px;
+		}
+		@include bp(tabportrait) {
+			font-size: 16px;
+		}
+		@include bp(mobile) {
+			font-size: 16px;
+		}
 	}
 	p {
 		&+h2 {
@@ -85,6 +306,13 @@
 		margin-top: 19px;
     	margin-bottom: 30px;
     	position:relative;
+    	@include bp(tabportrait) {
+    		font-size:16px;
+    	}
+    	@include bp(mobile) {
+    		font-size:16px;
+    		padding-right:10px;
+    	}
     	&.dotlist {
     		li {
     			padding-left: 10px;
@@ -114,7 +342,7 @@
     			}
     		}
     	}
-    	&.arrowList {
+    	/*&.arrowList {
     		li {
     			padding-left:15px;
     			&:before {
@@ -145,15 +373,21 @@
     				}
     			}
     		}
-    	}
+    	} */
     	&+ul {
     		margin-top: -14px;
     	}
     	&+h2{
     		margin-top: -3px;
+    		@include bp(tabportrait) {
+    			margin-top: -11px;
+    		}
     	}
     	&+h3{
     		margin-top: -3px;
+    		@include bp(tabportrait) {
+    			margin-top: -4px;
+    		}
     	}
     	&+h4{
     		margin-top: -3px;
