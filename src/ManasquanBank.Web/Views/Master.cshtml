@@ -1,9 +1,10 @@
-﻿
+﻿@using RJP.MultiUrlPicker.Models;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
-	var favicon = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("favicon");
+    Layout = null;
+    var favicon = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("favicon");
     var logo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("siteLogo");
+    var openAccountLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("openAnAccount");
 }
 
 <!DOCTYPE html>
@@ -20,6 +21,28 @@
   @RenderSection("InnerTopStyle", false)
 </head>
 <body style="display: none">
+    <div class="openAccount">
+        @if (openAccountLink != null)
+        {
+            if (openAccountLink.Target == "_blank")
+            {
+                <a href="@openAccountLink.Url" target="_blank">
+                    <span>
+                        Open an Account
+                    </span>
+                </a>
+            }
+            else
+            {
+                <a href="@openAccountLink.Url">
+                    <span>
+                        Open an Account
+                    </span>
+                </a>
+            }
+        }
+          
+        </div>
     <div class="loaderBlock">
       <div class="loaderWrap">
         <img src="@logo.Url" alt="Manasquan Bank Loader">
