@@ -1,0 +1,122 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var bgImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var profileImage = Model.Content.GetPropertyValue<IPublishedContent>("ProfileImage");
+    var name = Model.Content.GetPropertyValue<string>("employeeName");
+    var employeeTitle = Model.Content.GetPropertyValue<string>("employeeTitle");
+    var license = Model.Content.GetPropertyValue<string>("license");
+    var quote = Model.Content.GetPropertyValue<string>("quote");
+    //var address2 = Model.Content.GetPropertyValue<string>("address2");
+    //var officeNumber = Model.Content.GetPropertyValue<string>("officeNumber");
+    //var phoneNumber = Model.Content.GetPropertyValue<string>("phoneNumber");
+    var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
+    var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
+
+    var backUrl = Model.Content.AncestorOrSelf(2);
+
+}
+<div class="bioPage">
+    <section class="heroBanner">
+        @if (bgImage != null)
+        {
+            <figure class="bannerImage" style="background-image: url(@bgImage.Url)"></figure>
+        }
+
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <div class="bioFlex">
+                    @if (profileImage != null)
+                    {
+                        <figure class="bioFlexImg" style="background-image: url(@profileImage.Url)"></figure>
+                    }
+                    <div class="bioFlexContent profExec">
+                        @if (!string.IsNullOrEmpty(name))
+                        {
+                            <h5>@name</h5>
+                        }
+                        @if (!string.IsNullOrEmpty(employeeTitle))
+                        {
+                            <p class="cmpTitle">@employeeTitle</p>
+                        }
+                        @if (!string.IsNullOrEmpty(license))
+                        {
+                            <p class="cmpAddr1">@license</p>
+                        }
+
+                        @if (!string.IsNullOrEmpty(quote))
+                        {
+                                 quote = quote.Replace("<p>", "").Replace("</p>", "");
+                            <p class="bioQuote">@Html.Raw(quote)</p>
+
+                        }
+                        @if (Model.Content.HasValue("cTAButton"))
+                        {
+                            foreach (var item in cTAButton)
+                            {
+                                var cTAtitle = item.GetPropertyValue<string>("title");
+                                var link = item.GetPropertyValue<Link>("link");
+                                if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a class="btnManasq" href="@link.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                <span>Contact Me</span>
+                                            }
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btnManasq" href="@link.Url">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                <span>Contact Me</span>
+                                            }
+                                        </a>
+                                    }
+                                }
+                                else
+                                {
+                                    <a class="btnManasq" href="">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            <span>Contact Me</span>
+                                        }
+                                    </a>
+
+                                }
+
+
+                            }
+                        }
+
+                    </div>
+                </div>
+                <div class="bioContent">
+                    @if (!string.IsNullOrEmpty(bodyText))
+                    {
+                        @Html.Raw(bodyText)
+                    }
+
+                    @if (backUrl != null)
+                    {
+                        <p><a href="@backUrl.Url" class="back-btn"><img src="/images/bio/back_arrow.png" alt=""> Back</a></p>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
