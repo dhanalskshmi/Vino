@@ -108,12 +108,11 @@ namespace ManasquanBank.Web.Controllers
                 return String.Format("<a href=\"https://twitter.com/hashtag/{0}?src=hash\" target=\"_blank\">#{0}</a>", hashTag);
             });
         }
-
-        public HttpResponseMessage GetFacebookFeed()
+        public dynamic GetFacebookFeed_next()
         {
             const string CacheKey = "FacebookPosts";
-            long appId = 1573737752916643;
-            string appSecret = "ea6f8e2972b969454803f632e723a2f5";
+            long appId = 515374455584877;
+            string appSecret = "ec3d1aae876762fd3ec6f50b78017ba0";
 
             // Initialize the OAuth client (no calls are made at this point)
             FacebookOAuthClient client = new FacebookOAuthClient(appId, appSecret);
@@ -128,91 +127,24 @@ namespace ManasquanBank.Web.Controllers
             service.Client.Version = "v2.3";
 
             // Declare the options for the call to the API
-            var postsOptions = new FacebookGetPostsOptions("providentbank")
+            var postsOptions = new FacebookGetPostsOptions("ManasquanBank")
             {
-                Fields = "id,message,picture,link,name,description,type,icon,created_time,from,object_id,likes,comments"
+                Fields = "id,message,full_picture,link,name,description,type,icon,created_time,from,object_id,likes,comments",
+                Limit = 4
             };
 
             // retrieve the posts and cache for 1 hour
             var posts = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Posts.GetPosts(postsOptions), new TimeSpan(1, 0, 0)) as FacebookPostsResponse;
 
-            var pageOptions = new FacebookGetPageOptions("providentbank") { Fields = "id,link,name" };
-            var page = service.Pages.GetPage(pageOptions);
-
-            var socialStreamFacebook = new SocialStreamFacebook();
-            socialStreamFacebook.ResponseData = new SocialStreamFaceBookData();
-            socialStreamFacebook.ResponseData.Feed = new SocialStreamFacebookFeed();
-            socialStreamFacebook.ResponseData.Feed.Link = string.Empty;
-            socialStreamFacebook.ResponseData.Feed.Entries = new List<SocialStreamFacebookEntry>();
-
-           foreach (var post in posts.Body.Data)
-           {
-               if (post.Type == "status" && !string.IsNullOrEmpty(post.Story))
-               {
-                   continue;
-               }
-
-               var message = string.Empty;
-               if (!string.IsNullOrEmpty(post.Message))
-               {
-                   message = post.Message.Replace("\n", "<br>");
-               } 
-               else if (!string.IsNullOrEmpty(post.Story))
-               {
-                   message = post.Story;
-               }
-
-               if (!string.IsNullOrEmpty(post.Description))
-               {
-                   message = string.Format("{0} {1}", post.Message, post.Description);
-               }
-
-               var image = post.Picture;
-               var objectId = post.ObjectId;
-
-               if (image != null)
-               {
-                   if (string.IsNullOrEmpty(objectId) && post.Type != "video")
-                   {
-                       var picId = image.Split('_');
-
-                       if (!string.IsNullOrEmpty(picId[1]))
-                       {
-                           objectId = picId[1];
-                       }
-                   }
-               }
-
-               if (!string.IsNullOrEmpty(objectId))
-               {
-                  int n;
-
-                  // check objectId is numeric
-                  if (!image.Contains("safe_image.php") && int.TryParse(objectId, out n)) 
-                  {
-                      image = string.Format("https://graph.facebook.com/{0}/picture?type=normal", objectId);
-                  }
-               }
-
-               var entry = new SocialStreamFacebookEntry
-                               {
-                                   PageName = page.Body.Name,
-                                   PageLink = page.Body.Link,
-                                   Link = post.Link,
-                                   Content = message,
-                                   Thumb = image,
-                                   PublishedDate = post.CreatedTime.ToString("F")
-                               };
-
-               socialStreamFacebook.ResponseData.Feed.Entries.Add(entry);
-           }
-
-           var json = JsonConvert.SerializeObject(socialStreamFacebook, Formatting.None, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-
-            return new HttpResponseMessage()
+            var responseContent = string.Empty;
+            if (posts != null)
             {
-                Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
-            };
+                responseContent = posts.Body.ToJson();
+            }
+
+            // When using the ToJson() as the response directly the quotes were escaped in the string and it caused a js error. Using HttpResponseMessage was the solution.
+            return responseContent;
+
         }
     }
 }
