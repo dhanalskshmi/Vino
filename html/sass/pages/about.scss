@@ -814,17 +814,26 @@
         }
     }
 }
-.joinEmail form .grecaptcha-badge{
-    margin-right: 0;
-}
-.joinEmail form .grecaptcha-badge{
-    z-index: 10;
-    display: none;
+.joinEmail{
+    form {
+        .grecaptcha-badge{
+            margin-right: 0;
+            z-index: 10;
+            display: none;
+        }
+    } 
 }
 .contactUs + .joinEmail .captchaBlock{
 	visibility:hidden;position:absolute
 }
 
-#joinSuccess{
-    width: 100%;
+#joinEmail{
+    #joinSuccess{
+        width: 100%;
+    }
+    form {
+        #joinSuccess{
+            width: 100%;
+        }
+    }
 }
