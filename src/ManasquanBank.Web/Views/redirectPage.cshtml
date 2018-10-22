@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    //Response.Redirect(Model.Content.AncestorOrSelf(1).Children().First().Url);
+
+    Response.Redirect(Model.Content.Parent.Url);
+}
+
+@* the fun starts here *@
+
