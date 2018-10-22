@@ -4,14 +4,14 @@
 	}
 	.bgWrap {
 		@include bp(desktop) {
-			padding: 90px 43px 40px 51px;
+			padding: 41px 58px 9px 58px;
 		}
 		@include bp(tablandscape) {
 			padding: 45px 20px 20px 20px;
 		}
 		@include bp(tabportrait) {
 			padding:42px 20px 40px 20px;
-		}	
+		}
 		p {
 			&+.tableSection {
 				@include bp(desktop) {
@@ -268,7 +268,7 @@
 								@include bp(tabmax) {
 									display: table-caption;
 								}
-								td {									
+								td {
 									&:nth-child(2) {
 										@include bp(tabmax) {
 											display: block;
@@ -653,7 +653,7 @@
 					    }
 					    @include bp(tabportrait) {
 					    	font-size: 18px;
-					    	padding:9px 25px 4px 26px;
+					    	padding:7px 25px 6px 26px;
 					    }
 					    @include bp(mobile) {
 					    	font-size:18px;
@@ -742,11 +742,11 @@
 						padding:42px 44px 33px 43px;
 					}
 					@include bp(tablandscape) {
-						padding: 16px 28px 20px;
+						//padding: 16px 28px 20px;
 					}
 					@include bp(tabportrait) {
 						width: 61.814%;
-						padding: 16px 28px 20px;
+						//padding: 16px 28px 20px;
 					}
 					@include bp(mobile) {
 						width:100%;
@@ -774,8 +774,28 @@
 		margin-bottom: 24px;
 	}
 	@include bp(mobile) {
-		margin-top: 40px;
+		margin-top: 52px;
 		margin-bottom: 99px;
 	}
 }
 
+@media screen and (min-width: $base) {
+
+	.MacOS {
+		.categorySection {
+			.bgWrap {
+				.flexWrap {
+					.contentSection {
+						a {
+							&.learnBtn {
+								img {
+									top: -2px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
