@@ -219,7 +219,7 @@
 								margin-top: 73px;
 								@include bp(tablandscape) {
 									margin-top: -5px;
-									margin-bottom: 17px;
+									margin-bottom: 0px;
 								}
 								@include bp(tabportrait) {
 									margin-top: -4px;
