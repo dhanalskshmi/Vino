@@ -572,7 +572,7 @@ $dbannerhgt: 965px;
     }
     h4 {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 400;
       color: #FFF;
       text-transform: uppercase;
       text-align: center;
@@ -1393,7 +1393,7 @@ $dbannerhgt: 965px;
       line-height: 19px;
     }
     ul {
-      padding: 29px 49px 15px;
+      padding: 35px 49px 15px;
       display: flex;
       flex-wrap: wrap;
       align-items: top;
@@ -2359,7 +2359,7 @@ $dbannerhgt: 965px;
   // App Pannel
 
   .appPannel {
-    margin-bottom: 154px;
+    margin-bottom: 168px;
     padding-top: 0;
     padding-bottom: 0;
     .bgWraps {
@@ -2403,7 +2403,7 @@ $dbannerhgt: 965px;
       font-size: 50px;
     }
     ul {
-      padding: 89px 86px 40px;
+      padding: 76px 86px 46px;
       h4 {
         font-size: 24px;
       }
@@ -2413,8 +2413,8 @@ $dbannerhgt: 965px;
       }
     }
     .btnManasq {
-      font-size: 17px;
-      padding: 11px 44px;
+      font-size: 19px;
+      padding: 8px 38px;
       border-radius: 22px;
     }
   }
@@ -2479,7 +2479,9 @@ $dbannerhgt: 965px;
     }
     form {
       div {
-        width: 31.11%;
+        //width: 31.11%;
+        width: 416px;
+        margin-right: 13px;
         margin-bottom: 32px;
         &.groupCheckbox {
           width: 100%;
