@@ -1,6 +1,7 @@
 ﻿@using ClientDependency.Core.Mvc
 @using ManasquanBank.Web.Controllers
 @using Newtonsoft.Json.Linq
+@using Newtonsoft.Json
 @using System.Web.Script.Serialization;
 @using System.Text.RegularExpressions
 @using ContentModels = Umbraco.Web.PublishedContentModels;
@@ -14,6 +15,8 @@
     SocialFeedController t = new SocialFeedController();
     var twitterFeeds = t.GetTwitterTimeline();
     var jArray = JArray.Parse(twitterFeeds);
+    var facebookFeed = t.GetFacebookFeed_next();
+    var fbArray = JsonConvert.DeserializeObject(facebookFeed);
 }
 
 <div class="socialMedia">
@@ -108,6 +111,51 @@
         </div>
         }
         i++;
+    }
+}
+
+@if (fbArray.data.Count > 0)
+{
+    int i = 0;
+    foreach (dynamic fblist in fbArray.data)
+    {
+        var message = fblist.message;
+        var picture = fblist.full_picture;
+        var link = fblist.link;
+        var profile_url = fblist.from.id;
+
+        <div class="filtr-item" data-category="fb">
+            <div class="flexPanelWrap">
+                <div class="flexPanelHead">
+                    <div class="headLogo">
+                        <figure>
+                            <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
+</figure>
+                        <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
+                    </div>
+                    <div class="headDate">
+                        <span>2d</span>
+                    </div>
+                </div>
+                <div class="flexPanelBody">
+                    @if (picture != null)
+                    {
+                        <figure>
+                            <a href="@link" target="_blank"><img src="@picture" alt="@message"></a>
+                        </figure>
+                    }
+                    
+                    <p>@message</p>
+                </div>
+                <div class="flexPanelFoot">
+                    <div class="flexIcon">
+                        <figure>
+                            <a href="//www.facebook.com/@profile_url"> <img src="~/images/social/facebook.png" alt="Twitter"></a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 }
 <!--
