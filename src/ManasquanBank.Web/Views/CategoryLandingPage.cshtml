@@ -15,6 +15,10 @@
     var mobileWalletTitle = Model.Content.GetPropertyValue<string>("mobileWalletTitle");
     var mobiledescription = Model.Content.GetPropertyValue<string>("description");
     var categoryDetails = Model.Content.AncestorOrSelf(2).Children();
+    var appleWallet = Model.Content.GetPropertyValue<Link>("appleWallet");
+    var payWallet = Model.Content.GetPropertyValue<Link>("payWallet");
+    var androidWallet = Model.Content.GetPropertyValue<Link>("androidWallet");
+
 
 }
 <div class="catLanding">
@@ -135,7 +139,54 @@
                 }
                 
                 <figure>
-                    <img src="images/category-landing/payment.png">
+                    @if (appleWallet != null)
+                    {
+                        if (appleWallet.Target == "_blank")
+                        {
+                            <a href="@appleWallet.Url" target="_blank">
+                                <img src="/images/category-landing/apple-pay.png">
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@appleWallet.Url">
+                                <img src="/images/category-landing/apple-pay.png">
+                            </a>
+                        }
+
+                    }
+                    @if (payWallet != null)
+                    {
+                        if (payWallet.Target == "_blank")
+                        {
+                            <a href="@payWallet.Url" target="_blank">
+                                <img src="/images/category-landing/samsung-pay.png">
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@payWallet.Url">
+                                <img src="/images/category-landing/samsung-pay.png">
+                            </a>
+                        }
+
+                    }
+                    @if (androidWallet != null)
+                    {
+                        if (androidWallet.Target == "_blank")
+                        {
+                            <a href="@androidWallet.Url" target="_blank">
+                                <img src="/images/category-landing/google-pay.png">
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@androidWallet.Url">
+                                <img src="/images/category-landing/google-pay.png">
+                            </a>
+                        }
+
+                     }
                 </figure>
                 <a href="" class="btnManasq"><span>Learn More</span></a>
             </div>
