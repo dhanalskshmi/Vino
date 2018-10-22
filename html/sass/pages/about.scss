@@ -135,7 +135,18 @@
                 padding: 42px 60px 20px 60px;
             }
             @include bp(mobile) {
-                padding: 50px 10px 0 10px;
+                padding: 45px 10px 0 10px;
+            }
+        }
+        h2 {
+            @include bp(landscape) {
+                margin-bottom: 20px;
+            }
+            @include bp(tablet) {
+                margin-bottom: 18px;
+            }
+            @include bp(mobile) {
+                margin-bottom: 20px;
             }
         }
     }
@@ -149,8 +160,12 @@
     @include bp(landscape) {
         padding-top: 18px;
     }
+    @include bp(tablet){
+        padding-top: 26px;
+    }
     @include bp(mobile) {
         flex-direction: column;
+        padding-top: 7px;
     }
     li {
         a {
@@ -223,10 +238,10 @@
             }
         }
     }
-    .client-service{
-        a{
+    .client-service {
+        a {
             background: #1268e5;
-            &:hover{
+            &:hover {
                 background: #195dc1;
             }
         }
@@ -270,8 +285,7 @@
                 min-height: 450px;
                 position: relative;
                 display: flex;
-                align-items: center;
-                overflow: hidden;
+                align-items: center; // overflow: hidden;
                 @include bp(landscape) {
                     width: 40.8%;
                     min-height: 330px;
@@ -309,7 +323,7 @@
                 }
                 &:hover {
                     .contentImg {
-                        transform: scale(1.1);
+                        // transform: scale(1.1);
                     }
                 }
                 &:after {
@@ -347,7 +361,7 @@
                         display: table;
                     }
                     @include bp(tablet) {
-                        padding: 30px 26px;
+                        padding: 40px 26px 27px 26px;
                         max-width: 73%;
                     }
                     @include bp(mobile) {
@@ -393,11 +407,11 @@
                 width: 56%;
                 float: left;
                 @include bp(landscape) {
-                    padding: 20px 30px 0 30px;
+                    padding: 16px 30px 5px 30px;
                 }
                 @include bp(tablet) {
                     width: 66%;
-                    padding: 22px 30px 0 30px;
+                    padding: 22px 30px 3px 30px;
                 }
                 @include bp(mobile) {
                     width: 100%;
@@ -421,7 +435,7 @@
                         }
                     }
                     p {
-                        font-size: 17px;
+                        font-size: 16px;
                         line-height: 19px;
                         margin-bottom: 15px;
                         @include bp(landscape) {
@@ -447,13 +461,19 @@
             @include bp(tablet) {
                 padding-top: 40px;
             }
+            @include bp(mobile){
+                padding-top: 58px;
+            }
         }
     }
     &.rtAlign {
         .bgWrap {
             padding-bottom: 80px;
+            @include bp(landscape) {
+                padding: 60px 0px;
+            }
             @include bp(tablet) {
-                padding-top: 45px;
+                padding-top: 40px;
                 padding-bottom: 40px;
             }
             @include bp(mobile) {
@@ -464,7 +484,7 @@
                     min-height: 523px;
                     @include bp(landscape) {
                         min-height: 330px;
-                        width: 31.8%;
+                        width: 31%;
                     }
                     @include bp(tablet) {
                         order: 1;
@@ -490,7 +510,7 @@
                     }
                     .figureContent {
                         max-width: 285px;
-                        padding: 31px 25px;
+                        padding: 22px 25px 23px 25px;
                         @include bp(landscape) {
                             max-width: 78%;
                             padding: 11px 18px;
@@ -501,7 +521,7 @@
                         }
                         @include bp(mobile) {
                             max-width: 75%;
-                            padding: 15px;
+                            padding: 15px 22px;
                         }
                         h4 {
                             @include bp(tablet) {
@@ -509,15 +529,15 @@
                             }
                         }
                         p {
-                            font-size: 24px;
+                            font-size: 20px;
                             line-height: 23px;
-                            margin-top: 20px;
+                            margin-top: 24px;
                             @include bp(landscape) {
                                 font-size: 18px;
                                 line-height: 22px;
                             }
                             @include bp(mobile) {
-                                font-size: 16px;
+                                font-size: 18px;
                                 margin-top: 17px;
                             }
                         }
@@ -547,7 +567,7 @@
 .titleWrap {
     h3 {
         font-size: 36px;
-        padding-bottom: 40px;
+        padding-bottom: 36px;
         text-align: center;
         text-transform: uppercase;
         color: #fff;
@@ -569,15 +589,15 @@
 .boardDirectors {
     .bgWrap {
         background: #1268e5;
-        padding: 35px 100px 35px 100px;
+        padding: 56px 100px 12px 100px;
         @include bp(landscape) {
-            padding: 22px 85px;
+            padding: 22px 85px 13px 85px;
         }
         @include bp(tablet) {
             padding: 20px 40px 10px 40px;
         }
         @include bp(mobile) {
-            padding: 25px 10px 0px 10px;
+            padding: 22px 10px 0 10px;
         }
         .table {
             @include bp(tablet) {
@@ -620,6 +640,7 @@
                         }
                         p {
                             line-height: initial;
+                            font-size: 20px;
                             @include bp(landscape) {
                                 font-size: 16px;
                             }
@@ -659,10 +680,13 @@
             }
         }
         .memberFlexIcons {
-            margin-top: 10px;
+            margin-top: 12px;
             a {
                 display: inline-block;
-                margin-right: 10px;
+                margin-right: 14px;
+                @include bp(mobile){
+                    margin-right: 21px;
+                }
                 img {
                     max-width: 40px;
                     @include bp(landscape) {
@@ -676,32 +700,35 @@
 
 .execManage {
     .bgWrap {
+        background: #3b88f7;
+        padding: 31px 100px 35px 100px;
         .titleWrap {
             h3 {
                 @include bp(landscape) {
                     padding-bottom: 40px;
                 }
                 @include bp(tablet) {
-                    padding-bottom: 42px;
+                    padding-bottom: 38px;
                 }
                 @include bp(mobile) {
                     padding-bottom: 0px;
                 }
             }
         }
-        background: #3b88f7;
-        padding: 35px 100px 35px 100px;
         @include bp(landscape) {
-            padding: 22px 84px 35px 84px;
+            padding: 30px 84px 17px 84px;
         }
         @include bp(tablet) {
             padding: 21px 40px 19px 40px;
         }
         @include bp(mobile) {
-            padding: 25px 10px 0px 10px;
+            padding: 22px 10px 0 10px;
         }
         .memberFlexWrap {
             color: #fff;
+            @include bp(mobile){
+                margin-top: 20px;
+            }
         }
     }
 }
@@ -709,16 +736,16 @@
 .snrManage {
     .bgWrap {
         background: #cce1ff;
-        padding: 35px 100px 35px 100px;
+        padding: 35px 100px 6px 100px;
         color: #1a3d6e;
         @include bp(landscape) {
-            padding: 23px 85px 35px 85px;
+            padding: 35px 85px 42px 85px;
         }
         @include bp(tablet) {
             padding: 21px 40px 0px 40px;
         }
         @include bp(mobile) {
-            padding: 25px 10px 0px 10px;
+            padding: 30px 10px 0px 10px;
         }
         .titleWrap {
             h3 {
@@ -772,7 +799,7 @@
     }
     .bgWrap {
         .titleWrap {
-            margin-top: 300px;
+            margin-top: 292px;
             text-align: center;
             @include bp(landscape) {
                 margin-top: 170px;
@@ -785,17 +812,24 @@
             }
             h3 {
                 font-size: 66px;
+                line-height: normal;
+                padding-bottom: 20px;
                 @include bp(landscape) {
                     font-size: 36px;
-                    margin-bottom: 19px;
+                    margin-bottom: 28px;
+                    padding-bottom: 0;
                 }
                 @include bp(tablet) {
                     font-size: 24px;
                     margin-bottom: 0px;
+                    padding-bottom: 15px;
                 }
                 @include bp(mobile) {
                     font-size: 22px;
                     margin-bottom: 5px;
+                    padding-bottom: 0;
+                    padding-left: 20px;
+                    padding-right: 20px;
                 }
             }
             a {
@@ -805,7 +839,7 @@
                 border: 1px solid #fff;
                 color: #fff;
                 @include bp(landscape) {
-                    padding: 6px 31px;
+                    padding: 4px 27px;
                     letter-spacing: 0;
                     line-height: initial;
                     font-size: 16px;
@@ -814,25 +848,28 @@
         }
     }
 }
-.joinEmail{
+
+.joinEmail {
     form {
-        .grecaptcha-badge{
+        .grecaptcha-badge {
             margin-right: 0;
             z-index: 10;
             display: none;
         }
-    } 
-}
-.contactUs + .joinEmail .captchaBlock{
-	visibility:hidden;position:absolute
+    }
 }
 
-#joinEmail{
-    #joinSuccess{
+.contactUs+.joinEmail .captchaBlock {
+    visibility: hidden;
+    position: absolute
+}
+
+#joinEmail {
+    #joinSuccess {
         width: 100%;
     }
     form {
-        #joinSuccess{
+        #joinSuccess {
             width: 100%;
         }
     }
