@@ -100,13 +100,13 @@ transition: all 0.4s ease;
         background:#f1f1f1;
         color: #3d3d3d;
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 700;
         height: 100%;
         width: 100%;
         padding-top: 18px;
         &:hover,
         &.active {
-          color: #1268e5;
+          color: #eb2837;
         }
       }
     }
@@ -493,7 +493,7 @@ display: inline;
 }
 @media screen and (max-width: 767px) {
 
-  
+
 }
 @media screen and (min-width: $base) {
   .heroBlock {
