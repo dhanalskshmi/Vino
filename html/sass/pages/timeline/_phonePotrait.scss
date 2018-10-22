@@ -229,6 +229,8 @@
 					width:15px;
 					height:15px;
 					a {
+						width:15px;
+						height:15px;
 						&:after {
 							display: none;
 						}
@@ -323,6 +325,14 @@
 		.timeline::before {
 			//top: 261px;
 			height: calc(100% + 30px);
+		}
+
+		.timeline {
+			>li {
+				>.timeline-panel {
+					padding: 5px;
+				}
+			}
 		}
 
 }

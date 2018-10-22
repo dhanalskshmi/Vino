@@ -14,6 +14,8 @@
 				height: 15px;
 				right: -7px;
 				a {
+					width: 15px;
+					height: 15px;
 					&::after {
 						width: 19px;
 						top: 6px;
@@ -152,6 +154,49 @@
 			}
 		}
 	}
+	.timeline {
+		>li {
+			>.timeline-panel {
+				padding: 5px;
+			}
+		}
+	}
+
+	.timeline {
+    &::after {
+			width: 15px;
+			height: 15px;
+    }
+  }
+	.timeline {
+		>li {
+			>.timeline-panel {
+				width: 76%;
+			}
+		}
+	}
+	.timeline {
+		li {
+			&.timeline-inverted {
+				.timeline-panel {
+					float: right;
+				}
+			}
+		}
+	}
+	.timeline-wrapper {
+		
+	}
+  .heroBlock {
+    &.timelinePannelwrap {
+      margin-bottom: 40px;
+      .bgWrap {
+				padding-left: 28px;
+				padding-right: 28px;
+        padding-bottom: 40px;
+      }
+    }
+  }
 
 
 }

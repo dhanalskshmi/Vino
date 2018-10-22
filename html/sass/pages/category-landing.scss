@@ -1,202 +1,222 @@
 .catLanding {
-    .heroBlock {
-        .bgWrap {
-            padding: 41px 58px 9px 58px;
-            @include bp(landscape) {
-                padding: 21px 35px 9px 35px;
-            }
-            @include bp(tablet) {
-                padding: 15px 85px 9px 85px;
-            }
-            @include bp(mobile) {
-                padding: 11px 20px 9px 20px;
-            }
-        }
+  .heroBlock {
+    .bgWrap {
+      padding: 41px 58px 9px;
+      @include bp(landscape) {
+        padding: 21px 35px 9px;
+      }
+      @include bp(tablet) {
+        padding: 15px 85px 9px;
+      }
+      @include bp(mobile) {
+        padding: 11px 20px 9px;
+      }
     }
-    .heroFlex {
-        .flexLinkWrap {
-            width: 361px;
-            height: 325px;
-            margin-bottom: 43px;
-            .heroFlexheading {
+  }
 
+  .heroFlex {
+    margin-top: 61px;
+    @include bp(landscape) {
+      margin-top: 0;
+    }
+    .flexLinkWrap {
+      width: 361px;
+      height: 325px;
+      margin-bottom: 43px;
+      .heroFlexheading {}
+      @include bp(landscape) {
+        width: 262px;
+        height: 240px;
+        margin-bottom: 28px;
+      }
+      @include bp(tablet) {
+        width: 177px;
+        height: 160px;
+        margin-bottom: 20px;
+      }
+      @include bp(mobile) {
+        width: 221px;
+        height: 200px;
+        margin-bottom: 15px;
+      }
+
+      .flexLinks {
+        transition: 0.3s all;
+
+        .flexImage {
+          width: 361px;
+          height: 325px;
+          position: relative;
+          @include bp(landscape) {
+            width: 262px;
+            height: 208px;
+          }
+          @include bp(tablet) {
+            width: 177px;
+            height: 158px;
+          }
+          @include bp(mobile) {
+            width: 221px;
+            height: 198px;
+          }
+
+          &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .5));
+            opacity: 0.58;
+            transition: 0.3s all;
+          }
+        }
+
+        &:hover {
+          .flexImage {
+            &:after {
+              opacity: 0;
             }
-            @include bp(landscape) {
-                width: 262px;
-                height: 240px;
-                margin-bottom: 28px;
-            }
-            @include bp(tablet) {
-                width: 177px;
-                height: 160px;
-                margin-bottom: 20px;
-            }
-            @include bp(mobile) {
-                width: 221px;
-                height: 200px;
-                margin-bottom: 15px;
-            }
-            .flexLinks {
-                transition: .3s all;
-                .flexImage {
-                    width: 361px;
-                    height: 325px;
-                    position: relative;
-                    @include bp(landscape) {
-                        width: 262px;
-                        height: 208px;
-                    }
-                    @include bp(tablet) {
-                        width: 177px;
-                        height: 158px;
-					}
-					@include bp(mobile) {
-						width: 221px;
-						height: 198px;
-					}
-                    &:after {
-                        position: absolute;
-                        content: '';
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(to bottom, rgba(0, 0, 0, .5));
-                        opacity: .58;
-                        transition: .3s all;
-                    }
-                }
-                &:hover {
-                    .flexImage {
-                        &:after {
-                            opacity: 0;
-                        }
-                    }
-                }
-            }
-            .heroFlexheading {
-                padding: 6px 25px 6px 16px;
-                font-size: 24px;
-                width: auto;
-                bottom: 25px;
-                @include bp(landscape) {
-                    padding: 4px 17px 4px 10px;
-                    font-size: 15px;
-                    //width: 73%;
-				}
-				@include bp(tablet){
+          }
+        }
+      }
+
+      .heroFlexheading {
+        padding: 6px 25px 6px 16px;
+        font-size: 24px;
+        width: auto;
+        bottom: 25px;
+        @include bp(landscape) {
+          padding: 4px 17px 4px 10px;
+          font-size: 15px;
+          //width: 73%;
+        }
+        @include bp(tablet) {
           padding: 3px 12px 3px 6px;
-					font-size: 12px;
-				}
-				@include bp(mobile){
-					font-size: 15px;
+          font-size: 12px;
+        }
+        @include bp(mobile) {
+          font-size: 15px;
           padding: 4px 15px 4px 9px;
-					bottom: 16px;
-				}
-            }
+          bottom: 16px;
         }
+      }
     }
-    .bluePannel {
-		margin: 75px 0px;
-		@include bp(tablet){
-			margin: 44px 0;
-		}
+  }
+
+  .bluePannel {
+    margin: 75px 0;
+    @include bp(tablet) {
+      margin: 44px 0;
     }
-    .realAlerts {
-		margin-bottom: 100px;
-		@include bp(tablet){
-			margin-bottom: 40px;
-		}
-        .bgWrap {
-            padding: 34px 65px;
+  }
+
+  .realAlerts {
+    margin-bottom: 100px;
+    @include bp(tablet) {
+      margin-bottom: 40px;
+    }
+
+    .bgWrap {
+      padding: 34px 65px;
+      height: 487px;
+      @include bp(landscape) {
+        height: 312px;
+        padding: 24px 65px;
+      }
+      @include bp(tablet) {
+        height: 294px;
+        padding: 22px 81px;
+        background-position-y: -176px;
+      }
+      @include bp(mobile) {
+        height: 290px;
+        padding: 23px;
+        background-position-y: 0;
+      }
+
+      h4 {
+        font-size: 53px;
+        line-height: initial;
+        @include bp(landscape) {
+          font-size: 34px;
+        }
+        @include bp(tablet) {
+          font-size: 32px;
+        }
+        @include bp(mobile) {
+          font-size: 26px;
+        }
+      }
+
+      p {
+        font-size: 23px;
+        margin-top: 10px;
+        line-height: initial;
+        max-width: 200px;
+        @include bp(landscape) {
+          font-size: 15px;
+          max-width: 150px;
+        }
+        @include bp(tablet) {
+          margin-top: 5px;
+        }
+        @include bp(mobile) {
+          font-size: 19px;
+        }
+      }
+
+      figure {
+        margin-top: 28px;
+        @include bp(tablet) {
+          margin-top: 15px;
+        }
+
+        img {
+          margin-right: 20px;
+
+          &:nth-child(1),
+          &:nth-child(3) {
             @include bp(landscape) {
-                height: 312px;
-                padding: 24px 65px;
+              max-width: 50px;
             }
-            @include bp(tablet) {
-                height: 294px;
-				padding: 22px 81px;
-				background-position-y: -176px;
+          }
+
+          &:nth-child(2) {
+            @include bp(landscape) {
+              max-width: 20px;
             }
-            @include bp(mobile) {
-                height: 290px;
-				padding: 23px;
-				background-position-y: 0px;
-            }
-            h4 {
-                font-size: 53px;
-                line-height: initial;
-                @include bp(landscape) {
-                    font-size: 34px;
-                }
-                @include bp(tablet) {
-                    font-size: 32px;
-                }
-                @include bp(mobile) {
-                    font-size: 26px;
-                }
-            }
-            p {
-                font-size: 23px;
-                margin-top: 10px;
-                line-height: initial;
-                max-width: 200px;
-                @include bp(landscape) {
-                    font-size: 15px;
-                    max-width: 150px;
-				}
-				@include bp(tablet){
-					margin-top: 5px;
-				}
-				@include bp(mobile){
-					font-size: 19px;
-				}
-            }
-            figure {
-				margin-top: 33px;
-				@include bp(tablet){
-					margin-top: 15px;
-				}
-                img {
-                    margin-right: 20px;
-                    &:nth-child(1),
-                    &:nth-child(3) {
-                        @include bp(landscape) {
-                            max-width: 50px;
-                        }
-                    }
-                    &:nth-child(2) {
-                        @include bp(landscape) {
-                            max-width: 20px;
-                        }
-                    }
-                }
-            }
-            .btnManasq {
-                margin-top: 52px;
-                min-width: 245px;
-                padding: 19px 20px;
-                font-size: 27px;
-                @include bp(landscape) {
-                    font-size: 17px;
-                    padding: 10px 17px;
-                    min-width: 157px;
-                    margin-top: 30px;
-				}
-				@include bp(tablet){
-					margin-top: 19px;
-					padding: 8px 17px;
-					min-width: 149px;
-				}
-				@include bp(tablet){
-					min-width: 118px;
-					font-size: 13px;
-					padding: 5px 17px;
-					margin-top: 10px;
-				}
-            }
+          }
         }
+      }
+
+      .btnManasq {
+        margin-top: 52px;
+        min-width: 245px;
+        padding: 19px 20px;
+        font-size: 27px;
+        @include bp(landscape) {
+          font-size: 17px;
+          padding: 10px 17px;
+          min-width: 157px;
+          margin-top: 30px;
+        }
+        @include bp(tablet) {
+          font-size: 17px;
+          margin-top: 19px;
+          padding: 11px 22px 9px;
+          min-width: 149px;
+        }
+        @include bp(mobile) {
+          min-width: 118px;
+          font-size: 13px;
+          padding: 6px 17px;
+          margin-top: 10px;
+        }
+      }
     }
+  }
 }

@@ -35,7 +35,7 @@
 	 ul.timeline {
 		 > li {
 			 > .timeline-panel {
-				 //padding:7px;
+				 padding: 10px 10px 5px;
 		    }
 		 }
 	 }
@@ -82,10 +82,31 @@
 				>.timeline-badge {
 					a {
 						&::after {
-							width: 65px;
+							width: 75px;
 						}
 					}
 				}
 			}
 		}
+		.timeline {
+			>li {
+				>.timeline-panel {
+					width: 78%;
+					padding: 10px 10px 5px;
+				}
+			}
+		}
+
+		.heroBlock {
+	    &.timelinePannelwrap {
+				padding-left: 38px;
+		    padding-right: 38px;
+	      margin-bottom: 60px;
+	      .bgWrap {
+					padding-left: 40px;
+			    padding-right: 40px;
+	        padding-bottom: 60px;
+	      }
+	    }
+	  }
 	}
