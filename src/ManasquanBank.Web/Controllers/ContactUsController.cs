@@ -21,7 +21,7 @@ namespace ManasquanBank.Web.Controllers
             if (validate.GoogleCaptchaValidate(response))
             {
                 try
-            {
+                {
                 if (contact.AdminEmail > 0 || contact.ConfirmationEmail >= 0)
                 {
                     string AOI = "";
