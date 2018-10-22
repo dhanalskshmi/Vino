@@ -18,7 +18,7 @@
     var description = Model.Content.GetPropertyValue<string>("description");
     var cTAButton1 = Model.Content.GetPropertyValue<Link>("cTAButton1");
     var filterDetail = Model.Content.AncestorOrSelf(2).Children();
-    var ResourceList = Model.Content.AncestorOrSelf(2).Children.Where(item => item.DocumentTypeAlias == "filterDetailPage").ToList();
+    var ResourceList = Model.Content.Children.DescendantsOrSelf("filterDetailPage").OrderByDescending(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
     List<IPublishedContent> filteredData = new List<IPublishedContent>();
 
     var resourceType = Model.Content.Children.DescendantsOrSelf("resouceType").ToList();

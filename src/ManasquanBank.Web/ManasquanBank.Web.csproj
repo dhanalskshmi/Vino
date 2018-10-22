@@ -275,6 +275,14 @@
     <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
       <HintPath>..\packages\UmbracoCms.Core.7.12.2\lib\net45\TidyNet.dll</HintPath>
     </Reference>
+    <Reference Include="uDateFoldersy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uDateFoldersy.1.0.0\lib\net45\uDateFoldersy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="uHelpsy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uDateFoldersy.1.0.0\lib\net45\uHelpsy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="umbraco, Version=1.0.6820.12888, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.2\lib\net45\umbraco.dll</HintPath>
     </Reference>
@@ -596,6 +604,7 @@
     <Content Include="fonts\archivonarrowSemibold.woff" />
     <Content Include="fonts\archivonarrowSemibold.woff2" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
+    <Content Include="config\uDateFoldersy.config" />
     <None Include="packages.config" />
     <Content Include="Views\ContactUsPage.cshtml" />
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
@@ -617,6 +626,8 @@
     <Content Include="Views\Partials\SeoMetaData.cshtml" />
     <Content Include="Views\ExecutiveBioDetailPage.cshtml" />
     <Content Include="Views\redirectPage.cshtml" />
+    <Content Include="Views\Partials\uDateFoldersyFolderRedirect.cshtml" />
+    <Content Include="Views\dcaedc04-fc99-416a-b33c-365360f44280_uDateFoldersyFolderRedirect.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
