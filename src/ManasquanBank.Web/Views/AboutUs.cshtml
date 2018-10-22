@@ -24,7 +24,7 @@
     var leadership = Model.Content.AncestorOrSelf(2).Children();
     var backgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
     var timelineTitle = Model.Content.GetPropertyValue<string>("timelineTitle");
-    var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton3");
+    var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
 
 }
 
@@ -495,9 +495,9 @@
                         {
                             <h3>@timelineTitle</h3>
                         }
-                        @if (Model.Content.HasValue("cTAButton3"))
+                        @if (Model.Content.HasValue("cTAButton"))
                         {
-                            foreach (var CTA in cTAButton3)
+                            foreach (var CTA in cTAButton)
                             {
                                 var cTAtitle = CTA.GetPropertyValue<string>("title");
                                 var link = CTA.GetPropertyValue<Link>("link");
@@ -543,8 +543,47 @@
             <div class="containerWrapper">
                 <div class="bgWrap">
                     <div class="titleWrap">
-                        <h3>Manasquan Bank History Timeline</h3>
-                        <p><a href="#" class="btnManasq"><span>View the Details</span></a></p>
+                        @if (!string.IsNullOrEmpty(timelineTitle))
+                        {
+                            <h3>@timelineTitle</h3>
+                        }
+                        @if (Model.Content.HasValue("cTAButton"))
+                        {
+                            foreach (var CTA in cTAButton)
+                            {
+                                var cTAtitle = CTA.GetPropertyValue<string>("title");
+                                var link = CTA.GetPropertyValue<Link>("link");
+                                if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <p>
+                                            <a href="@link.Url" class="btnManasq" target="_blank">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    <span>@cTAtitle</span>
+                                                }
+                                            </a>
+                                        </p>
+                                    }
+                                    else
+                                    {
+
+                                        <p>
+                                            <a href="@link.Url" class="btnManasq">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    <span>@cTAtitle</span>
+                                                }
+                                            </a>
+                                        </p>
+                                    }
+                                }
+
+                            }
+                        }
+
+
                     </div>
                 </div>
             </div>

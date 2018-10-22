@@ -1,161 +1,163 @@
 .heroBlock {
-	
-	&+.general-template {
-		margin-top:50px;
-	}
-	p {
-		&+.lrImg {
-			margin-top: -15px;
-			@include bp(tablandscape) {
-				margin-top: 48px;
-			}
-			@include bp(tabportrait) {
-				margin-top: 28px;
-			}
-			@include bp(mobile) {
-				margin-top: 19px;
-			}
+	&.generalBanner {
+		@extend .general-template;
+		&+.general-template {
+			margin-top:50px;
 		}
-		&+ul {
-			&.dotlist {
-				margin-top: 75px;
+		p {
+			&+.lrImg {
+				margin-top: -15px;
 				@include bp(tablandscape) {
-					margin-top: 39px;
+					margin-top: 48px;
 				}
 				@include bp(tabportrait) {
-					margin-top: 25px;
+					margin-top: 28px;
 				}
 				@include bp(mobile) {
-					margin-top: 16px;
+					margin-top: 19px;
+				}
+			}
+			&+ul {
+				&.dotlist {
+					margin-top: 75px;
+					@include bp(tablandscape) {
+						margin-top: 39px;
+					}
+					@include bp(tabportrait) {
+						margin-top: 25px;
+					}
+					@include bp(mobile) {
+						margin-top: 16px;
+					}
 				}
 			}
 		}
-	}
-	.lrImg {
-		display:flex;
-		width:100%;
-		@include bp(tabportrait) {
-			display:table;
-		}
-		@include bp(mobile) {
-			display:table;
-		}
-		.imgSec1 {
-			width:46.783%;
-			float:left;
-			margin-right:6.259%;
-			@include bp(tablandscape) {
-				width: 48.163%;
-				margin-right: 3.674%;
-			}
+		.lrImg {
+			display:flex;
+			width:100%;
 			@include bp(tabportrait) {
-				width:100%;
-				margin-right:0%;
-				margin-bottom:20px;
+				display:table;
 			}
 			@include bp(mobile) {
-				width:100%;
-				margin-right:0%;
-				margin-bottom:20px;
+				display:table;
 			}
-			img {
+			.imgSec1 {
+				width:46.783%;
+				float:left;
+				margin-right:6.259%;
+				@include bp(tablandscape) {
+					width: 48.163%;
+					margin-right: 3.674%;
+				}
 				@include bp(tabportrait) {
 					width:100%;
-				}
-				@include bp(mobile) {
-					width:100%;
-				}
-			}
-		}
-		.imgSec2 {
-			width:46.958%;
-			float:left;
-			@include bp(tablandscape) {
-				width: 48.163%;
-			}
-			@include bp(tabportrait) {
-				width:100%;
-			}
-			@include bp(mobile) {
-				width:100%;
-			}
-			img {
-				@include bp(tabportrait) {
-					width:100%;
+					margin-right:0%;
+					margin-bottom:20px;
 				}
 				@include bp(mobile) {
 					width:100%;
+					margin-right:0%;
+					margin-bottom:20px;
+				}
+				img {
+					@include bp(tabportrait) {
+						width:100%;
+					}
+					@include bp(mobile) {
+						width:100%;
+					}
+				}
+			}
+			.imgSec2 {
+				width:46.958%;
+				float:left;
+				@include bp(tablandscape) {
+					width: 48.163%;
+				}
+				@include bp(tabportrait) {
+					width:100%;
+				}
+				@include bp(mobile) {
+					width:100%;
+				}
+				img {
+					@include bp(tabportrait) {
+						width:100%;
+					}
+					@include bp(mobile) {
+						width:100%;
+					}
+				}
+			}
+			&+p {
+				margin-top: 51px;
+				@include bp(tablandscape) {
+					margin-top: 41px;
+				}
+				@include bp(tabportrait) {
+					margin-top: 22px;
+				}
+				@include bp(mobile) {
+					margin-top: 20px;
 				}
 			}
 		}
-		&+p {
-			margin-top: 51px;
-			@include bp(tablandscape) {
-				margin-top: 41px;
-			}
-			@include bp(tabportrait) {
-				margin-top: 22px;
-			}
-			@include bp(mobile) {
-				margin-top: 20px;
-			}
-		}
-	}
-	ul {
+		ul {
 
-    	&.dotlist {
-    		font-size:20px;
-			color: #3d3d3d;
-			position:relative;
-			@include bp(tabportriat) {
-				font-size:18px;
-			}
-			@include bp(mobile) {
-				font-size:18px;
-			}
-    		li {
-    			padding-left: 10px;
-    			&::before {
-    				content: "";
-				    position: absolute;
-				    width: 5px;
-				    height: 5px;
-				    background: #3d3d3d;
-				    border-radius: 8px;
-				    margin-top: 10px;
-				    left: 0;
-				    @include bp(tabportrait) {
-				    	margin-top: 7px;
+	    	&.dotlist {
+	    		font-size:20px;
+				color: #3d3d3d;
+				position:relative;
+				@include bp(tabportriat) {
+					font-size:18px;
+				}
+				@include bp(mobile) {
+					font-size:18px;
+				}
+	    		li {
+	    			padding-left: 10px;
+	    			&::before {
+	    				content: "";
+					    position: absolute;
+					    width: 5px;
+					    height: 5px;
+					    background: #3d3d3d;
+					    border-radius: 8px;
+					    margin-top: 10px;
+					    left: 0;
+					    @include bp(tabportrait) {
+					    	margin-top: 7px;
+					    }
+	    			}
+	    			ul {
+	    				margin-top:0px;
+	    				li {
+	    					&:before {
+	    						content: "";
+							    position: absolute;
+							    width: 5px;
+							    height: 1px;
+							    background: #3d3d3d;
+							    margin-top: 12px;
+							    left: 0;
+	    					}
+	    				}
+	    			}
+	    		}
+	    		&+.tableSection {
+				    margin-top: 95px;
+				    @include bp(tablandscape) {
+				    	margin-top: 32px;
 				    }
-    			}
-    			ul {
-    				margin-top:0px;
-    				li {
-    					&:before {
-    						content: "";
-						    position: absolute;
-						    width: 5px;
-						    height: 1px;
-						    background: #3d3d3d;
-						    margin-top: 12px;
-						    left: 0;
-    					}
-    				}
-    			}
-    		}
-    		&+.tableSection {
-			    margin-top: 95px;
-			    @include bp(tablandscape) {
-			    	margin-top: 32px;
-			    }
-			    @include bp(tabportrait) {
-			    	margin-top: 15px;
-			    }
-			    @include bp(mobile) {
-			    	margin-top: 16px;
-			    }
-			}
-    	}
+				    @include bp(tabportrait) {
+				    	margin-top: 15px;
+				    }
+				    @include bp(mobile) {
+				    	margin-top: 16px;
+				    }
+				}
+	    	}
+		}
 	}
 }
 
@@ -217,7 +219,7 @@
 			}
 	    }
 	    &+ul {
-	    	margin-top: 6px;
+	    	margin-top: 8px;
 	    }
 	    &+p {
 	    	margin-top: 13px;
@@ -251,9 +253,12 @@
 		&+p {
 			margin-top: 13px;
 		}
+		&+ul {
+			margin-top: 9px;
+		}
 	}
 	h4 {
-		font-size: 16px;
+		font-size: 23px;
 		text-transform:uppercase;
 		color: #666666;
 		@include bp(tablandscape) {
@@ -270,6 +275,9 @@
 		}
 		&+p {
 			margin-top: 3px;
+		}
+		&+ul {
+			margin-top: 10px;
 		}
 
 	}
