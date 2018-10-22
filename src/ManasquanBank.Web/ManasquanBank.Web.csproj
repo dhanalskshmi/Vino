@@ -317,6 +317,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\agm.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-google-maps.2.1.0.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-google-maps.2.1.0.min.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-google-maps.2.3.3.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-google-maps.2.3.3.min.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-simple-logger.min.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\config.coordinatesbehavour.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\config.defaultlocation.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\config.definition.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\config.format.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\config.icon.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\iconanchorpoint.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\iconsize.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\iconurl.html" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\underscore-min.js" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\view.css" />
+    <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\view.html" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\css\epiphany.seo.metadata.css" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\js\epiphany.seo.metadata.js" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\views\epiphany.seo.metadata.html" />
@@ -454,6 +471,27 @@
     <Content Include="images\careers\cultureImg1.png" />
     <Content Include="images\careers\down-arrow.png" />
     <Content Include="images\careers\EmpStory.jpg" />
+    <Content Include="images\category-detail\category1.jpg" />
+    <Content Include="images\category-detail\category2.jpg" />
+    <Content Include="images\category-detail\category3.jpg" />
+    <Content Include="images\category-detail\client-service.png" />
+    <Content Include="images\category-detail\learn-arrow.png" />
+    <Content Include="images\category-detail\location-icon.png" />
+    <Content Include="images\category-detail\location-icon2.png" />
+    <Content Include="images\category-detail\phone-icon.png" />
+    <Content Include="images\category-detail\phone-icon2.png" />
+    <Content Include="images\category-detail\tick-arrow.png" />
+    <Content Include="images\category-landing\apple-pay.png" />
+    <Content Include="images\category-landing\category-landing1.jpg" />
+    <Content Include="images\category-landing\category-landing2.jpg" />
+    <Content Include="images\category-landing\category-landing3.jpg" />
+    <Content Include="images\category-landing\category-landing4.jpg" />
+    <Content Include="images\category-landing\category-landing5.jpg" />
+    <Content Include="images\category-landing\category-landing6.jpg" />
+    <Content Include="images\category-landing\google-pay.png" />
+    <Content Include="images\category-landing\mobile-wallet.jpg" />
+    <Content Include="images\category-landing\payment.png" />
+    <Content Include="images\category-landing\samsung-pay.png" />
     <Content Include="images\client-service\client-icon1.png" />
     <Content Include="images\client-service\client-icon2.png" />
     <Content Include="images\client-service\client-icon3.png" />
@@ -469,10 +507,17 @@
     <Content Include="images\client-service\service-icon3.png" />
     <Content Include="images\client-service\service-icon4.png" />
     <Content Include="images\favicon.ico" />
+    <Content Include="images\footer\fb.jpg" />
+    <Content Include="images\footer\fdic.png" />
     <Content Include="images\footer\f_applestore.jpg" />
     <Content Include="images\footer\f_googlestore.jpg" />
     <Content Include="images\footer\f_logo.jpg" />
+    <Content Include="images\footer\lender.png" />
+    <Content Include="images\footer\linkedin.jpg" />
+    <Content Include="images\footer\mail_logo.jpg" />
     <Content Include="images\footer\sprite_img.png" />
+    <Content Include="images\footer\tweet.jpg" />
+    <Content Include="images\footer\utube.jpg" />
     <Content Include="images\header\icon_1.jpg" />
     <Content Include="images\header\icon_1.png" />
     <Content Include="images\header\logo.png" />
@@ -493,11 +538,13 @@
     <Content Include="images\home\tweets.jpg" />
     <Content Include="images\home\video_icon.png" />
     <Content Include="images\location-detail\address-icon.png" />
+    <Content Include="images\location-detail\alertImage.jpg" />
     <Content Include="images\location-detail\atm-icon.png" />
     <Content Include="images\location-detail\box-icon.png" />
     <Content Include="images\location-detail\hours-icon.png" />
     <Content Include="images\location-detail\location-hero-image.jpg" />
     <Content Include="images\location-detail\mail-icon.png" />
+    <Content Include="images\location-detail\map.jpg" />
     <Content Include="images\location-detail\phone-icon.png" />
     <Content Include="images\location-detail\print-icon.png" />
     <Content Include="images\location\branch-location1.jpg" />
@@ -507,11 +554,17 @@
     <Content Include="images\location\homeIcon.png" />
     <Content Include="images\location\mailIcon.png" />
     <Content Include="images\location\serviceIcon.png" />
+    <Content Include="images\media-center\arrow-left.png" />
     <Content Include="images\media-center\arrow-right.png" />
     <Content Include="images\media-center\news1.jpg" />
     <Content Include="images\media-center\news2.jpg" />
     <Content Include="images\media-center\realTime.jpg" />
     <Content Include="images\media-center\real_image_bg.png" />
+    <Content Include="images\personal-lending\home-icon.png" />
+    <Content Include="images\personal-lending\lending1.jpg" />
+    <Content Include="images\personal-lending\phone-icon.png" />
+    <Content Include="images\personal-lending\user1.jpg" />
+    <Content Include="images\personal-lending\user2.jpg" />
     <Content Include="scripts\angular-google-maps-street-view.js" />
     <Content Include="scripts\angular-google-maps-street-view.min.js" />
     <Content Include="scripts\angular-google-maps.js" />
@@ -628,6 +681,10 @@
     <Content Include="Views\redirectPage.cshtml" />
     <Content Include="Views\Partials\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\dcaedc04-fc99-416a-b33c-365360f44280_uDateFoldersyFolderRedirect.cshtml" />
+    <Content Include="Views\SocialMedia.cshtml" />
+    <Content Include="Views\TimeLine.cshtml" />
+    <Content Include="Views\uDateFoldersyFolderRedirect.cshtml" />
+    <Content Include="Views\Partials\uDateFoldersy\uDateFoldersyFolderRedirect.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -644,6 +701,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ContactUs\" />
+    <Folder Include="Views\InstagramFeed\" />
     <Folder Include="Views\MacroPartials\" />
     <Folder Include="Views\NewsLetter\" />
   </ItemGroup>

@@ -15,7 +15,6 @@ using Skybrud.Social.Instagram;
 using Skybrud.Social.Instagram.Objects;
 using Skybrud.Social.Instagram.Responses;
 using Skybrud.Social.Instagram.OAuth;
-
 namespace ManasquanBank.Web.Controllers
 {
     using System;
@@ -28,24 +27,13 @@ namespace ManasquanBank.Web.Controllers
         //public dynamic GetInstagramTimeline()
         //{
 
-        //    // Initialize and configure the OAuth client
-        //    InstagramOAuthClient client = new InstagramOAuthClient
-        //    {
-        //        ClientId = "69f652275bc240df890a4a5214e1c2a9",
-        //        ClientSecret = "03518cfaa2274e37bb2a36b857b6c748",
-        //        RedirectUri = "http://manasquan.activitystaging.com"
-        //    };
+        //    string userId = "3041453045";
 
-        //    string state = Guid.NewGuid().ToString();
-        //    string url = client.GetAuthorizationUrl(state);
-        //    InstagramService service = InstagramService.CreateFromOAuthClient(new InstagramOAuthClient
-        //    {
-        //        AccessToken = "1313031959.87552ec.4189d55d32af42baa34f329cb2c1e108",
-        //    });
-            
-        //    InstagramUserResponse self = service.Users.GetSelf();
-        //    InstagramRecentMediaResponse recent = service.Users.GetRecentMedia(self.Body.Data.Id);
-        //    return recent;
+
+        //    InstagramService service = InstagramService.CreateFromAccessToken("3041453045.69f6522.fc83bfe8e3cc4f3a940f03bc8c63fff4");
+
+        //    return service.Users.GetRecentMedia();
+               
 
         //}
         public dynamic GetTwitterTimeline()

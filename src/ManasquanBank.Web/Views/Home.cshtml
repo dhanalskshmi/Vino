@@ -1,8 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
-@{
-	Layout = "Master.cshtml";
+@{ 
+    Layout = "Master.cshtml";
     var bannerImage = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage");
     var backgroundVideo = Model.Content.GetPropertyValue<string>("backgroundVideo");
     var bannerText = Model.Content.GetPropertyValue<string>("bannerText");
@@ -16,7 +16,8 @@
 
 <section class="bannerWrapper">
     <div class="bannerWrap">
-    @if(!string.IsNullOrEmpty(backgroundVideo))
+
+    @if (!string.IsNullOrEmpty(backgroundVideo))
     {
         <div class="player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:1, mute:false, opacity:1, addRaster:true, optimizeDisplay:true}">
             <figure class="bannerImage" style="background-image: url('@bannerImage.Url')"></figure>
