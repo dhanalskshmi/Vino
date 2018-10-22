@@ -621,7 +621,7 @@
                         border: none;
                     }
                     td {
-                        min-width: 26%;
+                        min-width: 27%;
                         display: inline-block;
                         padding: 15px 0px;
                         color: #fff;
@@ -655,17 +655,46 @@
 .memberFlexWrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
     @include bp(mobile) {
         flex-direction: column;
         margin-top: 17px;
     }
     .memberFlex {
-        margin-bottom: 20px;
-        width: 26%;
-        @include bp(mobile) {
-            width: 100%;
-        }
+        margin-bottom: 80px;
+        width: 26.7%;
+				margin-top: 0px;
+				margin-right: 9.8%;
+				@include bp(desktop) {
+
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(tablandscape) {
+					width: 27.1%;
+					margin-right: 9.35%;
+					margin-top: 0px;
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(tabportrait) {
+					width: 30%;
+					margin-right: 5%;
+					margin-top: 0px;
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(mobile) {
+					width:100%;
+					margin-right:0%;
+					margin-top:0px;
+				}
+        // @include bp(mobile) {
+        //     width: 100%;
+        // }
         h5 {
             font-size: 20px;
             font-weight: bold;
@@ -728,6 +757,9 @@
             color: #fff;
             @include bp(mobile){
                 margin-top: 20px;
+            }
+            .memberFlex{
+                margin-bottom: 20px;
             }
         }
     }

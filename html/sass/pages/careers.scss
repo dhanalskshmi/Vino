@@ -103,12 +103,43 @@
 .heroFlex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
     .flexLinkWrap {
         height: 330px;
         width: 340px;
         overflow: hidden;
         position: relative;
+        margin-bottom: 0px;
+        width: 29.7%;
+				margin-top: 0px;
+                margin-right: 5.45%;
+				@include bp(desktop) {
+
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(tablandscape) {
+					width: 29.7%;
+					margin-right: 6.05%;
+					margin-top: 0px;
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(tabportrait) {
+					width: 43%;
+					margin-right: 6%;
+					margin-top:0px;
+					&:nth-child(3n+3) {
+						margin-right:0%;
+					}
+				}
+				@include bp(mobile) {
+					width:100%;
+					margin-right:0%;
+					margin-top:0px;
+				}
         @include bp(landscape) {
             height: 243px;
             width: 253px;
