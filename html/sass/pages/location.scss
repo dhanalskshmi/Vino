@@ -177,7 +177,7 @@
 									width:auto;
 	    						}
 							}
-						} 				
+						}
 					}
 					.viewButtonLink {
 						background:#1268e5;
@@ -310,18 +310,7 @@
 	}
 	.serviceBgWrap {
 		background:#f1f1f1;
-		display:table;
 		width:100%;
-		padding: 37px 16px 35px 92px;
-		@include bp(tablandscape) {
-			padding:18px 30px 32px 30px;
-		}
-		@include bp(tabportrait) {
-			padding:21px 80px 32px 80px;
-		}
-		@include bp(mobile) {
-			padding: 61px 19px 16px 19px;
-		}
 		h2 {
 			font-family: "opensans";
 			font-size:48px;
@@ -330,18 +319,24 @@
 			text-align:center;
 			text-transform: uppercase;
 			margin-bottom:46px;
+			@include bp(desktop) {
+				padding-top:37px;
+			}
 			@include bp(tablandscape) {
 				font-size:24px;
 				margin-bottom: 54px;
+				padding-top:18px;
 			}
 			@include bp(tabportrait) {
 				font-size:24px;
 				margin-top:0px;
 				margin-bottom: 33px;
+				padding-top:21px;
 			}
 			@include bp(mobile) {
 				font-size:24px;
 				margin-bottom:36px;
+				padding-top:61px;
 			}
 		}
 		.serviceContent {
@@ -349,10 +344,20 @@
 			flex-wrap: wrap;
 			/*justify-content: space-between;*/
 			width:100%;
+			@include bp(desktop) {
+				padding: 0px 16px 35px 92px;
+			}
 			@include bp(tablandscape) {
 				justify-content: normal;
+				padding:0px 30px 32px 30px;
 			}
-			.serviceDetail {		
+			@include bp(tabportrait) {
+				padding:0px 80px 32px 80px;
+			}
+			@include bp(mobile) {
+				padding: 0px 19px 16px 19px;
+			}
+			.serviceDetail {
     			width: 22.1%;
     			margin-right: 3.866%;
 				float: left;
@@ -396,19 +401,19 @@
 					margin-top:32px;
 					margin-bottom:7px;
 					text-align:center;
-					min-height: 43px;
+					//min-height: 43px;
 					@include bp(desktop) {
 						margin-bottom: 11px;
 					}
 					@include bp(tablandscape) {
 						margin-top: 24px;
-    					min-height:43px;
+    					//min-height:43px;
     					margin-bottom: 18px;
 					}
 					@include bp(tabportrait) {
 						margin-top: 23px;
     					margin-bottom: 20px;
-    					min-height:43px;
+    					//min-height:43px;
 					}
 					@include bp(mobile) {
 						font-size:20px;
@@ -443,7 +448,7 @@
 					margin-top:0px;
 				}
 				@include bp(tablandscape) {
-					&:nth-child(4) { 
+					&:nth-child(4) {
 						margin-top:74px;
 					}
 				}
@@ -478,7 +483,6 @@
 	}
 	.mangerBgWrap {
 		background:#f1f1f1;
-		display:table;
 		width:100%;
 		padding: 45px 103px 65px 121px;
 		@include bp(tablandscape) {

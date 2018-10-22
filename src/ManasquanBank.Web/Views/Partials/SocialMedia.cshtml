@@ -23,23 +23,44 @@ int i = 0;
 <ul>
 @foreach (dynamic tweetlist in jArray)
 {
-if (i < 3)
-{
+    if (i < 3)
+    {
 
-var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+        // var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+        string[] temp, timesplit;
+        string date, date1, displayTime;
+        try
+        {
+            date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+
+            temp = date.Split(' ');
+
+            timesplit = temp[3].Split(':');
+
+            TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+            DateTime time = DateTime.Today.Add(timespan);
+            displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+        }
+        catch(Exception ex)
+        {
+            displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+        }
+
+      
+
 <li>
 <div class="eventHead">
 <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="eventLogo">
 <img src="~/images/header/logo.png" alt="Manasquan Bank Logo">
 </a>
-<div class="followShare">
+@*<div class="followShare">
 <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="follow">
 <span>Follow</span>
 </a>
 <div class="share">
 <a href="#"></a>
 </div>
-</div>
+</div>*@
 </div>
 <div class="eventDetails">
 <p>    
@@ -74,7 +95,7 @@ foreach(dynamic media in tweetlist.extended_entities["media"])
 <div class="venue">
 <p>
 <small>
-@date
+@displayTime
 </small>
 </p>
 </div>
