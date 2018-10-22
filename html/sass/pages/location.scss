@@ -310,7 +310,6 @@
 	}
 	.serviceBgWrap {
 		background:#f1f1f1;
-		display:table;
 		width:100%;
 		padding: 37px 16px 35px 92px;
 		@include bp(tablandscape) {
@@ -478,7 +477,6 @@
 	}
 	.mangerBgWrap {
 		background:#f1f1f1;
-		display:table;
 		width:100%;
 		padding: 45px 103px 65px 121px;
 		@include bp(tablandscape) {
