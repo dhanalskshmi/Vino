@@ -55,7 +55,7 @@
 					@include bp(tablandscape) {
 						width: 52.544%;
 						min-height: 475px;
-						padding-bottom: 198px;
+						padding-bottom: 204px;
 					}
 					@include bp(tabportrait) {
 						width: 39.4230%;
@@ -392,11 +392,9 @@
     					width: 100%;
 						background:#1268e5;
 						padding: 23px 22px 48px 61px;
-						margin-top: 61px;
 						position:absolute;
 						bottom:0;
 						@include bp(tablandscape) {
-							margin-top: 8px;
 							padding: 19px 23px 30px 19px;
 						}
 						@include bp(tabportrait) {
