@@ -498,64 +498,105 @@
     <script src='script/lib/nprogress.js'></script>
     <script src="script/lib/modernizr-custom.js"></script>
 	<script src="script/lib/scrollanimation.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
 	<script>
   $(document).ready(function() {
   	$(".timehrsSection").clone().appendTo($(".cloneTimeHrs"));
 
       if ($('.mapSection').length > 0) {
+        function initMap() {
           var map;
-          google.maps.event.addDomListener(window, "load", function() {
-              var map = new google.maps.Map(document.getElementById("map_div"), {
-                  center: new google.maps.LatLng(40.137508, -74.089629),
-                  zoom: 11,
-                  zoomControl: false,
-                  scrollwheel: false,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-              });
-              var infoWindow = new google.maps.InfoWindow();
+          var bounds = new google.maps.LatLngBounds();
+          var llocdata = jQuery(".mapSection").find("#map_value").val();
+          var llocdata = jQuery.parseJSON(llocdata);
+          var firstLat,firstLang,infoWindowContent = [];
+          for (var i = 0; i < llocdata.length; i++) {
+            var firstJSON = llocdata[i];
+            if(i == 0){
 
-              /*
-               * marker creater function (acts as a closure for html parameter)
-               */
-              function createMarker(options, html) {
-                  var marker = new google.maps.Marker(options);
-                  if (html) {
-                      google.maps.event.addListener(marker, "click", function() {
-                          infoWindow.setContent(html);
-                          infoWindow.open(options.map, this);
-                      });
-                  }
-                  return marker;
-              }
-              /*add markers to map*/
-              var marker0 = createMarker({
-                  position: new google.maps.LatLng(40.137508, -74.089629),
-                  map: map,
-              });
+              firstLat = firstJSON["lat"];
+              firstLang = firstJSON["lng"];
+              firstZoom = firstJSON["zoom"];
+            }
+          }
+          var uluru = {lat: firstLat, lng: firstLang};
+          var latlng = new google.maps.LatLng(firstLat, firstLang);
+          console.log(llocdata);
+          var myOptions = {
+           center: latlng,
+           zoom: firstZoom,
+           mapTypeControl: false,
+           draggable: false,
+           scaleControl: false,
+           scrollwheel: false,
+           navigationControl: false,
+           streetViewControl: false,
+           disableDefaultUI: false
+        };
+        // Display a map on the page
+        map = new google.maps.Map(document.getElementById("map_div"), myOptions);
+        //map.setTilt(45);
+        // Display multiple markers on a map
+        var infoWindow = new google.maps.InfoWindow({ maxWidth: 400 }), marker, i;
 
-              var marker1 = createMarker({
-                  position: new google.maps.LatLng(40.070730, -74.046798),
-                  map: map,
-              });
+        // Loop through our array of markers & place each one on the map
+        for( i = 0; i < llocdata.length; i++ ) {
 
-              var marker2 = createMarker({
-                  position: new google.maps.LatLng(40.069431, -74.128023),
-                  map: map,
-              });
-              var marker3 = createMarker({
-                  position: new google.maps.LatLng(40.201300, -74.255699),
-                  map: map,
-              });
-              var marker4 = createMarker({
-                  position: new google.maps.LatLng(40.120684, -74.144013),
-                  map: map,
-              });
-          });
+            var lat = llocdata[i]["lat"];
+            var Longitude = llocdata[i]["lng"];
+            var position = new google.maps.LatLng(lat, Longitude);
+            //bounds.extend(position);
+
+            infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["name"]+"</p><p>"+llocdata[i]["description"]+"</p>"+
+                                    +"<p>"+llocdata[i]["address"]+"</p><p>Duration: "+llocdata[i]["startDate"]+" - "+llocdata[i]["endDate"]+"</p></div>";
+
+            marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: llocdata[i]["name"]
+            });
+
+            marker.setTitle(llocdata[i]["name"]);
+            // Allow each marker to have an info window
+            if($(window).width() > 1200){
+
+                google.maps.event.addListener(marker, "mouseover", (function(marker, i) {
+                    return function() {
+                        infoWindow.setContent(infoWindowContent[i]);
+                        infoWindow.open(map, marker);
+                        map.setCenter(marker.getPosition());
+                    }
+
+                })(marker, i));
+
+                 /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
+                    return function() {
+                        infoWindow.close(map, marker);
+                    }
+
+                })(marker, i));*/
+
+
+            }
+            else{
+
+                google.maps.event.addListener(marker, "click", (function(marker, i) {
+                    return function() {
+                        infoWindow.setContent(infoWindowContent[i]);
+                        infoWindow.open(map, marker);
+                        map.setCenter(marker.getPosition());
+                    }
+
+                })(marker, i));
+            }
+
+        }
       }
+    }
   });
 	</script>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
 
 </body>
 
