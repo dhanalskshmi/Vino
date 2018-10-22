@@ -1792,7 +1792,7 @@ header + .loginBlocks .businessLogin p a {
     background: #1c3d6d;
     color: #FFF;
   }
-  .headerNav .topNav li.iWantto:hover ul {
+  .headerNav .topNav li.iWantto.active ul, .headerNav .topNav li.iWantto:hover ul {
     opacity: 1;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -1987,6 +1987,12 @@ header + .loginBlocks .businessLogin p a {
   }
   .SubmenuWrapper .cols:last-child {
     padding-bottom: 0;
+  }
+
+  .ie11 .menuWrapper .loginBlocks {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -2338,7 +2344,7 @@ header + .loginBlocks .businessLogin p a {
     left: 79.5%;
   }
   .SubmenuWrapper .flexBox {
-    height: 304px;
+    height: 310px;
   }
   .SubmenuWrapper .flexBox .cols {
     width: 230px;
@@ -3674,10 +3680,11 @@ footer {
 }
 .appPannel p {
   color: #FFF;
-  line-height: 18px;
+  font-size: 26px;
+  line-height: 26px;
 }
 .appPannel .appStores {
-  padding: 24px 0 2px;
+  padding: 26px 0 2px;
 }
 .appPannel .appStores figure {
   max-width: 190px;
@@ -4235,8 +4242,10 @@ footer {
     max-width: 105px;
   }
   .bankingServices ul li.clentService .serviceContent .title {
+    float: none;
     min-width: 103px;
     max-width: 103px;
+    padding-left: 10px;
   }
   .bankingServices ul li.personalBank, .bankingServices ul li.didgitalCenter {
     max-width: 44.123%;
@@ -4827,6 +4836,9 @@ footer {
     width: 117px;
     bottom: 0;
   }
+  .bankingServices ul li.clentService .serviceContent .title {
+    padding-left: 12px;
+  }
 
   .bluePannel {
     margin-bottom: 50px;
@@ -5251,6 +5263,9 @@ footer {
   .bankingServices ul li.kasasa figure {
     width: 182px;
     left: -10px;
+  }
+  .bankingServices ul li.clentService .serviceContent .title {
+    padding-left: 46px;
   }
 
   .bluePannel {
@@ -6578,12 +6593,12 @@ footer {
   margin-right: 0;
 }
 
-.grecaptcha-badge {
+.joinEmail form .grecaptcha-badge {
   z-index: 10;
   display: none;
 }
 
-.joinEmail .captchaBlock {
+.contactUs + .joinEmail .captchaBlock {
   visibility: hidden;
   position: absolute;
 }
@@ -9284,7 +9299,7 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .heroBlock.locationBlk .bgWrap.mapLocation #map_div2 {
     height: 244px;
-    margin-top: 22px;
+    margin-top: 17px;
     margin-bottom: 20px;
   }
 }
@@ -9305,7 +9320,7 @@ footer {
 
 .locationSection.dlview, .locationSection.pmView {
   padding-top: 87px;
-  padding-bottom: 78px;
+  padding-bottom: 76px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .locationSection.dlview, .locationSection.pmView {
@@ -9359,6 +9374,11 @@ footer {
     width: 100%;
     margin-right: 0%;
     margin-top: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .locationSection.dlview .locationBgWrap .locationBox .locationDetail img, .locationSection.pmView .locationBgWrap .locationBox .locationDetail img {
+    width: 100%;
   }
 }
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail h3, .locationSection.pmView .locationBgWrap .locationBox .locationDetail h3 {
@@ -9487,6 +9507,7 @@ footer {
   .locationSection.dlview .locationBgWrap .locationBox .locationDetail .directionLink a img, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .directionLink a img {
     margin-left: 0px;
     top: -3px;
+    width: auto;
   }
 }
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail .viewButtonLink, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .viewButtonLink {
@@ -9502,8 +9523,7 @@ footer {
 }
 @media (min-width: 1280px) {
   .locationSection.dlview .locationBgWrap .locationBox .locationDetail .viewButtonLink, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .viewButtonLink {
-    font-family: "opensans";
-    font-weight: 800;
+    padding: 6.4px 18px 6px 22px;
   }
 }
 @media (max-width: 1279px) {
@@ -9560,6 +9580,9 @@ footer {
     padding-bottom: 37px;
   }
 }
+.locationSection.dlview.grey + .branchService, .locationSection.grey.pmView + .branchService {
+  margin-top: 56px !important;
+}
 .locationSection.pmView {
   padding-top: 59px;
   padding-bottom: 39px;
@@ -9596,6 +9619,16 @@ footer {
     padding-top: 22px;
   }
 }
+@media (min-width: 1280px) {
+  .locationSection.pmView.grey + .branchService {
+    margin-top: 56px !important;
+  }
+}
+@media (min-width: 1280px) {
+  .locationSection.pmView + .branchService {
+    margin-top: -26px;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .locationSection.pmView.grey + section.branchService {
@@ -9615,22 +9648,32 @@ footer {
 }
 @media (max-width: 767px) {
   .locationSection.pmView + section.branchService {
-    margin-top: 0px;
+    margin-top: 35px;
   }
 }
 
 .branchService {
   margin-top: 23px;
 }
+@media (min-width: 1280px) {
+  .branchService {
+    margin-top: -26px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .branchService {
+    margin-top: -4px;
+  }
+}
 .branchService .serviceBgWrap {
   background: #f1f1f1;
   display: table;
   width: 100%;
-  padding: 37px 30px 38px 92px;
+  padding: 37px 16px 35px 92px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .branchService .serviceBgWrap {
-    padding: 18px 24px 32px 30px;
+    padding: 18px 30px 32px 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -9694,7 +9737,7 @@ footer {
   width: 22.1%;
   margin-right: 3.866%;
   float: left;
-  margin-top: 71px;
+  margin-top: 75px;
 }
 @media (min-width: 1280px) {
   .branchService .serviceBgWrap .serviceContent .serviceDetail:nth-child(4n+4) {
@@ -9740,17 +9783,25 @@ footer {
   margin-top: 32px;
   margin-bottom: 7px;
   text-align: center;
+  min-height: 43px;
+}
+@media (min-width: 1280px) {
+  .branchService .serviceBgWrap .serviceContent .serviceDetail h4 {
+    margin-bottom: 11px;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .branchService .serviceBgWrap .serviceContent .serviceDetail h4 {
     margin-top: 24px;
-    margin-bottom: 45px;
+    min-height: 43px;
+    margin-bottom: 18px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .branchService .serviceBgWrap .serviceContent .serviceDetail h4 {
     margin-top: 23px;
-    margin-bottom: 47px;
+    margin-bottom: 20px;
+    min-height: 43px;
   }
 }
 @media (max-width: 767px) {
@@ -9758,11 +9809,17 @@ footer {
     font-size: 20px;
     margin-top: 21px;
     margin-bottom: 33px;
+    min-height: auto;
   }
 }
 .branchService .serviceBgWrap .serviceContent .serviceDetail p {
   font-size: 20px;
   color: #666666;
+}
+@media (min-width: 1280px) {
+  .branchService .serviceBgWrap .serviceContent .serviceDetail p {
+    line-height: 25px;
+  }
 }
 @media (max-width: 767px) {
   .branchService .serviceBgWrap .serviceContent .serviceDetail p {
@@ -9771,7 +9828,7 @@ footer {
 }
 @media (min-width: 1280px) {
   .branchService .serviceBgWrap .serviceContent .serviceDetail p + p {
-    margin-top: 13px;
+    margin-top: 19px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -9806,30 +9863,31 @@ footer {
 
 .branchMangers {
   margin-top: 46px;
-  margin-bottom: 49px;
+  margin-bottom: 100px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .branchMangers {
     margin-top: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 59px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .branchMangers {
-    margin-bottom: 100px;
+    margin-top: 39px;
+    margin-bottom: 39px;
   }
 }
 @media (max-width: 767px) {
   .branchMangers {
     margin-top: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 99px;
   }
 }
 .branchMangers .mangerBgWrap {
   background: #f1f1f1;
   display: table;
   width: 100%;
-  padding: 45px 98px 65px 121px;
+  padding: 45px 103px 65px 121px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .branchMangers .mangerBgWrap {
@@ -9838,7 +9896,7 @@ footer {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .branchMangers .mangerBgWrap {
-    padding: 32px 99px 40px 100px;
+    padding: 21px 99px 40px 100px;
   }
 }
 @media (max-width: 767px) {
@@ -9889,9 +9947,9 @@ footer {
   }
 }
 .branchMangers .mangerBgWrap .managerContent .managerDetail {
-  width: 27.318%;
+  width: 26.7%;
   margin-top: 89px;
-  margin-right: 9.023%;
+  margin-right: 9.8%;
 }
 @media (min-width: 1280px) {
   .branchMangers .mangerBgWrap .managerContent .managerDetail:nth-child(3n+3) {
@@ -10123,10 +10181,16 @@ footer {
   float: left;
   position: relative;
 }
+@media (min-width: 1280px) {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection {
+    padding-bottom: 276px;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1279px) {
   .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection {
     width: 52.544%;
     min-height: 475px;
+    padding-bottom: 198px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -10198,6 +10262,11 @@ footer {
   float: left;
   padding-left: 20px;
   padding-top: 10px;
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
+    width: 83%;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
@@ -10337,6 +10406,7 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
     margin-top: -5px;
+    margin-bottom: 17px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -10868,7 +10938,8 @@ footer {
 @media (min-width: 768px) and (max-width: 1023px) {
   .alertSection .bgWrap .contentSec a {
     font-size: 17px;
-    padding: 8px 20.4px 3.2px 20px;
+    /*padding:8px 20.4px 3.2px 20px;*/
+    padding: 5px 20.4px 3.2px 20px;
     font-weight: 500;
   }
 }
@@ -11256,8 +11327,14 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media (max-width: 1279px) {
+  .socialMedia .heroBlock .bgWrap ul {
+    margin-top: 27px;
+  }
+}
 @media (max-width: 991px) {
   .socialMedia .heroBlock .bgWrap ul {
+    margin-top: 0;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -11269,6 +11346,7 @@ footer {
 }
 @media (max-width: 767px) {
   .socialMedia .heroBlock .bgWrap ul {
+    margin-top: 0;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
@@ -11322,6 +11400,7 @@ footer {
     min-height: 45px;
     margin-bottom: 20px;
     margin-right: 40px;
+    font-size: 24px;
   }
 }
 @media (max-width: 767px) {
@@ -11352,6 +11431,17 @@ footer {
 @media (max-width: 767px) {
   .socialPanel {
     margin-top: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .socialPanel .containerWrapper {
+    max-width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .socialPanel .containerWrapper {
+    max-width: 410px;
+    padding: 0;
   }
 }
 .socialPanel .bgWrap {
@@ -11499,7 +11589,7 @@ footer {
 }
 .socialPanel .bgWrap .filtr-container .flexPanelWrap .flexPanelBody p {
   font-size: 15px;
-  line-height: initial;
+  line-height: normal;
 }
 .socialPanel .bgWrap .filtr-container .flexPanelWrap .flexPanelBody p a {
   color: #1268e5;
@@ -11548,6 +11638,16 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categoryBlock .bgWrap {
     padding: 45px 20px 20px 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .categoryBlock .bgWrap {
+    padding: 42px 20px 20px 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .categoryBlock .bgWrap p + .tableSection {
+    margin-top: 53px;
   }
 }
 .categoryBlock .bgWrap .heroLinks {
@@ -11667,6 +11767,26 @@ footer {
 }
 .heroBlock .bgWrap .tableSection .table-responsive table tbody tr:last-child td {
   border-bottom: 0px;
+}
+@media (min-width: 1280px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.checking.responsive_table {
+    display: block;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.checking.responsive_table {
+    display: block;
+  }
+}
+@media (min-width: 1280px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {
+    display: none;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {
+    display: none;
+  }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
   .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {

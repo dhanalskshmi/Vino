@@ -521,10 +521,11 @@ $dbannerhgt: 965px;
   }
   p {
     color: #FFF;
-    line-height: 18px;
+    font-size: 26px;
+    line-height: 26px;
   }
   .appStores {
-    padding: 24px 0 2px;
+    padding: 26px 0 2px;
     figure {
       max-width: 190px;
       display: block;
@@ -1097,8 +1098,10 @@ $dbannerhgt: 965px;
         &.clentService {
           .serviceContent {
             .title {
+              float: none;
               min-width: 103px;
               max-width: 103px;
+              padding-left: 10px;
             }
           }
         }
@@ -1736,6 +1739,13 @@ $dbannerhgt: 965px;
             bottom: 0;
           }
         }
+        &.clentService {
+          .serviceContent {
+            .title {
+              padding-left: 12px;
+            }
+          }
+        }
       }
     }
   }
@@ -2215,6 +2225,13 @@ $dbannerhgt: 965px;
           figure {
             width: 182px;
             left: -10px;
+          }
+        }
+        &.clentService {
+          .serviceContent {
+            .title {
+              padding-left: 46px;
+            }
           }
         }
       }
