@@ -62,6 +62,11 @@
     PostionList = PostionList.ToList();
 
 }
+@section InnerTopStyle {
+
+    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
+
+}
 <div class="careers">
     <section class="heroBanner">
         @if (heroImage != null)
@@ -148,7 +153,7 @@
             </div>
         </div>
     </section>
-    <section class="openPosition">
+    <section class="openPosition" id="openPosition">
         <div class="containerWrapper">
             <div class="bgWrap">
                 <div class="titleWrap">
@@ -549,7 +554,22 @@
     </section>
 </div>
 @section InnerBottomScript {
+<script src="~/scripts/lib/jquery-ui.js"></script>
     <script>
+       
+        function positionSearch()
+        {
+            var currentURL = window.location.href.split('?')[0];
+          
+            var position = $("#careerInput").val();
+
+            window.location.href = currentURL + "?position=" + position;
+        }
+
+        
+
+    </script>
+<script>
         $(document).ready(function () {
             $(".btn-Lmore").click(function () {
                 $(this).closest(".bluePanelInner").find(".carLst").slideToggle();
@@ -559,16 +579,15 @@
         });
 
         $("#careerInput").selectmenu();
-    </script>
+
+        
+</script>
     <script>
-       
-        function positionSearch()
-        {
-            var currentURL = window.location.href.split('?')[0];
-          
-            var position = $("#careerInput").val();
-            
-            window.location.href = currentURL + "?position=" + position;
+        var url = window.location.search;
+        if (url.match("position").length > 0) {
+            $("html, body").animate({
+                scrollTop: $(".openPosition").offset().top
+            }, "slow")
         }
 
     </script>
