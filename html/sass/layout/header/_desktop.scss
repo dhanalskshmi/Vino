@@ -616,6 +616,7 @@ header {
 							}
 						}
 					}
+					&.active,
 					&:hover {
 						ul {
 							opacity: 1;
@@ -837,6 +838,14 @@ header {
 			}
 			&:last-child {
 				padding-bottom: 0;
+			}
+		}
+	}
+
+	.ie11 {
+		.menuWrapper {
+			.loginBlocks {
+				transform: none;
 			}
 		}
 	}
@@ -1222,7 +1231,7 @@ header {
 			}
 		}
 		.flexBox {
-			height: 304px;
+			height: 310px;
 			.cols {
 				//width: calc(100% / 5);
 				width: 230px;
