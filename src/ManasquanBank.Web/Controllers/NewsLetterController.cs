@@ -25,21 +25,24 @@ namespace ManasquanBank.Web.Controllers
                 if (detail.NewsAdminEmail > 0 || detail.NewsConfirmationEmail >= 0)
                 {
                     string AOI = "";
-                    int length = detail.newsLetterCheckboxs.Length;
-                    if (length > 0)
-                    {
-                        for (int i = 0; i < length; i++)
+                        if (detail.newsLetterCheckboxs != null)
                         {
-                            if (i == 0)
+                            int length = detail.newsLetterCheckboxs.Length;
+                            if (length > 0)
                             {
-                                AOI += detail.newsLetterCheckboxs[i];
-                            }
-                            else
-                            {
-                                AOI += ", " + detail.newsLetterCheckboxs[i];
+                                for (int i = 0; i < length; i++)
+                                {
+                                    if (i == 0)
+                                    {
+                                        AOI += detail.newsLetterCheckboxs[i];
+                                    }
+                                    else
+                                    {
+                                        AOI += ", " + detail.newsLetterCheckboxs[i];
+                                    }
+                                }
                             }
                         }
-                    }
 
                     List<PerplexMail.EmailTag> listoftags = new List<PerplexMail.EmailTag>();
                     listoftags.Add(new PerplexMail.EmailTag("[#FirstName#]", detail.newsLetterFirstName));
