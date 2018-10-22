@@ -605,7 +605,6 @@
     <Content Include="Views\AboutUs.cshtml" />
     <Content Include="Views\LocationLandingPage.cshtml" />
     <Content Include="Views\LocationDetailPage.cshtml" />
-    <Content Include="Views\RedirectLocationPage.cshtml" />
     <Content Include="Views\CategoryDetailPage.cshtml" />
     <Content Include="Views\CategoryLandingPage.cshtml" />
     <Content Include="Views\ProductDetailPage.cshtml" />
@@ -616,6 +615,8 @@
     <Content Include="Views\MediaCenterLandingPage.cshtml" />
     <Content Include="Views\PersonalLendingPage.cshtml" />
     <Content Include="Views\Partials\SeoMetaData.cshtml" />
+    <Content Include="Views\ExecutiveBioDetailPage.cshtml" />
+    <Content Include="Views\redirectPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

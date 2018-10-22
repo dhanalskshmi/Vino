@@ -817,6 +817,14 @@
 .joinEmail form .grecaptcha-badge{
     margin-right: 0;
 }
-.grecaptcha-badge{
+.joinEmail form .grecaptcha-badge{
     z-index: 10;
+    display: none;
+}
+.contactUs + .joinEmail .captchaBlock{
+	visibility:hidden;position:absolute
+}
+
+#joinSuccess{
+    width: 100%;
 }

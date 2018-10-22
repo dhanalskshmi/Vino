@@ -162,6 +162,7 @@
                             font-size: 24px;
                             display: flex;
                             align-items: center;
+                            color: #666;
                             @include bp(tablet){
                                 min-height: 212px;
                                 font-size: 20px;
