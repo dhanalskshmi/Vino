@@ -28,12 +28,17 @@
 				list-style: none;
 				padding: 0;
 				display: flex;
-    			justify-content: space-between;
+				justify-content: space-between;
+				@include bp(landscape){
+					margin-top: 27px;
+				}
     			@include bp(tablet){
+					margin-top: 0;
     				flex-wrap: wrap;
     				justify-content: flex-start;
     			}
     			@include bp(mobile){
+					margin-top: 0;
     				justify-content: center;
     				flex-direction: column;
     				align-items: center;
@@ -62,6 +67,7 @@
 							min-height: 45px;
 							margin-bottom: 20px;
 							margin-right: 40px;
+							font-size: 24px;
 						}
 						@include bp(mobile){
 							max-width: 180px;
@@ -88,6 +94,15 @@
 	}
 	@include bp(mobile){
 	margin-top: 40px;
+	}
+	.containerWrapper{
+		@include bp(tablet){
+			max-width: 100%;
+		}
+		@include bp(tablet){
+			max-width: 410px;
+			padding: 0;
+		}
 	}
 	.bgWrap{
 		background: #1268e5;
@@ -184,7 +199,7 @@
 				}
 				p{
 					font-size: 15px;
-					line-height: initial;
+					line-height: normal;
 					a{
 						color: #1268e5;
 					}
