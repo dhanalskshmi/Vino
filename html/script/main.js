@@ -483,17 +483,19 @@ $(document).ready(function() {
 				$(this).addClass('active')
 			});
 
-      $('.mainNavigation li').click(function() {
+      $('.mainNav li').click(function() {
         $(this).siblings().removeClass('active');
-        $(this).addClass('active');
       });
+
+			$('.mainNav li').click(function() {
+				$(this).toggleClass('active')
+			});
 
 
     }
-    $('.menusearchBlock a').click(function() {
-  		$('.menusearchBlock').toggleClass('act');
+    $('.mainNav li.search a').click(function() {
+  		$(this).toggleClass('act');
   		$('.txtBox').focus();
-      $('.mainNavigation li').removeClass('active');
     });
 
 
@@ -507,7 +509,7 @@ $(document).ready(function() {
 
   $('.mainNav .submit').click(function(e) {
 		$(this).toggleClass('active');
-		$('.mainNav .search').toggleClass('active');
+		$('.mainNav li.search').toggleClass('searchOpen');
 	});
   $('.mLogin a').click(function(e) {
 		$(this).toggleClass('active');
@@ -520,6 +522,7 @@ $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     if (scrollTop > 200) {
         $('.loginBlocks, .mLogin a').removeClass('active');
+        $('.mainNav ul li a').removeClass('active');
 
     }
 });

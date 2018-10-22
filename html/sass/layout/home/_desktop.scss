@@ -703,7 +703,8 @@ $dbannerhgt: 965px;
     }
   }
   .groupCheckbox {
-    margin-top: -6px;
+    //margin-top: -6px;
+    margin-top: 39px;
     margin-bottom: 49px;
     div {
       margin-bottom: 29px;
@@ -762,7 +763,7 @@ $dbannerhgt: 965px;
       font-weight: 700;
       font-size: 27px;
       color: #FFF;
-      padding: 3px 40px 0;
+      padding: 3px 44px 1px;
       border-radius: 25px;
       border: 1px solid #FFF;
       text-transform: uppercase;
@@ -1351,11 +1352,11 @@ $dbannerhgt: 965px;
         display: inline-block;
         max-width: 108px;
         margin-bottom: 0;
-        margin-right: 3px;
+        margin-right: 7px;
         text-align: right;
         &:last-child {
           margin-right: 0;
-          margin-left: 10px;
+          //margin-left: 10px;
         }
       }
     }
@@ -1875,7 +1876,7 @@ $dbannerhgt: 965px;
       padding-top: 17px;
       figure {
         max-width: 126px;
-        margin-right: 0;
+        margin-right: 9px;
       }
     }
     .imgDesg {
@@ -2380,12 +2381,13 @@ $dbannerhgt: 965px;
     .imgDesg {
       max-width: 408px;
       top: -56px;
-      left: -55px;
+      left: -43px;
     }
     .appStores {
       padding-top: 40px;
       figure {
         max-width: 185px;
+        margin-right: 10px;
       }
     }
   }
@@ -2477,7 +2479,7 @@ $dbannerhgt: 965px;
     }
     form {
       div {
-        width: 31.18%;
+        width: 31.11%;
         margin-bottom: 32px;
         &.groupCheckbox {
           width: 100%;

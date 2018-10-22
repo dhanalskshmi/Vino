@@ -135,6 +135,10 @@ a[href^=tel] {
   text-decoration: none;
 }
 
+input[type=text]::-ms-clear {
+  display: none;
+}
+
 .txtArea,
 .txtBox {
   -webkit-appearance: none;
@@ -1903,7 +1907,7 @@ header + .loginBlocks .businessLogin p a {
     width: 18px;
     height: 16px;
   }
-  .mainNav .search.active .txtBox {
+  .mainNav .search.searchOpen .txtBox {
     background: #eeeeee;
     color: #666666;
     width: 355px;
@@ -1918,6 +1922,59 @@ header + .loginBlocks .businessLogin p a {
   .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
     opacity: 1;
   }
+  .mainNav ul li.active.shortNav, .mainNav ul li:hover.shortNav {
+    position: relative;
+  }
+  .mainNav ul li.active .subNav, .mainNav ul li:hover .subNav {
+    display: block;
+  }
+
+  .mainNav .subNav {
+    display: none;
+    min-width: 150px;
+    padding: 0 1px;
+    background: #fff;
+    font-size: 11px;
+    position: absolute;
+    top: 29px;
+    left: 9px;
+    z-index: 99;
+    text-transform: none;
+    -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+            transform: translateY(10px);
+    -webkit-transition: all .3s;
+            transition: all .3s;
+  }
+  .mainNav .subNav li {
+    display: block;
+    float: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 0;
+  }
+  .mainNav .subNav li h4 {
+    font-size: 17px;
+    color: #1c3d6d;
+    margin: 4px 9px 1px;
+    text-transform: uppercase;
+  }
+  .mainNav .subNav li a {
+    font-size: 15px;
+    display: block;
+    padding: 6px 7px 4px;
+    border-bottom: 1px solid #b3b3b3;
+  }
+  .mainNav .subNav li a::after {
+    display: none;
+  }
+  .mainNav .subNav li a:hover {
+    background: #1c3d6d;
+    color: #FFF;
+  }
+  .mainNav .subNav li:last-child a {
+    border-bottom: none;
+  }
 
   .SubmenuWrapper {
     position: absolute;
@@ -1925,6 +1982,7 @@ header + .loginBlocks .businessLogin p a {
     left: 0;
     top: 83px;
     display: none;
+    box-shadow: 0 3px 10px -4px #000;
   }
   .SubmenuWrapper .borderLine {
     display: none;
@@ -1973,14 +2031,22 @@ header + .loginBlocks .businessLogin p a {
   .SubmenuWrapper ul {
     font-size: 17px;
     padding-top: 5px;
+    margin-left: -9px;
     text-transform: capitalize;
   }
   .SubmenuWrapper ul li {
     float: none;
-    padding: 3px 12px 0 0;
+    padding: 0 12px 0 0;
+  }
+  .SubmenuWrapper ul li a {
+    padding: 3px 11px 2px;
   }
   .SubmenuWrapper ul li a::after {
     display: none;
+  }
+  .SubmenuWrapper ul li a:hover {
+    background: #1c3d6d;
+    color: #FFF;
   }
   .SubmenuWrapper .cols {
     padding-bottom: 20px;
@@ -2091,12 +2157,12 @@ header + .loginBlocks .businessLogin p a {
     right: 250px;
     margin-top: -7px;
   }
-  .mainNav .search.active .txtBox {
+  .mainNav .search.searchOpen .txtBox {
     width: 410px;
     height: 40px;
     padding: 0 28px 0 15px;
   }
-  .mainNav .search.active .submit {
+  .mainNav .search.searchOpen .submit {
     margin-top: 4px;
   }
 
@@ -2129,13 +2195,17 @@ header + .loginBlocks .businessLogin p a {
     padding-top: 9px;
   }
   .SubmenuWrapper ul li {
-    padding: 7px 12px 0 0;
+    padding: 7px 0 0 0;
   }
   .SubmenuWrapper .cols {
     padding-bottom: 36px;
   }
   .SubmenuWrapper .cols:last-child {
     padding-bottom: 0;
+  }
+
+  .mainNav .subNav {
+    top: 45px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -2293,7 +2363,7 @@ header + .loginBlocks .businessLogin p a {
     width: 26px;
     height: 24px;
   }
-  .mainNav .search.active .txtBox {
+  .mainNav .search.searchOpen .txtBox {
     width: 545px;
     height: 53px;
     padding: 0 58px 0 15px;
@@ -2382,6 +2452,10 @@ header + .loginBlocks .businessLogin p a {
   .openAccount {
     top: 30%;
   }
+
+  .mainNav .subNav {
+    top: 66px;
+  }
 }
 @media screen and (min-width: 1300px) {
   .headerWrapper {
@@ -2416,20 +2490,20 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li {
     padding-right: 27px;
-    padding-bottom: 21px;
+    padding-bottom: 25px;
   }
   .mainNav ul li a {
     line-height: 25px;
   }
   .mainNav ul li a span::after {
-    bottom: -23px;
+    bottom: -26px;
   }
   .mainNav .search .submit i {
     background-size: contain;
     width: 25px;
     height: 24px;
   }
-  .mainNav .search.active .txtBox {
+  .mainNav .search.searchOpen .txtBox {
     width: 585px;
   }
 
@@ -3851,7 +3925,7 @@ footer {
   margin-bottom: 0;
 }
 .joinEmail .groupCheckbox {
-  margin-top: -6px;
+  margin-top: 39px;
   margin-bottom: 49px;
 }
 .joinEmail .groupCheckbox div {
@@ -3916,7 +3990,7 @@ footer {
   font-weight: 700;
   font-size: 27px;
   color: #FFF;
-  padding: 3px 40px 0;
+  padding: 3px 44px 1px;
   border-radius: 25px;
   border: 1px solid #FFF;
   text-transform: uppercase;
@@ -4480,12 +4554,11 @@ footer {
     display: inline-block;
     max-width: 108px;
     margin-bottom: 0;
-    margin-right: 3px;
+    margin-right: 7px;
     text-align: right;
   }
   .appPannel .appStores figure:last-child {
     margin-right: 0;
-    margin-left: 10px;
   }
   .appPannel .appDetails {
     max-width: 502px;
@@ -4960,7 +5033,7 @@ footer {
   }
   .appPannel .appStores figure {
     max-width: 126px;
-    margin-right: 0;
+    margin-right: 9px;
   }
   .appPannel .imgDesg {
     max-width: 278px;
@@ -5406,13 +5479,14 @@ footer {
   .appPannel .imgDesg {
     max-width: 408px;
     top: -56px;
-    left: -55px;
+    left: -43px;
   }
   .appPannel .appStores {
     padding-top: 40px;
   }
   .appPannel .appStores figure {
     max-width: 185px;
+    margin-right: 10px;
   }
 
   .knowledgePannel {
@@ -5491,7 +5565,7 @@ footer {
     height: 60px;
   }
   .joinEmail form div {
-    width: 31.18%;
+    width: 31.11%;
     margin-bottom: 32px;
   }
   .joinEmail form div.groupCheckbox {
@@ -11642,7 +11716,7 @@ footer {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categoryBlock .bgWrap {
-    padding: 42px 20px 20px 20px;
+    padding: 42px 20px 40px 20px;
   }
 }
 @media (min-width: 1280px) {
@@ -11650,8 +11724,23 @@ footer {
     margin-top: 53px;
   }
 }
-.categoryBlock .bgWrap .heroLinks {
+.categoryBlock .bgWrap.heroLinks {
   padding-top: 14px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .categoryBlock + .categorySection {
+    margin-top: -5px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .categoryBlock + .categorySection {
+    margin-top: -16px;
+  }
+}
+@media (max-width: 767px) {
+  .categoryBlock + .categorySection {
+    margin-top: 53px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -11791,7 +11880,7 @@ footer {
 @media (min-width: 320px) and (max-width: 1023px) {
   .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {
     background: #2c5aa7;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
     width: 100%;
   }
 }
@@ -11799,6 +11888,9 @@ footer {
   .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table {
     margin-bottom: 35px;
   }
+}
+.heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr:last-child td {
+  border-bottom: 0px;
 }
 @media (min-width: 320px) and (max-width: 1023px) {
   .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table tr td {
@@ -11911,6 +12003,11 @@ footer {
 .heroBlock .bgWrap .tableSection .table-responsive table.responsive_table:last-child {
   margin-bottom: 0px;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock.categoryBlock .bgWrap .tableSection {
+    margin-bottom: 22px;
+  }
+}
 
 .categorySection {
   display: block;
@@ -11919,7 +12016,7 @@ footer {
   .categorySection {
     display: table;
     width: 100%;
-    margin-top: 53px;
+    margin-top: 52px;
   }
 }
 .categorySection .bgWrap {
@@ -11944,13 +12041,13 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap {
     margin-left: 0px;
-    margin-top: 40px;
+    margin-top: 75px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap {
     margin-left: 0px;
-    margin-top: 70px;
+    margin-top: 55px;
   }
 }
 @media (max-width: 767px) {
@@ -12030,7 +12127,7 @@ footer {
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection {
-  width: 50%;
+  width: 51.015%;
   height: 100%;
   float: left;
   -webkit-box-ordinal-group: 3;
@@ -12042,13 +12139,14 @@ footer {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection {
-    padding: 16px 28px 20px 30px;
+    width: 50%;
+    padding: 16px 28px 12px 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap .contentSection {
     width: 61.814%;
-    padding: 20px 28px 20px 30px;
+    padding: 20px 28px 15px 30px;
   }
 }
 @media (max-width: 767px) {
@@ -12262,6 +12360,11 @@ footer {
 .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location {
   margin-left: 68px;
 }
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location {
+    margin-left: 6%;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location {
     margin-left: 45px;
@@ -12339,12 +12442,11 @@ footer {
   padding-left: 17px;
 }
 .categorySection .bgWrap .flexWrap .contentSection a.applyBtn {
-  font-family: "Open Sans",sans-serif;
   font-size: 27px;
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 8px 46px 11px 42px;
+  padding: 10px 46px 11px 42px;
   display: inline-block;
   border: 1px solid #fff;
   border-radius: 21px;
@@ -12352,7 +12454,7 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.applyBtn {
     font-size: 18px;
-    padding: 10px 26px 4px 26px;
+    padding: 5px 26px 4px 26px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -12366,8 +12468,9 @@ footer {
     font-size: 18px;
     padding: 9px 26px 4px 26px;
     margin: 0 auto;
-    width: 160px;
+    width: 63%;
     display: block;
+    text-align: center;
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
@@ -12381,11 +12484,13 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
     font-size: 16px;
+    padding-right: 7px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
     font-size: 16px;
+    padding-right: 5px;
   }
 }
 @media (max-width: 767px) {
@@ -12408,6 +12513,7 @@ footer {
     top: -3px;
     left: 0px;
     width: 8px;
+    display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -12415,6 +12521,7 @@ footer {
     top: -3px;
     left: 0px;
     width: 8px;
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -12422,6 +12529,7 @@ footer {
     top: -3px;
     left: 0px;
     width: 8px;
+    display: none;
   }
 }
 .categorySection.rightImg .bgWrap .flexWrap .imgSection {
@@ -13260,46 +13368,46 @@ footer {
   }
 }
 
-.heroBlock + .general-template {
+.heroBlock.generalBanner + .general-template, .heroBlock.generalBanner + .heroBlock.generalBanner {
   margin-top: 50px;
 }
-.heroBlock p + .lrImg {
+.heroBlock.generalBanner p + .lrImg {
   margin-top: -15px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock p + .lrImg {
+  .heroBlock.generalBanner p + .lrImg {
     margin-top: 48px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock p + .lrImg {
+  .heroBlock.generalBanner p + .lrImg {
     margin-top: 28px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock p + .lrImg {
+  .heroBlock.generalBanner p + .lrImg {
     margin-top: 19px;
   }
 }
-.heroBlock p + ul.dotlist {
+.heroBlock.generalBanner p + ul.dotlist {
   margin-top: 75px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock p + ul.dotlist {
+  .heroBlock.generalBanner p + ul.dotlist {
     margin-top: 39px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock p + ul.dotlist {
+  .heroBlock.generalBanner p + ul.dotlist {
     margin-top: 25px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock p + ul.dotlist {
+  .heroBlock.generalBanner p + ul.dotlist {
     margin-top: 16px;
   }
 }
-.heroBlock .lrImg {
+.heroBlock.generalBanner .lrImg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13307,111 +13415,111 @@ footer {
   width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock .lrImg {
+  .heroBlock.generalBanner .lrImg {
     display: table;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock .lrImg {
+  .heroBlock.generalBanner .lrImg {
     display: table;
   }
 }
-.heroBlock .lrImg .imgSec1 {
+.heroBlock.generalBanner .lrImg .imgSec1 {
   width: 46.783%;
   float: left;
   margin-right: 6.259%;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock .lrImg .imgSec1 {
+  .heroBlock.generalBanner .lrImg .imgSec1 {
     width: 48.163%;
     margin-right: 3.674%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock .lrImg .imgSec1 {
+  .heroBlock.generalBanner .lrImg .imgSec1 {
     width: 100%;
     margin-right: 0%;
     margin-bottom: 20px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock .lrImg .imgSec1 {
+  .heroBlock.generalBanner .lrImg .imgSec1 {
     width: 100%;
     margin-right: 0%;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock .lrImg .imgSec1 img {
+  .heroBlock.generalBanner .lrImg .imgSec1 img {
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock .lrImg .imgSec1 img {
+  .heroBlock.generalBanner .lrImg .imgSec1 img {
     width: 100%;
   }
 }
-.heroBlock .lrImg .imgSec2 {
+.heroBlock.generalBanner .lrImg .imgSec2 {
   width: 46.958%;
   float: left;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock .lrImg .imgSec2 {
+  .heroBlock.generalBanner .lrImg .imgSec2 {
     width: 48.163%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock .lrImg .imgSec2 {
+  .heroBlock.generalBanner .lrImg .imgSec2 {
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock .lrImg .imgSec2 {
+  .heroBlock.generalBanner .lrImg .imgSec2 {
     width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock .lrImg .imgSec2 img {
+  .heroBlock.generalBanner .lrImg .imgSec2 img {
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock .lrImg .imgSec2 img {
+  .heroBlock.generalBanner .lrImg .imgSec2 img {
     width: 100%;
   }
 }
-.heroBlock .lrImg + p {
+.heroBlock.generalBanner .lrImg + p {
   margin-top: 51px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock .lrImg + p {
+  .heroBlock.generalBanner .lrImg + p {
     margin-top: 41px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock .lrImg + p {
+  .heroBlock.generalBanner .lrImg + p {
     margin-top: 22px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock .lrImg + p {
+  .heroBlock.generalBanner .lrImg + p {
     margin-top: 20px;
   }
 }
-.heroBlock ul.dotlist {
+.heroBlock.generalBanner ul.dotlist {
   font-size: 20px;
   color: #3d3d3d;
   position: relative;
 }
 @media (max-width: 767px) {
-  .heroBlock ul.dotlist {
+  .heroBlock.generalBanner ul.dotlist {
     font-size: 18px;
   }
 }
-.heroBlock ul.dotlist li {
+.heroBlock.generalBanner ul.dotlist li {
   padding-left: 10px;
 }
-.heroBlock ul.dotlist li::before {
+.heroBlock.generalBanner ul.dotlist li::before {
   content: "";
   position: absolute;
   width: 5px;
@@ -13422,14 +13530,14 @@ footer {
   left: 0;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock ul.dotlist li::before {
+  .heroBlock.generalBanner ul.dotlist li::before {
     margin-top: 7px;
   }
 }
-.heroBlock ul.dotlist li ul {
+.heroBlock.generalBanner ul.dotlist li ul {
   margin-top: 0px;
 }
-.heroBlock ul.dotlist li ul li:before {
+.heroBlock.generalBanner ul.dotlist li ul li:before {
   content: "";
   position: absolute;
   width: 5px;
@@ -13438,205 +13546,211 @@ footer {
   margin-top: 12px;
   left: 0;
 }
-.heroBlock ul.dotlist + .tableSection {
+.heroBlock.generalBanner ul.dotlist + .tableSection {
   margin-top: 95px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock ul.dotlist + .tableSection {
+  .heroBlock.generalBanner ul.dotlist + .tableSection {
     margin-top: 32px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock ul.dotlist + .tableSection {
+  .heroBlock.generalBanner ul.dotlist + .tableSection {
     margin-top: 15px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock ul.dotlist + .tableSection {
+  .heroBlock.generalBanner ul.dotlist + .tableSection {
     margin-top: 16px;
   }
 }
 
-.general-template h1 {
+.general-template h1, .heroBlock.generalBanner h1 {
   text-transform: uppercase;
   color: #1268e5;
   font-size: 52px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h1 {
+  .general-template h1, .heroBlock.generalBanner h1 {
     font-size: 48px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template h1 {
+  .general-template h1, .heroBlock.generalBanner h1 {
     font-size: 36px;
   }
 }
 @media (max-width: 767px) {
-  .general-template h1 {
+  .general-template h1, .heroBlock.generalBanner h1 {
     font-size: 36px;
   }
 }
-.general-template h1 + h2, .general-template h1 + h2, .general-template h1 + h3, .general-template h1 + h4, .general-template h1 + h5 {
+.general-template h1 + h2, .heroBlock.generalBanner h1 + h2, .general-template h1 + h2, .heroBlock.generalBanner h1 + h2, .general-template h1 + h3, .heroBlock.generalBanner h1 + h3, .general-template h1 + h4, .heroBlock.generalBanner h1 + h4, .general-template h1 + h5, .heroBlock.generalBanner h1 + h5 {
   margin-top: 25px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h1 + h2, .general-template h1 + h2, .general-template h1 + h3, .general-template h1 + h4, .general-template h1 + h5 {
+  .general-template h1 + h2, .heroBlock.generalBanner h1 + h2, .general-template h1 + h2, .heroBlock.generalBanner h1 + h2, .general-template h1 + h3, .heroBlock.generalBanner h1 + h3, .general-template h1 + h4, .heroBlock.generalBanner h1 + h4, .general-template h1 + h5, .heroBlock.generalBanner h1 + h5 {
     margin-top: 20px;
   }
 }
-.general-template h1 + p {
+.general-template h1 + p, .heroBlock.generalBanner h1 + p {
   margin-top: 14px;
 }
-.general-template h2 {
+.general-template h2, .heroBlock.generalBanner h2 {
   font-size: 48px;
   line-height: 40px;
   text-transform: uppercase;
   color: #1268e5;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h2 {
+  .general-template h2, .heroBlock.generalBanner h2 {
     font-size: 36px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template h2 {
+  .general-template h2, .heroBlock.generalBanner h2 {
     font-size: 24px;
   }
 }
 @media (max-width: 767px) {
-  .general-template h2 {
+  .general-template h2, .heroBlock.generalBanner h2 {
     font-size: 32px;
   }
 }
-.general-template h2 + h3 {
+.general-template h2 + h3, .heroBlock.generalBanner h2 + h3 {
   margin-top: 24px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h2 + h3 {
+  .general-template h2 + h3, .heroBlock.generalBanner h2 + h3 {
     margin-top: 17px;
   }
 }
-.general-template h2 + h4 {
+.general-template h2 + h4, .heroBlock.generalBanner h2 + h4 {
   margin-top: 25px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h2 + h4 {
+  .general-template h2 + h4, .heroBlock.generalBanner h2 + h4 {
     margin-top: 18px;
   }
 }
-.general-template h2 + h5 {
+.general-template h2 + h5, .heroBlock.generalBanner h2 + h5 {
   margin-top: 23px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h2 + h5 {
+  .general-template h2 + h5, .heroBlock.generalBanner h2 + h5 {
     margin-top: 20px;
   }
 }
-.general-template h2 + ul {
-  margin-top: 6px;
+.general-template h2 + ul, .heroBlock.generalBanner h2 + ul {
+  margin-top: 8px;
 }
-.general-template h2 + p {
+.general-template h2 + p, .heroBlock.generalBanner h2 + p {
   margin-top: 13px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template h2 + p {
+  .general-template h2 + p, .heroBlock.generalBanner h2 + p {
     margin-top: 8px;
   }
 }
-.general-template h3 {
+.general-template h3, .heroBlock.generalBanner h3 {
   font-size: 36px;
   text-transform: uppercase;
   color: #666666;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h3 {
+  .general-template h3, .heroBlock.generalBanner h3 {
     font-size: 24px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template h3 {
+  .general-template h3, .heroBlock.generalBanner h3 {
     font-size: 22px;
   }
 }
 @media (max-width: 767px) {
-  .general-template h3 {
+  .general-template h3, .heroBlock.generalBanner h3 {
     font-size: 22px;
   }
 }
-.general-template h3 + h4 {
+.general-template h3 + h4, .heroBlock.generalBanner h3 + h4 {
   margin-top: 20px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h3 + h4 {
+  .general-template h3 + h4, .heroBlock.generalBanner h3 + h4 {
     margin-top: 15px;
   }
 }
-.general-template h3 + h5 {
+.general-template h3 + h5, .heroBlock.generalBanner h3 + h5 {
   margin-top: 18px;
 }
-.general-template h3 + p {
+.general-template h3 + p, .heroBlock.generalBanner h3 + p {
   margin-top: 13px;
 }
-.general-template h4 {
-  font-size: 16px;
+.general-template h3 + ul, .heroBlock.generalBanner h3 + ul {
+  margin-top: 9px;
+}
+.general-template h4, .heroBlock.generalBanner h4 {
+  font-size: 23px;
   text-transform: uppercase;
   color: #666666;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h4 {
+  .general-template h4, .heroBlock.generalBanner h4 {
     font-size: 18px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template h4 {
+  .general-template h4, .heroBlock.generalBanner h4 {
     font-size: 18px;
   }
 }
 @media (max-width: 767px) {
-  .general-template h4 {
+  .general-template h4, .heroBlock.generalBanner h4 {
     font-size: 18px;
   }
 }
-.general-template h4 + h5 {
+.general-template h4 + h5, .heroBlock.generalBanner h4 + h5 {
   margin-top: 8px;
 }
-.general-template h4 + p {
+.general-template h4 + p, .heroBlock.generalBanner h4 + p {
   margin-top: 3px;
 }
-.general-template h5 {
+.general-template h4 + ul, .heroBlock.generalBanner h4 + ul {
+  margin-top: 10px;
+}
+.general-template h5, .heroBlock.generalBanner h5 {
   font-size: 20px;
   text-transform: uppercase;
   color: #666666;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .general-template h5 {
+  .general-template h5, .heroBlock.generalBanner h5 {
     font-size: 16px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template h5 {
+  .general-template h5, .heroBlock.generalBanner h5 {
     font-size: 16px;
   }
 }
 @media (max-width: 767px) {
-  .general-template h5 {
+  .general-template h5, .heroBlock.generalBanner h5 {
     font-size: 16px;
   }
 }
-.general-template p + h2 {
+.general-template p + h2, .heroBlock.generalBanner p + h2 {
   margin-top: 22px;
 }
-.general-template p + h3 {
+.general-template p + h3, .heroBlock.generalBanner p + h3 {
   margin-top: 23px;
 }
-.general-template p + h4 {
+.general-template p + h4, .heroBlock.generalBanner p + h4 {
   margin-top: 21px;
 }
-.general-template p + .ContentBlk1 {
+.general-template p + .ContentBlk1, .heroBlock.generalBanner p + .ContentBlk1 {
   margin-top: 25px;
 }
-.general-template ul {
+.general-template ul, .heroBlock.generalBanner ul {
   font-size: 18px;
   margin-top: 19px;
   margin-bottom: 30px;
@@ -13675,20 +13789,20 @@ footer {
     	} */
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template ul {
+  .general-template ul, .heroBlock.generalBanner ul {
     font-size: 16px;
   }
 }
 @media (max-width: 767px) {
-  .general-template ul {
+  .general-template ul, .heroBlock.generalBanner ul {
     font-size: 16px;
     padding-right: 10px;
   }
 }
-.general-template ul.dotlist li {
+.general-template ul.dotlist li, .heroBlock.generalBanner ul.dotlist li {
   padding-left: 10px;
 }
-.general-template ul.dotlist li::before {
+.general-template ul.dotlist li::before, .heroBlock.generalBanner ul.dotlist li::before {
   content: "";
   position: absolute;
   width: 5px;
@@ -13698,10 +13812,10 @@ footer {
   margin-top: 10px;
   left: 0;
 }
-.general-template ul.dotlist li ul {
+.general-template ul.dotlist li ul, .heroBlock.generalBanner ul.dotlist li ul {
   margin-top: 0px;
 }
-.general-template ul.dotlist li ul li:before {
+.general-template ul.dotlist li ul li:before, .heroBlock.generalBanner ul.dotlist li ul li:before {
   content: "";
   position: absolute;
   width: 5px;
@@ -13710,29 +13824,29 @@ footer {
   margin-top: 12px;
   left: 0;
 }
-.general-template ul + ul {
+.general-template ul + ul, .heroBlock.generalBanner ul + ul {
   margin-top: -14px;
 }
-.general-template ul + h2 {
+.general-template ul + h2, .heroBlock.generalBanner ul + h2 {
   margin-top: -3px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template ul + h2 {
+  .general-template ul + h2, .heroBlock.generalBanner ul + h2 {
     margin-top: -11px;
   }
 }
-.general-template ul + h3 {
+.general-template ul + h3, .heroBlock.generalBanner ul + h3 {
   margin-top: -3px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .general-template ul + h3 {
+  .general-template ul + h3, .heroBlock.generalBanner ul + h3 {
     margin-top: -4px;
   }
 }
-.general-template ul + h4 {
+.general-template ul + h4, .heroBlock.generalBanner ul + h4 {
   margin-top: -3px;
 }
-.general-template ul + h5 {
+.general-template ul + h5, .heroBlock.generalBanner ul + h5 {
   margin-top: -3px;
 }
 
