@@ -936,8 +936,14 @@ $(document).ready(function () {
         });
     }
 
+    $('.contactForm .selectBox').not("select.multiple").selectmenu({
+        style: 'dropdown',
+        transferClasses: true,
+        change: function() {
+          $('#form_module').validate().element(this);
+       }
+      });
 });
-
 
 if ($('.timelineWrappers').length > 0) {
 
@@ -1577,3 +1583,10 @@ if ($(window).width() <= 1023) {
 }
 
 });
+  $(document).ready(function(){
+  $(".selectBox").selectmenu();
+
+ 
+
+  });
+   

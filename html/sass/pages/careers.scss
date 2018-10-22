@@ -234,6 +234,7 @@
                 border: 3px solid #fff;
                 font-size: 24px;
                 font-weight: normal;
+                padding: 10px 38px;
                 @include bp(landscape) {
                     padding: 10px 38px;
                 }
@@ -315,7 +316,7 @@
                     }
                     p {
                         font-size: 20px;
-                        @include bp(mobile) {
+                        @include bp(tablet) {
                             font-size: 18px;
                         }
                     }
@@ -380,7 +381,7 @@
                         margin-top: 47px;
                     }
                     @include bp(mobile) {
-                        margin-top: 44px;
+                        margin-top: 40px;
                         text-align: center;
                     }
                 }
@@ -514,7 +515,7 @@
                 line-height: 20px;
             }
             b {
-                font-size: 19px;
+                font-size: 18px;
                 @include bp(tablet) {
                     font-size: 16px;
                 }
@@ -574,7 +575,12 @@
                 }
                 .btnManasq {
                     @extend .btn-mansq;
-                    padding: 26px 24px 20px 24px;
+                    width: 250px;
+                    height: 62px;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     margin-top: 2px;
                     margin-left: 12px;
                     font-weight: normal;
@@ -582,7 +588,6 @@
                     font-size: 24px;
                     color: #fff;
                     text-decoration: none;
-                    display: inline-block;
                     @include bp(landscape) {
                         margin-left: 54px;
                         margin-top: 11px;
@@ -591,10 +596,13 @@
                         margin-left: 44px;
                         margin-top: 6px;
                         font-size: 20px;
-                        padding: 18px 14px;
+                        width: 202px;
+                        height: 54px;
+                        vertical-align: middle;
+                        display: flex;
                     }
                     @include bp(mobile) {
-                        display: inline-block;
+                        padding: 0;
                         margin: auto;
                     }
                 }
@@ -608,6 +616,7 @@
             }
             @include bp(tablet) {
                 margin: 42px 0;
+                margin-bottom: 12px;
             }
             @include bp(mobile) {
                 margin: 0;
@@ -618,6 +627,7 @@
                 margin-bottom: 19px;
                 @include bp(tablet) {
                     margin-bottom: 8px;
+                    font-size: 22px;
                 }
                 @include bp(mobile) {
                     margin-top: 24px;
@@ -631,7 +641,8 @@
                 float: left;
                 @include bp(tablet) {
                     min-width: auto;
-                    max-width: 256px;
+                    max-width: 281px;
+                    margin-right: 21px;
                 }
                 @include bp(mobile) {
                     min-width: auto;
@@ -642,6 +653,9 @@
                     margin: 45px 0px;
                     @include bp(landscape) {
                         margin-bottom: 0;
+                    }
+                    @include bp(tablet){
+                        margin-top: 33px;
                     }
                     @include bp(mobile) {
                         margin: 10px 0px;
@@ -654,7 +668,7 @@
                 display: inline-block;
                 width: calc(100% - 400px);
                 @include bp(tablet) {
-                    width: calc(100% - 296px);
+                    width: calc(100% - 302px);
                 }
                 @include bp(mobile) {
                     width: 100%;
@@ -682,6 +696,7 @@
                         line-height: 20px;
                     }
                     b {
+                        font-size: 20px;
                         color: #666666;
                     }
                 }
@@ -703,13 +718,22 @@
         }
         .titleWrap {
             h3 {
-                padding-bottom: 44px;
+                padding-bottom: 35px;
                 @include bp(landscape) {
                     padding-bottom: 34px;
+                }
+                @include bp(mobile){
+                    padding-bottom: 16px;
                 }
             }
         }
         .cultureBlk {
+            p{
+                font-size: 20px;
+                b{
+                    font-size: 20px;
+                }
+            }
             .cultureSingle {
                 display: flex; // border-bottom: 1px solid #666666;
                 // padding-bottom: 56px;
@@ -732,6 +756,9 @@
                 .cultureContent {
                     p {
                         color: #3d3d3d;
+                        b{
+                            font-size: 20px;
+                        }
                     }
                     @include bp(mobile) {
                         order: 2;
@@ -742,6 +769,14 @@
                     border-bottom: none;
                     .cultureImg {
                         margin-right: 0;
+                    }
+                    .cultureContent{
+                        p{
+                            @include bp(tablet){
+                                padding-right: 20px;
+                                text-align: right;
+                            }
+                        }
                     }
                 }
             }

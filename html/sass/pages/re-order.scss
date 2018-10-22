@@ -1,0 +1,292 @@
+.ui-timepicker-wrapper{
+
+    font-size: 18px;
+}
+
+.ui-selectmenu-open{
+    max-height: 400px;
+    overflow: auto;
+}
+
+.re-order{
+    &.request{
+        .contactFormWrap{
+            background-color: #afcdf5;
+             @include bp(mobile){
+            background-color: #c5d9f4;
+                
+             }
+        }
+        .clrdecoder{
+            background-color: #c5d9f4;
+            width: 100%;
+             @include bp(landscape){
+                padding-bottom: 14px;
+             }
+              @include bp(tablet){
+                        padding-bottom: 12px;
+                        padding-top: 20px;
+                 }
+        }
+    }
+    .threecolsWrapper{
+        padding-top: 30px;
+        padding-left: 18px;
+        padding-right: 31px;
+        +{
+            .parentWrapper{
+                padding-top: 0px;
+            }
+        }
+        @include bp(landscape){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 8px;
+            padding-right: 22px;
+             @include bp(landscape){
+                    padding-top: 20px;
+             }
+            .nopadding{
+                 width: 49%;
+                 @include bp(mobile){
+                    width: 100%;
+                 }
+                 &.fullwidth{
+                    width: 100%;
+                 }
+            }
+        }
+    }
+    .parentWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        padding-left: 18px;
+        padding-right: 31px;
+        padding-top: 30px;
+        @include bp(landscape){
+                padding-left: 8px;
+                padding-right: 22px;
+        }
+        @include bp(tablet){
+                        padding-top: 14px;
+                 }
+        .nopadding{
+                width: 48.1%;
+                 @include bp(landscape){
+                    width: 49%;
+                 }
+                 @include bp(tablet){
+                        width: 48%;
+                 }
+                 @include bp(mobile){
+                    width: 100%;
+                 }
+        }
+    }
+    .heroBlock{
+        h2{ 
+            color: #1c3d6d;
+            margin-bottom: 13px;
+            text-align: left;
+        }
+        .bgWrap{
+                padding: 40px 50px 40px 30px;
+                h4{
+                    font-size: 20px;
+                    color: #1c3d6d;
+                }
+                @include bp(landscape){
+                    padding: 46px 50px 40px 20px;
+                }
+                @include bp(tablet){
+                            padding: 46px 50px 20px 20px;
+                            h4{
+                                font-size: 18px;
+                            }
+                }
+                 @include bp(mobile){
+                    padding: 33px 12px 20px 12px;
+                    h4{
+                        font-size: 16px;
+                    }
+                }
+                
+        }
+    }
+    .greyPanel{
+            margin-bottom: 100px;
+            @include bp(landscape){
+                    margin-top: 28px;
+            }
+            @include bp(tablet){
+                    margin-top: 40px;
+            }
+        .bgWrap{
+            background-color: #fff;
+            padding: 0px;
+            .btnManasq{
+             @include bp(mobile){
+                    margin-top: 0px;
+             }
+         }
+        }
+    }
+    .contactFormWrap{
+        width: 100%;
+        padding: 0px 0px 32px 0px;
+        .row{
+            margin: 0px;
+        }
+       @include bp(landscape){
+                padding: 0px 0px 40px 0px;
+        }
+        @include bp(tablet){
+                padding: 32px 0px 21px 0px;
+                 padding: 0px 0 21px 0;
+        }
+        @include bp(mobile){
+                margin-left: 0;
+
+        }
+        .form-control{
+                height: 40px;
+                z-index: 1;
+            &.txtArea{
+                height: 230px;
+                 @include bp(tablet){
+                    max-height: 140px;
+                 }
+        }
+        }
+        .form-group{
+            margin-bottom: 22px;
+            padding: 0 12px;
+            @include bp(mobile){
+                    padding: 0 0;
+                    margin-bottom: 20px;
+            }
+            .errorSpan{
+                    right: 3px;
+                     @include bp(mobile){
+                        right: -9px;
+                     }
+            }
+         
+        }
+       
+    }
+    ol.re-orderList{
+           margin: 0;
+          padding: 0;
+          list-style-type: none;
+          padding-top: 20px;
+          @include bp(landscape){
+                padding-bottom: 15px;
+          }
+          @include bp(tablet) {
+                padding-bottom: 0;
+          }
+          @include bp(mobile){
+            padding-bottom: 5px;
+          }
+        li{
+                counter-increment: step-counter;
+                padding-bottom: 22px;
+                font-size: 20px;
+                color: #3d3d3d;
+                position: relative;
+                padding-left: 43px;
+                padding-top: 5px;
+                @include bp(landscape){
+                    font-size: 18px;
+                    padding-bottom: 15px;
+                }
+                @include bp(tablet) {
+                        padding-left: 41px;
+                        padding-bottom: 30px;
+                        &:last-child{
+                            padding-bottom:10px;    
+                        }
+                }
+                @include bp(mobile){
+                    font-size: 16px;
+                    padding-bottom: 25px;
+
+                }
+            &:before{
+            content: counter(step-counter);
+            margin-right: 10px;
+            font-size: 20px;
+            background-color: #c5d9f4;
+            color: #989898;
+            font-weight: 700;
+            padding: 5px 13px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            @include bp(landscape){
+                    padding: 4px 11px;
+                    font-size: 18px;
+            }
+             @include bp(mobile){
+                    font-size: 16px;
+                    padding: 5px 12px;
+                }
+            }
+        }
+    }
+    .heroLinks{
+        padding-top: 10px;
+        @include bp(tablet) {
+            padding-top: 0px;
+        }
+        li{
+            @include bp(mobile){
+                &:first-child{
+                    a{
+                        margin-bottom:20px;
+                    }
+                    }
+            }
+            a{
+                    margin: 0 30px;
+                    @include bp(landscape){
+                            margin: 0 15px;
+                    }
+                    @include bp(mobile){
+                            margin-left: auto;
+                            margin-right: auto;
+                            
+                    }
+            }
+        }
+    }
+    .selectBox{
+        &.error{
+            +.ui-selectmenu-button{
+               border: 1px solid #a41f36;   
+            }
+        }
+    +.ui-selectmenu-button{
+        width: 100%;
+        border: 0px;
+        .ui-selectmenu-text{
+                padding: 8px 13px;
+        }
+        &.ui-selectmenu-button-open{
+        span.ui-icon{
+             transform: rotate(180deg);
+        }
+    }
+    }
+}
+
+    .mob-flex{
+        text-align: center;
+    }
+
+}

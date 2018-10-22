@@ -14,7 +14,8 @@ module.exports = function(grunt) {
 				'script/pages/timeline.js',
 				//'script/pages/location-detail.js',
 				//'script/pages/location.js',
-				'script/pages/category-detail.js'
+				'script/pages/category-detail.js',
+				'script/pages/reorder-form.js'
 			],
       dest: 'script/main.js',
     },

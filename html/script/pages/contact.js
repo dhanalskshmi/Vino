@@ -63,4 +63,11 @@ $(document).ready(function () {
         });
     }
 
+    $('.contactForm .selectBox').not("select.multiple").selectmenu({
+        style: 'dropdown',
+        transferClasses: true,
+        change: function() {
+          $('#form_module').validate().element(this);
+       }
+      });
 });
