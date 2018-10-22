@@ -21,22 +21,25 @@ namespace ManasquanBank.Web.Controllers
             if (validate.GoogleCaptchaValidate(response))
             {
                 try
-            {
+                {
                 if (contact.AdminEmail > 0 || contact.ConfirmationEmail >= 0)
                 {
                     string AOI = "";
-                    int length = contact.checkboxs.Length;
-                    if (length > 0)
+                    if (contact.checkboxs != null)
                     {
-                        for (int i = 0; i < length; i++)
+                        int length = contact.checkboxs.Length;
+                        if (length > 0)
                         {
-                            if (i == 0)
+                            for (int i = 0; i < length; i++)
                             {
-                                AOI += contact.checkboxs[i];
-                            }
-                            else
-                            {
-                                AOI += ", " + contact.checkboxs[i];
+                                if (i == 0)
+                                {
+                                    AOI += contact.checkboxs[i];
+                                }
+                                else
+                                {
+                                    AOI += ", " + contact.checkboxs[i];
+                                }
                             }
                         }
                     }

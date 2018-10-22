@@ -2,49 +2,63 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using Epiphany.SeoMetadata
 @{
-        SeoMetadata seoMetaData = null;
+    SeoMetadata seoMetaData = null;
 
-        if (Model.Content.HasProperty("seoMetaData"))
-        {
-            seoMetaData = Model.Content.GetPropertyValue<SeoMetadata>("seoMetaData");
-        }
+    if (Model.Content.HasProperty("seoMetaData"))
+    {
+        seoMetaData = Model.Content.GetPropertyValue<SeoMetadata>("seoMetaData");
+    }
 
-        string Path = HttpContext.Current.Request.Url.AbsolutePath;
-        string host = HttpContext.Current.Request.Url.Host;
+    string Path = HttpContext.Current.Request.Url.AbsolutePath;
+    string host = HttpContext.Current.Request.Url.Host;
 
-        var metaTitle = Model.Content.Name;
-        var metaDescription = string.Empty;
-        
-        @* use the new seo meta values if they exist*@
-        if (seoMetaData != null)
-        {
-            if (!string.IsNullOrEmpty(seoMetaData.Title))
-            {
-                metaTitle = seoMetaData.Title;
-            }
+    var metaTitle = Model.Content.Name;
+    if(Model.Content.HasValue("title"))
+    {
+        metaTitle = Model.Content.GetPropertyValue<string>("title");
+    }
+    var metaDescription = string.Empty;
 
-            if (!string.IsNullOrEmpty(seoMetaData.Description))
-            {
-                metaDescription = seoMetaData.Description;
-            }
-        }
+
 
         @* special case for insight, event and press release *@
-        //if (Model.Content.DocumentTypeAlias == "insight" || Model.Content.DocumentTypeAlias == "pressRelease")
-        //{
-        //    if (Model.Content.HasValue("title"))
-        //    {
-        //        metaTitle = Model.Content.GetPropertyValue<string>("title");
-        //    }
-
-        //    if (Model.Content.HasProperty("teaserText") && Model.Content.HasValue("teaserText"))
-        //    {
-        //        metaDescription = Model.Content.GetPropertyValue<string>("teaserText");
-        //    }
-        //}
-
-    if(Path != "/")
+if (Model.Content.DocumentTypeAlias == "categoryDetailPage" || Model.Content.DocumentTypeAlias == "home" || Model.Content.DocumentTypeAlias == "mediaCenterLandingPage" || Model.Content.DocumentTypeAlias == "productDetailPage")
+{
+    if (Model.Content.HasValue("categoryDetailTitle"))
     {
+        metaTitle = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
+    }
+
+    if (Model.Content.HasProperty("siteTitle"))
+    {
+        metaTitle = Model.Content.GetPropertyValue<string>("siteTitle");
+    }
+    if (Model.Content.HasProperty("mediacenterTitle"))
+    {
+        metaTitle = Model.Content.GetPropertyValue<string>("mediacenterTitle");
+    }
+    if (Model.Content.HasProperty("productDetailTitle"))
+    {
+        metaTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
+    }
+}
+
+@* use the new seo meta values if they exist*@
+if (seoMetaData != null)
+{
+    if (!string.IsNullOrEmpty(seoMetaData.Title))
+    {
+        metaTitle = seoMetaData.Title;
+    }
+
+    if (!string.IsNullOrEmpty(seoMetaData.Description))
+    {
+        metaDescription = seoMetaData.Description;
+    }
+}
+
+if (Path != "/")
+{
 		  <title>@metaTitle | NJ Banks for Personal and Business Needs</title>
 		}
         else

@@ -452,19 +452,24 @@
                                 <div class="memberFlex">
                                     <h5>@empName</h5>
                                     <p>@empTitle</p>
-                                    <div class="memberFlexIcons">
-                                        <p>
-                                            @if (!string.IsNullOrEmpty(email))
-                                            {
-                                                <a href="mailto:" @email><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
-                                            }
-                                            else
-                                            {
-                                                <img src="images/about/mail_icon.png" alt="Mail_Icon">
-                                            }
-                                            <a href="@bio.Url"><img src="images/about/user_icon.png" alt="User_Icon"></a>
-                                        </p>
-                                    </div>
+
+                                    @if (bio.DocumentTypeAlias == "bioDetailPage")
+                                    {
+                                        <div class="memberFlexIcons">
+                                            <p>
+                                                @if (!string.IsNullOrEmpty(email))
+                                                {
+                                                    <a href="mailto:" @email><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
+                                                }
+                                                else
+                                                {
+                                                    <img src="images/about/mail_icon.png" alt="Mail_Icon">
+                                                }
+                                                <a href="@bio.Url"><img src="images/about/user_icon.png" alt="User_Icon"></a>
+                                            </p>
+                                        </div>
+                                    }
+                                    
                                 </div>
                             }
 
