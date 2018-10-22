@@ -49,9 +49,13 @@
 					min-height:749px;
 					float: left;
 					position: relative;
+					@include bp(desktop) {
+						padding-bottom:276px;
+					}
 					@include bp(tablandscape) {
 						width: 52.544%;
 						min-height: 475px;
+						padding-bottom: 198px;
 					}
 					@include bp(tabportrait) {
 						width: 39.4230%;
@@ -102,6 +106,9 @@
 										float:left;
 										padding-left: 20px;
 										padding-top: 10px;
+										@include bp(macview) {
+    										width: 83%;
+										}
 										@include bp(tablandscape) {
 											width: 83.40%;
 											padding-left:11px;
@@ -212,6 +219,7 @@
 								margin-top: 73px;
 								@include bp(tablandscape) {
 									margin-top: -5px;
+									margin-bottom: 17px;
 								}
 								@include bp(tabportrait) {
 									margin-top: -4px;
@@ -630,7 +638,8 @@
 				}
 				@include bp(tabportrait) {
 					font-size:17px;
-					padding:8px 20.4px 3.2px 20px;
+					/*padding:8px 20.4px 3.2px 20px;*/
+					padding: 5px 20.4px 3.2px 20px;
 					font-weight:500;
 				}
 				@include bp(mobile) {
