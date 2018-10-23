@@ -587,7 +587,6 @@ $(window).scroll(function() {
     if (scrollTop > 900) {
         $('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
-
     }
 });
 
