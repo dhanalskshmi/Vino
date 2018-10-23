@@ -2,7 +2,7 @@
     .heroBlock {
         margin-bottom: 99px;
         @include bp(mobile) {
-            margin-bottom: 92px;
+            margin-bottom: 100px;
         }
         p {
             color: #3d3d3d;
@@ -180,10 +180,11 @@
                 margin-bottom: 53px;
                 @include bp(tablet) {
                     margin-top: 43px;
+                    margin-bottom: 26px;
                 }
                 @include bp(mobile) {
                     margin-top: 22px;
-                    margin-bottom: 25px;
+                    margin-bottom: 28px;
                 }
                 p {
                     font-size: 18px;
@@ -254,6 +255,7 @@
                 }
                 @include bp(tablet){
                     margin-top: 13px;
+                    margin-bottom: 16px;
                 }
                 @include bp(mobile){
                     margin-top: 17px;

@@ -79,7 +79,7 @@
 		}
 		&.flex-order {
 			&.active{
-				display: block;
+				//display: block;
 			}
 		}
 		&::before {
@@ -88,7 +88,7 @@
 			height: calc(100% + 214px);*/
 		}
 		li {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       position: relative;
       //width:100%;
       float: left;

@@ -348,7 +348,7 @@
                     left: 0;
                     right: 0;
                     margin: auto;
-                    display: block;
+                    display: inline-table;
                     width: 255px;
                     border: 3px solid #fff;
                     color: #fff;
@@ -362,7 +362,7 @@
                         width: 73%;
                     }
                     @include bp(mobile) {
-                        margin: auto;
+                        margin: 20px auto;
                         padding: 38px 50px;
                         width: 226px;
                     }
@@ -517,7 +517,7 @@
                             padding: 17px 17px 15px 20px;
                         }
                         @include bp(mobile) {
-                            width: 220px;
+                            width: 225px;
                             padding: 15px 22px;
                         }
                         h4 {
@@ -568,6 +568,7 @@
                     .figureContent {
                         margin-top: 112px;
                         bottom: auto;
+                        display: inline-block;
                         @include bp(landscape){
                             margin-top: 95px;
                         }
@@ -775,7 +776,7 @@
         .titleWrap {
             h3 {
                 @include bp(landscape) {
-                    padding-bottom: 40px;
+                    padding-bottom: 28px;
                 }
                 @include bp(tablet) {
                     padding-bottom: 38px;

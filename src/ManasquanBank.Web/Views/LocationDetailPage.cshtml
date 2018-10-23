@@ -353,7 +353,7 @@
             var uluru = { lat: firstLat, lng: firstLang };
             var latlng = new google.maps.LatLng(firstLat, firstLang);
 
-            console.log(llocdata);
+           // console.log(llocdata);
 
             var myOptions = {
                 center: latlng,
@@ -407,41 +407,18 @@
                 marker.setTitle(llocdata[i]["name"]);
                 // Allow each marker to have an info window
 
-                if ($(window).width() > 1200) {
+                
+                google.maps.event.addListener(marker, "click", (function (marker, i) {
+                    
+                    return function () {
+                            infoWindow.setContent(infoWindowContent[i]);
+                            infoWindow.open(map, marker);
+                            map.setCenter(marker.getPosition());
+                        
+                    }
 
-                    google.maps.event.addListener(marker, "mouseover", (function (marker, i) {
-                        return function () {
-                            if (infoWindowContent[i] != infoWindow.getContent()) {
-                                infoWindow.setContent(infoWindowContent[i]);
-                                infoWindow.open(map, marker);
-                                map.setCenter(marker.getPosition());
-                            }
-                        }
-
-                    })(marker, i));
-
-                    /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
-                       return function() {
-                           infoWindow.close(map, marker);
-                       }
-
-                   })(marker, i));*/
-
-
-                }
-                else {
-
-                    google.maps.event.addListener(marker, "click", (function (marker, i) {
-                        return function () {
-                            if (infoWindowContent[i] != infoWindow.getContent()) {
-                                infoWindow.setContent(infoWindowContent[i]);
-                                infoWindow.open(map, marker);
-                                map.setCenter(marker.getPosition());
-                            }
-                        }
-
-                    })(marker, i));
-                }
+                })(marker, i));
+                
 
 
 

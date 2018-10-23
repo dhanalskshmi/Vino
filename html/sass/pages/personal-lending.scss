@@ -45,9 +45,7 @@
             }
         }
         .flexContent {
-            padding-left: 40px;
-            padding-top: 58px;
-            padding-right: 25px;
+            padding: 58px 25px 10px 40px;
             width: calc(100% - 533px);
             @include bp(landscape) {
                 width: calc(100% - 343px);
@@ -101,7 +99,7 @@
         .profDisplay {
             width: 222px;
             margin: 0 2.6%;
-            margin-right: 6%;
+            margin-right: 5.8%;
             padding-bottom: 20px;
             @include bp(landscape) {
                 width: 183px;
@@ -134,9 +132,9 @@
                     color: #fff;
                     background: #1c3d6d;
                     display: block;
-                    padding: 21px 20px;
+                    padding: 19px 20px;
                     font-size: 18px;
-                    font-weight: 600;
+                    font-weight: 500;
                     margin-bottom: 12px;
                     @include bp(landscape) {
                         font-size: 15px;

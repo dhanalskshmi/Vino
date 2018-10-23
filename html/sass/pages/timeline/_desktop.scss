@@ -492,7 +492,7 @@ display: inline;
   }
 }
 
-/*.ie11 {
+.ie11 {
   .timelinePannelwrap {
     &.heroBlock {
       .bgWrap {
@@ -509,7 +509,7 @@ display: inline;
       top: 1400px;
     }
   }
-}*/
+}
 
 @media screen and (max-width: 767px) {
 

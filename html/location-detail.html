@@ -244,7 +244,7 @@
 			<section class="mapSection">
 				<div class="containerWrapper">
 					<div id="map_div"></div>
-					<!--<img src="images/location-detail/map.jpg" alt="map"/> -->
+					 <input type="hidden" name="map_value" id="map_value" value="[{&quot;lat&quot;:55.406321,&quot;lng&quot;:10.387015,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;}]" />
 				</div>
 			</section>
 			<section class="alertSection">
@@ -498,109 +498,112 @@
     <script src='script/lib/nprogress.js'></script>
     <script src="script/lib/modernizr-custom.js"></script>
 	<script src="script/lib/scrollanimation.js"></script>
-
-  <script src="script/lib/jquery.validate.min.js"></script>
-  <script src="script/lib/jquery-ui.js"></script>
+    <script src="script/lib/jquery.validate.min.js"></script>
+    <script src="script/lib/jquery-ui.js"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
 	<script>
-  $(document).ready(function() {
-  	$(".timehrsSection").clone().appendTo($(".cloneTimeHrs"));
-
-      if ($('.mapSection').length > 0) {
         function initMap() {
-          var map;
-          var bounds = new google.maps.LatLngBounds();
-          var llocdata = jQuery(".mapSection").find("#map_value").val();
-          var llocdata = jQuery.parseJSON(llocdata);
-          var firstLat,firstLang,infoWindowContent = [];
-          for (var i = 0; i < llocdata.length; i++) {
-            var firstJSON = llocdata[i];
-            if(i == 0){
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var llocdata = jQuery("section.mapSection").find("#map_value").val();
+            var llocdata = jQuery.parseJSON(llocdata);
+            var firstLat, firstLang, infoWindowContent = [];
+            for (var i = 0; i < llocdata.length; i++) {
+                var firstJSON = llocdata[i];
+                if (i == 0) {
 
-              firstLat = firstJSON["lat"];
-              firstLang = firstJSON["lng"];
-              firstZoom = firstJSON["zoom"];
+                    firstLat = firstJSON["lat"];
+                    firstLang = firstJSON["lng"];
+                    firstZoom = firstJSON["zoom"];
+                }
             }
-          }
-          var uluru = {lat: firstLat, lng: firstLang};
-          var latlng = new google.maps.LatLng(firstLat, firstLang);
-          console.log(llocdata);
-          var myOptions = {
-           center: latlng,
-           zoom: firstZoom,
-           mapTypeControl: false,
-           draggable: false,
-           scaleControl: false,
-           scrollwheel: false,
-           navigationControl: false,
-           streetViewControl: false,
-           disableDefaultUI: false
-        };
-        // Display a map on the page
-        map = new google.maps.Map(document.getElementById("map_div"), myOptions);
-        //map.setTilt(45);
-        // Display multiple markers on a map
-        var infoWindow = new google.maps.InfoWindow({ maxWidth: 400 }), marker, i;
+            var uluru = { lat: firstLat, lng: firstLang };
+            var latlng = new google.maps.LatLng(firstLat, firstLang);
+            console.log(llocdata);
+            var myOptions = {
+                center: latlng,
+                zoom: firstZoom,
+                mapTypeControl: false,
+                draggable: true,
+                scaleControl: false,
+                scrollwheel: false,
+                navigationControl: false,
+                streetViewControl: false,
+                disableDefaultUI: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            // Display a map on the page
+            map = new google.maps.Map(document.getElementById("map_div"), myOptions);
+            //map.setTilt(45);
 
-        // Loop through our array of markers & place each one on the map
-        for( i = 0; i < llocdata.length; i++ ) {
+            // Display multiple markers on a map
 
-            var lat = llocdata[i]["lat"];
-            var Longitude = llocdata[i]["lng"];
-            var position = new google.maps.LatLng(lat, Longitude);
-            //bounds.extend(position);
+            if ($(window).width() > 767) {
 
-            infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["name"]+"</p><p>"+llocdata[i]["description"]+"</p>"+
-                                    +"<p>"+llocdata[i]["address"]+"</p><p>Duration: "+llocdata[i]["startDate"]+" - "+llocdata[i]["endDate"]+"</p></div>";
-
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: llocdata[i]["name"]
-            });
-
-            marker.setTitle(llocdata[i]["name"]);
-            // Allow each marker to have an info window
-            if($(window).width() > 1200){
-
-                google.maps.event.addListener(marker, "mouseover", (function(marker, i) {
-                    return function() {
-                        infoWindow.setContent(infoWindowContent[i]);
-                        infoWindow.open(map, marker);
-                        map.setCenter(marker.getPosition());
-                    }
-
-                })(marker, i));
-
-                 /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
-                    return function() {
-                        infoWindow.close(map, marker);
-                    }
-
-                })(marker, i));*/
-
-
+                var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
             }
-            else{
+            else {
 
-                google.maps.event.addListener(marker, "click", (function(marker, i) {
-                    return function() {
-                        infoWindow.setContent(infoWindowContent[i]);
-                        infoWindow.open(map, marker);
-                        map.setCenter(marker.getPosition());
-                    }
-
-                })(marker, i));
+                var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
             }
+            // Loop through our array of markers & place each one on the map
+            for (i = 0; i < llocdata.length; i++) {
 
+                var lat = llocdata[i]["lat"];
+                var Longitude = llocdata[i]["lng"];
+                var position = new google.maps.LatLng(lat, Longitude);
+                //bounds.extend(position);
+
+                infoWindowContent[i] = "<div class='map-infoContent'><p>" + llocdata[i]["title"] + "</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr=" + llocdata[i]["getdirection"] + "'>Get Direction</a></p></div>";
+
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    title: llocdata[i]["name"]
+                });
+
+                marker.setTitle(llocdata[i]["name"]);
+                // Allow each marker to have an info window
+
+                if ($(window).width() > 1200) {
+
+                    google.maps.event.addListener(marker, "mouseover", (function (marker, i) {
+                        return function () {
+                            if (infoWindowContent[i] != infoWindow.getContent()) {
+                                infoWindow.setContent(infoWindowContent[i]);
+                                infoWindow.open(map, marker);
+                                map.setCenter(marker.getPosition());
+                            }
+                        }
+                    })(marker, i));
+
+                    /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
+                       return function() {
+                           infoWindow.close(map, marker);
+                       }
+
+                   })(marker, i));*/
+                }
+                else {
+
+                    google.maps.event.addListener(marker, "click", (function (marker, i) {
+                        return function () {
+                            if (infoWindowContent[i] != infoWindow.getContent()) {
+                                infoWindow.setContent(infoWindowContent[i]);
+                                infoWindow.open(map, marker);
+                                map.setCenter(marker.getPosition());
+                            }
+                        }
+
+                    })(marker, i));
+                }
+            }
         }
-      }
-    }
-  });
-	</script>
-
-	<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
-
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd00wENWGmPdcouUEz5Ng6-BqzmoMz884&callback=initMap">
+    </script>
 </body>
 
 </html>

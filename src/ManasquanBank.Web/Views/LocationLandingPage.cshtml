@@ -350,102 +350,83 @@
 @section InnerBottomScript {
 <script src="~/scripts/lib/jquery-ui.js"></script>
     <script>
-function initMap() {
-    var map;
-    var bounds = new google.maps.LatLngBounds();
-    var llocdata = jQuery("section.heroBlock").find("#map_value").val();
+        function initMap() {
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var llocdata = jQuery("section.heroBlock").find("#map_value").val();
 
-  	var llocdata = jQuery.parseJSON(llocdata);
-  	var firstLat,firstLang,infoWindowContent = [];
+            var llocdata = jQuery.parseJSON(llocdata);
+            var firstLat, firstLang, infoWindowContent = [];
 
-  	for (var i = 0; i < llocdata.length; i++) {
-  		var firstJSON = llocdata[i];
-  		if(i == 0){
+            for (var i = 0; i < llocdata.length; i++) {
+                var firstJSON = llocdata[i];
+                if (i == 0) {
 
-  			firstLat = firstJSON["lat"];
-  			firstLang = firstJSON["lng"];
-  			firstZoom = firstJSON["zoom"];
-  		}
-  	}
-
-  	var uluru = {lat: firstLat, lng: firstLang};
-  	var latlng = new google.maps.LatLng(firstLat, firstLang);
-
-    console.log(llocdata);
-
-    var myOptions = {
-	   center: latlng,
-	   zoom: firstZoom,
-	   mapTypeControl: false,
-	   draggable: true,
-	   scaleControl: false,
-	   scrollwheel: false,
-	   navigationControl: false,
-	   streetViewControl: false,
-	   disableDefaultUI: false,
-     mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-
-
-
-    // Display a map on the page
-    map = new google.maps.Map(document.getElementById("map_div2"), myOptions);
-    //map.setTilt(45);
-
-
-
-    // Display multiple markers on a map
-
-    if($(window).width() > 767){
-
-      var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
-    }
-    else{
-
-      var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
-    }
-
-    // Loop through our array of markers & place each one on the map
-    for( i = 0; i < llocdata.length; i++ ) {
-
-  		  var lat = llocdata[i]["lat"];
-  		  var Longitude = llocdata[i]["lng"];
-        var position = new google.maps.LatLng(lat, Longitude);
-        //bounds.extend(position);
-
-        infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["title"]+"</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr="+llocdata[i]["getdirection"]+"'>Get Direction</a></p></div>";
-
-        marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            title: llocdata[i]["name"]
-        });
-
-        marker.setTitle(llocdata[i]["name"]);
-        // Allow each marker to have an info window
-
-        
-
-            google.maps.event.addListener(marker, "click", (function(marker, i) {
-                return function() {
-                  if(infoWindowContent[i]!=infoWindow.getContent())
-                  {
-                    infoWindow.setContent(infoWindowContent[i]);
-                    infoWindow.open(map, marker);
-                    map.setCenter(marker.getPosition());
-                  }
+                    firstLat = firstJSON["lat"];
+                    firstLang = firstJSON["lng"];
+                    firstZoom = firstJSON["zoom"];
                 }
+            }
 
-            })(marker, i));
-        
+            var uluru = { lat: firstLat, lng: firstLang };
+            var latlng = new google.maps.LatLng(firstLat, firstLang);
 
-    }
+            console.log(llocdata);
+
+            var myOptions = {
+                center: latlng,
+                zoom: firstZoom,
+                mapTypeControl: false,
+                draggable: true,
+                scaleControl: false,
+                scrollwheel: false,
+                navigationControl: false,
+                streetViewControl: false,
+                disableDefaultUI: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("map_div2"), myOptions);
+            //map.setTilt(45);
+            if ($(window).width() > 767) {
+
+                var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
+            }
+            else {
 
 
+                var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
+            }
 
+            // Loop through our array of markers & place each one on the map
+            for (i = 0; i < llocdata.length; i++) {
+
+                var lat = llocdata[i]["lat"];
+                var Longitude = llocdata[i]["lng"];
+                var position = new google.maps.LatLng(lat, Longitude);
+                //bounds.extend(position);
+
+                infoWindowContent[i] = "<div class='map-infoContent'><p>" + llocdata[i]["title"] + "</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr=" + llocdata[i]["getdirection"] + "'>Get Direction</a></p></div>";
+
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    title: llocdata[i]["name"]
+                });
+
+                marker.setTitle(llocdata[i]["name"]);
+                // Allow each marker to have an info window
+                google.maps.event.addListener(marker, "click", (function (marker, i) {
+                    return function () {
+                        infoWindow.setContent(infoWindowContent[i]);
+                        infoWindow.open(map, marker);
+                        map.setCenter(marker.getPosition());
+                    }
+                })(marker, i));
+            }
 }
-    </script>
+</script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=@googleMapKey&callback=initMap">
     </script>

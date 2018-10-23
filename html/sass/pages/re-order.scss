@@ -2,7 +2,12 @@
 
     font-size: 18px;
 }
-
+.ui-selectmenu-button-open{
+        span.ui-icon{
+             transform: rotate(180deg);
+        }
+    }
+    
 .ui-selectmenu-open{
     max-height: 400px;
     overflow: auto;
@@ -45,6 +50,9 @@
             padding-left: 8px;
             padding-right: 22px;
              @include bp(landscape){
+                    padding-top: 31px;
+             }
+             @include bp(tablet){
                     padding-top: 20px;
              }
             .nopadding{
@@ -62,7 +70,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: 8px;
+        margin-bottom: 14px;
         padding-left: 18px;
         padding-right: 31px;
         padding-top: 30px;
@@ -154,6 +162,9 @@
         .form-control{
                 height: 40px;
                 z-index: 1;
+        &.error{
+                   border: 1px solid #a41f36;
+        }
             &.txtArea{
                 height: 230px;
                  @include bp(tablet){

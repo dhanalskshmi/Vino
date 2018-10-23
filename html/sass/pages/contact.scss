@@ -249,6 +249,9 @@
             height: 42px;
             font-size: 18px;
             box-shadow: none;
+            &.error{
+                    border: 1px solid #a41f36;
+            }
             @include bp(tablet) {
                 height: 32px;
             }

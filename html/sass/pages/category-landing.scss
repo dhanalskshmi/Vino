@@ -9,7 +9,17 @@
         padding: 15px 85px 9px;
       }
       @include bp(mobile) {
-        padding: 11px 20px 9px;
+        padding: 16px 20px 9px;
+      }
+    }
+    h2{
+      @include bp(landscape){
+        margin-bottom: 5px;
+      }
+    }
+    p{
+      @include bp(landscape){
+        margin-bottom: 12px;
       }
     }
   }
@@ -18,6 +28,9 @@
     margin-top: 61px;
     @include bp(landscape) {
       margin-top: 0;
+    }
+    @include bp(mobile) {
+      margin-top: 30px;
     }
     .flexLinkWrap {
       width: 361px;
@@ -79,7 +92,7 @@
           position: relative;
           @include bp(landscape) {
             width: 262px;
-            height: 208px;
+            height: 240px;
           }
           @include bp(tablet) {
             width: 177px;
@@ -151,7 +164,7 @@
     }
 
     .bgWrap {
-      padding: 34px 65px;
+      padding: 20px 65px 34px 65px;
       height: 487px;
       @include bp(landscape) {
         height: 312px;
@@ -184,7 +197,7 @@
 
       p {
         font-size: 23px;
-        margin-top: 10px;
+        margin-top: -3px;
         line-height: initial;
         max-width: 200px;
         @include bp(landscape) {

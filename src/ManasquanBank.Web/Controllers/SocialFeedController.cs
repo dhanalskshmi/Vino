@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Text.RegularExpressions;
@@ -15,6 +14,11 @@ using Skybrud.Social.Instagram;
 using Skybrud.Social.Instagram.Objects;
 using Skybrud.Social.Instagram.Responses;
 using Skybrud.Social.Instagram.OAuth;
+using System;
+using Google.Apis.YouTube.v3;
+using Google.Apis.Services;
+using ManasquanBank.Web.Helpers;
+
 namespace ManasquanBank.Web.Controllers
 {
     using System;
@@ -24,18 +28,14 @@ namespace ManasquanBank.Web.Controllers
 
     public class SocialFeedController : Umbraco.Web.WebApi.UmbracoApiController
     {
-        //public dynamic GetInstagramTimeline()
-        //{
+        public dynamic GetInstagramTimeline()
+        {
 
-        //    string userId = "3041453045";
+           InstagramService service = InstagramService.CreateFromAccessToken("1313031959.87552ec.4189d55d32af42baa34f329cb2c1e108");
 
-
-        //    InstagramService service = InstagramService.CreateFromAccessToken("3041453045.69f6522.fc83bfe8e3cc4f3a940f03bc8c63fff4");
-
-        //    return service.Users.GetRecentMedia();
+           return service.Users.GetRecentMedia();
                
-
-        //}
+        }
         public dynamic GetTwitterTimeline()
         {
             const string CacheKey = "TwitterTimeline";
@@ -99,6 +99,83 @@ namespace ManasquanBank.Web.Controllers
             return mediaEntity;
             //return tweetText.Replace(mediaEntity.url, String.Format("<a href=\"{0}\" {1}><img src=\"{0}\" /></a>", mediaEntity.media_url, newWindow ? "target=\"_blank\"" : ""));
         }
+        public dynamic GetRelativeTimeBetweenDates(DateTime startDate, DateTime endDate)
+        {
+            const int MAXIMUM_DAYS_IN_MONTH = 31;
+            const int ONE_MINUTE = 60;
+            const int TWO_MINUTES = 120;
+            const int ONE_HOUR = 3600;
+            const int TWO_HOURS = 7200;
+            const int ONE_DAY = 86400;
+            const int ONE_WEEK = 7;
+
+            TimeSpan interval = endDate.Subtract(startDate);
+            int differenceInDays = (int)interval.TotalDays;
+            int differenceInSeconds = (int)interval.TotalSeconds;
+
+            string relativeTime = "";
+
+            if (differenceInDays >= 0 && differenceInDays < MAXIMUM_DAYS_IN_MONTH)
+            {
+                if (differenceInDays == 0)
+                {
+                    if (differenceInSeconds < ONE_MINUTE)
+                    {
+                        relativeTime = "just now";
+                    }
+                    else if (differenceInSeconds < TWO_MINUTES)
+                    {
+                        relativeTime = "1 minute ago";
+                    }
+                    else if (differenceInSeconds < ONE_HOUR)
+                    {
+                        relativeTime = string.Format("{0} minutes ago", Math.Floor((double)differenceInSeconds / ONE_MINUTE));
+                    }
+                    else if (differenceInSeconds < TWO_HOURS)
+                    {
+                        relativeTime = "1 hour ago";
+                    }
+                    else if (differenceInSeconds < ONE_DAY)
+                    {
+                        relativeTime = string.Format("{0} hours ago", Math.Floor((double)differenceInSeconds / ONE_HOUR));
+                    }
+                }
+                else if (differenceInDays == 1)
+                {
+                    DateTime yesterday = endDate.AddDays(-1);
+                    if (startDate.Date == yesterday.Date)
+                    {
+                        relativeTime = "1 day ago";
+                    }
+                    else
+                    {
+                        relativeTime = "2 days ago";
+                    }
+                }
+                else if (differenceInDays < ONE_WEEK)
+                {
+                    relativeTime = string.Format("{0} days ago", differenceInDays);
+                }
+                else if (differenceInDays < MAXIMUM_DAYS_IN_MONTH)
+                {
+                    double numberOfWeeks = Math.Ceiling((double)differenceInDays / ONE_WEEK);
+                    relativeTime = string.Format("{0} week{1} ago", numberOfWeeks, numberOfWeeks > 1 ? "s" : "");
+                }
+                else
+                {
+                    DateTime oneMonthAgo = endDate.AddMonths(-1);
+                    if (startDate.Year == oneMonthAgo.Year && startDate.Month == oneMonthAgo.Month)
+                    {
+                        relativeTime = "last month";
+                    }
+                    else
+                    {
+                        relativeTime = startDate.ToString("dd MMM yyyy");
+                    }
+                }
+            }
+            return relativeTime;
+        }
 
         public string ReplaceHashtagsWithUrls(string tweetText)
         {
@@ -130,7 +207,7 @@ namespace ManasquanBank.Web.Controllers
             var postsOptions = new FacebookGetPostsOptions("ManasquanBank")
             {
                 Fields = "id,message,full_picture,link,name,description,type,icon,created_time,from,object_id,likes,comments",
-                Limit = 4
+                Limit = 5
             };
 
             // retrieve the posts and cache for 1 hour
@@ -145,6 +222,24 @@ namespace ManasquanBank.Web.Controllers
             // When using the ToJson() as the response directly the quotes were escaped in the string and it caused a js error. Using HttpResponseMessage was the solution.
             return responseContent;
 
+        }
+
+        public dynamic GetYoutubeFeed()
+        {
+            var memCacher = new MemoryCacher();
+            var result = memCacher.GetValue("youtubefeed");
+            if (result == null)
+            {
+
+                YouTubeService yt = new YouTubeService(new BaseClientService.Initializer() { ApiKey = "AIzaSyDYBmEQoIuHY9CsVsaaQIB5cjeoYxYJMPk" });
+                var searchListRequest = yt.Search.List("snippet");
+                searchListRequest.ChannelId = "UCAV-mBab3tJ_SitM-lXtgAg";
+                searchListRequest.MaxResults = 7;
+                var searchListResult = searchListRequest.Execute();
+                memCacher.Add("youtubefeed", searchListResult.Items, DateTimeOffset.UtcNow.AddHours(1));
+                result = searchListResult.Items;
+            }
+            return result;
         }
     }
 }
