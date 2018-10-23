@@ -409,7 +409,7 @@
 
                 
                 google.maps.event.addListener(marker, "click", (function (marker, i) {
-                    alert(i);
+                    
                     return function () {
                             infoWindow.setContent(infoWindowContent[i]);
                             infoWindow.open(map, marker);
