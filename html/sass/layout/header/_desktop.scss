@@ -423,6 +423,13 @@ header {
 		z-index: -1;
 	}
 }
+.Android {
+	.hamburger {
+		&::before {
+			top: 7px;
+		}
+	}
+}
 
 @media screen and (min-width: $tab-port-min) {
 }

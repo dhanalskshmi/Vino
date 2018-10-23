@@ -491,6 +491,26 @@ display: inline;
     }
   }
 }
+
+.ie11 {
+  .timelinePannelwrap {
+    &.heroBlock {
+      .bgWrap {
+        display: table;
+        width: 100%;
+      }
+    }
+  }
+  .timeline {
+    &::before {
+      min-height: 1400px;
+    }
+    &::after {
+      top: 1400px;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
 
 
