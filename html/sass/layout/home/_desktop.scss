@@ -2523,7 +2523,7 @@ $dbannerhgt: 965px;
     form {
       div {
         //width: 31.11%;
-        width: 416px;
+        width: 403px;
         margin-right: 13px;
         margin-bottom: 32px;
         &.groupCheckbox {
@@ -2570,6 +2570,13 @@ $dbannerhgt: 965px;
     ul {
       li {
         max-width: 348px;
+      }
+    }
+  }
+  .joinEmail {
+    form {
+      div {
+        width: 416px
       }
     }
   }
