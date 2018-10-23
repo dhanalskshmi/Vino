@@ -422,6 +422,27 @@ button:hover::after {
           perspective: 1000px;
 }
 
+.error-page .pageNot-found-section {
+  width: 100%;
+  text-align: center;
+}
+.error-page .pageNot-found-section h1 {
+  color: #1268e5;
+}
+.error-page .pageNot-found-section p {
+  padding: 15px 0;
+  margin-bottom: 15px;
+}
+.error-page .pageNot-found-section .page-section-box {
+  padding: 0px 0 30px;
+}
+.error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply {
+  font-size: 24px;
+  padding: 16px 48px;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
 .visibilityHide {
   visibility: hidden;
 }
@@ -1583,6 +1604,14 @@ header + .loginBlocks .businessLogin p a {
   display: block;
 }
 
+.menuOpened .bankingServices {
+  z-index: -1;
+}
+
+.Android .hamburger::before {
+  top: 7px;
+}
+
 @media screen and (min-width: 768px) {
   header {
     margin-top: 20px;
@@ -1591,6 +1620,12 @@ header + .loginBlocks .businessLogin p a {
 
   .loginBlocks.active {
     display: none;
+  }
+
+  .firefox .menuWrapper .loginBlocks {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 
   .headerWrapper {
@@ -3276,6 +3311,23 @@ footer {
 .bannerWrapper .bannerContent h1 strong span:nth-child(3) {
   letter-spacing: 3px;
 }
+.bannerWrapper #wrapper .goto button {
+  font-size: 0;
+  background-image: url("../images/home/playpause_btn.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  width: 46px;
+  height: 49px;
+  position: absolute;
+  top: 270px;
+  left: 80%;
+  z-index: 999999;
+  z-index: 9999999;
+}
+.bannerWrapper #wrapper .goto button::after, .bannerWrapper #wrapper .goto button::before {
+  display: none;
+}
 
 .loginBlocks {
   margin-top: 12px;
@@ -3811,7 +3863,7 @@ footer {
   font-size: 24px;
   font-weight: 400;
   color: #FFF;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align: center;
 }
 .knowledgePannel .btnManasq, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply {
@@ -4831,6 +4883,10 @@ footer {
     letter-spacing: 3.3px;
   }
 
+  .bannerWrapper #wrapper .goto button {
+    top: 410px;
+  }
+
   .bankingServices {
     max-width: 83.593%;
     margin-top: -92px;
@@ -5231,6 +5287,13 @@ footer {
     letter-spacing: 5.1px;
   }
 
+  .bannerWrapper #wrapper .goto {
+    display: none;
+  }
+  .bannerWrapper #wrapper .goto button {
+    top: 710px;
+  }
+
   .bankingServices {
     max-width: 1240px;
     margin-top: -161px;
@@ -5615,7 +5678,7 @@ footer {
   float: left;
 }
 
-.btn-mansq, .persLending .homeStartWrap .homeStart .homeStartBtn a, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .historyTimeline .bgWrap .titleWrap a {
+.btn-mansq, .persLending .homeStartWrap .homeStart .homeStartBtn a, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .historyTimeline .bgWrap .titleWrap a, .error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply {
   display: inline-block;
   background: #1268e5;
   padding: 10px 45px;
@@ -5971,14 +6034,6 @@ footer {
   float: left;
   min-height: 450px;
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap {
@@ -6066,7 +6121,7 @@ footer {
   right: 0;
   margin: auto;
   display: inline-table;
-  max-width: 255px;
+  width: 255px;
   border: 3px solid #fff;
   color: #fff;
   padding: 27px 46px;
@@ -6074,21 +6129,20 @@ footer {
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
     padding: 40px 48px;
-    max-width: 61%;
-    display: table;
+    width: 61%;
   }
 }
 @media (max-width: 1023px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
     padding: 40px 26px 27px 26px;
-    max-width: 73%;
+    width: 73%;
   }
 }
 @media (max-width: 767px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
-    margin: auto;
+    margin: 20px auto;
     padding: 38px 50px;
-    max-width: 80%;
+    width: 226px;
   }
 }
 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent h4 {
@@ -6275,24 +6329,24 @@ footer {
   }
 }
 .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
-  max-width: 285px;
+  width: 285px;
   padding: 22px 25px 23px 25px;
 }
 @media (max-width: 1279px) {
   .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
-    max-width: 78%;
+    width: 78%;
     padding: 11px 18px;
   }
 }
 @media (max-width: 1023px) {
   .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
-    max-width: 92%;
+    width: 92%;
     padding: 17px 17px 15px 20px;
   }
 }
 @media (max-width: 767px) {
   .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
-    max-width: 75%;
+    width: 225px;
     padding: 15px 22px;
   }
 }
@@ -6341,6 +6395,45 @@ footer {
             order: 2;
     padding-left: 10px;
     padding-top: 25px;
+  }
+}
+
+.firefox .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+  margin-top: 112px;
+  bottom: auto;
+  display: inline-block;
+}
+@media (max-width: 1279px) {
+  .firefox .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+    margin-top: 95px;
+  }
+}
+@media (max-width: 1023px) {
+  .firefox .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+    margin-top: 115px;
+  }
+}
+@media (max-width: 767px) {
+  .firefox .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+    margin-top: 15px;
+  }
+}
+.firefox .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+  margin-top: 77px;
+}
+@media (max-width: 1279px) {
+  .firefox .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 1023px) {
+  .firefox .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .firefox .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent, .ie11 .ContentBlk1.rtAlign .bgWrap .flexWrapper .ContentImageWrap .figureContent {
+    margin-top: 33px;
   }
 }
 
@@ -6557,7 +6650,7 @@ footer {
 }
 @media (max-width: 1279px) {
   .execManage .bgWrap .titleWrap h3 {
-    padding-bottom: 40px;
+    padding-bottom: 28px;
   }
 }
 @media (max-width: 1023px) {
@@ -6650,7 +6743,7 @@ footer {
 }
 
 .historyTimeline {
-  min-height: 1000px;
+  height: 1000px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -6662,19 +6755,19 @@ footer {
 }
 @media (max-width: 1279px) {
   .historyTimeline {
-    min-height: 690px;
+    height: 690px;
     margin-top: -80px;
   }
 }
 @media (max-width: 1023px) {
   .historyTimeline {
-    min-height: 508px;
+    height: 508px;
     margin-top: -89px;
   }
 }
 @media (max-width: 767px) {
   .historyTimeline {
-    min-height: 215px;
+    height: 215px;
     margin-top: -20px;
   }
 }
@@ -7058,6 +7151,9 @@ footer {
   height: 42px;
   font-size: 18px;
   box-shadow: none;
+}
+.contactFormWrap .contactForm .form-control.error {
+  border: 1px solid #a41f36;
 }
 @media (max-width: 1023px) {
   .contactFormWrap .contactForm .form-control {
@@ -9159,7 +9255,7 @@ footer {
 }
 @media (max-width: 767px) {
   .bioPage .heroBlock {
-    margin-bottom: 92px;
+    margin-bottom: 100px;
   }
 }
 .bioPage .heroBlock p {
@@ -9401,12 +9497,13 @@ footer {
 @media (max-width: 1023px) {
   .bioPage .heroBlock .bgWrap .bioContent {
     margin-top: 43px;
+    margin-bottom: 26px;
   }
 }
 @media (max-width: 767px) {
   .bioPage .heroBlock .bgWrap .bioContent {
     margin-top: 22px;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
   }
 }
 .bioPage .heroBlock .bgWrap .bioContent p {
@@ -9498,6 +9595,7 @@ footer {
 @media (max-width: 1023px) {
   .bioPage .heroBlock .bgWrap .back-btn {
     margin-top: 13px;
+    margin-bottom: 16px;
   }
 }
 @media (max-width: 767px) {
@@ -12917,9 +13015,7 @@ footer {
   }
 }
 .persLending .flexWrapper .flexContent {
-  padding-left: 40px;
-  padding-top: 58px;
-  padding-right: 25px;
+  padding: 58px 25px 10px 40px;
   width: -webkit-calc(100% - 533px);
   width: calc(100% - 533px);
 }
@@ -12987,7 +13083,7 @@ footer {
 .persLending .profDisplayWrap .profDisplay {
   width: 222px;
   margin: 0 2.6%;
-  margin-right: 6%;
+  margin-right: 5.8%;
   padding-bottom: 20px;
 }
 @media (max-width: 1279px) {
@@ -13028,9 +13124,9 @@ footer {
   color: #fff;
   background: #1c3d6d;
   display: block;
-  padding: 21px 20px;
+  padding: 19px 20px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 @media (max-width: 1279px) {
@@ -13382,7 +13478,17 @@ footer {
 }
 @media (max-width: 767px) {
   .catLanding .heroBlock .bgWrap {
-    padding: 11px 20px 9px;
+    padding: 16px 20px 9px;
+  }
+}
+@media (max-width: 1279px) {
+  .catLanding .heroBlock h2 {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 1279px) {
+  .catLanding .heroBlock p {
+    margin-bottom: 12px;
   }
 }
 .catLanding .heroFlex {
@@ -13391,6 +13497,11 @@ footer {
 @media (max-width: 1279px) {
   .catLanding .heroFlex {
     margin-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .catLanding .heroFlex {
+    margin-top: 30px;
   }
 }
 .catLanding .heroFlex .flexLinkWrap {
@@ -13467,7 +13578,7 @@ footer {
 @media (max-width: 1279px) {
   .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
     width: 262px;
-    height: 208px;
+    height: 240px;
   }
 }
 @media (max-width: 1023px) {
@@ -13542,7 +13653,7 @@ footer {
   }
 }
 .catLanding .realAlerts .bgWrap {
-  padding: 34px 65px;
+  padding: 20px 65px 34px 65px;
   height: 487px;
 }
 @media (max-width: 1279px) {
@@ -13586,7 +13697,7 @@ footer {
 }
 .catLanding .realAlerts .bgWrap p {
   font-size: 23px;
-  margin-top: 10px;
+  margin-top: -3px;
   line-height: initial;
   max-width: 200px;
 }
@@ -13890,16 +14001,19 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .heroBlock.generalBanner h2 {
     font-size: 36px;
+    margin-bottom: 18px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .heroBlock.generalBanner h2 {
     font-size: 24px;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 767px) {
   .heroBlock.generalBanner h2 {
     font-size: 32px;
+    margin-bottom: 17px;
   }
 }
 .heroBlock.generalBanner h2 + h3 {
@@ -14831,6 +14945,17 @@ footer {
     padding-bottom: 40px;
   }
 }
+.ie11 .timelinePannelwrap.heroBlock .bgWrap {
+  display: table;
+  width: 100%;
+}
+.ie11 .timeline::before {
+  min-height: 1400px;
+}
+.ie11 .timeline::after {
+  top: 1400px;
+}
+
 @media screen and (min-width: 1280px) {
   .heroBlock.timelinePannelwrap {
     margin-bottom: 90px;
@@ -15496,6 +15621,12 @@ footer {
   font-size: 18px;
 }
 
+.ui-selectmenu-button-open span.ui-icon {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .ui-selectmenu-open {
   max-height: 400px;
   overflow: auto;
@@ -15551,6 +15682,11 @@ footer {
 }
 @media (max-width: 1279px) and (max-width: 1279px) {
   .re-order .threecolsWrapper {
+    padding-top: 31px;
+  }
+}
+@media (max-width: 1279px) and (max-width: 1023px) {
+  .re-order .threecolsWrapper {
     padding-top: 20px;
   }
 }
@@ -15581,7 +15717,7 @@ footer {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   padding-left: 18px;
   padding-right: 31px;
   padding-top: 30px;
@@ -15696,6 +15832,9 @@ footer {
 .re-order .contactFormWrap .form-control {
   height: 40px;
   z-index: 1;
+}
+.re-order .contactFormWrap .form-control.error {
+  border: 1px solid #a41f36;
 }
 .re-order .contactFormWrap .form-control.txtArea {
   height: 230px;
@@ -15843,4 +15982,240 @@ footer {
 }
 .re-order .mob-flex {
   text-align: center;
+}
+
+section.sitemap-section .sitemap-section-box {
+  width: 100%;
+  border-radius: 7px;
+  padding: 0;
+}
+section.sitemap-section .sitemap-section-box p {
+  color: #5a5a5a;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  padding: 0px;
+}
+section.sitemap-section .sitemap-section-box .full-width {
+  content: "";
+  display: table;
+  width: 100%;
+  margin-top: 0px;
+  float: none;
+}
+section.sitemap-section .sitemap-section-box .full-width h4 {
+  font-size: 18px;
+  color: #446bad;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+section.sitemap-section .sitemap-section-box .full-width h4 a {
+  color: inherit;
+  text-transform: capitalize;
+  position: relative;
+}
+section.sitemap-section .sitemap-section-box .full-width a h4 {
+  font-size: 18px;
+  color: #231f20;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+section.sitemap-section .sitemap-section-box .full-width .hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+section.sitemap-section .sitemap-section-box .full-width .hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #2098D1;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+section.sitemap-section .sitemap-section-box .full-width .hvr-underline-from-center:hover:before {
+  left: 0;
+  right: 0;
+}
+section.sitemap-section .sitemap-section-box .full-width ul {
+  margin-bottom: 17px;
+}
+section.sitemap-section .sitemap-section-box .full-width ul li {
+  display: block;
+}
+section.sitemap-section .sitemap-section-box .full-width ul li a {
+  color: #5a5a5a;
+  line-height: 26px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+section.sitemap-section .sitemap-section-box .full-width .left-section {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+}
+section.sitemap-section .sitemap-section-box .full-width .center-section {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+}
+section.sitemap-section .sitemap-section-box .full-width .center-section li {
+  display: block;
+}
+section.sitemap-section .sitemap-section-box .full-width .right-section {
+  float: left;
+  width: 32%;
+  margin-right: 0%;
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 1024px) {
+  section.sitemap-section .sitemap-section-box {
+    padding: 5px 0px 52px;
+  }
+  section.sitemap-section .sitemap-section-box p {
+    padding: 0px 102px;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  section.sitemap-section .sitemap-section-box {
+    padding: 18px 0 44px;
+  }
+  section.sitemap-section .sitemap-section-box p {
+    padding: 0px 30px;
+  }
+  section.sitemap-section .sitemap-section-box h1 {
+    margin-bottom: 17px;
+  }
+}
+@media (max-width: 767px) {
+  section.sitemap-section .sitemap-section-box {
+    padding: 0px 30px 0px;
+  }
+  section.sitemap-section .sitemap-section-box h1 {
+    font-size: 22px;
+    margin-bottom: 0px;
+  }
+  section.sitemap-section .sitemap-section-box h4 {
+    font-size: 18px;
+  }
+  section.sitemap-section .sitemap-section-box p {
+    line-height: 1.5;
+    font-size: 16px;
+    padding: 0px;
+  }
+  section.sitemap-section .sitemap-section-box .full-width {
+    margin-top: 0px;
+  }
+  section.sitemap-section .sitemap-section-box .full-width ul li a {
+    color: #4c4c4c;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  section.sitemap-section .sitemap-section-box .full-width .left-section {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  section.sitemap-section .sitemap-section-box .full-width .center-section {
+    width: 100%;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+  section.sitemap-section .sitemap-section-box .full-width .right-section {
+    width: 100%;
+    margin-right: 0px;
+    margin-top: 12px;
+  }
+}
+.newsPagination {
+  display: block;
+  text-align: right;
+}
+
+.newsPagination p {
+  display: inline-block;
+  font-size: 20px;
+  color: #666;
+}
+.newsPagination p img {
+  height: auto;
+  top: 0;
+  vertical-align: top;
+  margin-top: 2px;
+  width: 18px;
+  display: inline-block;
+}
+
+section.searchPage {
+  /*margin-top: 120px;
+  margin-bottom: 43px;*/
+}
+section.searchPage h1 {
+  text-align: center;
+}
+section.searchPage .searchWrap {
+  margin-bottom: 20px;
+}
+section.searchPage .searchWrap h4 {
+  font-size: 23px;
+  text-transform: uppercase;
+  color: #666;
+}
+section.searchPage .searchWrap p {
+  padding: 12px 0 16px 0;
+}
+section.searchPage .searchWrap p a {
+  text-decoration: underline;
+}
+section.searchPage .searchWrap p a:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 1024px) {
+  section.searchPage {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  section.searchPage h1 {
+    padding-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  section.searchPage {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  section.searchPage h1 {
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  section.searchPage {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  section.searchPage h1 {
+    padding-bottom: 7px;
+  }
+  section.searchPage .contentWrap a {
+    word-break: break-all;
+  }
+  section.searchPage .contentWrap h4 a {
+    word-break: normal;
+  }
 }

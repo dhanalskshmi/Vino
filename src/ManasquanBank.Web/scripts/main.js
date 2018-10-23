@@ -587,7 +587,6 @@ $(window).scroll(function() {
     if (scrollTop > 900) {
         $('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
-
     }
 });
 
@@ -728,15 +727,35 @@ $(window).scroll(function() {
 				var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-if (isChrome) console.log("You are using Chrome!");
+if (isChrome) {console.log("You are using Chrome!")};
 if (isSafari) console.log("You are using Safari!");
 
 	}
+
 	if(isMobile.Android()) {
 		//alert('ipad');
 				$('html').addClass('Android');
 
 	}
+
+	$(document).ready(function() {
+  var ua = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i),
+      browser;
+  if (navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    browser = "msie";
+  }
+  else {
+    browser = ua[1].toLowerCase();
+  }
+  //$('html' + browser).addClass("active");
+	if (navigator.userAgent.match(/firefox/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("firefox");
+  }
+	if (navigator.userAgent.match(/chrome/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("chrome");
+  }
+});
+
 
 
 
@@ -1014,13 +1033,27 @@ function GetReCaptchaID(containerID) {
 function onSubmit(token) {
   document.getElementById('contactForm').submit();
 }
-if ($('#contactForm').length > 0) {
+function onSubmitReOrder(token) {
+    document.getElementById('contactForm').submit();
+}
+$( window ).on("load", function() {
+ $('.selectBox').each(function(e) {
+    var name = $(this);
+    $(this).parent().find('label').attr('for', name.attr('name'));
+});
+});
+
+if ($('.contactForm').length > 0) {
     $(document).ready(function () {
+     
         jQuery.validator.addMethod("EmailVal", function (e, t) {
             var o = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return this.optional(t) || o.test(e)
         }, "Please enter a valid email address.")
-        var validator = $('#contactForm').validate({
+
+        jQuery.validator.addMethod("notEqual", function (value, element, param) { return this.optional(element) || value != $(param).val(); }, "This has to be different...");
+
+        var validator = $('.contactForm').validate({
             rules: {
                 cntTelePhone: {
                     minlength: 13
@@ -1030,38 +1063,53 @@ if ($('#contactForm').length > 0) {
                 },
             },
             ignore: [],
-            highlight: function (element, errorClass) {
-                var selector = "#" + element.id;
-                $(selector).addClass(errorClass);
+            
+            errorPlacement: function (error, element) {
+            return true;
+        },
+        highlight: function (element, errorClass) {
+            var selector = "#" + element.id;
+            $(selector).addClass(errorClass);
 
-                $(selector).parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
-                $(selector).parent().removeClass("successForm");
-                $(selector).parent().addClass("errorForm");
-            },
-            unhighlight: function (element, errorClass) {
+            $(selector).parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+        },
+        unhighlight: function (element, errorClass) {
 
-                var selector = "#" + element.id;
-                $(selector).removeClass(errorClass);
-                $(selector).parent().removeClass("errorForm");
-                $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
-                $(selector).parent().addClass("successForm");
-                $('input[type="text"]').each(function () {
-                    if ($(this).val() == "") {
-                        $(this).parent().removeClass("successForm");
-                    }
-                });
-            },
+            var selector = "#" + element.id;
+            $(selector).removeClass(errorClass);
+            $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
+        },
             submitHandler: function (form) {
                 var reCaptchaID = GetReCaptchaID("capt_contact");
                 grecaptcha.reset(reCaptchaID);
                 grecaptcha.execute(reCaptchaID);
             },
-            errorPlacement: function (error, element) { }
+            // errorPlacement: function (error, element) { 
+            //     return true;
+            // }
         });
         jQuery("#cntTelePhone").length > 0 && document.getElementById("cntTelePhone").addEventListener("input", function (e) {
             var t = e.target.value.replace(/\D/g, "").match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
             e.target.value = t[2] ? "(" + t[1] + ") " + t[2] + (t[3] ? "-" + t[3] : "") : t[1]
         })
+          $('.contactForm input').keydown(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode));
+        if  ( keycode  == 13) {   // key code for enter key
+
+        return false;
+        } else  {
+
+        validator.checkForm();
+        }
+    });
+
+    $('.contactForm .selectBox').not("select.multiple,#state,#country").selectmenu({
+        style: 'dropdown',
+        transferClasses: true,
+        change: function() {
+          $('.contactForm').validate().element(this);
+       }
+      });
     });
 }
 $(document).ready(function () {
@@ -1075,13 +1123,8 @@ $(document).ready(function () {
         });
     }
 
-    $('.contactForm .selectBox').not("select.multiple").selectmenu({
-        style: 'dropdown',
-        transferClasses: true,
-        change: function() {
-          $('#form_module').validate().element(this);
-       }
-      });
+   
+
 });
 
 if ($('.timelineWrappers').length > 0) {
@@ -1630,6 +1673,66 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
  });
 }
 
+$(document).ready(function() {
+	$(".timehrsSection").clone().appendTo($(".cloneTimeHrs"));
+});
+$(window).on("load resize", function(e) {
+    var windowSize = $(window).width();
+    if ($('.serviceContent').length > 0) {
+        $('.serviceContent .serviceDetail').find('h4').css('height', '');
+        // if (windowSize > 801 || windowSize < 800) {
+        $('.serviceContent').each(function() {
+            if (windowSize > 768 && windowSize <= 1023) {
+                var row = 2;
+            } else if (windowSize > 1024 && windowSize <= 1279) {
+                var row = 3;
+            } else if (1280 < windowSize) {
+                var row = 4;
+            } else {
+                var row = 1;
+            }
+            // console.log(row);
+            // console.log(windowSize);
+
+            // console.log($(this).find('.serviceDetail').length);
+            var start = 1;
+            var end = row;
+            var maxHeightH4 = 0;
+
+            var max = parseInt($(this).find('.serviceDetail').length / row);
+            console.log("before", max);
+
+            if (max > 0) {
+                max = max + 1;
+            }
+            console.log("after", max);
+            $(this).find('h4').css('height', '');
+
+            for (var i = 1; i <= max; i++) {
+                //$(this).find('.serviceDetail').each(function(){
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        maxHeightH4 = maxHeightH4 > $(this).find('h4').height() ? maxHeightH4 : $(this).find('h4').height();
+                    }
+                });
+
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        $(this).find('h4').css({
+                            'height': maxHeightH4
+                        });
+                    }
+                });
+
+                start = end + 1;
+                end = end + row;
+            }
+        });        
+	// }
+    }
+});
 $(document).ready(function(){
       if ($('.checking').length > 0) {
         resize();
@@ -1722,10 +1825,3 @@ if ($(window).width() <= 1023) {
 }
 
 });
-  $(document).ready(function(){
-  $(".selectBox").selectmenu();
-
- 
-
-  });
-   

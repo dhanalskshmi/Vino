@@ -1033,6 +1033,9 @@ function GetReCaptchaID(containerID) {
 function onSubmit(token) {
   document.getElementById('contactForm').submit();
 }
+function onSubmitReOrder(token) {
+    document.getElementById('contactForm').submit();
+}
 $( window ).on("load", function() {
  $('.selectBox').each(function(e) {
     var name = $(this);
