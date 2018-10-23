@@ -128,8 +128,8 @@
 				}
 			}
 			.flexPanelWrap{
-			display: flex;
-			flex-direction: column;
+			display: block;
+			// flex-direction: column;
 			padding: 10px;
 			margin: 16px 5px 16px 5px;
 			background: #fff;
@@ -209,7 +209,8 @@
 				}
 			}
 			.flexPanelFoot{
-				width: 100%;
+				display: flex;
+				justify-content: flex-end;
 				margin-top: 60px;
 				@include bp(tablet){
 					margin-top: 24px;
