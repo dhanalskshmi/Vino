@@ -6,7 +6,9 @@
 @using System.Text.RegularExpressions
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
+@using System.Text.RegularExpressions
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ManasquanBank.Web.Helpers;
 @{
     Layout = "Master.cshtml";
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
@@ -17,8 +19,11 @@
     var jArray = JArray.Parse(twitterFeeds);
     var facebookFeed = t.GetFacebookFeed_next();
     var fbArray = JsonConvert.DeserializeObject(facebookFeed);
+    //var memCacher = new MemoryCacher();
+    // memCacher.Delete("youtubefeed");
+    var youTubeFeed = t.GetYoutubeFeed();
+    var instaFeeds = t.GetInstagramTimeline();
 }
-
 <div class="socialMedia">
     <section class="heroBanner">
         <figure class="bannerImage" style="background-image: url('@heroImage.Url')"></figure>
@@ -55,6 +60,24 @@
     foreach (dynamic tweetlist in jArray)
     {
         var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+        string[] temp, timesplit;
+        string twitterdate, displayTime;
+        try
+        {
+            twitterdate = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+            temp = twitterdate.Split(' ');
+            timesplit = temp[3].Split(':');
+            TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+            DateTime time = DateTime.Today.Add(timespan);
+            displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+        }
+        catch (Exception ex)
+        {
+            displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+        }
+
+        DateTime created_time = Convert.ToDateTime(displayTime);
+        var twDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
         string msg = tweetlist.text.ToString();
         string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
         foreach (var url in tweetlist.entities.urls)
@@ -64,7 +87,7 @@
             text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
 
         }
-        if (i < 10)
+        if (i < 5)
         {
         <div class="filtr-item" data-category="tw">
             <div class="flexPanelWrap">
@@ -78,7 +101,7 @@
                         <h5><a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">Manasquan Bank</a></h5>
                     </div>
                     <div class="headDate">
-                        <span>2d</span>
+                        <span>@twDate</span>
                     </div>
                 </div>
                 <div class="flexPanelBody">
@@ -95,7 +118,6 @@
                         }
 
                     }
-                    
                     <p>@Html.Raw(text)</p>
                 </div>
                 <div class="flexPanelFoot">
@@ -124,17 +146,35 @@
         var link = fblist.link;
         var profile_url = fblist.from.id;
 
+        string[] temp, timesplit;
+        string fbDate, displayTime;
+        try
+        {
+            fbDate = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
+            temp = fbDate.Split(' ');
+            timesplit = temp[3].Split(':');
+            TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+            DateTime time = DateTime.Today.Add(timespan);
+            displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+        }
+        catch (Exception ex)
+        {
+            displayTime = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
+        }
+
+        DateTime created_time = Convert.ToDateTime(displayTime);
+        var facebookDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
         <div class="filtr-item" data-category="fb">
             <div class="flexPanelWrap">
                 <div class="flexPanelHead">
                     <div class="headLogo">
                         <figure>
                             <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
-</figure>
+                        </figure>
                         <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
                     </div>
                     <div class="headDate">
-                        <span>2d</span>
+                        <span>@facebookDate</span>
                     </div>
                 </div>
                 <div class="flexPanelBody">
@@ -150,12 +190,62 @@
                 <div class="flexPanelFoot">
                     <div class="flexIcon">
                         <figure>
-                            <a href="//www.facebook.com/@profile_url"> <img src="~/images/social/facebook.png" alt="Twitter"></a>
+                            <a href="//www.facebook.com/@profile_url"><img src="~/images/social/facebook.png" alt="Twitter"></a>
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
+    }
+}
+
+@if (youTubeFeed.Count > 0)
+{
+    int j = 0;
+    foreach (var item in youTubeFeed)
+    {
+        DateTime yt_time = Convert.ToDateTime(item.Snippet.PublishedAt.Date);
+        var FormatedTime = t.GetRelativeTimeBetweenDates(yt_time, DateTime.UtcNow).ToString();
+        if (j > 1)
+        {
+         <div class="filtr-item" data-category="yt">
+            <div class="flexPanelWrap">
+                <div class="flexPanelHead">
+                    <div class="headLogo">
+                        <figure>
+                            <a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Logo"></a>
+                        </figure>
+                        <h5><a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank">Manasquan Bank</a></h5>
+                    </div>
+                    <div class="headDate">
+                        <span>@FormatedTime</span>
+                    </div>
+                </div>
+                <div class="flexPanelBody">
+                    @if (item.Snippet.Thumbnails != null)
+                    {
+                        <figure>
+                            @if(item.Id.VideoId != null)
+                            {
+                                <a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank"><img src="@item.Snippet.Thumbnails.High.Url" alt="@item.Snippet.Title"></a>
+                            }
+                            
+                        </figure>
+                    }
+                    <p><a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank">@item.Snippet.Title</a></p>
+                </div>
+                <div class="flexPanelFoot">
+                    <div class="flexIcon">
+                        <figure>
+                            <a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank"><img src="~/images/social/youtube.png" alt="YouTube"></a>
+</figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        }
+        j++;
     }
 }
 <!--
