@@ -1,52 +1,57 @@
-$(document).ready(function() {
-    if ($('.mapLocation').length > 0) {
-        var map;
-        google.maps.event.addDomListener(window, "load", function() {
-            var map = new google.maps.Map(document.getElementById("map_div2"), {
-                center: new google.maps.LatLng(40.137508, -74.089629),
-                zoom: 11,
-                zoomControl: false,
-                scrollwheel: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            var infoWindow = new google.maps.InfoWindow();
-
-            /*
-             * marker creater function (acts as a closure for html parameter)
-             */
-            function createMarker(options, html) {
-                var marker = new google.maps.Marker(options);
-                if (html) {
-                    google.maps.event.addListener(marker, "click", function() {
-                        infoWindow.setContent(html);
-                        infoWindow.open(options.map, this);
-                    });
-                }
-                return marker;
+$(window).on("load resize", function(e) {
+    var windowSize = $(window).width();
+    if ($('.serviceContent').length > 0) {
+        $('.serviceContent .serviceDetail').find('h4').css('height', '');
+        // if (windowSize > 801 || windowSize < 800) {
+        $('.serviceContent').each(function() {
+            if (windowSize > 768 && windowSize <= 1023) {
+                var row = 2;
+            } else if (windowSize > 1024 && windowSize <= 1279) {
+                var row = 3;
+            } else if (1280 < windowSize) {
+                var row = 4;
+            } else {
+                var row = 1;
             }
-            /*add markers to map*/
-            var marker0 = createMarker({
-                position: new google.maps.LatLng(40.137508, -74.089629),
-                map: map,
-            });
+            // console.log(row);
+            // console.log(windowSize);
 
-            var marker1 = createMarker({
-                position: new google.maps.LatLng(40.070730, -74.046798),
-                map: map,
-            });
+            // console.log($(this).find('.serviceDetail').length);
+            var start = 1;
+            var end = row;
+            var maxHeightH4 = 0;
 
-            var marker2 = createMarker({
-                position: new google.maps.LatLng(40.069431, -74.128023),
-                map: map,
-            });
-            var marker3 = createMarker({
-                position: new google.maps.LatLng(40.201300, -74.255699),
-                map: map,
-            });
-            var marker4 = createMarker({
-                position: new google.maps.LatLng(40.120684, -74.144013),
-                map: map,
-            });
-        });
+            var max = parseInt($(this).find('.serviceDetail').length / row);
+            console.log("before", max);
+
+            if (max > 0) {
+                max = max + 1;
+            }
+            console.log("after", max);
+            $(this).find('h4').css('height', '');
+
+            for (var i = 1; i <= max; i++) {
+                //$(this).find('.serviceDetail').each(function(){
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        maxHeightH4 = maxHeightH4 > $(this).find('h4').height() ? maxHeightH4 : $(this).find('h4').height();
+                    }
+                });
+
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        $(this).find('h4').css({
+                            'height': maxHeightH4
+                        });
+                    }
+                });
+
+                start = end + 1;
+                end = end + row;
+            }
+        });        
+	// }
     }
 });
