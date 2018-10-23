@@ -81,17 +81,23 @@ $dbannerhgt: 965px;
         background-image: url('#{$img}/playpause_btn.png');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 0 0;
+        background-position: 0 -56px;
+        background-color: rgba(27, 61, 110,0.3);
         width: 46px;
-        height: 49px;
+        height: 46px;
         position: absolute;
-        top: 270px;
+        top: 285px;
         left: 80%;
         z-index: 999999;
         z-index: 9999999;
+        border: 2px solid #1b3d6e;
+        border-radius: 50%;
         &::after,
         &::before {
           display: none;
+        }
+        &.play {
+          background-position: 0 0;
         }
       }
     }
@@ -1544,6 +1550,16 @@ $dbannerhgt: 965px;
     }
   }
 
+  .bannerWrapper {
+    #wrapper {
+      .goto {
+        button {
+          top: 300px;
+        }
+      }
+    }
+  }
+
 
 
 
@@ -1665,11 +1681,13 @@ $dbannerhgt: 965px;
     #wrapper {
       .goto {
         button {
-          top: 410px;
+          top: 390px;
         }
       }
     }
   }
+
+
 
   // Services
 

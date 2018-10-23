@@ -1196,11 +1196,22 @@
           jQuery('#bgndVideo').YTPToggleVolume()
         }
       });
+      myPlayer.on("YTPPlay", function(){
+        $("#togglePlay").removeClass("play pause");
+        $("#togglePlay").addClass("pause");
+      });
+
+      myPlayer.on("YTPPause", function(){
+        $("#togglePlay").removeClass("play pause");
+        $("#togglePlay").addClass("play");
+      });
     });
 
     function checkForVal(val) {
       return val || 0;
     }
+
+
   </script>
 
 </body>
