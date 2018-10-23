@@ -1418,7 +1418,7 @@ THE SOFTWARE.
         useCurrent: true,
         calendarWeeks: false,
         minuteStepping: 1,
-        minDate: moment({y: 1900}),
+        minDate: moment({y: 1800}),
         maxDate: moment().add(100, 'y'),
         showToday: true,
         collapse: true,
