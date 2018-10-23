@@ -632,10 +632,10 @@
                                       <label for="loanPurpose">Department</label>
                                      <select name="loanPurpose" id="loanPurpose" class="form-control selectBox" default="" required="">
                                          <option value=""></option>
-                                         <option value="">Executive Management </option>
-                                         <option value="">Senior Management </option>
-                                         <option value="">Branch Managers </option>
-                                         <option value="">Foundation </option>
+                                         <option value="EM">Executive Management </option>
+                                         <option value="SM">Senior Management </option>
+                                         <option value="BM">Branch Managers </option>
+                                         <option value="F">Foundation </option>
                                     </select>
                                       <span class="errorSpan vd f-error">*</span>
                                 </div>
@@ -643,29 +643,29 @@
                                       <label for="loanOfficer">Employee</label>
                                      <select name="loanOfficer" id="loanOfficer" class="form-control selectBox" default="" required="">
                                          <option value=""></option>
-                                          <option value="">Ralph Tancredi</option>
-                                         <option value="">William L. Kays </option>
-                                         <option value="">Lisa Connell </option>
-                                         <option value="">David Tepper </option>
-                                         <option value="">Kathie Adams</option>
-                                          <option value="">Suellen Arecchi</option> 
-                                          <option value="">Nancy Canary</option>
-                                          <option value="">Jeffrey Casten</option>
-                                          <option value="">Luke Caverly</option>
-                                          <option value="">Lisa Colonno</option>
-                                          <option value="">Beth Culos</option>
-                                          <option value="">Robert Hart</option>
-                                          <option value="">Wililam Horvath</option>
-                                          <option value="">Rich Lanza</option>
-                                          <option value="">Loralee Neyland</option>
-                                          <option value="">Christina Paccione</option>
-                                          <option value="">Lisa Roettger</option>
-                                          <option value="">Ann Slavick</option>
-                                          <option value="">Nancy Steck</option>
-                                          <option value="">Alan J Stuart</option>
-                                          <option value="">Jennifer Weisert</option>
-                                          <option value="">Mary Anne Whittemore</option>
-                                          <option value="">Steve Yarosz</option>
+                                         <option value="RT">Ralph Tancredi</option>
+                                         <option value="WK">William L. Kays </option>
+                                         <option value="LC">Lisa Connell </option>
+                                         <option value="DT">David Tepper </option>
+                                         <option value="KA">Kathie Adams</option>
+                                          <option value="SA">Suellen Arecchi</option> 
+                                          <option value="NC">Nancy Canary</option>
+                                          <option value="JC">Jeffrey Casten</option>
+                                          <option value="LC">Luke Caverly</option>
+                                          <option value="LC">Lisa Colonno</option>
+                                          <option value="BC">Beth Culos</option>
+                                          <option value="RH">Robert Hart</option>
+                                          <option value="W">Wililam Horvath</option>
+                                          <option value="RL">Rich Lanza</option>
+                                          <option value="LN">Loralee Neyland</option>
+                                          <option value="CP">Christina Paccione</option>
+                                          <option value="LR">Lisa Roettger</option>
+                                          <option value="AS">Ann Slavick</option>
+                                          <option value="NS">Nancy Steck</option>
+                                          <option value="AS">Alan J Stuart</option>
+                                          <option value="JW">Jennifer Weisert</option>
+                                          <option value="MW">Mary Anne Whittemore</option>
+                                          <option value="SY">Steve Yarosz</option>
                                     </select>
                                       <span class="errorSpan vd f-error">*</span>
                                 </div>
@@ -686,7 +686,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                     <label for="cntEmail">Email</label>
-                                    <input type="email" class="form-control error" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
+                                    <input type="email" class="form-control" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
                                     <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
@@ -720,7 +720,7 @@
                                       <div class="form-group col-lg-6 col-xs-12 nopadding">
                                       <label for="country">Country</label>
                                      <select name="country" id="country" class="form-control selectBox" default="" required="">
-                                        <option value="" rel="">-Select Country-</option>
+                                        <!-- <option value="" rel="">-Select Country-</option> -->
                                     </select>
                                     <span class="errorSpan vd f-error">*</span>
                                 </div>
@@ -964,16 +964,6 @@
 $(document).ready(function() {
   $('#basicExample').timepicker();
 
-   $('body').on('click', '#basicExample', function() {  
-var maxMenuWidth = $("#basicExample").innerWidth();
-$(".ui-timepicker-wrapper").css({'max-width':maxMenuWidth+1});
-
-});
-
-$(window).on("load resize", function(){
-    var maxMenuWidth = $('.form-group').width();
-    $(".ui-timepicker-list").css({'max-width':maxMenuWidth+2});
-});
     $("#contactSucc").length > 0 && $("html, body").animate({
         scrollTop: $(".contactFormWrap").offset().top - 200
     }, "slow")
@@ -993,63 +983,43 @@ $(window).on("load resize", function(){
 
 });
 
-// $(document).ready(function () {
-//     $.each(myJson.countries, function (index, value) {
-//         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-//     });
-//     country_id = $("#country").attr("default");
-//     $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
-//     $("#country").on('selectmenuchange', function () {
-//         $("#state").selectmenu("destroy");
-//          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-
-//         country_id = $(this).find('option:selected').attr('rel');
-//           $("#state").selectmenu();
-//         $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             // $("#SltState2").selectmenu("refresh");
-//         });
-        
-
-//     });
-
-//     country_id = $("#country").find('option:selected').attr('rel');
-//     if (country_id != "") {
-//         $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             // $("#state").selectmenu("refresh");
-//         });
-
+$(document).ready(function () {
+    $.each(myJson.countries, function (index, value) {
+        $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+    });
+    country_id = $("#country").attr("default");
+    $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
    
-//     }
-// });
 
-// $(document).ready(function () {
-// var country_id;
-// var state_id;
-// $.each(myJson.countries, function (index, value) {
-//     $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-//      $("#country").change(function () {
-//         $("#state").find("option:gt(0)").remove();
-//         $("#state").find("option:first").text("Loading...");
-//         $("#state").selectbox();
-//          country_id = $(this).find('option:selected').attr('rel');
-//          $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             $("#state").selectbox();
-//         });
-//     });
-//  });
-// country_id = $("#country").attr("default");
-// $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
-//  state_id = $("#state").attr("default");
-// $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
-// $("#state").selectbox();
-// $("#country").selectbox();
-// });
+    country_id = $("#country").find('option:selected').attr('rel');
+    // console.log("Country INDEX : " + country_id);
+    if (country_id != "") {
+        $.each(myJson.countries[country_id].states, function (index1, value1) {
+            $("#state").find("option:first").text("-Select State-");
+            $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+            // $("#state").selectmenu("refresh");
+        });
+
+        state_id = $("#state").attr("default");
+        $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+    }
+    $("#state,#country").selectmenu();
+   
+    $("#country").on('selectmenuchange', function () {
+        $("#state").selectmenu("destroy");
+        country_id = $(this).find('option:selected').attr('rel');
+    $("#state").find("option").not("option:nth-child(1)").remove();    
+    $("#state").find("option:first").text("-Select State-");
+        $.each(myJson.countries[country_id].states, function (index1, value1) {
+            
+            $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+           console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        });
+        $("#state").selectmenu();
+
+    });
+
+});
     </script>
 
 </body>

@@ -653,7 +653,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                     <label for="cntEmail">Email</label>
-                                    <input type="email" class="form-control error" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
+                                    <input type="email" class="form-control" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
                                     <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
@@ -673,7 +673,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                       <label for="state">State</label>
-                                     <select name="state" id="state" class="form-control selectBox" default="">
+                                     <select name="state" id="state" class="form-control selectBox" default="" required="">
                                          <option value="">-Select State-</option>
                                     </select>
                                       <span class="errorSpan vd f-error">*</span>
@@ -686,8 +686,8 @@
                                     </div>
                                       <div class="form-group col-lg-6 col-xs-12 nopadding">
                                       <label for="country">Country</label>
-                                     <select name="country" id="country" class="form-control selectBox" default="">
-                                        <option value="" rel="">-Select Country-</option>
+                                     <select name="country" id="country" class="form-control selectBox" default="United States" required="">
+                                       <!--  <option value="" rel="">-Select Country-</option> -->
                                     </select>
                                     <span class="errorSpan vd f-error">*</span>
                                 </div>
@@ -934,64 +934,44 @@ $(document).ready(function() {
 
 });
 
-// $(document).ready(function () {
-//     $.each(myJson.countries, function (index, value) {
-//         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-//     });
-//     country_id = $("#country").attr("default");
-//     $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
-//     $("#country").on('selectmenuchange', function () {
-//         $("#state").selectmenu("destroy");
-//          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-
-//         country_id = $(this).find('option:selected').attr('rel');
-//           $("#state").selectmenu();
-//         $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             // $("#SltState2").selectmenu("refresh");
-//         });
-        
-
-//     });
-
-//     country_id = $("#country").find('option:selected').attr('rel');
-//     if (country_id != "") {
-//         $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             // $("#state").selectmenu("refresh");
-//         });
-
-   
-//     }
-// });
-
 $(document).ready(function () {
-var country_id;
-var state_id;
-$.each(myJson.countries, function (index, value) {
-    $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-     $("#country").change(function () {
-        $("#state").find("option:gt(0)").remove();
-        $("#state").find("option:first").text("Loading...");
-        $("#state").selectbox();
-         country_id = $(this).find('option:selected').attr('rel');
-         $.each(myJson.countries[country_id].states, function (index1, value1) {
+    $.each(myJson.countries, function (index, value) {
+        $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+    });
+    country_id = $("#country").attr("default");
+    $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+   
+
+    country_id = $("#country").find('option:selected').attr('rel');
+    // console.log("Country INDEX : " + country_id);
+    if (country_id != "") {
+        $.each(myJson.countries[country_id].states, function (index1, value1) {
             $("#state").find("option:first").text("-Select State-");
             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-            $("#state").selectbox();
+            // $("#state").selectmenu("refresh");
         });
+
+        state_id = $("#state").attr("default");
+        $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+    }
+    $("#state,#country").selectmenu();
+   
+    $("#country").on('selectmenuchange', function () {
+        $("#state").selectmenu("destroy");
+        country_id = $(this).find('option:selected').attr('rel');
+    $("#state").find("option").not("option:nth-child(1)").remove();    
+    $("#state").find("option:first").text("-Select State-");
+        $.each(myJson.countries[country_id].states, function (index1, value1) {
+            
+            $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+           console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        });
+        $("#state").selectmenu();
+
     });
- });
-country_id = $("#country").attr("default");
-$("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
- state_id = $("#state").attr("default");
-$("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
-$("#state").selectbox();
-$("#country").selectbox();
+
 });
-    </script>
+</script>
 
 </body>
 
