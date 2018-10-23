@@ -1,0 +1,10 @@
+@media only screen and (max-width: $tab-port-max) and (min-width: $tab-port-min) {
+  section.searchPage {
+      margin-top: 0;
+      margin-bottom: 28px;
+    h1 {
+      
+      padding-bottom: 30px;
+    }
+  }
+}

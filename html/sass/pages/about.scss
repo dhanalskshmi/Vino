@@ -284,8 +284,6 @@
                 float: left;
                 min-height: 450px;
                 position: relative;
-                display: flex;
-                align-items: center; // overflow: hidden;
                 @include bp(landscape) {
                     width: 40.8%;
                     min-height: 330px;
