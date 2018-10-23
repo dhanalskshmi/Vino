@@ -342,4 +342,13 @@
 			}
 		}
 
+		.Android {
+			.timeline {
+				&::after {
+					left: 97%;
+				}
+			}
+		}
+
+
 }
