@@ -10,6 +10,12 @@
             }
         }
     }
+    .heroBlock{
+        margin-bottom: 120px;
+        @include bp(landscape){
+            margin-bottom: 100px;
+        }
+    }
     .flexWrapper {
         display: flex;
         @include bp(mobile){
@@ -61,7 +67,7 @@
                 color: #666;
                 font-size: 36px;
                 margin-bottom: 19px;
-                @include bp(tablet) {
+                @include bp(landscape) {
                     font-size: 30px;
                 }
                 @include bp(mobile){
@@ -72,6 +78,9 @@
                 color: #666;
                 margin-bottom: 23px;
                 font-weight: 500;
+                @include bp(landscape){
+                    font-size: 17px;
+                }
             }
             ul {
                 display: list-item;
@@ -146,6 +155,7 @@
                 h5 {
                     color: #666;
                     font-size: 20px;
+                    font-weight: 600;
                     @include bp(landscape) {
                         font-size: 17px;
                     }
@@ -206,7 +216,7 @@
             color: #1c3d6d;
             margin-bottom: 16px;
             padding-top: 34px;
-            @include bp(tablet) {
+            @include bp(landscape) {
                 font-size: 40px;
             }
             @include bp(mobile) {
@@ -250,7 +260,7 @@
                     font-weight: 500;
                     color: #666;
                     @include bp(landscape) {
-                        font-size: 18px;
+                        font-size: 17px;
                     }
                 }
             }
@@ -261,6 +271,7 @@
                     @extend .btn-mansq;
                     font-size: 26px;
                     padding: 21px 47px;
+                    font-weight: 600;
                     @include bp(landscape) {
                         font-size: 22px;
                         padding: 16px 36px;
@@ -273,7 +284,7 @@
         display: flex;
         margin-top: 52px;
         @include bp(landscape) {
-            margin-top: 30px;
+            margin-top: 78px;
         }
         @include bp(mobile){
             flex-direction: column;
@@ -307,7 +318,7 @@
             &.full-width {
                 width: 100%;
                 padding-right: 33px;
-                padding-bottom: 11px;
+                padding-bottom: 6px;
                 h5 {
                     font-size: 24px;
                     text-transform: uppercase;
@@ -349,6 +360,9 @@
                 margin: 0;
             }
         }
+        &.flexDisHead{
+            margin-top: 33px;
+        }
     }
     .spanel {
         .flexWrapper {
@@ -370,6 +384,9 @@
                     width: 100%;
                 }
             }
+        }
+        &:last-child{
+            margin-bottom: 100px;
         }
     }
 }
