@@ -508,7 +508,6 @@
             var llocdata = jQuery("section.mapSection").find("#map_value").val();
             var llocdata = jQuery.parseJSON(llocdata);
             var firstLat, firstLang, infoWindowContent = [];
-
             for (var i = 0; i < llocdata.length; i++) {
                 var firstJSON = llocdata[i];
                 if (i == 0) {
@@ -518,12 +517,9 @@
                     firstZoom = firstJSON["zoom"];
                 }
             }
-
             var uluru = { lat: firstLat, lng: firstLang };
             var latlng = new google.maps.LatLng(firstLat, firstLang);
-
             console.log(llocdata);
-
             var myOptions = {
                 center: latlng,
                 zoom: firstZoom,
@@ -536,8 +532,6 @@
                 disableDefaultUI: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
-
-
             // Display a map on the page
             map = new google.maps.Map(document.getElementById("map_div"), myOptions);
             //map.setTilt(45);
@@ -552,7 +546,6 @@
 
                 var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
             }
-
             // Loop through our array of markers & place each one on the map
             for (i = 0; i < llocdata.length; i++) {
 
@@ -583,7 +576,6 @@
                                 map.setCenter(marker.getPosition());
                             }
                         }
-
                     })(marker, i));
 
                     /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
@@ -606,9 +598,7 @@
 
                     })(marker, i));
                 }
-
             }
-
         }
     </script>
     <script async defer
