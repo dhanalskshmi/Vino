@@ -10,6 +10,12 @@
             }
         }
     }
+    .heroBlock{
+        margin-bottom: 120px;
+        @include bp(landscape){
+            margin-bottom: 100px;
+        }
+    }
     .flexWrapper {
         display: flex;
         @include bp(mobile){
@@ -49,7 +55,10 @@
             width: calc(100% - 533px);
             @include bp(landscape) {
                 width: calc(100% - 343px);
-                padding-top: 27px;
+                padding-top: 38px;
+            }
+            @include bp(tablet){
+                padding-bottom: 0;
             }
             @include bp(mobile) {
                 width: 100%;
@@ -61,8 +70,11 @@
                 color: #666;
                 font-size: 36px;
                 margin-bottom: 19px;
-                @include bp(tablet) {
+                @include bp(landscape) {
                     font-size: 30px;
+                }
+                @include bp(tablet){
+                    margin-bottom: 11px;
                 }
                 @include bp(mobile){
                     line-height: initial;
@@ -72,6 +84,9 @@
                 color: #666;
                 margin-bottom: 23px;
                 font-weight: 500;
+                @include bp(landscape){
+                    font-size: 17px;
+                }
             }
             ul {
                 display: list-item;
@@ -93,8 +108,8 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 60px;
-        @include bp(mobile){
-
+        @include bp(tablet){
+            margin-top: 0;
         }
         .profDisplay {
             width: 222px;
@@ -146,6 +161,7 @@
                 h5 {
                     color: #666;
                     font-size: 20px;
+                    font-weight: 600;
                     @include bp(landscape) {
                         font-size: 17px;
                     }
@@ -206,7 +222,7 @@
             color: #1c3d6d;
             margin-bottom: 16px;
             padding-top: 34px;
-            @include bp(tablet) {
+            @include bp(landscape) {
                 font-size: 40px;
             }
             @include bp(mobile) {
@@ -250,7 +266,7 @@
                     font-weight: 500;
                     color: #666;
                     @include bp(landscape) {
-                        font-size: 18px;
+                        font-size: 17px;
                     }
                 }
             }
@@ -261,6 +277,7 @@
                     @extend .btn-mansq;
                     font-size: 26px;
                     padding: 21px 47px;
+                    font-weight: 600;
                     @include bp(landscape) {
                         font-size: 22px;
                         padding: 16px 36px;
@@ -273,7 +290,10 @@
         display: flex;
         margin-top: 52px;
         @include bp(landscape) {
-            margin-top: 30px;
+            margin-top: 78px;
+        }
+        @include bp(tablet) {
+            margin-top: 8px;
         }
         @include bp(mobile){
             flex-direction: column;
@@ -290,7 +310,7 @@
                 width: 100%;
                 padding-left: 10px;
                 padding-right: 10px;
-                margin-top: 25px;
+                margin-top: 0px;
             }
             h5 {
                 font-weight: 700;
@@ -307,7 +327,7 @@
             &.full-width {
                 width: 100%;
                 padding-right: 33px;
-                padding-bottom: 11px;
+                padding-bottom: 6px;
                 h5 {
                     font-size: 24px;
                     text-transform: uppercase;
@@ -334,6 +354,9 @@
             padding-bottom: 34px;
             width: calc(100% - 533px);
             margin-top: 0;
+            @include bp(landscape){
+                padding-bottom: 19px;
+            }
             @include bp(tablet) {
                 width: calc(100% - 420px);
                 justify-content: center;
@@ -347,6 +370,18 @@
             }
             .profDisplay {
                 margin: 0;
+            }
+        }
+        &.flexDisHead{
+            margin-top: 33px;
+            @include bp(landscape){
+                margin-top: 0;
+            }
+            @include bp(tablet) {
+                margin-top: 8px;
+            }
+            @include bp(mobile) {
+                margin-top: 0px;
             }
         }
     }
@@ -370,6 +405,9 @@
                     width: 100%;
                 }
             }
+        }
+        &:last-child{
+            margin-bottom: 100px;
         }
     }
 }
