@@ -448,6 +448,14 @@ header {
 		}
 	}
 
+	.firefox {
+		.menuWrapper {
+			.loginBlocks {
+				transform: none;
+			}
+		}
+	}
+
 	.headerWrapper {
 		background: rgba(255,255,255,1);
 		display: table;
