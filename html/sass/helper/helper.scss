@@ -451,15 +451,15 @@ button {
 }
 
 .error-page{
-  
-    .pageNot-found-section{   
+
+    .pageNot-found-section{
       width: 100%;
       text-align: center;
       h1{
         color: #1268e5;
       }
       p{
-        padding: 15px 0; 
+        padding: 15px 0;
         margin-bottom: 15px;
       }
     .page-section-box{
@@ -475,7 +475,7 @@ button {
       }
   }
     }
-    
+
 }
 
 // Visibility Hidden
@@ -642,7 +642,7 @@ p {
 @media screen and (max-width: 767px) {
   .error-page{
 
-    } 
+    }
   html,
   body {
     overflow-x: hidden;
