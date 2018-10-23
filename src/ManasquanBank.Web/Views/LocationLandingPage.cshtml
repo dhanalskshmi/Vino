@@ -58,6 +58,10 @@
     var json = jsonSerialiser.Serialize(MapLocations);
 
 }
+@section InnerTopStyle {
+
+    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
+}
 <section class="heroBanner">
     @if (heroImage != null)
     {
@@ -344,6 +348,7 @@
 
 }
 @section InnerBottomScript {
+<script src="~/scripts/lib/jquery-ui.js"></script>
     <script>
 function initMap() {
     var map;
@@ -420,30 +425,7 @@ function initMap() {
         marker.setTitle(llocdata[i]["name"]);
         // Allow each marker to have an info window
 
-        if($(window).width() > 1200){
-
-            google.maps.event.addListener(marker, "mouseover", (function(marker, i) {
-                return function() {
-                  if(infoWindowContent[i]!=infoWindow.getContent())
-                  {
-                    infoWindow.setContent(infoWindowContent[i]);
-                    infoWindow.open(map, marker);
-                    map.setCenter(marker.getPosition());
-                  }
-                }
-
-            })(marker, i));
-
-             /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
-                return function() {
-                    infoWindow.close(map, marker);
-                }
-
-            })(marker, i));*/
-
-
-        }
-        else{
+        
 
             google.maps.event.addListener(marker, "click", (function(marker, i) {
                 return function() {
@@ -456,10 +438,7 @@ function initMap() {
                 }
 
             })(marker, i));
-        }
-
-
-
+        
 
     }
 
