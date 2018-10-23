@@ -844,7 +844,7 @@
 							</div>
 							<div class="serviceDetail">
 								<img src="images/location/serviceIcon.png" alt="serviceIcon" />
-								<h4>Self-Service Coin Counting</h4>
+								<h4>Self-Service Coin Counting </h4>
 								<p>Turn your loose change into dollars! The coin counting machines are free for all bank customers and available at each branch.</p>
 							</div>
 							<div class="serviceDetail">
@@ -1156,12 +1156,10 @@
     <script src='script/lib/nprogress.js'></script>
     <script src="script/lib/modernizr-custom.js"></script>
 	<script src="script/lib/scrollanimation.js"></script>
-	<!--<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_mhIzW3YXtosbabjZDzgeQcgoOC4PJ5M"></script>-->
-
-  <script src="script/lib/jquery.validate.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_mhIzW3YXtosbabjZDzgeQcgoOC4PJ5M"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
     <script type="text/javascript">
-    /*$(document).ready(function() {
+    $(document).ready(function() {
         if ($('.mapLocation').length > 0) {
             var map;
             google.maps.event.addDomListener(window, "load", function() {
@@ -1174,6 +1172,9 @@
                 });
                 var infoWindow = new google.maps.InfoWindow();
 
+                /*
+                 * marker creater function (acts as a closure for html parameter)
+                 */
                 function createMarker(options, html) {
                     var marker = new google.maps.Marker(options);
                     if (html) {
@@ -1184,6 +1185,7 @@
                     }
                     return marker;
                 }
+                /*add markers to map*/
                 var marker0 = createMarker({
                     position: new google.maps.LatLng(40.137508, -74.089629),
                     map: map,
@@ -1208,93 +1210,65 @@
                 });
             });
         }
-    });*/
+    });
+	$(window).on("load resize", function(e) {
+    var windowSize = $(window).width();
+    if ($('.serviceContent').length > 0) {
+        $('.serviceContent .serviceDetail').find('h4').css('height', '');
+        // if (windowSize > 801 || windowSize < 800) {
+        $('.serviceContent').each(function() {
+            if (windowSize > 768 && windowSize <= 1023) {
+                var row = 2;
+            } else if (windowSize > 1024 && windowSize <= 1279) {
+                var row = 3;
+            } else if (1280 < windowSize) {
+                var row = 4;
+            } else {
+                var row = 1;
+            }
+            // console.log(row);
+            // console.log(windowSize);
 
+            // console.log($(this).find('.serviceDetail').length);
+            var start = 1;
+            var end = row;
+            var maxHeightH4 = 0;
 
+            var max = parseInt($(this).find('.serviceDetail').length / row);
+            console.log("before", max);
 
-$(window).on("load resize",function(e) {
+            if (max > 0) {
+                max = max + 1;
+            }
+            console.log("after", max);
+            $(this).find('h4').css('height', '');
 
- var windowSize = $(window).width();
+            for (var i = 1; i <= max; i++) {
+                //$(this).find('.serviceDetail').each(function(){
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        maxHeightH4 = maxHeightH4 > $(this).find('h4').height() ? maxHeightH4 : $(this).find('h4').height();
+                    }
+                });
 
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        $(this).find('h4').css({
+                            'height': maxHeightH4
+                        });
+                    }
+                });
 
- if($('.serviceContent').length > 0){
-
- $('.serviceContent .serviceDetail').find('h4').css('height','');
-
-
- // if (windowSize > 801 || windowSize < 800) {
-
-
-  $('.serviceContent').each(function(){
-if(windowSize > 768 && windowSize <= 1023){
-  var row = 2;
-}
-else if (windowSize > 1024 && windowSize <=1279) {
-  var row = 3;
-}
-else if (1280 < windowSize) {
-  var row =4;
-}
-else {
-  var row = 1;
-}
-// console.log(row);
-// console.log(windowSize);
-
-// console.log($(this).find('.serviceDetail').length);
-   var start = 1;
-   var end = row;
-   var maxHeightH4 =0;
-
-   var max=parseInt($(this).find('.serviceDetail').length/row);
-   console.log("before" ,max);
-
-   if(max > 0){
-    max=max+1;
-   }
-console.log("after" ,max);
-
-
-   $(this).find('h4').css('height','');
-
-   for (var i = 1; i <= max; i++) {
-
-
-
-   //$(this).find('.serviceDetail').each(function(){
-
-
-  $(this).find('.serviceDetail').each(function(index, element) {
-    index=index+1;
-    if(index >= start && index <= end){
-      maxHeightH4 = maxHeightH4 > $(this).find('h4').height() ? maxHeightH4 : $(this).find('h4').height();
+                start = end + 1;
+                end = end + row;
+            }
+        });        
+	// }
     }
-  });
-
-
-
-$(this).find('.serviceDetail').each(function(index, element) {
-     index=index+1;
-     if(index >= start && index <= end){
-       $(this).find('h4').css({'height':maxHeightH4});
-     }
-     });
-
-    start=end+1;
-    end=end+row;
-   }
-
-
- });
-
- // }
-}
-
 });
     </script>
-
-
-
 </body>
 
 </html>
