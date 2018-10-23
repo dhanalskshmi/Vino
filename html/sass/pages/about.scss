@@ -362,7 +362,7 @@
                         width: 73%;
                     }
                     @include bp(mobile) {
-                        margin: auto;
+                        margin: 20px auto;
                         padding: 38px 50px;
                         width: 226px;
                     }
@@ -517,7 +517,7 @@
                             padding: 17px 17px 15px 20px;
                         }
                         @include bp(mobile) {
-                            width: 220px;
+                            width: 225px;
                             padding: 15px 22px;
                         }
                         h4 {
