@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				'script/pages/home.js',
 				'script/pages/contact.js',
 				'script/pages/timeline.js',
-				//'script/pages/location-detail.js',
+				'script/pages/location-detail.js',
 				'script/pages/location.js',
 				'script/pages/category-detail.js',
 				'script/pages/reorder-form.js'

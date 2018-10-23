@@ -1649,6 +1649,9 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
  });
 }
 
+$(document).ready(function() {
+	$(".timehrsSection").clone().appendTo($(".cloneTimeHrs"));
+});
 $(window).on("load resize", function(e) {
     var windowSize = $(window).width();
     if ($('.serviceContent').length > 0) {
