@@ -62,7 +62,7 @@
             @include bp(landscape) {
                 width: calc(100% - 343px);
                 padding-top: 38px;
-                padding-bottom: 5px;
+                padding-bottom: 0px;
             }
             @include bp(tablet){
                 padding-bottom: 0;
@@ -260,7 +260,7 @@
             @include bp(tablet) {
                 flex-direction: column;
                 align-items: flex-start;
-                padding-bottom: 22px;
+                padding-bottom: 30px;
             }
             .homeStartCont {
                 width: 55%;
@@ -301,7 +301,7 @@
             margin-top: 78px;
         }
         @include bp(tablet) {
-            margin-top: 8px;
+            margin-top: 20px;
         }
         @include bp(mobile){
             flex-direction: column;
@@ -384,12 +384,6 @@
             margin-top: 33px;
             @include bp(landscape){
                 margin-top: 0;
-            }
-            @include bp(tablet) {
-                margin-top: 8px;
-            }
-            @include bp(mobile) {
-                margin-top: 0px;
             }
         }
     }
