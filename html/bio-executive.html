@@ -2,846 +2,729 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Manasquan Bank in NJ - NJ Banks for Personal and Business Needs</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" ,
-        shrink-to-fit='no' />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link href='css/lib/nprogress.css' rel='stylesheet' />
-    <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
-    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+  <meta charset="utf-8">
+  <title>Manasquan Bank in NJ - NJ Banks for Personal and Business Needs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" , shrink-to-fit='no' />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link href='css/lib/nprogress.css' rel='stylesheet' />
+  <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
+  <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 
 <body style='display: block'>
-    <div class="loaderBlock">
-        <div class="loaderWrap">
-            <img src="images/header/logo.png" alt="Manasquan Bank">
-        </div>
+  <div class="loaderBlock">
+    <div class="loaderWrap">
+      <img src="images/header/logo.png" alt="Manasquan Bank">
     </div>
-    <div class="siteWrap">
-        <div class="siteInner bioPage">
-            <!-- Header -->
-            <header>
-              <div class="containerWrapper">
-                <div class="headerWrapper">
-                  <a href="index.html" class="logo">
-                    <img src="images/header/logo.png" alt="Manasquan Bank" />
-                  </a>
-                  <div class="searchloginWrap">
-                    <div class="mLogin">
-                      <a href="#">Login</a>
-                    </div>
-                    <div class="mobileSearchwrap">
-                      <a href="#" class="hamburger">
-                        <span class="lines"></span>
+  </div>
+  <div class="siteWrap">
+    <div class="siteInner bioPage">
+      <!-- Header -->
+      <header>
+        <div class="containerWrapper">
+          <div class="headerWrapper">
+            <a href="index.html" class="logo">
+              <img src="images/header/logo.png" alt="Manasquan Bank" />
+            </a>
+            <div class="searchloginWrap">
+              <div class="mLogin">
+                <a href="javascript:void(0)">Login</a>
+              </div>
+              <div class="mobileSearchwrap">
+                <a href="javascript:void(0)" class="hamburger">
+                  <span class="lines"><span class="screen-reader-text">Hamburger</span></span>
+                </a>
+                <div class="mobileSearch">
+                  <span class="submit">
+                    <i></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mobileSearchfield">
+              <form class="" action="index.html" method="post">
+                <label for="msearch" class="screen-reader-text ">Mobile Search</label>
+                <input type="text" title="search" id="msearch" name="search" value="" placeholder="Search" class="txtBox">
+              </form>
+            </div>
+            <div class="menuWrapper">
+              <div class="loginBlocks">
+                <div class="personalLogin">
+                  <h3>PERSONAL BANKING</h3>
+                  <form id="personalLogin" action="" method="post">
+                    <label for="accessid" class="screen-reader-text ">access id</label>
+                    <input type="text" title="accessid" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID" required>
+                    <label for="password2" class="screen-reader-text ">Password</label>
+                    <input type="password" title="password2" name="password2" id="password2" value="" class="txtBox" placeholder="Password" required>
+                    <button type="submit" name="button"> <span>Login</span></button>
+                    <p>
+                      <a href="#">Sign Up</a>
+                      <a href="#">Forgot Password</a>
+                    </p>
+                  </form>
+                </div>
+                <div class="businessLogin">
+                  <h3>BUSINESS BANKING</h3>
+                  <form id="businessLogin" action="" method="post">
+                    <label for="businessaccessid" class="screen-reader-text">business access id</label>
+                    <input type="text" name="businessaccessid" title="businessaccessid" id="businessaccessid" value="" class="txtBox" placeholder="Access ID" required>
+                    <label for="businesspassword" class="screen-reader-text ">password</label>
+                    <input type="password" name="businesspassword" title="businessaccesspwd" id="businesspassword" value="" class="txtBox" placeholder="Password" required>
+                    <button type="submit" name="button"> <span>Login</span></button>
+                    <p>
+                      <a href="#">Forgot Password</a>
+                    </p>
+                  </form>
+                </div>
+
+              </div>
+              <div class="headerNav">
+                <div class="topNav">
+                  <ul>
+                    <li class="iWantto">
+                      <a href="#">
+                        I want to
                       </a>
-                      <div class="mobileSearch">
-                        <form class="" action="index.html" method="post">
-                          <input type="text" name="search" value="Search" class="txtBox">
-                          <span class="submit">
-                            <i></i>
-                          </span>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-    
-                  <div class="menuWrapper">
-                    <div class="loginBlocks">
-                      <div class="personalLogin">
-                        <h3>Personal login</h3>
-                        <form id="personalLogin" action="" method="post">
-                          <input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID" required >
-                          <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password" required >
-                          <button type="submit" name="button"> <span>Login</span></button>
-                          <p>
-                            <a href="#">Sign Up</a>
-                            <a href="#">Forgot Password</a>
-                          </p>
-                        </form>
-                      </div>
-                      <div class="businessLogin">
-                        <h3>Business login</h3>
-                        <form id="businessLogin" action="" method="post">
-                          <input type="text" name="businessaccessid" id="businessaccessid" value="" class="txtBox" placeholder="Access ID" required >
-                          <input type="password" name="businesspassword" id="businesspassword" value="" class="txtBox" placeholder="Password" required >
-                          <button type="submit" name="button"> <span>Login</span></button>
-                          <p>
-                            <a href="#">Forgot Password</a>
-                          </p>
-                        </form>
-                      </div>
-    
-                    </div>
-                    <div class="headerNav">
-                      <div class="topNav">
-                        <ul>
-                          <li class="iWantto">
-                            <a href="#">
-                              I want to
-                            </a>
-                            <ul class="subNav">
-                              <li>
-                                <a href="#">Open an Account</a>
-                              </li>
-                              <li>
-                                <a href="#">Check Rates</a>
-                              </li>
-                              <li>
-                                <a href="#">Find Branch / ATM</a>
-                              </li>
-                              <li>
-                                <a href="#">Report Lost or Stolen Card</a>
-                              </li>
-                              <li>
-                                <a href="#">Make a Loan Payment</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#">
-                              Media Center
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              Find a Branch
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              Contact Us
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              Careers
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="mainNav">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <span>
-                                PERSONAL<br>
-                                BANKING
-                              </span>
-                            </a>
-                            <div class="SubmenuWrapper">
-                              <div class="containerWrapper">
-                                <div class="bgWrap">
-                                  <div class="borderLine">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                  </div>
-                                  <h2>
-                                    Personal BANKING
-                                  </h2>
-                                  <div class="flexBox">
-                                    <div class="cols extWidth">
-                                      <h3>
-                                        CHECKING
-                                      </h3>
-                                      <ul>
-                                        <li>
-                                          <a href="#">Kasasa Cash</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Kasasa Cash Back</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Business Now/Super Now Checking</a>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="cols extWidth">
-                                      <h3>
-                                        Savings
-                                      </h3>
-                                      <ul>
-                                        <li>
-                                          <a href="#">Regular Savings</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Money Market Savings</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Certificate od Deposit (CD)</a>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="cols">
-                                      <h3>
-                                        merchant services
-                                      </h3>
-                                      <ul>
-                                        <li>
-                                          <a href="#">Regular Savings</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Money Market Savings</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Certificate of Deposit (CD)</a>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="cols">
-                                      <h3>
-                                        TOTAL COMMERCIAL
-                                        SOLUTIONS
-                                      </h3>
-                                    </div>
-                                    <div class="cols">
-                                      <h3>
-                                        lending
-                                      </h3>
-                                      <ul>
-                                        <li>
-                                          <a href="#">Commercial Real Estate</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Commercial Lines of Credit</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Commercial Term Loans</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Equipment Financing</a>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="cols">
-                                      <h3>
-                                        RATES
-                                      </h3>
-                                      <ul>
-                                        <li>
-                                          <a href="#">Checking</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Savings</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Money Market</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Cash Management</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Lending</a>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="cols">
-                                      <h3>
-                                        cash management
-                                      </h3>
-                                      <ul>
-                                        <li>
-                                          <a href="#">Merchant Services</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Total Commercial Solutions</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Remote Deposit Capture</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Safe Deposit Box</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Night Depository</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Account Reconciliation</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Remote Wire Transfer</a>
-                                        </li>
-                                        <li>
-                                          <a href="#">Positive Pay</a>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
+                      <ul class="subNav">
+                        <li>
+                          <a href="#">Open an Account</a>
+                        </li>
+                        <li>
+                          <a href="#">Check Rates</a>
+                        </li>
+                        <li>
+                          <a href="#">Find Branch / ATM</a>
+                        </li>
+                        <li>
+                          <a href="#">Report Lost or Stolen Card</a>
+                        </li>
+                        <li>
+                          <a href="#">Make a Loan Payment</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="media-center.html">
+                        Media Center
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        Find a Branch
+                      </a>
+                    </li>
+                    <li>
+                      <a href="contact.html">
+                        Contact Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="careers.html">
+                        Careers
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mainNav">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <span>
+                          PERSONAL<br>
+                          BANKING
+                        </span>
+                      </a>
+                      <div class="SubmenuWrapper">
+                        <div class="containerWrapper">
+                          <div class="bgWrap">
+                            <div class="borderLine">
+                              <i></i>
+                              <i></i>
+                              <i></i>
+                              <i></i>
+                            </div>
+                            <h2>
+                              Personal BANKING
+                            </h2>
+                            <div class="flexBox">
+                              <div class="cols extWidth">
+                                <h3>
+                                  CHECKING
+                                </h3>
+                                <ul>
+                                  <li>
+                                    <a href="#">Kasasa Cash</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Kasasa Cash Back</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Business Now/Super Now Checking</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="cols extWidth">
+                                <h3>
+                                  Savings
+                                </h3>
+                                <ul>
+                                  <li>
+                                    <a href="#">Regular Savings</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Money Market Savings</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Certificate od Deposit (CD)</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="cols">
+                                <h3>
+                                  merchant services
+                                </h3>
+                                <ul>
+                                  <li>
+                                    <a href="#">Regular Savings</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Money Market Savings</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Certificate of Deposit (CD)</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="cols">
+                                <h3>
+                                  TOTAL COMMERCIAL
+                                  SOLUTIONS
+                                </h3>
+                              </div>
+                              <div class="cols">
+                                <h3>
+                                  lending
+                                </h3>
+                                <ul>
+                                  <li>
+                                    <a href="#">Commercial Real Estate</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Commercial Lines of Credit</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Commercial Term Loans</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Equipment Financing</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="cols">
+                                <h3>
+                                  RATES
+                                </h3>
+                                <ul>
+                                  <li>
+                                    <a href="#">Checking</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Savings</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Money Market</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Cash Management</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Lending</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="cols">
+                                <h3>
+                                  cash management
+                                </h3>
+                                <ul>
+                                  <li>
+                                    <a href="#">Merchant Services</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Total Commercial Solutions</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Remote Deposit Capture</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Safe Deposit Box</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Night Depository</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Account Reconciliation</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Remote Wire Transfer</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Positive Pay</a>
+                                  </li>
+                                </ul>
                               </div>
                             </div>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <span>
-                                BUSINESS<br>
-                                BANKING
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <span>
-                                DIGITAL<br>
-                                CENTER
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <span>
-                                CLIENT<br>
-                                SERVICES
-                              </span>
-                            </a>
-                          </li>
-                          <li class="search">
-                            <form class="" action="index.html" method="post">
-                              <input type="text" name="search" value="Search" class="txtBox">
-                              <span class="submit">
-                                <i></i>
-                              </span>
-                            </form>
-                          </li>
-                        </ul>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-    
-                  </div>
-                </div>
-    
-              </div>
-              <div class="mnavWrapper">
-                <div class="wraps">
-                  <div class="marginWrap">
-                    <ul>
-                      <li>
-                        <a href="#"  class="msubMenu">
-                          Personal Banking
-                        </a>
-                        <ul class="inner" style="display: none;">
-                          <li>
-                            <a href="#"  class="msubMenu">
-                              checking
-                            </a>
-                            <ul class="inner" style="display: none;">
-                              <li>
-                                <a href="#">
-                                  Basic Business Checking
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Premier Business Checking
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Business Now/Super Now Checking
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#"  class="msubMenu">
-                              MERCHANT SERVICES
-                            </a>
-                            <ul class="inner" style="display: none;">
-                              <li>
-                                <a href="#">
-                                  Regular Savings
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Money Market Savings
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Certificate of Deposit (CD)
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <!--<li>
-                            <a href="#"  class="msubMenu">
-                              LENDING
-                            </a>
-                            <ul class="inner" style="display: none;">
-                              <li>
-                                <a href="#">
-                                  Commercial Real Estate
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Commercial Lines of Credit
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Commercial Term Loans
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Equipment Financing
-                                </a>
-                              </li>
-                            </ul>
-                          </li>-->
-                          <li>
-                            <a href="#"  class="msubMenu">
-                              RATES
-                            </a>
-                            <ul class="inner" style="display: none;">
-                              <li>
-                                <a href="#">
-                                  Checking
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Savings
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Money Market
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Cash Management
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Lending
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <!--<li>
-                            <a href="#"  class="msubMenu">
-                              CASH MANAGEMENT
-                            </a>
-                            <ul class="inner" style="display: none;">
-                              <li>
-                                <a href="#">
-                                  Merchant Services
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Total Commercial Solutions
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Remote Deposit Capture
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Safe Deposit Box
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Night Depository
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Account Reconciliation
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Remote Wire Transfer
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Positive Pay
-                                </a>
-                              </li>
-                            </ul>
-                          </li>-->
-                          <li>
-                            <a href="#"  class="msubMenu">
-                              SAVINGS
-                            </a>
-                            <ul class="inner" style="display: none;">
-                              <li>
-                                <a href="#">
-                                  Regular Savings
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Money Market Savings
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Certificate od Deposit (CD)
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#">
-                              TOTAL COMMERCIAL
-                              SOLUTIONS
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="#" class="msubMenu">
-                          Business Banking
-                        </a>
-                        <ul class="inner" style="display: none;">
-                          <li>
-                            <a href="#">
-                              Submenu
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Digital Center
-                        </a>
-                      </li>
-                      <li class="mtopNav">
-                        <a href="#" class="msubMenu">
-                          I want to
-                        </a>
-                        <ul class="inner" style="display: none;">
-                          <li>
-                            <a href="#">Open an Account</a>
-                          </li>
-                          <li>
-                            <a href="#">Check Rates</a>
-                          </li>
-                          <li>
-                            <a href="#">Find Branch / ATM</a>
-                          </li>
-                          <li>
-                            <a href="#">Report Lost or Stolen Card</a>
-                          </li>
-                          <li>
-                            <a href="#">Make a Loan Payment</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="mtopNav">
-                        <a href="#">
-                          Media Center
-                        </a>
-                      </li>
-                      <li class="mtopNav">
-                        <a href="#">
-                          Find a Branch
-                        </a>
-                      </li>
-                      <li class="mtopNav">
-                        <a href="#">
-                          Contact Us
-                        </a>
-                      </li>
-                      <li class="mtopNav">
-                        <a href="#">
-                          Careers
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-    
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span>
+                          BUSINESS<br>
+                          BANKING
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span>
+                          DIGITAL<br>
+                          CENTER
+                        </span>
+                      </a>
+                    </li>
+                    <li class="shortNav">
+                      <a href="#">
+                        <span>
+                          CLIENT<br>
+                          SERVICES
+                        </span>
+                      </a>
+                      <ul class="subNav">
+                        <li>
+                          <a href="#">Menu 1</a>
+                        </li>
+                        <li>
+                          <a href="#">Menu 2</a>
+                        </li>
+                        <li>
+                          <a href="#">Menu 3</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="search">
+                      <form class="" action="index.html" method="post">
+                        <label for="dsearch" class="screen-reader-text ">Search</label>
+                        <input type="text" title="search" name="search" id="dsearch" value="" placeholder="Search" class="txtBox">
+                        <span class="submit">
+                          <i></i>
+                        </span>
+                      </form>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </header>
-            <div class="openAccount">
-              <a href="#">
-                <span>
-                  Open an Account
-                </span>
-              </a>
-            </div>
-            <div class="loginBlocks">
-              <div class="personalLogin">
-                <h3>Personal login</h3>
-                <form id="mpersonalLogin" action="" method="post">
-                  <input type="text" name="maccessid" id="maccessid" value="" class="txtBox" placeholder="Access ID">
-                  <input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-                  <button type="submit" name="button"> <span>Login</span></button>
-                  <p>
-                    <a href="#">Sign Up</a>
-                    <a href="#">Forgot Password</a>
-                  </p>
-                </form>
-              </div>
-              <div class="businessLogin">
-                <h3>Business login</h3>
-                <form id="mbusinessLogin" action="" method="post">
-                  <input type="text" name="mbusinessaccessid" id="mbusinessaccessid" value="" class="txtBox" placeholder="Access ID">
-                  <input type="password" name="mbusinesspassword" id="mbusinesspassword" value="" class="txtBox" placeholder="Password">
-                  <button type="button" name="button"> <span>Login</span></button>
-                  <p>
-                    <a href="#">Forgot Password</a>
-                  </p>
-                </form>
-              </div>
-            </div>
-            <section class="heroBanner">
-                <figure class="bannerImage" style="background-image: url('images/banner/mediacenter_bg.jpg')"></figure>
-            </section>
-            <section class="heroBlock">
-                <div class="containerWrapper">
-                    <div class="bgWrap">
-                        <div class="bioFlex">
-                            <figure class="bioFlexImg"></figure>
-                            <div class="bioFlexContent profExec">
-                                <h5>NAME</h5>
-                                <p class="cmpTitle">Company Title</p>
-                                <p class="cmpAddr1">NMLS# 1383824</p>
-                                <p class="bioQuote">“My job is to keep the bank safe, financially sound and viable moving forward,” she says. “In order to do that, I need to have involvement in every department.”</p>
-                                <a class="btnManasq" href=""><span>Contact Me</span></a>
-                            </div>
-                        </div>
-                        <div class="bioContent">
-                            <p>Ralph G. Tancredi, Sr. has over 20-years experience with mortgage banking and also holds
-                                a CPA license. He is committed to meeting his clients’ needs and ensuring they receive
-                                superior customer service. Ralph works with a full range of borrowers but especially
-                                enjoys the opportunity to work with first-time homebuyers to make sure they fully
-                                understand the mortgage transaction process and have a positive experience. Whether
-                                you’re refinancing a mortgage or buying a property or building lot, Ralph provides you
-                                with the smooth and personable transaction that you deserve. He resides in Wall
-                                Township with his wife, Gail and two children.</p>
-                                <h5>Professional Background:</h5>
-                                <p>Ralph is a graduate of Seton Hall Preparatory School and Seton Hall University. He
-                                    started his career as an accountant with Russo, Delaura & Bielski and expanded his
-                                    financial expertise to mortgage lending. Ralph remains deeply committed to his
-                                    community, serving as:</p>
-                                    <ul>
-                                        <li>Treasurer, The Keith E. Neumann Foundation, 1989 – Present</li>
-                                        <li>Vice President, South Wall Fire Company No. 1, 2006 – Present</li>
-                                        <li>Fire Commissioner for District No. 3, Wall Township, NJ 2006 – Present</li>
-                                        <li>Volunteer Firefighter for South Wall Fire Co. No. 1, 2002 – Present</li>
-                                        <li>Treasurer of South Wall Fire Co. No. 1, 2003 – 2005</li>
-                                    </ul>
-                                    <h5>Affiliations:</h5>
-                                <ul>
-                                    <li>Licensed New Jersey State Certified Public Accountant, 1991 – Present</li>
-                                    <li>Federal Mortgage Loan Originator</li>
-                                    <li>Jersey Shore Chamber of Commerce</li>
-                                </ul>
-                        </div>
-                        <p><a href="#" class="back-btn"><img src="images/bio/back_arrow.png" alt=""> Back</a></p>
-                    </div>
-                </div>
-            </section>
-            <section class="joinEmail">
-                <div class="containerWrapper">
-                    <h2>
-                        JOIN OUR<br>
-                        EMAIL LIST
-                    </h2>
-                    <form class="" action="index.html" method="post">
-                        <div>
-                            <label>
-                                First Name
-                            </label>
-                            <input type="text" name="fname" value="" id="fname" class="txtBox">
-                        </div>
-                        <div>
-                            <label>
-                                last Name
-                            </label>
-                            <input type="text" name="lname" value="" id="lname" class="txtBox">
-                        </div>
-                        <div>
-                            <label>
-                                Email
-                            </label>
-                            <input type="text" name="email" value="" id="email" class="txtBox">
-                        </div>
-                        <div class="groupCheckbox">
-                            <div>
-                                <label>
-                                    <span>Personal Banking</span>
-                                    <input type="checkbox" name="personalbanking" value="" id="personalbanking" class="chkBox">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <span>Business Banking</span>
-                                    <input type="checkbox" name="businessbanking" value="" id="businessbanking" class="chkBox">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <span>Digital Services</span>
-                                    <input type="checkbox" name="digitalservices" value="" id="digitalservices" class="chkBox">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <span>Loans</span>
-                                    <input type="checkbox" name="loans" value="" id="loans" class="chkBox">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <span>Work at Manasquan Bank</span>
-                                    <input type="checkbox" name="work" value="" id="work" class="chkBox">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <span>Other</span>
-                                    <input type="checkbox" name="other" value="" id="other" class="chkBox">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="submit">
-                            <button type="button" name="button">Join</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-            <footer>
-                <div class="containerWrapper">
-                    <div class="footerWraps">
-                        <div class="fMenu">
-                            <ul>
-                                <li>
-                                    <a href="#">ABOUT US</a>
-                                </li>
-                                <li>
-                                    <a href="#">KNOWLEDGE CENTER</a>
-                                </li>
-                                <li>
-                                    <a href="#">CLIENT SERVICES</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="fCols">
-                            <figure>
-                                <a href="#"><img src="images/footer/f_logo.jpg" alt="Manasquan Bank"></a>
-                            </figure>
-                            <div class="detailsWrap">
-                                <p>
-                                    Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit. Ut
-                                    massa tellus, euismod sed
-                                    fermentum sed, pellentesque
-                                    varius.
-                                </p>
-                                <ul>
-                                    <li class="linkedIn">
-                                        <a href="#">LinkedIn</a>
-                                    </li>
-                                    <li class="fb">
-                                        <a href="#">Facebook</a>
-                                    </li>
-                                    <li class="uTube">
-                                        <a href="#">Youtube</a>
-                                    </li>
-                                    <li class="tweet">
-                                        <a href="#">Tweeter</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="fCols2">
-                            <h3>
-                                Address:
-                            </h3>
-                            <p>
-                                2221 Landmark Place<br>
-                                Wall, NJ 08736
-                            </p>
-                            <h3>
-                                Phone:
-                            </h3>
-                            <p>
-                                1-844-626-2265
-                            </p>
-                            <h3>
-                                Routing Number:
-                            </h3>
-                            <p>
-                                221272167
-                            </p>
-                        </div>
-                        <div class="fCols3">
-                            <figure>
-                                <a href="#">
-                                    <img src="images/footer/f_applestore.jpg" alt="">
-                                </a>
-                            </figure>
-                            <figure>
-                                <a href="#">
-                                    <img src="images/footer/f_googlestore.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="partnersBlock">
-                                <a href="#" class="fdic">Member FDIC</a>
-                                <a href="#" class="lender">Lender</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="fRow">
-                    <div class="containerWrapper">
-                        <ul>
-                            <li>&copy; Manasquan Bank</li>
-                            <li class="fLink">
-                                <a href="#">
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li class="fLink">
-                                <a href="#">
-                                    Accessibility Statement
-                                </a>
-                            </li>
-                            <li class="fLink">
-                                <a href="#">
-                                    Site Map
-                                </a>
-                            </li>
-                            <li>
-                                Site Designed and Developed by
-                                <a href="#">
-                                    Multimedia Solutions
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-            </footer>
+            </div>
+          </div>
+
         </div>
-    </div>
+        <div class="mnavWrapper">
+          <div class="wraps">
+            <div class="marginWrap">
+              <ul>
+                <li>
+                  <a href="#" class="msubMenu">
+                    Personal Banking
+                  </a>
+                  <ul class="inner" style="display: none;">
+                    <li>
+                      <a href="#" class="msubMenu">
+                        checking
+                      </a>
+                      <ul class="inner" style="display: none;">
+                        <li>
+                          <a href="#">
+                            Basic Business Checking
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Premier Business Checking
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Business Now/Super Now Checking
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="msubMenu">
+                        MERCHANT SERVICES
+                      </a>
+                      <ul class="inner" style="display: none;">
+                        <li>
+                          <a href="#">
+                            Regular Savings
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Money Market Savings
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Certificate of Deposit (CD)
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="msubMenu">
+                        RATES
+                      </a>
+                      <ul class="inner" style="display: none;">
+                        <li>
+                          <a href="#">
+                            Checking
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Savings
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Money Market
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Cash Management
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Lending
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="msubMenu">
+                        SAVINGS
+                      </a>
+                      <ul class="inner" style="display: none;">
+                        <li>
+                          <a href="#">
+                            Regular Savings
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Money Market Savings
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Certificate od Deposit (CD)
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        TOTAL COMMERCIAL
+                        SOLUTIONS
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="msubMenu">
+                    Business Banking
+                  </a>
+                  <ul class="inner" style="display: none;">
+                    <li>
+                      <a href="#">
+                        Sub Menu
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="msubMenu">
+                    Digital Center
+                  </a>
+                  <ul class="inner" style="display: none;">
+                    <li>
+                      <a href="#">
+                        Sub Menu
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mtopNav">
+                  <a href="#" class="msubMenu">
+                    I want to
+                  </a>
+                  <ul class="inner" style="display: none;">
+                    <li>
+                      <a href="#">Open an Account</a>
+                    </li>
+                    <li>
+                      <a href="#">Check Rates</a>
+                    </li>
+                    <li>
+                      <a href="#">Find Branch / ATM</a>
+                    </li>
+                    <li>
+                      <a href="#">Report Lost or Stolen Card</a>
+                    </li>
+                    <li>
+                      <a href="#">Make a Loan Payment</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mtopNav">
+                  <a href="media-center.html">
+                    Media Center
+                  </a>
+                </li>
+                <li class="mtopNav">
+                  <a href="#">
+                    Find a Branch
+                  </a>
+                </li>
+                <li class="mtopNav">
+                  <a href="contact.html">
+                    Contact Us
+                  </a>
+                </li>
+                <li class="mtopNav">
+                  <a href="careers.html">
+                    Careers
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-    <script type='text/javascript' src='script/lib/jquery.js'></script>
-    <script src='script/lib/nprogress.js'></script>
-    <script src="script/lib/modernizr-custom.js"></script>
-    <script type='text/javascript' src='script/main.min.js'></script>
+          </div>
+        </div>
+      </header>
+      <div class="openAccount">
+        <a href="#">
+          <span>
+            Open an Account
+          </span>
+        </a>
+      </div>
+      <div class="loginBlocks">
+        <div class="personalLogin">
+          <h3>PERSONAL BANKING</h3>
+          <form id="mpersonalLogin" action="" method="post">
+            <label for="maccessid" class="screen-reader-text ">access id</label>
+            <input type="text" name="maccessid" id="maccessid" value="" class="txtBox" required placeholder="Access ID">
+            <label for="password" class="screen-reader-text ">access password</label>
+            <input type="password" name="password" id="password" value="" class="txtBox" required placeholder="Password">
+            <button type="submit" name="button"> <span>Login</span></button>
+            <p>
+              <a href="#">Sign Up</a>
+              <a href="#">Forgot Password</a>
+            </p>
+          </form>
+        </div>
+        <div class="businessLogin">
+          <h3>BUSINESS BANKING</h3>
+          <form id="mbusinessLogin" action="" method="post">
+            <label for="mbusinessaccessid" class="screen-reader-text ">business access id</label>
+            <input type="text" name="mbusinessaccessid" id="mbusinessaccessid" value="" class="txtBox" required placeholder="Access ID">
+            <label for="mbusinesspassword" class="screen-reader-text ">business access password</label>
+            <input type="password" name="mbusinesspassword" id="mbusinesspassword" value="" class="txtBox" required placeholder="Password">
+            <button type="submit" name="button"> <span>Login</span></button>
+            <p>
+              <a href="#">Forgot Password</a>
+            </p>
+          </form>
+        </div>
+      </div>
+      <section class="heroBanner">
+        <figure class="bannerImage" style="background-image: url('images/banner/mediacenter_bg.jpg')"></figure>
+      </section>
+      <section class="heroBlock">
+        <div class="containerWrapper">
+          <div class="bgWrap">
+            <div class="bioFlex">
+              <figure class="bioFlexImg"></figure>
+              <div class="bioFlexContent profExec">
+                <h5>NAME</h5>
+                <p class="cmpTitle">Company Title</p>
+                <p class="cmpAddr1">NMLS# 1383824</p>
+                <p class="bioQuote">“My job is to keep the bank safe, financially sound and viable moving forward,” she says. “In order to do that, I need to have involvement in every department.”</p>
+                <a class="btnManasq" href=""><span>Contact Me</span></a>
+              </div>
+            </div>
+            <div class="bioContent">
+              <p>Ralph G. Tancredi, Sr. has over 20-years experience with mortgage banking and also holds
+                a CPA license. He is committed to meeting his clients’ needs and ensuring they receive
+                superior customer service. Ralph works with a full range of borrowers but especially
+                enjoys the opportunity to work with first-time homebuyers to make sure they fully
+                understand the mortgage transaction process and have a positive experience. Whether
+                you’re refinancing a mortgage or buying a property or building lot, Ralph provides you
+                with the smooth and personable transaction that you deserve. He resides in Wall
+                Township with his wife, Gail and two children.</p>
+              <h5>Professional Background:</h5>
+              <p>Ralph is a graduate of Seton Hall Preparatory School and Seton Hall University. He
+                started his career as an accountant with Russo, Delaura & Bielski and expanded his
+                financial expertise to mortgage lending. Ralph remains deeply committed to his
+                community, serving as:</p>
+              <ul>
+                <li>Treasurer, The Keith E. Neumann Foundation, 1989 – Present</li>
+                <li>Vice President, South Wall Fire Company No. 1, 2006 – Present</li>
+                <li>Fire Commissioner for District No. 3, Wall Township, NJ 2006 – Present</li>
+                <li>Volunteer Firefighter for South Wall Fire Co. No. 1, 2002 – Present</li>
+                <li>Treasurer of South Wall Fire Co. No. 1, 2003 – 2005</li>
+              </ul>
+              <h5>Affiliations:</h5>
+              <ul>
+                <li>Licensed New Jersey State Certified Public Accountant, 1991 – Present</li>
+                <li>Federal Mortgage Loan Originator</li>
+                <li>Jersey Shore Chamber of Commerce</li>
+              </ul>
+            </div>
+            <p><a href="#" class="back-btn"><img src="images/bio/back_arrow.png" alt=""> Back</a></p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="containerWrapper">
+          <div class="footerWraps">
+            <div class="fMenu">
+              <ul>
+                <li>
+                  <a href="about.html">ABOUT US</a>
+                </li>
+                <li>
+                  <a href="media-center.html">KNOWLEDGE CENTER</a>
+                </li>
+                <li>
+                  <a href="client-services.html">CLIENT SERVICES</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fCols">
+              <figure>
+                <a href="#"><img src="images/footer/f_logo.jpg" alt="Manasquan Bank"></a>
+              </figure>
+              <div class="detailsWrap">
+                <p>
+                  Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Ut
+                  massa tellus, euismod sed
+                  fermentum sed, pellentesque
+                  varius.
+                </p>
+                <ul>
+                  <li class="linkedIn">
+                    <a href="#">LinkedIn</a>
+                  </li>
+                  <li class="fb">
+                    <a href="#">Facebook</a>
+                  </li>
+                  <li class="uTube">
+                    <a href="#">Youtube</a>
+                  </li>
+                  <li class="tweet">
+                    <a href="#">Tweeter</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="fCols2">
+              <h3>
+                Address:
+              </h3>
+              <p>
+                2221 Landmark Place<br>
+                Wall, NJ 08736
+              </p>
+              <h3>
+                Phone:
+              </h3>
+              <p>
+                <a href="tel:18446262265">1-844-626-2265</a>
+              </p>
+              <h3>
+                Routing Number:
+              </h3>
+              <p>
+                221272167
+              </p>
+            </div>
+            <div class="fCols3">
+              <figure>
+                <a href="#">
+                  <img src="images/footer/f_applestore.jpg" alt="applestore">
+                </a>
+              </figure>
+              <figure>
+                <a href="#">
+                  <img src="images/footer/f_googlestore.jpg" alt="googlestore">
+                </a>
+              </figure>
+              <div class="partnersBlock">
+                <a href="#" class="fdic">
+                  <img src="images/footer/fdic.png" alt="Manasquan FDIC">
+                </a>
+                <a href="#" class="lender">
+                  <img src="images/footer/lender.png" alt="Manasquan Lender">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fRow">
+          <div class="containerWrapper">
+            <ul>
+              <li>&copy; 2018 Manasquan Bank</li>
+              <li class="fLink">
+                <a href="#">
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="fLink">
+                <a href="#">
+                  Accessibility Statement
+                </a>
+              </li>
+              <li class="fLink">
+                <a href="#">
+                  Site Map
+                </a>
+              </li>
+              <li>
+                Site Designed and Developed by
+                <a href="#">
+                  Multimedia Solutions
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='script/lib/jquery.js'></script>
+  <script src='script/lib/nprogress.js'></script>
+  <script src="script/lib/modernizr-custom.js"></script>
+  <script src="script/lib/jquery.validate.min.js"></script>
+  <script type='text/javascript' src='script/main.min.js'></script>
 
 </body>
 
