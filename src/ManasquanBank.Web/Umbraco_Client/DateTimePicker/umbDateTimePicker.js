@@ -10,7 +10,8 @@
                 buttonText: "<span>" + chooseDateTxt + "</span>",
                 showOn: 'button',
                 changeYear: true,
-                dateFormat: 'yy-mm-dd',
+                dateFormat: 'dd-mm-yy',
+				minDate: moment({y: 1800}),
                 time24h: true,
                 onClose: function(dateText, inst) { if (dateText == '') return; $(this).nextAll('div').remove(); }
             });

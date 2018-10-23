@@ -1,0 +1,356 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using umbraco.MacroEngines
+@using Newtonsoft.Json
+@using RJP.MultiUrlPicker.Models
+@using umbraco.NodeFactory
+@using ContentModels = Umbraco.Web.PublishedContentModels
+@using umbraco.cms.businesslogic.web
+@using Umbraco.Web.Extensions
+@using System.Linq
+@using System.Web.Script.Serialization;
+@{
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
+    var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
+    var thankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
+    var reOrderCheckAdminEmail = Model.Content.HasValue("AdminEmail") ? Model.Content.GetPropertyValue<int>("AdminEmail") : 0;
+    var reOrderCheckConfirmationEmail = Model.Content.HasValue("ConfirmationEmail") ? Model.Content.GetPropertyValue<int>("ConfirmationEmail") : 0;
+
+
+}
+@section InnerTopStyle {
+
+    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
+}
+<div class="re-order">
+
+    <section class="heroBanner">
+        @if (heroImage != null)
+        {
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+        }
+
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(title))
+                {
+                <h2>@title</h2>
+                }
+                @if(!string.IsNullOrEmpty(content))
+                {
+                @Html.Raw(content)
+                }
+
+                <ul class="heroLinks">
+                    @if (Model.Content.HasValue("cTAButton1"))
+                   {
+                       foreach (var CTA in cTAButton1)
+                       {
+                           var cTAtitle = CTA.GetPropertyValue<string>("title");
+                           var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                           var link = CTA.GetPropertyValue<Link>("link");
+
+                    <li class="find-us">
+                        @if (link != null)
+                            {
+                                if (link.Target == "_blank")
+                                {
+                            <a href="@link.Url" target="_blank">
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                            {
+                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+                                            else
+                                            {
+                                            <img src="/images/about/find-us.png" alt="find-us">
+                                            }
+                                </span>
+                                <span class="heroLinksText">
+                                    @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                            @Html.Raw(cTAtitle)
+                                            }
+                                </span>
+
+                            </a>
+                                }
+                                else
+                                {
+                            <a href="@link.Url">
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                            {
+                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+                                            else
+                                            {
+                                            <img src="/images/about/find-us.png" alt="find-us">
+                                            }
+                                </span>
+                                <span class="heroLinksText">
+                                    @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                            @Html.Raw(cTAtitle)
+                                            }
+                                </span>
+                            </a>
+                                }
+
+                            }
+                            else
+                            {
+                            <span class="heroLinksImage">
+                                @if (iconImage != null)
+                                    {
+                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                    }
+                                    else
+                                    {
+                                    <img src="/images/about/find-us.png" alt="find-us">
+                                    }
+                            </span>
+                            <span class="heroLinksText">
+                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                    {
+                                    @Html.Raw(cTAtitle)
+                                    }
+                            </span>
+                            }
+
+                    </li>
+                       }
+
+                   }
+                    @if (Model.Content.HasValue("cTAButton2"))
+                {
+                    foreach (var CTA in cTAButton2)
+                    {
+                        var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                        var link = CTA.GetPropertyValue<Link>("link");
+
+                    <li class="client-service">
+                        @if (link != null)
+                            {
+                                if (link.Target == "_blank")
+                                {
+                            <a href="@link.Url" target="_blank">
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                            {
+                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+                                            else
+                                            {
+                                            <img src="/images/about/expert-icon.png" alt="exper-icon">
+                                            }
+                                </span>
+                                <span class="heroLinksText">
+                                    @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                            @Html.Raw(cTAtitle)
+                                            }
+                                </span>
+
+                            </a>
+                                }
+                                else
+                                {
+                            <a href="@link.Url">
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                            {
+                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+                                            else
+                                            {
+                                            <img src="/images/about/expert-icon.png" alt="expert-icon">
+                                            }
+                                </span>
+                                <span class="heroLinksText">
+                                    @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                            @Html.Raw(replacetitle)
+                                            }
+                                </span>
+                            </a>
+                                }
+
+                            }
+                            else
+                            {
+                            <span class="heroLinksImage">
+                                @if (iconImage != null)
+                                    {
+                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                    }
+                                    else
+                                    {
+                                    <img src="/images/about/expert-icon.png" alt="expert-icon">
+                                    }
+                            </span>
+                            <span class="heroLinksText">
+                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                    {
+                                        var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                    @Html.Raw(replacetitle)
+                                    }
+                            </span>
+                            }
+
+                    </li>
+                    }
+
+                }
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="greyPanel">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+
+                @if (String.IsNullOrEmpty(ViewBag.ReOrderCheckErrorMessage) == false)
+                {
+                    <div class="alert alert-warning">
+                        <strong>Warning!</strong> @ViewBag.ReOrderCheckErrorMessage
+                    </div>
+                }
+                <div class="contactFormWrap">
+                    
+                    @using (Html.BeginUmbracoForm("SubmitForm", "ReOrderCheck", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
+                    {
+
+
+                        if (String.IsNullOrEmpty(ViewBag.ReOrderCheckSuccessMessage) == false)
+                        {
+                            if (!string.IsNullOrEmpty(thankYouMessage.ToString()))
+                            {
+                                <div id="joinSuccess">
+                                    <h4>@Html.Raw(thankYouMessage)</h4>
+                                </div>
+                            }
+                            else
+                            {
+                                <div id="joinSuccess">
+                                    <h4>@ViewBag.ReOrderCheckSuccessMessage</h4>
+                                </div>
+                            }
+
+                        }
+                        else
+                        {
+
+
+
+                            string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
+                            string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
+
+
+
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-lg-12 threecolsWrapper">
+                                    <div class="form-group col-lg-4 col-sm-6 col-xs-12 nopadding">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" class="form-control " maxlength="50" required name="firstName" id="firstName">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-6 col-xs-12 nopadding">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" class="form-control " maxlength="50" required name="lastName" id="lastName">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-12 col-xs-12 nopadding fullwidth">
+                                        <label for="accNo">Last 4 digits of checking account number</label>
+                                        <input type="number" class="form-control " required name="accNo" id="accNo">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-12 parentWrapper">
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="cntTelePhone">Phone number</label>
+                                        <input type="text" class="form-control" name="cntTelePhone" required id="cntTelePhone">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="cntEmail">Email</label>
+                                        <input type="email" class="form-control error" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="addressOne">Address line 1</label>
+                                        <input type="text" class="form-control " required name="addressOne" id="addressOne">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="addressTwo">Address line 2</label>
+                                        <input type="text" class="form-control" name="addressTwo" id="addressTwo">
+
+                                    </div>
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="city">City</label>
+                                        <input type="text" class="form-control" required name="city" id="city">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="state">State</label>
+                                        <select name="state" id="state" class="form-control selectBox" default="">
+                                            <option value="">-Select State-</option>
+                                            <option value="State 1">State 1</option>
+                                            <option value="State 2">State 2</option>
+                                        </select>
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="zip">Zip Code</label>
+                                        <input type="text" class="form-control " required name="zip" id="zip">
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="country">Country</label>
+                                        <select name="country" id="country" class="form-control selectBox" default="">
+                                            <option value="" rel="">-Select Country-</option>
+                                            <option value="Country 1">Country 1</option>
+                                            <option value="Country 2">Country 2</option>
+                                        </select>
+                                        <span class="errorSpan vd f-error">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="captchaBlock">
+                                <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmitReOrder" data-size="invisible"></div>
+                                <p class="form1_error hide">The captcha is required and can't be empty.</p>
+
+                            </div>
+                            <div class="row mob-flex">
+                                <button class="btnManasq"><span>SUBMIT</span></button>
+                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@reOrderCheckAdminEmail" />
+                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@reOrderCheckConfirmationEmail" />
+                                
+                            </div>
+
+                                <!-- <div class="success-msg" id="contactSucc">
+                      <h4>Thank you for contacting Manasquan Bank. Your message was sent successfully</h4>
+                    </div> -->
+
+
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section InnerBottomScript {
+    <script src="~/scripts/lib/jquery-ui.js"></script>
+}
