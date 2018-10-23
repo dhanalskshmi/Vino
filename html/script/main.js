@@ -442,6 +442,29 @@ $(document).ready(function() {
     $('.innerloginWrapper').css({'top':headHgt});
   });
 
+	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+		}
+
+	});
+
+
+	$(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+		}
+
+	});
+
   $('.msubMenu').click(function(e) {
   	e.preventDefault();
     var $this = $(this);

@@ -296,6 +296,11 @@ header {
 						top: 10px;
 						right: 0;
 					}
+					&.menuOpen {
+						&::after {
+							transform: rotate(-90deg);
+						}
+					}
 				}
 
 				&.msubMenu {
