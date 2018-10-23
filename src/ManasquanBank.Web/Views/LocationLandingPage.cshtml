@@ -58,6 +58,10 @@
     var json = jsonSerialiser.Serialize(MapLocations);
 
 }
+@section InnerTopStyle {
+
+    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
+}
 <section class="heroBanner">
     @if (heroImage != null)
     {
@@ -344,6 +348,7 @@
 
 }
 @section InnerBottomScript {
+<script src="~/scripts/lib/jquery-ui.js"></script>
     <script>
         function initMap() {
             var map;
@@ -388,6 +393,7 @@
                 var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
             }
             else {
+
 
                 var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
             }

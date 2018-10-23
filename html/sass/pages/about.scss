@@ -284,8 +284,6 @@
                 float: left;
                 min-height: 450px;
                 position: relative;
-                display: flex;
-                align-items: center; // overflow: hidden;
                 @include bp(landscape) {
                     width: 40.8%;
                     min-height: 330px;
@@ -351,23 +349,22 @@
                     right: 0;
                     margin: auto;
                     display: inline-table;
-                    max-width: 255px;
+                    width: 255px;
                     border: 3px solid #fff;
                     color: #fff;
                     padding: 27px 46px;
                     @include bp(landscape) {
                         padding: 40px 48px;
-                        max-width: 61%;
-                        display: table;
+                        width: 61%;
                     }
                     @include bp(tablet) {
                         padding: 40px 26px 27px 26px;
-                        max-width: 73%;
+                        width: 73%;
                     }
                     @include bp(mobile) {
-                        margin: auto;
+                        margin: 20px auto;
                         padding: 38px 50px;
-                        max-width: 80%;
+                        width: 226px;
                     }
                     h4 {
                         font-size: 40px;
@@ -509,18 +506,18 @@
                         }
                     }
                     .figureContent {
-                        max-width: 285px;
+                        width: 285px;
                         padding: 22px 25px 23px 25px;
                         @include bp(landscape) {
-                            max-width: 78%;
+                            width: 78%;
                             padding: 11px 18px;
                         }
                         @include bp(tablet) {
-                            max-width: 92%;
+                            width: 92%;
                             padding: 17px 17px 15px 20px;
                         }
                         @include bp(mobile) {
-                            max-width: 75%;
+                            width: 225px;
                             padding: 15px 22px;
                         }
                         h4 {
@@ -563,6 +560,51 @@
         }
     }
 }
+.firefox,.ie11{ 
+    .ContentBlk1 {
+        .bgWrap {
+            .flexWrapper {
+                .ContentImageWrap {
+                    .figureContent {
+                        margin-top: 112px;
+                        bottom: auto;
+                        display: inline-block;
+                        @include bp(landscape){
+                            margin-top: 95px;
+                        }
+                        @include bp(tablet){
+                            margin-top: 115px;
+                        }
+                        @include bp(mobile){
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        &.rtAlign{
+            .bgWrap {
+                .flexWrapper {
+                    .ContentImageWrap {
+                        .figureContent {
+                            margin-top: 77px;
+                            @include bp(landscape){
+                                margin-top: 25px;
+                            }
+                            @include bp(tablet){
+                                margin-top: 40px;
+                            }
+                            @include bp(mobile){
+                                margin-top: 33px;
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+
 
 .titleWrap {
     h3 {
@@ -734,7 +776,7 @@
         .titleWrap {
             h3 {
                 @include bp(landscape) {
-                    padding-bottom: 40px;
+                    padding-bottom: 28px;
                 }
                 @include bp(tablet) {
                     padding-bottom: 38px;
@@ -808,7 +850,7 @@
 }
 
 .historyTimeline {
-    min-height: 1000px;
+    height: 1000px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -818,15 +860,15 @@
     position: relative;
     z-index: -1;
     @include bp(landscape) {
-        min-height: 690px;
+        height: 690px;
         margin-top: -80px;
     }
     @include bp(tablet) {
-        min-height: 508px;
+        height: 508px;
         margin-top: -89px;
     }
     @include bp(mobile) {
-        min-height: 215px;
+        height: 215px;
         margin-top: -20px;
     }
     .bgWrap {

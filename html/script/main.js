@@ -442,6 +442,30 @@ $(document).ready(function() {
     $('.innerloginWrapper').css({'top':headHgt});
   });
 
+	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+			$($this).parent().find(".inner li a").removeClass("menuOpen");
+		}
+
+	});
+
+
+	$(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+		}
+
+	});
+
   $('.msubMenu').click(function(e) {
   	e.preventDefault();
     var $this = $(this);
@@ -560,10 +584,9 @@ $(document).ready(function() {
 // Hide events when scroll
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
-    if (scrollTop > 200) {
+    if (scrollTop > 900) {
         $('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
-
     }
 });
 
@@ -704,15 +727,35 @@ $(window).scroll(function() {
 				var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-if (isChrome) console.log("You are using Chrome!");
+if (isChrome) {console.log("You are using Chrome!")};
 if (isSafari) console.log("You are using Safari!");
 
 	}
+
 	if(isMobile.Android()) {
 		//alert('ipad');
 				$('html').addClass('Android');
 
 	}
+
+	$(document).ready(function() {
+  var ua = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i),
+      browser;
+  if (navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    browser = "msie";
+  }
+  else {
+    browser = ua[1].toLowerCase();
+  }
+  //$('html' + browser).addClass("active");
+	if (navigator.userAgent.match(/firefox/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("firefox");
+  }
+	if (navigator.userAgent.match(/chrome/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("chrome");
+  }
+});
+
 
 
 
@@ -1606,6 +1649,63 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
  });
 }
 
+$(window).on("load resize", function(e) {
+    var windowSize = $(window).width();
+    if ($('.serviceContent').length > 0) {
+        $('.serviceContent .serviceDetail').find('h4').css('height', '');
+        // if (windowSize > 801 || windowSize < 800) {
+        $('.serviceContent').each(function() {
+            if (windowSize > 768 && windowSize <= 1023) {
+                var row = 2;
+            } else if (windowSize > 1024 && windowSize <= 1279) {
+                var row = 3;
+            } else if (1280 < windowSize) {
+                var row = 4;
+            } else {
+                var row = 1;
+            }
+            // console.log(row);
+            // console.log(windowSize);
+
+            // console.log($(this).find('.serviceDetail').length);
+            var start = 1;
+            var end = row;
+            var maxHeightH4 = 0;
+
+            var max = parseInt($(this).find('.serviceDetail').length / row);
+            console.log("before", max);
+
+            if (max > 0) {
+                max = max + 1;
+            }
+            console.log("after", max);
+            $(this).find('h4').css('height', '');
+
+            for (var i = 1; i <= max; i++) {
+                //$(this).find('.serviceDetail').each(function(){
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        maxHeightH4 = maxHeightH4 > $(this).find('h4').height() ? maxHeightH4 : $(this).find('h4').height();
+                    }
+                });
+
+                $(this).find('.serviceDetail').each(function(index, element) {
+                    index = index + 1;
+                    if (index >= start && index <= end) {
+                        $(this).find('h4').css({
+                            'height': maxHeightH4
+                        });
+                    }
+                });
+
+                start = end + 1;
+                end = end + row;
+            }
+        });        
+	// }
+    }
+});
 $(document).ready(function(){
       if ($('.checking').length > 0) {
         resize();

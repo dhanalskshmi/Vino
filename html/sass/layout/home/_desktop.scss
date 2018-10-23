@@ -74,6 +74,28 @@ $dbannerhgt: 965px;
       }
     }
   }
+  #wrapper {
+    .goto {
+      button {
+        font-size: 0;
+        background-image: url('#{$img}/playpause_btn.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+        width: 46px;
+        height: 49px;
+        position: absolute;
+        top: 270px;
+        left: 80%;
+        z-index: 999999;
+        z-index: 9999999;
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
 }
 .loginBlocks {
   margin-top: 12px;
@@ -574,7 +596,7 @@ $dbannerhgt: 965px;
       font-size: 24px;
       font-weight: 400;
       color: #FFF;
-      text-transform: uppercase;
+      text-transform: capitalize;
       text-align: center;
     }
   }
@@ -1639,6 +1661,16 @@ $dbannerhgt: 965px;
     }
   }
 
+  .bannerWrapper {
+    #wrapper {
+      .goto {
+        button {
+          top: 410px;
+        }
+      }
+    }
+  }
+
   // Services
 
   .bankingServices {
@@ -2105,6 +2137,17 @@ $dbannerhgt: 965px;
               letter-spacing: 5.1px;
             }
           }
+        }
+      }
+    }
+  }
+
+  .bannerWrapper {
+    #wrapper {
+      .goto {
+        display: none;
+        button {
+          top: 710px;
         }
       }
     }

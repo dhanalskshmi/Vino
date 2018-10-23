@@ -1,0 +1,144 @@
+section.sitemap-section
+{
+
+	.sitemap-section-box
+	{
+		width:100%;
+		
+		border-radius: 7px;
+		padding: 0;
+
+	
+		p
+		{
+			color: #5a5a5a;
+			font-size: 20px;
+			line-height: 36px;
+			text-align: center;
+			padding: 0px;
+
+		}
+
+		.full-width
+		{
+			content:"";
+			display:table;
+			width:100%;
+			margin-top: 0px;
+			float: none;
+
+			h4
+			{
+				font-size: 18px;
+				color: #446bad;
+				font-weight: 700;
+				line-height: 28px;
+				margin-bottom: 5px;
+
+				a
+				{
+					color:inherit;
+					text-transform: capitalize;
+					position: relative;
+					
+				}
+			}
+
+			a
+			{
+				h4
+				{
+					font-size: 18px;
+					color: #231f20;
+					font-weight: 700;
+					line-height: 28px;
+					margin-bottom: 5px;
+				}
+			}
+			.hvr-underline-from-center{
+				    display: inline-block;
+				    vertical-align: middle;
+				    -webkit-transform: perspective(1px) translateZ(0);
+				    transform: perspective(1px) translateZ(0);
+				    box-shadow: 0 0 1px transparent;
+				    position: relative;
+				    overflow: hidden;
+
+			}
+			.hvr-underline-from-center
+			{
+				&:before{
+					content: "";
+				    position: absolute;
+				    z-index: -1;
+				    left: 50%;
+				    right: 50%;
+				    bottom: 0;
+				    background: #2098D1;
+				    height: 1px;
+				    -webkit-transition-property: left,right;
+				    transition-property: left,right;
+				    -webkit-transition-duration: .3s;
+				    transition-duration: .3s;
+				    -webkit-transition-timing-function: ease-out;
+				    transition-timing-function: ease-out;
+
+				}
+				&:hover{
+						&:before{
+							left: 0;
+    						right: 0;
+						}
+					}
+			}
+
+			ul
+			{
+				margin-bottom: 17px;
+
+				li
+				{
+					display: block;
+					a
+					{
+						color:#5a5a5a;
+						line-height: 26px;
+						font-size: 16px;
+						text-transform: capitalize;
+						
+					}
+				}
+			}
+
+			.left-section
+			{
+				float:left;
+				width:32%;
+				margin-right:2%;
+			}
+
+			.center-section
+			{
+				float:left;
+				width:32%;
+				margin-right:2%;
+				li{
+					display: block;
+				}
+			}
+
+			.right-section
+			{
+				float:left;
+				width:32%;
+				margin-right:0%;
+			}
+		}
+	}
+
+}
+
+
+@import "tabletLandscape";
+@import "tabletPotrait";
+@import "phonePotrait";

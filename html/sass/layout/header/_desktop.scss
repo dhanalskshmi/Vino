@@ -296,6 +296,11 @@ header {
 						top: 10px;
 						right: 0;
 					}
+					&.menuOpen {
+						&::after {
+							transform: rotate(-90deg);
+						}
+					}
 				}
 
 				&.msubMenu {
@@ -326,6 +331,7 @@ header {
 						font-size: 16px;
 						color: #FFF;
 						padding: 10px 6px 0;
+						line-height: 16px;
 						&::before {
 							display: none;
 						}
@@ -412,6 +418,19 @@ header {
 	}
 }
 
+.menuOpened {
+	.bankingServices {
+		z-index: -1;
+	}
+}
+.Android {
+	.hamburger {
+		&::before {
+			top: 7px;
+		}
+	}
+}
+
 @media screen and (min-width: $tab-port-min) {
 }
 @media screen and (min-width: $tab-port-min) {
@@ -426,6 +445,14 @@ header {
 	.loginBlocks{
 		&.active {
 			display: none;
+		}
+	}
+
+	.firefox {
+		.menuWrapper {
+			.loginBlocks {
+				transform: none;
+			}
 		}
 	}
 

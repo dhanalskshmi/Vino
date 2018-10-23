@@ -450,7 +450,33 @@ button {
   perspective: 1000px;
 }
 
+.error-page{
 
+    .pageNot-found-section{
+      width: 100%;
+      text-align: center;
+      h1{
+        color: #1268e5;
+      }
+      p{
+        padding: 15px 0;
+        margin-bottom: 15px;
+      }
+    .page-section-box{
+      padding: 0px 0 30px;
+    }
+  .actionBlock{
+      .btnManasq{
+            @extend .btn-mansq;
+            font-size: 24px;
+            padding: 16px 48px;
+            border: 1px solid #fff;
+            color: #fff;
+      }
+  }
+    }
+
+}
 
 // Visibility Hidden
 .visibilityHide {
@@ -614,6 +640,9 @@ p {
 
 
 @media screen and (max-width: 767px) {
+  .error-page{
+
+    }
   html,
   body {
     overflow-x: hidden;

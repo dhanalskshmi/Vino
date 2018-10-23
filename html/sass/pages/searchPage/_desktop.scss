@@ -1,0 +1,48 @@
+.newsPagination{
+  display: block;
+  text-align: right;
+}
+.newsPagination p {
+    display: inline-block;
+    font-size: 20px;
+    color: #666;
+    img {
+    height: auto;
+    top: 0;
+    vertical-align: top;
+    margin-top: 2px;
+    width: 18px;
+    display: inline-block;
+}
+}
+
+section.searchPage {
+    /*margin-top: 120px;
+    margin-bottom: 43px;*/
+    h1 {
+      text-align: center;
+    }
+    .searchWrap {
+      margin-bottom: 20px;
+      h4 {
+        font-size: 23px;
+        text-transform: uppercase;
+        color: #666;
+        
+      }
+      p {
+        a {
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      
+        padding: 12px 0 16px 0;
+      }
+    }
+  }
+
+@import "tabletLandscape";
+@import "tabletPotrait";
+@import "phonePotrait";

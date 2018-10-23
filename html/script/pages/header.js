@@ -442,6 +442,30 @@ $(document).ready(function() {
     $('.innerloginWrapper').css({'top':headHgt});
   });
 
+	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+			$($this).parent().find(".inner li a").removeClass("menuOpen");
+		}
+
+	});
+
+
+	$(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+		}
+
+	});
+
   $('.msubMenu').click(function(e) {
   	e.preventDefault();
     var $this = $(this);
@@ -560,10 +584,9 @@ $(document).ready(function() {
 // Hide events when scroll
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
-    if (scrollTop > 200) {
+    if (scrollTop > 900) {
         $('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
-
     }
 });
 
@@ -704,15 +727,35 @@ $(window).scroll(function() {
 				var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-if (isChrome) console.log("You are using Chrome!");
+if (isChrome) {console.log("You are using Chrome!")};
 if (isSafari) console.log("You are using Safari!");
 
 	}
+
 	if(isMobile.Android()) {
 		//alert('ipad');
 				$('html').addClass('Android');
 
 	}
+
+	$(document).ready(function() {
+  var ua = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i),
+      browser;
+  if (navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    browser = "msie";
+  }
+  else {
+    browser = ua[1].toLowerCase();
+  }
+  //$('html' + browser).addClass("active");
+	if (navigator.userAgent.match(/firefox/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("firefox");
+  }
+	if (navigator.userAgent.match(/chrome/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("chrome");
+  }
+});
+
 
 
 

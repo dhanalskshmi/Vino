@@ -174,12 +174,15 @@
 		    color: #1268e5;
 		    @include bp(tablandscape) {
 				font-size:36px;
+				margin-bottom: 18px;
 			}
 			@include bp(tabportrait) {
 				font-size:24px;
+				margin-bottom: 30px;
 			}
 			@include bp(mobile) {
 				font-size:32px;
+				margin-bottom: 17px;
 			}
 		    &+h3 {
 		    	margin-top:24px;

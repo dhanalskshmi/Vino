@@ -5,6 +5,13 @@
             margin-bottom: 100px;
         }
         h2{
+            margin-bottom: 36px;
+            @include bp(landscape){
+                margin-bottom: 20px;
+            }
+            @include bp(tablet){
+                margin-bottom: 14px;
+            }
             @include bp(mobile){
                 line-height: 36px;
             }
@@ -83,6 +90,7 @@
                     color: #fff;
                     font-weight: 600;
                     padding: 0;
+                    line-height: initial;
                     @include bp(landscape) {
                         margin-top: 49px;
                         margin-bottom: 58px;
