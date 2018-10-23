@@ -5,5 +5,34 @@
 @using Umbraco.Web.Extensions
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
 }
+ <section class="heroBanner">
+     @if (heroImage != null)
+     {
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+     }
+                
+            </section>
+            <section class="heroBlock generalBanner">
+				<div class="containerWrapper">
+				  <div class="bgWrap">
+                      @if (!string.IsNullOrEmpty(title))
+                      {
+                        <h2>@title</h2>
+                      }
+					  @if(!string.IsNullOrEmpty(content))
+                      {
+                          @Html.Raw(content)
+                      }
+					 
+				  </div>
+			   </div>
+			</section>
+			<section class="general-template">
+				<div class="containerWrapper">
+				</div>
+			</section>
