@@ -727,15 +727,35 @@ $(window).scroll(function() {
 				var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-if (isChrome) console.log("You are using Chrome!");
+if (isChrome) {console.log("You are using Chrome!")};
 if (isSafari) console.log("You are using Safari!");
 
 	}
+
 	if(isMobile.Android()) {
 		//alert('ipad');
 				$('html').addClass('Android');
 
 	}
+
+	$(document).ready(function() {
+  var ua = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i),
+      browser;
+  if (navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    browser = "msie";
+  }
+  else {
+    browser = ua[1].toLowerCase();
+  }
+  //$('html' + browser).addClass("active");
+	if (navigator.userAgent.match(/firefox/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("firefox");
+  }
+	if (navigator.userAgent.match(/chrome/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+    $('html').addClass("chrome");
+  }
+});
+
 
 
 
