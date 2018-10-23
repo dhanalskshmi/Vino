@@ -608,7 +608,7 @@
                     <div class="bgWrap">
                         <h2>careers at manasquan bank</h2>
                         <div class="heroCareer">
-                            <img src="images/careers/career-para.png" class="">
+                            <img src="images/careers/career-para.png" alt="Careers badge" class="">
                             <p>At Manasquan, people are at the core of everything we do, and we firmly believe that
                                 having the best people on our team is a key to our success. We are invested in each and
                                 every member of our staff, and we’ve been ranked one of the top 20 places to work in
@@ -648,6 +648,7 @@
                             <h3>OPEN POSITIONS</h3>
                             <div class="careerSearch">
                                 <div class="form-group">
+                                    <label for="careerInput-button" class="hidden">Search Positions</label>
                                     <select name="careerInput" id="careerInput" class="form-control">
                                         <option value="">Option 1</option>
                                         <option value="">Option 1</option>
@@ -1389,6 +1390,12 @@
         });
 
         $("#careerInput").selectmenu();
+        $( window ).on("load", function() {
+            $('select#careerInput').each(function(e) {
+                var $this = $(this);
+                $(this).parent().find('label').attr('for','careerInput');
+            });
+        });
     </script>
 
 </body>
