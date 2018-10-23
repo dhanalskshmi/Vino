@@ -442,10 +442,72 @@ $(document).ready(function() {
     $('.innerloginWrapper').css({'top':headHgt});
   });
 
+	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+			$($this).parent().find(".inner li a").removeClass("menuOpen");
+		}
+
+	});
+
+
+	$(".inner li a").click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+
+		if($this.hasClass("msubMenu")){
+			$(".inner li a").not($this).removeClass("menuOpen");
+			$($this).toggleClass("menuOpen");
+		}
+
+	});
+
   $('.msubMenu').click(function(e) {
   	e.preventDefault();
     var $this = $(this);
      //$($this).parent().removeClass('mainActive').addClass('mainActive');
+     //$(this).parent().parent().find('.hov').not($(this).parent()).removeClass('mainActive');
+     // $(this).parent().parent().find('.hov').each(function(){
+     //    $(this).find("ul").not($this.next()).slideUp();
+     // });
+
+
+
+
+
+     if ($this.next().hasClass("mainActive"))
+     {
+       $this.next().toggleClass('mainActive');
+			 $this.parent().parent().removeClass('mainActive');
+
+       $this.next().slideUp();
+     }else{
+			 /*$this.parent().parent().find('li .inner').removeClass('mainActive');
+        $this.parent().parent().find('li .inner').slideUp(350);
+        $this.next().toggleClass('mainActive');
+        $this.next().slideToggle(350);
+       $(this).parent().toggleClass('mainActive');
+       $this.next().slideDown();*/
+			 //$this.parent().toggleClass('mainActive');
+			 $this.parent().parent().find('li .inner').removeClass('mainActive');
+        $this.parent().parent().find('li .inner').slideUp();
+        $this.next().toggleClass('mainActive');
+        $this.next().slideToggle();
+     }
+
+
+  });
+
+
+
+	/*$('.msubMenu').click(function(e) {
+  	e.preventDefault();
+    var $this = $(this);
+    // // $($this).parent().removeClass('mainActive').addClass('mainActive');
      $(this).parent().parent().find('.hov').not($(this).parent()).removeClass('mainActive');
      $(this).parent().parent().find('.hov').each(function(){
         $(this).find("ul").not($this.next()).slideUp();
@@ -460,7 +522,9 @@ $(document).ready(function() {
        $this.next().slideDown();
      }
 
-  });
+  });*/
+
+
 
 
 
@@ -520,7 +584,7 @@ $(document).ready(function() {
 // Hide events when scroll
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
-    if (scrollTop > 200) {
+    if (scrollTop > 900) {
         $('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
 
@@ -724,7 +788,82 @@ $(window).scroll(function() {
 
 if ($('#personalLogin, #businessLogin, #mpersonalLogin, #mbusinessLogin').length > 0) {
 	$(document).ready(function() {
-    var validator = $('form#personalLogin, form#businessLogin, form#mpersonalLogin, form#mbusinessLogin').validate({
+    var validator = $('form#personalLogin').validate({
+        ignore: [],
+        highlight: function (element, errorClass) {
+            var selector = "#" + element.id;
+            $(selector).addClass(errorClass);
+
+            $(selector).parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+            $(selector).parent().removeClass("successForm");
+            $(selector).parent().addClass("errorForm");
+        },
+        unhighlight: function (element, errorClass) {
+
+            var selector = "#" + element.id;
+            $(selector).removeClass(errorClass);
+            $(selector).parent().removeClass("errorForm");
+            $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
+            $(selector).parent().addClass("successForm");
+            $('input[type="text"]').each(function () {
+                if ($(this).val() == "") {
+                    $(this).parent().removeClass("successForm");
+                }
+            });
+        },
+        errorPlacement: function (error, element) { }
+    });
+    var validator = $('form#businessLogin').validate({
+        ignore: [],
+        highlight: function (element, errorClass) {
+            var selector = "#" + element.id;
+            $(selector).addClass(errorClass);
+
+            $(selector).parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+            $(selector).parent().removeClass("successForm");
+            $(selector).parent().addClass("errorForm");
+        },
+        unhighlight: function (element, errorClass) {
+
+            var selector = "#" + element.id;
+            $(selector).removeClass(errorClass);
+            $(selector).parent().removeClass("errorForm");
+            $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
+            $(selector).parent().addClass("successForm");
+            $('input[type="text"]').each(function () {
+                if ($(this).val() == "") {
+                    $(this).parent().removeClass("successForm");
+                }
+            });
+        },
+        errorPlacement: function (error, element) { }
+    });
+		var validator = $('form#mpersonalLogin').validate({
+        ignore: [],
+        highlight: function (element, errorClass) {
+            var selector = "#" + element.id;
+            $(selector).addClass(errorClass);
+
+            $(selector).parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+            $(selector).parent().removeClass("successForm");
+            $(selector).parent().addClass("errorForm");
+        },
+        unhighlight: function (element, errorClass) {
+
+            var selector = "#" + element.id;
+            $(selector).removeClass(errorClass);
+            $(selector).parent().removeClass("errorForm");
+            $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
+            $(selector).parent().addClass("successForm");
+            $('input[type="text"]').each(function () {
+                if ($(this).val() == "") {
+                    $(this).parent().removeClass("successForm");
+                }
+            });
+        },
+        errorPlacement: function (error, element) { }
+    });
+		var validator = $('form#mbusinessLogin').validate({
         ignore: [],
         highlight: function (element, errorClass) {
             var selector = "#" + element.id;

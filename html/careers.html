@@ -1381,6 +1381,10 @@
                 $(this).closest(".bluePanelInner").find(".carLst").slideToggle();
                 var text = $(this).text() == 'Learn More' ? 'Less' : 'Learn More';
                 $(this).text(text).toggleClass("active");
+                var bluepanel = $(this).closest(".bluePanel");
+                $('html, body').animate({
+                    scrollTop: bluepanel.offset().top
+                }, "slow");
             });
         });
 
