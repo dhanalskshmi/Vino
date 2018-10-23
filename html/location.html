@@ -607,6 +607,8 @@
                     <div class="bgWrap mapLocation">
                         <h2>Find Us</h2>
 						<div id="map_div2"></div>
+						<input type="hidden" name="map_value" id="map_value" value="[{&quot;lat&quot;:55.406321,&quot;lng&quot;:10.387015,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.405767,&quot;lng&quot;:10.388217,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.406766,&quot;lng&quot;:10.387165,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.406912,&quot;lng&quot;:10.387187,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.407551,&quot;lng&quot;:10.387272,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.405535,&quot;lng&quot;:10.385137,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.407223,&quot;lng&quot;:10.384826,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.406321,&quot;lng&quot;:10.387015,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.406321,&quot;lng&quot;:10.387015,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;},{&quot;lat&quot;:55.406321,&quot;lng&quot;:10.387015,&quot;key&quot;:0,&quot;zoom&quot;:17,&quot;title&quot;:&quot;WALL TOWNNSHIP (HQ)&quot;,&quot;getdirection&quot;:&quot;2307 Rt. 88 Point Pleasant, NJ 08742&quot;}]" />
+
                     </div>
                 </div>
             </section>
@@ -1158,59 +1160,105 @@
 	<script src="script/lib/scrollanimation.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_mhIzW3YXtosbabjZDzgeQcgoOC4PJ5M"></script>
     <script type='text/javascript' src='script/main.min.js'></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        if ($('.mapLocation').length > 0) {
-            var map;
-            google.maps.event.addDomListener(window, "load", function() {
-                var map = new google.maps.Map(document.getElementById("map_div2"), {
-                    center: new google.maps.LatLng(40.137508, -74.089629),
-                    zoom: 11,
-                    zoomControl: false,
-                    scrollwheel: false,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
-                var infoWindow = new google.maps.InfoWindow();
+     <script>
+function initMap() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var llocdata = jQuery("section.heroBlock").find("#map_value").val();
 
-                /*
-                 * marker creater function (acts as a closure for html parameter)
-                 */
-                function createMarker(options, html) {
-                    var marker = new google.maps.Marker(options);
-                    if (html) {
-                        google.maps.event.addListener(marker, "click", function() {
-                            infoWindow.setContent(html);
-                            infoWindow.open(options.map, this);
-                        });
-                    }
-                    return marker;
+  	var llocdata = jQuery.parseJSON(llocdata);
+  	var firstLat,firstLang,infoWindowContent = [];
+
+  	for (var i = 0; i < llocdata.length; i++) {
+  		var firstJSON = llocdata[i];
+  		if(i == 0){
+
+  			firstLat = firstJSON["lat"];
+  			firstLang = firstJSON["lng"];
+  			firstZoom = firstJSON["zoom"];
+  		}
+  	}
+
+  	var uluru = {lat: firstLat, lng: firstLang};
+  	var latlng = new google.maps.LatLng(firstLat, firstLang);
+
+    console.log(llocdata);
+
+    var myOptions = {
+	   center: latlng,
+	   zoom: firstZoom,
+	   mapTypeControl: false,
+	   draggable: true,
+	   scaleControl: false,
+	   scrollwheel: false,
+	   navigationControl: false,
+	   streetViewControl: false,
+	   disableDefaultUI: false,
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+
+
+
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map_div2"), myOptions);
+    //map.setTilt(45);
+
+
+
+    // Display multiple markers on a map
+
+    if($(window).width() > 767){
+
+      var infoWindow = new google.maps.InfoWindow({ maxWidth: 300 }), marker, i;
+    }
+    else{
+
+      var infoWindow = new google.maps.InfoWindow({ maxWidth: 200 }), marker, i;
+    }
+
+    // Loop through our array of markers & place each one on the map
+    for( i = 0; i < llocdata.length; i++ ) {
+
+  		  var lat = llocdata[i]["lat"];
+  		  var Longitude = llocdata[i]["lng"];
+        var position = new google.maps.LatLng(lat, Longitude);
+        //bounds.extend(position);
+
+        infoWindowContent[i] = "<div class='map-infoContent'><p>"+llocdata[i]["title"]+"</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr="+llocdata[i]["getdirection"]+"'>Get Direction</a></p></div>";
+
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: llocdata[i]["name"]
+        });
+
+        marker.setTitle(llocdata[i]["name"]);
+        // Allow each marker to have an info window
+
+        
+
+            google.maps.event.addListener(marker, "click", (function(marker, i) {
+                return function() {
+                  if(infoWindowContent[i]!=infoWindow.getContent())
+                  {
+                    infoWindow.setContent(infoWindowContent[i]);
+                    infoWindow.open(map, marker);
+                    map.setCenter(marker.getPosition());
+                  }
                 }
-                /*add markers to map*/
-                var marker0 = createMarker({
-                    position: new google.maps.LatLng(40.137508, -74.089629),
-                    map: map,
-                });
 
-                var marker1 = createMarker({
-                    position: new google.maps.LatLng(40.070730, -74.046798),
-                    map: map,
-                });
+            })(marker, i));
+        
 
-                var marker2 = createMarker({
-                    position: new google.maps.LatLng(40.069431, -74.128023),
-                    map: map,
-                });
-                var marker3 = createMarker({
-                    position: new google.maps.LatLng(40.201300, -74.255699),
-                    map: map,
-                });
-                var marker4 = createMarker({
-                    position: new google.maps.LatLng(40.120684, -74.144013),
-                    map: map,
-                });
-            });
-        }
-    });
+    }
+
+
+
+}
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd00wENWGmPdcouUEz5Ng6-BqzmoMz884&callback=initMap">
     </script>
 </body>
 
