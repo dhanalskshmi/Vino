@@ -524,6 +524,12 @@
     <Content Include="images\header\logo.png" />
     <Content Include="images\header\mobilearrow_sprite.png" />
     <Content Include="images\header\search_icon.png" />
+    <Content Include="images\history\formdropdown_arrow.png" />
+    <Content Include="images\history\history_img1.jpg" />
+    <Content Include="images\history\history_img2.jpg" />
+    <Content Include="images\history\history_img3.jpg" />
+    <Content Include="images\history\history_img4.jpg" />
+    <Content Include="images\history\history_img5.jpg" />
     <Content Include="images\home\apple_app.png" />
     <Content Include="images\home\app_img.png" />
     <Content Include="images\home\demo_icon.png" />
