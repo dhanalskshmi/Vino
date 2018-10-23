@@ -449,6 +449,7 @@ $(document).ready(function() {
 		if($this.hasClass("msubMenu")){
 			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
 			$($this).toggleClass("menuOpen");
+			$($this).parent().find(".inner li a").removeClass("menuOpen");
 		}
 
 	});
@@ -583,7 +584,7 @@ $(document).ready(function() {
 // Hide events when scroll
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
-    if (scrollTop > 200) {
+    if (scrollTop > 900) {
         $('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
 
