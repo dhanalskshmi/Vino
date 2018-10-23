@@ -1,10 +1,39 @@
 .heroBlock {
 	&.generalBanner {
-		@extend .general-template;
 		&+.general-template {
-			margin-top:50px;
+			margin-top:100px;
+		}
+		&+.joinEmail {
+			margin-top:100px;
+			@include bp(tablandscape) {
+				margin-top:59px;
+			}
+			@include bp(tabportrait) {
+				margin-top:39px;
+			}
+			@include bp(mobile) {
+				margin-top:99px;
+			}
 		}
 		p {
+			&+h2 {
+				margin-top: 22px;
+			}
+			&+h3 {
+				margin-top: 23px;
+			}
+			&+h4 {
+				margin-top: 79px;
+				@include bp(tablandscape) {
+					margin-top: 37px;
+				}
+				@include bp(tabportrait) {
+					margin-top: 30px;
+				}
+				@include bp(mobile) {
+					margin-top: 28px;
+				}
+			}
 			&+.lrImg {
 				margin-top: -15px;
 				@include bp(tablandscape) {
@@ -18,17 +47,15 @@
 				}
 			}
 			&+ul {
-				&.dotlist {
-					margin-top: 75px;
-					@include bp(tablandscape) {
-						margin-top: 39px;
-					}
-					@include bp(tabportrait) {
-						margin-top: 25px;
-					}
-					@include bp(mobile) {
-						margin-top: 16px;
-					}
+				margin-top: 75px;
+				@include bp(tablandscape) {
+					margin-top: 39px;
+				}
+				@include bp(tabportrait) {
+					margin-top: 25px;
+				}
+				@include bp(mobile) {
+					margin-top: 16px;
 				}
 			}
 		}
@@ -102,65 +129,249 @@
 				}
 			}
 		}
-		ul {
+		table {
+			display:block;
+			width:100%;
+			&.responsive_table {
+				&:last-child {
+					@include bp(tabportrait) {
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+		h1 {
+			text-transform:uppercase;
+			color: #1268e5;
+			font-size:52px;
+			@include bp(tablandscape) {
+				font-size:48px;
+			}
+			@include bp(tabportrait) {
+				font-size:36px;
+			}
+			@include bp(mobile) {
+				font-size:36px;
+			}
+			&+h2 {
+				color: #666666;
+			}
+			&+h2 , &+h2 , &+h3 , &+h4 , &+h5{
+				margin-top: 25px;
+				@include bp(tablandscape) {
+					margin-top: 20px;
+				}
+			}
 
-	    	&.dotlist {
-	    		font-size:20px;
-				color: #3d3d3d;
-				position:relative;
-				@include bp(tabportriat) {
-					font-size:18px;
+			&+p {
+				margin-top:14px;
+			}
+		}
+		h2 {
+			font-size: 48px;
+		    line-height: 40px;
+		    text-transform: uppercase;
+		    color: #1268e5;
+		    @include bp(tablandscape) {
+				font-size:36px;
+			}
+			@include bp(tabportrait) {
+				font-size:24px;
+			}
+			@include bp(mobile) {
+				font-size:32px;
+			}
+		    &+h3 {
+		    	margin-top:24px;
+		    	@include bp(tablandscape) {
+					margin-top: 17px;
+				}
+		    }
+		    &+h4 {
+		    	margin-top:25px;
+		    	@include bp(tablandscape) {
+					margin-top: 18px;
+				}
+		    }
+		    &+h5 {
+		    	margin-top:23px;
+		    	@include bp(tablandscape) {
+					margin-top: 20px;
+				}
+		    }
+		    &+ul {
+		    	margin-top: 8px;
+		    }
+		    &+p {
+		    	margin-top: 13px;
+		    	@include bp(tabportrait) {
+		    		margin-top: 8px;
+		    	}
+		    }
+		}
+		h3 {
+			font-size: 36px;
+			text-transform:uppercase;
+			color: #666666;
+			@include bp(tablandscape) {
+				font-size:24px;
+			}
+			@include bp(tabportrait) {
+				font-size:22px;
+			}
+			@include bp(mobile) {
+				font-size:22px;
+			}
+			&+h4 {
+				margin-top: 20px;
+				@include bp(tablandscape) {
+					margin-top: 15px;
+				}
+			}
+			&+h5 {
+				margin-top: 18px;
+			}
+			&+p {
+				margin-top: 13px;
+			}
+			&+ul {
+				margin-top: 9px;
+			}
+		}
+		h4 {
+			font-size: 23px;
+			text-transform:uppercase;
+			color: #666666;
+			@include bp(tablandscape) {
+				font-size:18px;
+			}
+			@include bp(tabportrait) {
+				font-size:18px;
+			}
+			@include bp(mobile) {
+				font-size:18px;
+			}
+			&+h5 {
+				margin-top:8px;
+			}
+			&+p {
+				margin-top: 3px;
+			}
+			&+ul {
+				margin-top: 9px;
+				@include bp(tabportrait) {
+					margin-top: 7px;
 				}
 				@include bp(mobile) {
-					font-size:18px;
+					margin-top: 3px;
 				}
-	    		li {
-	    			padding-left: 10px;
-	    			&::before {
-	    				content: "";
-					    position: absolute;
-					    width: 5px;
-					    height: 5px;
-					    background: #3d3d3d;
-					    border-radius: 8px;
-					    margin-top: 10px;
-					    left: 0;
-					    @include bp(tabportrait) {
-					    	margin-top: 7px;
-					    }
-	    			}
-	    			ul {
-	    				margin-top:0px;
-	    				li {
-	    					&:before {
-	    						content: "";
-							    position: absolute;
-							    width: 5px;
-							    height: 1px;
-							    background: #3d3d3d;
-							    margin-top: 12px;
-							    left: 0;
-	    					}
-	    				}
-	    			}
-	    		}
-	    		&+.tableSection {
-				    margin-top: 95px;
-				    @include bp(tablandscape) {
-				    	margin-top: 32px;
-				    }
-				    @include bp(tabportrait) {
-				    	margin-top: 15px;
-				    }
-				    @include bp(mobile) {
-				    	margin-top: 16px;
-				    }
-				}
-	    	}
+			}
+		}
+		h5 {
+			font-size: 20px;
+			text-transform:uppercase;
+			color: #666666;
+			@include bp(tablandscape) {
+				font-size: 16px;
+			}
+			@include bp(tabportrait) {
+				font-size: 16px;
+			}
+			@include bp(mobile) {
+				font-size: 16px;
+			}
+		}
+		ul {
+		    font-size: 20px;
+		    margin-top: 19px;
+		    margin-bottom: 30px;
+		    color: #3d3d3d;
+		    position:relative;
+		    @include bp(tabportrait) {
+		        font-size: 16px;
+		    }
+		    @include bp(mobile) {
+		        font-size: 18px;
+		        padding-right: 10px;
+		    }
+		    li {
+		        padding-left: 10px;
+		        &::before {
+		            content: "";
+		            position: absolute;
+		            width: 5px;
+		            height: 5px;
+		            background: #3d3d3d;
+		            border-radius: 8px;
+		            margin-top: 10px;
+		            left: 0;
+		        }
+		        ul {
+		            margin-top: 0px;
+		            li {
+		                &:before {
+		                    content: "";
+		                    position: absolute;
+		                    width: 5px;
+		                    height: 1px;
+		                    background: #3d3d3d;
+		                    margin-top: 12px;
+		                    left: 0;
+		                }
+		            }
+		        }
+		    }
+		    &+ul {
+		        margin-top: -14px;
+		    }
+		    &+h2 {
+		        margin-top: -3px;
+		        @include bp(tabportrait) {
+		            margin-top: -11px;
+		        }
+		    }
+		    &+h3 {
+		        margin-top: -3px;
+		        @include bp(tabportrait) {
+		            margin-top: -4px;
+		        }
+		    }
+		    &+h4 {
+		        margin-top: -3px;
+		    }
+		    &+h5 {
+		        margin-top: -3px;
+		    }
+		    &+table {
+		        margin-top: 95px;
+		        @include bp(tablandscape) {
+		            margin-top: 32px;
+		        }
+		        @include bp(tabportrait) {
+		            margin-top: 15px;
+		        }
+		        @include bp(mobile) {
+		            margin-top: 16px;
+		        }
+		        &+.responsive_table {
+		        	@include bp(tabportrait) {
+		        		margin-top: -14px;
+		        	}
+		        	@include bp(mobile) {
+		        		margin-top: -14px;
+		        	}
+		        }
+		    }
+		    &.heroLinks {
+		    	li {
+		    		&:before {
+		    			display:none;
+		    		}
+		    	}
+		    }
 		}
 	}
 }
-
 .general-template {
 	h1 {
 		text-transform:uppercase;
@@ -174,6 +385,9 @@
 		}
 		@include bp(mobile) {
 			font-size:36px;
+		}
+		&+h2 {
+			color: #666666;
 		}
 		&+h2 , &+h2 , &+h3 , &+h4 , &+h5{
 			margin-top: 25px;
@@ -277,9 +491,8 @@
 			margin-top: 3px;
 		}
 		&+ul {
-			margin-top: 10px;
+			margin-top: 9px;
 		}
-
 	}
 	h5 {
 		font-size: 20px;
@@ -310,99 +523,64 @@
 		}
 	}
 	ul {
-		font-size: 18px;
-		margin-top: 19px;
-    	margin-bottom: 30px;
-    	position:relative;
-    	@include bp(tabportrait) {
-    		font-size:16px;
-    	}
-    	@include bp(mobile) {
-    		font-size:16px;
-    		padding-right:10px;
-    	}
-    	&.dotlist {
-    		li {
-    			padding-left: 10px;
-    			&::before {
-    				content: "";
-				    position: absolute;
-				    width: 5px;
-				    height: 5px;
-				    background: #3d3d3d;
-				    border-radius: 8px;
-				    margin-top: 10px;
-				    left: 0;
-    			}
-    			ul {
-    				margin-top:0px;
-    				li {
-    					&:before {
-    						content: "";
-						    position: absolute;
-						    width: 5px;
-						    height: 1px;
-						    background: #3d3d3d;
-						    margin-top: 12px;
-						    left: 0;
-    					}
-    				}
-    			}
-    		}
-    	}
-    	/*&.arrowList {
-    		li {
-    			padding-left:15px;
-    			&:before {
-    				content: "";
-				    border-top: 5px solid transparent;
-				    border-bottom: 4px solid transparent;
-				    border-left: 8px solid #666666;
-				    position: absolute;
-				    width: 0;
-				    height: 0;
-				    margin-top: 8px;
-				    left: 0;
-				    right: 13px;
-    			}
-    			ul {
-    				margin-top:0px;
-    				li {
-    					&:before {
-    						content: "";
-						    position: absolute;
-						    width: 5px;
-						    height: 1px;
-						    background: #3d3d3d;
-						    margin-top: 12px;
-						    left: 0;
-						    border: none;
-    					}
-    				}
-    			}
-    		}
-    	} */
-    	&+ul {
-    		margin-top: -14px;
-    	}
-    	&+h2{
-    		margin-top: -3px;
-    		@include bp(tabportrait) {
-    			margin-top: -11px;
-    		}
-    	}
-    	&+h3{
-    		margin-top: -3px;
-    		@include bp(tabportrait) {
-    			margin-top: -4px;
-    		}
-    	}
-    	&+h4{
-    		margin-top: -3px;
-    	}
-    	&+h5{
-    		margin-top: -3px;
-    	}
+	    font-size: 18px;
+	    margin-top: 19px;
+	    margin-bottom: 30px;
+	    position: relative;
+	    @include bp(tabportrait) {
+	        font-size: 16px;
+	    }
+	    @include bp(mobile) {
+	        font-size: 16px;
+	        padding-right: 10px;
+	    }
+	    li {
+	        padding-left: 10px;
+	        &::before {
+	            content: "";
+	            position: absolute;
+	            width: 5px;
+	            height: 5px;
+	            background: #3d3d3d;
+	            border-radius: 8px;
+	            margin-top: 10px;
+	            left: 0;
+	        }
+	        ul {
+	            margin-top: 0px;
+	            li {
+	                &:before {
+	                    content: "";
+	                    position: absolute;
+	                    width: 5px;
+	                    height: 1px;
+	                    background: #3d3d3d;
+	                    margin-top: 12px;
+	                    left: 0;
+	                }
+	            }
+	        }
+	    }
+	    &+ul {
+	        margin-top: -14px;
+	    }
+	    &+h2 {
+	        margin-top: -3px;
+	        @include bp(tabportrait) {
+	            margin-top: -11px;
+	        }
+	    }
+	    &+h3 {
+	        margin-top: -3px;
+	        @include bp(tabportrait) {
+	            margin-top: -4px;
+	        }
+	    }
+	    &+h4 {
+	        margin-top: -3px;
+	    }
+	    &+h5 {
+	        margin-top: -3px;
+	    }
 	}
-	
 }
