@@ -105,8 +105,8 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 60px;
-        @include bp(mobile){
-
+        @include bp(tablet){
+            margin-top: 0;
         }
         .profDisplay {
             width: 222px;
@@ -307,7 +307,7 @@
                 width: 100%;
                 padding-left: 10px;
                 padding-right: 10px;
-                margin-top: 25px;
+                margin-top: 0px;
             }
             h5 {
                 font-weight: 700;
@@ -371,6 +371,15 @@
         }
         &.flexDisHead{
             margin-top: 33px;
+            @include bp(landscape){
+                margin-top: 0;
+            }
+            @include bp(tablet) {
+                margin-top: 8px;
+            }
+            @include bp(mobile) {
+                margin-top: 0px;
+            }
         }
     }
     .spanel {
