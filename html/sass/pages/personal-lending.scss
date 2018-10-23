@@ -55,7 +55,7 @@
             width: calc(100% - 533px);
             @include bp(landscape) {
                 width: calc(100% - 343px);
-                padding-top: 27px;
+                padding-top: 38px;
             }
             @include bp(mobile) {
                 width: 100%;
@@ -69,6 +69,9 @@
                 margin-bottom: 19px;
                 @include bp(landscape) {
                     font-size: 30px;
+                }
+                @include bp(tablet){
+                    margin-bottom: 11px;
                 }
                 @include bp(mobile){
                     line-height: initial;
@@ -286,6 +289,9 @@
         @include bp(landscape) {
             margin-top: 78px;
         }
+        @include bp(tablet) {
+            margin-top: 8px;
+        }
         @include bp(mobile){
             flex-direction: column;
             margin-top: 0;
@@ -345,6 +351,9 @@
             padding-bottom: 34px;
             width: calc(100% - 533px);
             margin-top: 0;
+            @include bp(landscape){
+                padding-bottom: 19px;
+            }
             @include bp(tablet) {
                 width: calc(100% - 420px);
                 justify-content: center;
