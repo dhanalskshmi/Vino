@@ -1,0 +1,194 @@
+﻿@using ServiceHelpers
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using ConnecticutRegionalWater.Web.Models;
+@model Search
+@{
+    Layout = null;
+
+    var SearchCount = 0;
+
+    SearchCount = Model.Count;
+
+    var SearchKeyword = Model.Query;
+
+    double DefaultPageDisplayCount = 6;
+
+    if (SearchCount > 60)
+    {
+        DefaultPageDisplayCount = 6;
+    }
+    else if (SearchCount > 30)
+    {
+        DefaultPageDisplayCount = 3;
+    }
+    else
+    {
+        DefaultPageDisplayCount = 2;
+    }
+
+    int DefaultDisplayCount = 7;
+
+    int pageCount = 0;
+
+
+    if (SearchCount % DefaultDisplayCount == 0)
+    {
+        pageCount = SearchCount / Convert.ToInt32(DefaultDisplayCount);
+    }
+    else
+    {
+        pageCount = (SearchCount / Convert.ToInt32(DefaultDisplayCount)) + 1;
+    }
+
+    var PagiUrl = "";
+    int PageNum = 1;
+    int sp = 1;
+    if (!int.TryParse(Request.QueryString["page"], out PageNum))
+    {
+        PageNum = 1;
+    }
+    var SearchResults = Model.SearchResults;
+}
+                       
+@if (Model.Count > 0)
+{
+
+
+    <section class="searchPage" id="maincontent">
+        <div class="containerWrapper">
+            <div class="container">
+            <h1>Search Results</h1>
+            <p>@Model.Count results for @Model.Query</p>
+            <div class="searchWrap">
+            @foreach (var result in SearchResults)
+            {
+                
+                <h4><a href="@result.Url" target="_blank">@result.Title</a></h4>
+                <p><a href="@result.Url" target="_blank">@result.DisplayUrl</a><br/> @result.Snippet</p>
+                
+            }
+            </div>
+
+            @if (SearchCount > DefaultDisplayCount)
+            {
+                <div class="pager-content paginationWrap">
+
+                    <ul class="pagination">
+                        @if (PageNum > 1)
+                        {
+                            if (Model.Query != "")
+                            {
+                                PagiUrl = "?q=" + @Model.Query + "&?page=" + (PageNum - 1);
+                            }
+                            else
+                            {
+                                PagiUrl = "?page=" + (PageNum - 1);
+                            }
+
+                            <li class="previous">
+                               <a data-page="@(PageNum - 1)" href="@PagiUrl"><span>previous</span></a>
+                            </li>
+                        }
+
+                        @if (PageNum < DefaultPageDisplayCount)
+                        {
+                            sp = 1;
+                        }
+                        else if (PageNum >= (pageCount - Math.Floor(DefaultPageDisplayCount / 2)))
+                        {
+                            sp = pageCount - Convert.ToInt32(DefaultPageDisplayCount) + 1;
+                        }
+                        else if (PageNum >= DefaultPageDisplayCount)
+                        {
+                            sp = PageNum - Convert.ToInt32(Math.Floor(DefaultPageDisplayCount / 2));
+                        }
+
+                        @if (PageNum >= pageCount)
+                        {
+                            if (Model.Query != "")
+                            {
+                                PagiUrl = "?q=" + @Model.Query + "&page=1";
+                            }
+                            else
+                            {
+                                PagiUrl = "?page=1";
+                            }
+
+                            <li><a href="@PagiUrl" title="Go to page 1 of results">1</a></li>
+                            <li><a href="#" class="no-link pointerNone">..</a></li>
+                        }
+
+                        @for (var p = sp; p <= (sp + DefaultPageDisplayCount - 1); p++)
+                        {
+                            string ActivePage = (p == PageNum) ? "active" : String.Empty;
+
+                            if (Model.Query != "")
+                            {
+                                PagiUrl = "?q=" + @Model.Query + "&page=" + p;
+                            }
+                            else
+                            {
+                                PagiUrl = "?page=" + p;
+                            }
+
+                            <li class="@ActivePage"><a href="@PagiUrl" title="Go to page @p of results">@p</a></li>
+
+                        }
+
+                        <!-- If the current page is less than say the last page minus $max pages divided by 2-->
+                        @if (PageNum < (pageCount - Math.Floor(DefaultPageDisplayCount / 2)))
+                        {
+                            string ActivePage = (pageCount == PageNum) ? "active" : String.Empty;
+
+                            if (Model.Query != "")
+                            {
+                                PagiUrl = "?q=" + @Model.Query + "&page=" + pageCount;
+                            }
+                            else
+                            {
+                                PagiUrl = "?page=" + pageCount;
+                            }
+
+                            <li><a href="#" class="no-link pointerNone">..</a></li>
+                            <li class="@ActivePage"><a href="@PagiUrl" title="Go to page @pageCount of results">@pageCount</a></li>
+                        }
+
+                        @if (PageNum < pageCount && pageCount > 1)
+                        {
+                            if (Model.Query != "")
+                            {
+                                PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum + 1);
+                            }
+                            else
+                            {
+                                PagiUrl = "?page=" + (PageNum + 1);
+                            }
+
+                            <li class="next">
+                               <a data-page="@(PageNum + 1)" href="@PagiUrl"><span>next</span></a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            }
+       
+        </div>
+    </div>
+    </section>
+}
+else
+{
+    <section class="searchPage">
+        <div class="containerWrapper">
+            <div class="container">
+                <h1>Search Results</h1>
+                <p>@Model.Count results for @Model.Query</p>
+                <div class="searchWrap">
+                        <p class="no-record">No Record Found</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+}

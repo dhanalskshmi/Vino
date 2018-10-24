@@ -1,7 +1,7 @@
 ﻿@using ClientDependency.Core.Mvc
 @using ManasquanBank.Web.Controllers
-@using Newtonsoft.Json.Linq
 @using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
 @using System.Web.Script.Serialization;
 @using System.Text.RegularExpressions
 @using ContentModels = Umbraco.Web.PublishedContentModels;
@@ -150,82 +150,89 @@ catch (Exception e)
 @try
 {
     var facebookFeed = t.GetFacebookFeed_next();
-    var fbArray = JsonConvert.DeserializeObject(facebookFeed);
-    if (fbArray.data.Count > 0)
+    try
     {
-        int i = 0;
-        foreach (dynamic fblist in fbArray.data)
+        var fbArray = JsonConvert.DeserializeObject(facebookFeed);
+        if (fbArray.data.Count > 0)
         {
-            var message = "";
-            if (fblist.message != null)
+            int i = 0;
+            foreach (dynamic fblist in fbArray.data)
             {
-                message = fblist.message;
-            }
-            else
-            {
-                message = string.Empty;
-            }
-            var picture = fblist.full_picture;
-            var link = fblist.link;
-            var profile_url = fblist.from.id;
+                string message = string.Empty;
+                if (fblist.message != null)
+                {
+                    message = fblist.message;
+                }
+                else
+                {
+                    message = string.Empty;
+                }
+                var picture = fblist.full_picture;
+                var link = fblist.link;
+                var profile_url = fblist.from.id;
 
-            string[] temp, timesplit;
-            string fbDate, displayTime;
-            try
-            {
-                fbDate = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
-                temp = fbDate.Split(' ');
-                timesplit = temp[3].Split(':');
-                TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
-                DateTime time = DateTime.Today.Add(timespan);
-                displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
-            }
-            catch (Exception ex)
-            {
-                displayTime = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
-            }
+                string[] temp, timesplit;
+                string fbDate, displayTime;
+                try
+                {
+                    fbDate = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
+                    temp = fbDate.Split(' ');
+                    timesplit = temp[3].Split(':');
+                    TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+                    DateTime time = DateTime.Today.Add(timespan);
+                    displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+                }
+                catch (Exception ex)
+                {
+                    displayTime = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
+                }
 
-            DateTime created_time = Convert.ToDateTime(displayTime);
-            var formatedDate = created_time.ToString("yyyy-MM-dd");
-            var facebookDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
-            <div class="filtr-item" data-category="fb" data-date="@formatedDate">
-                <div class="flexPanelWrap">
-                    <div class="flexPanelHead">
-                        <div class="headLogo">
-                            <figure>
-                                <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
-                            </figure>
-                            <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
+                DateTime created_time = Convert.ToDateTime(displayTime);
+                var formatedDate = created_time.ToString("yyyy-MM-dd");
+                var facebookDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
+                <div class="filtr-item" data-category="fb" data-date="@formatedDate">
+                    <div class="flexPanelWrap">
+                        <div class="flexPanelHead">
+                            <div class="headLogo">
+                                <figure>
+                                    <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
+                                </figure>
+                                <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
+                            </div>
+                            <div class="headDate">
+                                <span>@facebookDate</span>
+                            </div>
                         </div>
-                        <div class="headDate">
-                            <span>@facebookDate</span>
+                        <div class="flexPanelBody">
+                            @if (picture != null)
+                            {
+                                <figure>
+                                    <a href="@link" target="_blank"><img src="@picture" alt="@message"></a>
+                                </figure>
+                            }
+
+                            <p>@message</p>
                         </div>
-                    </div>
-                    <div class="flexPanelBody">
-                        @if (picture != null)
-                        {
-                            <figure>
-                                <a href="@link" target="_blank"><img src="@picture" alt="@message"></a>
-                            </figure>
-                        }
-                    
-                        <p>@message</p>
-                    </div>
-                    <div class="flexPanelFoot">
-                        <div class="flexIcon">
-                            <figure>
-                                <a href="//www.facebook.com/@profile_url"><img src="~/images/social/facebook.png" alt="Twitter"></a>
-                            </figure>
+                        <div class="flexPanelFoot">
+                            <div class="flexIcon">
+                                <figure>
+                                    <a href="//www.facebook.com/@profile_url"><img src="~/images/social/facebook.png" alt="Twitter"></a>
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         }
+    }
+    catch (Exception e)
+    {
+       // @Html.Raw(e.Message.ToString())
     }
 }
 catch (Exception e)
 {
-    @Html.Raw(e.Message.ToString())
+   @Html.Raw(e.Message.ToString())
 }
 @try
 {

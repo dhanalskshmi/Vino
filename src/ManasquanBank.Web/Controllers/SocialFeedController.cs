@@ -2,6 +2,7 @@
 using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
 using Skybrud.Social.Facebook;
 using Skybrud.Social.Facebook.OAuth;
@@ -292,6 +293,7 @@ namespace ManasquanBank.Web.Controllers
             }
             catch (Exception e)
             {
+
                 return false;
             }
            

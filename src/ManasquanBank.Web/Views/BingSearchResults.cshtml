@@ -1,0 +1,7 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var searchApiKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("searchApiKey");
+    var searchResultsUrl = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("searchResultsUrl");
+}
+@Html.Action("Index", "BingSearch", new { searchApiKey = @searchApiKey, searchResultsUrl = @searchResultsUrl })
