@@ -9,10 +9,10 @@ namespace ManasquanBank.Web.Models
     public class BusinessManagementModel
     {
         [Required]
-        public string loanPurpose { get; set; }
+        public string department { get; set; }
 
         [Required]
-        public string loanOfficer { get; set; }
+        public string employee { get; set; }
 
         [Required]
         public string firstName { get; set; }
