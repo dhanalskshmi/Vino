@@ -216,13 +216,13 @@
                         {
                             if (!string.IsNullOrEmpty(thankYouMessage.ToString()))
                             {
-                                <div id="contactSucc">
+                                <div id="contactSucc" class="success-msg">
                                     <h4>@Html.Raw(thankYouMessage)</h4>
                                 </div>
                             }
                             else
                             {
-                                <div id="contactSucc">
+                                <div id="contactSucc" class="success-msg">
                                     <h4>@ViewBag.ReOrderCheckSuccessMessage</h4>
                                 </div>
                             }
