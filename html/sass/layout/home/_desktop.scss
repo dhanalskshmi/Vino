@@ -968,6 +968,16 @@ $dbannerhgt: 965px;
   }
 }
 
+@media screen and (max-width: 767px) {
+
+  .appPannel {
+    p {
+      br {
+        display: none;
+      }
+    }
+  }
+}
 @media screen and (min-width: $tab-port-min) {
 
 
