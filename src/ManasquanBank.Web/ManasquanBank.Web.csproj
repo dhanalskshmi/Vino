@@ -666,6 +666,7 @@
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\NewsLetterController.cs" />
     <Compile Include="Controllers\ReOrderCheckController.cs" />
+    <Compile Include="Controllers\RequestConsultationsController.cs" />
     <Compile Include="Controllers\SocialFeedController.cs" />
     <Compile Include="Controllers\SocialStreamFacebook.cs" />
     <Compile Include="Controllers\SocialStreamFaceBookData.cs" />
@@ -678,6 +679,7 @@
     <Compile Include="Models\NewsLetterModel.cs" />
     <Compile Include="Models\RecaptchaResponse.cs" />
     <Compile Include="Models\ReOrderCheckModel.cs" />
+    <Compile Include="Models\RequestConsultationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -748,6 +750,7 @@
     <Content Include="Views\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\Partials\uDateFoldersy\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\ReOrderCheck.cshtml" />
+    <Content Include="Views\RequestConsultation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -770,6 +773,7 @@
     <Folder Include="Views\MacroPartials\" />
     <Folder Include="Views\NewsLetter\" />
     <Folder Include="Views\ReOrderCheck\" />
+    <Folder Include="Views\RequestConsultations\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

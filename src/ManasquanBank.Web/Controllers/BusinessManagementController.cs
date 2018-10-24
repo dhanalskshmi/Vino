@@ -31,8 +31,8 @@ namespace ManasquanBank.Web.Controllers
                     {
 
                         List<PerplexMail.EmailTag> listoftags = new List<PerplexMail.EmailTag>();
-                        listoftags.Add(new PerplexMail.EmailTag("[#Department#]", business.loanPurpose));
-                        listoftags.Add(new PerplexMail.EmailTag("[#Employee#]", business.loanOfficer));
+                        listoftags.Add(new PerplexMail.EmailTag("[#Department#]", business.department));
+                        listoftags.Add(new PerplexMail.EmailTag("[#Employee#]", business.employee));
                         listoftags.Add(new PerplexMail.EmailTag("[#FirstName#]", business.firstName));
                         listoftags.Add(new PerplexMail.EmailTag("[#LastName#]", business.lastName));
                         listoftags.Add(new PerplexMail.EmailTag("[#PhoneNo#]", business.cntTelePhone));
@@ -43,7 +43,7 @@ namespace ManasquanBank.Web.Controllers
                         listoftags.Add(new PerplexMail.EmailTag("[#State#]", business.state));
                         listoftags.Add(new PerplexMail.EmailTag("[#Zip#]", business.zip));
                         listoftags.Add(new PerplexMail.EmailTag("[#Country#]", business.country));
-                        listoftags.Add(new PerplexMail.EmailTag("[#TimeCall#]", business.call));
+                        
                         listoftags.Add(new PerplexMail.EmailTag("[#Message#]", business.cntComments));
 
 
