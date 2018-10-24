@@ -1,5 +1,4 @@
-﻿
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using umbraco.MacroEngines
 @using Newtonsoft.Json
 @using RJP.MultiUrlPicker.Models
@@ -11,21 +10,21 @@
 @using System.Web.Script.Serialization;
 @{
     Layout = "Master.cshtml";
+
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
     var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
-    var businessthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
-    var businessAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
-    var businessConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
+    var requestthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
+    var requestAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
+    var requestConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
 }
 @section InnerTopStyle {
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
     <link href="~/css/lib/jquery.timepicker.css" rel="stylesheet" />
 }
-<div class="re-order">
-
+<div class="re-order request">
     <section class="heroBanner">
         @if (heroImage != null)
         {
@@ -35,7 +34,7 @@
     <section class="heroBlock">
         <div class="containerWrapper">
             <div class="bgWrap">
-                @if (!string.IsNullOrEmpty(title))
+                <  @if (!string.IsNullOrEmpty(title))
                 {
                     <h2>@title</h2>
                 }
@@ -64,7 +63,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -83,7 +82,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -102,14 +101,14 @@
                                         {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                         }
-                                        
+
                                     </span>
-                                                    <span class="heroLinksText">
-                                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                                        {
-                                                            @Html.Raw(cTAtitle)
-                                                        }
-                                                    </span>
+                                    <span class="heroLinksText">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            @Html.Raw(cTAtitle)
+                                        }
+                                    </span>
                                 }
 
                             </li>
@@ -135,7 +134,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -154,7 +153,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -174,15 +173,15 @@
                                         {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                         }
-                                        
+
                                     </span>
-                                                    <span class="heroLinksText">
-                                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                                        {
-                                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                            @Html.Raw(replacetitle)
-                                                        }
-                                                    </span>
+                                    <span class="heroLinksText">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                            @Html.Raw(replacetitle)
+                                        }
+                                    </span>
                                 }
 
                             </li>
@@ -196,83 +195,65 @@
     <section class="greyPanel">
         <div class="containerWrapper">
             <div class="bgWrap">
-                @if (String.IsNullOrEmpty(ViewBag.businessErrorMessage) == false)
-                {
-                    <div class="alert alert-warning">
-                        <strong>Warning!</strong> @ViewBag.businessErrorMessage
-                    </div>
-                }
+
+              
+
+@if (String.IsNullOrEmpty(ViewBag.requestErrorMessage) == false)
+{
+    <div class="alert alert-warning">
+        <strong>Warning!</strong> @ViewBag.requestErrorMessage
+    </div>
+}
                 <div class="contactFormWrap">
 
-                    @using (Html.BeginUmbracoForm("SubmitForm", "BusinessManagement", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
+                    @using (Html.BeginUmbracoForm("SubmitForm", "RequestConsultations", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
                     {
 
 
-                        if (String.IsNullOrEmpty(ViewBag.businessSuccessMessage) == false)
+                        if (String.IsNullOrEmpty(ViewBag.requestSuccessMessage) == false)
                         {
-                            if (!string.IsNullOrEmpty(businessthankYouMessage.ToString()))
+                            if (!string.IsNullOrEmpty(requestthankYouMessage.ToString()))
                             {
                                 <div id="contactSucc" class="success-msg">
-                                    <h4>@Html.Raw(businessthankYouMessage)</h4>
+                                    <h4>@Html.Raw(requestthankYouMessage)</h4>
                                 </div>
                             }
                             else
                             {
                                 <div id="contactSucc" class="success-msg">
-                                    <h4>@ViewBag.businessSuccessMessage</h4>
+                                    <h4>@ViewBag.requestSuccessMessage</h4>
                                 </div>
                             }
 
                         }
                         else
                         {
-
-
-
                             string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
                             string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
                             <div class="row">
                                 <span class="wpcf7-form"></span>
-                                <div class="col-md-12 col-sm-12 col-lg-12 parentWrapper">
-                                   
+                                <div class="clrdecoder parentWrapper">
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
-                                        <label for="loanPurpose">Department</label>
-                                        <select name="department" id="department" class="form-control selectBox" default="" required="">
+                                        <label for="loanPurpose">Purpose of loan</label>
+                                        <select name="loanPurpose" id="loanPurpose" class="form-control selectBox" default="">
                                             <option value=""></option>
-                                            <option value="Executive Management">Executive Management </option>
-                                            <option value="Senior Management">Senior Management </option>
-                                            <option value="Branch Managers">Branch Managers </option>
-                                            <option value="Foundation">Foundation </option>
+                                            <option value="Purchase">Purchase</option>
+                                            <option value="Refinance">Refinance </option>
+                                            <option value="Home Equity">Home Equity</option>
+                                            <option value="Construction">Construction</option>
+                                            <option value="Building Lot">Building Lot</option>
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
-                                        <label for="loanOfficer">Employee</label>
-                                        <select name="employee" id="employee" class="form-control selectBox" default="" required="">
+                                        <label for="loanOfficer">Loan officer</label>
+                                        <select name="loanOfficer" id="loanOfficer" class="form-control selectBox" default="">
                                             <option value=""></option>
                                             <option value="Ralph Tancredi">Ralph Tancredi</option>
-                                            <option value="William L. Kays">William L. Kays </option>
-                                            <option value="Lisa Connell">Lisa Connell </option>
-                                            <option value="David Tepper">David Tepper </option>
-                                            <option value="Kathie Adams">Kathie Adams</option>
-                                            <option value="Suellen Arecchi">Suellen Arecchi</option>
-                                            <option value="Nancy Canary">Nancy Canary</option>
-                                            <option value="Jeffrey Casten">Jeffrey Casten</option>
-                                            <option value="Luke Caverly">Luke Caverly</option>
-                                            <option value="Lisa Colonno">Lisa Colonno</option>
-                                            <option value="Beth Culos">Beth Culos</option>
-                                            <option value="Robert Hart">Robert Hart</option>
-                                            <option value="Wililam Horvath">Wililam Horvath</option>
-                                            <option value="Rich Lanza">Rich Lanza</option>
-                                            <option value="Loralee Neyland">Loralee Neyland</option>
-                                            <option value="Christina Paccione">Christina Paccione</option>
-                                            <option value="Lisa Roettger">Lisa Roettger</option>
-                                            <option value="Ann Slavick">Ann Slavick</option>
-                                            <option value="Nancy Steck">Nancy Steck</option>
-                                            <option value="Alan J Stuart">Alan J Stuart</option>
-                                            <option value="Jennifer Weisert">Jennifer Weisert</option>
-                                            <option value="Mary Anne Whittemore">Mary Anne Whittemore</option>
-                                            <option value="Steve Yarosz">Steve Yarosz</option>
+                                            <option value="William L. Kays">William L. Kays</option>
+                                            <option value="Lisa Connell">Lisa Connell</option>
+                                            <option value="David Tepper">David Tepper</option>
+
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -296,6 +277,8 @@
                                         <input type="email" class="form-control error" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-12 parentWrapper">
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="addressOne">Address line 1</label>
                                         <input type="text" class="form-control " required name="addressOne" id="addressOne">
@@ -315,7 +298,7 @@
                                         <label for="state">State</label>
                                         <select name="state" id="state" class="form-control selectBox" default="" required="">
                                             <option value="">-Select State-</option>
-                                            
+                                           
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -329,18 +312,22 @@
                                         <label for="country">Country</label>
                                         <select name="country" id="country" class="form-control selectBox" default="" required="">
                                             <option value="" rel="">-Select Country-</option>
-                                            
+                                            x
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
-                                    
+                                    <div class="form-group col-lg-6 col-xs-12 nopadding">
+                                        <label for="call">Best time to call</label>
+                                        <input type="text" class="form-control time ui-timepicker-input" name="call" id="basicExample" autocomplete="off">
 
-                                </div>
-                                <div class="col-lg-12 col-xs-12">
-                                    <div class="form-group">
+                                    </div>
+
+                                    <div class="col-lg-12 col-xs-12 form-group">
+
                                         <label for="cntComments">Message</label>
                                         <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="captchaBlock">
@@ -348,15 +335,20 @@
                                 <p class="form1_error hide">The captcha is required and can't be empty.</p>
 
                             </div>
-                                            <span class="wpcf7-form"></span>
-                                            <div class="row mob-flex">
+                            <span class="wpcf7-form"></span>
+                            <div class="row mob-flex">
 
-                                                <button class="btnManasq"><span>SUBMIT</span></button>
-                                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
-                                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />
-                                            </div>
+                                <button class="btnManasq"><span>SUBMIT</span></button>
+                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@requestAdminEmail" />
+                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@requestConfirmationEmail" />
+                            </div>
+
+                            <!-- <div class="success-msg" id="contactSucc">
+                  <h4>Thank you for contacting Manasquan Bank. Your message was sent successfully</h4>
+                </div> -->
 
                         }
+
                     }
                 </div>
             </div>
@@ -366,13 +358,11 @@
 </div>
 @section InnerBottomScript {
     <script src="~/scripts/lib/jquery-ui.js"></script>
-    <script src="~/scripts/lib/country-json.js"></script>
     <script src="~/scripts/lib/jquery.timepicker.min.js"></script>
-
-   <script>
+    <script src="~/scripts/lib/country-json.js"></script>
+<script>
     $(document).ready(function() {
-      $('#basicExample').timepicker();
-
+        $('#basicExample').timepicker();
       $("#contactSucc").length > 0 && $("html, body").animate({
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")

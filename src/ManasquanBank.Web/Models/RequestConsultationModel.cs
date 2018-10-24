@@ -4,15 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
+
 namespace ManasquanBank.Web.Models
 {
-    public class BusinessManagementModel
+    public class RequestConsultationModel
     {
         [Required]
-        public string department { get; set; }
+        public string loanPurpose { get; set; }
 
         [Required]
-        public string employee { get; set; }
+        public string loanOfficer { get; set; }
 
         [Required]
         public string firstName { get; set; }
@@ -45,7 +46,7 @@ namespace ManasquanBank.Web.Models
 
         public string country { get; set; }
 
-      
+        public string call { get; set; }
 
         public string cntComments { get; set; }
 

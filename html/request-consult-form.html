@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link href='css/lib/nprogress.css' rel='stylesheet' />
   <link href='css/lib/jquery-ui.css' rel='stylesheet' />
+   <link rel="stylesheet" href="css/lib/jquery.timepicker.css">
   <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
   <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
@@ -889,9 +890,11 @@
   <script src="script/lib/jquery-ui.js"></script>
   <script src="script/lib/jquery.validate.min.js"></script>
   <script src="script/pages/country-json.js"></script>
+   <script src="script/lib/jquery.timepicker.min.js"></script>
   <script type='text/javascript' src='script/main.min.js'></script>
   <script>
     $(document).ready(function() {
+        $('#basicExample').timepicker();
       $("#contactSucc").length > 0 && $("html, body").animate({
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")
