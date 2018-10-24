@@ -443,7 +443,8 @@ $(document).ready(function() {
   });
 
 	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
-  	e.preventDefault();
+
+		
     var $this = $(this);
 
 		if($this.hasClass("msubMenu")){
@@ -456,7 +457,7 @@ $(document).ready(function() {
 
 
 	$(".inner li a").click(function(e) {
-  	e.preventDefault();
+
     var $this = $(this);
 
 		if($this.hasClass("msubMenu")){
