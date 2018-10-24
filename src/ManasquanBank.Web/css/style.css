@@ -6852,7 +6852,7 @@ footer {
   }
 }
 
-.joinEmail form .grecaptcha-badge {
+.joinEmail form .grecaptcha-badge, .contactFormWrap form .grecaptcha-badge {
   margin-right: 0;
   z-index: 10;
   display: none;
@@ -11438,13 +11438,23 @@ footer {
     margin-bottom: 8px;
   }
 }
+.proDetail .heroBlock .bgWrap p small {
+  font-size: 14px;
+}
 .proDetail .heroBlock .bgWrap ul {
   list-style: disc;
-  padding: 12px 0 0 55px;
+  padding: 12px 0 0px 55px;
+  margin-bottom: 38px;
+}
+@media (max-width: 1023px) {
+  .proDetail .heroBlock .bgWrap ul {
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 767px) {
   .proDetail .heroBlock .bgWrap ul {
     padding: 10px 0 0 49px;
+    margin-bottom: 15px;
   }
 }
 .proDetail .heroBlock .bgWrap ul li {
