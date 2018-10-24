@@ -37,10 +37,10 @@ namespace ManasquanBank.Web.Controllers
                 var result = memCacher.GetValue("instagramfeed");
                 if (result == null)
                 {
-                    InstagramService service = InstagramService.CreateFromAccessToken("1313031959.87552ec.4189d55d32af42baa34f329cb2c1e108");
-                    var response = service.Users.GetRecentMedia(1313031959, 5);
+                    InstagramService service = InstagramService.CreateFromAccessToken("5407079472.34bb094.2cb398a5654b48388028cea639dd7bcb");
+                    var response = service.Users.GetRecentMedia(5407079472, 5);
                     result = response.Body.Data.ToJson();
-                    memCacher.Add("instagramfeed", result, DateTimeOffset.UtcNow.AddHours(24));
+                    memCacher.Add("instagramfeed", result, DateTimeOffset.UtcNow.AddHours(1));
                 }
                 return result;
 
