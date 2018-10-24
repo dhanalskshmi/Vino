@@ -72,7 +72,7 @@ if ($('.contactForm').length > 0) {
         }
     });
 
-    $('.contactForm .selectBox').not("select.multiple,#state,#country").selectmenu({
+    $('.contactForm .selectBox').not("select.multiple, #state, #country").selectmenu({
         style: 'dropdown',
         transferClasses: true,
         change: function() {

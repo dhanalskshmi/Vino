@@ -28,9 +28,12 @@ section.searchPage {
         font-size: 23px;
         text-transform: uppercase;
         color: #666;
+        font-weight: 400;
         
       }
       p {
+        font-size: 18px;
+        margin-bottom: 0px;
         a {
           text-decoration: underline;
           &:hover {
@@ -38,8 +41,20 @@ section.searchPage {
           }
         }
       
-        padding: 12px 0 16px 0;
+        padding: 12px 0 3px 0;
+
       }
+       .btn-readMore{
+          display: inline-block;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: 700;
+          padding-top: 5px;
+          margin-bottom: 32px; 
+          font-size: 18px; 
+          color: #666;
+
+        }
     }
   }
 
