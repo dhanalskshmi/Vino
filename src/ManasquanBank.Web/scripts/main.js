@@ -443,7 +443,8 @@ $(document).ready(function() {
   });
 
 	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
-  	e.preventDefault();
+
+		
     var $this = $(this);
 
 		if($this.hasClass("msubMenu")){
@@ -456,7 +457,7 @@ $(document).ready(function() {
 
 
 	$(".inner li a").click(function(e) {
-  	e.preventDefault();
+
     var $this = $(this);
 
 		if($this.hasClass("msubMenu")){
@@ -1111,11 +1112,15 @@ if ($('.contactForm').length > 0) {
           $('.contactForm').validate().element(this);
        }
       });
-      $("#state").on('selectmenuchange', function() {
+      $("#state,#country").on('selectmenuchange', function() {
         validator.checkForm();
         console.log("State change");
-        if($("option[value='']:selected")){
+        if($('#state').val() == ""){
+            console.log("fail");
             $("#state").parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+        } else{
+            console.log("success");
+            $("#state").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
         }
     });
     });
