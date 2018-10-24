@@ -196,10 +196,10 @@
     <section class="greyPanel">
         <div class="containerWrapper">
             <div class="bgWrap">
-                @if (String.IsNullOrEmpty(ViewBag.ReOrderCheckErrorMessage) == false)
+                @if (String.IsNullOrEmpty(ViewBag.businessErrorMessage) == false)
                 {
                     <div class="alert alert-warning">
-                        <strong>Warning!</strong> @ViewBag.ReOrderCheckErrorMessage
+                        <strong>Warning!</strong> @ViewBag.businessErrorMessage
                     </div>
                 }
                 <div class="contactFormWrap">
@@ -208,7 +208,7 @@
                     {
 
 
-                        if (String.IsNullOrEmpty(ViewBag.ReOrderCheckSuccessMessage) == false)
+                        if (String.IsNullOrEmpty(ViewBag.businessSuccessMessage) == false)
                         {
                             if (!string.IsNullOrEmpty(businessthankYouMessage.ToString()))
                             {
@@ -219,7 +219,7 @@
                             else
                             {
                                 <div id="contactSucc">
-                                    <h4>@ViewBag.ReOrderCheckSuccessMessage</h4>
+                                    <h4>@ViewBag.businessSuccessMessage</h4>
                                 </div>
                             }
 
