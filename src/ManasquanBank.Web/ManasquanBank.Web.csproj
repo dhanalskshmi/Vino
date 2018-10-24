@@ -443,6 +443,7 @@
     <Content Include="css\lib\jquery-ui.min-cptt.css" />
     <Content Include="css\lib\jquery-ui.min.css" />
     <Content Include="css\lib\jquery.mb.YTPlayer.min.css" />
+    <Content Include="css\lib\jquery.timepicker.css" />
     <Content Include="css\lib\nprogress.css" />
     <Content Include="css\lib\swiper.min.css" />
     <Content Include="css\lib\YouTubePopUp.css" />
@@ -627,9 +628,11 @@
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\lib\bootstrap-datepicker.js" />
+    <Content Include="scripts\lib\country-json.js" />
     <Content Include="scripts\lib\jquery-3.2.1.min.js" />
     <Content Include="scripts\lib\jquery-ui.js" />
     <Content Include="scripts\lib\jquery.mb.YTPlayer.js" />
+    <Content Include="scripts\lib\jquery.timepicker.min.js" />
     <Content Include="scripts\lib\jquery3.1.0.min.js" />
     <Content Include="scripts\lib\modernizr-custom.js" />
     <Content Include="scripts\lib\nprogress.js" />
@@ -640,6 +643,7 @@
     <Content Include="scripts\lodash.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\main.min.js" />
+    <Content Include="Views\BusinessManagement.cshtml" />
     <Content Include="Views\ClientService.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
@@ -659,9 +663,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BusinessManagementController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\NewsLetterController.cs" />
     <Compile Include="Controllers\ReOrderCheckController.cs" />
+    <Compile Include="Controllers\RequestConsultationsController.cs" />
     <Compile Include="Controllers\SocialFeedController.cs" />
     <Compile Include="Controllers\SocialStreamFacebook.cs" />
     <Compile Include="Controllers\SocialStreamFaceBookData.cs" />
@@ -669,10 +675,12 @@
     <Compile Include="Controllers\SocialStreamFacebookFeed.cs" />
     <Compile Include="Helpers\cacheHelper.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Models\BusinessManagementModel.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Models\NewsLetterModel.cs" />
     <Compile Include="Models\RecaptchaResponse.cs" />
     <Compile Include="Models\ReOrderCheckModel.cs" />
+    <Compile Include="Models\RequestConsultationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -743,6 +751,7 @@
     <Content Include="Views\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\Partials\uDateFoldersy\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\ReOrderCheck.cshtml" />
+    <Content Include="Views\RequestConsultation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -758,12 +767,14 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\BusinessManagement\" />
     <Folder Include="Views\cacheHelper\" />
     <Folder Include="Views\ContactUs\" />
     <Folder Include="Views\InstagramFeed\" />
     <Folder Include="Views\MacroPartials\" />
     <Folder Include="Views\NewsLetter\" />
     <Folder Include="Views\ReOrderCheck\" />
+    <Folder Include="Views\RequestConsultations\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

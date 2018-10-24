@@ -7,6 +7,8 @@
 @using ManasquanBank.Web.Models;
 @{
     var footerLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("footerLogo");
+    var equalHousingLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("equalHousingLogo");
+    var memberFDICLogo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("memberFDICLogo");
     var mobileIconsApple = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsApple");
     var mobileIconAppleIconLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("mobileIconAppleIconLink");
     var mobileIconsAndroid = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("mobileIconsAndroid");
@@ -177,7 +179,7 @@
               </div>
               <div class="fCols">
                 <figure>
-                  <a href="/"><img src="@footerLogo.Url" alt="Manasquan Bank Footer Logo"></a>
+                  <a href="/"><img src="@footerLogo.Url" alt="Manasquan Bank"></a>
                 </figure>
                 <div class="detailsWrap">
                  	@if (!string.IsNullOrEmpty(brandDescription))
@@ -251,10 +253,12 @@
 
                 }
                 </figure>
+
                 <div class="partnersBlock">
-                  <a href="#" class="fdic">Member FDIC</a>
-                  <a href="#" class="lender">Lender</a>
+                  <span class="fdic"><img src="@memberFDICLogo.Url" alt="Manasquan FDIC"></span>
+                  <span  class="lender"><img src="@equalHousingLogo.Url" alt="Manasquan Lender"></span>
                 </div>
+
               </div>
             </div>
           </div>

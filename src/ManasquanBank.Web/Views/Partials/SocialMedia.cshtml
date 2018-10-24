@@ -53,19 +53,19 @@ int i = 0;
 <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="eventLogo">
 <img src="~/images/header/logo.png" alt="Manasquan Bank Logo">
 </a>
-@*<div class="followShare">
-<a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="follow">
-<span>Follow</span>
+
+<div class="followShare">
+<a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
+<img src="/images/home/tweet.png" alt="">
 </a>
-<div class="share">
-<a href="#"></a>
+
 </div>
-</div>*@
+
+
 </div>
 <div class="eventDetails">
 <p>    
-@{
-string msg = tweetlist.text.ToString();
+@{string msg = tweetlist.text.ToString();
 string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
 foreach (var url in tweetlist.entities.urls)
 {

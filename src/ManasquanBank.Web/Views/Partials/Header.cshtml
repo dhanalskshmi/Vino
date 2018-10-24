@@ -19,46 +19,55 @@
 			</a>
 			<div class="searchloginWrap">
                 <div class="mLogin">
-                  <a href="#">Login</a>
+                  <a href="javascript:void(0)">Login</a>
                 </div>
 				<div class="mobileSearchwrap">
-					<a href="#" class="hamburger"><span class="lines"></span></a>
-					<div class="mobileSearch">
-						<form class="" action="index.html" method="post">
-							<input type="text" name="search" placeholder="Search" value="" class="txtBox">
-							<span class="submit">
-							<i></i>
-							</span>
-						</form>
-					</div>
+					<a href="javascript:void(0)" class="hamburger"><span class="lines"><span class="screen-reader-text">Hamburger</span></span></a>
+                    <div class="mobileSearch">
+                        <span class="submit">
+                            <i></i>
+                        </span>
+                    </div>
 				</div>
 			</div>
+            <div class="mobileSearchfield">
+                <form class="" action="index.html" method="post">
+                    <label for="msearch" class="screen-reader-text ">Mobile Search</label>
+                    <input type="text" title="search" id="msearch" name="search" value="" placeholder="Search" class="txtBox">
+                </form>
+            </div>
             <div class="menuWrapper">
                 <div class="loginBlocks">
-					<div class="personalLogin">
-						<h3>Personal login </h3>
-						<form class="" action="index.html" method="post">
-							<input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
-							<input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-							<button type="button" name="button"> <span>Login </span></button>
-							<p>
-							<a href="#">Sign Up </a>
-							<a href="#">Forgot Password </a>
-							</p>
-						</form>
-					</div>
-					<div class="businessLogin">
-						<h3>Business login </h3>
-						<form class="" action="index.html" method="post">
-							<input type="text" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID">
-							<input type="password" name="password" id="password" value="" class="txtBox" placeholder="Password">
-							<button type="button" name="button"> <span>Login </span></button>
-							<p>
-							<a href="#">Forgot Password </a>
-							</p>
-						</form>
-					</div>
+                    <div class="personalLogin">
+                        <h3>PERSONAL BANKING</h3>
+                        <form id="personalLogin" action="" method="post">
+                            <label for="accessid" class="screen-reader-text ">access id</label>
+                            <input type="text" title="accessid" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID" required>
+                            <label for="password2" class="screen-reader-text ">Password</label>
+                            <input type="password" title="password2" name="password2" id="password2" value="" class="txtBox" placeholder="Password" required>
+                            <button type="submit" name="button"> <span>Login</span></button>
+                            <p>
+                                <a href="#">Sign Up</a>
+                                <a href="#">Forgot Password</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="businessLogin">
+                        <h3>BUSINESS BANKING</h3>
+                        <form id="businessLogin" action="" method="post">
+                            <label for="businessaccessid" class="screen-reader-text">business access id</label>
+                            <input type="text" name="businessaccessid" title="businessaccessid" id="businessaccessid" value="" class="txtBox" placeholder="Access ID" required>
+                            <label for="businesspassword" class="screen-reader-text ">password</label>
+                            <input type="password" name="businesspassword" title="businessaccesspwd" id="businesspassword" value="" class="txtBox" placeholder="Password" required>
+                            <button type="submit" name="button"> <span>Login</span></button>
+                            <p>
+                                <a href="#">Forgot Password</a>
+                            </p>
+                        </form>
+                    </div>
+
                 </div>
+
 				<div class="headerNav">
 					<div class="topNav">
 						<ul>
@@ -208,12 +217,12 @@
 	                            }
 	                        }
 							<li class="search">
-								<form class="" action="index.html" method="post">
+								<form class="" action="#" method="post">
 									<label class="screen-reader-text" for="search">Search </label>
-									<input type="text" name="search" id="search" placeholder="Search" value="" class="txtBox">
-									<span class="submit">
-									<i></i>
-									</span>
+                                    <input type="text" title="search" name="search" id="dsearch" value="" placeholder="Search" class="txtBox">
+                                    <span class="submit">
+                                    <i></i>
+                                    </span>
 								</form>
 							</li>
 						</ul>

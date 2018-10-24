@@ -554,6 +554,11 @@ p {
   top: 20%;
   right: 0;
   z-index: 999;
+  -webkit-transform: perspective(1px) rotate(-90deg) translate3d(0, 0, 0);
+          transform: perspective(1px) rotate(-90deg) translate3d(0, 0, 0);
+  -webkit-transform-origin: right;
+      -ms-transform-origin: right;
+          transform-origin: right;
 }
 .openAccount a {
   background: #eb2837;
@@ -562,8 +567,8 @@ p {
   color: #FFF;
   padding: 3px 7px 2px;
   text-transform: uppercase;
-  -webkit-transform: perspective(1px) rotate(-90deg) translateY(-10px) translate3d(0, 0, 0);
-          transform: perspective(1px) rotate(-90deg) translateY(-10px) translate3d(0, 0, 0);
+  -webkit-transform: perspective(1px) rotate(0deg) translateY(-10px) translate3d(0, 0, 0);
+          transform: perspective(1px) rotate(0deg) translateY(-10px) translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   display: block;
@@ -3316,17 +3321,23 @@ footer {
   background-image: url("../images/home/playpause_btn.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 0;
+  background-position: 0 -56px;
+  background-color: rgba(27, 61, 110, 0.3);
   width: 46px;
-  height: 49px;
+  height: 46px;
   position: absolute;
-  top: 270px;
+  top: 285px;
   left: 80%;
   z-index: 999999;
   z-index: 9999999;
+  border: 2px solid #1b3d6e;
+  border-radius: 50%;
 }
 .bannerWrapper #wrapper .goto button::after, .bannerWrapper #wrapper .goto button::before {
   display: none;
+}
+.bannerWrapper #wrapper .goto button.play {
+  background-position: 0 0;
 }
 
 .loginBlocks {
@@ -4796,6 +4807,10 @@ footer {
     padding-left: 20px;
     margin-top: 2px;
   }
+
+  .bannerWrapper #wrapper .goto button {
+    top: 300px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .popUpWrapper {
@@ -4884,7 +4899,7 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: 410px;
+    top: 390px;
   }
 
   .bankingServices {
@@ -5633,7 +5648,7 @@ footer {
     height: 60px;
   }
   .joinEmail form div {
-    width: 416px;
+    width: 403px;
     margin-right: 13px;
     margin-bottom: 32px;
   }
@@ -5671,6 +5686,10 @@ footer {
   }
   .bankingServices ul li {
     max-width: 348px;
+  }
+
+  .joinEmail form div {
+    width: 416px;
   }
 }
 .full-width {
@@ -6833,13 +6852,13 @@ footer {
   }
 }
 
-.joinEmail form .grecaptcha-badge {
+.joinEmail form .grecaptcha-badge, .contactFormWrap form .grecaptcha-badge {
   margin-right: 0;
   z-index: 10;
   display: none;
 }
 
-.contactUs + .joinEmail .captchaBlock {
+.contactUs + .joinEmail .captchaBlock, .re-order + .joinEmail .captchaBlock {
   visibility: hidden;
   position: absolute;
 }
@@ -7278,6 +7297,11 @@ footer {
   color: #1268e5;
   font-size: 23px;
   padding: 25px 30px;
+}
+
+.re-order .success-msg h4 {
+  padding-top: 33px;
+  padding-bottom: 0;
 }
 
 .specNeed {
@@ -9322,6 +9346,7 @@ footer {
   padding-top: 6px;
   width: -webkit-calc(100% - 380px);
   width: calc(100% - 380px);
+  position: relative;
 }
 @media (max-width: 1279px) {
   .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent {
@@ -9383,7 +9408,7 @@ footer {
 }
 @media (max-width: 1023px) {
   .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .cmpAddr2 {
-    min-height: 110px;
+    min-height: 131px;
   }
 }
 @media (max-width: 767px) {
@@ -9430,6 +9455,8 @@ footer {
   text-align: center;
   border-radius: 15px;
   line-height: 15px;
+  position: absolute;
+  bottom: 0;
 }
 @media (max-width: 1023px) {
   .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply {
@@ -9454,6 +9481,7 @@ footer {
     display: inherit;
     font-weight: bold;
     line-height: 20px;
+    position: relative;
   }
 }
 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec h5 {
@@ -11410,13 +11438,23 @@ footer {
     margin-bottom: 8px;
   }
 }
+.proDetail .heroBlock .bgWrap p small {
+  font-size: 14px;
+}
 .proDetail .heroBlock .bgWrap ul {
   list-style: disc;
-  padding: 12px 0 0 55px;
+  padding: 12px 0 0px 55px;
+  margin-bottom: 38px;
+}
+@media (max-width: 1023px) {
+  .proDetail .heroBlock .bgWrap ul {
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 767px) {
   .proDetail .heroBlock .bgWrap ul {
     padding: 10px 0 0 49px;
+    margin-bottom: 15px;
   }
 }
 .proDetail .heroBlock .bgWrap ul li {
@@ -12964,6 +13002,24 @@ footer {
     margin: 45px 0px;
   }
 }
+.persLending .heroBlock {
+  margin-bottom: 120px;
+}
+@media (max-width: 1279px) {
+  .persLending .heroBlock {
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 1023px) {
+  .persLending .heroBlock {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .persLending .heroBlock {
+    margin-bottom: 44px;
+  }
+}
 .persLending .flexWrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13023,7 +13079,13 @@ footer {
   .persLending .flexWrapper .flexContent {
     width: -webkit-calc(100% - 343px);
     width: calc(100% - 343px);
-    padding-top: 27px;
+    padding-top: 38px;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 1023px) {
+  .persLending .flexWrapper .flexContent {
+    padding-bottom: 0;
   }
 }
 @media (max-width: 767px) {
@@ -13039,9 +13101,14 @@ footer {
   font-size: 36px;
   margin-bottom: 19px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .persLending .flexWrapper .flexContent h3 {
     font-size: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  .persLending .flexWrapper .flexContent h3 {
+    margin-bottom: 11px;
   }
 }
 @media (max-width: 767px) {
@@ -13053,6 +13120,12 @@ footer {
   color: #666;
   margin-bottom: 23px;
   font-weight: 500;
+}
+@media (max-width: 1279px) {
+  .persLending .flexWrapper .flexContent p {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
 }
 .persLending .flexWrapper .flexContent ul {
   display: list-item;
@@ -13079,6 +13152,11 @@ footer {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   margin-top: 60px;
+}
+@media (max-width: 1023px) {
+  .persLending .profDisplayWrap {
+    margin-top: 0;
+  }
 }
 .persLending .profDisplayWrap .profDisplay {
   width: 222px;
@@ -13138,6 +13216,7 @@ footer {
 .persLending .profDisplayWrap .profDisplay .profContent h5 {
   color: #666;
   font-size: 20px;
+  font-weight: 600;
 }
 @media (max-width: 1279px) {
   .persLending .profDisplayWrap .profDisplay .profContent h5 {
@@ -13225,7 +13304,7 @@ footer {
   margin-bottom: 16px;
   padding-top: 34px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .persLending .homeStartWrap h4 {
     font-size: 40px;
   }
@@ -13285,7 +13364,7 @@ footer {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start;
-    padding-bottom: 22px;
+    padding-bottom: 30px;
   }
 }
 .persLending .homeStartWrap .homeStart .homeStartCont {
@@ -13307,7 +13386,7 @@ footer {
 }
 @media (max-width: 1279px) {
   .persLending .homeStartWrap .homeStart .homeStartCont p {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 .persLending .homeStartWrap .homeStart .homeStartBtn {
@@ -13323,6 +13402,7 @@ footer {
 .persLending .homeStartWrap .homeStart .homeStartBtn a {
   font-size: 26px;
   padding: 21px 47px;
+  font-weight: 600;
 }
 @media (max-width: 1279px) {
   .persLending .homeStartWrap .homeStart .homeStartBtn a {
@@ -13339,7 +13419,12 @@ footer {
 }
 @media (max-width: 1279px) {
   .persLending .flexDisWrap {
-    margin-top: 30px;
+    margin-top: 78px;
+  }
+}
+@media (max-width: 1023px) {
+  .persLending .flexDisWrap {
+    margin-top: 20px;
   }
 }
 @media (max-width: 767px) {
@@ -13367,7 +13452,7 @@ footer {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 25px;
+    margin-top: 0px;
   }
 }
 .persLending .flexDisWrap .flexDisCont h5 {
@@ -13385,7 +13470,7 @@ footer {
 .persLending .flexDisWrap .flexDisCont.full-width {
   width: 100%;
   padding-right: 33px;
-  padding-bottom: 11px;
+  padding-bottom: 6px;
 }
 .persLending .flexDisWrap .flexDisCont.full-width h5 {
   font-size: 24px;
@@ -13417,6 +13502,11 @@ footer {
   width: calc(100% - 533px);
   margin-top: 0;
 }
+@media (max-width: 1279px) {
+  .persLending .flexDisWrap .profDisplayWrap {
+    padding-bottom: 19px;
+  }
+}
 @media (max-width: 1023px) {
   .persLending .flexDisWrap .profDisplayWrap {
     width: -webkit-calc(100% - 420px);
@@ -13438,6 +13528,14 @@ footer {
 }
 .persLending .flexDisWrap .profDisplayWrap .profDisplay {
   margin: 0;
+}
+.persLending .flexDisWrap.flexDisHead {
+  margin-top: 33px;
+}
+@media (max-width: 1279px) {
+  .persLending .flexDisWrap.flexDisHead {
+    margin-top: 0;
+  }
 }
 @media (max-width: 1023px) {
   .persLending .spanel .flexWrapper .flexImage {
@@ -13461,6 +13559,9 @@ footer {
   .persLending .spanel .flexWrapper .flexContent {
     width: 100%;
   }
+}
+.persLending .spanel:last-child {
+  margin-bottom: 100px;
 }
 
 .catLanding .heroBlock .bgWrap {
@@ -15115,16 +15216,13 @@ footer {
   .timeline.invert-order.active {
     display: block;
   }
-  .timeline.flex-order.active {
-    display: block;
-  }
   .timeline::before {
     /*left: -22px;
     top: 0;
     height: calc(100% + 214px);*/
   }
   .timeline li {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     position: relative;
     float: left;
     clear: right;
@@ -15440,10 +15538,6 @@ footer {
   .timeline.invert-order.active {
     display: block;
   }
-  .timeline.flex-order.active {
-    display: block;
-  }
-
   .timeline-heading img {
     width: 100%;
   }
@@ -15517,6 +15611,10 @@ footer {
   .timeline::after {
     width: 15px;
     height: 15px;
+  }
+
+  .Android .timeline::after {
+    left: 97%;
   }
 }
 .animated {

@@ -1103,14 +1103,22 @@ if ($('.contactForm').length > 0) {
         validator.checkForm();
         }
     });
+    
 
-    $('.contactForm .selectBox').not("select.multiple,#state,#country").selectmenu({
+    $('.contactForm .selectBox').not("select.multiple, #country").selectmenu({
         style: 'dropdown',
         transferClasses: true,
         change: function() {
           $('.contactForm').validate().element(this);
        }
       });
+      $("#state").on('selectmenuchange', function() {
+        validator.checkForm();
+        console.log("State change");
+        if($("option[value='']:selected")){
+            $("#state").parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+        }
+    });
     });
 }
 $(document).ready(function () {

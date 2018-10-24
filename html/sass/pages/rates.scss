@@ -1,0 +1,79 @@
+.heroBlock {
+	&.rates{
+	.bgWrap {
+		    padding: 50px 40px 40px 40px;
+		table{
+			 thead{
+			 	tr{
+			 		th{
+			 			text-align: left;
+			 			background-color: #2c5aa7;
+			 			font-size: 18px;
+			 			padding-left: 13px;
+			 			line-height: 21px;
+			 			padding-top: 18px;
+    					padding-bottom: 18px;
+			 			&:nth-of-type(2){
+			 				    width: 20.5%;
+							    padding-right: 41px;
+							    padding-left: 13px;
+			 			}
+			 			&:nth-of-type(3){
+			 				        width: 25.2%;
+								    padding-right: 20px;
+								    
+			 			}
+			 			&:nth-of-type(4){
+			 				            width: 17%;
+									    padding-right: 20px;
+									   
+			 			}
+			 			&:nth-of-type(4){
+			 				            width: 20%;
+									    padding-right: 20px;
+									    
+			 			}
+
+			 		}
+			 	}
+			 	} 
+			 	tbody{
+			 		tr{	
+			 			td{
+			 			text-align: left;
+			 			font-size: 24px;
+			 			line-height: 21px;
+			 			p{
+			 				color: inherit;
+			 				margin-bottom: 0px;
+			 				font-size: inherit;
+			 				padding-bottom: 7px;
+			 				&:last-child{
+			 					padding-bottom:0px;
+			 				}
+			 			}
+			 			a{
+			 				color: #0066e4;
+			 			}
+			 		}
+			 			&:nth-child(odd) {
+						background-color: #fff;
+						td:nth-child(1){
+							background-color:#656565;
+							font-size: 18px;
+						}
+					}
+			 		&:nth-child(even) {
+			 			background-color: #ccd4df;
+			 			td:nth-child(1){
+							background-color:#3d3d3d;
+							font-size: 18px;
+						}
+			 		}
+					
+			 		}
+			 	}
+			}
+	}
+}
+}

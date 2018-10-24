@@ -923,7 +923,7 @@
     }
 }
 
-.joinEmail {
+.joinEmail,.contactFormWrap {
     form {
         .grecaptcha-badge {
             margin-right: 0;
@@ -933,7 +933,7 @@
     }
 }
 
-.contactUs+.joinEmail .captchaBlock {
+.contactUs+.joinEmail .captchaBlock,.re-order+.joinEmail .captchaBlock {
     visibility: hidden;
     position: absolute
 }

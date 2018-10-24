@@ -15,19 +15,18 @@
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
-    var twitterFeeds = t.GetTwitterTimeline();
-    var jArray = JArray.Parse(twitterFeeds);
-    var facebookFeed = t.GetFacebookFeed_next();
-    var fbArray = JsonConvert.DeserializeObject(facebookFeed);
-    //var memCacher = new MemoryCacher();
-    // memCacher.Delete("youtubefeed");
-    var youTubeFeed = t.GetYoutubeFeed();
-    var instaFeeds = t.GetInstagramTimeline();
+    
+    
+    
 }
+
+
+
 <div class="socialMedia">
     <section class="heroBanner">
         <figure class="bannerImage" style="background-image: url('@heroImage.Url')"></figure>
     </section>
+   
     <section class="heroBlock">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -54,134 +53,265 @@
         <div class="containerWrapper">
             <div class="bgWrap">
                 <div class="filtr-container">
-@if (jArray.Count > 0)
+@try
 {
-    int i = 0;
-    foreach (dynamic tweetlist in jArray)
+    var twitterFeeds = t.GetTwitterTimeline();
+    var jArray = JArray.Parse(twitterFeeds);
+    if (jArray.Count > 0)
     {
-        var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-        string[] temp, timesplit;
-        string twitterdate, displayTime;
-        try
+        int i = 0;
+        foreach (dynamic tweetlist in jArray)
         {
-            twitterdate = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-            temp = twitterdate.Split(' ');
-            timesplit = temp[3].Split(':');
-            TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
-            DateTime time = DateTime.Today.Add(timespan);
-            displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
-        }
-        catch (Exception ex)
-        {
-            displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-        }
+            var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+            string[] temp, timesplit;
+            string twitterdate, displayTime;
+            try
+            {
+                twitterdate = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                temp = twitterdate.Split(' ');
+                timesplit = temp[3].Split(':');
+                TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+                DateTime time = DateTime.Today.Add(timespan);
+                displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+            }
+            catch (Exception ex)
+            {
+                displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+            }
 
-        DateTime created_time = Convert.ToDateTime(displayTime);
-        var twDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
-        string msg = tweetlist.text.ToString();
-        string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
-        foreach (var url in tweetlist.entities.urls)
-        {
-            string link = url.url.ToString();
-            string newtab = "true";
-            text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
+            DateTime created_time = Convert.ToDateTime(displayTime);
+            var formatedDate = created_time.ToString("yyyy-MM-dd");
+            var twDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
+            string msg = tweetlist.text.ToString();
+            string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
+            foreach (var url in tweetlist.entities.urls)
+            {
+                string link = url.url.ToString();
+                string newtab = "true";
+                text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
 
-        }
-        if (i < 5)
-        {
-        <div class="filtr-item" data-category="tw">
-            <div class="flexPanelWrap">
-                <div class="flexPanelHead">
-                    <div class="headLogo">
-                        <figure>
-                            <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
-                                <img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank">
-                            </a>
-                        </figure>
-                        <h5><a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">Manasquan Bank</a></h5>
-                    </div>
-                    <div class="headDate">
-                        <span>@twDate</span>
+            }
+           
+                <div class="filtr-item" data-category="tw" data-date="@formatedDate">
+                    <div class="flexPanelWrap">
+                        <div class="flexPanelHead">
+                            <div class="headLogo">
+                                <figure>
+                                    <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
+                                        <img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank">
+                                    </a>
+                                </figure>
+                                <h5><a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">Manasquan Bank</a></h5>
+                            </div>
+                            <div class="headDate">
+                                <span>@twDate</span>
+                            </div>
+                        </div>
+                        <div class="flexPanelBody">
+                            @if (tweetlist.extended_entities != null)
+                            {
+
+                                foreach (dynamic media in tweetlist.extended_entities["media"])
+                                {
+
+                                    <figure>
+                                        <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
+                                    </figure>
+
+                                }
+
+                            }
+                            <p>@Html.Raw(text)</p>
+                        </div>
+                        <div class="flexPanelFoot">
+                            <div class="flexIcon">
+                                <figure>
+                                    <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
+                                        <img src="~/images/social/twitter.png" alt="Twitter">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="flexPanelBody">
-                    @if (tweetlist.extended_entities != null)
-                    {
+           
+            
+        }
+    }
+}
+catch (Exception e)
+{
+    @Html.Raw(e)
+}
 
-                        foreach (dynamic media in tweetlist.extended_entities["media"])
-                        {
 
+@try
+{
+    var facebookFeed = t.GetFacebookFeed_next();
+    var fbArray = JsonConvert.DeserializeObject(facebookFeed);
+    if (fbArray.data.Count > 0)
+    {
+        int i = 0;
+        foreach (dynamic fblist in fbArray.data)
+        {
+            var message = fblist.message;
+            var picture = fblist.full_picture;
+            var link = fblist.link;
+            var profile_url = fblist.from.id;
+
+            string[] temp, timesplit;
+            string fbDate, displayTime;
+            try
+            {
+                fbDate = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
+                temp = fbDate.Split(' ');
+                timesplit = temp[3].Split(':');
+                TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+                DateTime time = DateTime.Today.Add(timespan);
+                displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+            }
+            catch (Exception ex)
+            {
+                displayTime = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
+            }
+
+            DateTime created_time = Convert.ToDateTime(displayTime);
+            var formatedDate = created_time.ToString("yyyy-MM-dd");
+            var facebookDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
+            <div class="filtr-item" data-category="fb" data-date="@formatedDate">
+                <div class="flexPanelWrap">
+                    <div class="flexPanelHead">
+                        <div class="headLogo">
                             <figure>
-                                <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
+                                <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
                             </figure>
-
+                            <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
+                        </div>
+                        <div class="headDate">
+                            <span>@facebookDate</span>
+                        </div>
+                    </div>
+                    <div class="flexPanelBody">
+                        @if (picture != null)
+                        {
+                            <figure>
+                                <a href="@link" target="_blank"><img src="@picture" alt="@message"></a>
+                            </figure>
                         }
-
-                    }
-                    <p>@Html.Raw(text)</p>
-                </div>
-                <div class="flexPanelFoot">
-                    <div class="flexIcon">
-                        <figure>
-                            <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
-                                <img src="~/images/social/twitter.png" alt="Twitter">
-                                </a>
-                        </figure>
+                    
+                        <p>@message</p>
+                    </div>
+                    <div class="flexPanelFoot">
+                        <div class="flexIcon">
+                            <figure>
+                                <a href="//www.facebook.com/@profile_url"><img src="~/images/social/facebook.png" alt="Twitter"></a>
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         }
-        i++;
     }
 }
-
-@if (fbArray.data.Count > 0)
+catch(Exception e)
 {
-    int i = 0;
-    foreach (dynamic fblist in fbArray.data)
+    
+}
+
+@try
+{
+    var youTubeFeed = t.GetYoutubeFeed();
+    if (youTubeFeed.Count > 0)
     {
-        var message = fblist.message;
-        var picture = fblist.full_picture;
-        var link = fblist.link;
-        var profile_url = fblist.from.id;
-
-        string[] temp, timesplit;
-        string fbDate, displayTime;
-        try
+        int j = 0;
+        foreach (var item in youTubeFeed)
         {
-            fbDate = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
-            temp = fbDate.Split(' ');
-            timesplit = temp[3].Split(':');
-            TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
-            DateTime time = DateTime.Today.Add(timespan);
-            displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
-        }
-        catch (Exception ex)
-        {
-            displayTime = fblist.created_time.ToString("hh:mm , dd MMM yyyy");
-        }
+            DateTime yt_time = Convert.ToDateTime(item.Snippet.PublishedAt.Date);
+            var FormatedTime = t.changeDateFormat(item.Snippet.PublishedAt.Date, DateTime.UtcNow).ToString();
+            var formatedDate = yt_time.ToString("yyyy-MM-dd");
+            if (j > 1)
+            {
+                <div class="filtr-item" data-category="yt" data-date="@formatedDate">
+                    <div class="flexPanelWrap">
+                        <div class="flexPanelHead">
+                            <div class="headLogo">
+                                <figure>
+                                    <a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Logo"></a>
+                                </figure>
+                                <h5><a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank">Manasquan Bank</a></h5>
+                            </div>
+                            <div class="headDate">
+                                <span>@FormatedTime</span>
+                            </div>
+                        </div>
+                        <div class="flexPanelBody">
+                            @if (item.Snippet.Thumbnails != null)
+                            {
+                                <figure>
+                                    @if (item.Id.VideoId != null)
+                                    {
+                                        <a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank"><img src="@item.Snippet.Thumbnails.High.Url" alt="@item.Snippet.Title"></a>
+                                    }
 
-        DateTime created_time = Convert.ToDateTime(displayTime);
-        var facebookDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
-        <div class="filtr-item" data-category="fb">
+                                </figure>
+                            }
+                            <p><a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank">@item.Snippet.Title</a></p>
+                        </div>
+                        <div class="flexPanelFoot">
+                            <div class="flexIcon">
+                                <figure>
+                                    <a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank"><img src="~/images/social/youtube.png" alt="YouTube"></a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+            j++;
+        }
+    }
+}
+catch (Exception e)
+{
+    @Html.Raw(e)
+}
+
+
+@try
+{
+    var instaFeed = t.GetInstagramTimeline();
+    //Deserializing it into an object that will contain each of the keys and their values
+    dynamic InstaFeedObject = JsonConvert.DeserializeObject(instaFeed);
+    foreach (var item in InstaFeedObject)
+    {
+        var image_url = item.images.standard_resolution.url;
+        double created_time = item.created_time;
+        var profile_name = item.user.username;
+        var message = item.caption.text;
+        var link = item.link;
+        DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        DateTime b = origin.AddSeconds(created_time);
+        var formatedDate = b.ToString("yyyy-MM-dd");
+        var FormatedTime = t.GetRelativeTimeBetweenDates(b, DateTime.UtcNow).ToString();
+        <div class="filtr-item" data-category="ig" data-date="@formatedDate">
             <div class="flexPanelWrap">
                 <div class="flexPanelHead">
                     <div class="headLogo">
                         <figure>
-                            <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
+                            <a href="//www.instagram.com/@profile_name" target="_blank"><img src="~/images/header/logo_fav.jpg" alt="Logo Image"></a>
                         </figure>
-                        <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
+                        <h5><a href="//www.instagram.com/@profile_name" target="_blank">Manasquan Bank</a></h5>
                     </div>
                     <div class="headDate">
-                        <span>@facebookDate</span>
+                        <span>@FormatedTime</span>
                     </div>
                 </div>
                 <div class="flexPanelBody">
-                    @if (picture != null)
+                    @if (image_url != null)
                     {
                         <figure>
-                            <a href="@link" target="_blank"><img src="@picture" alt="@message"></a>
+                            <a href="@link" target="_blank"></a><img src="@image_url" alt="Instagram Post Image"></a>
                         </figure>
                     }
                     
@@ -190,344 +320,21 @@
                 <div class="flexPanelFoot">
                     <div class="flexIcon">
                         <figure>
-                            <a href="//www.facebook.com/@profile_url"><img src="~/images/social/facebook.png" alt="Twitter"></a>
+                            <a href="//www.instagram.com/@profile_name" target="_blank"><img src="~/images/social/instagram.png" alt="Instagram"></a>
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
+        
     }
 }
-
-@if (youTubeFeed.Count > 0)
+catch (Exception e)
 {
-    int j = 0;
-    foreach (var item in youTubeFeed)
-    {
-        DateTime yt_time = Convert.ToDateTime(item.Snippet.PublishedAt.Date);
-        var FormatedTime = t.GetRelativeTimeBetweenDates(yt_time, DateTime.UtcNow).ToString();
-        if (j > 1)
-        {
-         <div class="filtr-item" data-category="yt">
-            <div class="flexPanelWrap">
-                <div class="flexPanelHead">
-                    <div class="headLogo">
-                        <figure>
-                            <a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Logo"></a>
-                        </figure>
-                        <h5><a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank">Manasquan Bank</a></h5>
-                    </div>
-                    <div class="headDate">
-                        <span>@FormatedTime</span>
-                    </div>
-                </div>
-                <div class="flexPanelBody">
-                    @if (item.Snippet.Thumbnails != null)
-                    {
-                        <figure>
-                            @if(item.Id.VideoId != null)
-                            {
-                                <a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank"><img src="@item.Snippet.Thumbnails.High.Url" alt="@item.Snippet.Title"></a>
-                            }
-                            
-                        </figure>
-                    }
-                    <p><a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank">@item.Snippet.Title</a></p>
-                </div>
-                <div class="flexPanelFoot">
-                    <div class="flexIcon">
-                        <figure>
-                            <a href="//www.youtube.com/channel/@item.Snippet.ChannelId" target="_blank"><img src="~/images/social/youtube.png" alt="YouTube"></a>
-</figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        }
-        j++;
-    }
+    @Html.Raw(e)
 }
-<!--
-                    <div class="filtr-item" data-category="fb">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5><a href="#">Manasquan Bank </a></h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-1.png" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum <a href="">http://www.asdasd.com</a> nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <a href="#"> <img src="images/social/twitter.png" alt="Twitter"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="filtr-item" data-category="tw">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <a href=""><img src="images/social/social-2.png" alt="Social Image"></a>
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/facebook.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="yt">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-3.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/twitter.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="ig">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-4.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/facebook.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="fb">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-5.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/twitter.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="tw">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/twitter.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="ig">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-6.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/twitter.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="yt">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-7.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/facebook.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="fb">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-8.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/twitter.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filtr-item" data-category="yt">
-                        <div class="flexPanelWrap">
-                            <div class="flexPanelHead">
-                                <div class="headLogo">
-                                    <figure>
-                                        <img src="images/header/logo_fav.jpg" alt="Logo Image">
-                                    </figure>
-                                    <h5>Manasquan Bank</h5>
-                                </div>
-                                <div class="headDate">
-                                    <span>2d</span>
-                                </div>
-                            </div>
-                            <div class="flexPanelBody">
-                                <figure>
-                                    <img src="images/social/social-9.jpg" alt="Social Image">
-                                </figure>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra leo eu porttitor tristique. Etiam pretium quam rutrum nisi placerat malesuada. Nulla facilisi.</p>
-                            </div>
-                            <div class="flexPanelFoot">
-                                <div class="flexIcon">
-                                    <figure>
-                                        <img src="images/social/facebook.png" alt="Twitter">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    -->
+
                 </div>
             </div>
         </div>
@@ -560,6 +367,7 @@
         var filterizd = $('.filtr-container').filterizr(options);
         // If you have already instantiated your Filterizr then call...
         filterizd.filterizr('setOptions', options);
+        filterizd.filterizr('sort', 'date', 'desc');
 
 });
 

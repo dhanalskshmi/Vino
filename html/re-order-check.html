@@ -958,6 +958,7 @@
         $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
       }
       $("#state,#country").selectmenu();
+      $("#country").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
 
       $("#country").on('selectmenuchange', function() {
         $("#state").selectmenu("destroy");
@@ -967,7 +968,7 @@
         $.each(myJson.countries[country_id].states, function(index1, value1) {
 
           $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-          console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+          // console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
         });
         $("#state").selectmenu();
 

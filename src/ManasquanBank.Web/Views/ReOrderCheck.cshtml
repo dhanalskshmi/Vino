@@ -17,8 +17,8 @@
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
     var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
     var thankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
-    var reOrderCheckAdminEmail = Model.Content.HasValue("AdminEmail") ? Model.Content.GetPropertyValue<int>("AdminEmail") : 0;
-    var reOrderCheckConfirmationEmail = Model.Content.HasValue("ConfirmationEmail") ? Model.Content.GetPropertyValue<int>("ConfirmationEmail") : 0;
+    var reOrderCheckAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
+    var reOrderCheckConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
 
 
 }
@@ -67,10 +67,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/find-us.png" alt="find-us">
-                                            }
+                                           
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -89,10 +86,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/find-us.png" alt="find-us">
-                                            }
+                                            
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -111,10 +105,7 @@
                                     {
                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                     }
-                                    else
-                                    {
-                                    <img src="/images/about/find-us.png" alt="find-us">
-                                    }
+                                    
                             </span>
                             <span class="heroLinksText">
                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -147,10 +138,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/expert-icon.png" alt="exper-icon">
-                                            }
+                                            
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -169,10 +157,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/expert-icon.png" alt="expert-icon">
-                                            }
+                                            
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -192,10 +177,7 @@
                                     {
                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                     }
-                                    else
-                                    {
-                                    <img src="/images/about/expert-icon.png" alt="expert-icon">
-                                    }
+                                    
                             </span>
                             <span class="heroLinksText">
                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -234,13 +216,13 @@
                         {
                             if (!string.IsNullOrEmpty(thankYouMessage.ToString()))
                             {
-                                <div id="joinSuccess">
+                                <div id="contactSucc" class="success-msg">
                                     <h4>@Html.Raw(thankYouMessage)</h4>
                                 </div>
                             }
                             else
                             {
-                                <div id="joinSuccess">
+                                <div id="contactSucc" class="success-msg">
                                     <h4>@ViewBag.ReOrderCheckSuccessMessage</h4>
                                 </div>
                             }
@@ -258,6 +240,7 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-lg-12 threecolsWrapper">
+                                    <span class="wpcf7-form"></span>
                                     <div class="form-group col-lg-4 col-sm-6 col-xs-12 nopadding">
                                         <label for="firstName">First Name</label>
                                         <input type="text" class="form-control " maxlength="50" required name="firstName" id="firstName">
@@ -282,7 +265,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="cntEmail">Email</label>
-                                        <input type="email" class="form-control error" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
+                                        <input type="email" class="form-control" required="" name="cntEmail" id="cntEmail" aria-required="true" aria-invalid="true">
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
@@ -302,10 +285,9 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="state">State</label>
-                                        <select name="state" id="state" class="form-control selectBox" default="">
+                                        <select name="state" id="state" required class="form-control selectBox" default="">
                                             <option value="">-Select State-</option>
-                                            <option value="State 1">State 1</option>
-                                            <option value="State 2">State 2</option>
+                                          
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -317,10 +299,9 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="country">Country</label>
-                                        <select name="country" id="country" class="form-control selectBox" default="">
+                                        <select name="country" id="country" required class="form-control selectBox" default="">
                                             <option value="" rel="">-Select Country-</option>
-                                            <option value="Country 1">Country 1</option>
-                                            <option value="Country 2">Country 2</option>
+                                           
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -331,6 +312,7 @@
                                 <p class="form1_error hide">The captcha is required and can't be empty.</p>
 
                             </div>
+                            <span class="wpcf7-form"></span>
                             <div class="row mob-flex">
                                 <button class="btnManasq"><span>SUBMIT</span></button>
                                 <input type="hidden" id="AdminEmail" name="AdminEmail" value="@reOrderCheckAdminEmail" />
@@ -353,4 +335,65 @@
 </div>
 @section InnerBottomScript {
     <script src="~/scripts/lib/jquery-ui.js"></script>
+    <script src="~/scripts/lib/country-json.js"></script>
+<script>
+    $(document).ready(function() {
+      $("#contactSucc").length > 0 && $("html, body").animate({
+        scrollTop: $(".contactFormWrap").offset().top - 200
+      }, "slow")
+
+      if (jQuery("#zip").length > 0) {
+        document.getElementById('zip').addEventListener('input', function(e) {
+          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+          e.target.value = x[1];
+        });
+      }
+      if (jQuery("#accNo").length > 0) {
+        document.getElementById('accNo').addEventListener('input', function(e) {
+          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
+          e.target.value = x[1];
+        });
+      }
+
+    });
+
+    $(document).ready(function() {
+      $.each(myJson.countries, function(index, value) {
+        $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+      });
+      country_id = $("#country").attr("default");
+      $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+
+
+      country_id = $("#country").find('option:selected').attr('rel');
+      // console.log("Country INDEX : " + country_id);
+      if (country_id != "") {
+        $.each(myJson.countries[country_id].states, function(index1, value1) {
+          $("#state").find("option:first").text("-Select State-");
+          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+          // $("#state").selectmenu("refresh");
+        });
+
+        state_id = $("#state").attr("default");
+        $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+      }
+      $("#state,#country").selectmenu();
+
+      $("#country").on('selectmenuchange', function() {
+        $("#state").selectmenu("destroy");
+        country_id = $(this).find('option:selected').attr('rel');
+        $("#state").find("option").not("option:nth-child(1)").remove();
+        $("#state").find("option:first").text("-Select State-");
+        $.each(myJson.countries[country_id].states, function(index1, value1) {
+
+          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+          console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        });
+        $("#state").selectmenu();
+
+      });
+
+    });
+</script>
+
 }
