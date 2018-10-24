@@ -37,7 +37,7 @@
                     <div class="decade-wrapper" id="decade-wrapper">
                         <ul class="tabs">
                             <li>
-                                <a href="#1800">1800s-1950s</a>
+                                <a href="#1800" class="active">1800s-1950s</a>
                             </li>
                             <li>
                                 <a href="#1950">1950s-1970s</a>
@@ -63,7 +63,7 @@
                     <div class="timeline-wrapper">
                         @{
                             startYear = 1800;
-                            endYear = 1950;
+                            endYear = 1949;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
 
@@ -157,7 +157,7 @@
                         @{
 
                             startYear = 1950;
-                            endYear = 1970;
+                            endYear = 1969;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
 
@@ -249,7 +249,7 @@
                         @{
 
                             startYear = 1950;
-                            endYear = 1970;
+                            endYear = 1969;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
 
@@ -335,7 +335,7 @@
 
                         @{
                             startYear = 1970;
-                            endYear = 1990;
+                            endYear = 1989;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
 
@@ -427,7 +427,7 @@
                         }
                         @{
                             startYear = 1970;
-                            endYear = 1990;
+                            endYear = 1989;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
 
@@ -695,7 +695,7 @@
 
                         @{
 
-                            startYear = 2007;
+                            startYear = 2008;
                             endYear = currentYear;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();
@@ -787,7 +787,7 @@
 
                         @{
 
-                            startYear = 2007;
+                            startYear = 2008;
                             endYear = currentYear;
 
                             timelineDetails = timelineListing.DescendantsOrSelf("timelineItems").Where(x => x.HasValue("filterDate") && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) >= startYear && int.Parse(x.GetPropertyValue<DateTime>("filterDate").ToString("yyyy")) <= endYear).OrderBy(x => Convert.ToDateTime(x.GetPropertyValue<string>("filterDate"))).ToList();

@@ -24,9 +24,12 @@
     var leadership = Model.Content.AncestorOrSelf(2).Children();
     var backgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
     var timelineTitle = Model.Content.GetPropertyValue<string>("timelineTitle");
+
+    //var timeline = Model.Content.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "timeLine");
     var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
 
 }
+
 
 <div class="aboutUs">
 
