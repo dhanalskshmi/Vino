@@ -16,10 +16,10 @@ namespace ManasquanBank.Web.Controllers
         [HttpPost]
         public ActionResult SubmitForm(BusinessManagementModel business)
         {
-            //DataHelper validate = new DataHelper();
-            //var response = Request["g-recaptcha-response"];
-            //if (validate.GoogleCaptchaValidate(response))
-            //{
+            DataHelper validate = new DataHelper();
+            var response = Request["g-recaptcha-response"];
+            if (validate.GoogleCaptchaValidate(response))
+            {
                 try
                 {
                     if (business.addressTwo == null)
@@ -70,11 +70,11 @@ namespace ManasquanBank.Web.Controllers
                     LogHelper.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, ex.Message, ex.InnerException);
                     ViewBag.businessErrorMessage = "There is some problem, please try again later";
                 }
-            //}
-            //else
-            //{
-            //    ViewBag.businessErrorMessage = "We're sorry, an recaptcha error has occured, please reload the page and try again";
-            //}
+            }
+            else
+            {
+                ViewBag.businessErrorMessage = "We're sorry, an recaptcha error has occured, please reload the page and try again";
+            }
 
             return CurrentUmbracoPage();
         }

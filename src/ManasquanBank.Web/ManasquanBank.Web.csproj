@@ -642,6 +642,7 @@
     <Content Include="scripts\lodash.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\main.min.js" />
+    <Content Include="Views\BusinessManagement.cshtml" />
     <Content Include="Views\ClientService.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
@@ -747,7 +748,6 @@
     <Content Include="Views\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\Partials\uDateFoldersy\uDateFoldersyFolderRedirect.cshtml" />
     <Content Include="Views\ReOrderCheck.cshtml" />
-    <Content Include="Views\BuisnessManagement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

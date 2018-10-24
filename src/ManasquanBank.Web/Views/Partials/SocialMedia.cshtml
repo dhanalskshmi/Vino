@@ -64,8 +64,7 @@ int i = 0;
 </div>
 <div class="eventDetails">
 <p>    
-@{
-string msg = tweetlist.text.ToString();
+@{string msg = tweetlist.text.ToString();
 string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
 foreach (var url in tweetlist.entities.urls)
 {

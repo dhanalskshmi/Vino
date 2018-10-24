@@ -1,4 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using umbraco.MacroEngines
 @using Newtonsoft.Json
 @using RJP.MultiUrlPicker.Models
@@ -15,13 +16,13 @@
     var content = Model.Content.GetPropertyValue<string>("content");
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
     var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
-    var thankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
-    var reOrderCheckAdminEmail = Model.Content.HasValue("AdminEmail") ? Model.Content.GetPropertyValue<int>("AdminEmail") : 0;
-    var reOrderCheckConfirmationEmail = Model.Content.HasValue("ConfirmationEmail") ? Model.Content.GetPropertyValue<int>("ConfirmationEmail") : 0;
+    var businessthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
+    var businessAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
+    var businessConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
 }
 @section InnerTopStyle {
-<link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
-<link href="~/css/lib/jquery.timepicker.css" rel="stylesheet" />
+    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/lib/jquery.timepicker.css" rel="stylesheet" />
 }
 <div class="re-order">
 
@@ -63,10 +64,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                else
-                                                {
-                                                    <img src="/images/about/find-us.png" alt="find-us">
-                                                }
+                                                
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -85,10 +83,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                else
-                                                {
-                                                    <img src="/images/about/find-us.png" alt="find-us">
-                                                }
+                                                
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -107,17 +102,14 @@
                                         {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                         }
-                                        else
-                                        {
-                                            <img src="/images/about/find-us.png" alt="find-us">
-                                        }
+                                        
                                     </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            @Html.Raw(cTAtitle)
-                                        }
-                                    </span>
+                                                    <span class="heroLinksText">
+                                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                                        {
+                                                            @Html.Raw(cTAtitle)
+                                                        }
+                                                    </span>
                                 }
 
                             </li>
@@ -143,10 +135,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                else
-                                                {
-                                                    <img src="/images/about/expert-icon.png" alt="exper-icon">
-                                                }
+                                                
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -165,10 +154,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                else
-                                                {
-                                                    <img src="/images/about/expert-icon.png" alt="expert-icon">
-                                                }
+                                                
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -188,18 +174,15 @@
                                         {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                         }
-                                        else
-                                        {
-                                            <img src="/images/about/expert-icon.png" alt="expert-icon">
-                                        }
+                                        
                                     </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                            @Html.Raw(replacetitle)
-                                        }
-                                    </span>
+                                                    <span class="heroLinksText">
+                                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                                        {
+                                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                                            @Html.Raw(replacetitle)
+                                                        }
+                                                    </span>
                                 }
 
                             </li>
@@ -213,24 +196,24 @@
     <section class="greyPanel">
         <div class="containerWrapper">
             <div class="bgWrap">
-@if (String.IsNullOrEmpty(ViewBag.ReOrderCheckErrorMessage) == false)
-{
-    <div class="alert alert-warning">
-        <strong>Warning!</strong> @ViewBag.ReOrderCheckErrorMessage
-    </div>
-}
+                @if (String.IsNullOrEmpty(ViewBag.ReOrderCheckErrorMessage) == false)
+                {
+                    <div class="alert alert-warning">
+                        <strong>Warning!</strong> @ViewBag.ReOrderCheckErrorMessage
+                    </div>
+                }
                 <div class="contactFormWrap">
 
-                    @using (Html.BeginUmbracoForm("SubmitForm", "ReOrderCheck", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
+                    @using (Html.BeginUmbracoForm("SubmitForm", "BusinessManagement", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
                     {
 
 
                         if (String.IsNullOrEmpty(ViewBag.ReOrderCheckSuccessMessage) == false)
                         {
-                            if (!string.IsNullOrEmpty(thankYouMessage.ToString()))
+                            if (!string.IsNullOrEmpty(businessthankYouMessage.ToString()))
                             {
                                 <div id="contactSucc">
-                                    <h4>@Html.Raw(thankYouMessage)</h4>
+                                    <h4>@Html.Raw(businessthankYouMessage)</h4>
                                 </div>
                             }
                             else
@@ -249,16 +232,17 @@
                             string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
                             string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
                             <div class="row">
-
+                                <span class="wpcf7-form"></span>
                                 <div class="col-md-12 col-sm-12 col-lg-12 parentWrapper">
+                                   
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="loanPurpose">Department</label>
                                         <select name="loanPurpose" id="loanPurpose" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            <option value="">Executive Management </option>
-                                            <option value="">Senior Management </option>
-                                            <option value="">Branch Managers </option>
-                                            <option value="">Foundation </option>
+                                            <option value="Executive Management">Executive Management </option>
+                                            <option value="Senior Management">Senior Management </option>
+                                            <option value="Branch Managers">Branch Managers </option>
+                                            <option value="Foundation">Foundation </option>
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -266,29 +250,29 @@
                                         <label for="loanOfficer">Employee</label>
                                         <select name="loanOfficer" id="loanOfficer" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            <option value="">Ralph Tancredi</option>
-                                            <option value="">William L. Kays </option>
-                                            <option value="">Lisa Connell </option>
-                                            <option value="">David Tepper </option>
-                                            <option value="">Kathie Adams</option>
-                                            <option value="">Suellen Arecchi</option>
-                                            <option value="">Nancy Canary</option>
-                                            <option value="">Jeffrey Casten</option>
-                                            <option value="">Luke Caverly</option>
-                                            <option value="">Lisa Colonno</option>
-                                            <option value="">Beth Culos</option>
-                                            <option value="">Robert Hart</option>
-                                            <option value="">Wililam Horvath</option>
-                                            <option value="">Rich Lanza</option>
-                                            <option value="">Loralee Neyland</option>
-                                            <option value="">Christina Paccione</option>
-                                            <option value="">Lisa Roettger</option>
-                                            <option value="">Ann Slavick</option>
-                                            <option value="">Nancy Steck</option>
-                                            <option value="">Alan J Stuart</option>
-                                            <option value="">Jennifer Weisert</option>
-                                            <option value="">Mary Anne Whittemore</option>
-                                            <option value="">Steve Yarosz</option>
+                                            <option value="Ralph Tancredi">Ralph Tancredi</option>
+                                            <option value="William L. Kays">William L. Kays </option>
+                                            <option value="Lisa Connell">Lisa Connell </option>
+                                            <option value="David Tepper">David Tepper </option>
+                                            <option value="Kathie Adams">Kathie Adams</option>
+                                            <option value="Suellen Arecchi">Suellen Arecchi</option>
+                                            <option value="Nancy Canary">Nancy Canary</option>
+                                            <option value="Jeffrey Casten">Jeffrey Casten</option>
+                                            <option value="Luke Caverly">Luke Caverly</option>
+                                            <option value="Lisa Colonno">Lisa Colonno</option>
+                                            <option value="Beth Culos">Beth Culos</option>
+                                            <option value="Robert Hart">Robert Hart</option>
+                                            <option value="Wililam Horvath">Wililam Horvath</option>
+                                            <option value="Rich Lanza">Rich Lanza</option>
+                                            <option value="Loralee Neyland">Loralee Neyland</option>
+                                            <option value="Christina Paccione">Christina Paccione</option>
+                                            <option value="Lisa Roettger">Lisa Roettger</option>
+                                            <option value="Ann Slavick">Ann Slavick</option>
+                                            <option value="Nancy Steck">Nancy Steck</option>
+                                            <option value="Alan J Stuart">Alan J Stuart</option>
+                                            <option value="Jennifer Weisert">Jennifer Weisert</option>
+                                            <option value="Mary Anne Whittemore">Mary Anne Whittemore</option>
+                                            <option value="Steve Yarosz">Steve Yarosz</option>
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -331,6 +315,8 @@
                                         <label for="state">State</label>
                                         <select name="state" id="state" class="form-control selectBox" default="" required="">
                                             <option value="">-Select State-</option>
+                                            <option value="State 1">State 1</option>
+                                            <option value="State 2">State 2</option>
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -344,6 +330,8 @@
                                         <label for="country">Country</label>
                                         <select name="country" id="country" class="form-control selectBox" default="" required="">
                                             <option value="" rel="">-Select Country-</option>
+                                            <option value="Country 1">Country 1</option>
+                                            <option value="Country 2">Country 2</option>
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -361,12 +349,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mob-flex">
+                            <div class="captchaBlock">
+                                <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
+                                <p class="form1_error hide">The captcha is required and can't be empty.</p>
 
-                                <button class="btnManasq"><span>SUBMIT</span></button>
-                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@reOrderCheckAdminEmail" />
-                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@reOrderCheckConfirmationEmail" />
                             </div>
+                                            <span class="wpcf7-form"></span>
+                                            <div class="row mob-flex">
+
+                                                <button class="btnManasq"><span>SUBMIT</span></button>
+                                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
+                                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />
+                                            </div>
 
                         }
                     }
@@ -375,101 +369,101 @@
         </div>
     </section>
 
- </div>
+</div>
 @section InnerBottomScript {
-<script src="~/scripts/lib/jquery-ui.js"></script>
-<script src="~/scripts/lib/jquery.timepicker.min.js"></script>
+    <script src="~/scripts/lib/jquery-ui.js"></script>
+    <script src="~/scripts/lib/jquery.timepicker.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  $('#basicExample').timepicker();
+    <script>
+        $(document).ready(function () {
+            $('#basicExample').timepicker();
 
-   $('body').on('click', '#basicExample', function() {
-var maxMenuWidth = $("#basicExample").innerWidth();
-$(".ui-timepicker-wrapper").css({'max-width':maxMenuWidth+1});
+            $('body').on('click', '#basicExample', function () {
+                var maxMenuWidth = $("#basicExample").innerWidth();
+                $(".ui-timepicker-wrapper").css({ 'max-width': maxMenuWidth + 1 });
 
-});
+            });
 
-$(window).on("load resize", function(){
-    var maxMenuWidth = $('.form-group').width();
-    $(".ui-timepicker-list").css({'max-width':maxMenuWidth+2});
-});
-    $("#contactSucc").length > 0 && $("html, body").animate({
-        scrollTop: $(".contactFormWrap").offset().top - 200
-    }, "slow")
+            $(window).on("load resize", function () {
+                var maxMenuWidth = $('.form-group').width();
+                $(".ui-timepicker-list").css({ 'max-width': maxMenuWidth + 2 });
+            });
+            $("#contactSucc").length > 0 && $("html, body").animate({
+                scrollTop: $(".contactFormWrap").offset().top - 200
+            }, "slow")
 
-    if (jQuery("#zip").length > 0) {
-    document.getElementById('zip').addEventListener('input', function (e) {
-        var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
-        e.target.value = x[1];
-    });
-}
-   if (jQuery("#accNo").length > 0) {
-    document.getElementById('accNo').addEventListener('input', function (e) {
-        var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
-        e.target.value = x[1];
-    });
-}
+            if (jQuery("#zip").length > 0) {
+                document.getElementById('zip').addEventListener('input', function (e) {
+                    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+                    e.target.value = x[1];
+                });
+            }
+            if (jQuery("#accNo").length > 0) {
+                document.getElementById('accNo').addEventListener('input', function (e) {
+                    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
+                    e.target.value = x[1];
+                });
+            }
 
-});
+        });
 
-// $(document).ready(function () {
-//     $.each(myJson.countries, function (index, value) {
-//         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-//     });
-//     country_id = $("#country").attr("default");
-//     $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
-//     $("#country").on('selectmenuchange', function () {
-//         $("#state").selectmenu("destroy");
-//          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        // $(document).ready(function () {
+        //     $.each(myJson.countries, function (index, value) {
+        //         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+        //     });
+        //     country_id = $("#country").attr("default");
+        //     $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+        //     $("#country").on('selectmenuchange', function () {
+        //         $("#state").selectmenu("destroy");
+        //          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
 
-//         country_id = $(this).find('option:selected').attr('rel');
-//           $("#state").selectmenu();
-//         $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             // $("#SltState2").selectmenu("refresh");
-//         });
-
-
-//     });
-
-//     country_id = $("#country").find('option:selected').attr('rel');
-//     if (country_id != "") {
-//         $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             // $("#state").selectmenu("refresh");
-//         });
+        //         country_id = $(this).find('option:selected').attr('rel');
+        //           $("#state").selectmenu();
+        //         $.each(myJson.countries[country_id].states, function (index1, value1) {
+        //             $("#state").find("option:first").text("-Select State-");
+        //             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        //             // $("#SltState2").selectmenu("refresh");
+        //         });
 
 
-//     }
-// });
+        //     });
 
-// $(document).ready(function () {
-// var country_id;
-// var state_id;
-// $.each(myJson.countries, function (index, value) {
-//     $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-//      $("#country").change(function () {
-//         $("#state").find("option:gt(0)").remove();
-//         $("#state").find("option:first").text("Loading...");
-//         $("#state").selectbox();
-//          country_id = $(this).find('option:selected').attr('rel');
-//          $.each(myJson.countries[country_id].states, function (index1, value1) {
-//             $("#state").find("option:first").text("-Select State-");
-//             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-//             $("#state").selectbox();
-//         });
-//     });
-//  });
-// country_id = $("#country").attr("default");
-// $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
-//  state_id = $("#state").attr("default");
-// $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
-// $("#state").selectbox();
-// $("#country").selectbox();
-// });
-</script>
+        //     country_id = $("#country").find('option:selected').attr('rel');
+        //     if (country_id != "") {
+        //         $.each(myJson.countries[country_id].states, function (index1, value1) {
+        //             $("#state").find("option:first").text("-Select State-");
+        //             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        //             // $("#state").selectmenu("refresh");
+        //         });
+
+
+        //     }
+        // });
+
+        // $(document).ready(function () {
+        // var country_id;
+        // var state_id;
+        // $.each(myJson.countries, function (index, value) {
+        //     $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+        //      $("#country").change(function () {
+        //         $("#state").find("option:gt(0)").remove();
+        //         $("#state").find("option:first").text("Loading...");
+        //         $("#state").selectbox();
+        //          country_id = $(this).find('option:selected').attr('rel');
+        //          $.each(myJson.countries[country_id].states, function (index1, value1) {
+        //             $("#state").find("option:first").text("-Select State-");
+        //             $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+        //             $("#state").selectbox();
+        //         });
+        //     });
+        //  });
+        // country_id = $("#country").attr("default");
+        // $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+        //  state_id = $("#state").attr("default");
+        // $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+        // $("#state").selectbox();
+        // $("#country").selectbox();
+        // });
+    </script>
 
 }

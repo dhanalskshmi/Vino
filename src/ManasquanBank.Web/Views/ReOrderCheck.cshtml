@@ -17,8 +17,8 @@
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
     var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
     var thankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
-    var reOrderCheckAdminEmail = Model.Content.HasValue("AdminEmail") ? Model.Content.GetPropertyValue<int>("AdminEmail") : 0;
-    var reOrderCheckConfirmationEmail = Model.Content.HasValue("ConfirmationEmail") ? Model.Content.GetPropertyValue<int>("ConfirmationEmail") : 0;
+    var reOrderCheckAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
+    var reOrderCheckConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
 
 
 }
@@ -67,10 +67,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/find-us.png" alt="find-us">
-                                            }
+                                           
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -89,10 +86,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/find-us.png" alt="find-us">
-                                            }
+                                            
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -111,10 +105,7 @@
                                     {
                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                     }
-                                    else
-                                    {
-                                    <img src="/images/about/find-us.png" alt="find-us">
-                                    }
+                                    
                             </span>
                             <span class="heroLinksText">
                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -147,10 +138,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/expert-icon.png" alt="exper-icon">
-                                            }
+                                            
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -169,10 +157,7 @@
                                             {
                                             <img src="@iconImage.Url" alt="@iconImage.Name">
                                             }
-                                            else
-                                            {
-                                            <img src="/images/about/expert-icon.png" alt="expert-icon">
-                                            }
+                                            
                                 </span>
                                 <span class="heroLinksText">
                                     @if (!string.IsNullOrEmpty(cTAtitle))
@@ -192,10 +177,7 @@
                                     {
                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                     }
-                                    else
-                                    {
-                                    <img src="/images/about/expert-icon.png" alt="expert-icon">
-                                    }
+                                    
                             </span>
                             <span class="heroLinksText">
                                 @if (!string.IsNullOrEmpty(cTAtitle))
