@@ -15,13 +15,7 @@
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
-    
-    
-    
 }
-
-
-
 <div class="socialMedia">
     <section class="heroBanner">
         <figure class="bannerImage" style="background-image: url('@heroImage.Url')"></figure>
@@ -82,7 +76,16 @@
             DateTime created_time = Convert.ToDateTime(displayTime);
             var formatedDate = created_time.ToString("yyyy-MM-dd");
             var twDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
-            string msg = tweetlist.text.ToString();
+            string msg = string.Empty;
+            if (tweetlist.text.ToString() != null)
+            {
+                msg = tweetlist.text.ToString();
+            }
+            else
+            {
+                msg = string.Empty;
+            }
+
             string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
             foreach (var url in tweetlist.entities.urls)
             {
@@ -91,7 +94,7 @@
                 text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
 
             }
-           
+
                 <div class="filtr-item" data-category="tw" data-date="@formatedDate">
                     <div class="flexPanelWrap">
                         <div class="flexPanelHead">
@@ -141,10 +144,9 @@
 }
 catch (Exception e)
 {
-    @Html.Raw(e)
+    @Html.Raw(e.Message.ToString())
+    
 }
-
-
 @try
 {
     var facebookFeed = t.GetFacebookFeed_next();
@@ -154,7 +156,15 @@ catch (Exception e)
         int i = 0;
         foreach (dynamic fblist in fbArray.data)
         {
-            var message = fblist.message;
+            var message = "";
+            if (fblist.message != null)
+            {
+                message = fblist.message;
+            }
+            else
+            {
+                message = string.Empty;
+            }
             var picture = fblist.full_picture;
             var link = fblist.link;
             var profile_url = fblist.from.id;
@@ -213,11 +223,10 @@ catch (Exception e)
         }
     }
 }
-catch(Exception e)
+catch (Exception e)
 {
-    
+    @Html.Raw(e.Message.ToString())
 }
-
 @try
 {
     var youTubeFeed = t.GetYoutubeFeed();
@@ -274,21 +283,28 @@ catch(Exception e)
 }
 catch (Exception e)
 {
-    @Html.Raw(e)
+    @Html.Raw(e.Message.ToString())
 }
-
-
 @try
 {
     var instaFeed = t.GetInstagramTimeline();
-    //Deserializing it into an object that will contain each of the keys and their values
     dynamic InstaFeedObject = JsonConvert.DeserializeObject(instaFeed);
     foreach (var item in InstaFeedObject)
     {
         var image_url = item.images.standard_resolution.url;
         double created_time = item.created_time;
         var profile_name = item.user.username;
-        var message = item.caption.text;
+        var message = "";
+        if (item.caption != null)
+        {
+            message = item.caption.text;
+
+        }
+        else
+        {
+            message = "";
+        }
+
         var link = item.link;
         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         DateTime b = origin.AddSeconds(created_time);
@@ -311,7 +327,7 @@ catch (Exception e)
                     @if (image_url != null)
                     {
                         <figure>
-                            <a href="@link" target="_blank"></a><img src="@image_url" alt="Instagram Post Image"></a>
+                            <a href="@link" target="_blank"><img src="@image_url" alt="Instagram Post Image"></a>
                         </figure>
                     }
                     
@@ -326,21 +342,18 @@ catch (Exception e)
                 </div>
             </div>
         </div>
-        
+
     }
 }
 catch (Exception e)
 {
-    @Html.Raw(e)
+    @Html.Raw(e.Message.ToString())
 }
-
-
                 </div>
             </div>
         </div>
     </section>
 </div>
-
 @section InnerBottomScript {
 <script type='text/javascript' src='~/scripts/lib/jquery.filterizr.min.js'></script>
 <script>

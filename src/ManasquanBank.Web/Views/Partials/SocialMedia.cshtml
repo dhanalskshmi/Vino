@@ -5,107 +5,111 @@
 @using System.Text.RegularExpressions
 @inherits UmbracoTemplatePage
 @{
-
     SocialFeedController t = new SocialFeedController();
-    var twitterFeeds=t.GetTwitterTimeline();
-    //var instaFeed = t.GetInstagramTimeline();
-    var jArray = JArray.Parse(twitterFeeds);
-    //@Html.Raw(jArray);
 }
 <section class="eventsPannel">
 <div class="containerWrapper">
 <h2>
 CURRENT EVENTS
 </h2>
-@if (jArray.Count > 0)
+@try
 {
-int i = 0;
-<ul>
-@foreach (dynamic tweetlist in jArray)
-{
-    if (i < 3)
+    var twitterFeeds = t.GetTwitterTimeline();
+    var jArray = JArray.Parse(twitterFeeds);
+    if (jArray.Count > 0)
     {
+        int i = 0;
+        <ul>
+            @foreach (dynamic tweetlist in jArray)
+            {
+                if (i < 3)
+                {
 
-        // var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-        string[] temp, timesplit;
-        string date, date1, displayTime;
-        try
-        {
-            date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                    // var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                    string[] temp, timesplit;
+                    string date, date1, displayTime;
+                    try
+                    {
+                        date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
 
-            temp = date.Split(' ');
+                        temp = date.Split(' ');
 
-            timesplit = temp[3].Split(':');
+                        timesplit = temp[3].Split(':');
 
-            TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
-            DateTime time = DateTime.Today.Add(timespan);
-            displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
-        }
-        catch(Exception ex)
-        {
-            displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-        }
-
-      
-
-<li>
-<div class="eventHead">
-<a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="eventLogo">
-<img src="~/images/header/logo.png" alt="Manasquan Bank Logo">
-</a>
-
-<div class="followShare">
-<a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
-<img src="/images/home/tweet.png" alt="">
-</a>
-
-</div>
+                        TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+                        DateTime time = DateTime.Today.Add(timespan);
+                        displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+                    }
+                    catch (Exception ex)
+                    {
+                        displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                    }
 
 
-</div>
-<div class="eventDetails">
-<p>    
-@{string msg = tweetlist.text.ToString();
-string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
-foreach (var url in tweetlist.entities.urls)
+
+                    <li>
+                        <div class="eventHead">
+                            <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="eventLogo">
+                                <img src="~/images/header/logo.png" alt="Manasquan Bank Logo">
+                            </a>
+
+                            <div class="followShare">
+                                <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
+                                    <img src="/images/home/tweet.png" alt="">
+                                </a>
+
+                            </div>
+
+
+                        </div>
+                        <div class="eventDetails">
+                            <p>
+                                @{string msg = tweetlist.text.ToString();
+                                    string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
+                                    foreach (var url in tweetlist.entities.urls)
+                                    {
+                                        string link = url.url.ToString();
+                                        string newtab = "true";
+                                        text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
+
+                                    }
+
+                                    @Html.Raw(text)
+                                }
+
+                            </p>
+                            @if (tweetlist.extended_entities != null)
+                            {
+
+                                foreach (dynamic media in tweetlist.extended_entities["media"])
+                                {
+
+                                    <figure>
+                                        <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
+                                    </figure>
+
+                                }
+
+                            }
+                            <div class="venue">
+                                <p>
+                                    <small>
+                                        @displayTime
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                                        }
+                                        i++;
+                                    }
+        </ul>
+    }
+
+}
+catch (Exception e)
 {
-string link = url.url.ToString();
-string newtab = "true";
-text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
-
+    @Html.Raw(e.Message.ToString())
 }
-                                 
-@Html.Raw(text)
-}
-                               
-</p>
-@if (tweetlist.extended_entities != null)
-{
-                               
-foreach(dynamic media in tweetlist.extended_entities["media"])
-{
-                                   
-<figure>
-<a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
-</figure>
-
-}
-
-}
-<div class="venue">
-<p>
-<small>
-@displayTime
-</small>
-</p>
-</div>
-</div>
-</li>
-}
-i++;
-}
-</ul>
-}
- 
 </div>
 </section>
