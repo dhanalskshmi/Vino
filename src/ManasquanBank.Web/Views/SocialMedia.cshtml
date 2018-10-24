@@ -289,6 +289,7 @@ catch (Exception e)
         double created_time = item.created_time;
         var profile_name = item.user.username;
         var message = item.caption.text;
+        var link = item.link;
         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         DateTime b = origin.AddSeconds(created_time);
         var formatedDate = b.ToString("yyyy-MM-dd");
@@ -310,7 +311,7 @@ catch (Exception e)
                     @if (image_url != null)
                     {
                         <figure>
-                            <img src="@image_url" alt="Social Image">
+                            <a href="@link" target="_blank"></a><img src="@image_url" alt="Instagram Post Image"></a>
                         </figure>
                     }
                     
