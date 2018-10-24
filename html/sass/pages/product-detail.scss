@@ -51,12 +51,20 @@
                     font-size: 16px;
                     margin-bottom: 8px;
                 }
+                small{
+                    font-size: 14px;
+                }
             }
             ul {
                 list-style: disc;
-                padding: 12px 0 0 55px;
+                padding: 12px 0 0px 55px;
+                margin-bottom: 38px;
+                @include bp(tablet) {
+                    margin-bottom: 20px;
+                }
                 @include bp(mobile) {
                     padding: 10px 0 0 49px;
+                    margin-bottom: 15px;
                 }
                 li {
                     display: list-item;
