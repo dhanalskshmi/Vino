@@ -81,7 +81,7 @@ $dbannerhgt: 965px;
         background-image: url('#{$img}/playpause_btn.png');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 0 -56px;
+        background-position: 0 0;
         background-color: rgba(27, 61, 110,0.3);
         width: 46px;
         height: 46px;
@@ -98,6 +98,9 @@ $dbannerhgt: 965px;
         }
         &.play {
           background-position: 0 0;
+        }
+        &.pause {
+          background-position: 0 -56px;
         }
       }
     }
