@@ -1,14 +1,14 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
-@{ 
+@{
     Layout = "Master.cshtml";
     var bannerImage = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage");
     var backgroundVideo = Model.Content.GetPropertyValue<string>("backgroundVideo");
     var bannerText = Model.Content.GetPropertyValue<string>("bannerText");
     /*Promotion Text */
     var promotionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("promotionPanel");
-    string [] classes = new string[]  {"bunisessBank", "serviceContent", "personalBank", "mortage", "kasasa", "didgitalCenter", "clentService"};
+    string[] classes = new string[] { "bunisessBank", "serviceContent", "personalBank", "mortage", "kasasa", "didgitalCenter", "clentService" };
     /* Action Panel */
     var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
 
@@ -18,11 +18,11 @@
     @if (!string.IsNullOrEmpty(backgroundVideo))
     {
         <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:1, mute:false, opacity:1, addRaster:true, optimizeDisplay:true}">
-            @if(bannerImage != null)
-            { 
-            <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
+            @if (bannerImage != null)
+            {
+                <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
 
-            </figure>
+                </figure>
             }
             <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
 
@@ -45,7 +45,7 @@
                     {
                         @Html.Raw(bannerText)
                     }
-                    
+
                 </div>
 
             </div>
@@ -54,11 +54,11 @@
     else
     {
         <div class="bannerWrap">
-        @if (bannerImage != null)
-        {
-            <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
-            </figure>
-        }
+            @if (bannerImage != null)
+            {
+                <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
+                </figure>
+            }
             <div class="bannerContent">
                 <div class="containerWrapper">
                     @if (!string.IsNullOrEmpty(bannerText))
@@ -78,152 +78,285 @@
 <section class="bankingServices">
     <div class="containerWrapper">
         <ul>
-        @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))
-        {
-            int i = 1;
-            foreach (var promotion in promotionPanel)
+            @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))
             {
-                var promotionTitle = promotion.GetPropertyValue<string>("promotionTitle");
-                var backgroundColor = promotion.GetPropertyValue<string>("backgroundColor");
-                var description = promotion.GetPropertyValue<string>("description");
-                var backgroundImage = promotion.GetPropertyValue<IPublishedContent>("backgroundImage");
-                var cTAButton = promotion.GetPropertyValue<Link>("cTAButton");
-               
+                int i = 1;
+                foreach (var promotion in promotionPanel)
+                {
+                    var promotionTitle = promotion.GetPropertyValue<string>("promotionTitle");
+                    var backgroundColor = promotion.GetPropertyValue<string>("backgroundColor");
+                    var description = promotion.GetPropertyValue<string>("description");
+                    var backgroundImage = promotion.GetPropertyValue<IPublishedContent>("backgroundImage");
+                    var cTAButton = promotion.GetPropertyValue<Link>("cTAButton");
 
-                if(i == 1){
 
-                     <li class="bunisessBank">
-                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                          <a href="#">Business Banking</a>
-                        </figure>
-                        <div class="serviceContent">
-                          <div class="title">
-                            @Html.Raw(promotionTitle)
-                          </div>
-                        </div>
-                      </li>
-                }
-                else if(i == 2){
-                   <li class="personalBank">
-                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                          <a href="#">Personal Banking</a>
-                        </figure>
-                        <div class="serviceContent">
-                          <div class="title">
-                            @Html.Raw(promotionTitle)
-                          </div>
-                        </div>
-                    </li>
-                }
-                else if(i == 3){
+                    if (i == 1)
+                    {
 
-                    <li class="mortage" style="background: @backgroundColor">
-                        <div class="serviceContent">
-                          @Html.Raw(promotionTitle)
-                        </div>
-                    </li>
-                }
-                else if(i == 4){
-
-                     <li class="@classes[i]" style="background: @backgroundColor">
-                        <div class="serviceContent">
-                            <div class="detailBlock">
-                                @Html.Raw(promotionTitle)
-                                @if (cTAButton.Target == "_blank")
+                        <li class="bunisessBank">
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                @if (cTAButton != null)
                                 {
-                                    <a class="btnManasq" href="@cTAButton.Url" target="_blank" title="@cTAButton.Name"><span>@cTAButton.Name </span></a>
+                                    if (cTAButton.Target == "_blank")
+                                    {
+                                        <a href="@cTAButton.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@cTAButton.Url">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+                                        </a>
+                                    }
                                 }
-                                else
-                                {
-                                    <a class="btnManasq" href="@cTAButton.Url" title="@cTAButton.Name"><span>@cTAButton.Name </span></a>
-                                }
-                               
+
+                            </figure>
+                            <div class="serviceContent">
+                                <div class="title">
+                                    @if (!string.IsNullOrEmpty(promotionTitle))
+                                    {
+                                        @Html.Raw(promotionTitle)
+                                    }
+                                </div>
                             </div>
-                        </div>
-                        <figure>
-                            <img src="@backgroundImage.Url" alt="@Html.Raw(promotionTitle)">
-                        </figure>
-                    </li>
-                }
-                else if(i == 5){
-                    <li class="didgitalCenter">
-                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                          <a href="#">Digital Center</a>
-                        </figure>
-                        <div class="serviceContent">
-                          <div class="title">
-                            @Html.Raw(promotionTitle)
-                          </div>
-                        </div>
-                      </li>
+                        </li>
+                    }
+                    else if (i == 2)
+                    {
+                        <li class="personalBank">
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                @if (cTAButton != null)
+                                {
+                                    if (cTAButton.Target == "_blank")
+                                    {
+                                        <a href="@cTAButton.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
 
-                }
-                else{
 
-                    <li class="clentService">
-                        <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                          <a href="#">Client Services</a>
-                        </figure>
-                        <div class="serviceContent">
-                          <div class="title">
-                            @Html.Raw(promotionTitle)
-                          </div>
-                        </div>
-                    </li>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@cTAButton.Url">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+                                        </a>
+                                    }
+                                }
+                            </figure>
+                            <div class="serviceContent">
+                                <div class="title">
+                                    @if (!string.IsNullOrEmpty(promotionTitle))
+                                    {
+                                        @Html.Raw(promotionTitle)
+                                    }
+
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    else if (i == 3)
+                    {
+
+                        <li class="mortage" style="background: @backgroundColor">
+                            @if (cTAButton.Target == "_blank")
+                            {
+                                <a href="@cTAButton.Url" target="_blank">
+                                    <div class="serviceContent">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            @Html.Raw(promotionTitle)
+                                        }
+
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@cTAButton.Url">
+                                    <div class="serviceContent">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            @Html.Raw(promotionTitle)
+                                        }
+                                    </div>
+                                </a>
+                            }
+                        </li>
+                    }
+                    else if (i == 4)
+                    {
+
+                        <li class="@classes[i]" style="background: @backgroundColor">
+                            <div class="serviceContent">
+                                <div class="detailBlock">
+                                    @Html.Raw(promotionTitle)
+                                    @if (cTAButton.Target == "_blank")
+                                    {
+                                        <a class="btnManasq" href="@cTAButton.Url" target="_blank" title="@cTAButton.Name"><span>@cTAButton.Name </span></a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btnManasq" href="@cTAButton.Url" title="@cTAButton.Name"><span>@cTAButton.Name </span></a>
+                                    }
+
+                                </div>
+                            </div>
+                            <figure>
+                                <img src="@backgroundImage.Url" alt="@Html.Raw(promotionTitle)">
+                            </figure>
+                        </li>
+                    }
+                    else if (i == 5)
+                    {
+                        <li class="didgitalCenter">
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                @if (cTAButton != null)
+                                {
+                                    if (cTAButton.Target == "_blank")
+                                    {
+                                        <a href="@cTAButton.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@cTAButton.Url">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+                                        </a>
+                                    }
+                                }
+                            </figure>
+                            <div class="serviceContent">
+                                <div class="title">
+                                    @if (!string.IsNullOrEmpty(promotionTitle))
+                                    {
+                                        @Html.Raw(promotionTitle)
+                                    }
+                                </div>
+                            </div>
+                        </li>
+
+                    }
+                    else
+                    {
+
+                        <li class="clentService">
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                @if (cTAButton != null)
+                                {
+                                    if (cTAButton.Target == "_blank")
+                                    {
+                                        <a href="@cTAButton.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@cTAButton.Url">
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                @Html.Raw(promotionTitle)
+                                            }
+
+                                        </a>
+                                    }
+                                }
+                            </figure>
+                            <div class="serviceContent">
+                                <div class="title">
+                                    @if (!string.IsNullOrEmpty(promotionTitle))
+                                    {
+                                        @Html.Raw(promotionTitle)
+                                    }
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    i++;
                 }
-                i++;
             }
-        }
         </ul>
     </div>
 </section>
 <section class="bluePannel animatable">
     <div class="containerWrapper">
         <div class="bgWrap">
-        @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
-        {
-            int j = 1;
-            foreach (var action in actionPanel)
+            @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
             {
-                var actionTitle = action.GetPropertyValue<string>("actionTitle");
-                var actionDescription = action.GetPropertyValue<string>("actionDescription");
-                var tagLineSentence = action.GetPropertyValue<string>("tagLineSentence");
-                var actioncTAButton = action.GetPropertyValue<Link>("actioncTAButton");
-                <div class="detailsWrap">
-                    <div class="wraps">
-                        @if (!string.IsNullOrEmpty(actionTitle))
-                        {
-                            <h2>@actionTitle </h2>
+                int j = 1;
+                foreach (var action in actionPanel)
+                {
+                    var actionTitle = action.GetPropertyValue<string>("actionTitle");
+                    var actionDescription = action.GetPropertyValue<string>("actionDescription");
+                    var tagLineSentence = action.GetPropertyValue<string>("tagLineSentence");
+                    var actioncTAButton = action.GetPropertyValue<Link>("actioncTAButton");
+                    <div class="detailsWrap">
+                        <div class="wraps">
+                            @if (!string.IsNullOrEmpty(actionTitle))
+                            {
+                                <h2>@actionTitle </h2>
+                            }
+                            @if (!string.IsNullOrEmpty(tagLineSentence))
+                            {
+                                <h3>@tagLineSentence </h3>
+                            }
+                            @if (!string.IsNullOrEmpty(actionDescription))
+                            {
+                                @Html.Raw(actionDescription)
+                            }
+                        </div>
+                        @if (actioncTAButton.Target == "_blank")
+                    {
+                            <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
                         }
-                        @if (!string.IsNullOrEmpty(tagLineSentence))
+                        else
                         {
-                            <h3>@tagLineSentence </h3>
+                            <a class="btnManasq" href="@actioncTAButton.Url" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
                         }
-                        @if (!string.IsNullOrEmpty(actionDescription))
-                        {
-                            @Html.Raw(actionDescription)
-                        }
+
                     </div>
-                    @if (actioncTAButton.Target == "_blank")
+                    if (j == 1)
                     {
-                        <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
-                    }
-                    else
-                    {
-                        <a class="btnManasq" href="@actioncTAButton.Url" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
-                    }
-                    
-                </div>
-                if(j == 1){
 
-                    <figure>
-                        <img src="~/images/home/img_or.png" alt="OR">
-                    </figure>
+                        <figure>
+                            <img src="~/images/home/img_or.png" alt="OR">
+                        </figure>
+                    }
+                    j++;
                 }
-                j++;
-            }
 
-        }
+            }
         </div>
     </div>
 </section>
@@ -247,17 +380,17 @@
             <div class="containerWrapper">
                 @if (!string.IsNullOrEmpty(titleText))
                 {
-                    <h2>@Html.Raw(titleText.Replace( " ", "</br>" )) </h2>
+                    <h2>@Html.Raw(titleText.Replace(" ", "</br>")) </h2>
                 }
-               
-                
+
+
             </div>
         </div>
         <div class="redBlock">
             <div class="containerWrapper">
                 @if (!string.IsNullOrEmpty(foundationTaglineText))
                 {
-                    <h2>@Html.Raw(foundationTaglineText.Replace( " ", "</br>" )) </h2>
+                    <h2>@Html.Raw(foundationTaglineText.Replace(" ", "</br>")) </h2>
                 }
             </div>
         </div>
@@ -303,14 +436,14 @@
                 }
                 <div class="appStores">
                     <figure class="">
-                    <a href="@appleStoreLink" target="_blank">
-                      <img src="~/images/home/apple_app.png" alt="App Store Icon">
-                    </a>
+                        <a href="@appleStoreLink" target="_blank">
+                            <img src="~/images/home/apple_app.png" alt="App Store Icon">
+                        </a>
                     </figure>
                     <figure>
-                    <a href="@googlePlayStoreLink" target="_blank">
-                      <img src="~/images/home/google_app.png" alt="Play Store Icon">
-                    </a>
+                        <a href="@googlePlayStoreLink" target="_blank">
+                            <img src="~/images/home/google_app.png" alt="Play Store Icon">
+                        </a>
                     </figure>
                 </div>
             </div>
@@ -337,36 +470,36 @@
             @if (!string.IsNullOrEmpty(featureDescription))
             {
                 @Html.Raw(featureDescription)
-            }  
+            }
             @if (Model.Content.AncestorOrSelf(1).HasValue("featureLists"))
             {
                 <ul>
-                @foreach (var feature in featureLists)
+                    @foreach (var feature in featureLists)
                 {
                     var featureTitle = feature.GetPropertyValue<string>("featureTitle");
                     var featureImage = feature.GetPropertyValue<IPublishedContent>("featureImage");
-                    <li>
-                        <figure>
-                        <img src="@featureImage.Url" alt="@featureTitle">
-                        </figure>
-                        @if (!string.IsNullOrEmpty(featureTitle))
-                        {
-                            <h4>@featureTitle </h4>
-                        }
-                    </li>
-                }
+                        <li>
+                            <figure>
+                                <img src="@featureImage.Url" alt="@featureTitle">
+                            </figure>
+                            @if (!string.IsNullOrEmpty(featureTitle))
+                            {
+                                <h4>@featureTitle </h4>
+                            }
+                        </li>
+                    }
                 </ul>
             }
-            
 
-                @if (featurecTAButton.Target == "_blank")
-                {
+
+            @if (featurecTAButton.Target == "_blank")
+            {
                 <a class="btnManasq" href="@featurecTAButton.Url" target="_blank" title="@featurecTAButton.Name"><span>@featurecTAButton.Name </span></a>
-                }
-                else
-                {
+            }
+            else
+            {
                 <a class="btnManasq" href="@featurecTAButton.Url" title="@featurecTAButton.Name"><span>@featurecTAButton.Name </span></a>
-                }
+            }
 
         </div>
     </div>
@@ -376,33 +509,33 @@
 
 @section InnerBottomScript {
 
-<script>
-    var myPlayer;
-    jQuery(function() {
-      myPlayer = jQuery("#bgndVideo").YTPlayer();
-      // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
-      myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function(e) {
-        if (e.type == 'YTPPlay') {
-          jQuery('#bgndVideo').YTPToggleVolume()
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            myPlayer = jQuery("#bgndVideo").YTPlayer();
+            // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
+            myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
+                if (e.type == 'YTPPlay') {
+                    jQuery('#bgndVideo').YTPToggleVolume()
+                }
+            });
+            myPlayer.on("YTPPlay", function () {
+                $("#togglePlay").removeClass("play pause");
+                $("#togglePlay").addClass("pause");
+            });
+
+            myPlayer.on("YTPPause", function () {
+                $("#togglePlay").removeClass("play pause");
+                $("#togglePlay").addClass("play");
+            });
+        });
+
+        function checkForVal(val) {
+            return val || 0;
         }
-      });
-      myPlayer.on("YTPPlay", function(){
-        $("#togglePlay").removeClass("play pause");
-        $("#togglePlay").addClass("pause");
-      });
-
-      myPlayer.on("YTPPause", function(){
-        $("#togglePlay").removeClass("play pause");
-        $("#togglePlay").addClass("play");
-      });
-    });
-
-    function checkForVal(val) {
-      return val || 0;
-    }
 
 
-</script>
+    </script>
 
 
 }

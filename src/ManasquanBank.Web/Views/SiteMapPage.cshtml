@@ -10,6 +10,7 @@
 @using System.Web.Script.Serialization;
 @{
     Layout = "Master.cshtml";
+    var PageTitle = "";
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var LeftNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("leftNavigation");
     var MiddleNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("middleNavigation");
@@ -31,25 +32,35 @@
                 <div class="sitemap-section-box">
                     <div class="full-width">
                         <div class="left-section">
-                            <h4><a class="hvr-underline-from-center" href="#">Head 1</a></h4>
-                            <ul>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 1</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 2</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 3</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 4</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 5</a></li>
-                            </ul>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 4</a></h4>
-                            <ul>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 1</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 2</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 3</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 4</a></li>
-                                <li><a class="hvr-underline-from-center" href="#">Menu 5</a></li>
-                            </ul>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 2</a></h4>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 3</a></h4>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 4</a></h4>
+                            @if (Model.Content.HasValue("leftNavigation"))
+                            {
+                                foreach (var node in LeftNavigation)
+                                {
+                                    var CurrentNode = new DynamicNode().NodeById(node);
+                                    var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
+                                    if (!string.IsNullOrEmpty(CurrentNode.Name))
+                                    {
+                                        PageTitle = CurrentNode.Name;
+                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
+                                        if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                        {
+                                            <ul>
+                                                @foreach (var childNode in CurrentNode.Children)
+                                                {
+                                                    var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                    if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                    {
+                                                        PageTitle = ChildNode.Name;
+                                                        <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                    }
+                                                }
+                                            </ul>
+                                        }
+                                    }
+                                    PageTitle = "";
+                                }
+                            }
                         </div>
                         <div class="center-section">
                             <h4><a class="hvr-underline-from-center" href="#">Head 5</a></h4>

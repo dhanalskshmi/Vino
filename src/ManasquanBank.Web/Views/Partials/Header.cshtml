@@ -162,7 +162,26 @@
 						                                <i></i>
 						                                <i></i>
 				                              		</div>
-					                              	<h2>@primaryTitle </h2>
+                                                    @if (primaryTitleLink != null)
+                                                    {
+                                                        if (primaryTitleLink.Target == "_blank")
+                                                        {
+                                                            <a href="@primaryTitleLink.Url" target="_blank">
+                                                                <h2>@primaryTitle</h2>
+                                                            </a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="@primaryTitleLink.Url">
+                                                                <h2>@primaryTitle</h2>
+                                                            </a>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <h2>@primaryTitle</h2>
+                                                    }
+
 	                              					<div class="flexBox">
 	                              					
 	                         						@foreach (var megamenu in megaMenuPanel)
