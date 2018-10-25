@@ -18,6 +18,7 @@
     var appleWallet = Model.Content.GetPropertyValue<Link>("appleWallet");
     var payWallet = Model.Content.GetPropertyValue<Link>("payWallet");
     var androidWallet = Model.Content.GetPropertyValue<Link>("androidWallet");
+    var cTAButton = Model.Content.GetPropertyValue<Link>("cTAButton"); 
 
 
 }
@@ -188,7 +189,18 @@
 
                      }
                 </figure>
-                <a href="" class="btnManasq"><span>Learn More</span></a>
+                @if (cTAButton != null)
+                {
+                    if (cTAButton.Target == "_blank")
+                    {
+                        <a href="@cTAButton.Url" class="btnManasq" target="_blank"><span>@cTAButton.Name</span></a>
+                    }
+                    else
+                    {
+                        <a href="@cTAButton.Url" class="btnManasq"><span>@cTAButton.Name</span></a>
+                    }
+                }
+                
             </div>
             }
         </div>
