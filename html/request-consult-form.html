@@ -584,11 +584,11 @@
                       <label for="loanPurpose">Purpose of loan</label>
                       <select name="loanPurpose" id="loanPurpose" class="form-control selectBox" default="" required="">
                         <option value=""></option>
-                        <option value="">Purchase</option>
-                        <option value="">Refinance </option>
-                        <option value="">Home Equity</option>
-                        <option value="">Construction</option>
-                        <option value="">Building Lot</option>
+                        <option value="Purchase">Purchase</option>
+                        <option value="Refinance">Refinance </option>
+                        <option value="Home Equity">Home Equity</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Building Lot">Building Lot</option>
                       </select>
                       <span class="errorSpan vd f-error">*</span>
                     </div>
@@ -596,10 +596,10 @@
                       <label for="loanOfficer">Loan officer</label>
                       <select name="loanOfficer" id="loanOfficer" class="form-control selectBox" default="" required="">
                         <option value=""></option>
-                        <option value="">Ralph Tancredi</option>
-                        <option value="">William L. Kays </option>
-                        <option value="">Lisa Connell </option>
-                        <option value="">David Tepper </option>
+                        <option value="Ralph Tancredi">Ralph Tancredi</option>
+                        <option value="William L. Kays">William L. Kays </option>
+                        <option value="Lisa Connell">Lisa Connell </option>
+                        <option value="David Tepper">David Tepper </option>
 
                       </select>
                       <span class="errorSpan vd f-error">*</span>
@@ -651,7 +651,7 @@
 
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                       <label for="zip">Zip Code</label>
-                      <input type="text" class="form-control " required name="zip" id="zip">
+                      <input type="text" class="form-control " required name="zip" id="zip" minlength="6" maxlength="6">
                       <span class="errorSpan vd f-error">*</span>
                     </div>
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
@@ -659,7 +659,7 @@
                       <select name="country" id="country" class="form-control selectBox" default="" required="">
                         <!--   <option value="" rel="">-Select Country-</option> -->
                       </select>
-                      <span class="errorSpan vd f-error">*</span>
+                      <span class="errorSpan vd f-success">*</span>
                     </div>
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                       <label for="call">Best time to call</label>
@@ -895,16 +895,18 @@
   <script>
     $(document).ready(function() {
         $('#basicExample').timepicker();
+
+
       $("#contactSucc").length > 0 && $("html, body").animate({
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")
 
-      if (jQuery("#zip").length > 0) {
-        document.getElementById('zip').addEventListener('input', function(e) {
-          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
-          e.target.value = x[1];
-        });
-      }
+      // if (jQuery("#zip").length > 0) {
+      //   document.getElementById('zip').addEventListener('input', function(e) {
+      //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+      //     e.target.value = x[1];
+      //   });
+      // }
       if (jQuery("#accNo").length > 0) {
         document.getElementById('accNo').addEventListener('input', function(e) {
           var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
@@ -915,6 +917,8 @@
     });
 
     $(document).ready(function() {
+     
+
       $.each(myJson.countries, function(index, value) {
         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
       });

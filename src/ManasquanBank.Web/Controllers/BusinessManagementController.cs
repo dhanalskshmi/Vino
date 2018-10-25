@@ -26,6 +26,13 @@ namespace ManasquanBank.Web.Controllers
                     {
                         business.addressTwo = "";
                     }
+                    if (business.cntComments == null)
+                    {
+                        business.cntComments = "";
+                    }
+
+
+                    
 
                     if (business.AdminEmail > 0 || business.ConfirmationEmail >= 0)
                     {

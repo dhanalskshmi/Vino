@@ -1,0 +1,114 @@
+﻿@using ServiceHelpers
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using ConnecticutRegionalWater.Web.Models;
+@model Search
+@{
+    Layout = null;
+    var SearchKeyword = Model.Query;
+    int DefaultDisplayCount = 10;
+    var Count = 0;
+    int PageNum = 1;
+    var PagiUrl = "";
+    string htmlstr = "";
+    int CurrentPage;
+    bool CurrentPageBool = int.TryParse(Request["page"], out CurrentPage);
+    if (CurrentPageBool == false)
+    {
+        CurrentPage = 1;
+    }
+
+    Count = Model.Count;
+
+    var pagecnt = Count % 10;
+
+    int paginationcount = Count / 10;
+
+    if (pagecnt != 0)
+    {
+        paginationcount = paginationcount + 1;
+    }
+
+    int TotalPages = (Count - 1) / DefaultDisplayCount + 1;
+
+    var PageCount = 0;
+    if (Count % DefaultDisplayCount == 0)
+    {
+        PageCount = Count / DefaultDisplayCount;
+    }
+    else
+    {
+        PageCount = (Count / DefaultDisplayCount) + 1;
+    }
+
+    if (Model.Count > 0)
+    {
+        if (!int.TryParse(Request.QueryString["page"], out PageNum))
+        {
+            PageNum = 1;
+        }
+    }
+
+
+    var SearchResults = Model.SearchResults;
+}
+
+@{ 
+    if (Model.Count > 0)
+    {
+
+                    <p>@Model.Count results for @Model.Query</p>
+                    <div class="searchWrap">
+                        @foreach (var result in SearchResults)
+                        {
+
+                            <h4><a href="@result.Url" target="_blank">@result.Title</a></h4>
+                            <p><a href="@result.Url" target="_blank">@result.DisplayUrl</a><br /> @result.Snippet</p>
+                            <a href="@result.Url" target="_blank" class="btn-readMore">Read More &gt;</a>
+                        }
+                    </div>
+
+                   if (PageCount > 1)
+                   {
+                    <div class="paginationWrap">
+                        <div class="newsPagination">
+                            <p>
+                                @if (PageNum > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
+                                {
+                                    PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum + 1);
+
+                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-left.png" alt="Left arrow" title="Media Image"></a>
+                                }
+
+                                <b>@PageNum of @paginationcount</b>
+
+                                @Html.Raw(htmlstr)
+
+                                @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
+                                {
+                                    PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum + 1);
+                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-right.png" alt="Right arrow" title="Media Image"></a>
+
+                                }
+                            </p>
+                        </div>
+                    </div>
+                   }
+
+    }
+    else
+    {
+    <section class="searchPage">
+        <div class="containerWrapper">
+            <div class="container">
+                <h1>Search Results</h1>
+                <p>@Model.Count results for @Model.Query</p>
+                <div class="searchWrap">
+                    <p class="no-record">No Record Found</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+        }
+
+    }

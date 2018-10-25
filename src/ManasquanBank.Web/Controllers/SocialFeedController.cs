@@ -2,6 +2,7 @@
 using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
 using Skybrud.Social.Facebook;
 using Skybrud.Social.Facebook.OAuth;
@@ -19,13 +20,16 @@ using System;
 using Google.Apis.YouTube.v3;
 using Google.Apis.Services;
 using ManasquanBank.Web.Helpers;
-
+using ManasquanBank.Web.Models;
 namespace ManasquanBank.Web.Controllers
 {
     using System;
 
     using Skybrud.Social;
     using Skybrud.Social.Facebook.Responses.Posts;
+    using System.Net;
+    using System.IO;
+    using System.Text;
 
     public class SocialFeedController : Umbraco.Web.WebApi.UmbracoApiController
     {
@@ -50,8 +54,95 @@ namespace ManasquanBank.Web.Controllers
                 return false;
             }
         }
+
+
+        public dynamic GetTwitterFeed()
+        {
+
+            var memCacher = new MemoryCacher();
+            var result = memCacher.GetValue("twitterfeed");
+           
+                if (result == null)
+                {
+                try
+                {
+
+                    // You need to set your own keys and screen name
+                    var oAuthConsumerKey = "Dz6hIYXCUjmu1c64kX4Ni28oQ";
+                    var oAuthConsumerSecret = "1DOoYvighjAGph6iSXhv0lljiKT8uYP5cjI6A8VuehNWgorj36";
+                    var oAuthUrl = "https://api.twitter.com/oauth2/token";
+                    var screenname = "ManasquanBank";
+
+                    // Do the Authenticate
+                    var authHeaderFormat = "Basic {0}";
+
+                    var authHeader = string.Format(authHeaderFormat,
+                        Convert.ToBase64String(Encoding.UTF8.GetBytes(Uri.EscapeDataString(oAuthConsumerKey) + ":" +
+                        Uri.EscapeDataString((oAuthConsumerSecret)))
+                    ));
+
+                    var postBody = "grant_type=client_credentials";
+
+                    HttpWebRequest authRequest = (HttpWebRequest)WebRequest.Create(oAuthUrl);
+                    authRequest.Headers.Add("Authorization", authHeader);
+                    authRequest.Method = "POST";
+                    authRequest.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
+                    authRequest.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+
+                    using (Stream stream = authRequest.GetRequestStream())
+                    {
+                        byte[] content = ASCIIEncoding.ASCII.GetBytes(postBody);
+                        stream.Write(content, 0, content.Length);
+                    }
+
+                    authRequest.Headers.Add("Accept-Encoding", "gzip");
+
+                    WebResponse authResponse = authRequest.GetResponse();
+                    // deserialize into an object
+                    TwitAuthenticateResponse twitAuthResponse;
+                    using (authResponse)
+                    {
+                        using (var reader = new StreamReader(authResponse.GetResponseStream()))
+                        {
+                            JavaScriptSerializer js = new JavaScriptSerializer();
+                            var objectText = reader.ReadToEnd();
+                            twitAuthResponse = JsonConvert.DeserializeObject<TwitAuthenticateResponse>(objectText);
+                        }
+                    }
+
+                    // Do the timeline
+                    var timelineFormat = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={0}&include_rts=1&exclude_replies=1&count=5&tweet_mode=extended";
+                    var timelineUrl = string.Format(timelineFormat, screenname);
+                    HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
+                    var timelineHeaderFormat = "{0} {1}";
+                    timeLineRequest.Headers.Add("Authorization", string.Format(timelineHeaderFormat, twitAuthResponse.token_type, twitAuthResponse.access_token));
+                    timeLineRequest.Method = "Get";
+                    WebResponse timeLineResponse = timeLineRequest.GetResponse();
+                    var timeLineJson = string.Empty;
+                    using (timeLineResponse)
+                    {
+                        using (var reader = new StreamReader(timeLineResponse.GetResponseStream()))
+                        {
+                            timeLineJson = reader.ReadToEnd();
+                            result = timeLineJson;
+                            memCacher.Add("twitterfeed", timeLineJson, DateTimeOffset.UtcNow.AddHours(1));
+                        }
+                    }
+
+                }
+            catch (Exception e)
+            {
+                return "{}";
+            }
+        }
+
+         return result;
+        }
         public dynamic GetTwitterTimeline()
         {
+
+            
+
             try
             {
                 const string CacheKey = "TwitterTimeline";
@@ -59,13 +150,13 @@ namespace ManasquanBank.Web.Controllers
                 {
                     ConsumerKey = "Dz6hIYXCUjmu1c64kX4Ni28oQ",
                     ConsumerSecret = "1DOoYvighjAGph6iSXhv0lljiKT8uYP5cjI6A8VuehNWgorj36",
+               
 
                 };
 
                 // Initialize a new service instance from the OAuth client
                 TwitterService service = TwitterService.CreateFromOAuthClient(client);
-                
-                // make call to api, caching results for 1 hour
+                 // make call to api, caching results for 1 hour
                 var response = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Statuses.GetUserTimeline("ManasquanBank",5), new TimeSpan(1, 0, 0)) as TwitterTimelineResponse;
 
                 var responseContent = string.Empty;
@@ -292,6 +383,7 @@ namespace ManasquanBank.Web.Controllers
             }
             catch (Exception e)
             {
+
                 return false;
             }
            

@@ -610,7 +610,7 @@
             <h4>We offer three ways for you to re-order checks:</h4>
             <ol class="re-orderList">
               <li>Stop by any Manasquan Bank location to drop off the re-order form found in your box of checks. You may also mail it to us at PO Box E, Manasquan, NJ 08736.</li>
-              <li>Call us at 1-844-626-2265.</li>
+              <li>Call us at <a href="tel:18446262265">1-844-626-2265</a>.</li>
               <li>Fill in the information below and we will contact you.</li>
             </ol>
             <ul class="heroLinks">
@@ -640,7 +640,7 @@
                     </div>
                     <div class="form-group col-lg-4 col-sm-12 col-xs-12 nopadding fullwidth">
                       <label for="accNo">Last 4 digits of checking account number</label>
-                      <input type="number" class="form-control " required name="accNo" id="accNo">
+                      <input type="text" class="form-control " required name="accNo" id="accNo">
                       <span class="errorSpan vd f-error">*</span>
                     </div>
                   </div>
@@ -680,7 +680,7 @@
 
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                       <label for="zip">Zip Code</label>
-                      <input type="text" class="form-control " required name="zip" id="zip">
+                      <input type="text" class="form-control " required name="zip" id="zip" minlength="6" maxlength="6">
                       <span class="errorSpan vd f-error">*</span>
                     </div>
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
@@ -922,12 +922,12 @@
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")
 
-      if (jQuery("#zip").length > 0) {
-        document.getElementById('zip').addEventListener('input', function(e) {
-          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
-          e.target.value = x[1];
-        });
-      }
+      // if (jQuery("#zip").length > 0) {
+      //   document.getElementById('zip').addEventListener('input', function(e) {
+      //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+      //     e.target.value = x[1];
+      //   });
+      // }
       if (jQuery("#accNo").length > 0) {
         document.getElementById('accNo').addEventListener('input', function(e) {
           var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);

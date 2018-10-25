@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var searchApiKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("searchApiKey");
+    var searchResultsUrl = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("searchResultsUrl");
+    var searchBackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("searchBackgroundImage");
+    var searchTitle = Model.Content.GetPropertyValue<string>("searchTitle");
+}
+<section class="heroBanner">
+    <figure class="bannerImage" style="background-image: url('@searchBackgroundImage.Url')"></figure>
+</section>
+<section class="heroBlock">
+    <div class="containerWrapper">
+        <div class="bgWrap specNeed">
+            <section class="searchPage">
+                @if (!string.IsNullOrEmpty(searchTitle))
+                {
+                    <h1>@searchTitle</h1>
+                }               
+                @Html.Action("Index", "BingSearch", new { searchApiKey = @searchApiKey, searchResultsUrl = @searchResultsUrl })
+            </section>
+        </div>
+    </div>
+</section>
