@@ -759,6 +759,7 @@
     <Content Include="Views\PageNotFound.cshtml" />
     <Content Include="Views\Partials\SearchResults.cshtml" />
     <Content Include="Views\BingSearchResults.cshtml" />
+    <Content Include="Views\Rates.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

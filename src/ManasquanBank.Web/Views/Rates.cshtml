@@ -1,5 +1,266 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Rates>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
+    var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
+    var rates = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("ratesContent");
+
+    var lendingTitle = Model.Content.GetPropertyValue<string>("lendingTitle");
+    var lendingImage = Model.Content.GetPropertyValue<IPublishedContent>("lendingImage");
+    var lendingContent = Model.Content.GetPropertyValue<string>("lendingContent");
+    var cTAButton = Model.Content.GetPropertyValue<Link>("cTAButton");
 }
+<section class="heroBanner">
+    @if (heroImage != null)
+    {
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+    }
+</section>
+<section class="heroBlock">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if (!string.IsNullOrEmpty(title))
+            {
+                <h2>@title</h2>
+            }
+            @if (!string.IsNullOrEmpty(content))
+            {
+                @Html.Raw(content)
+            }
+
+            <ul class="heroLinks">
+                @if (Model.Content.HasValue("cTAButton1"))
+                {
+                    foreach (var CTA in cTAButton1)
+                    {
+                        var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                        var link = CTA.GetPropertyValue<Link>("link");
+
+                        <li class="find-us">
+                            @if (link != null)
+                            {
+                                if (link.Target == "_blank")
+                                {
+                                    <a href="@link.Url" target="_blank">
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="@link.Url">
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+                                    </a>
+                                }
+
+                            }
+                            else
+                            {
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                    {
+                                        <img src="@iconImage.Url" alt="@iconImage.Name">
+                                    }
+
+                                </span>
+                                <span class="heroLinksText">
+                                    @if (!string.IsNullOrEmpty(cTAtitle))
+                                    {
+                                        @Html.Raw(cTAtitle)
+                                    }
+                                </span>
+                            }
+
+                        </li>
+                    }
+
+                }
+                @if (Model.Content.HasValue("cTAButton2"))
+                {
+                    foreach (var CTA in cTAButton2)
+                    {
+                        var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                        var link = CTA.GetPropertyValue<Link>("link");
+
+                        <li class="call-us">
+                            @if (link != null)
+                            {
+                                if (link.Target == "_blank")
+                                {
+                                    <a href="@link.Url" target="_blank">
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="@link.Url">
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                                @Html.Raw(replacetitle)
+                                            }
+                                        </span>
+                                    </a>
+                                }
+
+                            }
+                            else
+                            {
+                                <span class="heroLinksImage">
+                                    @if (iconImage != null)
+                                    {
+                                        <img src="@iconImage.Url" alt="@iconImage.Name">
+                                    }
+
+                                </span>
+                                <span class="heroLinksText">
+                                    @if (!string.IsNullOrEmpty(cTAtitle))
+                                    {
+                                        var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                        @Html.Raw(replacetitle)
+                                    }
+                                </span>
+                            }
+
+                        </li>
+                    }
+
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+
+@if (rates != null)
+            {
+                foreach (var rate in rates)
+                {
+                    var ratetitle = rate.GetPropertyValue<string>("ratesTitle");
+                    var rateContent = rate.GetPropertyValue<string>("content");
+
+        <section class="greyPanel rates">
+            <div class="containerWrapper">
+                <div class="bgWrap">
+                    <div class="titleWrap">
+                        @if (!string.IsNullOrEmpty(ratetitle))
+                        {
+                            <h3>@ratetitle</h3>
+                        }
+
+                    </div>
+                    <div class="tableSection">
+                        <div class="table-responsive">
+                            @if (!string.IsNullOrEmpty(rateContent))
+                            {
+                                @Html.Raw(rateContent)
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    }
+}
+
+<section class="greyPanel lft-img bContent specNeed">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            <div class="flexWrapper">
+                @if (!string.IsNullOrEmpty(lendingTitle))
+                {
+                    <h3 class="hidden-sm hidden-lg hidden-md">@lendingTitle</h3>
+                }
+                @if (lendingImage != null)
+                {
+                    <figure class="flexImage" style="background-image:url(@lendingImage.Url);"></figure>
+                }
+                
+                <div class="flexContent">
+                    @if (!string.IsNullOrEmpty(lendingTitle))
+                    {
+                        <h3 class="hidden-xs">@lendingTitle</h3>
+                    }
+                    @if(!string.IsNullOrEmpty(lendingContent))
+                    {
+                        @Html.Raw(lendingContent)
+                    }
+                    
+                    <div class="rates-btn">
+                        @if (cTAButton != null)
+                        {
+                            if (cTAButton.Target == "_blank")
+                            {
+                                <a href="@cTAButton.Url" class="btnManasq" target="_blank"><span>@cTAButton.Name</span></a>
+                            }
+                            else
+                            {
+                                <a href="@cTAButton.Url" class="btnManasq"><span>@cTAButton.Name</span></a>
+                            }
+                        }
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
