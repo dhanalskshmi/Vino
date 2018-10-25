@@ -111,7 +111,26 @@ function GetReCaptchaID(containerID) {
             return;
         }
      });
- 
+
      return retval;
 }
 
+
+function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+     $(this).css("height","auto");
+      thisHeight = $(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+   group.height(tallest);
+}
+
+
+if ($('.eventsPannel').length > 0) {
+  $(window).on('load resize', function () {
+    equalHeight($(".evenhgt"));
+  });
+}
