@@ -8,7 +8,16 @@
 			}
 	.bgWrap {
 		       padding: 38px 40px 23px 40px;
-
+		       @include bp(tablet) {
+		       	    padding: 38px 0px 4px 0px;
+		       }
+			 @include bp(mobile) {
+			.titleWrap{
+				h3{
+				padding-bottom: 17px;
+			}
+			}
+		}
 		    .tableSection{
 		    	margin-top: 7px;
 		    	margin-bottom: 0px;
@@ -19,7 +28,7 @@
 							@include bp(tablandscape) {
 								font-size: 13px;
 							}
-								@include bp(mobile) {
+								@include bp(tablet) {
 									padding-left: 10px;
 									padding-right: 10px;
 								}
@@ -29,10 +38,10 @@
 					    	margin-top: 0px;					}		    	
 		    }
 		    @include bp(tablandscape) {
-		    	    padding: 22px 22px 22px 22px;
+		    	    padding: 22px 22px 4px 22px;
 		    }
 		   	@include bp(mobile) {
-				    padding: 38px 10px 40px 10px;
+				    padding: 24px 10px 40px 10px;
 				}
 		table{
 			margin-bottom: 37px;
@@ -193,6 +202,8 @@
 			 				&:nth-child(2){
 					 				background: #656565;
 					 				text-align: center;
+					 				padding-top: 11px;
+					 				padding-bottom: 11px;
 					 			}
 			 			}
 			 		}
@@ -354,6 +365,7 @@
               @include bp(tablet){
               	max-height: 383px;
               	width: 304px;
+              	height: auto;
               }
                @include bp(mobile){
               	height: 232px;
