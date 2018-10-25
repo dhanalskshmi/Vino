@@ -74,6 +74,10 @@
         padding-left: 18px;
         padding-right: 31px;
         padding-top: 30px;
+        .textareaBox{
+            padding-left: 0;
+            padding-right: 0;
+        }
         @include bp(landscape){
                 padding-left: 8px;
                 padding-right: 22px;
@@ -99,9 +103,12 @@
             color: #1c3d6d;
             margin-bottom: 13px;
             text-align: left;
+            @include bp(landscape){
+                margin-bottom: 8px;
+            }
         }
         .bgWrap{
-                padding: 40px 50px 40px 30px;
+                    padding: 40px 30px 40px 30px;
                 h4{
                     font-size: 20px;
                     color: #1c3d6d;
@@ -132,6 +139,9 @@
             @include bp(tablet){
                     margin-top: 40px;
             }
+             @include bp(mobile){
+                margin-top: 20px;
+             }
         .bgWrap{
             background-color: #fff;
             padding: 0px;
@@ -145,6 +155,7 @@
     .contactFormWrap{
         width: 100%;
         padding: 0px 0px 32px 0px;
+        margin-top: 12px;
         .row{
             margin: 0px;
         }
@@ -298,6 +309,9 @@
 
     .mob-flex{
         text-align: center;
+        .btnManasq{
+            margin-right: 0px;
+        }
     }
 
 }

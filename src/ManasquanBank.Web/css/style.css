@@ -5705,7 +5705,7 @@ footer {
   float: left;
 }
 
-.btn-mansq, .persLending .homeStartWrap .homeStart .homeStartBtn a, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .greyPanel.rates .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .greyPanel.rates .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .greyPanel.rates .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .greyPanel.rates .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .greyPanel.rates .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .greyPanel.rates .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .greyPanel.rates .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .greyPanel.rates .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bioPage .greyPanel.rates .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .greyPanel.rates .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .greyPanel.rates .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .greyPanel.rates .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .greyPanel.rates .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .greyPanel.rates .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .greyPanel.rates .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .historyTimeline .bgWrap .titleWrap a, .error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply {
+.btn-mansq, .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply, .persLending .homeStartWrap .homeStart .homeStartBtn a, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .greyPanel.rates .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .greyPanel.rates .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .greyPanel.rates .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .greyPanel.rates .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .greyPanel.rates .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .greyPanel.rates .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .greyPanel.rates .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .greyPanel.rates .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bioPage .greyPanel.rates .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .greyPanel.rates .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .greyPanel.rates .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .greyPanel.rates .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .greyPanel.rates .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .greyPanel.rates .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .greyPanel.rates .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .historyTimeline .bgWrap .titleWrap a, .error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply {
   display: inline-block;
   background: #1268e5;
   padding: 10px 45px;
@@ -15898,6 +15898,10 @@ footer {
   padding-right: 31px;
   padding-top: 30px;
 }
+.re-order .parentWrapper .textareaBox {
+  padding-left: 0;
+  padding-right: 0;
+}
 @media (max-width: 1279px) {
   .re-order .parentWrapper {
     padding-left: 8px;
@@ -15932,8 +15936,13 @@ footer {
   margin-bottom: 13px;
   text-align: left;
 }
+@media (max-width: 1279px) {
+  .re-order .heroBlock h2, .re-order .greyPanel.rates h2 {
+    margin-bottom: 8px;
+  }
+}
 .re-order .heroBlock .bgWrap, .re-order .greyPanel.rates .bgWrap {
-  padding: 40px 50px 40px 30px;
+  padding: 40px 30px 40px 30px;
 }
 .re-order .heroBlock .bgWrap h4, .re-order .greyPanel.rates .bgWrap h4 {
   font-size: 20px;
@@ -15973,6 +15982,11 @@ footer {
     margin-top: 40px;
   }
 }
+@media (max-width: 767px) {
+  .re-order .greyPanel {
+    margin-top: 20px;
+  }
+}
 .re-order .greyPanel .bgWrap {
   background-color: #fff;
   padding: 0px;
@@ -15985,6 +15999,7 @@ footer {
 .re-order .contactFormWrap {
   width: 100%;
   padding: 0px 0px 32px 0px;
+  margin-top: 12px;
 }
 .re-order .contactFormWrap .row {
   margin: 0px;
@@ -16159,6 +16174,9 @@ footer {
 .re-order .mob-flex {
   text-align: center;
 }
+.re-order .mob-flex .btnManasq, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply {
+  margin-right: 0px;
+}
 
 .greyPanel.rates {
   margin-top: 80px;
@@ -16166,10 +16184,11 @@ footer {
 @media (max-width: 767px) {
   .greyPanel.rates {
     margin-bottom: 40px;
+    margin-top: 40px;
   }
 }
 .greyPanel.rates .bgWrap {
-  padding: 38px 40px 40px 40px;
+  padding: 38px 40px 28px 40px;
 }
 .greyPanel.rates .bgWrap .tableSection {
   margin-top: 7px;
@@ -16198,6 +16217,35 @@ footer {
   line-height: 21px;
   padding-top: 18px;
   padding-bottom: 18px;
+  /*&:nth-of-type(1){
+  			 				    width: 16.5%;
+  			 				}
+  			 			&:nth-of-type(2){
+  			 				    width: 20.4%;
+  							    padding-right: 41px;
+  							     @include bp(tablandscape) {
+  							     	width: 20.5%;
+  								    padding-right: 20px;
+  
+  							     }
+  			 			}
+  			 			&:nth-of-type(3){
+  			 				        width: 24%;
+  								    padding-right: 15px;
+  								    
+  			 			}
+  			 			&:nth-of-type(4){
+  			 				            width: 17%;
+  									    padding-right: 20px;
+  									   @include bp(tablandscape) {
+  									   	width: 16.5%;
+  									   }
+  			 			}
+  			 			&:nth-of-type(5){
+  			 				            width: 20%;
+  									    padding-right: 20px;
+  									    
+  			 			}*/
 }
 .greyPanel.rates .bgWrap table thead tr th:last-child {
   width: 20%;
@@ -16217,36 +16265,6 @@ footer {
     width: 22%;
   }
 }
-.greyPanel.rates .bgWrap table thead tr th:nth-of-type(1) {
-  /*width: 16.5%;*/
-}
-.greyPanel.rates .bgWrap table thead tr th:nth-of-type(2) {
-  /*width: 20.4%;*/
-  padding-right: 41px;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .greyPanel.rates .bgWrap table thead tr th:nth-of-type(2) {
-    width: 20.5%;
-    padding-right: 20px;
-  }
-}
-.greyPanel.rates .bgWrap table thead tr th:nth-of-type(3) {
-  /* width: 24%;*/
-  padding-right: 15px;
-}
-.greyPanel.rates .bgWrap table thead tr th:nth-of-type(4) {
-  /*width: 17%;*/
-  padding-right: 20px;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .greyPanel.rates .bgWrap table thead tr th:nth-of-type(4) {
-    width: 16.5%;
-  }
-}
-.greyPanel.rates .bgWrap table thead tr th:nth-of-type(5) {
-  /* width: 20%;*/
-  padding-right: 20px;
-}
 .greyPanel.rates .bgWrap table tbody tr td {
   text-align: left;
   font-size: 24px;
@@ -16256,6 +16274,7 @@ footer {
   padding-left: 12px;
   padding-right: 30px;
   color: #1c3d6d;
+  vertical-align: top;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .greyPanel.rates .bgWrap table tbody tr td {
@@ -16325,6 +16344,9 @@ footer {
   }
 }
 @media (max-width: 1023px) {
+  .greyPanel.rates .bgWrap table.responsive_table {
+    background: transparent;
+  }
   .greyPanel.rates .bgWrap table.responsive_table tr {
     height: 64px;
   }
@@ -16398,6 +16420,171 @@ footer {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .greyPanel.rates .bgWrap .detailsText p {
     font-size: 13px;
+  }
+}
+
+.greyPanel.lft-img .rates-btn {
+  padding-top: 25px;
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img .rates-btn {
+    padding-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .rates-btn {
+    text-align: center;
+  }
+}
+.greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
+  font-size: 18px;
+  color: #fff;
+  padding: 17px 50px;
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
+    font-size: 15px;
+    padding: 11px 36px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
+    font-size: 14px;
+  }
+}
+.greyPanel.lft-img .bgWrap {
+  padding: 0px;
+}
+.greyPanel.lft-img .flexWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .flexWrapper {
+    padding-top: 25px;
+  }
+}
+.greyPanel.lft-img .flexWrapper h3 {
+  text-transform: uppercase;
+  color: #1268e5;
+  font-size: 36px;
+  margin-bottom: 19px;
+}
+@media (max-width: 1279px) {
+  .greyPanel.lft-img .flexWrapper h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img .flexWrapper h3 {
+    margin-bottom: 7px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .flexWrapper h3 {
+    line-height: initial;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 17px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .flexWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.greyPanel.lft-img .flexWrapper .flexImage {
+  background-size: cover;
+  width: 535px;
+  max-height: 433px;
+  height: auto;
+  position: relative;
+  background-position: center center;
+}
+@media (max-width: 1279px) {
+  .greyPanel.lft-img .flexWrapper .flexImage {
+    max-height: 352px;
+  }
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img .flexWrapper .flexImage {
+    max-height: 383px;
+    width: 304px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .flexWrapper .flexImage {
+    height: 232px;
+    width: 100%;
+  }
+}
+.greyPanel.lft-img .flexContent {
+  padding: 58px 25px 20px 40px;
+  width: -webkit-calc(100% - 535px);
+  width: calc(100% - 535px);
+}
+@media (max-width: 1279px) {
+  .greyPanel.lft-img .flexContent {
+    width: -webkit-calc(100% - 376px);
+    width: calc(100% - 376px);
+    padding: 32px 20px 10px 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img .flexContent {
+    padding: 20px 20px 10px 20px;
+    width: -webkit-calc(100% - 344px);
+    width: calc(100% - 344px);
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img .flexContent {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 43px;
+    padding-bottom: 18px;
+  }
+}
+.greyPanel.lft-img .flexContent p {
+  color: #666;
+  margin-bottom: 23px;
+  font-weight: 500;
+}
+@media (max-width: 1279px) {
+  .greyPanel.lft-img .flexContent p {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img .flexContent p {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+.greyPanel.lft-img .flexContent ul, .greyPanel.lft-img .flexContent .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .greyPanel.lft-img .flexContent ol, .greyPanel.lft-img .flexContent .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .greyPanel.lft-img .flexContent ol {
+  display: list-item;
+  padding-left: 20px;
+}
+.greyPanel.lft-img .flexContent ul li, .greyPanel.lft-img .flexContent .proDetail .heroBlock .bgWrap ol li, .proDetail .heroBlock .bgWrap .greyPanel.lft-img .flexContent ol li, .greyPanel.lft-img .flexContent .proDetail .greyPanel.rates .bgWrap ol li, .proDetail .greyPanel.rates .bgWrap .greyPanel.lft-img .flexContent ol li {
+  display: list-item;
+  list-style: disc;
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 6px;
+}
+@media (max-width: 1279px) {
+  .greyPanel.lft-img .flexContent ul li, .greyPanel.lft-img .flexContent .proDetail .heroBlock .bgWrap ol li, .proDetail .heroBlock .bgWrap .greyPanel.lft-img .flexContent ol li, .greyPanel.lft-img .flexContent .proDetail .greyPanel.rates .bgWrap ol li, .proDetail .greyPanel.rates .bgWrap .greyPanel.lft-img .flexContent ol li {
+    font-size: 18px;
   }
 }
 
