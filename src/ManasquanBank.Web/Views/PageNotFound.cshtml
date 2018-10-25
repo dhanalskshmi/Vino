@@ -5,23 +5,26 @@
     var bodyText = Model.Content.GetPropertyValue<string>("notFoundbodyText");
     var notFoundbackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("notFoundbackgroundImage");
 }
+
 <section class="heroBanner">
     <figure class="bannerImage" style="background-image: url('@notFoundbackgroundImage.Url')"></figure>
 </section>
-<section class="heroBlock">
-    <div class="containerWrapper">
-        <div class="bgWrap specNeed">
-            <section class="pageNot-found-section">
-                <div class="containerWrapper" id="maincontent">
-                    <h1>@title</h1>
-                    <div class="page-section-box">
-                        @Html.Raw(bodyText)
-                        <div class="actionBlock">
-                            <a href="/" class="btnManasq"><span>go to home page</span></a>
+<div class="error-page">
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap specNeed">
+                <section class="pageNot-found-section">
+                    <div class="containerWrapper" id="maincontent">
+                        <h1>@title</h1>
+                        <div class="page-section-box">
+                            @Html.Raw(bodyText)
+                            <div class="actionBlock">
+                                <a href="/" class="btnManasq"><span>go to home page</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>

@@ -15,7 +15,11 @@
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
+    var twitterFeeds = t.GetTwitterFeed();
+    var jArray = JArray.Parse(twitterFeeds);
+    
 }
+
 <div class="socialMedia">
     <section class="heroBanner">
         <figure class="bannerImage" style="background-image: url('@heroImage.Url')"></figure>
@@ -49,8 +53,9 @@
                 <div class="filtr-container">
 @try
 {
-    var twitterFeeds = t.GetTwitterTimeline();
-    var jArray = JArray.Parse(twitterFeeds);
+   // var twitterFeeds = t.GetTwitterTimeline();
+   // var jArray = JArray.Parse(twitterFeeds);
+   // @Html.Raw(jArray)
     if (jArray.Count > 0)
     {
         int i = 0;
@@ -77,9 +82,9 @@
             var formatedDate = created_time.ToString("yyyy-MM-dd");
             var twDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
             string msg = string.Empty;
-            if (tweetlist.text.ToString() != null)
+            if (tweetlist.full_text.ToString() != null)
             {
-                msg = tweetlist.text.ToString();
+                msg = tweetlist.full_text.ToString();
             }
             else
             {
@@ -113,14 +118,15 @@
                         <div class="flexPanelBody">
                             @if (tweetlist.extended_entities != null)
                             {
-
+                                int s = 0;
                                 foreach (dynamic media in tweetlist.extended_entities["media"])
                                 {
-
+                                    if (s == 0) { 
                                     <figure>
                                         <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
                                     </figure>
-
+                                        s++;
+                                    }
                                 }
 
                             }

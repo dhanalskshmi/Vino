@@ -220,8 +220,16 @@
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
     </Reference>
+    <Reference Include="Skybrud.Essentials, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Essentials.1.1.5\lib\net47\Skybrud.Essentials.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Skybrud.Social, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Skybrud.Social.0.9.6.0\lib\net40\Skybrud.Social.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Skybrud.Social.Umbraco, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Social.Umbraco.1.0.7\lib\net45\Skybrud.Social.Umbraco.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SpectrumColourPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -394,6 +402,29 @@
     <Content Include="App_Plugins\PerplexMail\style.min.css" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.html" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\FacebookOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\GoogleOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\InstagramOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\TwitterOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\Dialogs.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\PropertyEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\ScopesDialog.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\Dialogs.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\PropertyEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\ScopesDialog.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Images\sprite.png" />
+    <Content Include="App_Plugins\Skybrud.Social\Instagram\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Instagram\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Instagram\OAuth\PropertyEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Styles\Social.css" />
+    <Content Include="App_Plugins\Skybrud.Social\Styles\Social.min.css" />
+    <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\PropertyEditor.html" />
     <Content Include="App_Plugins\SpectrumColorPicker\lang\da-DK.xml" />
     <Content Include="App_Plugins\SpectrumColorPicker\lang\de-DE.xml" />
     <Content Include="App_Plugins\SpectrumColorPicker\lang\en-GB.xml" />
@@ -677,6 +708,7 @@
     <Compile Include="Helpers\cacheHelper.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Models\BusinessManagementModel.cs" />
+    <Compile Include="Models\TwitAuthenticateResponse .cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Models\NewsLetterModel.cs" />
     <Compile Include="Models\RecaptchaResponse.cs" />
@@ -727,6 +759,9 @@
     <Content Include="fonts\archivonarrowSemibold.woff2" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
     <Content Include="config\uDateFoldersy.config" />
+    <Content Include="App_Plugins\Skybrud.Social\Styles\_table.less" />
+    <Content Include="App_Plugins\Skybrud.Social\Styles\Social.less" />
+    <Content Include="App_Plugins\Skybrud.Social\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\ContactUsPage.cshtml" />
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
@@ -759,6 +794,7 @@
     <Content Include="Views\PageNotFound.cshtml" />
     <Content Include="Views\Partials\SearchResults.cshtml" />
     <Content Include="Views\BingSearchResults.cshtml" />
+    <Content Include="Views\Rates.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

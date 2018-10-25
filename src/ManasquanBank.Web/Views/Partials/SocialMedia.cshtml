@@ -14,7 +14,7 @@ CURRENT EVENTS
 </h2>
 @try
 {
-    var twitterFeeds = t.GetTwitterTimeline();
+    var twitterFeeds = t.GetTwitterFeed();
     var jArray = JArray.Parse(twitterFeeds);
     if (jArray.Count > 0)
     {
@@ -55,7 +55,7 @@ CURRENT EVENTS
 
                             <div class="followShare">
                                 <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
-                                    <img src="/images/home/tweet.png" alt="">
+                                    <img src="/images/home/tweet.png" alt="Twitter Logo">
                                 </a>
 
                             </div>
@@ -64,7 +64,7 @@ CURRENT EVENTS
                         </div>
                         <div class="eventDetails">
                             <p>
-                                @{string msg = tweetlist.text.ToString();
+                                @{string msg = tweetlist.full_text.ToString();
                                     string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
                                     foreach (var url in tweetlist.entities.urls)
                                     {
@@ -80,13 +80,16 @@ CURRENT EVENTS
                             </p>
                             @if (tweetlist.extended_entities != null)
                             {
-
+                                int s = 0;
                                 foreach (dynamic media in tweetlist.extended_entities["media"])
                                 {
-
+                                    if (s == 0)
+                                    {
                                     <figure>
                                         <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
                                     </figure>
+                                        s++;
+                                    }
 
                                 }
 
@@ -109,7 +112,7 @@ CURRENT EVENTS
 }
 catch (Exception e)
 {
-    @Html.Raw(e.Message.ToString())
+   
 }
 </div>
 </section>

@@ -4,17 +4,22 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ConnecticutRegionalWater.Web.Models;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using Umbraco.Web.Mvc;
 
-
-namespace ManasquanBank.Web.Controllers
+namespace ConnecticutRegionalWater.Web.Controllers
 {
     using System.Threading.Tasks;
     using ServiceHelpers;
+
     public class BingSearchController : SurfaceController
     {
         // GET: BingSearchSurface
-        public ActionResult Index()
+        public ActionResult Index(string searchApiKey, string searchResultsUrl)
         {
             var query = Request.QueryString["q"];
             var offset = 0;
@@ -24,9 +29,9 @@ namespace ManasquanBank.Web.Controllers
                 int.TryParse(Request.QueryString["page"], out offset);
             }
 
-            var bingSearcher = new BingSearchHelper { SearchApiKey = ConfigurationManager.AppSettings["SearchApiKey"] };
+            var bingSearcher = new BingSearchHelper { SearchApiKey = searchApiKey };
 
-            var search = bingSearcher.GetSearchResults(query + " site:"+ConfigurationManager.AppSettings["SearchResultsUrl"], offset: offset);
+            var search = bingSearcher.GetSearchResults(query + " site:" + searchResultsUrl, offset: offset);
 
             search.Query = query;
             search.Page = offset;
