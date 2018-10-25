@@ -101,18 +101,18 @@
 											<ul class="subNav">
 												@foreach (var sub in subMenu)
                                             	{
-	                                                var submenuLink = sub.GetPropertyValue<Link>("submenuLink");
+	                                                var secondLevellink = sub.GetPropertyValue<Link>("secondLevellink");
 	                                                var submenuTitle = sub.GetPropertyValue<string>("submenuTitle");
 	                                                <li>
-		                                                @if (submenuLink != null)
+		                                                @if (secondLevellink != null)
 	                                                    {
-	                                                        if (submenuLink.Target == "_blank")
+	                                                        if (secondLevellink.Target == "_blank")
 	                                                        {
-	                                                            <a href="@submenuLink.Url" target="_blank" title="@submenuLink.Name" aria-label="@submenuLink.Name">@submenuTitle </a>
+	                                                            <a href="@secondLevellink.Url" target="_blank" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
 	                                                        }
 	                                                        else
 	                                                        {
-	                                                            <a href="@submenuLink.Url" title="@submenuLink.Name" aria-label="@submenuLink.Name">@submenuTitle </a>
+	                                                            <a href="@secondLevellink.Url" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
 	                                                        }
 
 	                                                    }
@@ -370,18 +370,18 @@
                         <ul class="inner" style="display: none;">
                             @foreach (var sub in subMenu)
                             {
-                                var submenuLink = sub.GetPropertyValue<Link>("submenuLink");
+                                var secondLevellink = sub.GetPropertyValue<Link>("secondLevellink");
                                 var submenuTitle = sub.GetPropertyValue<string>("submenuTitle");
                                 <li>
-                                    @if (submenuLink != null)
+                                    @if (secondLevellink != null)
                                     {
-                                        if (submenuLink.Target == "_blank")
+                                        if (secondLevellink.Target == "_blank")
                                         {
-                                            <a href="@submenuLink.Url" target="_blank" title="@submenuLink.Name" aria-label="@submenuLink.Name">@submenuTitle </a>
+                                            <a href="@secondLevellink.Url" target="_blank" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
                                         }
                                         else
                                         {
-                                            <a href="@submenuLink.Url" title="@submenuLink.Name" aria-label="@submenuLink.Name">@submenuTitle </a>
+                                            <a href="@secondLevellink.Url" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
                                         }
 
                                     }
