@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
+@using System.Text.RegularExpressions;
 @{
     Layout = "Master.cshtml";
     var bannerImage = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage");
@@ -102,7 +103,9 @@
                                         <a href="@cTAButton.Url" target="_blank">
                                             @if (!string.IsNullOrEmpty(promotionTitle))
                                             {
-                                                @Html.Raw(promotionTitle)
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
                                             }
 
 
@@ -113,7 +116,9 @@
                                         <a href="@cTAButton.Url">
                                             @if (!string.IsNullOrEmpty(promotionTitle))
                                             {
-                                                @Html.Raw(promotionTitle)
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
                                             }
 
                                         </a>
@@ -142,7 +147,9 @@
                                         <a href="@cTAButton.Url" target="_blank">
                                             @if (!string.IsNullOrEmpty(promotionTitle))
                                             {
-                                                @Html.Raw(promotionTitle)
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
                                             }
 
 
@@ -153,10 +160,12 @@
                                         <a href="@cTAButton.Url">
                                             @if (!string.IsNullOrEmpty(promotionTitle))
                                             {
-                                                @Html.Raw(promotionTitle)
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
                                             }
 
-                                        </a>
+                                       </a>
                                     }
                                 }
                             </figure>
@@ -232,10 +241,12 @@
                                     if (cTAButton.Target == "_blank")
                                     {
                                         <a href="@cTAButton.Url" target="_blank">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                @Html.Raw(promotionTitle)
-                                            }
+                                           @if (!string.IsNullOrEmpty(promotionTitle))
+                                           {
+                                               string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
+                                           }
 
 
                                         </a>
@@ -245,8 +256,11 @@
                                         <a href="@cTAButton.Url">
                                             @if (!string.IsNullOrEmpty(promotionTitle))
                                             {
-                                                @Html.Raw(promotionTitle)
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
                                             }
+
 
                                         </a>
                                     }
@@ -275,7 +289,9 @@
                                         <a href="@cTAButton.Url" target="_blank">
                                             @if (!string.IsNullOrEmpty(promotionTitle))
                                             {
-                                                @Html.Raw(promotionTitle)
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                                @promoTitle
                                             }
 
 
@@ -284,10 +300,13 @@
                                     else
                                     {
                                         <a href="@cTAButton.Url">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                @Html.Raw(promotionTitle)
-                                            }
+                                           @if (!string.IsNullOrEmpty(promotionTitle))
+                                           {
+                                               string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                            @promoTitle
+                                           }
+
 
                                         </a>
                                     }
