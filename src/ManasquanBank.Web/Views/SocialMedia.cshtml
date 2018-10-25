@@ -15,8 +15,7 @@
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
-    var twitterFeeds = t.GetTwitterFeed();
-    var jArray = JArray.Parse(twitterFeeds);
+    
     
 }
 
@@ -53,9 +52,8 @@
                 <div class="filtr-container">
 @try
 {
-   // var twitterFeeds = t.GetTwitterTimeline();
-   // var jArray = JArray.Parse(twitterFeeds);
-   // @Html.Raw(jArray)
+    var twitterFeeds = t.GetTwitterFeed();
+    var jArray = JArray.Parse(twitterFeeds);
     if (jArray.Count > 0)
     {
         int i = 0;
