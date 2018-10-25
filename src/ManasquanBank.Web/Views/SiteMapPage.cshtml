@@ -36,51 +36,198 @@
                             {
                                 foreach (var node in LeftNavigation)
                                 {
+
+
                                     var CurrentNode = new DynamicNode().NodeById(node);
                                     var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
                                     if (!string.IsNullOrEmpty(CurrentNode.Name))
                                     {
                                         PageTitle = CurrentNode.Name;
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
-                                        if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
-                                        {
-                                            <ul>
-                                                @foreach (var childNode in CurrentNode.Children)
-                                                {
-                                                    var ChildNode = new DynamicNode().NodeById(childNode.Id);
 
-                                                    if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                        if (node.DocumentTypeAlias != "locationLandingPage")
+                                        {
+                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            {
+
+
+                                                <ul>
+                                                    @foreach (var childNode in CurrentNode.Children)
                                                     {
-                                                        PageTitle = ChildNode.Name;
-                                                        <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                        if (childNode.NodeTypeAlias == "locationDetailPage")
+                                                        {
+                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                            {
+                                                                PageTitle = ChildNode.Name;
+                                                                <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                            }
+
+                                                        }
+
+
                                                     }
-                                                }
-                                            </ul>
+                                                </ul>
+                                            }
                                         }
+                                        else if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
+                                        {
+                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            {
+                                                <ul>
+                                                    @foreach (var childNode in CurrentNode.Children)
+                                                    {
+                                                        var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                        if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                        {
+                                                            PageTitle = ChildNode.Name;
+                                                            <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            }
+
+                                        }
+
+
                                     }
                                     PageTitle = "";
                                 }
                             }
                         </div>
                         <div class="center-section">
-                            <h4><a class="hvr-underline-from-center" href="#">Head 5</a></h4>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 6</a></h4>
-                            <ul>
-                                <li>
-                                    <h4><a class="hvr-underline-from-center" href="#">Head 7</a></h4>
-                                </li>
-                                <li>
-                                    <h4><a class="hvr-underline-from-center" href="#">Head 8</a></h4>
-                                </li>
-                                <li>
-                                    <h4><a class="hvr-underline-from-center" href="#">Head 9</a></h4>
-                                </li>
-                            </ul>
+                            @if (Model.Content.HasValue("leftNavigation"))
+                            {
+                                foreach (var node in LeftNavigation)
+                                {
+
+
+                                    var CurrentNode = new DynamicNode().NodeById(node);
+                                    var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
+                                    if (!string.IsNullOrEmpty(CurrentNode.Name))
+                                    {
+                                        PageTitle = CurrentNode.Name;
+                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
+
+                                        if (node.DocumentTypeAlias != "locationLandingPage")
+                                        {
+                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            {
+
+
+                                                <ul>
+                                                    @foreach (var childNode in CurrentNode.Children)
+                                                    {
+                                                        if (childNode.NodeTypeAlias == "locationDetailPage")
+                                                        {
+                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                            {
+                                                                PageTitle = ChildNode.Name;
+                                                                <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                            }
+
+                                                        }
+
+
+                                                    }
+                                                </ul>
+                                            }
+                                        }
+                                        else if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
+                                        {
+                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            {
+                                                <ul>
+                                                    @foreach (var childNode in CurrentNode.Children)
+                                                    {
+                                                        var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                        if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                        {
+                                                            PageTitle = ChildNode.Name;
+                                                            <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            }
+
+                                        }
+
+
+                                    }
+                                    PageTitle = "";
+                                }
+                            }
                         </div>
                         <div class="right-section">
-                            <h4><a class="hvr-underline-from-center" href="#">Head 10</a></h4>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 11</a></h4>
-                            <h4><a class="hvr-underline-from-center" href="#">Head 12</a></h4>
+                            @if (Model.Content.HasValue("leftNavigation"))
+                            {
+                                foreach (var node in LeftNavigation)
+                                {
+
+
+                                    var CurrentNode = new DynamicNode().NodeById(node);
+                                    var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
+                                    if (!string.IsNullOrEmpty(CurrentNode.Name))
+                                    {
+                                        PageTitle = CurrentNode.Name;
+                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
+
+                                        if (node.DocumentTypeAlias != "locationLandingPage")
+                                        {
+                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            {
+
+
+                                                <ul>
+                                                    @foreach (var childNode in CurrentNode.Children)
+                                                    {
+                                                        if (childNode.NodeTypeAlias == "locationDetailPage")
+                                                        {
+                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                            {
+                                                                PageTitle = ChildNode.Name;
+                                                                <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                            }
+
+                                                        }
+
+
+                                                    }
+                                                </ul>
+                                            }
+                                        }
+                                        else if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
+                                        {
+                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            {
+                                                <ul>
+                                                    @foreach (var childNode in CurrentNode.Children)
+                                                    {
+                                                        var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                        if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                        {
+                                                            PageTitle = ChildNode.Name;
+                                                            <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            }
+
+                                        }
+
+
+                                    }
+                                    PageTitle = "";
+                                }
+                            }
                         </div>
                     </div>
                 </div>
