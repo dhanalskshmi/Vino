@@ -1774,9 +1774,29 @@ $(document).ready(function(){
                             var vTr;
                             $('<table />', { 'class': 'responsive_table', 'id': 'tablemobile' + i + j }).insertAfter(vInsertAfter);
                             $(this).find('td').each(function () {
-                                $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).append($('<td/>', { 'html': $(this).html() })).appendTo($('#tablemobile' + i + j));
-                                k++;
+
+                               
+
+                             
+                                if($(this).attr("colspan")>0){
+                                    var col=$(this).attr("colspan");
+                                    $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).append($('<td/>', { 'html': $(this).html() })).appendTo($('#tablemobile' + i + j)).find("td:last-child").attr({'rowspan' : col});
+                                     k++;
+                                    col=parseInt(col);
+                                    col=col-1;
+                                    
+                                    for(var a=0;a<col;a++){
+                                     $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).appendTo($('#tablemobile' + i + j));
+                                    k++;
+                                    }
+                                    
+                                }else{
+                                     $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).append($('<td/>', { 'html': $(this).html() })).appendTo($('#tablemobile' + i + j));
+                                     k++;
+                                }
+
                             });
+                            
                             vInsertAfter = '#tablemobile' + i + j;
                         }
                         j++;
@@ -1791,6 +1811,7 @@ $(document).ready(function(){
                             $(this).find('td').each(function () {
                                 if ($(this).html().trim() != '&nbsp;')
                                 {
+
                                     if (k / 2 == 0)
                                         $('<tr/>').append($('<td/>', { 'html': $(this).html(), 'style': 'background-color: #fafafa' })).appendTo($('#tablemobile' + i + j));
                                     else
