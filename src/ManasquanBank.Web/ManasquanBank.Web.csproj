@@ -798,6 +798,7 @@
     <Content Include="Views\BingSearchResults.cshtml" />
     <Content Include="Views\Rates.cshtml" />
     <Content Include="Views\SiteMapPage.cshtml" />
+    <Content Include="Views\SiteMapXml.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
