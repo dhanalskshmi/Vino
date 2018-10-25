@@ -390,21 +390,25 @@
 			}
 			.contentSection {
 				width:51.015%;
-				height:100%;
+				min-height: 550px;
+				position: relative;
 				float:left;
 				order:2;
 				/*padding: 42px 52px 35px 48px;*/
-				padding:42px 47px 35px 48px;
+				padding:42px 47px 200px 48px;
 				@include bp(tablandscape){
 					width:50%;
-					padding:16px 28px 12px 30px;
+					min-height: 390px;
+					padding:16px 28px 130px 30px;
 				}
 				@include bp(tabportrait) {
 					width: 61.814%;
-					padding:20px 28px 15px 30px;
+					min-height: 390px;
+					padding:20px 28px 143px 30px;
 				}
 				@include bp(mobile) {
 					width:100%;
+					min-height: auto;
 					padding:19px 11px 16px 11px;
 				}
 				h2 {
@@ -494,6 +498,20 @@
 						    margin-top: 10px;
 						    left: 0;
     					}
+					}
+				}
+				.contentBottom{
+					position: absolute;
+					bottom: 33px;
+					@include bp(tablandscape){
+						bottom: 16px;
+					}
+					@include bp(tabportrait){
+						bottom: 20px;
+					}
+					@include bp(mobile) {
+						position: static;
+						bottom: auto;
 					}
 				}
 				.icon-section {
@@ -759,7 +777,7 @@
 					width: 49.844%;
 					order: 1;
 					@include bp(desktop) {
-						padding:42px 44px 33px 43px;
+						padding:42px 44px 200px 43px;
 					}
 					@include bp(tablandscape) {
 						//padding: 16px 28px 20px;

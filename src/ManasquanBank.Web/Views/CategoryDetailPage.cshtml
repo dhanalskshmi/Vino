@@ -233,65 +233,65 @@
                                 {
                                     @Html.Raw(featuresList)
                                 }
-                                
-                                <div class="icon-section">
-                                    <span>
-                                        @if (!string.IsNullOrEmpty(phoneNo))
-                                        {
-                                            <img src="/images/category-detail/phone-icon.png" alt="phone-icon" />
-                                            <a href="tel:@phoneNo">@phoneNo</a>
-                                        }
-                                        
-                                    </span>
-                                    <span class="location-icon">
-                                        @if (branchLocator != null)
-                                        {
-                                            if (branchLocator.Target == "_blank")
+                                <div class="contentBottom">
+                                    <div class="icon-section">
+                                        <span>
+                                            @if (!string.IsNullOrEmpty(phoneNo))
                                             {
-                                                <img src="/images/category-detail/location-icon.png" alt="location-icon" />
-                                                <a href="@branchLocator.Url" target="_blank">@branchLocator.Name</a>
-                                            }
-                                            else
-                                            {
-                                                <img src="/images/category-detail/location-icon.png" alt="location-icon" />
-                                                <a href="@branchLocator.Url">@branchLocator.Name</a>
+                                                <img src="/images/category-detail/phone-icon.png" alt="phone-icon" />
+                                                <a href="tel:@phoneNo">@phoneNo</a>
                                             }
 
+                                        </span>
+                                        <span class="location-icon">
+                                            @if (branchLocator != null)
+                                            {
+                                                if (branchLocator.Target == "_blank")
+                                                {
+                                                    <img src="/images/category-detail/location-icon.png" alt="location-icon" />
+                                                    <a href="@branchLocator.Url" target="_blank">@branchLocator.Name</a>
+                                                }
+                                                else
+                                                {
+                                                    <img src="/images/category-detail/location-icon.png" alt="location-icon" />
+                                                    <a href="@branchLocator.Url">@branchLocator.Name</a>
+                                                }
+
+                                            }
+                                        </span>
+                                    </div>
+                                    @if (applyNow != null)
+                                    {
+                                        if (applyNow.Target == "_blank")
+                                        {
+                                            <a href="@applyNow.Url" target="_blank" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
                                         }
-                                    </span>
+                                        else
+                                        {
+                                            <a href="@applyNow.Url" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
+                                        }
+
+                                    }
+                                    @if (learnMore != null)
+                                    {
+                                        if (learnMore.Target == "_blank")
+                                        {
+                                            <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@learnMore.Url" class="learnBtn">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                            </a>
+                                        }
+                                    }
                                 </div>
-                                @if (applyNow != null)
-                                {
-                                    if (applyNow.Target == "_blank")
-                                    {
-                                        <a href="@applyNow.Url" target="_blank" class="btnManasq applyBtn">
-                                            <span>@applyNow.Name</span>
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@applyNow.Url" class="btnManasq applyBtn">
-                                            <span>@applyNow.Name</span>
-                                        </a>
-                                    }
-
-                                }
-                                @if (learnMore != null)
-                                {
-                                    if (learnMore.Target == "_blank")
-                                    {
-                                        <a href="@learnMore.Url" target="_blank" class="learnBtn">
-                                            @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@learnMore.Url" class="learnBtn">
-                                            @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
-                                        </a>
-                                    }
-                                }
-                                
                             </div>
                         </div>
                     </div>
@@ -323,65 +323,66 @@
                                 {
                                     @Html.Raw(featuresList)
                                 }
-
-                                <div class="icon-section">
-                                    <span>
-                                        @if (!string.IsNullOrEmpty(phoneNo))
-                                        {
-                                            <img src="/images/category-detail/phone-icon.png" alt="phone-icon" />
-                                            <a href="tel:@phoneNo">@phoneNo</a>
-                                        }
-
-                                    </span>
-                                    <span class="location-icon">
-                                        @if (branchLocator != null)
-                                        {
-                                            if (branchLocator.Target == "_blank")
+                                <div class="contentBottom">
+                                    <div class="icon-section">
+                                        <span>
+                                            @if (!string.IsNullOrEmpty(phoneNo))
                                             {
-                                                <img src="/images/category-detail/location-icon.png" alt="location-icon" />
-                                                <a href="@branchLocator.Url" target="_blank">@branchLocator.Name</a>
-                                            }
-                                            else
-                                            {
-                                                <img src="/images/category-detail/location-icon.png" alt="location-icon" />
-                                                <a href="@branchLocator.Url">@branchLocator.Name</a>
+                                                <img src="/images/category-detail/phone-icon.png" alt="phone-icon" />
+                                                <a href="tel:@phoneNo">@phoneNo</a>
                                             }
 
+                                        </span>
+                                        <span class="location-icon">
+                                            @if (branchLocator != null)
+                                            {
+                                                if (branchLocator.Target == "_blank")
+                                                {
+                                                    <img src="/images/category-detail/location-icon.png" alt="location-icon" />
+                                                    <a href="@branchLocator.Url" target="_blank">@branchLocator.Name</a>
+                                                }
+                                                else
+                                                {
+                                                    <img src="/images/category-detail/location-icon.png" alt="location-icon" />
+                                                    <a href="@branchLocator.Url">@branchLocator.Name</a>
+                                                }
+
+                                            }
+                                        </span>
+                                    </div>
+                                    @if (applyNow != null)
+                                    {
+                                        if (applyNow.Target == "_blank")
+                                        {
+                                            <a href="@applyNow.Url" target="_blank" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
                                         }
-                                    </span>
+                                        else
+                                        {
+                                            <a href="@applyNow.Url" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
+                                        }
+
+                                    }
+                                    @if (learnMore != null)
+                                    {
+                                        if (learnMore.Target == "_blank")
+                                        {
+                                            <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@learnMore.Url" class="learnBtn">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                            </a>
+                                        }
+                                    }
+                                    </div>
                                 </div>
-                                @if (applyNow != null)
-                                {
-                                    if (applyNow.Target == "_blank")
-                                    {
-                                        <a href="@applyNow.Url" target="_blank" class="btnManasq applyBtn">
-                                            <span>@applyNow.Name</span>
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@applyNow.Url" class="btnManasq applyBtn">
-                                            <span>@applyNow.Name</span>
-                                        </a>
-                                    }
-
-                                }
-                                @if (learnMore != null)
-                                {
-                                    if (learnMore.Target == "_blank")
-                                    {
-                                        <a href="@learnMore.Url" target="_blank" class="learnBtn">
-                                            @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@learnMore.Url" class="learnBtn">
-                                            @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
-                                        </a>
-                                    }
-                                }
-                            </div>
                         </div>
                     </div>
                 </div>
