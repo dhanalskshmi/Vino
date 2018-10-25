@@ -15819,6 +15819,7 @@ footer {
 .re-order.request .clrdecoder {
   background-color: #c5d9f4;
   width: 100%;
+  margin-bottom: 7px;
 }
 @media (max-width: 1279px) {
   .re-order.request .clrdecoder {
@@ -15829,6 +15830,15 @@ footer {
   .re-order.request .clrdecoder {
     padding-bottom: 12px;
     padding-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .re-order.request .clrdecoder {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .re-order.request .clrdecoder + .parentWrapper {
+    padding-top: 0px;
   }
 }
 .re-order .threecolsWrapper {
@@ -16032,7 +16042,7 @@ footer {
 }
 @media (max-width: 1023px) {
   .re-order .contactFormWrap .form-control.txtArea {
-    max-height: 140px;
+    max-height: 170px;
   }
 }
 .re-order .contactFormWrap .form-group {
@@ -16177,6 +16187,11 @@ footer {
 .re-order .mob-flex .btnManasq, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply {
   margin-right: 0px;
 }
+@media (max-width: 767px) {
+  .re-order .mob-flex .btnManasq, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply {
+    margin: 0 auto;
+  }
+}
 
 .greyPanel.rates {
   margin-top: 80px;
@@ -16188,11 +16203,27 @@ footer {
   }
 }
 .greyPanel.rates .bgWrap {
-  padding: 38px 40px 28px 40px;
+  padding: 38px 40px 23px 40px;
 }
 .greyPanel.rates .bgWrap .tableSection {
   margin-top: 7px;
-  margin-bottom: 21px;
+  margin-bottom: 0px;
+}
+.greyPanel.rates .bgWrap .tableSection p {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .greyPanel.rates .bgWrap .tableSection p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.rates .bgWrap .tableSection p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .greyPanel.rates .bgWrap .tableSection {
@@ -16208,6 +16239,9 @@ footer {
   .greyPanel.rates .bgWrap {
     padding: 38px 10px 40px 10px;
   }
+}
+.greyPanel.rates .bgWrap table {
+  margin-bottom: 37px;
 }
 .greyPanel.rates .bgWrap table thead tr th {
   text-align: left;
@@ -16298,9 +16332,9 @@ footer {
 }
 .greyPanel.rates .bgWrap table tbody tr td p {
   color: inherit;
-  margin-bottom: 0px;
-  font-size: inherit;
-  padding-bottom: 7px;
+  margin-bottom: 0px !important;
+  font-size: inherit !important;
+  padding-bottom: 7px !important;
 }
 .greyPanel.rates .bgWrap table tbody tr td p:last-child {
   padding-bottom: 0px;
@@ -16371,6 +16405,9 @@ footer {
     padding-top: 17px;
     padding-bottom: 10px;
   }
+  .greyPanel.rates .bgWrap table.responsive_table tr td p {
+    margin-bottom: 5px;
+  }
   .greyPanel.rates .bgWrap table.responsive_table tr td:last-child {
     text-align: left;
     padding-left: 15px;
@@ -16378,10 +16415,12 @@ footer {
   .greyPanel.rates .bgWrap table.responsive_table tr td:last-child p {
     color: inherit;
     font-size: inherit;
-    margin-bottom: 0px;
-  }
-  .greyPanel.rates .bgWrap table.responsive_table tr td:last-child p + p {
-    margin-bottom: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*margin-bottom: 0px;*/
+    /*+p{
+    	margin-bottom: 0;
+    }*/
   }
   .greyPanel.rates .bgWrap table.responsive_table tr:nth-child(2) td {
     display: table-cell;
@@ -16410,16 +16449,6 @@ footer {
     line-height: 22px;
     padding-top: 7px;
     padding-bottom: 6px;
-  }
-}
-.greyPanel.rates .bgWrap .detailsText p {
-  font-size: 14px;
-  line-height: 18px;
-  margin-bottom: 12px;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .greyPanel.rates .bgWrap .detailsText p {
-    font-size: 13px;
   }
 }
 

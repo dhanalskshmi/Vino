@@ -7,10 +7,23 @@
 				margin-top: 40px;
 			}
 	.bgWrap {
-		       padding: 38px 40px 28px 40px;
+		       padding: 38px 40px 23px 40px;
 		    .tableSection{
 		    	margin-top: 7px;
-		    	margin-bottom: 21px;
+		    	margin-bottom: 0px;
+					p{
+							font-size: 14px;
+							line-height: 18px;
+							margin-bottom: 12px;
+							@include bp(tablandscape) {
+								font-size: 13px;
+							}
+								@include bp(mobile) {
+									padding-left: 10px;
+									padding-right: 10px;
+								}
+						}
+
 					    @include bp(tablandscape) {
 					    	margin-top: 0px;					}		    	
 		    }
@@ -21,6 +34,7 @@
 				    padding: 38px 10px 40px 10px;
 				}
 		table{
+			margin-bottom: 37px;
 			 thead{
 			 	tr{
 			 		th{
@@ -116,9 +130,9 @@
     					}
 			 			p{
 			 				color: inherit;
-			 				margin-bottom: 0px;
-			 				font-size: inherit;
-			 				padding-bottom: 7px;
+			 				margin-bottom: 0px !important;
+			 				font-size: inherit !important;
+			 				padding-bottom: 7px !important;
 			 				&:last-child{
 			 					padding-bottom:0px;
 			 				}
@@ -162,6 +176,8 @@
 			 		}
 			 	}
 			 	&.responsive_table{
+			 		
+
 			 		 @include bp(tablet) {
 			 		 	background: transparent;
 			 		tr{
@@ -191,16 +207,21 @@
 			 					padding-top: 17px;
     							padding-bottom: 10px;
 				 			}
+				 			p{
+				 				margin-bottom: 5px;
+				 			}
 				 			&:last-child{
 				 				text-align: left;
 				 				padding-left: 15px;
 				 				p{
 				 					color: inherit;
 				 					font-size: inherit;
-				 					margin-bottom: 0px;
-				 					+p{
+				 					padding-left: 0px;
+					 				padding-right: 0px;
+				 					/*margin-bottom: 0px;*/
+				 					/*+p{
 				 						margin-bottom: 0;
-				 					}
+				 					}*/
 				 				}
 				 			}
 				 				
@@ -248,19 +269,14 @@
 			 	 }
 			 		} 
 			}
-.detailsText{
-	p{
-		font-size: 14px;
-		line-height: 18px;
-		margin-bottom: 12px;
-		@include bp(tablandscape) {
-			font-size: 13px;
-		}
-	}
-}
+
+	
+
 	}
 }
 }
+
+
 .greyPanel{
 	&.lft-img{
 .rates-btn{

@@ -651,7 +651,7 @@
 
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                       <label for="zip">Zip Code</label>
-                      <input type="text" class="form-control " required name="zip" id="zip">
+                      <input type="text" class="form-control " required name="zip" id="zip" minlength="6" maxlength="6">
                       <span class="errorSpan vd f-error">*</span>
                     </div>
                     <div class="form-group col-lg-6 col-xs-12 nopadding">
@@ -895,16 +895,18 @@
   <script>
     $(document).ready(function() {
         $('#basicExample').timepicker();
+
+
       $("#contactSucc").length > 0 && $("html, body").animate({
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")
 
-      if (jQuery("#zip").length > 0) {
-        document.getElementById('zip').addEventListener('input', function(e) {
-          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
-          e.target.value = x[1];
-        });
-      }
+      // if (jQuery("#zip").length > 0) {
+      //   document.getElementById('zip').addEventListener('input', function(e) {
+      //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+      //     e.target.value = x[1];
+      //   });
+      // }
       if (jQuery("#accNo").length > 0) {
         document.getElementById('accNo').addEventListener('input', function(e) {
           var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
@@ -915,6 +917,8 @@
     });
 
     $(document).ready(function() {
+     
+
       $.each(myJson.countries, function(index, value) {
         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
       });

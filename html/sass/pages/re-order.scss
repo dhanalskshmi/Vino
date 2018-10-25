@@ -25,6 +25,7 @@
         .clrdecoder{
             background-color: #c5d9f4;
             width: 100%;
+            margin-bottom: 7px;
              @include bp(landscape){
                 padding-bottom: 14px;
              }
@@ -32,6 +33,13 @@
                         padding-bottom: 12px;
                         padding-top: 20px;
                  }
+                  @include bp(mobile){
+                    margin-bottom: 0px;
+                    padding-bottom: 0px;
+                    +.parentWrapper{
+                        padding-top: 0px;
+                    }
+                  }
         }
     }
     .threecolsWrapper{
@@ -179,7 +187,7 @@
             &.txtArea{
                 height: 230px;
                  @include bp(tablet){
-                    max-height: 140px;
+                    max-height: 170px;
                  }
         }
         }
@@ -311,6 +319,9 @@
         text-align: center;
         .btnManasq{
             margin-right: 0px;
+             @include bp(mobile){
+                margin:  0 auto;
+             }
         }
     }
 
