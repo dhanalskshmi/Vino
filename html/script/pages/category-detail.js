@@ -91,7 +91,7 @@ $(document).ready(function(){
             }
           });
 
-          if ($(window).width() <= 767) {
+         
             $(window).on("load resize",function(e){
               $(".responsive_table tr:first-child").each(function() {
                $(this).addClass('blueBg')
@@ -100,14 +100,14 @@ $(document).ready(function(){
 
             });
 
-          }
+          
 
         }
 };
-if ($(window).width() <= 1023) {
+
   $(".responsive_table tr:first-child").each(function() {
    $(this).addClass('blueBg');
   });
-}
+
 
 });

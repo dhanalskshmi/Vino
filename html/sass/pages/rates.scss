@@ -8,6 +8,7 @@
 			}
 	.bgWrap {
 		       padding: 38px 40px 23px 40px;
+
 		    .tableSection{
 		    	margin-top: 7px;
 		    	margin-bottom: 0px;
@@ -151,6 +152,7 @@
 							background-color:#656565;
 							font-size: 18px;
 							line-height: 21px;
+							text-align: left;
 							@include bp(tablandscape) {
     						font-size: 14px;
     						line-height: 16px;
@@ -166,6 +168,7 @@
 							background-color:#3d3d3d;
 							font-size: 18px;
 							line-height: 21px;
+							text-align: left;
 							@include bp(tablandscape) {
     						font-size: 14px;
     						line-height: 16px;
@@ -198,6 +201,7 @@
 				 				font-size: 16px;
 			 					line-height: 18px;
 			 					color: #1c3d6d;
+			 					font-weight: 500;
 
 				 			&:nth-child(1){
 				 				background-color: #5678bf !important;
@@ -238,6 +242,7 @@
 			 		}
 			 	}
 			 	 @include bp(mobile) {
+			 	 	margin-bottom: 21px;
 			 	 	tr{
 			 			height: 64px;
 			 			td{
@@ -292,6 +297,7 @@
 			font-size: 18px;
 			color: #fff;
 			padding: 17px 50px;
+			font-weight: 700;
 						  @include bp(tablet){
 						  	font-size: 15px;
 						  	padding: 11px 36px;
@@ -317,7 +323,7 @@
                 font-size: 36px;
                 margin-bottom: 19px;
                 @include bp(landscape) {
-                    font-size: 30px;
+                    font-size: 24px;
                     margin-bottom: 10px;
                 }
                 @include bp(tablet){
@@ -339,7 +345,7 @@
             background-size: cover;
             width: 535px;
    			max-height: 433px;
-   			height: auto;
+   			height: 436px;
             position: relative;
             background-position: center center;
              @include bp(landscape){
