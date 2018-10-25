@@ -350,6 +350,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="500.aspx" />
+    <Content Include="500.html" />
     <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\agm.js" />
     <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-google-maps.2.1.0.js" />
     <Content Include="App_Plugins\AngularGoogleMaps\2.0.3\angular-google-maps.2.1.0.min.js" />
@@ -795,6 +797,7 @@
     <Content Include="Views\Partials\SearchResults.cshtml" />
     <Content Include="Views\BingSearchResults.cshtml" />
     <Content Include="Views\Rates.cshtml" />
+    <Content Include="Views\SiteMapPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

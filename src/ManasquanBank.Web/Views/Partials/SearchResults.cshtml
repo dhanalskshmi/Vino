@@ -47,8 +47,6 @@
             PageNum = 1;
         }
     }
-
-
     var SearchResults = Model.SearchResults;
 }
 
@@ -60,7 +58,6 @@
                     <div class="searchWrap">
                         @foreach (var result in SearchResults)
                         {
-
                             <h4><a href="@result.Url" target="_blank">@result.Title</a></h4>
                             <p><a href="@result.Url" target="_blank">@result.DisplayUrl</a><br /> @result.Snippet</p>
                             <a href="@result.Url" target="_blank" class="btn-readMore">Read More &gt;</a>
@@ -97,18 +94,8 @@
     }
     else
     {
-    <section class="searchPage">
-        <div class="containerWrapper">
-            <div class="container">
-                <h1>Search Results</h1>
-                <p>@Model.Count results for @Model.Query</p>
-                <div class="searchWrap">
-                    <p class="no-record">No Record Found</p>
-                </div>
-
+            <div class="searchWrap">
+                <p class="no-record">No Record Found</p>
             </div>
-        </div>
-    </section>
-        }
-
     }
+}

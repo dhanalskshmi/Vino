@@ -63,7 +63,7 @@ CURRENT EVENTS
 
                         </div>
                         <div class="eventDetails">
-                            <p>
+                            <p class="evenhgt">
                                 @{string msg = tweetlist.full_text.ToString();
                                     string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
                                     foreach (var url in tweetlist.entities.urls)
@@ -85,9 +85,9 @@ CURRENT EVENTS
                                 {
                                     if (s == 0)
                                     {
-                                    <figure>
-                                        <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
-                                    </figure>
+                                        <figure style="background-image: url('@media.media_url')">
+                                                <a href="@media.url" target="_blank"><span class="screen-reader-text">Media Link</span></a>
+                                        </figure>                                        
                                         s++;
                                     }
 
