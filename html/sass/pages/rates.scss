@@ -1,6 +1,6 @@
 .greyPanel {
 	&.rates{
-		@extend .heroBlock;
+		@extend .tableClass;
 		margin-top: 80px;
 			@include bp(mobile) {
 				margin-bottom: 40px;

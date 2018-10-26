@@ -892,6 +892,11 @@ header {
 			color: #1c3d6d;
 			padding-bottom: 14px;
 			text-transform: uppercase;
+			a{
+				&::after{
+					display: none;
+				}
+			}
 		}
 		h3 {
 			font-size: 19px;
