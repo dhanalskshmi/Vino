@@ -2518,20 +2518,20 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .flatNav .SubmenuWrapper .borderLine i:nth-child(1) {
-    left: -webkit-calc(100% - 1004px);
-    left: calc(100% - 1004px);
+    left: -webkit-calc(100% - 952px);
+    left: calc(100% - 952px);
   }
   .flatNav .SubmenuWrapper .borderLine i:nth-child(2) {
-    left: -webkit-calc(100% - 755px);
-    left: calc(100% - 755px);
+    left: -webkit-calc(100% - 715px);
+    left: calc(100% - 715px);
   }
   .flatNav .SubmenuWrapper .borderLine i:nth-child(3) {
-    left: -webkit-calc(100% - 507px);
-    left: calc(100% - 507px);
+    left: -webkit-calc(100% - 478px);
+    left: calc(100% - 478px);
   }
   .flatNav .SubmenuWrapper .borderLine i:nth-child(4) {
-    left: -webkit-calc(100% - 258px);
-    left: calc(100% - 258px);
+    left: -webkit-calc(100% - 241px);
+    left: calc(100% - 241px);
   }
   .flatNav .SubmenuWrapper.col-3 .borderLine i {
     min-height: 144px;
@@ -2630,6 +2630,23 @@ header + .loginBlocks .businessLogin p a {
 
   .openAccount {
     top: 25.3%;
+  }
+
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(1) {
+    left: -webkit-calc(100% - 1004px);
+    left: calc(100% - 1004px);
+  }
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(2) {
+    left: -webkit-calc(100% - 755px);
+    left: calc(100% - 755px);
+  }
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(3) {
+    left: -webkit-calc(100% - 507px);
+    left: calc(100% - 507px);
+  }
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(4) {
+    left: -webkit-calc(100% - 258px);
+    left: calc(100% - 258px);
   }
 }
 /*@import "tabletLandscape";
