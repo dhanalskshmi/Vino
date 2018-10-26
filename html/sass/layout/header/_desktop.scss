@@ -945,6 +945,16 @@ header {
 		}
 	}
 
+	.flatNav {
+		.SubmenuWrapper {
+			&.col-3 {
+				.flexBox {
+					height: 224px;
+				}
+			}
+		}
+	}
+
 	.ie11 {
 		.menuWrapper {
 			.loginBlocks {
@@ -1122,6 +1132,15 @@ header {
 	.mainNav {
 		.subNav {
 			top: 45px;
+		}
+	}
+	.flatNav {
+		.SubmenuWrapper {
+			&.col-3 {
+				.flexBox {
+					height: 338px;
+				}
+			}
 		}
 	}
 

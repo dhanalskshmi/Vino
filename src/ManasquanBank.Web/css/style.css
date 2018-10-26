@@ -2117,6 +2117,10 @@ header + .loginBlocks .businessLogin p a {
     padding-bottom: 0;
   }
 
+  .flatNav .SubmenuWrapper.col-3 .flexBox {
+    height: 224px;
+  }
+
   .ie11 .menuWrapper .loginBlocks {
     -webkit-transform: none;
         -ms-transform: none;
@@ -2268,6 +2272,10 @@ header + .loginBlocks .businessLogin p a {
 
   .mainNav .subNav {
     top: 45px;
+  }
+
+  .flatNav .SubmenuWrapper.col-3 .flexBox {
+    height: 338px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -5751,7 +5759,7 @@ footer {
     height: 60px;
   }
   .joinEmail form div {
-    width: 403px;
+    width: 398px;
     margin-right: 13px;
     margin-bottom: 32px;
   }

@@ -919,7 +919,12 @@ $(document).ready(function() {
 	$(".SubmenuWrapper").each(function(){
 		var className="col-"+$(this).find(".cols").length;
 		$(this).addClass(className);
-		$(this).parent().find("a:first-child").addClass("hasSubmenu");
+		$(this).parent().find("a").each(function(i){
+			if(i==0){
+				$(this).addClass("hasSubmenu");
+			}
+		});
+
 	});
 
 	$("a.hasSubmenu").click(function(e){
