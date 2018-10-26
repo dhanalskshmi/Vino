@@ -14,7 +14,11 @@
         //padding: 0 15px;
     }
 }
-
+.ie11{
+    .aboutUs{
+        display: inline;
+    }
+}
 .btn-mansq {
     display: inline-block;
     background: #1268e5;

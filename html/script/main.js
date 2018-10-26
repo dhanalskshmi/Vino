@@ -1018,10 +1018,6 @@ $('.contiLnk').on('click',function(){
     
 });
 
-if (isshow == null) {
-      // Show popup here
-  $('.popupWrap .wrap').addClass('Open');     
-}
 
 $(document).ready(function() {
     $("#contactSucc").length > 0 && $("html, body").animate({
