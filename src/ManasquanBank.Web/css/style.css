@@ -3870,6 +3870,10 @@ footer {
   text-align: center;
   text-transform: uppercase;
 }
+.knowledgePannel h2 + p {
+  color: #FFF;
+  padding: 20px 5% 0;
+}
 .knowledgePannel ul, .knowledgePannel .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .knowledgePannel ol, .knowledgePannel .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .knowledgePannel ol {
   padding: 102px 0 53px;
   text-align: center;
@@ -4690,6 +4694,10 @@ footer {
   .knowledgePannel h2 {
     font-size: 28px;
     line-height: 19px;
+  }
+  .knowledgePannel h2 + p {
+    padding-left: 6%;
+    padding-right: 6%;
   }
   .knowledgePannel ul, .knowledgePannel .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .knowledgePannel ol, .knowledgePannel .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .knowledgePannel ol {
     padding: 35px 49px 15px;
@@ -5611,6 +5619,9 @@ footer {
   }
   .knowledgePannel h2 {
     font-size: 50px;
+  }
+  .knowledgePannel h2 + p {
+    padding-top: 30px;
   }
   .knowledgePannel ul, .knowledgePannel .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .knowledgePannel ol, .knowledgePannel .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .knowledgePannel ol {
     padding: 76px 86px 46px;
@@ -6905,10 +6916,10 @@ footer {
   position: absolute;
 }
 
-#joinEmail #joinSuccess {
+#joinEmail #joinSuccess, .joinEmail #joinSuccess {
   width: 100%;
 }
-#joinEmail form #joinSuccess {
+#joinEmail form #joinSuccess, .joinEmail form #joinSuccess {
   width: 100%;
 }
 
@@ -16587,7 +16598,7 @@ footer {
     line-height: initial;
     font-size: 32px;
     text-align: center;
-    margin-bottom: 17px;
+    margin-bottom: 12px;
   }
 }
 @media (max-width: 767px) {
