@@ -2516,6 +2516,34 @@ header + .loginBlocks .businessLogin p a {
   .mainNav .subNav {
     top: 66px;
   }
+
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(1) {
+    left: -webkit-calc(100% - 1004px);
+    left: calc(100% - 1004px);
+  }
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(2) {
+    left: -webkit-calc(100% - 755px);
+    left: calc(100% - 755px);
+  }
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(3) {
+    left: -webkit-calc(100% - 507px);
+    left: calc(100% - 507px);
+  }
+  .flatNav .SubmenuWrapper .borderLine i:nth-child(4) {
+    left: -webkit-calc(100% - 258px);
+    left: calc(100% - 258px);
+  }
+  .flatNav .SubmenuWrapper.col-3 .borderLine i {
+    min-height: 144px;
+  }
+  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
+    display: none;
+  }
+  .flatNav .SubmenuWrapper.col-3 .flexBox {
+    width: -webkit-calc((100% / 5) * 3);
+    width: calc((100% / 5) * 3);
+    height: 182px;
+  }
 }
 @media screen and (min-width: 1300px) {
   .headerWrapper {
@@ -2602,37 +2630,6 @@ header + .loginBlocks .businessLogin p a {
 
   .openAccount {
     top: 25.3%;
-  }
-
-  .flatNav .SubmenuWrapper .borderLine i:nth-child(1) {
-    left: -webkit-calc(100% - 1004px);
-    left: calc(100% - 1004px);
-  }
-  .flatNav .SubmenuWrapper .borderLine i:nth-child(2) {
-    left: -webkit-calc(100% - 755px);
-    left: calc(100% - 755px);
-  }
-  .flatNav .SubmenuWrapper .borderLine i:nth-child(3) {
-    left: -webkit-calc(100% - 507px);
-    left: calc(100% - 507px);
-  }
-  .flatNav .SubmenuWrapper .borderLine i:nth-child(4) {
-    left: -webkit-calc(100% - 258px);
-    left: calc(100% - 258px);
-  }
-  .flatNav .SubmenuWrapper.col-3 .borderLine i {
-    min-height: 144px;
-  }
-  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
-    display: none;
-  }
-  .flatNav .SubmenuWrapper.col-3 .flexBox {
-    width: -webkit-calc((100% / 5) * 3);
-    width: calc((100% / 5) * 3);
-    height: 182px;
-  }
-  .flatNav .SubmenuWrapper.col-3 .flexBox .cols {
-    width: 33.33%;
   }
 }
 /*@import "tabletLandscape";
