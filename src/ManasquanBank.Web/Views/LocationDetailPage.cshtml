@@ -395,7 +395,7 @@
                 var position = new google.maps.LatLng(lat, Longitude);
                 //bounds.extend(position);
 
-                infoWindowContent[i] = "<div class='map-infoContent'><p>" + llocdata[i]["title"] + "</p><p class='get-direction'><a target='_blank' href='http://maps.google.com/maps?saddr=Current+Location&daddr=" + llocdata[i]["getdirection"] + "'>Get Direction</a></p></div>";
+                infoWindowContent[i] = "<div class='map-infoContent'><p>" + llocdata[i]["title"] + "</p><p class='get-direction'><a target='_blank' href='https://maps.google.com/maps?saddr=Current+Location&daddr=" + llocdata[i]["getdirection"] + "'>Get Direction</a></p></div>";
 
                 marker = new google.maps.Marker({
                     position: position,
