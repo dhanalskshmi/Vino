@@ -1392,16 +1392,16 @@ header {
 			.borderLine {
 				i {
 					&:nth-child(1) {
-						left: calc(100% - 1004px);
+						left: calc(100% - 952px);
 					}
 					&:nth-child(2) {
-						left: calc(100% - 755px);
+						left: calc(100% - 715px);
 					}
 					&:nth-child(3) {
-						left: calc(100% - 507px);
+						left: calc(100% - 478px);
 					}
 					&:nth-child(4) {
-						left: calc(100% - 258px);
+						left: calc(100% - 241px);
 					}
 				}
 			}
@@ -1549,6 +1549,27 @@ header {
 
 	.openAccount {
     top: 25.3%;
+	}
+
+	.flatNav {
+		.SubmenuWrapper {
+			.borderLine {
+				i {
+					&:nth-child(1) {
+						left: calc(100% - 1004px);
+					}
+					&:nth-child(2) {
+						left: calc(100% - 755px);
+					}
+					&:nth-child(3) {
+						left: calc(100% - 507px);
+					}
+					&:nth-child(4) {
+						left: calc(100% - 258px);
+					}
+				}
+			}
+		}
 	}
 
 
