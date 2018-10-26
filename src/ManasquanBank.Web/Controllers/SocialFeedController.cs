@@ -391,6 +391,7 @@ namespace ManasquanBank.Web.Controllers
         {
             try
             {
+                
                 var memCacher = new MemoryCacher();
                 var result = memCacher.GetValue("youtubefeed");
                 if (result == null)
@@ -405,7 +406,7 @@ namespace ManasquanBank.Web.Controllers
                     result = searchListResult.Items;
                 }
                 return result;
-
+                
             }
             catch(Exception e)
             {

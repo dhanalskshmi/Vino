@@ -3,7 +3,7 @@
 @using RJP.MultiUrlPicker.Models;
 @{
     Layout = "Master.cshtml";
-    var filterBannerHeroImage = Model.Content.GetPropertyValue<IPublishedContent>("filterBannerHeroImage");
+    var filterBannerHeroImage = Model.Content.AncestorOrSelf(2).GetPropertyValue<IPublishedContent>("detailHeroImage");
     var detailImage = Model.Content.GetPropertyValue<IPublishedContent>("detailImage");
     var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
     var filterDetailTitle = Model.Content.GetPropertyValue<string>("filterDetailTitle");

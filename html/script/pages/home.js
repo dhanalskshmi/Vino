@@ -56,7 +56,7 @@ if ($('.joinEmail').length > 0) {
 
 setTimeout(function() {
   $('html').addClass('popUpOpen');
-  if($('popUpWrapper').length > 0){
+  if($('.popUpWrapper').length > 0){
       //console.log('open');
       setTimeout(function(){
         $('.popupWrap .wrap').addClass('Open');
@@ -67,7 +67,17 @@ setTimeout(function() {
 $('.close').click(function() {
   $('html.pop').removeClass('popUpOpen');
   $('.popupWrap .wrap').removeClass('Open');
+  localStorage.setItem('isshow', 1);
 });
+var isshow = localStorage.getItem('isshow');
+if (isshow== null) {
+      // Show popup here
+      if($('.popUpWrapper').length > 0){
+        setTimeout(function(){
+          $('.popupWrap .wrap').addClass('Open');
+        },100);
+      }
+}
 
 $(document).ready(function() {
     $("#contactSucc").length > 0 && $("html, body").animate({

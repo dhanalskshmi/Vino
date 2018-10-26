@@ -47,15 +47,15 @@
 				}
 			}
 			&+ul {
-				margin-top: 75px;
-				@include bp(tablandscape) {
-					margin-top: 39px;
-				}
-				@include bp(tabportrait) {
-					margin-top: 25px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				@include bp(landscape) {
+					margin-top: 10px;
+				margin-bottom: 10px;
 				}
 				@include bp(mobile) {
-					margin-top: 16px;
+					margin-top: 10px;
+				margin-bottom: 10px;
 				}
 			}
 		}
@@ -130,7 +130,7 @@
 			}
 		}
 		table {
-			display:block;
+			display:table;
 			width:100%;
 			&.responsive_table {
 				&:last-child {
