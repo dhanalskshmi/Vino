@@ -35,7 +35,7 @@
     }
     
 </section>
-<section class="heroBlock">
+<section class="heroBlock timelinePannelwrap">
     <div class="containerWrapper">
         <div class="bgWrap">
             @if (!string.IsNullOrEmpty(timelinetitle))
@@ -80,7 +80,7 @@
                             </ul>
 
 
-                            <select class="decade-year-dropdown" id="timeline_dropdown">
+                            <select class="decade-year-dropdown" title="YearList" id="timeline_dropdown">
 
                                 
                                 @foreach (var item in YearList)
@@ -148,7 +148,7 @@
                                                                 <div class="timeline-heading">
                                                                     @if (image != null)
                                                                     {
-                                                                        <img class="img-responsive" src="@image.Url" />
+                                                                        <img class="img-responsive" src="@image.Url" alt="@image.Name"/>
                                                                     }
 
                                                                 </div>
@@ -182,7 +182,7 @@
                                                                 <div class="timeline-heading">
                                                                     @if (image != null)
                                                                     {
-                                                                        <img class="img-responsive" src="@image.Url" />
+                                                                        <img class="img-responsive" src="@image.Url" alt="@image.Name"/>
                                                                     }
 
                                                                 </div>
@@ -235,7 +235,7 @@
                                                                 <div class="timeline-heading">
                                                                     @if (image != null)
                                                                     {
-                                                                        <img class="img-responsive" src="@image.Url" />
+                                                                        <img class="img-responsive" src="@image.Url" alt="@image.Name"/>
                                                                     }
 
                                                                 </div>
@@ -269,7 +269,7 @@
                                                                 <div class="timeline-heading">
                                                                     @if (image != null)
                                                                     {
-                                                                        <img class="img-responsive" src="@image.Url" />
+                                                                        <img class="img-responsive" src="@image.Url" alt="@image.Name"/>
                                                                     }
 
                                                                 </div>
@@ -316,7 +316,7 @@
                                                                 <div class="timeline-heading">
                                                                     @if (image != null)
                                                                     {
-                                                                        <img class="img-responsive" src="@image.Url" />
+                                                                        <img class="img-responsive" src="@image.Url" alt="@image.Name"/>
                                                                     }
                                                                 </div>
                                                                 <div class="timeline-body">
@@ -345,7 +345,7 @@
                                                                 <div class="timeline-heading">
                                                                     @if (image != null)
                                                                     {
-                                                                        <img class="img-responsive" src="@image.Url" />
+                                                                        <img class="img-responsive" src="@image.Url" alt="@image.Name"/>
                                                                     }
                                                                 </div>
                                                                 <div class="timeline-body">

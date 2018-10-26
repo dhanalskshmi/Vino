@@ -139,6 +139,56 @@
 					}
 				}
 			}
+			td{
+				font-size: 18px;
+				@include bp(mobile){
+					font-size: 16px;
+				}
+			}
+			thead{
+				tr{
+					th{
+						border-bottom: 4px solid #f1f1f1;
+						border-right: 4px solid #f1f1f1;
+						background: #5678bf;
+						color: #fff;
+						font-size: 15px;
+						text-transform: uppercase;
+						text-align: center;
+						vertical-align: middle;
+						font-weight: 500;
+					}
+				}
+			}
+			&.responsive_table{
+				tr{
+					td{
+						&:nth-child(1) {
+                            @include bp(tabmax) {
+                                color: #fff;
+                                width: 43.4%;
+                                text-transform: uppercase;
+                                font-weight: 500 !important;
+                                padding-top: 11px;
+                                padding-bottom: 7px;
+                                padding-left: 30px;
+                            }
+                            @include bp(mobile) {
+                                width: 64.1%;
+                                padding-left: 10px;
+                                padding-top: 15px;
+                                padding-bottom: 12px;
+                            }
+                        }
+                        &:last-child {
+                            @include bp(tabmax) {
+                                border-right: 0px;
+                                text-align: center;
+                            }
+                        }
+					}
+				}
+			}
 		}
 		h1 {
 			text-transform:uppercase;
