@@ -81,7 +81,7 @@
 
             DateTime created_time = Convert.ToDateTime(displayTime);
             var formatedDate = created_time.ToString("yyyy-MM-dd");
-            var twDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
+            var twDate = t.changeDateFormat(created_time, DateTime.UtcNow).ToString();
             string msg = string.Empty;
             if (tweetlist.full_text.ToString() != null)
             {
@@ -201,7 +201,7 @@ catch (Exception e)
 
                 DateTime created_time = Convert.ToDateTime(displayTime);
                 var formatedDate = created_time.ToString("yyyy-MM-dd");
-                var facebookDate = t.GetRelativeTimeBetweenDates(created_time, DateTime.UtcNow).ToString();
+                var facebookDate = t.changeDateFormat(created_time, DateTime.UtcNow).ToString();
                 <div class="filtr-item" data-category="fb" data-date="@formatedDate">
                     <div class="flexPanelWrap">
                         <div class="flexPanelHead">
@@ -336,7 +336,7 @@ catch (Exception e)
         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         DateTime b = origin.AddSeconds(created_time);
         var formatedDate = b.ToString("yyyy-MM-dd");
-        var FormatedTime = t.GetRelativeTimeBetweenDates(b, DateTime.UtcNow).ToString();
+        var FormatedTime = t.changeDateFormat(b, DateTime.UtcNow).ToString();
         <div class="filtr-item" data-category="ig" data-date="@formatedDate">
             <div class="flexPanelWrap">
                 <div class="flexPanelHead">
