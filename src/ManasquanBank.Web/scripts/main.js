@@ -913,6 +913,15 @@ if ($('#personalLogin, #businessLogin, #mpersonalLogin, #mbusinessLogin').length
 }
 
 
+$(document).ready(function() {
+	$(".SubmenuWrapper").each(function(){
+		var className="col-"+$(this).find(".cols").length;
+		$(this).addClass(className);
+	})
+
+});
+
+
 function onSubmit(token) {
     document.getElementById('contactForm').submit();
 }
