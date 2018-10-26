@@ -45,7 +45,7 @@ namespace ManasquanBank.Web.Controllers
                     InstagramService service = InstagramService.CreateFromAccessToken(instagramAccessToken);
                     var response = service.Users.GetRecentMedia(instagramUserId, 5);
                     result = response.Body.Data.ToJson();
-                    memCacher.Add("instagramfeed", result, DateTimeOffset.UtcNow.AddHours(1));
+                    memCacher.Add("instagramfeed", result, DateTimeOffset.UtcNow.AddHours(3));
                 }
                 return result;
 
@@ -126,7 +126,7 @@ namespace ManasquanBank.Web.Controllers
                         {
                             timeLineJson = reader.ReadToEnd();
                             result = timeLineJson;
-                            memCacher.Add("twitterfeed", timeLineJson, DateTimeOffset.UtcNow.AddHours(1));
+                            memCacher.Add("twitterfeed", timeLineJson, DateTimeOffset.UtcNow.AddHours(3));
                         }
                     }
 
@@ -154,7 +154,7 @@ namespace ManasquanBank.Web.Controllers
                 // Initialize a new service instance from the OAuth client
                 TwitterService service = TwitterService.CreateFromOAuthClient(client);
                  // make call to api, caching results for 1 hour
-                var response = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Statuses.GetUserTimeline("ManasquanBank",5), new TimeSpan(1, 0, 0)) as TwitterTimelineResponse;
+                var response = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Statuses.GetUserTimeline("ManasquanBank",5), new TimeSpan(3, 0, 0)) as TwitterTimelineResponse;
 
                 var responseContent = string.Empty;
                 if (response != null)
@@ -367,7 +367,7 @@ namespace ManasquanBank.Web.Controllers
                 };
 
                 // retrieve the posts and cache for 1 hour
-                var posts = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Posts.GetPosts(postsOptions), new TimeSpan(1, 0, 0)) as FacebookPostsResponse;
+                var posts = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Posts.GetPosts(postsOptions), new TimeSpan(3, 0, 0)) as FacebookPostsResponse;
 
                 var responseContent = string.Empty;
                 if (posts != null)
@@ -402,7 +402,7 @@ namespace ManasquanBank.Web.Controllers
                     searchListRequest.ChannelId = id;
                     searchListRequest.MaxResults = count;
                     var searchListResult = searchListRequest.Execute();
-                    memCacher.Add("youtubefeed", searchListResult.Items, DateTimeOffset.UtcNow.AddHours(1));
+                    memCacher.Add("youtubefeed", searchListResult.Items, DateTimeOffset.UtcNow.AddHours(3));
                     result = searchListResult.Items;
                 }
                 return result;

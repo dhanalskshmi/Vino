@@ -44,6 +44,7 @@
             </div>
         </div>
     </section>
+
     <section class="socialPanel">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -207,9 +208,9 @@ catch (Exception e)
                         <div class="flexPanelHead">
                             <div class="headLogo">
                                 <figure>
-                                    <a href="//www.facebook.com/@profile_url"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
+                                    <a href="//www.facebook.com/@profile_url" target="_blank"><img src="~/images/header/logo_fav.jpg" alt="Manasquan Bank"></a>
                                 </figure>
-                                <h5><a href="//www.facebook.com/@profile_url">Manasquan Bank </a></h5>
+                                <h5><a href="//www.facebook.com/@profile_url" target="_blank">Manasquan Bank </a></h5>
                             </div>
                             <div class="headDate">
                                 <span>@facebookDate</span>
@@ -228,7 +229,7 @@ catch (Exception e)
                         <div class="flexPanelFoot">
                             <div class="flexIcon">
                                 <figure>
-                                    <a href="//www.facebook.com/@profile_url"><img src="~/images/social/facebook.png" alt="Twitter"></a>
+                                    <a href="//www.facebook.com/@profile_url" target="_blank"><img src="~/images/social/facebook.png" alt="Facebook"></a>
                                 </figure>
                             </div>
                         </div>
@@ -384,12 +385,12 @@ catch (Exception e)
 @section InnerBottomScript {
 <script type='text/javascript' src='~/scripts/lib/jquery.filterizr.min.js'></script>
 <script>
-      $(window).on("load",function(e){
+      $(window).on("load resize",function(e){
             // Default options
         var options = {
            animationDuration: 0.5, // in seconds
            filter: 'all', // Initial filter
-           delay: 25, // Transition delay in ms
+           delay: 350, // Transition delay in ms
            delayMode: 'progressive', // 'progressive' or 'alternate'
            easing: 'ease-out',
            filterOutCss: { // Filtering out animation
@@ -403,12 +404,14 @@ catch (Exception e)
            layout: 'sameWidth', // See layouts
            selector: '.filtr-container',
         }
-        // You can override any of these options and then call...
-        var filterizd = $('.filtr-container').filterizr(options);
+          // You can override any of these options and then call...
+       
+         var filterizd = $('.filtr-container').filterizr(options);
+         
+        
         // If you have already instantiated your Filterizr then call...
         filterizd.filterizr('setOptions', options);
         filterizd.filterizr('sort', 'date', 'desc');
-
 });
 
 $(document).ready(function(){
