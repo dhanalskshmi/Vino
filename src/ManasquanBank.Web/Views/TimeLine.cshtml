@@ -10,6 +10,8 @@
     Layout = "Master.cshtml";
 
 
+    var timelinetitle = Model.Content.GetPropertyValue<string>("siteTitle");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
 
     var timelineListing = Model.Content.Children.Where("Visible");
 
@@ -27,12 +29,20 @@
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
 }
 <section class="heroBanner">
-    <figure class="bannerImage" style="background-image: url('/images/banner/about_bg.jpg')"></figure>
+    @if (heroImage != null)
+    {
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+    }
+    
 </section>
 <section class="heroBlock">
     <div class="containerWrapper">
         <div class="bgWrap">
-            <h2>manasquan bank history timeline</h2>
+            @if (!string.IsNullOrEmpty(timelinetitle))
+            {
+                <h2>@timelinetitle</h2>
+            }
+            
             <div class="timelineWrappers">
                 <div class="timelineWrapper">
 
