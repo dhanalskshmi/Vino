@@ -21,7 +21,7 @@
 <section class="heroBanner">
     @if (heroImage != null)
     {
-        <figure class="bannerImage" style="background-image: url(@heroImage)"></figure>
+        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
     }
 </section>
 <section class="heroBlock">
@@ -45,62 +45,112 @@
                                         PageTitle = CurrentNode.Name;
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
 
-                                        if (node.DocumentTypeAlias != "locationLandingPage")
+
+                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
                                         {
-                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            if (node.DocumentTypeAlias == "locationLandingPage")
                                             {
+                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                {
 
 
-                                                <ul>
-                                                    @foreach (var childNode in CurrentNode.Children)
-                                                    {
-                                                        if (childNode.NodeTypeAlias == "locationDetailPage")
+                                                    <ul>
+                                                        @foreach (var childNode in CurrentNode.Children)
                                                         {
-                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
-
-                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                            if (childNode.NodeTypeAlias == "locationDetailPage")
                                                             {
-                                                                PageTitle = ChildNode.Name;
-                                                                <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                {
+                                                                    PageTitle = ChildNode.Name;
+                                                                    <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
+                                                                }
+
                                                             }
 
+
                                                         }
-
-
-                                                    }
-                                                </ul>
+                                                    </ul>
+                                                }
                                             }
-                                        }
-                                        else if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
-                                        {
-                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            else if (node.DocumentTypeAlias == "categoryLandingPage")
                                             {
-                                                <ul>
-                                                    @foreach (var childNode in CurrentNode.Children)
-                                                    {
-                                                        var ChildNode = new DynamicNode().NodeById(childNode.Id);
+                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                {
 
-                                                        if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+
+                                                    <ul>
+                                                        @foreach (var childNode in CurrentNode.Children)
                                                         {
-                                                            PageTitle = ChildNode.Name;
-                                                            <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
-                                                        }
-                                                    }
-                                                </ul>
-                                            }
+                                                            if (childNode.NodeTypeAlias == "categoryDetailPage")
+                                                            {
+                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
 
-                                        }
+                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                {
+                                                                    PageTitle = ChildNode.Name;
+                                                                    <li>
+                                                                        <h5>
+                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a>
+                                                                        </h5>
+                                                                        @{
+                                                                            var thirdlevel = new DynamicNode().NodeById(childNode.Id);
+
+                                                                            if (thirdlevel.Children.Count() > 0)
+                                                                            {
+                                                                                <ul>
+                                                                                    @foreach (var third in thirdlevel.Children)
+                                                                                    {
+                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@third.Name</a></li>
+                                                                                    }
+                                                                                </ul>
+                                                                            }
+
+                                                                        }
+
+                                                                    </li>
+                                                                                    }
+
+                                                                                }
 
 
-                                    }
-                                    PageTitle = "";
-                                }
-                            }
+                                                                            }
+                                                    </ul>
+                                                                                }
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                                                {
+                                                                                    <ul>
+                                                                                        @foreach (var childNode in CurrentNode.Children)
+                                                                                        {
+                                                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                            {
+                                                                                                PageTitle = ChildNode.Name;
+                                                                                                <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
+                                                                                            }
+                                                                                        }
+                                                                                    </ul>
+                                                                                                }
+                                                                                            }
+
+
+                                                                                        }
+
+
+                                                                                    }
+                                                                                    PageTitle = "";
+                                                                                }
+                                                                            }
                         </div>
                         <div class="center-section">
-                            @if (Model.Content.HasValue("leftNavigation"))
+                            @if (Model.Content.HasValue("middleNavigation"))
                             {
-                                foreach (var node in LeftNavigation)
+                                foreach (var node in MiddleNavigation)
                                 {
 
 
@@ -111,62 +161,112 @@
                                         PageTitle = CurrentNode.Name;
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
 
-                                        if (node.DocumentTypeAlias != "locationLandingPage")
+
+                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
                                         {
-                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            if (node.DocumentTypeAlias == "locationLandingPage")
                                             {
+                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                {
 
 
-                                                <ul>
-                                                    @foreach (var childNode in CurrentNode.Children)
-                                                    {
-                                                        if (childNode.NodeTypeAlias == "locationDetailPage")
+                                                    <ul>
+                                                        @foreach (var childNode in CurrentNode.Children)
                                                         {
-                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
-
-                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                            if (childNode.NodeTypeAlias == "locationDetailPage")
                                                             {
-                                                                PageTitle = ChildNode.Name;
-                                                                <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                {
+                                                                    PageTitle = ChildNode.Name;
+                                                                    <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
+                                                                }
+
                                                             }
 
+
                                                         }
-
-
-                                                    }
-                                                </ul>
+                                                    </ul>
+                                                }
                                             }
-                                        }
-                                        else if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
-                                        {
-                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            else if (node.DocumentTypeAlias == "categoryLandingPage")
                                             {
-                                                <ul>
-                                                    @foreach (var childNode in CurrentNode.Children)
-                                                    {
-                                                        var ChildNode = new DynamicNode().NodeById(childNode.Id);
+                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                {
 
-                                                        if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+
+                                                    <ul>
+                                                        @foreach (var childNode in CurrentNode.Children)
                                                         {
-                                                            PageTitle = ChildNode.Name;
-                                                            <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
-                                                        }
-                                                    }
-                                                </ul>
-                                            }
+                                                            if (childNode.NodeTypeAlias == "categoryDetailPage")
+                                                            {
+                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
 
-                                        }
+                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                {
+                                                                    PageTitle = ChildNode.Name;
+                                                                    <li>
+                                                                        <h5>
+                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a>
+                                                                        </h5>
+                                                                        @{
+                                                                            var thirdlevel = new DynamicNode().NodeById(childNode.Id);
+
+                                                                            if (thirdlevel.Children.Count() > 0)
+                                                                            {
+                                                                                <ul>
+                                                                                    @foreach (var third in thirdlevel.Children)
+                                                                                    {
+                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@third.Name</a></li>
+                                                                                    }
+                                                                                </ul>
+                                                                            }
+
+                                                                        }
+
+                                                                    </li>
+                                                                                    }
+
+                                                                                }
 
 
-                                    }
-                                    PageTitle = "";
-                                }
-                            }
+                                                                            }
+                                                    </ul>
+                                                                                }
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                                                {
+                                                                                    <ul>
+                                                                                        @foreach (var childNode in CurrentNode.Children)
+                                                                                        {
+                                                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                            {
+                                                                                                PageTitle = ChildNode.Name;
+                                                                                                <li><h3><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h3></li>
+                                                                                            }
+                                                                                        }
+                                                                                    </ul>
+                                                                                                }
+                                                                                            }
+
+
+                                                                                        }
+
+
+                                                                                    }
+                                                                                    PageTitle = "";
+                                                                                }
+                                                                            }
                         </div>
                         <div class="right-section">
-                            @if (Model.Content.HasValue("leftNavigation"))
+                            @if (Model.Content.HasValue("rightNavigation"))
                             {
-                                foreach (var node in LeftNavigation)
+                                foreach (var node in RightNavigation)
                                 {
 
 
@@ -177,57 +277,107 @@
                                         PageTitle = CurrentNode.Name;
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
 
-                                        if (node.DocumentTypeAlias != "locationLandingPage")
+
+                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
                                         {
-                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            if (node.DocumentTypeAlias == "locationLandingPage")
                                             {
+                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                {
 
 
-                                                <ul>
-                                                    @foreach (var childNode in CurrentNode.Children)
-                                                    {
-                                                        if (childNode.NodeTypeAlias == "locationDetailPage")
+                                                    <ul>
+                                                        @foreach (var childNode in CurrentNode.Children)
                                                         {
-                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
-
-                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                            if (childNode.NodeTypeAlias == "locationDetailPage")
                                                             {
-                                                                PageTitle = ChildNode.Name;
-                                                                <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
+                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                {
+                                                                    PageTitle = ChildNode.Name;
+                                                                    <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
+                                                                }
+
                                                             }
 
+
                                                         }
-
-
-                                                    }
-                                                </ul>
+                                                    </ul>
+                                                }
                                             }
-                                        }
-                                        else if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
-                                        {
-                                            if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                            else if (node.DocumentTypeAlias == "categoryLandingPage")
                                             {
-                                                <ul>
-                                                    @foreach (var childNode in CurrentNode.Children)
-                                                    {
-                                                        var ChildNode = new DynamicNode().NodeById(childNode.Id);
+                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                {
 
-                                                        if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+
+                                                    <ul>
+                                                        @foreach (var childNode in CurrentNode.Children)
                                                         {
-                                                            PageTitle = ChildNode.Name;
-                                                            <li><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></li>
-                                                        }
-                                                    }
-                                                </ul>
-                                            }
+                                                            if (childNode.NodeTypeAlias == "categoryDetailPage")
+                                                            {
+                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
 
-                                        }
+                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                {
+                                                                    PageTitle = ChildNode.Name;
+                                                                    <li>
+                                                                        <h5>
+                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a>
+                                                                        </h5>
+                                                                        @{
+                                                                            var thirdlevel = new DynamicNode().NodeById(childNode.Id);
+
+                                                                            if (thirdlevel.Children.Count() > 0)
+                                                                            {
+                                                                                <ul>
+                                                                                    @foreach (var third in thirdlevel.Children)
+                                                                                    {
+                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@third.Name</a></li>
+                                                                                    }
+                                                                                </ul>
+                                                                            }
+
+                                                                        }
+
+                                                                    </li>
+                                                                                    }
+
+                                                                                }
 
 
-                                    }
-                                    PageTitle = "";
-                                }
-                            }
+                                                                            }
+                                                    </ul>
+                                                                                }
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                                                {
+                                                                                    <ul>
+                                                                                        @foreach (var childNode in CurrentNode.Children)
+                                                                                        {
+                                                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                            {
+                                                                                                PageTitle = ChildNode.Name;
+                                                                                                <li><h3><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h3></li>
+                                                                                            }
+                                                                                        }
+                                                                                    </ul>
+                                                                                                }
+                                                                                            }
+
+
+                                                                                        }
+
+
+                                                                                    }
+                                                                                    PageTitle = "";
+                                                                                }
+                                                                            }
                         </div>
                     </div>
                 </div>
