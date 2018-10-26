@@ -3950,6 +3950,7 @@ footer {
   border-radius: 15px;
 }
 .eventsPannel figure {
+  background-image: url("../images/home/tweets_fill.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
