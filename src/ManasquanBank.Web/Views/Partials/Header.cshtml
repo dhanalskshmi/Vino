@@ -198,15 +198,21 @@
                                                     {
                                                         if (primaryTitleLink.Target == "_blank")
                                                         {
-                                                            <a href="@primaryTitleLink.Url" target="_blank">
-                                                                <h2>@primaryTitle</h2>
-                                                            </a>
+                                                            <h2>
+                                                                <a href="@primaryTitleLink.Url" target="_blank">
+                                                                    @primaryTitle
+
+                                                                </a>
+                                                            </h2>
                                                         }
                                                         else
                                                         {
-                                                            <a href="@primaryTitleLink.Url">
-                                                                <h2>@primaryTitle</h2>
-                                                            </a>
+                                                            <h2>
+                                                                <a href="@primaryTitleLink.Url">
+                                                                    @primaryTitle
+
+                                                                </a>
+                                                            </h2>
                                                         }
                                                     }
                                                     else
@@ -392,7 +398,7 @@
                     var secondaryTitle = secondNav.GetPropertyValue<string>("secondaryTitle");
                     var subMenu = secondNav.GetPropertyValue<IEnumerable<IPublishedContent>>("subMenu");
                     var menuClass = "";
-                <li class="mtopNav">
+                <li class="mtopNav flatNav">
                     @if (subMenu != null)
                     {
                         if (secondaryLink.Target == "_blank")

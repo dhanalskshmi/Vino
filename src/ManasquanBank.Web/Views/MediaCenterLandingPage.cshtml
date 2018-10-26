@@ -238,38 +238,71 @@
                             var teaserText = resource.GetPropertyValue<string>("teaserText");
                             var filterDetailTitle = resource.GetPropertyValue<string>("filterDetailTitle");
                             var typeofResource = resource.GetPropertyValue<IPublishedContent>("typeOfResource");
-
+                            var detailImage = resource.GetPropertyValue<IPublishedContent>("detailImage");
                             var date = resource.GetPropertyValue<DateTime>("filterDate").ToString("MMM dd, yyyy");
 
                             <div class="newsFlex">
-                                <figure class="newsFlexImg">
-                                    <a href=""> <img src="images/media-center/news1.jpg" alt="Media Image" title="Media Image"></a>
-                                </figure>
-                                <div class="newsFlexContent">
-                                    @if (!string.IsNullOrEmpty(filterDetailTitle))
-                                    {
-                                        <h4><a href="@resource.Url">@filterDetailTitle</a></h4>
-                                    }
-                                    <h5>
-                                        @if (date != null)
+                                @if (detailImage != null)
+                                {
+                                    <figure class="newsFlexImg">
+                                        <a href=""> <img src="@detailImage.Url" alt="@detailImage.Name" title="Media Image"></a>
+                                    </figure>
+                                    <div class="newsFlexContent">
+                                        @if (!string.IsNullOrEmpty(filterDetailTitle))
                                         {
-                                            <span class="newsDate">@date</span>
+                                            <h4><a href="@resource.Url">@filterDetailTitle</a></h4>
                                         }
-                                        @if (typeofResource != null)
+                                        <h5>
+                                            @if (date != null)
+                                            {
+                                                <span class="newsDate">@date</span>
+                                            }
+                                            @if (typeofResource != null)
+                                            {
+                                                <a href="@resource.Url" class="newsType">
+                                                    @typeofResource.Name
+                                                </a>
+                                            }
+
+                                        </h5>
+                                        @if (!string.IsNullOrEmpty(teaserText))
                                         {
-                                            <a href="@resource.Url" class="newsType">
-                                                @typeofResource.Name
-                                            </a>
+                                            @Html.Raw(teaserText)
                                         }
 
-                                    </h5>
-                                    @if (!string.IsNullOrEmpty(teaserText))
-                                    {
-                                        @Html.Raw(teaserText)
-                                    }
+                                        <a href="@resource.Url" class="btn-readMore">Read More ></a>
+                                    </div>
+                                }
+                                else
+                                {
+                                   
+                                    <div class="newsFlexContent noImage">
+                                        @if (!string.IsNullOrEmpty(filterDetailTitle))
+                                        {
+                                            <h4><a href="@resource.Url">@filterDetailTitle</a></h4>
+                                        }
+                                        <h5>
+                                            @if (date != null)
+                                            {
+                                                <span class="newsDate">@date</span>
+                                            }
+                                            @if (typeofResource != null)
+                                            {
+                                                <a href="@resource.Url" class="newsType">
+                                                    @typeofResource.Name
+                                                </a>
+                                            }
 
-                                    <a href="@resource.Url" class="btn-readMore">Read More ></a>
-                                </div>
+                                        </h5>
+                                        @if (!string.IsNullOrEmpty(teaserText))
+                                        {
+                                            @Html.Raw(teaserText)
+                                        }
+
+                                        <a href="@resource.Url" class="btn-readMore">Read More ></a>
+                                    </div>
+                                }
+                               
                             </div>
                         }
                     }

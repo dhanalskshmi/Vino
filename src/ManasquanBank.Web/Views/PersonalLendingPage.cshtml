@@ -271,11 +271,11 @@
 
                                     @if (!string.IsNullOrEmpty(officeNo))
                                     {
-                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office:@officeNo</p>
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office:<a href="tel:@officeNo">@officeNo</a></p>
                                     }
                                     @if (!string.IsNullOrEmpty(cellPhone))
                                     {
-                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Cell Phone: @cellPhone</p>
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Cell Phone: <a href="tel:@cellPhone">@cellPhone</a></p>
                                     }
                                     
                                 </div>
@@ -305,11 +305,11 @@
 
                                 if (cTAButton3.Target == "_blank")
                                 {
-                                    <a href="" class="@cTAButton3.Url" target="_blank"><span>@cTAButton3.Name</span></a>
+                                    <a href="@cTAButton3.Url" class="btnManasq" target="_blank"><span>@cTAButton3.Name</span></a>
                                 }
                                 else
                                 {
-                                    <a href="" class="@cTAButton3.Url"><span>@cTAButton3.Name</span></a>
+                                    <a href="@cTAButton3.Url" class="btnManasq"><span>@cTAButton3.Name</span></a>
                                 }
                             }
                             
@@ -429,13 +429,13 @@
                                         }
                                         @if (!string.IsNullOrEmpty(constructionOfficeNo))
                                         {
-                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office: @constructionOfficeNo</p>
+                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office: <a href="tel:@constructionOfficeNo">@constructionOfficeNo</a></p>
                                         }
                                         @if (!string.IsNullOrEmpty(constructionCellPhone))
                                         {
                                             <p class="profPhone">
-                                                <img src="/images/personal-lending/phone-icon.png"> Cell Phone: @constructionCellPhone
-                                            </p>
+                                                <img src="/images/personal-lending/phone-icon.png"> Cell Phone: <a href="tel:@constructionCellPhone">@constructionCellPhone</a>
+</p>
                                         }
 
 
@@ -462,7 +462,7 @@
                         var otherLendingBodyText = others.GetPropertyValue<string>("otherLendingBodyText");
 
 
-                <section class="greyPanel bContent">
+                <section class="greyPanel bContent spanel">
                 <div class="containerWrapper">
                     <div class="bgWrap">
                         <div class="flexWrapper">
