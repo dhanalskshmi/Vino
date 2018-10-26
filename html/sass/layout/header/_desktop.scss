@@ -893,6 +893,7 @@ header {
 			padding-bottom: 14px;
 			text-transform: uppercase;
 			a{
+				color: inherit;
 				&::after{
 					display: none;
 				}
@@ -1520,6 +1521,30 @@ header {
 					}
 					&:nth-child(4) {
 						left: calc(100% - 258px);
+					}
+				}
+			}
+			&.col-3 {
+				.borderLine {
+					i {
+						min-height: 144px;
+						&:nth-child(1) {
+							//left: calc(100% - 944px);
+						}
+						&:nth-child(1) {
+							//left: calc(100% - 944px);
+						}
+						&:nth-child(3),
+						&:nth-child(4) {
+							display: none;
+						}
+					}
+				}
+				.flexBox {
+					width: calc((100% / 5) * 3);
+					height: 182px;
+					.cols {
+						width: 33.33%;
 					}
 				}
 			}

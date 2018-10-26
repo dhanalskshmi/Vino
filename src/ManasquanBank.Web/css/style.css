@@ -2070,6 +2070,9 @@ header + .loginBlocks .businessLogin p a {
     padding-bottom: 14px;
     text-transform: uppercase;
   }
+  .SubmenuWrapper h2 a {
+    color: inherit;
+  }
   .SubmenuWrapper h2 a::after {
     display: none;
   }
@@ -2616,6 +2619,20 @@ header + .loginBlocks .businessLogin p a {
   .flatNav .SubmenuWrapper .borderLine i:nth-child(4) {
     left: -webkit-calc(100% - 258px);
     left: calc(100% - 258px);
+  }
+  .flatNav .SubmenuWrapper.col-3 .borderLine i {
+    min-height: 144px;
+  }
+  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
+    display: none;
+  }
+  .flatNav .SubmenuWrapper.col-3 .flexBox {
+    width: -webkit-calc((100% / 5) * 3);
+    width: calc((100% / 5) * 3);
+    height: 182px;
+  }
+  .flatNav .SubmenuWrapper.col-3 .flexBox .cols {
+    width: 33.33%;
   }
 }
 /*@import "tabletLandscape";
