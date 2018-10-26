@@ -165,30 +165,39 @@
 						<ul>
 
 							@if (Model.Content.AncestorOrSelf(1).HasValue("primaryNavigation"))
-	                        {
-	                            foreach (var primaryNav in primaryNavigation)
-	                            {
-	                                var primaryTitleLink = primaryNav.GetPropertyValue<Link>("primaryTitleLink");
-	                                var primaryTitle = primaryNav.GetPropertyValue<string>("primaryTitle");
-	                                var megaMenuPanel = primaryNav.GetPropertyValue<IEnumerable<IPublishedContent>>("megaMenuPanel");
-	                                int k = 0;
-	                            <li>
-	                                @if (primaryTitleLink != null)
-	                                {
-	                                    if (primaryTitleLink.Target == "_blank")
-	                                    {
-	                                        <a href="@primaryTitleLink.Url" target="_blank" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
-	                                    }
-	                                    else
-	                                    {
-	                                        <a href="@primaryTitleLink.Url" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
-	                                    }
+                                        {
+                                            int i = 1;
+                                            foreach (var primaryNav in primaryNavigation)
+                                            {
+                                                var primaryTitleLink = primaryNav.GetPropertyValue<Link>("primaryTitleLink");
+                                                var primaryTitle = primaryNav.GetPropertyValue<string>("primaryTitle");
+                                                var megaMenuPanel = primaryNav.GetPropertyValue<IEnumerable<IPublishedContent>>("megaMenuPanel");
+                                                int k = 0;
 
-	                                }
-	                                
-	                                @if (megaMenuPanel != null)
-	                        		{
-		                                <div class="SubmenuWrapper">
+                                <li class="item-@i">
+                                    @if (primaryTitleLink != null)
+            
+                                    {
+                                                    if (primaryTitleLink.Target == "_blank")
+                                                    {
+
+                                            <a href="@primaryTitleLink.Url" target="_blank" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
+            
+                                        }
+                                                    else
+                                                    {
+
+                                            <a href="@primaryTitleLink.Url" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
+            
+                                        }
+
+                                                }
+
+                                                @if (megaMenuPanel != null)
+            
+                                    {
+
+                                        <div class="SubmenuWrapper">
 				                          	<div class="containerWrapper">
 				                            	<div class="bgWrap">
 				                              		<div class="borderLine">
@@ -198,9 +207,9 @@
 						                                <i></i>
 				                              		</div>
                                                     @if (primaryTitleLink != null)
-                                                    {
-                                                        if (primaryTitleLink.Target == "_blank")
-                                                        {
+                                    {
+                                        if (primaryTitleLink.Target == "_blank")
+                                        {
                                                             <h2>
                                                                 <a href="@primaryTitleLink.Url" target="_blank">
                                                                     @primaryTitle
@@ -208,8 +217,8 @@
                                                                 </a>
                                                             </h2>
                                                         }
-                                                        else
-                                                        {
+                                        else
+                                        {
                                                             <h2>
                                                                 <a href="@primaryTitleLink.Url">
                                                                     @primaryTitle
@@ -217,29 +226,32 @@
                                                                 </a>
                                                             </h2>
                                                         }
-                                                    }
+                                    }
                                                     else
                                                     {
                                                         <h2>@primaryTitle</h2>
-                                                    }
+                                }
 
 	                              					<div class="flexBox">
-	                              					
-	                         						@foreach (var megamenu in megaMenuPanel)
-                                            		{
-                                            			if(k < 2){
-                                            				largeClass = "extWidth";
-                                            			}
-                                            			else{
-                                            				largeClass = string.Empty;
-														}
-														var megamenuTitle = megamenu.GetPropertyValue<string>("megamenuTitle");
-														var subMenuLink = megamenu.GetPropertyValue<Link>("subMenuLink");
-														var lastMenu = megamenu.GetPropertyValue<MultiUrls>("thirdLevelMenu");
-					                        			
-	                                					<div class="cols @largeClass">
-	                                						@if (subMenuLink.Target == "_blank")
-                                                            {
+
+
+                                                     @foreach (var megamenu in megaMenuPanel)
+                                {
+                                    if(k < 2){
+                                        largeClass = string.Empty;
+                                    }
+                                    else{
+                                        largeClass = string.Empty;
+                                    }
+                                    var megamenuTitle = megamenu.GetPropertyValue<string>("megamenuTitle");
+                                    var subMenuLink = megamenu.GetPropertyValue<Link>("subMenuLink");
+                                    var lastMenu = megamenu.GetPropertyValue<MultiUrls>("thirdLevelMenu");
+
+
+                                                        <div class="cols @largeClass">
+
+                                                            @if (subMenuLink.Target == "_blank")
+                                {
                                                                 <h3><a href="@subMenuLink.Url" target="_blank">@megamenuTitle </a></h3>
                                                             }
                                                             else
@@ -250,17 +262,17 @@
                                                 			{
 															<ul>
                                                                 @foreach (var thirdL in lastMenu)
-                                                                {
-                                                                    if (thirdL.Target == "_blank")
-                                                                    {
+                            {
+                                if (thirdL.Target == "_blank")
+                                {
                                                                         <li><a href="@thirdL.Url" target="_blank">@thirdL.Name</a></li>
                                                                     }
-                                                                    else
-                                                                    {
+                                else
+                                {
                                                                         <li><a href="@thirdL.Url">@thirdL.Name</a></li>
                                                                     }
 
-                                                                }
+                            }
                                                             </ul>
 	                                                        }
 							                              
@@ -274,8 +286,11 @@
 	                        			</div>
                         			}
 								</li>
-	                            }
-	                        }
+
+                                    i++;
+
+                                }
+                            }
 							<li class="search">
 								<form action="/search">
 									<label class="screen-reader-text" for="search">Search </label>
