@@ -14316,6 +14316,50 @@ footer {
     margin-bottom: 20px;
   }
 }
+.heroBlock.generalBanner table td {
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .heroBlock.generalBanner table td {
+    font-size: 16px;
+  }
+}
+.heroBlock.generalBanner table thead tr th {
+  border-bottom: 4px solid #f1f1f1;
+  border-right: 4px solid #f1f1f1;
+  background: #5678bf;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+}
+@media (min-width: 320px) and (max-width: 1023px) {
+  .heroBlock.generalBanner table.responsive_table tr td:nth-child(1) {
+    color: #fff;
+    width: 43.4%;
+    text-transform: uppercase;
+    font-weight: 500 !important;
+    padding-top: 11px;
+    padding-bottom: 7px;
+    padding-left: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .heroBlock.generalBanner table.responsive_table tr td:nth-child(1) {
+    width: 64.1%;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 12px;
+  }
+}
+@media (min-width: 320px) and (max-width: 1023px) {
+  .heroBlock.generalBanner table.responsive_table tr td:last-child {
+    border-right: 0px;
+    text-align: center;
+  }
+}
 .heroBlock.generalBanner h1 {
   text-transform: uppercase;
   color: #1268e5;
