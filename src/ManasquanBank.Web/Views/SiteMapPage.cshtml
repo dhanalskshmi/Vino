@@ -11,6 +11,8 @@
 @{
     Layout = "Master.cshtml";
     var PageTitle = "";
+    var title = Model.Content.GetPropertyValue<string>("title");
+
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var LeftNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("leftNavigation");
     var MiddleNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("middleNavigation");
@@ -26,9 +28,14 @@
 </section>
 <section class="heroBlock">
     <div class="containerWrapper">
+       
+
         <div class="bgWrap clientServiceNeed">
             <section class="sitemap-section">
-
+                @if (!string.IsNullOrEmpty(title))
+                {
+                    <h2 style="text-align:center">@title</h2><br />
+                }
                 <div class="sitemap-section-box">
                     <div class="full-width">
                         <div class="left-section">
@@ -46,35 +53,9 @@
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
 
 
-                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
+                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine" && node.DocumentTypeAlias != "locationLandingPage")
                                         {
-                                            if (node.DocumentTypeAlias == "locationLandingPage")
-                                            {
-                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
-                                                {
-
-
-                                                    <ul>
-                                                        @foreach (var childNode in CurrentNode.Children)
-                                                        {
-                                                            if (childNode.NodeTypeAlias == "locationDetailPage")
-                                                            {
-                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
-
-                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
-                                                                {
-                                                                    PageTitle = ChildNode.Name;
-                                                                    <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
-                                                                }
-
-                                                            }
-
-
-                                                        }
-                                                    </ul>
-                                                }
-                                            }
-                                            else if (node.DocumentTypeAlias == "categoryLandingPage")
+                                            if (node.DocumentTypeAlias == "categoryLandingPage")
                                             {
                                                 if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
                                                 {
@@ -162,35 +143,9 @@
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
 
 
-                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
+                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine" && node.DocumentTypeAlias != "locationLandingPage")
                                         {
-                                            if (node.DocumentTypeAlias == "locationLandingPage")
-                                            {
-                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
-                                                {
-
-
-                                                    <ul>
-                                                        @foreach (var childNode in CurrentNode.Children)
-                                                        {
-                                                            if (childNode.NodeTypeAlias == "locationDetailPage")
-                                                            {
-                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
-
-                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
-                                                                {
-                                                                    PageTitle = ChildNode.Name;
-                                                                    <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
-                                                                }
-
-                                                            }
-
-
-                                                        }
-                                                    </ul>
-                                                }
-                                            }
-                                            else if (node.DocumentTypeAlias == "categoryLandingPage")
+                                            if (node.DocumentTypeAlias == "categoryLandingPage")
                                             {
                                                 if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
                                                 {
@@ -278,35 +233,9 @@
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
 
 
-                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine")
+                                        if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine" && node.DocumentTypeAlias != "locationLandingPage")
                                         {
-                                            if (node.DocumentTypeAlias == "locationLandingPage")
-                                            {
-                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
-                                                {
-
-
-                                                    <ul>
-                                                        @foreach (var childNode in CurrentNode.Children)
-                                                        {
-                                                            if (childNode.NodeTypeAlias == "locationDetailPage")
-                                                            {
-                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
-
-                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
-                                                                {
-                                                                    PageTitle = ChildNode.Name;
-                                                                    <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
-                                                                }
-
-                                                            }
-
-
-                                                        }
-                                                    </ul>
-                                                }
-                                            }
-                                            else if (node.DocumentTypeAlias == "categoryLandingPage")
+                                            if (node.DocumentTypeAlias == "categoryLandingPage")
                                             {
                                                 if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
                                                 {
