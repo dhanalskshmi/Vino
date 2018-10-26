@@ -6,7 +6,6 @@
     var logo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("siteLogo");
     var openAccountLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("openAnAccount");
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +18,6 @@
   <link href="~/css/lib/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
   @RenderSection("InnerTopStyle", false)
   <link rel="stylesheet" type="text/css" href="~/css/style.min.css">
-  
 </head>
 <body style="display: none">
     <div class="loaderBlock">
@@ -29,7 +27,7 @@
     </div>
     <div class="siteWrap">
         <div class="siteInner">
-
+            @Html.Partial("homePopUp")
             @Html.Partial("Header")
             <div class="openAccount">
                 @if (openAccountLink != null)
@@ -58,8 +56,6 @@
 
 
             @RenderBody()
-
-
             @Html.Partial("Footer")
             <!--<div class="overlay"></div>-->
         </div>

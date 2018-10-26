@@ -28,6 +28,7 @@
     //string thankYouMessageJoin1 = thankYouMessageJoin.ToString().Replace("<p>","").Replace("</p>","");
     var newsLetterAdminEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterAdminEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterAdminEmail") : 0;
     var newsLetterConfirmationEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterConfirmationEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterConfirmationEmail") : 0;
+    var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
 }
 
 
@@ -65,17 +66,8 @@
             }
             else
             {
-
-
-
                 string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
                 string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
-
-
-
-
-
-
             <div>
             <span class="wpcf7-form"></span>
                 <label>
@@ -154,8 +146,10 @@
 
     </div>
 </section>
-
-
+@if (alertPosition == "Bottom")
+{
+    @Html.Partial("AlertMessage")
+}
  <footer>
           <div class="containerWrapper">
             <div class="footerWraps">

@@ -5,6 +5,10 @@
 @using System.Text.RegularExpressions
 @inherits UmbracoTemplatePage
 @{
+    /* Twitter Config */
+    var twitterConsumerKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterConsumerKey");
+    var twitterSecretKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterSecretKey");
+    var twitterId = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterId");
     SocialFeedController t = new SocialFeedController();
 }
 <section class="eventsPannel">
@@ -14,7 +18,7 @@ CURRENT EVENTS
 </h2>
 @try
 {
-    var twitterFeeds = t.GetTwitterFeed();
+    var twitterFeeds = t.GetTwitterFeed(twitterConsumerKey, twitterSecretKey, twitterId);
     var jArray = JArray.Parse(twitterFeeds);
     if (jArray.Count > 0)
     {

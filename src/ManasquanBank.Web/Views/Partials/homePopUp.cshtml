@@ -1,0 +1,89 @@
+﻿@using RJP.MultiUrlPicker.Models;
+@using umbraco.MacroEngines
+@using Newtonsoft.Json
+@using RJP.MultiUrlPicker.Models
+@using umbraco.NodeFactory
+@using ContentModels = Umbraco.Web.PublishedContentModels
+@using umbraco.cms.businesslogic.web
+@using Umbraco.Web.Extensions
+@using System.Linq
+@using System.Text.RegularExpressions
+@using System.Web.Script.Serialization;
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var alertMessage = "";
+    var alertVisible = false;
+    var pageVisible = false;
+    var hideAlert = Model.Content.AncestorOrSelf(1).GetPropertyValue<bool>("popupHideAlert");
+    var popUpcTAButtonLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("popUpcTAButtonLink");
+    var popupAlertPage = Model.Content.AncestorOrSelf(1).GetPropertyValue<IEnumerable<IPublishedContent>>("popupAlertPage");
+    if (Model.Content.AncestorOrSelf(1).HasProperty("popupAlertMessage") && Model.Content.AncestorOrSelf(1).HasValue("popupAlertMessage"))
+    {
+        alertMessage = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("popupAlertMessage");
+    }
+    var startDate = Model.Content.AncestorOrSelf(1).HasProperty("popupAlertStartDate") && Model.Content.AncestorOrSelf(1).HasValue("popupAlertStartDate") ? Model.Content.AncestorOrSelf(1).GetProperty("popupAlertStartDate").Value.ToString() : string.Empty;
+    var endDate = Model.Content.AncestorOrSelf(1).HasProperty("popupAlertEndDate") && Model.Content.AncestorOrSelf(1).HasValue("popupAlertEndDate") ? Model.Content.AncestorOrSelf(1).GetProperty("popupAlertEndDate").Value.ToString() : string.Empty;
+    if (string.IsNullOrEmpty(startDate) && string.IsNullOrEmpty(endDate))
+    {
+        alertVisible = false;
+    }
+    else if (hideAlert == true)
+    {
+        alertVisible = false;
+    }
+    else if (!string.IsNullOrEmpty(startDate) && (string.IsNullOrEmpty(endDate)))
+    {
+        alertVisible = DateTime.Now > Convert.ToDateTime(startDate);
+    }
+    else if (string.IsNullOrEmpty(startDate) && (!string.IsNullOrEmpty(endDate)))
+    {
+        alertVisible = DateTime.Now < Convert.ToDateTime(endDate);
+    }
+    else
+    {
+        alertVisible = DateTime.Now > Convert.ToDateTime(startDate) && DateTime.Now < Convert.ToDateTime(endDate);
+    }
+}
+
+@if (Model.Content.HasValue("popupAlertPage"))
+{
+    pageVisible = false;
+    foreach (var node in popupAlertPage)
+    {
+        var CurrentNode = new DynamicNode().NodeById(node);
+        var CurrentPageId = Umbraco.TypedContent(CurrentNode.Id);
+        // int nodeId = Convert.ToInt32(CurrentPageId);
+        if (CurrentNode.Id == Model.Content.Id)
+        {
+            pageVisible = true;
+        }
+
+    }
+}
+@if (alertVisible && pageVisible)
+{
+    <div class="popUpWrapper">
+        <div class="popupWrap">
+            <div class="wrap">
+                <a href="#" class="close">
+                    <i></i>
+                </a>
+                <div class="popContent">
+                @Html.Raw(alertMessage)
+                @if (popUpcTAButtonLink != null)
+                {
+                    <p class="popLnk">
+                        <a href="@popUpcTAButtonLink.Url" target="_blank" class="contiLnk btnManasq">
+                            <span>
+                                Dont't show this<br>
+                                to me again
+                            </span>
+                            <i></i>
+                        </a>
+                    </p>
+                 }
+                </div>
+            </div>
+        </div>
+    </div>
+}
