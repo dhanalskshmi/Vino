@@ -151,14 +151,14 @@
                             position: relative;
                         }
                     }
-                    &.profExec{
-                        h5{
+                    &.profExec {
+                        h5 {
                             margin-bottom: 5px;
                         }
-                        .cmpTitle{
+                        .cmpTitle {
                             margin-bottom: 5px;
                         }
-                        .bioQuote{
+                        .bioQuote {
                             min-height: 256px;
                             font-style: italic;
                             line-height: initial;
@@ -167,11 +167,11 @@
                             display: flex;
                             align-items: center;
                             color: #666;
-                            @include bp(tablet){
+                            @include bp(tablet) {
                                 min-height: 212px;
                                 font-size: 20px;
                             }
-                            @include bp(mobile){
+                            @include bp(mobile) {
                                 min-height: initial;
                                 font-size: 16px;
                             }
@@ -203,7 +203,7 @@
                     text-transform: uppercase;
                     margin-top: 52px;
                     margin-bottom: 22px;
-                    @include bp(tablet){
+                    @include bp(tablet) {
                         margin-top: 10px;
                     }
                     @include bp(landscape) {
@@ -218,7 +218,7 @@
                     font-size: 18px;
                     line-height: 22px;
                     margin-bottom: 4px;
-                    @include bp(tablet){
+                    @include bp(tablet) {
                         margin-bottom: 10px;
                     }
                     @include bp(mobile) {
@@ -229,7 +229,7 @@
                 ul {
                     list-style: disc;
                     padding-left: 56px;
-                    @include bp(tablet){
+                    @include bp(tablet) {
                         margin-top: 10px;
                     }
                     @include bp(mobile) {
@@ -240,28 +240,26 @@
                         padding-left: 20px;
                         font-size: 18px;
                         margin-bottom: 2px;
-                        @include bp(tablet){
+                        @include bp(tablet) {
                             margin-bottom: -1px;
                         }
-                        @include bp(mobile){
+                        @include bp(mobile) {
                             font-size: 16px;
                         }
                     }
                 }
             }
-            .bioInfos {
-               
-            }
-            .back-btn{
+            .bioInfos {}
+            .back-btn {
                 margin-top: 40px;
-                @include bp(landscape){
+                @include bp(landscape) {
                     margin-bottom: 9px;
                 }
-                @include bp(tablet){
+                @include bp(tablet) {
                     margin-top: 13px;
                     margin-bottom: 16px;
                 }
-                @include bp(mobile){
+                @include bp(mobile) {
                     margin-top: 17px;
                     margin-bottom: 0;
                 }
@@ -292,5 +290,28 @@
     }
     &:hover {
         color: #3d3d3d;
+    }
+}
+
+.ie11 {
+    .bioPage {
+        .heroBlock {
+            .bgWrap {
+                .bioFlex {
+                    .bioFlexContent.profExec {
+                        .bioQuote {
+                            height: 256px;
+                            @include bp(tablet){
+                                height: 212px;
+                            }
+                            @include bp(mobile){
+                                height: auto;
+                                min-height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

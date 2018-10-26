@@ -9783,6 +9783,21 @@ footer {
   color: #3d3d3d;
 }
 
+.ie11 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
+  height: 256px;
+}
+@media (max-width: 1023px) {
+  .ie11 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
+    height: 212px;
+  }
+}
+@media (max-width: 767px) {
+  .ie11 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
+    height: auto;
+    min-height: auto;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .heroBlock.locationBlk .bgWrap.mapLocation {
     padding: 41px 18px 21px 20px;
@@ -12773,6 +12788,7 @@ footer {
 .categorySection .bgWrap .flexWrap .contentSection .contentBottom {
   position: absolute;
   bottom: 33px;
+  width: 86%;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection .contentBottom {
@@ -12788,6 +12804,7 @@ footer {
   .categorySection .bgWrap .flexWrap .contentSection .contentBottom {
     position: static;
     bottom: auto;
+    width: 100%;
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection .icon-section {

@@ -22,12 +22,12 @@ $(window).on("load resize", function(e) {
             var maxHeightH4 = 0;
 
             var max = parseInt($(this).find('.serviceDetail').length / row);
-            console.log("before", max);
+           // console.log("before", max);
 
             if (max > 0) {
                 max = max + 1;
             }
-            console.log("after", max);
+           // console.log("after", max);
             $(this).find('h4').css('height', '');
 
             for (var i = 1; i <= max; i++) {

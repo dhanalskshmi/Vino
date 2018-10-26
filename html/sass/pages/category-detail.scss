@@ -504,7 +504,8 @@
                 }
                 .contentBottom {
                     position: absolute;
-                    bottom: 33px;
+					bottom: 33px;
+					width: 86%;
                     @include bp(tablandscape) {
                         bottom: 16px;
                     }
@@ -513,7 +514,8 @@
                     }
                     @include bp(mobile) {
                         position: static;
-                        bottom: auto;
+						bottom: auto;
+						width: 100%;
                     }
                 }
                 .icon-section {
