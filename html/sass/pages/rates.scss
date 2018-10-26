@@ -142,7 +142,10 @@
 			 				color: inherit;
 			 				margin-bottom: 0px !important;
 			 				font-size: inherit !important;
-			 				padding-bottom: 7px !important;
+			 				padding-bottom: 20px !important;
+			 				@include bp(tablet) {
+								padding-bottom: 7px !important;
+			 				}
 			 				&:last-child{
 			 					padding-bottom:0px;
 			 				}
@@ -295,6 +298,13 @@
 
 .greyPanel{
 	&.lft-img{
+		padding-top: 11px;
+		 @include bp(tablet){
+		 	padding-top: 23px;
+		 }
+		 @include bp(mobile){
+		 	padding-top: 0px;
+		 }
 .rates-btn{
 	padding-top: 25px;	
 			  @include bp(tablet){
@@ -345,7 +355,7 @@
                     line-height: initial;
                     font-size: 32px;
                     text-align: center;
-                    margin-bottom: 17px;
+                    margin-bottom: 12px;
                 }
             }
         @include bp(mobile){

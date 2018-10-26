@@ -89,23 +89,7 @@
                                 }
 
                             }
-                            else
-                            {
-                                <span class="heroLinksImage">
-                                    @if (iconImage != null)
-                                    {
-                                        <img src="@iconImage.Url" alt="@iconImage.Name">
-                                    }
-
-                                </span>
-                                <span class="heroLinksText">
-                                    @if (!string.IsNullOrEmpty(cTAtitle))
-                                    {
-                                        @Html.Raw(cTAtitle)
-                                    }
-                                </span>
-                            }
-
+                           
                         </li>
                     }
 
@@ -161,24 +145,7 @@
                                 }
 
                             }
-                            else
-                            {
-                                <span class="heroLinksImage">
-                                    @if (iconImage != null)
-                                    {
-                                        <img src="@iconImage.Url" alt="@iconImage.Name">
-                                    }
-
-                                </span>
-                                <span class="heroLinksText">
-                                    @if (!string.IsNullOrEmpty(cTAtitle))
-                                    {
-                                        var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                        @Html.Raw(replacetitle)
-                                    }
-                                </span>
-                            }
-
+                            
                         </li>
                     }
 

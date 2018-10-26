@@ -588,6 +588,10 @@ $dbannerhgt: 965px;
     line-height: 44px;
     text-align: center;
     text-transform: uppercase;
+    + p {
+      color: #FFF;
+      padding: 20px 5% 0;
+    }
   }
   ul {
     padding: 102px 0 53px;
@@ -668,6 +672,7 @@ $dbannerhgt: 965px;
     }
   }
   figure {
+    background-image: url('#{$img}/tweets_fill.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1447,6 +1452,10 @@ $dbannerhgt: 965px;
     h2 {
       font-size: 28px;
       line-height: 19px;
+      + p {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
     }
     ul {
       padding: 35px 49px 15px;
@@ -2500,6 +2509,9 @@ $dbannerhgt: 965px;
     }
     h2 {
       font-size: 50px;
+      + p {
+        padding-top: 30px;
+      }
     }
     ul {
       padding: 76px 86px 46px;

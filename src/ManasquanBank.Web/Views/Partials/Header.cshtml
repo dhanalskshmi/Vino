@@ -41,6 +41,38 @@
             </div>
             <div class="menuWrapper">
                 <div class="loginBlocks">
+
+                    <div class="personalLogin">
+                        <h3>PERSONAL BANKING</h3>
+                        <form method="POST" action="https://web1.secureinternetbank.com/pbi_pbi1151/login/remote/221272167">
+                            <label for="maccessid" class="screen-reader-text ">access id</label>
+                            <input type="text" name="username" id="username" value="" class="txtBox" required="" placeholder="Access ID" aria-required="true">
+                            <label for="password" class="screen-reader-text ">access password</label>
+                            <input type="password" name="password" id="password" value="" class="txtBox" required="" placeholder="Password" aria-required="true">
+                            <button type="submit" name="button"> <span>Login</span></button>
+                            <p>
+                                <a class="link-text" href="https://web1.secureinternetbank.com/pbi_pbi1151/enroll/221272167">Sign Up</a>
+                                <a class="link-text" href="https://web1.secureinternetbank.com/pbi_pbi1151/ForgotPassword/221272167">Forgot Password</a>
+
+                            </p>
+                        </form>
+                    </div>
+
+                    <div class="businessLogin">
+                        <h3>BUSINESS BANKING</h3>
+                        <form class="form-login" method="post" id="businessremote">
+                            <label for="mbusinessaccessid" class="screen-reader-text ">business access id</label>
+                            <input type="text" name="AccessID" id="AccessID" value="" class="txtBox" required="" aria-label="Access ID" placeholder="Access ID" aria-required="true">
+                            <label for="mbusinesspassword" class="screen-reader-text ">business access password</label>
+                            <input type="password" name="password" id="password" value="" class="txtBox" required="" placeholder="Password" aria-required="true">
+                            <button type="submit" name="button"> <span>Login</span></button>
+                            <p>
+                                <a href="#">Forgot Password</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                @*<div class="loginBlocks">
                     <div class="personalLogin">
                         <h3>PERSONAL BANKING</h3>
                         <form id="personalLogin" action="" method="post">
@@ -69,7 +101,7 @@
                         </form>
                     </div>
 
-                </div>
+                </div>*@
 
 				<div class="headerNav">
 					<div class="topNav">

@@ -104,23 +104,7 @@
                                     }
 
                                 }
-                                else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
-                                        
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                            @Html.Raw(replacetitle)
-                                        }
-                                    </span>
-                                }
+                                
 
                             </li>
                         }
@@ -179,23 +163,7 @@
                                     }
 
                                 }
-                                else
-                                {
-                                    <span class="heroLinksImage">
-                                    @if (iconImage != null)
-                                    {
-                                        <img src="@iconImage.Url" alt="@iconImage.Name">
-                                    }
-                                    
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                            @Html.Raw(replacetitle)
-                                        }
-                                    </span>
-                                }
+                                
 
                             </li>
                         }
@@ -254,23 +222,7 @@
                                     }
 
                                 }
-                                else
-                                {
-                                    <span class="heroLinksImage">
-                                    @if (iconImage != null)
-                                    {
-                                        <img src="@iconImage.Url" alt="@iconImage.Name">
-                                    }
-                                    
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                            @Html.Raw(replacetitle)
-                                        }
-                                    </span>
-                                }
+                                
 
                             </li>
                         }
@@ -349,7 +301,7 @@
                 foreach (var item in leadership)
                 {
                     var bgcolor = item.GetPropertyValue<string>("backgroundColor");
-                    var leadtitle = item.Name;
+                    var leadtitle = item.GetPropertyValue<string>("title");
                     var bios = item.Children;
                     if (i == 0)
                     {
@@ -359,7 +311,11 @@
                     <div class="containerWrapper">
                         <div class="bgWrap">
                             <div class="titleWrap">
-                                <h3>@leadtitle</h3>
+                                @if (!string.IsNullOrEmpty(title))
+                                {
+                                    <h3>@leadtitle</h3>
+                                }
+                                
                             </div>
                             <table class="table">
                                 <tbody>
@@ -426,7 +382,7 @@
                                             <p>
                                                 @if (!string.IsNullOrEmpty(email))
                                                 {
-                                                    <a href="mailto:" @email><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
+                                                    <a href="mailto:"@email><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
                                                 }
                                                 else
                                                 {

@@ -1629,6 +1629,10 @@ header + .loginBlocks .businessLogin p a {
     display: none;
   }
 
+  .mobileSearchfield.active {
+    display: none;
+  }
+
   .firefox .menuWrapper .loginBlocks {
     -webkit-transform: none;
         -ms-transform: none;
@@ -3866,6 +3870,10 @@ footer {
   text-align: center;
   text-transform: uppercase;
 }
+.knowledgePannel h2 + p {
+  color: #FFF;
+  padding: 20px 5% 0;
+}
 .knowledgePannel ul, .knowledgePannel .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .knowledgePannel ol, .knowledgePannel .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .knowledgePannel ol {
   padding: 102px 0 53px;
   text-align: center;
@@ -3942,6 +3950,7 @@ footer {
   border-radius: 15px;
 }
 .eventsPannel figure {
+  background-image: url("../images/home/tweets_fill.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -4686,6 +4695,10 @@ footer {
   .knowledgePannel h2 {
     font-size: 28px;
     line-height: 19px;
+  }
+  .knowledgePannel h2 + p {
+    padding-left: 6%;
+    padding-right: 6%;
   }
   .knowledgePannel ul, .knowledgePannel .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .knowledgePannel ol, .knowledgePannel .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .knowledgePannel ol {
     padding: 35px 49px 15px;
@@ -5607,6 +5620,9 @@ footer {
   }
   .knowledgePannel h2 {
     font-size: 50px;
+  }
+  .knowledgePannel h2 + p {
+    padding-top: 30px;
   }
   .knowledgePannel ul, .knowledgePannel .proDetail .heroBlock .bgWrap ol, .proDetail .heroBlock .bgWrap .knowledgePannel ol, .knowledgePannel .proDetail .greyPanel.rates .bgWrap ol, .proDetail .greyPanel.rates .bgWrap .knowledgePannel ol {
     padding: 76px 86px 46px;
@@ -6901,10 +6917,10 @@ footer {
   position: absolute;
 }
 
-#joinEmail #joinSuccess {
+#joinEmail #joinSuccess, .joinEmail #joinSuccess {
   width: 100%;
 }
-#joinEmail form #joinSuccess {
+#joinEmail form #joinSuccess, .joinEmail form #joinSuccess {
   width: 100%;
 }
 
@@ -12044,7 +12060,7 @@ footer {
 }
 .socialPanel .bgWrap .filtr-container .flexPanelWrap .flexPanelHead .headLogo figure img {
   border-radius: 50%;
-  width: 100%;
+  max-width: 100%;
   max-height: 100%;
 }
 .socialPanel .bgWrap .filtr-container .flexPanelWrap .flexPanelHead .headLogo h5 {
@@ -12077,6 +12093,7 @@ footer {
   }
 }
 .socialPanel .bgWrap .filtr-container .flexPanelWrap .flexPanelBody figure img {
+  width: 100%;
   border: 1px solid #d6d6d6;
 }
 .socialPanel .bgWrap .filtr-container .flexPanelWrap .flexPanelBody p {
@@ -16232,6 +16249,16 @@ footer {
 .greyPanel.rates .bgWrap {
   padding: 38px 40px 23px 40px;
 }
+@media (max-width: 1023px) {
+  .greyPanel.rates .bgWrap {
+    padding: 38px 0px 4px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.rates .bgWrap .titleWrap h3 {
+    padding-bottom: 17px;
+  }
+}
 .greyPanel.rates .bgWrap .tableSection {
   margin-top: 7px;
   margin-bottom: 0px;
@@ -16246,7 +16273,7 @@ footer {
     font-size: 13px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .greyPanel.rates .bgWrap .tableSection p {
     padding-left: 10px;
     padding-right: 10px;
@@ -16259,12 +16286,12 @@ footer {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .greyPanel.rates .bgWrap {
-    padding: 22px 22px 22px 22px;
+    padding: 22px 22px 4px 22px;
   }
 }
 @media (max-width: 767px) {
   .greyPanel.rates .bgWrap {
-    padding: 38px 10px 40px 10px;
+    padding: 24px 10px 40px 10px;
   }
 }
 .greyPanel.rates .bgWrap table {
@@ -16361,7 +16388,12 @@ footer {
   color: inherit;
   margin-bottom: 0px !important;
   font-size: inherit !important;
-  padding-bottom: 7px !important;
+  padding-bottom: 20px !important;
+}
+@media (max-width: 1023px) {
+  .greyPanel.rates .bgWrap table tbody tr td p {
+    padding-bottom: 7px !important;
+  }
 }
 .greyPanel.rates .bgWrap table tbody tr td p:last-child {
   padding-bottom: 0px;
@@ -16380,6 +16412,7 @@ footer {
   background-color: #656565;
   font-size: 18px;
   line-height: 21px;
+  text-align: left;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .greyPanel.rates .bgWrap table tbody tr:nth-child(odd) td:nth-child(1) {
@@ -16397,6 +16430,7 @@ footer {
   background-color: #3d3d3d;
   font-size: 18px;
   line-height: 21px;
+  text-align: left;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .greyPanel.rates .bgWrap table tbody tr:nth-child(even) td:nth-child(1) {
@@ -16418,11 +16452,14 @@ footer {
   .greyPanel.rates .bgWrap table.responsive_table tr.blueBg td:nth-child(2) {
     background: #656565;
     text-align: center;
+    padding-top: 11px;
+    padding-bottom: 11px;
   }
   .greyPanel.rates .bgWrap table.responsive_table tr td {
     font-size: 16px;
     line-height: 18px;
     color: #1c3d6d;
+    font-weight: 500;
   }
   .greyPanel.rates .bgWrap table.responsive_table tr td:nth-child(1) {
     background-color: #5678bf !important;
@@ -16454,6 +16491,9 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .greyPanel.rates .bgWrap table.responsive_table {
+    margin-bottom: 21px;
+  }
   .greyPanel.rates .bgWrap table.responsive_table tr {
     height: 64px;
   }
@@ -16479,6 +16519,19 @@ footer {
   }
 }
 
+.greyPanel.lft-img {
+  padding-top: 11px;
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img {
+    padding-top: 23px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img {
+    padding-top: 0px;
+  }
+}
 .greyPanel.lft-img .rates-btn {
   padding-top: 25px;
 }
@@ -16496,6 +16549,7 @@ footer {
   font-size: 18px;
   color: #fff;
   padding: 17px 50px;
+  font-weight: 700;
 }
 @media (max-width: 1023px) {
   .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
@@ -16530,7 +16584,7 @@ footer {
 }
 @media (max-width: 1279px) {
   .greyPanel.lft-img .flexWrapper h3 {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 10px;
   }
 }
@@ -16545,7 +16599,7 @@ footer {
     line-height: initial;
     font-size: 32px;
     text-align: center;
-    margin-bottom: 17px;
+    margin-bottom: 12px;
   }
 }
 @media (max-width: 767px) {
@@ -16561,7 +16615,7 @@ footer {
   background-size: cover;
   width: 535px;
   max-height: 433px;
-  height: auto;
+  height: 436px;
   position: relative;
   background-position: center center;
 }
@@ -16574,6 +16628,7 @@ footer {
   .greyPanel.lft-img .flexWrapper .flexImage {
     max-height: 383px;
     width: 304px;
+    height: auto;
   }
 }
 @media (max-width: 767px) {

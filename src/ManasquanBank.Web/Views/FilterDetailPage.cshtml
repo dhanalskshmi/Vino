@@ -10,6 +10,10 @@
     var filterDate = Model.Content.GetPropertyValue<string>("filterDate");
     var filtercTAButton = Model.Content.GetPropertyValue<Link>("filtercTAButton");
     var parent = Model.Content.Parent;
+
+   
+
+
 }
 <div class="filterDetail">
     <section class="heroBanner">
@@ -52,7 +56,9 @@
                     <div class="sharePanel">
                         @if (detailImage != null)
                         {
-                            <a href="javascript:void(0);" st_url="@Model.Content.Url" st_title="@filterDetailTitle" st_image="@detailImage.Url" class="st_sharethis_large" displaytext="ShareThis">+ share</a>
+                                    var image = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + detailImage.Url;
+
+                                    <a href="javascript:void(0);" st_url="@Model.Content.Url" st_title="@filterDetailTitle" st_image="@image" class="st_sharethis_large" displaytext="ShareThis">+ share</a>
                         }
                         else
                         {
