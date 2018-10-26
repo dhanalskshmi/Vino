@@ -669,6 +669,8 @@
     <Content Include="scripts\lib\country-json.js" />
     <Content Include="scripts\lib\jquery-3.2.1.min.js" />
     <Content Include="scripts\lib\jquery-ui.js" />
+    <Content Include="scripts\lib\jquery.filterizr.min.js" />
+    <Content Include="scripts\lib\jquery.js" />
     <Content Include="scripts\lib\jquery.mb.YTPlayer.js" />
     <Content Include="scripts\lib\jquery.timepicker.min.js" />
     <Content Include="scripts\lib\jquery3.1.0.min.js" />
@@ -824,6 +826,7 @@
     <Folder Include="Views\BusinessManagement\" />
     <Folder Include="Views\cacheHelper\" />
     <Folder Include="Views\ContactUs\" />
+    <Folder Include="Views\Home\" />
     <Folder Include="Views\InstagramFeed\" />
     <Folder Include="Views\MacroPartials\" />
     <Folder Include="Views\NewsLetter\" />
