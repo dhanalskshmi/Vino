@@ -14,7 +14,35 @@
     var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
 
 }
-
+<div class="loginBlocks">
+    <div class="personalLogin">
+        <h3>PERSONAL BANKING</h3>
+        <form id="mpersonalLogin" action="https://web1.secureinternetbank.com/pbi_pbi1151/login/remote/221272167" method="post">
+            <label for="personal_accessid_mob" class="screen-reader-text ">access id</label>
+            <input type="text" name="personal_accessid_mob" id="personal_accessid_mob" value="" class="txtBox" required placeholder="Access ID">
+            <label for="personal_password_mob" class="screen-reader-text ">access password</label>
+            <input type="password" name="personal_password_mob" id="personal_password_mob" value="" class="txtBox" required placeholder="Password">
+            <button type="submit" name="button"> <span>Login</span></button>
+            <p>
+                <a href="https://web1.secureinternetbank.com/pbi_pbi1151/enroll/221272167" target="_blank">Sign Up</a>
+                <a class="link-text" href="https://web1.secureinternetbank.com/pbi_pbi1151/ForgotPassword/221272167" target="_blank">Forgot Password</a>
+            </p>
+        </form>
+    </div>
+    <div class="businessLogin">
+        <h3>BUSINESS BANKING</h3>
+        <form id="mbusinessLogin" action="" method="post">
+            <label for="business_accessid_mob" class="screen-reader-text ">business access id</label>
+            <input type="text" name="business_accessid_mob" id="business_accessid_mob" value="" class="txtBox" required placeholder="Access ID">
+            <label for="business_password_mob" class="screen-reader-text ">business access password</label>
+            <input type="password" name="business_password_mob" id="business_password_mob" value="" class="txtBox" required placeholder="Password">
+            <button type="submit" name="button"> <span>Login</span></button>
+            <p>
+                <a href="#">Forgot Password</a>
+            </p>
+        </form>
+    </div>
+</div>
 <section class="bannerWrapper">
     @if (!string.IsNullOrEmpty(backgroundVideo))
     {
@@ -30,16 +58,7 @@
                 <div class="goto">
                     <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
                 </div>
-                <!--7SnmCUwOsts-->
-                <!--BsekcY04xvQ-->
-                <!--r1xohS2u69E-->
-                <!--Fk9EBOOAYiU-->
-                <!--sEuXfDtrco8-->
-                <!--9d8wWcJLnFI-->
-                <!--Fk9EBOOAYiU-->
-                <!-- https://www.youtube.com/watch?v=VHcAusNO3L4&list=RDEMtvEj6XzR7gbh_QCXSzFudw -->
-
-            </div>
+              </div>
             <div class="bannerContent">
                 <div class="containerWrapper">
                     @if (!string.IsNullOrEmpty(bannerText))
