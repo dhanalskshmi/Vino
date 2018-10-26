@@ -1386,6 +1386,8 @@ header {
 		}
 	}
 
+
+
 }
 
 @media screen and (min-width: 1300px) {
@@ -1501,6 +1503,27 @@ header {
 
 	.openAccount {
     top: 25.3%;
+	}
+
+	.flatNav {
+		.SubmenuWrapper {
+			.borderLine {
+				i {
+					&:nth-child(1) {
+						left: calc(100% - 1004px);
+					}
+					&:nth-child(2) {
+						left: calc(100% - 755px);
+					}
+					&:nth-child(3) {
+						left: calc(100% - 507px);
+					}
+					&:nth-child(4) {
+						left: calc(100% - 258px);
+					}
+				}
+			}
+		}
 	}
 
 
