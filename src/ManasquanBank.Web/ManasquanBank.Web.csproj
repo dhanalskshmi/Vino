@@ -524,6 +524,7 @@
     <Content Include="images\banner\client_service_bg.jpg" />
     <Content Include="images\banner\location_bg.jpg" />
     <Content Include="images\banner\mediacenter_bg.jpg" />
+    <Content Include="images\banner\product-detail.jpg" />
     <Content Include="images\bio\back_arrow.png" />
     <Content Include="images\bio\bio.jpg" />
     <Content Include="images\bio\phone_icon.png" />
@@ -538,8 +539,10 @@
     <Content Include="images\category-detail\client-service.png" />
     <Content Include="images\category-detail\learn-arrow.png" />
     <Content Include="images\category-detail\location-icon.png" />
+    <Content Include="images\category-detail\location-icon1.png" />
     <Content Include="images\category-detail\location-icon2.png" />
     <Content Include="images\category-detail\phone-icon.png" />
+    <Content Include="images\category-detail\phone-icon1.png" />
     <Content Include="images\category-detail\phone-icon2.png" />
     <Content Include="images\category-detail\tick-arrow.png" />
     <Content Include="images\category-landing\apple-pay.png" />
@@ -602,6 +605,7 @@
     <Content Include="images\home\demo_icon.png" />
     <Content Include="images\home\google_app.png" />
     <Content Include="images\home\img_or.png" />
+    <Content Include="images\home\playpause_btn.png" />
     <Content Include="images\home\prdinfo_icon.png" />
     <Content Include="images\home\security_icon.png" />
     <Content Include="images\home\service_1.jpg" />
@@ -611,6 +615,7 @@
     <Content Include="images\home\service_img.png" />
     <Content Include="images\home\tweet.png" />
     <Content Include="images\home\tweets.jpg" />
+    <Content Include="images\home\tweets_fill.jpg" />
     <Content Include="images\home\video_icon.png" />
     <Content Include="images\location-detail\address-icon.png" />
     <Content Include="images\location-detail\alertImage.jpg" />
@@ -799,6 +804,8 @@
     <Content Include="Views\Rates.cshtml" />
     <Content Include="Views\SiteMapPage.cshtml" />
     <Content Include="Views\SiteMapXml.cshtml" />
+    <Content Include="Views\Partials\AlertMessage.cshtml" />
+    <Content Include="Views\Partials\homePopUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
