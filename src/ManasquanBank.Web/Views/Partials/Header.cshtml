@@ -161,7 +161,7 @@
 	                        }
 						</ul>
 					</div>
-					<div class="mainNav">
+					<div class="mainNav flatNav">
 						<ul>
 
 							@if (Model.Content.AncestorOrSelf(1).HasValue("primaryNavigation"))
@@ -401,7 +401,7 @@
                     var secondaryTitle = secondNav.GetPropertyValue<string>("secondaryTitle");
                     var subMenu = secondNav.GetPropertyValue<IEnumerable<IPublishedContent>>("subMenu");
                     var menuClass = "";
-                <li class="mtopNav flatNav">
+                <li class="mtopNav">
                     @if (subMenu != null)
                     {
                         if (secondaryLink.Target == "_blank")
