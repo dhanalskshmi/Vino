@@ -15,8 +15,6 @@
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
-    
-    
 }
 
 <div class="socialMedia">
@@ -52,7 +50,12 @@
                 <div class="filtr-container">
 @try
 {
-    var twitterFeeds = t.GetTwitterFeed();
+    /* Twitter Config */
+    var twitterConsumerKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterConsumerKey");
+    var twitterSecretKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterSecretKey");
+    var twitterId = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterId");
+    var twitterCount = Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("twitterCount");
+    var twitterFeeds = t.GetTwitterFeed(twitterConsumerKey, twitterSecretKey, twitterId, twitterCount);
     var jArray = JArray.Parse(twitterFeeds);
     if (jArray.Count > 0)
     {
@@ -153,7 +156,12 @@ catch (Exception e)
 }
 @try
 {
-    var facebookFeed = t.GetFacebookFeed_next();
+    /* Facebook Config */
+    var facebookAppId = Model.Content.AncestorOrSelf(1).GetPropertyValue<long>("facebookAppId");
+    var facebookAppSecretId = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebookAppSecretId");
+    var facebookId = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("facebookId");
+    var facebookCount = Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("facebookCount");
+    var facebookFeed = t.GetFacebookFeed_next(facebookAppId, facebookAppSecretId, facebookId, facebookCount);
     try
     {
         var fbArray = JsonConvert.DeserializeObject(facebookFeed);
@@ -240,7 +248,11 @@ catch (Exception e)
 }
 @try
 {
-    var youTubeFeed = t.GetYoutubeFeed();
+    /* Youtube Config */
+    var youtubeAPIKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtubeAPIKey");
+    var youtubeChannelId = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("youtubeChannelId");
+    var youtubeCount = Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("youtubeCount");
+    var youTubeFeed = t.GetYoutubeFeed(youtubeAPIKey, youtubeChannelId, youtubeCount);
     if (youTubeFeed.Count > 0)
     {
         int j = 0;
@@ -298,7 +310,11 @@ catch (Exception e)
 }
 @try
 {
-    var instaFeed = t.GetInstagramTimeline();
+    /* Instagram Config */
+    var instagramAccessToken = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("instagramAccessToken");
+    var instagramUserId = Model.Content.AncestorOrSelf(1).GetPropertyValue<long>("instagramUserId");
+    var instagramCount = Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("instagramCount");
+    var instaFeed = t.GetInstagramTimeline(instagramAccessToken, instagramUserId, instagramCount);
     dynamic InstaFeedObject = JsonConvert.DeserializeObject(instaFeed);
     foreach (var item in InstaFeedObject)
     {
