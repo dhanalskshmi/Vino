@@ -1458,6 +1458,11 @@ header .containerWrapper {
   right: 19px;
   top: 25.5%;
 }
+.mnavWrapper ul li a.msubMenu span, .mnavWrapper .proDetail .heroBlock .bgWrap ol li a.msubMenu span, .proDetail .heroBlock .bgWrap .mnavWrapper ol li a.msubMenu span {
+  display: block;
+  max-width: -webkit-calc(100% - 30px);
+  max-width: calc(100% - 30px);
+}
 .mnavWrapper ul li.mainActive a.msubMenu::before, .mnavWrapper .proDetail .heroBlock .bgWrap ol li.mainActive a.msubMenu::before, .proDetail .heroBlock .bgWrap .mnavWrapper ol li.mainActive a.msubMenu::before {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);

@@ -214,6 +214,10 @@ header {
             right: 19px;
             top: 25.5%;
           }
+					span {
+						display: block;
+						max-width: calc(100% - 30px);
+					}
         }
         &:hover {
           //color: #0d7ec3;

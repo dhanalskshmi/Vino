@@ -446,12 +446,13 @@ $(document).ready(function() {
 
 
     var $this = $(this);
-
+if($(e.target).closest("span").length==0){
 		if($this.hasClass("msubMenu")){
 			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
 			$($this).toggleClass("menuOpen");
 			$($this).parent().find(".inner li a").removeClass("menuOpen");
 		}
+	}
 
 	});
 
@@ -459,27 +460,25 @@ $(document).ready(function() {
 	$(".inner li a").click(function(e) {
 
     var $this = $(this);
-
+if($(e.target).closest("span").length==0){
 		if($this.hasClass("msubMenu")){
 			$(".inner li a").not($this).removeClass("menuOpen");
 			$($this).toggleClass("menuOpen");
 		}
+}
+	});
 
+	$(".msubMenu").each(function(){
+		$(this).wrapInner( "<span></span>");
 	});
 
   $('.msubMenu').click(function(e) {
-  	e.preventDefault();
+
     var $this = $(this);
-     //$($this).parent().removeClass('mainActive').addClass('mainActive');
-     //$(this).parent().parent().find('.hov').not($(this).parent()).removeClass('mainActive');
-     // $(this).parent().parent().find('.hov').each(function(){
-     //    $(this).find("ul").not($this.next()).slideUp();
-     // });
 
 
-
-
-
+		if($(e.target).closest("span").length==0){
+				e.preventDefault();
      if ($this.next().hasClass("mainActive"))
      {
        $this.next().toggleClass('mainActive');
@@ -487,19 +486,14 @@ $(document).ready(function() {
 
        $this.next().slideUp();
      }else{
-			 /*$this.parent().parent().find('li .inner').removeClass('mainActive');
-        $this.parent().parent().find('li .inner').slideUp(350);
-        $this.next().toggleClass('mainActive');
-        $this.next().slideToggle(350);
-       $(this).parent().toggleClass('mainActive');
-       $this.next().slideDown();*/
-			 //$this.parent().toggleClass('mainActive');
+
 			 $this.parent().parent().find('li .inner').removeClass('mainActive');
         $this.parent().parent().find('li .inner').slideUp();
         $this.next().toggleClass('mainActive');
         $this.next().slideToggle();
      }
 
+	 }
 
   });
 
@@ -912,11 +906,26 @@ if ($('#personalLogin, #businessLogin, #mpersonalLogin, #mbusinessLogin').length
   });
 }
 
+function is_touch_device() {
+  try {
+    document.createEvent("TouchEvent");
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
 $(document).ready(function() {
 	$(".SubmenuWrapper").each(function(){
 		var className="col-"+$(this).find(".cols").length;
 		$(this).addClass(className);
-	})
+		$(this).parent().find("a:first-child").addClass("hasSubmenu");
+	});
+
+	$("a.hasSubmenu").click(function(e){
+		if(is_touch_device()){
+			e.preventDefault();
+		}
+	});
 
 });
