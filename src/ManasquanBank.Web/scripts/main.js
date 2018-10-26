@@ -444,7 +444,7 @@ $(document).ready(function() {
 
 	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
 
-		
+
     var $this = $(this);
 
 		if($this.hasClass("msubMenu")){
@@ -1049,6 +1049,15 @@ if ($('.eventsPannel').length > 0) {
   });
 }
 
+$(document).ready(function(){
+    $(".scroll").on('click', function(e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        $('html, body').animate({
+          scrollTop: ($(target).offset().top)
+        }, 500);
+     });
+});
 // Form moduleA
 function onSubmit(token) {
   document.getElementById('contactForm').submit();

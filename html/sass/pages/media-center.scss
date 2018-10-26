@@ -198,6 +198,9 @@
                     @include bp(mobile){
                         width: 100%;
                     }
+                    &.noImage{
+                        width: 100%;
+                    }
                     h4 {
                         color: #3d3d3d;
                         font-size: 24px;

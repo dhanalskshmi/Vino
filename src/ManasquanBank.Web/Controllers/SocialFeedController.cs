@@ -33,7 +33,8 @@ namespace ManasquanBank.Web.Controllers
 
     public class SocialFeedController : Umbraco.Web.WebApi.UmbracoApiController
     {
-        public dynamic GetInstagramTimeline()
+        
+        public dynamic GetInstagramTimeline(string instagramAccessToken, long instagramUserId, int count = 5)
         {
             try
             {
@@ -41,8 +42,8 @@ namespace ManasquanBank.Web.Controllers
                 var result = memCacher.GetValue("instagramfeed");
                 if (result == null)
                 {
-                    InstagramService service = InstagramService.CreateFromAccessToken("5407079472.34bb094.2cb398a5654b48388028cea639dd7bcb");
-                    var response = service.Users.GetRecentMedia(5407079472, 5);
+                    InstagramService service = InstagramService.CreateFromAccessToken(instagramAccessToken);
+                    var response = service.Users.GetRecentMedia(instagramUserId, 5);
                     result = response.Body.Data.ToJson();
                     memCacher.Add("instagramfeed", result, DateTimeOffset.UtcNow.AddHours(1));
                 }
@@ -56,7 +57,7 @@ namespace ManasquanBank.Web.Controllers
         }
 
 
-        public dynamic GetTwitterFeed()
+        public dynamic GetTwitterFeed(string twitterConsumerKey, string twitterSecretKey, string twitterId, int count = 5)
         {
 
             var memCacher = new MemoryCacher();
@@ -68,10 +69,10 @@ namespace ManasquanBank.Web.Controllers
                 {
 
                     // You need to set your own keys and screen name
-                    var oAuthConsumerKey = "Dz6hIYXCUjmu1c64kX4Ni28oQ";
-                    var oAuthConsumerSecret = "1DOoYvighjAGph6iSXhv0lljiKT8uYP5cjI6A8VuehNWgorj36";
+                    var oAuthConsumerKey = twitterConsumerKey;
+                    var oAuthConsumerSecret = twitterSecretKey;
                     var oAuthUrl = "https://api.twitter.com/oauth2/token";
-                    var screenname = "ManasquanBank";
+                    var screenname = twitterId;
 
                     // Do the Authenticate
                     var authHeaderFormat = "Basic {0}";
@@ -111,7 +112,7 @@ namespace ManasquanBank.Web.Controllers
                     }
 
                     // Do the timeline
-                    var timelineFormat = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={0}&include_rts=1&exclude_replies=1&count=5&tweet_mode=extended";
+                    var timelineFormat = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={0}&include_rts=1&exclude_replies=1&count="+count+"&tweet_mode=extended";
                     var timelineUrl = string.Format(timelineFormat, screenname);
                     HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
                     var timelineHeaderFormat = "{0} {1}";
@@ -140,9 +141,7 @@ namespace ManasquanBank.Web.Controllers
         }
         public dynamic GetTwitterTimeline()
         {
-
             
-
             try
             {
                 const string CacheKey = "TwitterTimeline";
@@ -150,8 +149,6 @@ namespace ManasquanBank.Web.Controllers
                 {
                     ConsumerKey = "Dz6hIYXCUjmu1c64kX4Ni28oQ",
                     ConsumerSecret = "1DOoYvighjAGph6iSXhv0lljiKT8uYP5cjI6A8VuehNWgorj36",
-               
-
                 };
 
                 // Initialize a new service instance from the OAuth client
@@ -343,11 +340,11 @@ namespace ManasquanBank.Web.Controllers
                 return String.Format("<a href=\"https://twitter.com/hashtag/{0}?src=hash\" target=\"_blank\">#{0}</a>", hashTag);
             });
         }
-        public dynamic GetFacebookFeed_next()
+        public dynamic GetFacebookFeed_next(long id, string secret, string userid, int count = 5)
         {
             const string CacheKey = "FacebookPosts";
-            long appId = 515374455584877;
-            string appSecret = "ec3d1aae876762fd3ec6f50b78017ba0";
+            long appId = id;
+            string appSecret = secret;
             try
             {
                 // Initialize the OAuth client (no calls are made at this point)
@@ -363,10 +360,10 @@ namespace ManasquanBank.Web.Controllers
                 service.Client.Version = "v2.3";
 
                 // Declare the options for the call to the API
-                var postsOptions = new FacebookGetPostsOptions("ManasquanBank")
+                var postsOptions = new FacebookGetPostsOptions(userid)
                 {
                     Fields = "id,message,full_picture,link,name,description,type,icon,created_time,from,object_id,likes,comments",
-                    Limit = 5
+                    Limit = count
                 };
 
                 // retrieve the posts and cache for 1 hour
@@ -390,7 +387,7 @@ namespace ManasquanBank.Web.Controllers
 
         }
 
-        public dynamic GetYoutubeFeed()
+        public dynamic GetYoutubeFeed(string key, string id, int count = 5)
         {
             try
             {
@@ -399,10 +396,10 @@ namespace ManasquanBank.Web.Controllers
                 if (result == null)
                 {
 
-                    YouTubeService yt = new YouTubeService(new BaseClientService.Initializer() { ApiKey = "AIzaSyDYBmEQoIuHY9CsVsaaQIB5cjeoYxYJMPk" });
+                    YouTubeService yt = new YouTubeService(new BaseClientService.Initializer() { ApiKey = key });
                     var searchListRequest = yt.Search.List("snippet");
-                    searchListRequest.ChannelId = "UCAV-mBab3tJ_SitM-lXtgAg";
-                    searchListRequest.MaxResults = 7;
+                    searchListRequest.ChannelId = id;
+                    searchListRequest.MaxResults = count;
                     var searchListResult = searchListRequest.Execute();
                     memCacher.Add("youtubefeed", searchListResult.Items, DateTimeOffset.UtcNow.AddHours(1));
                     result = searchListResult.Items;
