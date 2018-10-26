@@ -447,6 +447,11 @@ header {
 			display: none;
 		}
 	}
+	.mobileSearchfield {
+		&.active {
+			display: none;
+		}
+	}
 
 	.firefox {
 		.menuWrapper {
