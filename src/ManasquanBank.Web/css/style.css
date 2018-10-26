@@ -13103,9 +13103,6 @@ footer {
     top: -2px;
   }
 }
-.heroBlock .bgWrap {
-  overflow-x: scroll;
-}
 .heroBlock table > tbody > tr:nth-of-type(odd) td {
   background-color: #d9e0ea;
   border-right: 4px solid #f1f1f1;
@@ -13119,7 +13116,7 @@ footer {
 }
 @media (max-width: 767px) {
   .heroBlock table > tbody > tr td {
-    padding-left: 5px;
+    padding: 5px;
   }
 }
 .heroBlock table > tbody > tr td:last-child {
@@ -13136,7 +13133,6 @@ footer {
   }
 }
 .heroBlock table ul, .proDetail .heroBlock table .bgWrap ol, .proDetail .heroBlock .bgWrap table ol {
-  list-style: disc;
   padding-left: 20px;
 }
 @media (max-width: 767px) {
@@ -13152,7 +13148,7 @@ footer {
   position: relative;
   padding-left: 10px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1279px) {
   .heroBlock table ul li, .proDetail .heroBlock table .bgWrap ol li, .proDetail .heroBlock .bgWrap table ol li {
     font-size: 18px;
     line-height: 22px;
@@ -13165,14 +13161,8 @@ footer {
   height: 5px;
   background: #3d3d3d;
   border-radius: 8px;
-  margin-top: 10px;
+  top: 9px;
   left: 0;
-}
-@media (max-width: 767px) {
-  .heroBlock table ul li:after, .proDetail .heroBlock table .bgWrap ol li:after, .proDetail .heroBlock .bgWrap table ol li:after {
-    margin-top: 0;
-    top: 9px;
-  }
 }
 
 .persLending .greyPanel .bgWrap {
@@ -14118,21 +14108,19 @@ footer {
   }
 }
 .heroBlock.generalBanner p + ul, .proDetail .heroBlock.generalBanner .bgWrap p + ol {
-  margin-top: 75px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (max-width: 1279px) {
   .heroBlock.generalBanner p + ul, .proDetail .heroBlock.generalBanner .bgWrap p + ol {
-    margin-top: 39px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.generalBanner p + ul, .proDetail .heroBlock.generalBanner .bgWrap p + ol {
-    margin-top: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 767px) {
   .heroBlock.generalBanner p + ul, .proDetail .heroBlock.generalBanner .bgWrap p + ol {
-    margin-top: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 .heroBlock.generalBanner .lrImg {
@@ -14235,7 +14223,7 @@ footer {
   }
 }
 .heroBlock.generalBanner table {
-  display: block;
+  display: table;
   width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
