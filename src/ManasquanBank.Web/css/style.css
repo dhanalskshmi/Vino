@@ -6895,10 +6895,10 @@ footer {
   position: absolute;
 }
 
-#joinEmail #joinSuccess {
+#joinEmail #joinSuccess, .joinEmail #joinSuccess {
   width: 100%;
 }
-#joinEmail form #joinSuccess {
+#joinEmail form #joinSuccess, .joinEmail form #joinSuccess {
   width: 100%;
 }
 
@@ -16362,7 +16362,12 @@ footer {
   color: inherit;
   margin-bottom: 0px !important;
   font-size: inherit !important;
-  padding-bottom: 7px !important;
+  padding-bottom: 20px !important;
+}
+@media (max-width: 1023px) {
+  .greyPanel.rates .bgWrap table tbody tr td p {
+    padding-bottom: 7px !important;
+  }
 }
 .greyPanel.rates .bgWrap table tbody tr td p:last-child {
   padding-bottom: 0px;
@@ -16488,6 +16493,19 @@ footer {
   }
 }
 
+.greyPanel.lft-img {
+  padding-top: 11px;
+}
+@media (max-width: 1023px) {
+  .greyPanel.lft-img {
+    padding-top: 23px;
+  }
+}
+@media (max-width: 767px) {
+  .greyPanel.lft-img {
+    padding-top: 0px;
+  }
+}
 .greyPanel.lft-img .rates-btn {
   padding-top: 25px;
 }
