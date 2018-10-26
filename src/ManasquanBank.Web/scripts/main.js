@@ -976,30 +976,37 @@ if ($('.joinEmail').length > 0) {
 }
 
 // Home PopUP
+var isshow = window.localStorage.getItem('isshow');
 
-setTimeout(function() {
-  $('html').addClass('popUpOpen');
-  if($('.popUpWrapper').length > 0){
-      //console.log('open');
-      setTimeout(function(){
-        $('.popupWrap .wrap').addClass('Open');
-      },100);
-  }
+if(isshow == null){
 
-},3500);
-$('.close').click(function() {
-  $('html.pop').removeClass('popUpOpen');
-  $('.popupWrap .wrap').removeClass('Open');
-  localStorage.setItem('isshow', 1);
-});
-var isshow = localStorage.getItem('isshow');
-if (isshow== null) {
-      // Show popup here
-      if($('.popUpWrapper').length > 0){
+    setTimeout(function() {
+    $('html').addClass('popUpOpen');
+    if($('.popUpWrapper').length > 0){
+        //console.log('open');
         setTimeout(function(){
           $('.popupWrap .wrap').addClass('Open');
         },100);
-      }
+    }
+
+  },3500);
+}
+
+$('.close').click(function() {
+  $('html').removeClass('popUpOpen');
+  $('.popupWrap .wrap').removeClass('Open');
+  window.localStorage.setItem('isshow', 1);
+});
+$('.contiLnk').on('click',function(){
+    window.localStorage.setItem('isshow', 1);
+    $('html').removeClass('popUpOpen');
+    $('.popupWrap .wrap').removeClass('Open');
+    
+});
+
+if (isshow == null) {
+      // Show popup here
+  $('.popupWrap .wrap').addClass('Open');     
 }
 
 $(document).ready(function() {
