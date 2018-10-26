@@ -970,7 +970,7 @@ if ($('.joinEmail').length > 0) {
 
 setTimeout(function() {
   $('html').addClass('popUpOpen');
-  if($('popUpWrapper').length > 0){
+  if($('.popUpWrapper').length > 0){
       //console.log('open');
       setTimeout(function(){
         $('.popupWrap .wrap').addClass('Open');
