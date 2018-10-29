@@ -106,7 +106,7 @@
                                 {
                                     if (link.Target == "_blank")
                                     {
-                                        <a href="@link.Url" class="flexLinks" target="_blank">
+                                        <a href="@link.Url" class="flexLinks scroll" target="_blank">
                                             @if (image != null)
                                             {
                                                 <figure class="flexImage" style="background-image: url(@image.Url)"></figure>
@@ -120,7 +120,7 @@
                                     }
                                     else
                                     {
-                                        <a href="@link.Url" class="flexLinks">
+                                        <a href="@link.Url" class="flexLinks scroll">
                                             @if (image != null)
                                             {
                                                 <figure class="flexImage" style="background-image: url(@image.Url)"></figure>
@@ -273,7 +273,7 @@
 
     }
 
-    <section class="greyPanel careerGrey">
+    <section class="greyPanel careerGrey" id="whyChooseUs">
         <div class="containerWrapper">
             <div class="bgWrap">
                 <div class="titleWrap">
@@ -375,7 +375,7 @@
             </div>
         </div>
     </section>
-    <section class="greyPanel cultureWrap">
+    <section class="greyPanel cultureWrap" id="ourCulture">
         <div class="containerWrapper">
             <div class="bgWrap">
                 <div class="titleWrap">

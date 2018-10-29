@@ -11,10 +11,12 @@
 @{
     Layout = "Master.cshtml";
     var PageTitle = "";
-    var title = Model.Content.GetPropertyValue<string>("title");
+    var title = Model.Content.GetPropertyValue<string>
+    ("title");
 
-    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
-    var LeftNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("leftNavigation");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>
+        ("heroImage");
+        var LeftNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("leftNavigation");
     var MiddleNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("middleNavigation");
     var RightNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("rightNavigation");
 
@@ -28,7 +30,7 @@
 </section>
 <section class="heroBlock">
     <div class="containerWrapper">
-       
+
 
         <div class="bgWrap clientServiceNeed">
             <section class="sitemap-section">
@@ -44,13 +46,40 @@
                                 foreach (var node in LeftNavigation)
                                 {
 
-
+                                    //var tittle = CurrentNode.Name;
                                     var CurrentNode = new DynamicNode().NodeById(node);
                                     var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
                                     if (!string.IsNullOrEmpty(CurrentNode.Name))
                                     {
                                         PageTitle = CurrentNode.Name;
-                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
+
+                                        if(CurrentNode.HasValue("title"))
+                                        {
+                                            PageTitle = CurrentNode.GetProperty<string>("title");
+                                        }
+
+                                        if (CurrentNode.NodeTypeAlias == "categoryDetailPage" || CurrentNode.NodeTypeAlias == "home" || CurrentNode.NodeTypeAlias == "mediaCenterLandingPage" || CurrentNode.NodeTypeAlias == "productDetailPage")
+                                        {
+                                            if (CurrentNode.HasValue("categoryDetailTitle"))
+                                            {
+                                                PageTitle = CurrentNode.GetProperty<string>("categoryDetailTitle");
+                                            }
+
+                                            if (CurrentNode.HasValue("siteTitle"))
+                                            {
+                                                PageTitle = CurrentNode.GetProperty<string>("siteTitle");
+                                            }
+                                            if (CurrentNode.HasValue("mediacenterTitle"))
+                                            {
+                                                PageTitle = CurrentNode.GetProperty<string>("mediacenterTitle");
+                                            }
+                                            if (CurrentNode.HasValue("productDetailTitle"))
+                                            {
+                                                PageTitle = CurrentNode.GetProperty<string>("productDetailTitle");
+                                            }
+                                        }
+
+                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@PageTitle</a></h4>
 
 
                                         if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine" && node.DocumentTypeAlias != "locationLandingPage")
@@ -71,9 +100,37 @@
                                                                 if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                 {
                                                                     PageTitle = ChildNode.Name;
+
+                                                                    if (ChildNode.HasValue("title"))
+                                                                    {
+                                                                        PageTitle = ChildNode.GetProperty<string>("title");
+                                                                    }
+
+                                                                    if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                    {
+                                                                        if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                        }
+
+                                                                        if (ChildNode.HasValue("siteTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                        }
+                                                                        if (ChildNode.HasValue("mediacenterTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                        }
+                                                                        if (ChildNode.HasValue("productDetailTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                        }
+                                                                    }
+
+
                                                                     <li>
                                                                         <h5>
-                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a>
+                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a>
                                                                         </h5>
                                                                         @{
                                                                             var thirdlevel = new DynamicNode().NodeById(childNode.Id);
@@ -83,7 +140,34 @@
                                                                                 <ul>
                                                                                     @foreach (var third in thirdlevel.Children)
                                                                                     {
-                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@third.Name</a></li>
+                                                                                        PageTitle = third.Name;
+
+                                                                                        if (third.HasValue("title"))
+                                                                                        {
+                                                                                            PageTitle = third.GetProperty<string>("title");
+                                                                                        }
+
+                                                                                        if (third.NodeTypeAlias == "categoryDetailPage" || third.NodeTypeAlias == "home" || third.NodeTypeAlias == "mediaCenterLandingPage" || third.NodeTypeAlias == "productDetailPage")
+                                                                                        {
+                                                                                            if (third.HasValue("categoryDetailTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("categoryDetailTitle");
+                                                                                            }
+
+                                                                                            if (third.HasValue("siteTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("siteTitle");
+                                                                                            }
+                                                                                            if (third.HasValue("mediacenterTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("mediacenterTitle");
+                                                                                            }
+                                                                                            if (third.HasValue("productDetailTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("productDetailTitle");
+                                                                                            }
+                                                                                        }
+                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@PageTitle</a></li>
                                                                                     }
                                                                                 </ul>
                                                                             }
@@ -112,7 +196,33 @@
                                                                                             if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                                             {
                                                                                                 PageTitle = ChildNode.Name;
-                                                                                                <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h5></li>
+
+                                                                                                if (ChildNode.HasValue("title"))
+                                                                                                {
+                                                                                                    PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                                }
+
+                                                                                                if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                                                {
+                                                                                                    if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                                                    }
+
+                                                                                                    if (ChildNode.HasValue("siteTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("mediacenterTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("productDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                                                    }
+                                                                                                }
+                                                                                                <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a></h5></li>
                                                                                             }
                                                                                         }
                                                                                     </ul>
@@ -139,8 +249,35 @@
                                     var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
                                     if (!string.IsNullOrEmpty(CurrentNode.Name))
                                     {
+
                                         PageTitle = CurrentNode.Name;
-                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
+
+                                        if (CurrentNode.HasValue("title"))
+                                        {
+                                            PageTitle = CurrentNode.GetProperty<string>("title");
+                                        }
+                                        if (CurrentNode.NodeTypeAlias == "categoryDetailPage" || CurrentNode.NodeTypeAlias == "home" || CurrentNode.NodeTypeAlias == "mediaCenterLandingPage" || CurrentNode.NodeTypeAlias == "productDetailPage")
+                                        {
+                                            if (CurrentNode.HasValue("categoryDetailTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
+                                            }
+
+                                            if (CurrentNode.HasProperty("siteTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("siteTitle");
+                                            }
+                                            if (CurrentNode.HasProperty("mediacenterTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("mediacenterTitle");
+                                            }
+                                            if (CurrentNode.HasProperty("productDetailTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
+                                            }
+                                        }
+
+                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@PageTitle</a></h4>
 
 
                                         if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine" && node.DocumentTypeAlias != "locationLandingPage")
@@ -161,9 +298,37 @@
                                                                 if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                 {
                                                                     PageTitle = ChildNode.Name;
+
+                                                                    if (ChildNode.HasValue("title"))
+                                                                    {
+                                                                        PageTitle = ChildNode.GetProperty<string>("title");
+                                                                    }
+
+                                                                    if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                    {
+                                                                        if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                        }
+
+                                                                        if (ChildNode.HasValue("siteTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                        }
+                                                                        if (ChildNode.HasValue("mediacenterTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                        }
+                                                                        if (ChildNode.HasValue("productDetailTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                        }
+                                                                    }
+
+
                                                                     <li>
                                                                         <h5>
-                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a>
+                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a>
                                                                         </h5>
                                                                         @{
                                                                             var thirdlevel = new DynamicNode().NodeById(childNode.Id);
@@ -173,7 +338,34 @@
                                                                                 <ul>
                                                                                     @foreach (var third in thirdlevel.Children)
                                                                                     {
-                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@third.Name</a></li>
+                                                                                        PageTitle = third.Name;
+
+                                                                                        if (third.HasValue("title"))
+                                                                                        {
+                                                                                            PageTitle = third.GetProperty<string>("title");
+                                                                                        }
+
+                                                                                        if (third.NodeTypeAlias == "categoryDetailPage" || third.NodeTypeAlias == "home" || third.NodeTypeAlias == "mediaCenterLandingPage" || third.NodeTypeAlias == "productDetailPage")
+                                                                                        {
+                                                                                            if (third.HasValue("categoryDetailTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("categoryDetailTitle");
+                                                                                            }
+
+                                                                                            if (third.HasValue("siteTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("siteTitle");
+                                                                                            }
+                                                                                            if (third.HasValue("mediacenterTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("mediacenterTitle");
+                                                                                            }
+                                                                                            if (third.HasValue("productDetailTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("productDetailTitle");
+                                                                                            }
+                                                                                        }
+                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@PageTitle</a></li>
                                                                                     }
                                                                                 </ul>
                                                                             }
@@ -202,7 +394,33 @@
                                                                                             if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                                             {
                                                                                                 PageTitle = ChildNode.Name;
-                                                                                                <li><h3><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h3></li>
+
+                                                                                                if (ChildNode.HasValue("title"))
+                                                                                                {
+                                                                                                    PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                                }
+
+                                                                                                if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                                                {
+                                                                                                    if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                                                    }
+
+                                                                                                    if (ChildNode.HasValue("siteTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("mediacenterTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("productDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                                                    }
+                                                                                                }
+                                                                                                <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a></h5></li>
                                                                                             }
                                                                                         }
                                                                                     </ul>
@@ -230,7 +448,32 @@
                                     if (!string.IsNullOrEmpty(CurrentNode.Name))
                                     {
                                         PageTitle = CurrentNode.Name;
-                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@CurrentNode.Name</a></h4>
+
+                                        if (CurrentNode.HasValue("title"))
+                                        {
+                                            PageTitle = CurrentNode.GetProperty<string>("title");
+                                        }
+                                        if (CurrentNode.NodeTypeAlias == "categoryDetailPage" || CurrentNode.NodeTypeAlias == "home" || CurrentNode.NodeTypeAlias == "mediaCenterLandingPage" || CurrentNode.NodeTypeAlias == "productDetailPage")
+                                        {
+                                            if (CurrentNode.HasValue("categoryDetailTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
+                                            }
+
+                                            if (CurrentNode.HasProperty("siteTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("siteTitle");
+                                            }
+                                            if (CurrentNode.HasProperty("mediacenterTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("mediacenterTitle");
+                                            }
+                                            if (CurrentNode.HasProperty("productDetailTitle"))
+                                            {
+                                                PageTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
+                                            }
+                                        }
+                                        <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@PageTitle</a></h4>
 
 
                                         if (node.DocumentTypeAlias != "aboutUs" && node.DocumentTypeAlias != "mediaCenterLandingPage" && node.DocumentTypeAlias != "careersLandingPage" && node.DocumentTypeAlias != "timeLine" && node.DocumentTypeAlias != "locationLandingPage")
@@ -251,9 +494,37 @@
                                                                 if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                 {
                                                                     PageTitle = ChildNode.Name;
+
+                                                                    if (ChildNode.HasValue("title"))
+                                                                    {
+                                                                        PageTitle = ChildNode.GetProperty<string>("title");
+                                                                    }
+
+                                                                    if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                    {
+                                                                        if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                        }
+
+                                                                        if (ChildNode.HasValue("siteTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                        }
+                                                                        if (ChildNode.HasValue("mediacenterTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                        }
+                                                                        if (ChildNode.HasValue("productDetailTitle"))
+                                                                        {
+                                                                            PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                        }
+                                                                    }
+
+
                                                                     <li>
                                                                         <h5>
-                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a>
+                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a>
                                                                         </h5>
                                                                         @{
                                                                             var thirdlevel = new DynamicNode().NodeById(childNode.Id);
@@ -263,7 +534,34 @@
                                                                                 <ul>
                                                                                     @foreach (var third in thirdlevel.Children)
                                                                                     {
-                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@third.Name</a></li>
+                                                                                        PageTitle = third.Name;
+
+                                                                                        if (third.HasValue("title"))
+                                                                                        {
+                                                                                            PageTitle = third.GetProperty<string>("title");
+                                                                                        }
+
+                                                                                        if (third.NodeTypeAlias == "categoryDetailPage" || third.NodeTypeAlias == "home" || third.NodeTypeAlias == "mediaCenterLandingPage" || third.NodeTypeAlias == "productDetailPage")
+                                                                                        {
+                                                                                            if (third.HasValue("categoryDetailTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("categoryDetailTitle");
+                                                                                            }
+
+                                                                                            if (third.HasValue("siteTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("siteTitle");
+                                                                                            }
+                                                                                            if (third.HasValue("mediacenterTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("mediacenterTitle");
+                                                                                            }
+                                                                                            if (third.HasValue("productDetailTitle"))
+                                                                                            {
+                                                                                                PageTitle = third.GetProperty<string>("productDetailTitle");
+                                                                                            }
+                                                                                        }
+                                                                                        <li><a class="hvr-underline-from-center" href="@third.Url">@PageTitle</a></li>
                                                                                     }
                                                                                 </ul>
                                                                             }
@@ -292,7 +590,33 @@
                                                                                             if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                                             {
                                                                                                 PageTitle = ChildNode.Name;
-                                                                                                <li><h3><a class="hvr-underline-from-center" href="@ChildNode.Url">@ChildNode.Name</a></h3></li>
+
+                                                                                                if (ChildNode.HasValue("title"))
+                                                                                                {
+                                                                                                    PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                                }
+
+                                                                                                if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                                                {
+                                                                                                    if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                                                    }
+
+                                                                                                    if (ChildNode.HasValue("siteTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("mediacenterTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("productDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                                                    }
+                                                                                                }
+                                                                                                <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a></h5></li>
                                                                                             }
                                                                                         }
                                                                                     </ul>

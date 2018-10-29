@@ -29,15 +29,15 @@ if (Model.Content.DocumentTypeAlias == "categoryDetailPage" || Model.Content.Doc
         metaTitle = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
     }
 
-    if (Model.Content.HasProperty("siteTitle"))
+    if (Model.Content.HasValue("siteTitle"))
     {
         metaTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     }
-    if (Model.Content.HasProperty("mediacenterTitle"))
+    if (Model.Content.HasValue("mediacenterTitle"))
     {
         metaTitle = Model.Content.GetPropertyValue<string>("mediacenterTitle");
     }
-    if (Model.Content.HasProperty("productDetailTitle"))
+    if (Model.Content.HasValue("productDetailTitle"))
     {
         metaTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
     }

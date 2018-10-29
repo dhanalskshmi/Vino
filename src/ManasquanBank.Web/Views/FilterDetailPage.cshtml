@@ -9,7 +9,7 @@
     var filterDetailTitle = Model.Content.GetPropertyValue<string>("filterDetailTitle");
     var filterDate = Model.Content.GetPropertyValue<string>("filterDate");
     var filtercTAButton = Model.Content.GetPropertyValue<Link>("filtercTAButton");
-    var parent = Model.Content.Parent;
+    var parent = Model.Content.AncestorOrSelf(2);
 
    
 

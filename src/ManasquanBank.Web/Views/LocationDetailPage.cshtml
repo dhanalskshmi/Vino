@@ -11,7 +11,7 @@
 @{
     Layout = "Master.cshtml";
     var title = Model.Content.GetPropertyValue<string>("title");
-    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var heroImage = Model.Content.AncestorOrSelf(2).GetPropertyValue<IPublishedContent>("detailHeroImage"); 
     var branchTitle = Model.Content.GetPropertyValue<string>("branchTitle");
     var image = Model.Content.GetPropertyValue<IPublishedContent>("image");
     var address = Model.Content.GetPropertyValue<string>("address");
@@ -101,13 +101,21 @@
                 <h2>@branchTitle</h2>
             }
             <div class="contentSection">
-                <div class="imgSection">
+              
+                  
                     @if (image != null)
                     {
-                        <img src="@image.Url" alt="@image.Name" />
+                        <div class="imgSection" style="background-image:url(@image.Url)">
+                            
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="imgSection">
+                           
+                        </div>
                     }
 
-                </div>
                 <div class="addrSection">
                     <div class="fullWrap">
                         <div class="lftSec">
