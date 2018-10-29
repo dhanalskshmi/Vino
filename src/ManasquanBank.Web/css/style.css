@@ -8166,6 +8166,10 @@ footer {
   margin-top: 12px;
   letter-spacing: 2.3px;
 }
+.bluePanel .bgWrap .bluePanelInner .carblk .btn-Lmore:hover {
+  text-decoration: underline;
+  color: #000;
+}
 @media (max-width: 1023px) {
   .bluePanel .bgWrap .bluePanelInner .carblk .btn-Lmore {
     letter-spacing: 0.6px;
@@ -16904,7 +16908,7 @@ section.sitemap-section .sitemap-section-box .full-width h4 {
 }
 section.sitemap-section .sitemap-section-box .full-width h4 a {
   color: inherit;
-  text-transform: capitalize;
+  text-transform: uppercase;
   position: relative;
 }
 section.sitemap-section .sitemap-section-box .full-width a h4 {

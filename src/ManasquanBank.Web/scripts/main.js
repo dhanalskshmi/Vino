@@ -1018,10 +1018,6 @@ $('.contiLnk').on('click',function(){
     
 });
 
-if (isshow == null) {
-      // Show popup here
-  $('.popupWrap .wrap').addClass('Open');     
-}
 
 $(document).ready(function() {
     $("#contactSucc").length > 0 && $("html, body").animate({
@@ -1149,7 +1145,7 @@ if ($('.contactForm').length > 0) {
             $(selector).removeClass(errorClass);
             $(selector).parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
         },
-            submitHandler: function (form) {
+        submitHandler: function (form) {
                 var reCaptchaID = GetReCaptchaID("capt_contact");
                 grecaptcha.reset(reCaptchaID);
                 grecaptcha.execute(reCaptchaID);
@@ -1183,12 +1179,10 @@ if ($('.contactForm').length > 0) {
       });
       $("#state,#country").on('selectmenuchange', function() {
         validator.checkForm();
-        console.log("State change");
         if($('#state').val() == ""){
-            console.log("fail");
             $("#state").parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
+            alert();
         } else{
-            console.log("success");
             $("#state").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
         }
     });

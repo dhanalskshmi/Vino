@@ -389,6 +389,10 @@
                     display: inline-block;
                     margin-top: 12px;
                     letter-spacing: 2.3px;
+                    &:hover{
+                        text-decoration: underline;
+                        color: #000;
+                    }
                     @include bp(tablet) {
                         letter-spacing: 0.6px;
                         font-size: 18px;
