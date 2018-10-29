@@ -165,25 +165,26 @@
 
     .bgWrap {
       padding: 20px 65px 34px 65px;
-      height: 487px;
+      min-height: 487px;
+      height: auto;
       @include bp(landscape) {
-        height: 312px;
+        min-height: 312px;
         padding: 24px 65px;
       }
       @include bp(tablet) {
-        height: 294px;
+        min-height: 294px;
         padding: 22px 81px;
         background-position-y: -176px;
       }
       @include bp(mobile) {
-        height: 290px;
+        min-height: 290px;
         padding: 23px;
         background-position-y: 0;
       }
 
       h4 {
         font-size: 53px;
-        line-height: initial;
+        line-height: normal;
         @include bp(landscape) {
           font-size: 34px;
         }
@@ -197,8 +198,8 @@
 
       p {
         font-size: 23px;
-        margin-top: -3px;
-        line-height: initial;
+        margin-top: 0px;
+        line-height: normal;
         max-width: 200px;
         @include bp(landscape) {
           font-size: 15px;
