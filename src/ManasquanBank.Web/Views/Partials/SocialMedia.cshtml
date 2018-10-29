@@ -40,7 +40,9 @@ CURRENT EVENTS
 
                         timesplit = temp[3].Split(':');
 
-                        TimeSpan timespan = new TimeSpan(Convert.ToInt32(timesplit[0]), Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+                       int timesp = Convert.ToInt32(timesplit[0]) + 5;
+
+                        TimeSpan timespan = new TimeSpan(timesp, Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
                         DateTime time = DateTime.Today.Add(timespan);
                         displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
                     }

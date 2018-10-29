@@ -19,6 +19,22 @@
     var requestthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
     var requestAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
     var requestConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
+    var purposeOfLoan = Model.Content.GetPropertyValue<string>("purposeOfLoan");
+    var loanOfficer = Model.Content.GetPropertyValue<string>("loanOfficer");
+    string[] purposeOfLoanList = purposeOfLoan.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+
+    if(purposeOfLoanList.Length == 1)
+    {
+        purposeOfLoanList = purposeOfLoan.Split(new string[] { "\n" }, StringSplitOptions.None);
+    }
+
+    string[] loanOfficerList = loanOfficer.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+
+    if(loanOfficerList.Length == 1)
+    {
+        loanOfficerList = loanOfficer.Split(new string[] { "\n" }, StringSplitOptions.None);
+    }
+
 }
 @section InnerTopStyle {
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
@@ -237,11 +253,14 @@
                                         <label for="loanPurpose">Purpose of loan</label>
                                         <select name="loanPurpose" id="loanPurpose" class="form-control selectBox" default="">
                                             <option value=""></option>
-                                            <option value="Purchase">Purchase</option>
-                                            <option value="Refinance">Refinance </option>
-                                            <option value="Home Equity">Home Equity</option>
-                                            <option value="Construction">Construction</option>
-                                            <option value="Building Lot">Building Lot</option>
+                                            @if (purposeOfLoanList.Length > 0)
+                                            {
+                                                for (int i = 0; i < purposeOfLoanList.Length; i++)
+                                                {
+                                                    <option value="@purposeOfLoanList[i]">@purposeOfLoanList[i]</option>
+                                                }
+
+                                            }
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -249,10 +268,13 @@
                                         <label for="loanOfficer">Loan officer</label>
                                         <select name="loanOfficer" id="loanOfficer" class="form-control selectBox" default="">
                                             <option value=""></option>
-                                            <option value="Ralph Tancredi">Ralph Tancredi</option>
-                                            <option value="William L. Kays">William L. Kays</option>
-                                            <option value="Lisa Connell">Lisa Connell</option>
-                                            <option value="David Tepper">David Tepper</option>
+                                            @if (loanOfficerList.Length > 0)
+                                            {
+                                                for (int j = 0; j < loanOfficerList.Length; j++)
+                                                {
+                                                    <option value="@loanOfficerList[j]">@loanOfficerList[j]</option>
+                                                }
+                                            }
 
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>

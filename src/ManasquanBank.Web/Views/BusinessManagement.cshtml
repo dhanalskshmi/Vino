@@ -21,9 +21,16 @@
     var businessConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
     var department = Model.Content.GetPropertyValue<string>("department");
     var employee = Model.Content.GetPropertyValue<string>("employee");
-
     string[] departmentList = department.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+    if(departmentList.Length == 1)
+    {
+        department.Split(new string[] { "\n" }, StringSplitOptions.None);
+    }
     string[] employeeList = employee.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+    if(employeeList.Length == 1)
+    {
+        employeeList = employee.Split(new string[] { "\n" }, StringSplitOptions.None);
+    }
 
 }
 
