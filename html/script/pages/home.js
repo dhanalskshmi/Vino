@@ -74,6 +74,10 @@ $('.close').click(function() {
   $('.popupWrap .wrap').removeClass('Open');
   window.localStorage.setItem('isshow', 1);
 });
+$('.close-alerts').click(function() {
+    $(this).closest(".alertsPannel").fadeOut();
+    $(this).closest(".floatingAlerts").fadeOut();
+});
 $('.contiLnk').on('click',function(){
     window.localStorage.setItem('isshow', 1);
     $('html').removeClass('popUpOpen');

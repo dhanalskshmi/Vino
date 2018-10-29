@@ -4288,6 +4288,62 @@ footer {
   line-height: 13px;
 }
 
+.close-alerts {
+  opacity: 1;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.close-alerts i {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  float: right;
+  margin-top: 0px;
+}
+.close-alerts i::after, .close-alerts i::before {
+  content: "";
+  background: #fff;
+  width: 3px;
+  height: 19px;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.close-alerts i::after {
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+          transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.close-alerts i::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.close-alerts i:hover {
+  opacity: 1;
+}
+.close-alerts i:hover::before {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.close-alerts i:hover::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .floatingAlerts {
   position: fixed;
   bottom: 1%;
@@ -9178,7 +9234,8 @@ footer {
   }
 }
 .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexContent h4 a:hover {
-  color: inherit;
+  color: #23527c;
+  text-decoration: underline;
 }
 .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexContent p {
   color: #3d3d3d;
@@ -9227,12 +9284,20 @@ footer {
     display: inline-block;
   }
 }
+.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexContent h5 .newsType:hover {
+  text-decoration: underline;
+  color: #0058d8;
+}
 .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexContent .btn-readMore {
   display: inline-block;
   color: #666666;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
+}
+.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexContent .btn-readMore:hover {
+  color: #23527c;
+  text-decoration: underline;
 }
 @media (max-width: 1279px) {
   .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexContent .btn-readMore {
@@ -10036,6 +10101,10 @@ footer {
     top: -3px;
     width: auto;
   }
+}
+.locationSection.dlview .locationBgWrap .locationBox .locationDetail .directionLink a:hover, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .directionLink a:hover {
+  color: #23527c;
+  text-decoration: underline;
 }
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail .viewButtonLink, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .viewButtonLink {
   background: #1268e5;
@@ -17093,6 +17162,10 @@ section.searchPage .searchWrap .btn-readMore {
   margin-bottom: 32px;
   font-size: 18px;
   color: #666;
+}
+section.searchPage .searchWrap .btn-readMore:hover {
+  color: #23527c;
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 1279px) and (min-width: 1024px) {

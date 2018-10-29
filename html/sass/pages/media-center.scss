@@ -220,7 +220,8 @@
                         }
                         a {
                             &:hover {
-                                color: inherit;
+                                color: #23527c;
+                                text-decoration: underline;
                             }
                         }
                     }
@@ -259,6 +260,10 @@
                                 margin-top: 4px;
                                 display: inline-block;
                             }
+                            &:hover{
+                                text-decoration: underline;
+                                color: #0058d8;
+                            }
                         }
                     }
                     .btn-readMore {
@@ -267,6 +272,10 @@
                         font-size: 18px;
                         text-transform: uppercase;
                         font-weight: bold;
+                        &:hover{
+                            color: #23527c;
+                            text-decoration: underline;
+                        }
                         @include bp(landscape) {
                             font-size: 16px;
                         }
