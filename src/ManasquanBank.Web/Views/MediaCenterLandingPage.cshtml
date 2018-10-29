@@ -322,7 +322,7 @@
                                 {
                                     PagiUrl = "?page=" + (PageNum - 1);
 
-                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Media Image"></a>
+                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Previous"></a>
                                 }
                                 
                                 <b>@PageNum of @paginationcount</b>
@@ -332,16 +332,17 @@
                                 @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
                                 {
                                     PagiUrl = "?page=" + (PageNum + 1);
-                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
+                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Next"></a>
 
                                 }
                             </p>
                         </div>
                     </div>
                 }
-                @*<div class="newsPagination">
-                        <b>1</b> of 10 <a href="#"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
-                    </div>*@
+                                @*<div class="newsPagination">
+        previous next
+            <b>1</b> of 10 <a href="#"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
+        </div>*@
             </div>
         </div>
     </section>

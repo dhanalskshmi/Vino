@@ -71,7 +71,7 @@
                             <p>
                                 @if (PageNum > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
                                 {
-                                    PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum + 1);
+                                    PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum - 1);
 
                                     <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-left.png" alt="Left arrow" title="Media Image"></a>
                                 }
