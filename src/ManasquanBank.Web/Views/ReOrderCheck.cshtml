@@ -307,17 +307,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="captchaBlock">
-                                <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
-                                <p class="form1_error hide">The captcha is required and can't be empty.</p>
-
-                            </div>
+                            
                             <span class="wpcf7-form"></span>
                             <div class="row mob-flex">
                                 <button class="btnManasq"><span>SUBMIT</span></button>
                                 <input type="hidden" id="AdminEmail" name="AdminEmail" value="@reOrderCheckAdminEmail" />
                                 <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@reOrderCheckConfirmationEmail" />
                                 
+                            </div>
+                            <div class="captchaBlock">
+                                <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
+                                <p class="form1_error hide">The captcha is required and can't be empty.</p>
+
                             </div>
 
                                 <!-- <div class="success-msg" id="contactSucc">

@@ -79,15 +79,16 @@
             <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
         </div>
     </div>
-    <div class="captchaBlock">
-        <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
-        <p class="form1_error hide">The captcha is required and can't be empty.</p>
-        
-    </div>
+    
     <button class="btn-mansq pull-right btnManasq"><span>SUBMIT</span></button>
     <input type="hidden" id="adminEmail" name="AdminEmail" value="@Model.AdminEmail" />
     <input type="hidden" id="confirmationEmail" name="ConfirmationEmail" value="@Model.ConfirmationEmail" />
     <span class="wpcf7-form"></span>
+    <div class="captchaBlock">
+        <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
+        <p class="form1_error hide">The captcha is required and can't be empty.</p>
+
+    </div>
 </div>
 }
 
