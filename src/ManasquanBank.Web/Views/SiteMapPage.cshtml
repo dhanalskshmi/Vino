@@ -260,20 +260,20 @@
                                         {
                                             if (CurrentNode.HasValue("categoryDetailTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("categoryDetailTitle");
                                             }
 
-                                            if (CurrentNode.HasProperty("siteTitle"))
+                                            if (CurrentNode.HasValue("siteTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("siteTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("siteTitle");
                                             }
-                                            if (CurrentNode.HasProperty("mediacenterTitle"))
+                                            if (CurrentNode.HasValue("mediacenterTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("mediacenterTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("mediacenterTitle");
                                             }
-                                            if (CurrentNode.HasProperty("productDetailTitle"))
+                                            if (CurrentNode.HasValue("productDetailTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("productDetailTitle");
                                             }
                                         }
 
@@ -457,20 +457,20 @@
                                         {
                                             if (CurrentNode.HasValue("categoryDetailTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("categoryDetailTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("categoryDetailTitle");
                                             }
 
-                                            if (CurrentNode.HasProperty("siteTitle"))
+                                            if (CurrentNode.HasValue("siteTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("siteTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("siteTitle");
                                             }
-                                            if (CurrentNode.HasProperty("mediacenterTitle"))
+                                            if (CurrentNode.HasValue("mediacenterTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("mediacenterTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("mediacenterTitle");
                                             }
-                                            if (CurrentNode.HasProperty("productDetailTitle"))
+                                            if (CurrentNode.HasValue("productDetailTitle"))
                                             {
-                                                PageTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
+                                                PageTitle = CurrentNode.GetProperty<string>("productDetailTitle");
                                             }
                                         }
                                         <h4><a class="hvr-underline-from-center" href="@CurrentNode.Url">@PageTitle</a></h4>

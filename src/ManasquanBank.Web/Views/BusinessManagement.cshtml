@@ -19,7 +19,14 @@
     var businessthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
     var businessAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
     var businessConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
+    var department = Model.Content.GetPropertyValue<string>("department");
+    var employee = Model.Content.GetPropertyValue<string>("employee");
+
+    string[] departmentList = department.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+    string[] employeeList = employee.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+
 }
+
 @section InnerTopStyle {
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
     <link href="~/css/lib/jquery.timepicker.css" rel="stylesheet" />
@@ -239,10 +246,14 @@
                                         <label for="loanPurpose">Department</label>
                                         <select name="department" id="department" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            <option value="Executive Management">Executive Management </option>
-                                            <option value="Senior Management">Senior Management </option>
-                                            <option value="Branch Managers">Branch Managers </option>
-                                            <option value="Foundation">Foundation </option>
+                                            @if (departmentList.Length > 0)
+                                            {
+                                                for (int i = 0; i < departmentList.Length; i++)
+                                                {
+                                                    <option value="@departmentList[i]">@departmentList[i]</option>
+                                                }
+                                            }
+
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -250,25 +261,13 @@
                                         <label for="loanOfficer">Employee</label>
                                         <select name="employee" id="employee" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                           <option value="Kathie Adams">Kathie Adams</option>
-                                            <option value="Suellen Arecchi">Suellen Arecchi</option>
-                                            <option value="Nancy Canary">Nancy Canary</option>
-                                            <option value="Jeffrey Casten">Jeffrey Casten</option>
-                                            <option value="Luke Caverly">Luke Caverly</option>
-                                            <option value="Lisa Colonno">Lisa Colonno</option>
-                                            <option value="Beth Culos">Beth Culos</option>
-                                            <option value="Robert Hart">Robert Hart</option>
-                                            <option value="Wililam Horvath">Wililam Horvath</option>
-                                            <option value="Rich Lanza">Rich Lanza</option>
-                                            <option value="Loralee Neyland">Loralee Neyland</option>
-                                            <option value="Christina Paccione">Christina Paccione</option>
-                                            <option value="Lisa Roettger">Lisa Roettger</option>
-                                            <option value="Ann Slavick">Ann Slavick</option>
-                                            <option value="Nancy Steck">Nancy Steck</option>
-                                            <option value="Alan J Stuart">Alan J Stuart</option>
-                                            <option value="Jennifer Weisert">Jennifer Weisert</option>
-                                            <option value="Mary Anne Whittemore">Mary Anne Whittemore</option>
-                                            <option value="Steve Yarosz">Steve Yarosz</option>
+                                            @if (employeeList.Length > 0)
+                                            {
+                                                for (int j = 0; j < employeeList.Length; j++)
+                                                {
+                                                    <option value="@employeeList[j]">@employeeList[j]</option>
+                                                }
+                                            }
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -330,14 +329,15 @@
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     
+                                    <div class="col-lg-12 col-xs-12 form-group">
+                                       
+                                            <label for="cntComments">Message</label>
+                                            <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
+                                       
+                                    </div>
 
                                 </div>
-                                <div class="col-lg-12 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="cntComments">Message</label>
-                                        <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="captchaBlock">
                                 <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
@@ -373,12 +373,12 @@
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")
 
-      if (jQuery("#zip").length > 0) {
-        document.getElementById('zip').addEventListener('input', function(e) {
-          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
-          e.target.value = x[1];
-        });
-      }
+      // if (jQuery("#zip").length > 0) {
+      //   document.getElementById('zip').addEventListener('input', function(e) {
+      //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+      //     e.target.value = x[1];
+      //   });
+      // }
       if (jQuery("#accNo").length > 0) {
         document.getElementById('accNo').addEventListener('input', function(e) {
           var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
@@ -409,7 +409,7 @@
         $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
       }
       $("#state,#country").selectmenu();
-
+      $("#country").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
       $("#country").on('selectmenuchange', function() {
         $("#state").selectmenu("destroy");
         country_id = $(this).find('option:selected').attr('rel');
@@ -426,6 +426,7 @@
 
     });
 </script>
+
 
 
 }

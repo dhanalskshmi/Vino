@@ -33,9 +33,6 @@
     var googleMapKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("googleMapKey");
     List<Locations> MapLocations = new List<Locations>();
 
-    ///* icon */
-
-    //var addressIcon = Model.Content.AncestorOrSelf(2).GetPropertyValue<string>("addressIcon");
 
 }
 @functions
@@ -52,13 +49,9 @@
     }
 }
 @{
-
-
     Locations objlocations = new Locations();
-
     System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex("<[^>]*>");
     address = rx.Replace(address, "");
-
     decimal lat = map.Latitude;
     decimal lng = map.Longitude;
     var zoom = map.Zoom;
@@ -72,8 +65,6 @@
     var json = jsonSerialiser.Serialize(MapLocations);
 
 }
-
-
 @section InnerTopStyle {
     <style>
         p.printIcon:before {

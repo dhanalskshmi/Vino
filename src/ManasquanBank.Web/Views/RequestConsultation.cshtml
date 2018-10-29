@@ -403,6 +403,7 @@
         $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
       }
       $("#state,#country").selectmenu();
+      $("#country").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
 
       $("#country").on('selectmenuchange', function() {
         $("#state").selectmenu("destroy");
@@ -420,6 +421,7 @@
 
     });
 </script>
+
 
 
 }
