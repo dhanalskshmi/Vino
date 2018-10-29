@@ -457,7 +457,7 @@
     var appleStoreLink = Model.Content.GetPropertyValue<string>("appleStoreLink");
     var googlePlayStoreLink = Model.Content.GetPropertyValue<string>("googlePlayStoreLink");
     var appDescription = Model.Content.GetPropertyValue<string>("appDescription");
-    var appcTAButton = Model.Content.GetPropertyValue<Link>("appcTAButton");
+    var appLogo = Model.Content.GetPropertyValue<IPublishedContent>("appLogo");
 }
 
 <section class="appPannel animatable">
@@ -475,6 +475,7 @@
                 <div class="appStores">
                     <figure class="">
                         <a href="@appleStoreLink" target="_blank">
+                           
                             <img src="~/images/home/apple_app.png" alt="App Store Icon">
                         </a>
                     </figure>
@@ -486,7 +487,11 @@
                 </div>
             </div>
             <figure class="imgDesg">
-                <img src="~/images/home/app_img.png" alt="Mobile Icon">
+                @if (appLogo != null)
+                {
+                    <img src="@appLogo.Url" alt="Mobile Icon">
+                }
+                
             </figure>
         </div>
     </div>

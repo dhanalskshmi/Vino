@@ -40,7 +40,7 @@ CURRENT EVENTS
 
                         timesplit = temp[3].Split(':');
 
-                       int timesp = Convert.ToInt32(timesplit[0]) + 5;
+                       int timesp = Convert.ToInt32(timesplit[0]) - 7;
 
                         TimeSpan timespan = new TimeSpan(timesp, Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
                         DateTime time = DateTime.Today.Add(timespan);
