@@ -108,6 +108,9 @@
                         font-weight: 600;
                         color: #fff;
                         background-color: #1c3d6d;
+                        &:hover{
+                            background-color: #004dbf;
+                        }
                     }
                     .stLarge{
                         display: none;

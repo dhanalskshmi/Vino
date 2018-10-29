@@ -99,6 +99,11 @@
 							font-size:22px;
 							margin-bottom: 7px;
 						}
+						a{
+							&:hover{
+								text-decoration: underline;
+							}
+						}
 					}
 					p {
 						font-size:20px;
@@ -107,6 +112,7 @@
 						a {
 							text-decoration: none;
 							&:hover {
+								text-decoration: underline;
 								color:#666;
 							}
 						}

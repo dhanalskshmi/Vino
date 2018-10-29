@@ -684,6 +684,12 @@
                             @include bp(landscape) {
                                 font-size: 16px;
                             }
+                            a{
+                                color: #fff;
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                            }
                         }
                         p {
                             line-height: initial;
@@ -747,6 +753,12 @@
             font-weight: bold;
             @include bp(landscape) {
                 font-size: 16px;
+            }
+            a{
+                color: #fff;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
         p {
@@ -848,6 +860,14 @@
                 }
                 @include bp(mobile) {
                     margin-bottom: 20px;
+                }
+                h5{
+                    a{
+                        color: #1a3d6e;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }

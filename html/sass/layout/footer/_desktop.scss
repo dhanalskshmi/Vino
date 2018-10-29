@@ -94,6 +94,11 @@ footer {
     + h3 {
       padding-top: 17px;
     }
+    a{
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
 }
 

@@ -575,6 +575,9 @@
                                 color: #666;
                                 font-size: 24px;
                                 text-transform: uppercase;
+                                &:hover{
+                                    text-decoration: underline;
+                                }
                                 @include bp(tablandscape) {
                                     font-size: 18px;
                                     font-weight: bold;
@@ -635,6 +638,9 @@
                                 &.text {
                                     /*top:-28px;*/
                                     top: -9px;
+                                    &:hover{
+                                        text-decoration: underline;
+                                    }
                                     @include bp(tablandscape) {
                                         top: -9px;
                                     }
@@ -712,6 +718,9 @@
                         float: right;
                         font-weight: bold;
                         padding-top: 22px;
+                        &:hover{
+                            text-decoration: underline;
+                        }
                         @include bp(tablandscape) {
                             font-size: 16px;
                             padding-right: 7px;

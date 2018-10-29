@@ -2769,6 +2769,9 @@ footer {
 .fCols2 p + h3 {
   padding-top: 17px;
 }
+.fCols2 p a:hover {
+  text-decoration: underline;
+}
 
 .fCols3 figure {
   margin-top: 39px;
@@ -6726,6 +6729,12 @@ footer {
     font-size: 16px;
   }
 }
+.boardDirectors .bgWrap .table tbody tr td h5 a {
+  color: #fff;
+}
+.boardDirectors .bgWrap .table tbody tr td h5 a:hover {
+  text-decoration: underline;
+}
 .boardDirectors .bgWrap .table tbody tr td p {
   line-height: initial;
   font-size: 20px;
@@ -6801,6 +6810,12 @@ footer {
   .memberFlexWrap .memberFlex h5 {
     font-size: 16px;
   }
+}
+.memberFlexWrap .memberFlex h5 a {
+  color: #fff;
+}
+.memberFlexWrap .memberFlex h5 a:hover {
+  text-decoration: underline;
 }
 .memberFlexWrap .memberFlex p {
   line-height: initial;
@@ -6927,6 +6942,12 @@ footer {
   .snrManage .bgWrap .memberFlexWrap .memberFlex {
     margin-bottom: 20px;
   }
+}
+.snrManage .bgWrap .memberFlexWrap .memberFlex h5 a {
+  color: #1a3d6e;
+}
+.snrManage .bgWrap .memberFlexWrap .memberFlex h5 a:hover {
+  text-decoration: underline;
 }
 
 .historyTimeline {
@@ -7112,6 +7133,9 @@ footer {
 .contactUs .heroBlock p strong {
     font-size: 18px;
   }
+}
+.contactUs .heroBlock p a:hover {
+  text-decoration: underline;
 }
 @media (max-width: 767px) {
   .contactUs .heroBlock .heroLinks {
@@ -9625,6 +9649,9 @@ footer {
     padding-left: 0;
   }
 }
+.bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .phoneNo a:hover {
+  text-decoration: underline;
+}
 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .phoneNo img {
   margin-right: 11px;
   vertical-align: bottom;
@@ -9856,6 +9883,7 @@ footer {
 }
 .back-btn:hover {
   color: #3d3d3d;
+  text-decoration: underline;
 }
 
 .ie11 .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent.profExec .bioQuote {
@@ -10001,6 +10029,9 @@ footer {
     margin-bottom: 7px;
   }
 }
+.locationSection.dlview .locationBgWrap .locationBox .locationDetail h3 a:hover, .locationSection.pmView .locationBgWrap .locationBox .locationDetail h3 a:hover {
+  text-decoration: underline;
+}
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail p, .locationSection.pmView .locationBgWrap .locationBox .locationDetail p {
   font-size: 20px;
   color: #666666;
@@ -10010,6 +10041,7 @@ footer {
   text-decoration: none;
 }
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail p a:hover, .locationSection.pmView .locationBgWrap .locationBox .locationDetail p a:hover {
+  text-decoration: underline;
   color: #666;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -10933,6 +10965,7 @@ footer {
   text-decoration: none;
 }
 .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a:hover {
+  text-decoration: underline;
   color: inherit;
 }
 .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong {
@@ -11935,6 +11968,9 @@ footer {
   font-weight: 600;
   color: #fff;
   background-color: #1c3d6d;
+}
+.filterDetail .heroBlock .bgWrap .heroFoot .sharePanel a:hover {
+  background-color: #004dbf;
 }
 .filterDetail .heroBlock .bgWrap .heroFoot .sharePanel .stLarge {
   display: none;
@@ -12962,6 +12998,9 @@ footer {
   font-size: 24px;
   text-transform: uppercase;
 }
+.categorySection .bgWrap .flexWrap .contentSection .icon-section a span.text:hover {
+  text-decoration: underline;
+}
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section a span.text {
     font-size: 18px;
@@ -13042,6 +13081,9 @@ footer {
 .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location span.text {
   /*top:-28px;*/
   top: -9px;
+}
+.categorySection .bgWrap .flexWrap .contentSection .icon-section a.location span.text:hover {
+  text-decoration: underline;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location span.text {
@@ -13126,6 +13168,9 @@ footer {
   float: right;
   font-weight: bold;
   padding-top: 22px;
+}
+.categorySection .bgWrap .flexWrap .contentSection a.learnBtn:hover {
+  text-decoration: underline;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
@@ -16650,6 +16695,9 @@ footer {
 }
 .greyPanel.rates .bgWrap table tbody tr td a {
   color: #0066e4;
+}
+.greyPanel.rates .bgWrap table tbody tr td a:hover {
+  text-decoration: underline;
 }
 .greyPanel.rates .bgWrap table tbody tr:nth-child(odd) {
   background-color: #fff;

@@ -84,7 +84,6 @@ if ($('.contactForm').length > 0) {
         validator.checkForm();
         if($('#state').val() == ""){
             $("#state").parent().find("span.vd").removeClass('f-important f-success').addClass('f-error');
-            alert();
         } else{
             $("#state").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
         }

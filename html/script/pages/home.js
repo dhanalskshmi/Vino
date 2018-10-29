@@ -54,7 +54,8 @@ if ($('.joinEmail').length > 0) {
 
 // Home PopUP
 var isshow = window.localStorage.getItem('isshow');
-
+var isshowalert = window.localStorage.getItem('isshowalert');
+console.log(isshowalert);
 if(isshow == null){
 
     setTimeout(function() {
@@ -68,6 +69,11 @@ if(isshow == null){
 
   },3500);
 }
+if(isshowalert == null){
+    $(".alertsPannel").fadeIn();
+    $(".floatingAlerts").fadeIn();
+    console.log("Close Alert 2")
+}
 
 $('.close').click(function() {
   $('html').removeClass('popUpOpen');
@@ -77,6 +83,8 @@ $('.close').click(function() {
 $('.close-alerts').click(function() {
     $(this).closest(".alertsPannel").fadeOut();
     $(this).closest(".floatingAlerts").fadeOut();
+    console.log("Close Alert 1")
+    window.localStorage.setItem('isshowalert', 1);
 });
 $('.contiLnk').on('click',function(){
     window.localStorage.setItem('isshow', 1);

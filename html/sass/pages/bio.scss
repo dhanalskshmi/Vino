@@ -102,6 +102,11 @@
                         @include bp(mobile) {
                             padding-left: 0;
                         }
+                        a{
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
                         img {
                             margin-right: 11px;
                             vertical-align: bottom;
@@ -249,7 +254,6 @@
                     }
                 }
             }
-            .bioInfos {}
             .back-btn {
                 margin-top: 40px;
                 @include bp(landscape) {
@@ -290,6 +294,7 @@
     }
     &:hover {
         color: #3d3d3d;
+        text-decoration: underline;
     }
 }
 
