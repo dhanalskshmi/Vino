@@ -2115,7 +2115,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .flatNav .SubmenuWrapper.col-3 .flexBox {
-    height: 224px;
+    height: 180px;
   }
 
   .ie11 .menuWrapper .loginBlocks {
@@ -2272,7 +2272,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .flatNav .SubmenuWrapper.col-3 .flexBox {
-    height: 338px;
+    height: 268px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -4316,9 +4316,6 @@ footer {
           transform: rotate(45deg);
 }
 
-.alertsPannel .alertsWrap {
-  margin: 0 12px;
-}
 .alertsPannel .alertsWrap .wrap {
   background: #da1627;
   max-width: 386px;
