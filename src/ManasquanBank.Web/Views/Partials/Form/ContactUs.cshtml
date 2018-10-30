@@ -1,12 +1,7 @@
 ﻿@using ManasquanBank.Web.Models;
 @using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post, new { id = "contactForm", @class = "contactForm wpcf7-form" }))
 {
-    if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
-    {
-        <div class="alert alert-warning warnAlert">
-            <strong>Warning!</strong> @ViewBag.ErrorMessage
-        </div>
-    }
+    
     string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
     string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
 <div class="row">
