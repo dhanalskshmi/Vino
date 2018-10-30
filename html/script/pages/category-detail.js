@@ -80,7 +80,7 @@ $(document).ready(function(){
             });
 
             $(window).on("load resize",function(e){
-            if ($(window).width() <= 1023) {
+            if (window.innerWidth <= 1023) {
                 $("[id*='tablenormal']").hide();
                 $("[id*='tablemobile']").show();
 
