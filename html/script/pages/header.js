@@ -951,13 +951,13 @@ $(document).ready(function() {
 
 	setTimeout(function() {
 		$('.SubmenuWrapper').css({'top': $('header').height()});
-	}, 200);
+	}, 500);
 	$(window).on("load resize",function() {
 		$('.SubmenuWrapper').css({'top': ''});
 		console.log("resized");
 		setTimeout(function() {
 			$('.SubmenuWrapper').css({'top': $('header').height()});
-		}, 200);
+		}, 500);
 
 	});
 
