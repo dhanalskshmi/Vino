@@ -23,10 +23,11 @@
 		    	margin-bottom: 0px;
 					p{
 							font-size: 14px;
-							line-height: 18px;
+							line-height: 24px;
 							margin-bottom: 12px;
 							@include bp(tablandscape) {
 								font-size: 13px;
+								line-height: 21px;
 							}
 								@include bp(tablet) {
 									padding-left: 10px;

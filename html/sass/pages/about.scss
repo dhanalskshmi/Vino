@@ -71,6 +71,30 @@
 .heroBlock {
     position: relative;
     width: 100%;
+    ul,ol{
+        list-style: disc;
+        padding-left: 55px;
+        margin-top: 12px;
+        margin-bottom: 25px;
+        @include bp(tablet) {
+            margin-bottom: 20px;
+        }
+        @include bp(mobile) {
+            padding-left: 49px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        li {
+            display: list-item;
+            color: #666666;
+            font-size: 20px;
+            padding-left: 17px;
+            margin-bottom: -1px;
+            @include bp(tablet) {
+                font-size: 16px;
+            }
+        }
+    }
     .bgWrap {
         width: 100%;
         background: #f1f1f1;
@@ -157,11 +181,14 @@
     }
 }
 
-.heroLinks {
+.heroLinks,ul.heroLinks {
     text-align: center;
+    padding: 0;
+    margin: 0;
     padding-top: 22px;
     display: flex;
     justify-content: center;
+    list-style: none;
     @include bp(landscape) {
         padding-top: 18px;
     }
@@ -173,6 +200,8 @@
         padding-top: 7px;
     }
     li {
+        list-style: none;
+        padding: 0;
         a {
             position: relative;
             background: #1268e5;

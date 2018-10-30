@@ -60,7 +60,7 @@
                     font-size: 14px;
                 }
             }
-            ul {
+            ul,ol {
                 list-style: disc;
                 padding-left: 55px;
                 margin-top: 12px;
@@ -88,7 +88,6 @@
                 }
             }
             ol{
-                @extend ul;
                 list-style: decimal;
             }
             .btnWrap {
