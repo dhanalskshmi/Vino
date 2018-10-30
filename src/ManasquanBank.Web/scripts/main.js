@@ -1138,7 +1138,27 @@ $(document).ready(function(){
           },7000);
      }
 });
-
+$(document).ready(function(){
+    "use strict";
+    var form = $(".form-login"),
+        url = {
+            protocol: "https://",
+            roDomain: "web1.secureinternetbank.com",
+            ro: "/pbi_pbi1961/pbi1961.ashx?wci=RemoteLogin&logonby=connect3&prmaccess=Portfolio&rt=",
+            boDomain: "web1.secureinternetbank.com",
+            bo: "/ebc_ebc1961/ebc1961.ashx?wci=Process&wce=RemoteLogon&irl=T&mfa=2&rt=",
+            rt: "221272167"
+        };
+    form.on("submit", function() {
+        if (!this.AccessID.value) {
+            alert("Please enter a valid Access ID. Thank you!");
+            return false
+        }
+        this.nmUID.value = this.AccessID.value;
+        this.nmRTN.value = url.rt;
+        this.action = url.protocol + (this.app.value == 0 ? url.roDomain + url.ro : url.boDomain + url.bo) + url.rt
+    })
+});
 // Form moduleA
 function onSubmit(token) {
   document.getElementById('contactForm').submit();

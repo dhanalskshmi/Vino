@@ -7146,6 +7146,10 @@ footer {
   position: absolute;
 }
 
+.captchaBlock {
+  position: absolute;
+}
+
 #joinEmail #joinSuccess, .joinEmail #joinSuccess {
   width: 100%;
 }
