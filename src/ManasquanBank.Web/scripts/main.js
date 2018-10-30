@@ -366,6 +366,9 @@ $('.backtoTop').click(function(event) {
 
 $('.SubmenuWrapper').css({'top': $('header').outerHeight()});
 $(window).on("load resize",function(e) {
+	$('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+});
+$(window).on("load resize",function(e) {
 
 			 if ($(window).width() >= 768) {
 				 $('.loginBlocks.active').removeClass('active');
@@ -386,7 +389,7 @@ $(window).on("load resize",function(e) {
 
 			//var headHgt = $('header').outerHeight();
 			//console.log(headHgt);
-			$('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+
 
 });
 
