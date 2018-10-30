@@ -566,10 +566,20 @@ if($(e.target).closest("span").length==0){
 
 
 
+
+		$(".mainNav li.item-1, .mainNav li.item-2, .mainNav li.item-3, .mainNav li.item-4").removeClass('visibilityHide')
   $('.mainNav .submit').click(function(e) {
 		$(this).toggleClass('active');
 		$('.mainNav li.search').toggleClass('searchOpen');
+		$(".mainNav li.item-1, .mainNav li.item-2, .mainNav li.item-3, .mainNav li.item-4").removeClass('visibilityHide');
+		if($(this).parent().parent().hasClass("searchOpen")){
+			$(this).parent().parent().siblings().addClass('visibilityHide');
+		}
+		//$(".mainNav li.item-1, .mainNav li.item-2, .mainNav li.item-3, .mainNav li.item-4").toggleClass('visibilityHide');
+
+
 	});
+
   $('.mLogin a').click(function(e) {
 		$(this).toggleClass('active');
 		$('.loginBlocks').toggleClass('active');
