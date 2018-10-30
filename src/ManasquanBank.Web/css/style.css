@@ -4225,7 +4225,7 @@ footer {
 
 .popUpWrapper {
   position: fixed;
-  top: 12%;
+  top: 130px;
   left: 50%;
   width: 100%;
   z-index: 999;
@@ -4327,7 +4327,7 @@ footer {
 .alertsPannel .alertsWrap .wrap {
   background: #da1627;
   max-width: 386px;
-  padding: 5px 10px 5px 30px;
+  padding: 5px 30px 5px 30px;
   margin: 0 auto;
   position: relative;
 }
@@ -4346,7 +4346,6 @@ footer {
   font-size: 12px;
   color: #FFF;
   line-height: 13px;
-  padding-right: 20px;
 }
 
 .close-alerts {
@@ -4440,6 +4439,7 @@ footer {
   font-size: 12px;
   color: #3d3d3d;
   line-height: 13px;
+  padding-right: 20px;
 }
 
 .popupWrap .wrap {
@@ -4461,6 +4461,13 @@ footer {
   display: block;
 }
 
+.popUpWrapper {
+  visibility: hidden;
+}
+.popUpWrapper.Open {
+  visibility: visible;
+}
+
 @media screen and (max-width: 767px) {
   .appPannel p br {
     display: none;
@@ -4468,7 +4475,7 @@ footer {
 }
 @media screen and (min-width: 768px) {
   .popUpWrapper {
-    top: 10%;
+    top: 130px;
   }
   .popUpWrapper .popupWrap .wrap {
     max-width: 460px;
@@ -4482,7 +4489,7 @@ footer {
     margin: 0;
   }
   .alertsPannel .alertsWrap .wrap {
-    padding: 5px 16px 5px 30px;
+    padding: 5px 30px 5px 30px;
     max-width: 100%;
   }
   .alertsPannel .alertsWrap .wrap::before {
@@ -5027,7 +5034,7 @@ footer {
 }
 @media screen and (min-width: 1024px) {
   .popUpWrapper {
-    top: 16%;
+    top: 175px;
   }
   .popUpWrapper .popupWrap .wrap {
     padding: 21px 28px 20px;
@@ -5455,7 +5462,7 @@ footer {
   }
 
   .alertsPannel .alertsWrap .wrap {
-    padding: 16px 16px 22px 67px;
+    padding: 16px 30px 22px 67px;
   }
   .alertsPannel .alertsWrap .wrap::before {
     top: 11px;
