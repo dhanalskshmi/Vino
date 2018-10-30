@@ -17143,6 +17143,19 @@ footer {
   }
 }
 
+section.sitemap-section ul {
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  section.sitemap-section ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+section.sitemap-section ul li {
+  padding-left: 0;
+}
 section.sitemap-section .sitemap-section-box {
   width: 100%;
   border-radius: 7px;
