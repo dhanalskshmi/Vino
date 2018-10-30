@@ -1036,7 +1036,7 @@ $('.close-alerts').click(function() {
     window.localStorage.setItem('isshowalert', 1);
     setTimeout(function(){
       //alert($('header').outerHeight());
-      $('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+      $('.SubmenuWrapper').css({'top': ''});
   	},100);
 
 });
