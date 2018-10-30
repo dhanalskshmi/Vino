@@ -55,13 +55,11 @@ if ($('.joinEmail').length > 0) {
 // Home PopUP
 var isshow = window.localStorage.getItem('isshow');
 var isshowalert = window.localStorage.getItem('isshowalert');
-console.log(isshowalert);
 if(isshow == null){
 
     setTimeout(function() {
     $('html').addClass('popUpOpen');
     if($('.popUpWrapper').length > 0){
-        //console.log('open');
         setTimeout(function(){
           $('.popupWrap .wrap').addClass('Open');
         },100);
@@ -72,7 +70,6 @@ if(isshow == null){
 if(isshowalert == null){
     $(".alertsPannel").fadeIn();
     $(".floatingAlerts").fadeIn();
-    console.log("Close Alert 2")
 }
 
 $('.close').click(function() {
@@ -83,7 +80,6 @@ $('.close').click(function() {
 $('.close-alerts').click(function() {
     $(this).closest(".alertsPannel").fadeOut();
     $(this).closest(".floatingAlerts").fadeOut();
-    console.log("Close Alert 1")
     window.localStorage.setItem('isshowalert', 1);
 });
 $('.contiLnk').on('click',function(){
@@ -115,15 +111,15 @@ function isInView(el) {
 $(".grecaptcha-badge").hide();
 if ($('form.wpcf7-form').length > 0) {
     $(window).on("load resize scroll", function(e) {
-        var visibleATview = false;
-        $('form.wpcf7-form,form .wpcf7-form').each(function() {
-            if (isInView($(this))) {
-                visibleATview = true;
-            }
-        });
-        if (visibleATview) {
+        var top_of_element = $("form.wpcf7-form").offset().top;
+        var bottom_of_element = $("form.wpcf7-form").offset().top + $("form.wpcf7-form").outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+        var top_of_screen = $(window).scrollTop();
+    
+        if((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
             $(".grecaptcha-badge").show();
-        } else {
+        }
+        else {
             $(".grecaptcha-badge").hide();
         }
     });
