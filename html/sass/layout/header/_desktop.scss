@@ -1181,6 +1181,18 @@ header {
 		}
 	}
 
+	.ieEdge {
+		.flatNav {
+			.SubmenuWrapper {
+				&.col-7 {
+					.flexBox {
+						height: 520px;
+					}
+				}
+			}
+		}
+	}
+
 
 
 }
@@ -1494,6 +1506,18 @@ header {
 			&.col-7 {
 				.flexBox {
 					height: 310px;
+				}
+			}
+		}
+	}
+
+	.ieEdge {
+		.flatNav {
+			.SubmenuWrapper {
+				&.col-7 {
+					.flexBox {
+						height: 310px;
+					}
 				}
 			}
 		}
