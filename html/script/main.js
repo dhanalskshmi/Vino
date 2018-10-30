@@ -1130,6 +1130,11 @@ $(document).ready(function(){
           scrollTop: ($(target).offset().top)
         }, 500);
      });
+     if ($('.warnAlert').length > 0) {
+        setTimeout(function() {
+            $('.warnAlert').fadeOut();
+          },7000);
+     }
 });
 
 // Form moduleA
