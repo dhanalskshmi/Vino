@@ -453,7 +453,7 @@ header {
 	}
 	.mobileSearchfield {
 		&.active {
-			display: none;
+			display: none !important;
 		}
 	}
 

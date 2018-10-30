@@ -1635,7 +1635,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .mobileSearchfield.active {
-    display: none;
+    display: none !important;
   }
 
   .firefox .menuWrapper .loginBlocks {
