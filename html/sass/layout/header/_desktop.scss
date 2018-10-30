@@ -756,6 +756,7 @@ header {
 		    right: 196px;
 		    margin-top: -7px;
 				opacity: 0;
+				visibility: hidden;
 		    transition: all .55s;
 			}
 			.submit {
@@ -782,6 +783,7 @@ header {
 			    padding: 0 28px 0 15px;
 			    //border: 1px solid #1b3d6e;
 					opacity: 1;
+					visibility: visible;
 				}
 				.submit {
 					i {
@@ -1432,7 +1434,7 @@ header {
 			&.col-3 {
 				.borderLine {
 					i {
-						min-height: 144px;
+						min-height: 164px;
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
@@ -1447,7 +1449,7 @@ header {
 				}
 				.flexBox {
 					width: calc((100% / 5) * 3);
-					height: 182px;
+					height: 200px;
 					.cols {
 						//width: 33.33%;
 					}

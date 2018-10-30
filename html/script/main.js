@@ -957,9 +957,29 @@ $(document).ready(function() {
 		console.log("resized");
 		setTimeout(function() {
 			$('.SubmenuWrapper').css({'top': $('header').height()});
-		}, 500);
+		}, 200);
 
 	});
+
+	if ($("body").width() <= 767) {
+		$('.loginBlocks').css({'top': $('header').height()});
+	}
+	$(window).on("load resize",function() {
+		if ($("body").width() <= 767) {
+			setTimeout(function() {
+				$('.loginBlocks').css({'top': $('header').height()});
+			}, 500);
+		}
+
+	});
+	/*else if ($("body").width() >= 768) {
+		$('.loginBlocks').css({'top': ''});
+		$(window).on("load resize",function() {
+			setTimeout(function() {
+				$('.loginBlocks').css({'top': ''});
+			}, 500);
+		});
+	}*/
 
 });
 
