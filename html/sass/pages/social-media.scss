@@ -94,13 +94,17 @@
 	}
 	@include bp(mobile){
 	margin-top: 40px;
+	max-width: 410px;
+	padding: 0 12px;
+	margin-left: auto;
+	margin-right: auto;
 	}
 	.containerWrapper{
 		@include bp(tablet){
-			max-width: 100%;
+			//max-width: 100%;
 		}
 		@include bp(tablet){
-			max-width: 410px;
+			//max-width: 410px;
 			padding: 0;
 		}
 	}
