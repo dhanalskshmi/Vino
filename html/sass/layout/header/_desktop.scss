@@ -1415,16 +1415,16 @@ header {
 			.borderLine {
 				i {
 					&:nth-child(1) {
-						left: calc(100% - 952px);
+						left: calc((100% / 5) - 5px);
 					}
 					&:nth-child(2) {
-						left: calc(100% - 715px);
+						left: calc((200% / 5) - 5px);
 					}
 					&:nth-child(3) {
-						left: calc(100% - 478px);
+						left: calc((300% / 5) - 5px);
 					}
 					&:nth-child(4) {
-						left: calc(100% - 241px);
+						left: calc((400% / 5) - 5px);
 					}
 				}
 			}
@@ -1459,6 +1459,57 @@ header {
 
 }
 
+/*@media screen and (min-width: 1284px) {
+
+	.flatNav {
+		.SubmenuWrapper {
+			.borderLine {
+				i {
+					&:nth-child(3) {
+						left: calc(100% - 956px);
+					}
+					&:nth-child(4) {
+						left: 946px;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 1286px) {
+
+	.flatNav {
+		.SubmenuWrapper {
+			.borderLine {
+				i {
+					&:nth-child(3) {
+						left: 710px;
+					}
+					&:nth-child(4) {
+						left: 948px;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 1290px) {
+
+	.flatNav {
+		.SubmenuWrapper {
+			.borderLine {
+				i {
+					&:nth-child(3) {
+						left: 712px;
+					}
+					&:nth-child(4) {
+						left: 950px;
+					}
+				}
+			}
+		}
+	}
+}*/
 @media screen and (min-width: 1300px) {
 
 	.headerWrapper {
