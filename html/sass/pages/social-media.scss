@@ -118,6 +118,7 @@
 		}
 		.filtr-container{
 			z-index: 1;
+			overflow: hidden;
 			.filtr-item{
 				width: 33.3%;
 				@include bp(landscape){

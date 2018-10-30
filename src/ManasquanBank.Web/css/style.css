@@ -12289,6 +12289,7 @@ footer {
 }
 .socialPanel .bgWrap .filtr-container {
   z-index: 1;
+  overflow: hidden;
 }
 .socialPanel .bgWrap .filtr-container .filtr-item {
   width: 33.3%;
