@@ -1034,12 +1034,13 @@ $('.close-alerts').click(function() {
     $(this).closest(".alertsPannel").fadeOut();
     $(this).closest(".floatingAlerts").fadeOut();
     window.localStorage.setItem('isshowalert', 1);
+    $('.SubmenuWrapper').css({'top': $('header').outerHeight()});
 });
 $('.contiLnk').on('click',function(){
     window.localStorage.setItem('isshow', 1);
     $('html').removeClass('popUpOpen');
     $('.popupWrap .wrap,.popUpWrapper').removeClass('Open');
-    
+
 });
 
 
@@ -1123,6 +1124,7 @@ $(document).ready(function(){
         }, 500);
      });
 });
+
 // Form moduleA
 function onSubmit(token) {
   document.getElementById('contactForm').submit();
