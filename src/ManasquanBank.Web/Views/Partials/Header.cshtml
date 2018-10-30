@@ -93,11 +93,11 @@
 		                                {
 		                                    if (secondaryLink.Target == "_blank")
 		                                    {
-		                                        <a href="@secondaryLink.Url" target="_blank" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+		                                        <a href="@secondaryLink.Url" target="_blank"  aria-label="@secondaryLink.Name">@secondaryTitle </a>
 		                                    }
 		                                    else
 		                                    {
-		                                        <a href="@secondaryLink.Url" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+		                                        <a href="@secondaryLink.Url"  aria-label="@secondaryLink.Name">@secondaryTitle </a>
 		                                    }
 
 		                                }
@@ -113,11 +113,11 @@
 	                                                    {
 	                                                        if (secondLevellink.Target == "_blank")
 	                                                        {
-	                                                            <a href="@secondLevellink.Url" target="_blank" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
+	                                                            <a href="@secondLevellink.Url" target="_blank"  aria-label="@secondLevellink.Name">@submenuTitle </a>
 	                                                        }
 	                                                        else
 	                                                        {
-	                                                            <a href="@secondLevellink.Url" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
+	                                                            <a href="@secondLevellink.Url"  aria-label="@secondLevellink.Name">@submenuTitle </a>
 	                                                        }
 
 	                                                    }
@@ -151,13 +151,13 @@
                                                     if (primaryTitleLink.Target == "_blank")
                                                     {
 
-                                            <a href="@primaryTitleLink.Url" target="_blank" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
+                                            <a href="@primaryTitleLink.Url" target="_blank"  aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
             
                                         }
                                                     else
                                                     {
 
-                                            <a href="@primaryTitleLink.Url" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
+                                            <a href="@primaryTitleLink.Url"  aria-label="@primaryTitleLink.Name"><span>@Html.Raw(primaryTitle.Replace( " ", "</br>" )) </span></a>
             
                                         }
 
@@ -299,11 +299,11 @@
                         {
                             if (primaryTitleLink.Target == "_blank")
                             {
-                                <a href="@primaryTitleLink.Url" class="msubMenu" target="_blank" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name">@primaryTitle </a>
+                                <a href="@primaryTitleLink.Url" class="msubMenu" target="_blank"  aria-label="@primaryTitleLink.Name">@primaryTitle </a>
                             }
                             else
                             {
-                                <a href="@primaryTitleLink.Url" class="msubMenu" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name">@primaryTitle </a>
+                                <a href="@primaryTitleLink.Url" class="msubMenu"  aria-label="@primaryTitleLink.Name">@primaryTitle </a>
                             }
 
                         }
@@ -365,11 +365,11 @@
                         {
                             if (primaryTitleLink.Target == "_blank")
                             {
-                                <a href="@primaryTitleLink.Url"  target="_blank" title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name">@primaryTitle </a>
+                                <a href="@primaryTitleLink.Url"  target="_blank"  aria-label="@primaryTitleLink.Name">@primaryTitle </a>
                             }
                             else
                             {
-                                <a href="@primaryTitleLink.Url"  title="@primaryTitleLink.Name" aria-label="@primaryTitleLink.Name">@primaryTitle </a>
+                                <a href="@primaryTitleLink.Url"   aria-label="@primaryTitleLink.Name">@primaryTitle </a>
                             }
 
                         }
@@ -391,11 +391,11 @@
                     {
                         if (secondaryLink.Target == "_blank")
                         {
-                            <a href="@secondaryLink.Url" class="msubMenu" target="_blank" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+                            <a href="@secondaryLink.Url" class="msubMenu" target="_blank"  aria-label="@secondaryLink.Name">@secondaryTitle </a>
                         }
                         else
                         {
-                            <a href="@secondaryLink.Url" class="msubMenu" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+                            <a href="@secondaryLink.Url" class="msubMenu"  aria-label="@secondaryLink.Name">@secondaryTitle </a>
                         }
 
                     }
@@ -403,11 +403,11 @@
 
                         if (secondaryLink.Target == "_blank")
                         {
-                            <a href="@secondaryLink.Url"  target="_blank" title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+                            <a href="@secondaryLink.Url"  target="_blank"  aria-label="@secondaryLink.Name">@secondaryTitle </a>
                         }
                         else
                         {
-                            <a href="@secondaryLink.Url"  title="@secondaryLink.Name" aria-label="@secondaryLink.Name">@secondaryTitle </a>
+                            <a href="@secondaryLink.Url"   aria-label="@secondaryLink.Name">@secondaryTitle </a>
                         }
                     }
                     @if (subMenu != null)
@@ -422,11 +422,11 @@
                                     {
                                         if (secondLevellink.Target == "_blank")
                                         {
-                                            <a href="@secondLevellink.Url" target="_blank" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
+                                            <a href="@secondLevellink.Url" target="_blank"  aria-label="@secondLevellink.Name">@submenuTitle </a>
                                         }
                                         else
                                         {
-                                            <a href="@secondLevellink.Url" title="@secondLevellink.Name" aria-label="@secondLevellink.Name">@submenuTitle </a>
+                                            <a href="@secondLevellink.Url"  aria-label="@secondLevellink.Name">@submenuTitle </a>
                                         }
 
                                     }
