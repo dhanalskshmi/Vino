@@ -1386,12 +1386,13 @@ header {
 		ul {
 			padding-top: 9px;
 			li {
-				padding-top: 0;
+				padding-top: 2px;
 				padding-right: 0 !important;
 				padding-bottom: 0 !important;
 				a {
 					display: block;
 					padding: 3px 11px 0;
+			    line-height: 22px !important;
 					&:hover {
 						background: #1c3d6d;
 						color: #FFF;
@@ -1548,7 +1549,7 @@ header {
 		ul {
 			li {
 				padding-right: 27px;
-		    padding-bottom: 25px;
+		    padding-bottom: 29px;
 				a {
 					line-height: 25px;
 					span {

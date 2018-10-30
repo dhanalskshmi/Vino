@@ -2509,13 +2509,14 @@ header + .loginBlocks .businessLogin p a {
     padding-top: 9px;
   }
   .SubmenuWrapper ul li, .SubmenuWrapper .proDetail .heroBlock .bgWrap ol li, .proDetail .heroBlock .bgWrap .SubmenuWrapper ol li {
-    padding-top: 0;
+    padding-top: 2px;
     padding-right: 0 !important;
     padding-bottom: 0 !important;
   }
   .SubmenuWrapper ul li a, .SubmenuWrapper .proDetail .heroBlock .bgWrap ol li a, .proDetail .heroBlock .bgWrap .SubmenuWrapper ol li a {
     display: block;
     padding: 3px 11px 0;
+    line-height: 22px !important;
   }
   .SubmenuWrapper ul li a:hover, .SubmenuWrapper .proDetail .heroBlock .bgWrap ol li a:hover, .proDetail .heroBlock .bgWrap .SubmenuWrapper ol li a:hover {
     background: #1c3d6d;
@@ -2642,7 +2643,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li, .mainNav .proDetail .heroBlock .bgWrap ol li, .proDetail .heroBlock .bgWrap .mainNav ol li {
     padding-right: 27px;
-    padding-bottom: 25px;
+    padding-bottom: 29px;
   }
   .mainNav ul li a, .mainNav .proDetail .heroBlock .bgWrap ol li a, .proDetail .heroBlock .bgWrap .mainNav ol li a {
     line-height: 25px;
@@ -4345,6 +4346,7 @@ footer {
   font-size: 12px;
   color: #FFF;
   line-height: 13px;
+  padding-right: 20px;
 }
 
 .close-alerts {
