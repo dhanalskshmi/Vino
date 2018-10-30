@@ -364,7 +364,7 @@ $('.backtoTop').click(function(event) {
 
 
 
-
+$('.SubmenuWrapper').css({'top': $('header').outerHeight()});
 $(window).on("load resize",function(e) {
 
 			 if ($(window).width() >= 768) {
