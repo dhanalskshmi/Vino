@@ -25,8 +25,12 @@
     foreach (var data in ResourceList)
     {
         var Year = data.GetPropertyValue<DateTime>("filterDate").ToString("yyyy");
-        var resourceCategory = data.GetPropertyValue<int>("typeOfResource");
-
+        var resourceCategorys = data.GetPropertyValue<IEnumerable<IPublishedContent>>("resource");
+        var resourceCategory="";
+        foreach (var item in resourceCategorys)
+        {
+            resourceCategory = item.Id.ToString();
+        }
 
         var filterTitle = data.GetPropertyValue<string>("filterDetailTitle");
         var filterTeaser = data.GetPropertyValue<string>("teaserText");
@@ -156,7 +160,7 @@
                                     bool hasKeys = Request.QueryString.HasKeys();
                                     if (!hasKeys)
                                     {
-                                        <option value="">SELECT A RESOURCE</option>
+                                        <option value="">Type of Resource</option>
                                     }
                                     else
                                     {
@@ -237,7 +241,7 @@
 
                             var teaserText = resource.GetPropertyValue<string>("teaserText");
                             var filterDetailTitle = resource.GetPropertyValue<string>("filterDetailTitle");
-                            var typeofResource = resource.GetPropertyValue<IPublishedContent>("typeOfResource");
+                            var typeofResource = resource.GetPropertyValue<IEnumerable<IPublishedContent>>("resource");
                             var detailImage = resource.GetPropertyValue<IPublishedContent>("detailImage");
                             var date = resource.GetPropertyValue<DateTime>("filterDate").ToString("MMM dd, yyyy");
 
@@ -259,9 +263,13 @@
                                             }
                                             @if (typeofResource != null)
                                             {
-                                                <a href="?resourceType=@typeofResource.Id" class="newsType">
-                                                    @typeofResource.Name
-                                                </a>
+                                                foreach (var item in typeofResource)
+                                                {
+                                                    <a href="?resourceType=@item.Id" class="newsType">
+                                                        @item.Name
+                                                    </a>
+                                                }
+
                                             }
 
                                         </h5>
@@ -288,9 +296,13 @@
                                             }
                                             @if (typeofResource != null)
                                             {
-                                                <a href="?resourceType=@typeofResource.Id" class="newsType">
-                                                    @typeofResource.Name
-                                                </a>
+                                                foreach (var item in typeofResource)
+                                                {
+                                                    <a href="?resourceType=@item.Id" class="newsType">
+                                                        @item.Name
+                                                    </a>
+                                                }
+
                                             }
 
                                         </h5>
@@ -322,7 +334,7 @@
                                 {
                                     PagiUrl = "?page=" + (PageNum - 1);
 
-                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Previous"></a>
+                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Previous page"></a>
                                 }
                                 
                                 <b>@PageNum of @paginationcount</b>
@@ -332,7 +344,7 @@
                                 @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
                                 {
                                     PagiUrl = "?page=" + (PageNum + 1);
-                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Next"></a>
+                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Next page"></a>
 
                                 }
                             </p>
