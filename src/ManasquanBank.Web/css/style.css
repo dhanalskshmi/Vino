@@ -2124,17 +2124,13 @@ header + .loginBlocks .businessLogin p a {
     height: 202px;
   }
   .flatNav .SubmenuWrapper.col-7 .flexBox {
-    height: 380px;
+    height: 390px;
   }
 
   .ie11 .menuWrapper .loginBlocks {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
-  }
-
-  .iOS.chrome {
-    display: none;
   }
 }
 @media screen and (min-width: 1024px) {
