@@ -1148,6 +1148,11 @@ header {
 					height: 290px;
 				}
 			}
+			&.col-7 {
+				.flexBox {
+					height: 498px;
+				}
+			}
 		}
 	}
 
@@ -1459,6 +1464,11 @@ header {
 					.cols {
 						//width: 33.33%;
 					}
+				}
+			}
+			&.col-7 {
+				.flexBox {
+					height: 310px;
 				}
 			}
 		}
