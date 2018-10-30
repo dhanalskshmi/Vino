@@ -949,9 +949,16 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+	setTimeout(function() {
+		$('.SubmenuWrapper').css({'top': $('header').height()});
+	}, 200);
 	$(window).on("load resize",function() {
-		$('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+		$('.SubmenuWrapper').css({'top': ''});
+		console.log("resized");
+		setTimeout(function() {
+			$('.SubmenuWrapper').css({'top': $('header').height()});
+		}, 500);
+
 	});
 
 });
