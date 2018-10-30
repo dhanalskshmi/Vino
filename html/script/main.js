@@ -384,6 +384,10 @@ $(window).on("load resize",function(e) {
 	      //$('footer').addClass('animateIt');
 	    }, 1200);
 
+			//var headHgt = $('header').outerHeight();
+			//console.log(headHgt);
+			$('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+
 });
 
 if ($("body").width() <= 767) {
@@ -556,6 +560,8 @@ if($(e.target).closest("span").length==0){
   		$(this).toggleClass('act');
   		$('.txtBox').focus();
     });
+
+
 
 
 
