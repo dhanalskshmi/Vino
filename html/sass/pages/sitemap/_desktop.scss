@@ -1,5 +1,16 @@
 section.sitemap-section
 {
+	ul{
+		padding: 0;
+		margin: 0;
+		@include bp(mobile){
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			padding-left: 0;	
+		}
+	}
 
 	.sitemap-section-box
 	{
