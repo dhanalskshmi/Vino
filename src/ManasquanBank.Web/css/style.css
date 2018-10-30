@@ -2132,6 +2132,10 @@ header + .loginBlocks .businessLogin p a {
         -ms-transform: none;
             transform: none;
   }
+
+  .iOS.chrome {
+    display: none;
+  }
 }
 @media screen and (min-width: 1024px) {
   .logo {
