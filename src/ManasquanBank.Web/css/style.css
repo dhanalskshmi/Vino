@@ -6699,7 +6699,7 @@ footer {
 }
 @media (max-width: 1279px) {
   .ContentBlk1.rtAlign .bgWrap .flexWrapper .contentLeft {
-    width: 68.2%;
+    width: 69%;
     padding-left: 30px;
   }
 }
@@ -15171,6 +15171,15 @@ footer {
 
 .timelineWrapper {
   margin-top: 30px;
+}
+.timelineWrapper ul {
+  padding: 0;
+  margin: 0;
+}
+.timelineWrapper ul li {
+  list-style: none;
+  padding-left: 0;
+  font-size: inherit;
 }
 .timelineWrapper .ui-selectmenu-button.ui-button {
   display: none;
