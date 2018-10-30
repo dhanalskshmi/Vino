@@ -2440,7 +2440,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li, .mainNav .proDetail .heroBlock .bgWrap ol li, .proDetail .heroBlock .bgWrap .mainNav ol li {
     padding-right: 19px;
-    padding-bottom: 25px;
+    padding-bottom: 29px;
   }
   .mainNav ul li a::after, .mainNav .proDetail .heroBlock .bgWrap ol li a::after, .proDetail .heroBlock .bgWrap .mainNav ol li a::after {
     height: 49px;
@@ -2643,7 +2643,7 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav ul li, .mainNav .proDetail .heroBlock .bgWrap ol li, .proDetail .heroBlock .bgWrap .mainNav ol li {
     padding-right: 27px;
-    padding-bottom: 29px;
+    padding-bottom: 25px;
   }
   .mainNav ul li a, .mainNav .proDetail .heroBlock .bgWrap ol li a, .proDetail .heroBlock .bgWrap .mainNav ol li a {
     line-height: 25px;
