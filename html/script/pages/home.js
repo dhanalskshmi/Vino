@@ -104,6 +104,9 @@ $(document).ready(function() {
     $("#joinSuccess").length > 0 && $("html, body").animate({
         scrollTop: $(".joinEmail").offset().top
     }, "slow")
+    $(".warnAlert").length > 0 && $("html, body").animate({
+        scrollTop: $(".joinEmail").offset().top
+    }, "slow")
 });
 function isInView(el) {
     if (typeof jQuery !== 'undefined' && el instanceof jQuery) el = el[0];
