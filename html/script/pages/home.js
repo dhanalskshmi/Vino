@@ -81,7 +81,11 @@ $('.close-alerts').click(function() {
     $(this).closest(".alertsPannel").fadeOut();
     $(this).closest(".floatingAlerts").fadeOut();
     window.localStorage.setItem('isshowalert', 1);
-    $('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+    setTimeout(function(){
+      //alert($('header').outerHeight());
+      $('.SubmenuWrapper').css({'top': $('header').outerHeight()});
+  	},100);
+
 });
 $('.contiLnk').on('click',function(){
     window.localStorage.setItem('isshow', 1);
