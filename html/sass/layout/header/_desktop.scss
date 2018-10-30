@@ -951,7 +951,7 @@ header {
 		.SubmenuWrapper {
 			&.col-3 {
 				.flexBox {
-					height: 180px;
+					height: 194px;
 				}
 			}
 		}
@@ -1140,7 +1140,7 @@ header {
 		.SubmenuWrapper {
 			&.col-3 {
 				.flexBox {
-					height: 268px;
+					height: 290px;
 				}
 			}
 		}
@@ -1434,13 +1434,14 @@ header {
 			&.col-3 {
 				.borderLine {
 					i {
-						min-height: 164px;
+						min-height: 244px;
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
+						&:nth-child(2),
 						&:nth-child(3),
 						&:nth-child(4) {
 							display: none;
@@ -1448,8 +1449,8 @@ header {
 					}
 				}
 				.flexBox {
-					width: calc((100% / 5) * 3);
-					height: 200px;
+					width: calc((100% / 5) * 2);
+					height: 270px;
 					.cols {
 						//width: 33.33%;
 					}

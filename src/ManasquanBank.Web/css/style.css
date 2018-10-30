@@ -2120,7 +2120,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .flatNav .SubmenuWrapper.col-3 .flexBox {
-    height: 180px;
+    height: 194px;
   }
 
   .ie11 .menuWrapper .loginBlocks {
@@ -2277,7 +2277,7 @@ header + .loginBlocks .businessLogin p a {
   }
 
   .flatNav .SubmenuWrapper.col-3 .flexBox {
-    height: 268px;
+    height: 290px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -2550,15 +2550,15 @@ header + .loginBlocks .businessLogin p a {
     left: calc((400% / 5) - 5px);
   }
   .flatNav .SubmenuWrapper.col-3 .borderLine i {
-    min-height: 164px;
+    min-height: 244px;
   }
-  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
+  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(2), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
     display: none;
   }
   .flatNav .SubmenuWrapper.col-3 .flexBox {
-    width: -webkit-calc((100% / 5) * 3);
-    width: calc((100% / 5) * 3);
-    height: 200px;
+    width: -webkit-calc((100% / 5) * 2);
+    width: calc((100% / 5) * 2);
+    height: 270px;
   }
 }
 /*@media screen and (min-width: 1284px) {
