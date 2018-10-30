@@ -73,7 +73,7 @@
                                 {
                                     PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum - 1);
 
-                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-left.png" alt="Left arrow" title="Previous"></a>
+                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-left.png" alt="Left arrow" title="Previous page"></a>
                                 }
 
                                 <b>@PageNum of @paginationcount</b>
@@ -83,7 +83,7 @@
                                 @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
                                 {
                                     PagiUrl = "?q=" + @Model.Query + "&page=" + (PageNum + 1);
-                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-right.png" alt="Right arrow" title="Next"></a>
+                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="~/images/media-center/arrow-right.png" alt="Right arrow" title="Next page"></a>
 
                                 }
                             </p>
