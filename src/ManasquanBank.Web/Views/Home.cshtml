@@ -36,6 +36,9 @@
             <input type="text" name="AccessID" id="AccessID" value="" class="txtBox" title="Access ID" required placeholder="Access ID">
             <label for="business_password_mob" class="screen-reader-text ">business access password</label>
             <input type="password" name="password" value="" class="txtBox" title="Password" required placeholder="Password">
+            <input type="hidden" name="nmUID" />
+            <input type="hidden" name="nmRTN" />
+            <input type="hidden" name="app" value="1" />
             <button type="submit"> <span>Login</span></button>
             <p>
                 <a href="#">Forgot Password</a>
@@ -98,7 +101,7 @@
 <section class="bankingServices">
     <div class="containerWrapper">
         <ul>
-            @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))
+            @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))    
             {
                 int i = 1;
                 foreach (var promotion in promotionPanel)
