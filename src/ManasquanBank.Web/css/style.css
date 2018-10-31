@@ -9481,6 +9481,8 @@ footer {
   margin-top: 2px;
   width: 18px;
   display: inline-block;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
 }
 @media (max-width: 1023px) {
   .newsWrap .bgWrap .newsPagination p img {
