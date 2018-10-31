@@ -67,7 +67,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
 
                                             </span>
                                             <span class="heroLinksText">
@@ -88,7 +88,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                               
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -100,22 +100,22 @@
                                     }
 
                                 }
-                                else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
-                                       
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            @Html.Raw(cTAtitle)
-                                        }
-                                    </span>
-                                }
+                                @*else
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -134,13 +134,13 @@
                                 {
                                     if (link.Target == "_blank")
                                     {
-                                        <a href="@link.Url" target="_blank">
+                                        <a href="tel:@link.Url" target="_blank">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                               
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -153,13 +153,13 @@
                                     }
                                     else
                                     {
-                                        <a href="@link.Url">
+                                        <a href="tel:@link.Url">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -171,22 +171,22 @@
                                     }
 
                                 }
-                                else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
-                                       
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            @Html.Raw(cTAtitle)
-                                        }
-                                    </span>
-                                }
+                                @*else
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -212,9 +212,9 @@
                 }
                 @if (String.IsNullOrEmpty(ViewBag.ErrorMessage) == false)
                 {
-                <div class="alert alert-warning warnAlert">
-                    <strong>Warning!</strong> @ViewBag.ErrorMessage
-                </div>
+                    <div class="alert alert-warning warnAlert">
+                        <strong>Warning!</strong> @ViewBag.ErrorMessage
+                    </div>
                 }
                 <div class="contactFormWrap">
 
@@ -225,7 +225,7 @@
                         {
                             <div class="success-msg" id="contactSucc">
                                 <h4>@Html.Raw(thankYouMessage)</h4>
-</div>
+                            </div>
                         }
                         else
                         {
@@ -237,10 +237,10 @@
                     else
                     {
                         @Html.Partial("Form/ContactUs", new ContactUsModel()
-               {
-                   AdminEmail = adminEmail,
-                   ConfirmationEmail = confirmationEmail
-               })
+                   {
+                       AdminEmail = adminEmail,
+                       ConfirmationEmail = confirmationEmail
+                   })
 
                         @*@Html.Raw(formBelowContent)*@
                     }
@@ -272,7 +272,7 @@
 
                             <li class="client-service">
                                 @if (link != null)
-                    {
+                        {
                         if (link.Target == "_blank")
                         {
                                         <a href="@link.Url" target="_blank">
@@ -281,7 +281,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -299,7 +299,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@iconImage.Name">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -311,22 +311,22 @@
                                     }
 
                                 }
-                                else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
-                                        
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            @Html.Raw(cTAtitle)
-                                        }
-                                    </span>
-                                }
+                                @*else
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -336,4 +336,4 @@
             </div>
         </div>
     </section>
- </div>
+</div>
