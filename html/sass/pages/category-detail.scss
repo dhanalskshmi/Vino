@@ -4,7 +4,7 @@
     }
     .bgWrap {
         @include bp(desktop) {
-            padding: 41px 58px 9px 58px;
+            padding: 41px 58px 20px 58px;
         }
         @include bp(tablandscape) {
             padding: 45px 20px 20px 20px;
