@@ -373,8 +373,11 @@
                             var email = bio.GetPropertyValue<string>("email");
 
                                 <div class="memberFlex">
-                                    @*<a href="@bio.Url" alt="@bio.Name">*@
-                                        <h5>@empName</h5>@*</a>*@
+                                    <h5>
+                                        <a href="@bio.Url" alt="@bio.Name">
+                                            @empName
+                                        </a>
+                                    </h5>
                                         <p>@empTitle</p>
 
                                         @if (bio.DocumentTypeAlias == "bioDetailPage")
