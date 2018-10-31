@@ -9488,6 +9488,9 @@ footer {
     width: 14px;
   }
 }
+.newsWrap .bgWrap .newsPagination p img:hover {
+  opacity: 0.6;
+}
 
 .realAlerts {
   margin-bottom: 112px;
