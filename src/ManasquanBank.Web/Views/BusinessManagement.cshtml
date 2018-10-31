@@ -109,7 +109,7 @@
                                     }
 
                                 }
-                                else
+                                @*else
                                 {
                                     <span class="heroLinksImage">
                                         @if (iconImage != null)
@@ -124,7 +124,7 @@
                                                             @Html.Raw(cTAtitle)
                                                         }
                                                     </span>
-                                }
+                                }*@
 
                             </li>
                         }
@@ -143,7 +143,7 @@
                                 {
                                     if (link.Target == "_blank")
                                     {
-                                        <a href="@link.Url" target="_blank">
+                                        <a href="tel:@link.Url" target="_blank">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -162,7 +162,7 @@
                                     }
                                     else
                                     {
-                                        <a href="@link.Url">
+                                        <a href="tel:@link.Url">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -181,7 +181,7 @@
                                     }
 
                                 }
-                                else
+                                @*else
                                 {
                                     <span class="heroLinksImage">
                                         @if (iconImage != null)
@@ -197,7 +197,7 @@
                                                             @Html.Raw(replacetitle)
                                                         }
                                                     </span>
-                                }
+                                }*@
 
                             </li>
                         }

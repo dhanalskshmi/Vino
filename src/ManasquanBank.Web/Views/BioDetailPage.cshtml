@@ -20,7 +20,7 @@
     var phoneNumber = Model.Content.GetPropertyValue<string>("phoneNumber");
     var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
     var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
-    
+    var email = Model.Content.GetPropertyValue<string>("email");
     var backUrl = Model.Content.AncestorOrSelf(2);
 
 }
@@ -94,7 +94,40 @@
                                         </a>
                                     }
                                 }
-                                
+
+
+                                @*if (!string.IsNullOrEmpty(email))
+                                {
+                                    <a class="btnManasq" href="mailto:@email" target="_blank">
+                                        @if (!string.IsNullOrEmpty(cTAtitle))
+                                        {
+                                            <span>@cTAtitle</span>
+                                        }
+                                    </a>
+                                }*@
+                                if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a class="btnManasq" href="@link.Url" target="_blank">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                <span>@cTAtitle</span>
+                                            }
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btnManasq" href="@link.Url">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                <span>@cTAtitle</span>
+                                            }
+                                        </a>
+                                    }
+                                }
+
+
 
 
                             }

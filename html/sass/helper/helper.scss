@@ -615,7 +615,7 @@ p {
 .openAccount {
   display: none;
   position: fixed;
-  top: 20%;
+  top: 30%;
   right: 0;
   z-index: 999;
   transform: perspective(1px) rotate(-90deg) translate3d( 0, 0, 0);
@@ -735,7 +735,7 @@ p {
     line-height: 24px;
   }
   .openAccount {
-    top: 13.4%;
+    //top: 13.4%;
     a {
       font-size: 17px;
       padding: 1px 10px 10px;
@@ -795,7 +795,7 @@ p {
     line-height: 32px;
   }
   .openAccount {
-    top: 16.3%;
+    //top: 16.3%;
     a {
       font-size: 24px;
       padding: 4px 14px 24px;

@@ -14,38 +14,7 @@
     var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
 
 }
-<div class="loginBlocks">
-    <div class="personalLogin">
-        <h3>PERSONAL BANKING</h3>
-        <form id="mpersonalLogin" action="https://web1.secureinternetbank.com/pbi_pbi1151/login/remote/221272167" method="POST">
-            <label for="username" class="screen-reader-text ">access id</label>
-            <input type="text" name="username" id="musername" value="" class="txtBox" title="Enter the Access ID" required placeholder="Access ID">
-            <label for="password" class="screen-reader-text ">access password</label>
-            <input type="password" name="password" id="mpassword" value="" class="txtBox" title="Enter the Password" required placeholder="Password">
-            <button type="submit"> <span>Login</span></button>
-            <p>
-                <a href="https://web1.secureinternetbank.com/pbi_pbi1151/enroll/221272167" target="_blank">Sign Up</a>
-                <a class="link-text" href="https://web1.secureinternetbank.com/pbi_pbi1151/ForgotPassword/221272167" target="_blank">Forgot Password</a>
-            </p>
-        </form>
-    </div>
-    <div class="businessLogin">
-        <h3>BUSINESS BANKING</h3>
-        <form id="mbusinessLogin" class="form-login" action="" method="post">
-            <label for="AccessID" class="screen-reader-text ">business access id</label>
-            <input type="text" name="AccessID" id="AccessID" value="" class="txtBox" title="Enter the Access ID" required placeholder="Access ID">
-            <label for="business_password_mob" class="screen-reader-text ">business access password</label>
-            <input type="password" name="password" value="" class="txtBox" title="Enter the Password" required placeholder="Password">
-            <input type="hidden" name="nmUID" />
-            <input type="hidden" name="nmRTN" />
-            <input type="hidden" name="app" value="1" />
-            <button type="submit"> <span>Login</span></button>
-            <p>
-                <a href="#">Forgot Password</a>
-            </p>
-        </form>
-    </div>
-</div>
+
 <section class="bannerWrapper">
     @if (!string.IsNullOrEmpty(backgroundVideo))
     {
