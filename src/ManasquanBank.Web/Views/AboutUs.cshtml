@@ -373,27 +373,28 @@
                             var email = bio.GetPropertyValue<string>("email");
 
                                 <div class="memberFlex">
-                                    <h5>@empName</h5>
-                                    <p>@empTitle</p>
+                                    @*<a href="@bio.Url" alt="@bio.Name">*@
+                                        <h5>@empName</h5>@*</a>*@
+                                        <p>@empTitle</p>
 
-                                    @if (bio.DocumentTypeAlias == "bioDetailPage")
-                                    {
-                                        <div class="memberFlexIcons">
-                                            <p>
-                                                @if (!string.IsNullOrEmpty(email))
-                                                {
-                                                    <a href="mailto:"@email><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
-                                                }
-                                                else
-                                                {
-                                                    <img src="images/about/mail_icon.png" alt="Mail_Icon">
-                                                }
-                                                <a href="@bio.Url"><img src="images/about/user_icon.png" alt="User_Icon"></a>
-                                            </p>
-                                        </div>
-                                    }
-                                    
-                                </div>
+                                        @if (bio.DocumentTypeAlias == "bioDetailPage")
+                                        {
+                                            <div class="memberFlexIcons">
+                                                <p>
+                                                    @if (!string.IsNullOrEmpty(email))
+                                                    {
+                                                        <a href="mailto:@email"><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <img src="images/about/mail_icon.png" alt="Mail_Icon">
+                                                    }
+                                                    <a href="@bio.Url" alt="@bio.Name"><img src="images/about/user_icon.png" alt="User_Icon"></a>
+                                                </p>
+                                            </div>
+                                        }
+
+</div>
                             }
 
                         </div>
