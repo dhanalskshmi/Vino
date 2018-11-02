@@ -18,7 +18,7 @@
 <section class="bannerWrapper">
     @if (!string.IsNullOrEmpty(backgroundVideo))
     {
-        <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:1, mute:false, opacity:1, addRaster:true, optimizeDisplay:true}">
+        <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
             @if (bannerImage != null)
             {
                 <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
