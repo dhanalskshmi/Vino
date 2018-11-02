@@ -460,7 +460,7 @@ ul {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 a:focus, a:hover {
   text-decoration: none;
@@ -471,7 +471,7 @@ button, input, textarea {
   border: none;
   outline: none;
   border-radius: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -481,7 +481,7 @@ button {
 
 a {
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 a:active, a:focus {
   -webkit-transition: all 0.3s;
@@ -870,6 +870,10 @@ p {
   .checkbox label {
     padding-left: 23px;
   }
+}
+
+.ytp-chrome-top.ytp-show-watch-later-title.ytp-show-share-title.ytp-show-cards-title.ytp-share-button-visible, .ytp-pause-overlay-controls-hidden .ytp-pause-overlay {
+  display: none;
 }
 
 @media screen and (min-width: 1280px) {
@@ -3686,8 +3690,8 @@ footer {
 }
 .bankingServices li .imgBlock::after {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.45)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.45)));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.45) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   position: absolute;
   bottom: 0;
