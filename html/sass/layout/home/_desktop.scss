@@ -15,6 +15,9 @@ $dbannerhgt: 965px;
   .inline-YTPlayer {
     max-width: 100% !important;
     max-height: $mbannerhgt;
+    @include bp(desktop){
+      pointer-events: none;
+    }
   }
   #wrapper_bgndVideo {
     min-height: $mbannerhgt;

@@ -3414,6 +3414,11 @@ footer {
   max-width: 100% !important;
   max-height: 422px;
 }
+@media (min-width: 1280px) {
+  .bannerWrapper .inline-YTPlayer {
+    pointer-events: none;
+  }
+}
 .bannerWrapper #wrapper_bgndVideo {
   min-height: 422px;
 }
