@@ -933,10 +933,10 @@ html {
     -webkit-transform: translateX(-13%);
         -ms-transform: translateX(-13%);
             transform: translateX(-13%);
-    -webkit-transition-delay: 2.5s;
-            transition-delay: 2.5s;
-    -webkit-transition: all 1.5s;
-            transition: all 1.5s;
+    -webkit-transition-delay: 3.5s;
+            transition-delay: 3.5s;
+    -webkit-transition: all 3.5s;
+            transition: all 3.5s;
   }
   .animatable.appPannel .imgDesg {
     opacity: 0;
