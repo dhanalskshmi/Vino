@@ -2911,7 +2911,7 @@ footer {
 }
 
 .fRow {
-  background: #292a2d;
+  background: #132a4c;
   padding: 22px 0 33px;
 }
 .fRow ul {
@@ -5778,9 +5778,9 @@ footer {
     padding-top: 18px;
     padding-bottom: 21px;
     margin: 0 auto;
-    -webkit-transform: translateX(-64px);
-        -ms-transform: translateX(-64px);
-            transform: translateX(-64px);
+    -webkit-transform: translateX(-65px);
+        -ms-transform: translateX(-65px);
+            transform: translateX(-65px);
   }
   .communityPannel .redBlock h2 {
     padding-left: 98px;
