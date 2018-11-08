@@ -65,7 +65,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
 
                                             </span>
@@ -84,7 +84,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
 
                                             </span>
@@ -136,7 +136,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
 
                                             </span>
@@ -155,7 +155,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
 
                                             </span>
@@ -246,8 +246,8 @@
                                         {
                                             <a href="tel:@phoneNo">
                                                 <span>
-                                                    <img src="/images/category-detail/phone-icon.png" class="deskView" alt="phone-icon" />
-                                                    <img src="/images/category-detail/phone-icon.png" class="otherView" alt="phone-icon" />
+                                                    <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon" />
+                                                    <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Phone Icon Mobile View" />
                                                     
                                                  </span>
                                                 <span class="text">
@@ -261,9 +261,8 @@
                                             {
                                                 <a href="@branchLocator.Url" class="location" target="_blank">
                                                     <span>
-                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="location-icon" />
-                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="location-icon" />
-                                                        
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon Mobile View" />
                                                     </span>
                                                     <span class="text">
                                                         @branchLocator.Name
@@ -274,8 +273,8 @@
                                             {
                                                 <a href="@branchLocator.Url" class="location">
                                                     <span>
-                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="location-icon" />
-                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="location-icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon Mobile View" />
                                                         
                                                     </span>
                                                     <span class="text">
@@ -306,13 +305,13 @@
                                         if (learnMore.Target == "_blank")
                                         {
                                             <a href="@learnMore.Url" target="_blank" class="learnBtn">
-                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn Arrow" />
                                             </a>
                                         }
                                         else
                                         {
                                             <a href="@learnMore.Url" class="learnBtn">
-                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn Arrow" />
                                             </a>
                                         }
                                     }
@@ -354,8 +353,8 @@
                                         {
                                             <a href="tel:@phoneNo">
                                                 <span>
-                                                    <img src="/images/category-detail/phone-icon.png" class="deskView" alt="phone-icon" />
-                                                    <img src="/images/category-detail/phone-icon.png" class="otherView" alt="phone-icon" />
+                                                    <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon Desktop View" />
+                                                    <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Mobile Phone Icon" />
                                                     
                                                 </span>
                                                 <span class="text">
@@ -369,8 +368,8 @@
                                             {
                                                 <a href="@branchLocator.Url" target="_blank" class="location">
                                                     <span>
-                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="location-icon" />
-                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="location-icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Desktop View Location Icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Mobile Location Icon" />
                                                        
                                                     </span>
                                                     <span class="text">
@@ -382,8 +381,8 @@
                                             {
                                                 <a href="@branchLocator.Url" class="location">
                                                     <span>
-                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="location-icon" />
-                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="location-icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon Desktop" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon" />
                                                     </span>
                                                     <span class="text">
                                                         @branchLocator.Name
@@ -413,13 +412,13 @@
                                         if (learnMore.Target == "_blank")
                                         {
                                             <a href="@learnMore.Url" target="_blank" class="learnBtn">
-                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="@learnMore.Name" />
                                             </a>
                                         }
                                         else
                                         {
                                             <a href="@learnMore.Url" class="learnBtn">
-                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="@learnMore.Name" />
                                             </a>
                                         }
                                     }

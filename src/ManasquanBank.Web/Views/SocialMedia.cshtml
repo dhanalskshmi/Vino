@@ -126,7 +126,7 @@
                                 {
                                     if (s == 0) { 
                                     <figure>
-                                        <a href="@media.url" target="_blank"><img src="@media.media_url" alt="@tweetlist.text" /></a>
+                                        <a href="@media.url" target="_blank"><img src="@media.media_url" alt="Twitter Feed Image" /><span class="screen-reader-text">@text</span></a>
                                     </figure>
                                         s++;
                                     }
@@ -221,7 +221,7 @@ catch (Exception e)
                             @if (picture != null)
                             {
                                 <figure>
-                                    <a href="@link" target="_blank"><img src="@picture" alt="@message"></a>
+                                    <a href="@link" target="_blank"><img src="@picture" alt="@message"><span class="screen-reader-text">@message</span></a>
                                 </figure>
                             }
 
@@ -284,7 +284,7 @@ catch (Exception e)
                                 <figure>
                                     @if (item.Id.VideoId != null)
                                     {
-                                        <a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank"><img src="@item.Snippet.Thumbnails.High.Url" alt="@item.Snippet.Title"></a>
+                                        <a href="//www.youtube.com/embed/@item.Id.VideoId" target="_blank"><img src="@item.Snippet.Thumbnails.High.Url" alt="@item.Snippet.Title"><span class="screen-reader-text">@item.Snippet.Title</span></a>
                                     }
 
                                 </figure>
@@ -356,7 +356,7 @@ catch (Exception e)
                     @if (image_url != null)
                     {
                         <figure>
-                            <a href="@link" target="_blank"><img src="@image_url" alt="Instagram Post Image"></a>
+                            <a href="@link" target="_blank"><img src="@image_url" alt="Instagram Post Image"><span class="screen-reader-text">Instagram Feed image</span></a>
                         </figure>
                     }
                     
