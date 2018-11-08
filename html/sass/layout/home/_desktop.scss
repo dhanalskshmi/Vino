@@ -16,7 +16,7 @@ $dbannerhgt: 965px;
     max-width: 100% !important;
     max-height: $mbannerhgt;
     @include bp(desktop){
-      pointer-events: none;
+      //pointer-events: none;
     }
   }
   #wrapper_bgndVideo {
@@ -2263,13 +2263,26 @@ $dbannerhgt: 965px;
   .bannerWrapper {
     #wrapper {
       .goto {
-        display: none;
+        //display: none;
+        opacity: 0;
+        visibility: hidden;
         button {
           top: 710px;
         }
       }
     }
   }
+  .fixedBg {
+    &.bannerWrapper {
+      #wrapper {
+        .goto {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
 
   .bankingServices {
     max-width: 1240px;
