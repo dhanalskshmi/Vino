@@ -554,7 +554,7 @@
         </div>
       </div>
       <section class="bannerWrapper">
-        <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'_GpwGNm_BFQ',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:1, mute:false, opacity:1, addRaster:true, optimizeDisplay:true}">
+        <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'_GpwGNm_BFQ',containment:'div.player', showControls:false, autoPlay:true, loop:true, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
           <figure class="bannerImage" style="background-image: url('images/banner/banner_bg.jpg')">
 
           </figure>
@@ -1193,7 +1193,7 @@
       // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
       myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function(e) {
         if (e.type == 'YTPPlay') {
-          jQuery('#bgndVideo').YTPToggleVolume()
+          //jQuery('#bgndVideo').YTPToggleVolume()
         }
       });
       myPlayer.on("YTPPlay", function(){

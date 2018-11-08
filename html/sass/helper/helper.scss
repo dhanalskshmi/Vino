@@ -925,3 +925,7 @@ p {
     padding-left: 23px;
   }
 }
+
+.ytp-chrome-top.ytp-show-watch-later-title.ytp-show-share-title.ytp-show-cards-title.ytp-share-button-visible,.ytp-pause-overlay-controls-hidden .ytp-pause-overlay {
+    display: none;
+}

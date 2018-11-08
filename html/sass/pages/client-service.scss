@@ -69,19 +69,26 @@
 				}
 				a {
 					figure {
+						width: 135px;
+						height: 135px;
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						margin: auto;
+						border-radius: 50%;
+						padding: 10px;
+						background: #fff;
 						transition: all .3s;
+						@include bp(landscape){
+							width: 110px;
+							height: 110px;
+						}
 						img {
 							display: block;
-    						margin: 0 auto;
-    						@include bp(tablandscape) {
-    							width:110px;
-    						}
-    						@include bp(tabportrait) {
-    							width:90px;
-    						}
-    						@include bp(mobile) {
-    							width:110px;
-    						}
+							margin: 0 auto;
+							@include bp(landscape){
+								max-width: 40px;
+							}
 						}
 					}
 					span {

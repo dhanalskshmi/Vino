@@ -339,7 +339,8 @@
 		    margin-top: 19px;
 		    margin-bottom: 30px;
 		    color: #3d3d3d;
-		    position:relative;
+			position:relative;
+			list-style: none;
 		    @include bp(tabportrait) {
 		        font-size: 16px;
 		    }

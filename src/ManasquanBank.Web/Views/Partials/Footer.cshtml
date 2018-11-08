@@ -70,19 +70,19 @@
                 string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
             <div>
            
-                <label>
+                <label for="newsLetterFirstName">
                     First Name
                 </label>
                 <input type="text" name="newsLetterFirstName" value="" id="newsLetterFirstName" class="txtBox" required>
             </div>
             <div>
-                <label>
-                    last Name
+                <label for="newsLetterLastName">
+                    Last Name
                 </label>
                 <input type="text" name="newsLetterLastName" value="" id="newsLetterLastName" class="txtBox" required>
             </div>
             <div>
-                <label>
+                <label for="newsLetteremail">
                     Email
                 </label>
                 <input type="email" name="newsLetteremail" value="" id="newsLetteremail" class="txtBox" required>
@@ -196,7 +196,7 @@
 		                }
 		                @if (!string.IsNullOrEmpty(twitter))
 		                {	
-		                <li class="tweet"><a href="@twitter" target="_blank">Tweeter</a></li>
+		                <li class="tweet"><a href="@twitter" target="_blank">Twitter</a></li>
 		                }
 	                </ul>
                 </div>
