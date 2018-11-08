@@ -157,7 +157,28 @@ input[type=text]::-ms-clear {
 .txtBox {
   appearance: none;
 }
-
+.fixedBg {
+	background-image: url('#{$img}/banner/banner_bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+  background-position: center top;
+  height: auto;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: -999;
+  img {
+    visibility: hidden;
+  }
+  &.fade {
+    opacity: 1;
+    &.out {
+      opacity: 0;
+    }
+  }
+}
 .fade {
   .siteWrap {
     transition: all 0.55s;
