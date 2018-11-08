@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project name="Web" default="autobuild">
+    <property name="build-name" value="ManasquanBank.Web" />
+
     <include buildfile="shared.build" />
     <include buildfile="version.build" />
 
     <property name="CCNetLabel" value="1.0.${environment::get-variable('BUILD_NUMBER')}" />
 
-    <property name="build-name" value="ManasquanBank.Web" />
 
 	<!--  build debug version  -->
     <property name="debug" value="true" />

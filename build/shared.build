@@ -75,11 +75,11 @@
 			<arg line="&quot;${code.dir}\${build-name}.sln&quot;" />
 			<arg value="/p:VisualStudioVersion=12.0" />
 			<arg value="/p:RunOctoPack=true" />
-			<arg value="/p:OctoPackPublishPackageToHttp=http://octopus.multimediasolutions.com/nuget/packages" />
+			<arg value="/p:OctoPackPublishPackageToHttp=https://octopus.multimediasolutions.com/nuget/packages" />
 			<arg value="/p:OctoPackPublishApiKey=${octopusdeploy.key}" />
 			<arg value="/p:OctoPackReleaseNotesFile=${build.root}\releaseNotes.txt" />
 			<arg value="/p:OctoPackPackageVersion=${CCNetLabel}${issue.id}" /> 
-			<arg value="/p:OctoPackProjectName=${'build-name'}" />
+			<arg value="/p:OctoPackProjectName=${build-name}" />
 
 			<arg value="/verbosity:normal" />
 			<arg value="/nologo" />
@@ -91,7 +91,7 @@
 			<arg line="--project &quot;Manasquan Bank&quot;" />
 			<arg line="--version ${CCNetLabel}${issue.id}" />
 			<arg line="--packageversion ${CCNetLabel}${issue.id}" />
-			<arg line="--server http://octopus.multimediasolutions.com" />
+			<arg line="--server https://octopus.multimediasolutions.com" />
 			<arg line="--apiKey ${octopusdeploy.key}" />
 		</exec>
 
