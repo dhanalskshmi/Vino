@@ -55,7 +55,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                
 
@@ -76,7 +76,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                 
                                             </span>
@@ -128,7 +128,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                
                                             </span>
@@ -147,7 +147,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                
                                             </span>
@@ -271,11 +271,11 @@
 
                                     @if (!string.IsNullOrEmpty(officeNo))
                                     {
-                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office:<a href="tel:@officeNo">@officeNo</a></p>
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Phone Icon"> Office:<a href="tel:@officeNo">@officeNo</a></p>
                                     }
                                     @if (!string.IsNullOrEmpty(cellPhone))
                                     {
-                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Cell Phone: <a href="tel:@cellPhone">@cellPhone</a></p>
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Mobile Icon"> Cell Phone: <a href="tel:@cellPhone">@cellPhone</a></p>
                                     }
                                     
                                 </div>
@@ -288,7 +288,7 @@
                     <span class="div-line"></span>
                     @if (!string.IsNullOrEmpty(programTitle))   
                     {
-                        <h4><img src="/images/personal-lending/home-icon.png">@programTitle</h4>
+                        <h4><img src="/images/personal-lending/home-icon.png" alt="Home Icon">@programTitle</h4>
                     }
                     
                     <div class="homeStart">
@@ -429,12 +429,12 @@
                                         }
                                         @if (!string.IsNullOrEmpty(constructionOfficeNo))
                                         {
-                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png"> Office: <a href="tel:@constructionOfficeNo">@constructionOfficeNo</a></p>
+                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Phone Icon"> Office: <a href="tel:@constructionOfficeNo">@constructionOfficeNo</a></p>
                                         }
                                         @if (!string.IsNullOrEmpty(constructionCellPhone))
                                         {
                                             <p class="profPhone">
-                                                <img src="/images/personal-lending/phone-icon.png"> Cell Phone: <a href="tel:@constructionCellPhone">@constructionCellPhone</a>
+                                                <img src="/images/personal-lending/phone-icon.png" alt="Cell Phone Icon"> Cell Phone: <a href="tel:@constructionCellPhone">@constructionCellPhone</a>
 </p>
                                         }
 

@@ -55,7 +55,7 @@
                                         <span class="heroLinksImage">
                                             @if (iconImage != null)
                                             {
-                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                             }
                                             
                                         </span>
@@ -74,7 +74,7 @@
                                         <span class="heroLinksImage">
                                         @if (iconImage != null)
                                         {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                         }
                                         
                                         </span>
@@ -126,7 +126,7 @@
                                         <span class="heroLinksImage">
                                             @if (iconImage != null)
                                             {
-                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                             }
                                            
                                         </span>
@@ -145,7 +145,7 @@
                                         <span class="heroLinksImage">
                                         @if (iconImage != null)
                                         {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                         }
                                        
                                         </span>
@@ -228,7 +228,7 @@
                                                 @if (icons != null)
                                                 {
                                                     <figure>
-                                                        <img src="@icons.Url" alt="@icons.Name" />
+                                                        <img src="@icons.Url" alt="@descriptors" />
                                                     </figure>
                                                 }
                                                 @if (!string.IsNullOrEmpty(descriptors))
@@ -243,7 +243,7 @@
                                                 @if (icons != null)
                                                 {
                                                     <figure>
-                                                        <img src="@icons.Url" alt="@icons.Name" />
+                                                        <img src="@icons.Url" alt="@descriptors" />
                                                     </figure>
                                                 }
                                                 @if (!string.IsNullOrEmpty(descriptors))
@@ -259,7 +259,7 @@
                                         if (icons != null)
                                         {
                                             <figure>
-                                                <img src="@icons.Url" alt="@icons.Name" />
+                                                <img src="@icons.Url" alt="@descriptors" />
                                             </figure>
                                         }
                                         if (!string.IsNullOrEmpty(descriptors))

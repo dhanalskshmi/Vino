@@ -154,7 +154,7 @@
                     <form action="" class="mediaForm">
                         <div class="form-group">
                             <!-- <input type="text" class="form-control" placeholder="Type of resource"> -->
-                            <select class="form-control" id="resourceType" name="resourceType">
+                            <select class="form-control" title="Resource Type" id="resourceType" name="resourceType">
                                 @if (resourceType != null)
                                 {
                                     bool hasKeys = Request.QueryString.HasKeys();
@@ -196,26 +196,30 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            @if (string.IsNullOrEmpty(Request.QueryString["newDate"]) == false)
-                            {
-                                <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -" value="@Request.QueryString["newDate"]">
-                            }
-                            else
-                            {
-                                <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
-                            }
+                            <label for="newDate" class="screen-reader-text">Date</label>
+                                @if (string.IsNullOrEmpty(Request.QueryString["newDate"]) == false)
+                                {
+                                    <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -" value="@Request.QueryString["newDate"]">
+                                }
+                                else
+                                {
+                                    <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
+                                }
+                            
                         </div>
                         <div class="form-group">
-                            @if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
-                            {
-                                <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder" value="@Request.QueryString["newkey"]">
-                            }
-                            else
-                            {
-                                <input type="text" class="form-control" id="newkey" name="newkey" placeholder="Keyword">
-                            }
-                            <input type="hidden" name="page" value="" />
-                        </div>
+                            <label for="newkey" class="screen-reader-text">Keyword</label>
+                                @if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
+                                {
+                                    <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder" value="@Request.QueryString["newkey"]">
+                                }
+                                else
+                                {
+                                    <input type="text" class="form-control" id="newkey" name="newkey" placeholder="Keyword">
+                                }
+                                <input type="hidden" name="page" value="" />
+                                
+</div>
                         <div class="form-group searchBtn">
                             <button class="btnManasq" onclick="return fnScroll()"><span>Search</span></button>
 
@@ -249,7 +253,7 @@
                                 @if (detailImage != null)
                                 {
                                     <figure class="newsFlexImg">
-                                        <a href=""> <img src="@detailImage.Url" alt="@detailImage.Name" title="Media Image"></a>
+                                        <a href="@resource.Url"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
                                     </figure>
                                     <div class="newsFlexContent">
                                         @if (!string.IsNullOrEmpty(filterDetailTitle))
@@ -334,7 +338,7 @@
                                 {
                                     PagiUrl = "?page=" + (PageNum - 1);
 
-                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="images/media-center/arrow-left.png" alt="Media Image" title="Previous page"></a>
+                                    <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="/images/media-center/arrow-left.png" alt="Media Image" title="Previous page"></a>
                                 }
                                 
                                 <b>@PageNum of @paginationcount</b>
@@ -344,7 +348,7 @@
                                 @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
                                 {
                                     PagiUrl = "?page=" + (PageNum + 1);
-                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Next page"></a>
+                                    <a data-page="@(PageNum + 1)" href="@PagiUrl"><img src="/images/media-center/arrow-right.png" alt="Media Image" title="Next page"></a>
 
                                 }
                             </p>

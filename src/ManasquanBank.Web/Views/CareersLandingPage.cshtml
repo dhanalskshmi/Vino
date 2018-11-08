@@ -84,7 +84,7 @@
                 <div class="heroCareer">
                     @if (imageBadge != null)
                     {
-                        <img src="@imageBadge.Url" class="" alt="@imageBadge.Name">
+                        <img src="@imageBadge.Url" class="" alt="@careersTitle">
                     }
                     @if (!string.IsNullOrEmpty(careersDescription))
                     {
@@ -163,8 +163,7 @@
                     }
                     <div class="careerSearch">
                         <div class="form-group">
-                            <label for="careerInput-button" class="hidden">Search Positions</label>
-                            <select name="careerInput" id="careerInput" class="form-control">
+                            <select name="careerInput" title="Search Position" id="careerInput" class="form-control">
                                 @if (featurepositon != null)
                                 {
                                     bool hasKeys = Request.QueryString.HasKeys();
@@ -349,7 +348,7 @@
                     <figure class="empStoryImg">
                         @if (featurepanelImage != null)
                         {
-                            <img src="@featurepanelImage.Url" alt="@featurepanelImage.Name">
+                            <img src="@featurepanelImage.Url" alt="@featurepanelTitle">
                         }
 
                     </figure>
@@ -491,6 +490,7 @@
                     }
                     @if (Model.Content.HasValue("cultureImages"))
                     {
+                        int add = 1;
                         <div class="cultImgWrap">
                             @foreach (var image in cultureImages)
                             {
@@ -499,11 +499,12 @@
                                     <figure>
                                         @if (images != null)
                                         {
-                                            <img src="@images.Url" alt="@images.Name" class="img-responsive">
+                                            <img src="@images.Url" alt="Gallery Image @add" class="img-responsive">
                                         }
 
                                     </figure>
                                 </div>
+                                add++;
                             }
                         </div>
                     }

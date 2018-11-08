@@ -76,7 +76,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                 
                                             </span>
@@ -95,7 +95,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                 
                                             </span>
@@ -147,7 +147,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                 
                                             </span>
@@ -166,7 +166,7 @@
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
-                                                    <img src="@iconImage.Url" alt="@iconImage.Name">
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
                                                 
                                             </span>
@@ -182,22 +182,22 @@
 
                                 }
                                 @*else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
-                                        
-                                    </span>
-                                                    <span class="heroLinksText">
-                                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                                        {
-                                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                            @Html.Raw(replacetitle)
-                                                        }
-                                                    </span>
-                                }*@
+    {
+        <span class="heroLinksImage">
+            @if (iconImage != null)
+            {
+                <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+            }
+
+        </span>
+                        <span class="heroLinksText">
+                            @if (!string.IsNullOrEmpty(cTAtitle))
+                            {
+                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                @Html.Raw(replacetitle)
+                            }
+                        </span>
+    }*@
 
                             </li>
                         }
@@ -250,8 +250,8 @@
                                 <div class="col-md-12 col-sm-12 col-lg-12 parentWrapper">
                                    
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
-                                        <label for="loanPurpose">Department</label>
-                                        <select name="department" id="department" class="form-control selectBox" default="" required="">
+                                        <label for="department">Department</label>
+                                        <select name="department" title="Department" id="department" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
                                             @if (departmentList.Length > 0)
                                             {
@@ -265,8 +265,8 @@
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
-                                        <label for="loanOfficer">Employee</label>
-                                        <select name="employee" id="employee" class="form-control selectBox" default="" required="">
+                                        <label for="employee">Employee</label>
+                                        <select name="employee" title="Employee" id="employee" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
                                             @if (employeeList.Length > 0)
                                             {
@@ -315,7 +315,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="state">State</label>
-                                        <select name="state" id="state" class="form-control selectBox" default="" required="">
+                                        <select name="state" title="State" id="state" class="form-control selectBox" default="" required="">
                                             <option value="">-Select State-</option>
                                             
                                         </select>
@@ -329,7 +329,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="country">Country</label>
-                                        <select name="country" id="country" class="form-control selectBox" default="United States" required="">
+                                        <select name="country" title="Country" id="country" class="form-control selectBox" default="United States" required="">
                                             <option value="" rel="">-Select Country-</option>
                                             
                                         </select>
@@ -351,8 +351,8 @@
                                             <div class="row mob-flex">
 
                                                 <button class="btnManasq"><span>SUBMIT</span></button>
-                                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
-                                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />
+                                                @*<input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
+                                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />*@
                                             </div>
                                             <div class="captchaBlock">
                                                 <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
