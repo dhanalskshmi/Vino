@@ -40,12 +40,17 @@
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
     <link href="~/css/lib/jquery.timepicker.css" rel="stylesheet" />
 }
+@section BackgroundImage {
+    @if (heroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="re-order request">
     <section class="heroBanner">
-        @if (heroImage != null)
-        {
-            <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
-        }
+       
     </section>
     <section class="heroBlock">
         <div class="containerWrapper">

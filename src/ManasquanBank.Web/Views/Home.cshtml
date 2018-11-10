@@ -15,62 +15,70 @@
 
 }
 
-<section class="bannerWrapper">
+@section BackgroundImage {
     @if (!string.IsNullOrEmpty(backgroundVideo))
     {
-        <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
-            @if (bannerImage != null)
-            {
-                <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
+        if (bannerImage != null)
+        {
+        <div class="fixedBg fade out bannerWrapper" style="background-image: url('@bannerImage.Url')">
+            <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
 
-                </figure>
-            }
-            <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+                <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
 
-                <div class="goto">
-                    <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
-                </div>
-              </div>
-            <div class="bannerContent">
-                <div class="containerWrapper">
-                    @if (!string.IsNullOrEmpty(bannerText))
-                    {
-                        @Html.Raw(bannerText)
-                    }
-
+                    <div class="goto">
+                        <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
+                    </div>
                 </div>
 
             </div>
         </div>
+        }
+        else
+        {
+            <div class="fixedBg fade out bannerWrapper" style="background-image: url('images/banner/banner_bg.jpg')">
+                <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
+
+                    <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+
+                        <div class="goto">
+                            <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
     }
     else
     {
-        <div class="bannerWrap">
-            @if (bannerImage != null)
-            {
-                <figure class="bannerImage" style="background-image: url('@bannerImage.Url')">
-                </figure>
-            }
-            <div class="bannerContent">
-                <div class="containerWrapper">
-                    @if (!string.IsNullOrEmpty(bannerText))
-                    {
-                        @Html.Raw(bannerText)
-                    }
-
-                </div>
-
+        if (bannerImage != null)
+        {
+            <div class="fixedBg fade out" style="background-image: url('@bannerImage.Url')">
+                <img src="images/body_bg.jpg" alt="">
             </div>
+        }
+    }
+}
+<section class="bannerWrapper">
+
+    <div class="bannerContent">
+        <div class="containerWrapper">
+            @if (!string.IsNullOrEmpty(bannerText))
+            {
+                @Html.Raw(bannerText)
+            }
+
         </div>
 
-    }
+    </div>
+
 </section>
 
 
 <section class="bankingServices">
     <div class="containerWrapper">
         <ul>
-            @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))    
+            @if (Model.Content.AncestorOrSelf(1).HasValue("promotionPanel"))
             {
                 int i = 1;
                 foreach (var promotion in promotionPanel)
@@ -156,7 +164,7 @@
                                                 @promoTitle
                                             }
 
-                                       </a>
+                                        </a>
                                     }
                                 }
                             </figure>
@@ -232,12 +240,12 @@
                                     if (cTAButton.Target == "_blank")
                                     {
                                         <a href="@cTAButton.Url" target="_blank">
-                                           @if (!string.IsNullOrEmpty(promotionTitle))
-                                           {
-                                               string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
                                                 @promoTitle
-                                           }
+                                            }
 
 
                                         </a>
@@ -291,12 +299,12 @@
                                     else
                                     {
                                         <a href="@cTAButton.Url">
-                                           @if (!string.IsNullOrEmpty(promotionTitle))
-                                           {
-                                               string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+                                            @if (!string.IsNullOrEmpty(promotionTitle))
+                                            {
+                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
-                                            @promoTitle
-                                           }
+                                                @promoTitle
+                                            }
 
 
                                         </a>
@@ -347,7 +355,7 @@
                             }
                         </div>
                         @if (actioncTAButton.Target == "_blank")
-                    {
+                        {
                             <a class="btnManasq" href="@actioncTAButton.Url" target="_blank" title="@actioncTAButton.Name"><span>@actioncTAButton.Name </span></a>
                         }
                         else
@@ -372,11 +380,11 @@
 </section>
 @{
 
-    var foundationbackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
-    var titleText = Model.Content.GetPropertyValue<string>("titleText");
-    var foundationTaglineText = Model.Content.GetPropertyValue<string>("foundationTaglineText");
-    var foundationDescription = Model.Content.GetPropertyValue<string>("foundationDescription");
-    var foundationcTAButton = Model.Content.GetPropertyValue<Link>("cTAButton");
+            var foundationbackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
+            var titleText = Model.Content.GetPropertyValue<string>("titleText");
+            var foundationTaglineText = Model.Content.GetPropertyValue<string>("foundationTaglineText");
+            var foundationDescription = Model.Content.GetPropertyValue<string>("foundationDescription");
+            var foundationcTAButton = Model.Content.GetPropertyValue<Link>("cTAButton");
 }
 <section class="communityPannel animatable">
     <div class="bgWraps">
@@ -425,11 +433,11 @@
     </div>
 </section>
 @{
-    var appTitle = Model.Content.GetPropertyValue<string>("appTitle");
-    var appleStoreLink = Model.Content.GetPropertyValue<string>("appleStoreLink");
-    var googlePlayStoreLink = Model.Content.GetPropertyValue<string>("googlePlayStoreLink");
-    var appDescription = Model.Content.GetPropertyValue<string>("appDescription");
-    var appLogo = Model.Content.GetPropertyValue<IPublishedContent>("appLogo");
+            var appTitle = Model.Content.GetPropertyValue<string>("appTitle");
+            var appleStoreLink = Model.Content.GetPropertyValue<string>("appleStoreLink");
+            var googlePlayStoreLink = Model.Content.GetPropertyValue<string>("googlePlayStoreLink");
+            var appDescription = Model.Content.GetPropertyValue<string>("appDescription");
+            var appLogo = Model.Content.GetPropertyValue<IPublishedContent>("appLogo");
 }
 
 <section class="appPannel animatable">
@@ -447,7 +455,7 @@
                 <div class="appStores">
                     <figure class="">
                         <a href="@appleStoreLink" target="_blank">
-                           
+
                             <img src="~/images/home/apple_app.png" alt="App Store Icon">
                         </a>
                     </figure>
@@ -463,17 +471,17 @@
                 {
                     <img src="@appLogo.Url" alt="Mobile Icon">
                 }
-                
+
             </figure>
         </div>
     </div>
 </section>
 @{
-    var knowledgeTitle = Model.Content.GetPropertyValue<string>("knowledgeTitle");
-    var knowledgeBackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("knowledgeBackgroundImage");
-    var featureDescription = Model.Content.GetPropertyValue<string>("featureDescription");
-    var featurecTAButton = Model.Content.GetPropertyValue<Link>("featurecTAButton");
-    var featureLists = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("featureLists");
+            var knowledgeTitle = Model.Content.GetPropertyValue<string>("knowledgeTitle");
+            var knowledgeBackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("knowledgeBackgroundImage");
+            var featureDescription = Model.Content.GetPropertyValue<string>("featureDescription");
+            var featurecTAButton = Model.Content.GetPropertyValue<Link>("featurecTAButton");
+            var featureLists = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("featureLists");
 }
 <section class="knowledgePannel animatable">
     <div class="containerWrapper">
@@ -490,9 +498,9 @@
             {
                 <ul>
                     @foreach (var feature in featureLists)
-                {
-                    var featureTitle = feature.GetPropertyValue<string>("featureTitle");
-                    var featureImage = feature.GetPropertyValue<IPublishedContent>("featureImage");
+                    {
+                        var featureTitle = feature.GetPropertyValue<string>("featureTitle");
+                        var featureImage = feature.GetPropertyValue<IPublishedContent>("featureImage");
                         <li>
                             <figure>
                                 <img src="@featureImage.Url" alt="@featureTitle">

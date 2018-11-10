@@ -18,12 +18,16 @@
 
 
 }
-<section class="heroBanner">
+@section BackgroundImage {
     @if (bgImage != null)
-            {
-        <figure class="bannerImage" style="background-image: url(@bgImage.Url)"></figure>
+    {
+        <div class="fixedBg fade out" style="background-image: url('@bgImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
     }
-
+}
+<section class="heroBanner">
+   
 </section>
 <section class="heroBlock csheorBlk">
     <div class="containerWrapper">

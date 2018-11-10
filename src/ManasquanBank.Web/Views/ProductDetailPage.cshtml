@@ -7,9 +7,17 @@
     var productDetailContent = Model.Content.GetPropertyValue<string>("productDetailContent");
     var parent = Model.Content.Parent;
 }
+@section BackgroundImage {
+    @if (backgroundHeroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@backgroundHeroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="proDetail">
 <section class="heroBanner">
-    <figure class="bannerImage" style="background-image: url('@backgroundHeroImage.Url')"></figure>
+   
 </section>
 <section class="heroBlock">
     <div class="containerWrapper">

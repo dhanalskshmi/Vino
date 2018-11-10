@@ -5,9 +5,16 @@
     var bodyText = Model.Content.GetPropertyValue<string>("notFoundbodyText");
     var notFoundbackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("notFoundbackgroundImage");
 }
-
+@section BackgroundImage {
+    @if (notFoundbackgroundImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@notFoundbackgroundImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <section class="heroBanner">
-    <figure class="bannerImage" style="background-image: url('@notFoundbackgroundImage.Url')"></figure>
+    
 </section>
 <div class="error-page">
     <section class="heroBlock">

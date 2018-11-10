@@ -15,9 +15,17 @@
 
 
 }
+@section BackgroundImage {
+    @if (filterBannerHeroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@filterBannerHeroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="filterDetail">
     <section class="heroBanner">
-        <figure class="bannerImage" style="background-image: url('@filterBannerHeroImage.Url')"></figure>
+       
     </section>
     <section class="heroBlock">
         <div class="containerWrapper">

@@ -28,11 +28,16 @@
 
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
 }
-<section class="heroBanner">
+@section BackgroundImage {
     @if (heroImage != null)
     {
-        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
     }
+}
+<section class="heroBanner">
+   
     
 </section>
 <section class="heroBlock timelinePannelwrap">

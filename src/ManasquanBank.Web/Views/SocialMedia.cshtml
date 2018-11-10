@@ -17,9 +17,17 @@
     SocialFeedController t = new SocialFeedController();
 }
 
+@section BackgroundImage {
+    @if (heroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="socialMedia">
     <section class="heroBanner">
-        <figure class="bannerImage" style="background-image: url('@heroImage.Url')"></figure>
+       
     </section>
    
     <section class="heroBlock">

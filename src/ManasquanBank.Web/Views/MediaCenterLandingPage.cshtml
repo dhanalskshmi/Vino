@@ -131,14 +131,19 @@
     <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
     <link href="~/css/lib/datepicker.css" rel="stylesheet" />
 }
+@section BackgroundImage {
+    @if (heroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="mediaCenter">
 
     <section class="heroWrapper">
         <div class="heroBanner">
-            @if (heroImage != null)
-            {
-                <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
-            }
+           
         </div>
         <div class="heroBlock">
             <div class="containerWrapper" id="containerWrapper">

@@ -24,13 +24,18 @@
     var thankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
 
 }
+@section BackgroundImage {
+    @if (bgimage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@bgimage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="contactUs">
 
     <section class="heroBanner">
-        @if (bgimage != null)
-        {
-            <figure class="bannerImage" style="background-image: url('images/banner/about_bg.jpg')"></figure>
-        }
+       
     </section>
     <section class="heroBlock">
         <div class="containerWrapper">

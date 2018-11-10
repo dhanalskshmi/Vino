@@ -25,13 +25,17 @@
     var backUrl = Model.Content.AncestorOrSelf(2);
 
 }
+@section BackgroundImage {
+    @if (bgImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@bgImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <div class="bioPage">
     <section class="heroBanner">
-        @if (bgImage != null)
-        {
-            <figure class="bannerImage" style="background-image: url(@bgImage.Url)"></figure>
-        }
-
+       
     </section>
     <section class="heroBlock">
         <div class="containerWrapper">

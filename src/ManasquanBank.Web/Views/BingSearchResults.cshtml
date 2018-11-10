@@ -6,8 +6,16 @@
     var searchBackgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("searchBackgroundImage");
     var searchTitle = Model.Content.GetPropertyValue<string>("searchTitle");
 }
+@section BackgroundImage {
+    @if (searchBackgroundImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@searchBackgroundImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
 <section class="heroBanner">
-    <figure class="bannerImage" style="background-image: url('@searchBackgroundImage.Url')"></figure>
+    
 </section>
 <section class="heroBlock">
     <div class="containerWrapper">

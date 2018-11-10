@@ -10,12 +10,16 @@
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
 }
+@section BackgroundImage {
+    @if (heroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
+            <img src="images/body_bg.jpg" alt="">
+        </div>
+    }
+}
  <section class="heroBanner">
-     @if (heroImage != null)
-     {
-        <figure class="bannerImage" style="background-image: url(@heroImage.Url)"></figure>
-     }
-                
+            
             </section>
             <section class="heroBlock generalBanner">
 				<div class="containerWrapper">
