@@ -3519,7 +3519,7 @@ footer {
   display: none;
 }
 .bannerWrapper #wrapper .goto button.playBtn {
-  background-image: url("../images/home/video_loader.gif");
+  background-image: url("../images/home/playpause_btn.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -3527,6 +3527,9 @@ footer {
 }
 .bannerWrapper #wrapper .goto button.playBtn.loading {
   background-image: url("../images/home/video_loader.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
 }
 .bannerWrapper #wrapper .goto button.playBtn.play {
   background-image: url("../images/home/playpause_btn.png");
@@ -5377,7 +5380,6 @@ footer {
   }
   .communityPannel .imgBlock {
     top: 18px;
-    right: 0;
   }
   .communityPannel .imgBlock figure {
     width: 348px;
@@ -5847,7 +5849,6 @@ footer {
   }
   .communityPannel .imgBlock {
     top: 27px;
-    right: 0;
   }
   .communityPannel .imgBlock figure {
     width: 501px;
@@ -15263,6 +15264,25 @@ table + ul.heroLinks {
 }
 .general-template ul + h5 {
   margin-top: -3px;
+}
+
+.heroBlock.generalBanner ul + h3 {
+  margin-top: 16px;
+}
+@media (max-width: 767px) {
+  .heroBlock.generalBanner ul + h3 {
+    margin-top: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock.generalBanner ul + h3 {
+    margin-top: 16px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock.generalBanner ul + h3 {
+    margin-top: 16px;
+  }
 }
 
 .timelinePage header {
