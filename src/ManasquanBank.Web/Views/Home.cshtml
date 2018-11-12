@@ -21,7 +21,7 @@
         if (bannerImage != null)
         {
         <div class="fixedBg fade out bannerWrapper" style="background-image: url('@bannerImage.Url')">
-            <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
+            <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'_GpwGNm_BFQ',containment:'div.player', showControls:false, autoPlay:true, loop:true, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
             </div>
         </div>
         }
@@ -54,7 +54,8 @@
             {
             <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
                 <div class="goto">
-                    <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
+                <button id="togglePlay" class="command playBtn" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
+                <button class="muteBtn muted" onclick="jQuery('#bgndVideo').YTPToggleVolume()">Mute/Unmute</button>
                 </div>
             </div>
             }
