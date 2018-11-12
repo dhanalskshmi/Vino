@@ -531,11 +531,12 @@
       myPlayer = jQuery("#bgndVideo").YTPlayer();
       // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
         myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
-        if (e.type == 'YTPReady') {
-          $("#togglePlay").removeClass("play pause loading");
-          $("#togglePlay").addClass("play");
-            $(".goto").addClass("visible");
-        }
+            if (e.type == 'YTPReady') {
+                $("#iframe_bgndVideo").attr("title","Banner Background Video");
+                $("#togglePlay").removeClass("play pause loading");
+                $("#togglePlay").addClass("play");
+                $(".goto").addClass("visible");
+            }
 
       });
       myPlayer.on("YTPBuffering", function(){
