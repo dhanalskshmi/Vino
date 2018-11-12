@@ -367,7 +367,7 @@ namespace ManasquanBank.Web.Controllers
                 };
 
                 // retrieve the posts and cache for 1 hour
-                var posts = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Posts.GetPosts(postsOptions), new TimeSpan(3, 0, 0)) as FacebookPostsResponse;
+                var posts = ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem(CacheKey, () => service.Posts.GetPosts(postsOptions), new TimeSpan(10, 0, 0)) as FacebookPostsResponse;
 
                 var responseContent = string.Empty;
                 if (posts != null)
