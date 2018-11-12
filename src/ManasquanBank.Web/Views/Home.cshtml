@@ -22,14 +22,6 @@
         {
         <div class="fixedBg fade out bannerWrapper" style="background-image: url('@bannerImage.Url')">
             <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
-
-                <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
-
-                    <div class="goto">
-                        <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
-                    </div>
-                </div>
-
             </div>
         </div>
         }
@@ -37,14 +29,6 @@
         {
             <div class="fixedBg fade out bannerWrapper" style="background-image: url('images/banner/banner_bg.jpg')">
                 <div class="bannerWrap player" id="bgndVideo" data-property="{videoURL:'@backgroundVideo',containment:'div.player', showControls:false, autoPlay:true, loop:true, vol:0, mute:true, opacity:1, addRaster:true, optimizeDisplay:true}">
-
-                    <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
-
-                        <div class="goto">
-                            <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         }
@@ -54,7 +38,6 @@
         if (bannerImage != null)
         {
             <div class="fixedBg fade out" style="background-image: url('@bannerImage.Url')">
-                <img src="images/body_bg.jpg" alt="">
             </div>
         }
     }
@@ -67,7 +50,14 @@
             {
                 @Html.Raw(bannerText)
             }
-
+            @if (!string.IsNullOrEmpty(backgroundVideo))
+            {
+            <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+                <div class="goto">
+                    <button id="togglePlay" class="command" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
+                </div>
+            </div>
+            }
         </div>
 
     </div>
@@ -533,32 +523,48 @@
 @section InnerBottomScript {
 
     <script>
-        var myPlayer;
-        jQuery(function () {
-            myPlayer = jQuery("#bgndVideo").YTPlayer();
-            // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
-            myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
-                if (e.type == 'YTPPlay') {
-                    jQuery('#bgndVideo').YTPToggleVolume()
-                }
-            });
-            myPlayer.on("YTPPlay", function () {
-                $("#togglePlay").removeClass("play pause");
-                $("#togglePlay").addClass("pause");
-            });
 
-            myPlayer.on("YTPPause", function () {
-                $("#togglePlay").removeClass("play pause");
-                $("#togglePlay").addClass("play");
-            });
-        });
+    var myPlayer;
+    jQuery(function() {
 
-        function checkForVal(val) {
-            return val || 0;
+      myPlayer = jQuery("#bgndVideo").YTPlayer();
+      // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
+        myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
+        if (e.type == 'YTPReady') {
+          $("#togglePlay").removeClass("play pause loading");
+          $("#togglePlay").addClass("play");
+            $(".goto").addClass("visible");
         }
 
+      });
+      myPlayer.on("YTPBuffering", function(){
+        $("#togglePlay").removeClass("play pause loading");
+        $("#togglePlay").addClass("loading");
+      });
+      myPlayer.on("YTPPlay", function(){
+        $("#togglePlay").removeClass("play pause loading");
+        $("#togglePlay").addClass("pause");
+      });
+      myPlayer.on("YTPMuted", function(){
+        $(".muteBtn").removeClass("muted unmuted");
+        $(".muteBtn").addClass("muted");
+      });
+      myPlayer.on("YTPUnmuted", function(){
+        $(".muteBtn").removeClass("muted unmuted");
+        $(".muteBtn").addClass("unmuted");
+      });
 
-    </script>
+      myPlayer.on("YTPPause", function(){
+        $("#togglePlay").removeClass("play pause loading");
+        $("#togglePlay").addClass("play");
+      });
+    });
 
+    function checkForVal(val) {
+      return val || 0;
+    }
+
+
+</script>
 
 }
