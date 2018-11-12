@@ -11,14 +11,17 @@ table{
         tr{
             td{
                 &:nth-child(2){
-                    display: block;
+                    display: block !important;
                 }
             }
             } 
         } 
-        +ul.heroLinks{
-            margin-top: 0px;
-        }
+        
+}
+.tableSection{
+    +.heroLinks{
+        margin-top: 0px !important;
+    }
 }
 .categoryBlock {
     @include bp(mobile) {
