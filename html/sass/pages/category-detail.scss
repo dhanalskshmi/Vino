@@ -1,6 +1,6 @@
 
 table{
-   
+
     margin:0 auto;
     thead{
         th{
@@ -14,9 +14,12 @@ table{
                     display: block !important;
                 }
             }
-            } 
-        } 
-        
+            }
+        }
+
+}
+table.checking  tbody tr td:nth-child(2) {
+  display: table-cell !important;
 }
 .tableSection{
     +.heroLinks{
@@ -153,7 +156,7 @@ table{
                     @include bp(tablandscape) {
                         display: block;
                     }
-                  
+
                 }
             }
             &.responsive_table {

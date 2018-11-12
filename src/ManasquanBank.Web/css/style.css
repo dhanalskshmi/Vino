@@ -12559,6 +12559,10 @@ table tbody tr td:nth-child(2) {
   display: block !important;
 }
 
+table.checking tbody tr td:nth-child(2) {
+  display: table-cell !important;
+}
+
 .tableSection + .heroLinks {
   margin-top: 0px !important;
 }
