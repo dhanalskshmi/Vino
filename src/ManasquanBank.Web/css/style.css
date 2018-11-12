@@ -157,7 +157,6 @@ input[type=text]::-ms-clear {
   min-width: 100%;
   position: fixed;
   width: 100%;
-  z-index: -999;
 }
 .fixedBg img {
   visibility: hidden;
@@ -3442,11 +3441,6 @@ footer {
   max-width: 100% !important;
   max-height: 422px;
 }
-@media (min-width: 1280px) {
-  .bannerWrapper .inline-YTPlayer {
-    pointer-events: none;
-  }
-}
 .bannerWrapper #wrapper_bgndVideo {
   min-height: 422px;
 }
@@ -3499,18 +3493,20 @@ footer {
 .bannerWrapper .bannerContent h1 strong span:nth-child(3) {
   letter-spacing: 3px;
 }
+.bannerWrapper #wrapper .goto {
+  opacity: 0;
+}
+.bannerWrapper #wrapper .goto.visible {
+  opacity: 1;
+}
 .bannerWrapper #wrapper .goto button {
   font-size: 0;
-  background-image: url("../images/home/playpause_btn.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
   background-color: rgba(27, 61, 110, 0.3);
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 285px;
-  left: 80%;
+  top: 18px;
+  right: 0;
   z-index: 999999;
   z-index: 9999999;
   border: 2px solid #1b3d6e;
@@ -3519,11 +3515,42 @@ footer {
 .bannerWrapper #wrapper .goto button::after, .bannerWrapper #wrapper .goto button::before {
   display: none;
 }
-.bannerWrapper #wrapper .goto button.play {
+.bannerWrapper #wrapper .goto button.playBtn {
+  background-image: url("../images/home/video_loader.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: 0 0;
+  border: none;
 }
-.bannerWrapper #wrapper .goto button.pause {
-  background-position: 0 -56px;
+.bannerWrapper #wrapper .goto button.playBtn.loading {
+  background-image: url("../images/home/video_loader.gif");
+}
+.bannerWrapper #wrapper .goto button.playBtn.play {
+  background-image: url("../images/home/playpause_btn.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  border: 2px solid #1b3d6e;
+}
+.bannerWrapper #wrapper .goto button.playBtn.pause {
+  background-image: url("../images/home/playpause_btn.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -48px;
+  border: 2px solid #1b3d6e;
+}
+.bannerWrapper #wrapper .goto button.muteBtn {
+  background-image: url("../images/home/on.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  right: 56px;
+}
+.bannerWrapper #wrapper .goto button.muteBtn.muted {
+  background-image: url("../images/home/off.png");
+}
+.bannerWrapper #wrapper .goto button.muteBtn.unmuted {
+  background-image: url("../images/home/on.png");
 }
 
 .loginBlocks {
@@ -4161,7 +4188,7 @@ footer {
 }
 
 .joinEmail {
-  background: #969696;
+  background: #efba36;
   padding: 50px 0 17px;
 }
 .joinEmail h2 {
@@ -5079,7 +5106,11 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: 300px;
+    top: 10px;
+    right: 68px;
+  }
+  .bannerWrapper #wrapper .goto button.muteBtn {
+    right: 136px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -5169,7 +5200,10 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: 390px;
+    right: 38px;
+  }
+  .bannerWrapper #wrapper .goto button.muteBtn {
+    right: 106px;
   }
 
   .bankingServices {
@@ -5575,11 +5609,17 @@ footer {
     letter-spacing: 5.1px;
   }
 
-  .bannerWrapper #wrapper .goto {
-    display: none;
-  }
   .bannerWrapper #wrapper .goto button {
-    top: 710px;
+    top: 100px;
+    right: 0;
+  }
+  .bannerWrapper #wrapper .goto button.muteBtn {
+    right: 66px;
+  }
+
+  .fixedBg.bannerWrapper #wrapper .goto {
+    visibility: visible;
+    opacity: 1;
   }
 
   .bankingServices {
@@ -5958,6 +5998,11 @@ footer {
   .joinEmail form div.submit button {
     font-size: 28px;
     padding: 3px 43px 5px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .appPannel .imgDesg {
+    left: -11px;
   }
 }
 @media screen and (min-width: 1360px) {
@@ -9561,6 +9606,7 @@ footer {
 }
 .realAlerts .bgWrap {
   background-image: url("../images/media-center/real_image_bg.png");
+  background-color: #1b3d6e;
   height: 501px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12640,6 +12686,14 @@ footer {
     display: block;
   }
 }
+.tableClass .bgWrap table.checking.responsive_table.twoCols, .greyPanel.rates .bgWrap table.checking.responsive_table.twoCols {
+  display: table;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .tableClass .bgWrap table.checking.responsive_table.twoCols tbody tr td:nth-child(2), .greyPanel.rates .bgWrap table.checking.responsive_table.twoCols tbody tr td:nth-child(2) {
+    display: block;
+  }
+}
 @media (min-width: 1280px) {
   .tableClass .bgWrap table.responsive_table, .greyPanel.rates .bgWrap table.responsive_table {
     display: none;
@@ -14423,6 +14477,9 @@ footer {
   }
 }
 
+.heroBlock.generalBanner ul {
+  padding-left: 26px;
+}
 .heroBlock.generalBanner + .general-template {
   margin-top: 100px;
 }
