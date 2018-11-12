@@ -2745,6 +2745,13 @@ $dbannerhgt: 965px;
 }
 
 
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .appPannel{
+    .imgDesg{
+          left: -11px;
+    }
+  }
+}
 @media screen and (min-width: 1360px) {
 
   .bankingServices {

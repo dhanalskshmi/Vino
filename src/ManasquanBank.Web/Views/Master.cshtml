@@ -1,10 +1,24 @@
 ﻿@using RJP.MultiUrlPicker.Models;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
 @{
     Layout = null;
     var favicon = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("favicon");
     var logo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("siteLogo");
     var openAccountLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("openAnAccount");
+    Html.RequiresCss("~/css/lib/nprogress.css");
+    Html.RequiresCss("~/css/lib/bootstrap.min.css");
+    Html.RequiresCss("~/css/lib/jquery.mb.YTPlayer.min.css");
+    Html.RequiresCss("~/css/style.min.css");
+    Html.RequiresJs("~/scripts/lib/jquery.js");
+    Html.RequiresJs("~/scripts/lib/nprogress.js");
+    Html.RequiresJs("~/scripts/lib/modernizr-custom.js");
+    Html.RequiresJs("~/scripts/lib/scrollanimation.js");
+    Html.RequiresJs("~/scripts/lib/waypoints.min.js");
+    Html.RequiresJs("~/scripts/lib/jquery.mb.YTPlayer.js");
+    Html.RequiresJs("~/scripts/lib/jquery.validate.min.js");
+    Html.RequiresJs("~/scripts/main.min.js");        
+
 }
 <!DOCTYPE html>
 <html lang="en-us">
@@ -13,11 +27,8 @@
   @Html.Partial("SeoMetaData")
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", shrink-to-fit="no" />
   <link rel="shortcut icon" href="@favicon.Url" type="image/x-icon">
-  <link href="~/css/lib/nprogress.css" rel="stylesheet" />
-  <link href="~/css/lib/bootstrap.min.css" rel="stylesheet" />
-  <link href="~/css/lib/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+  @Html.RenderCssHere()
   @RenderSection("InnerTopStyle", false)
-  <link rel="stylesheet" type="text/css" href="~/css/style.min.css">
 </head>
 <body style="display: none">
     @RenderSection("BackgroundImage", false)
@@ -89,17 +100,8 @@
             <!--<div class="overlay"></div>-->
         </div>
     </div>
-    <script src='https://www.google.com/recaptcha/api.js' defer></script>
-    <script type="text/javascript" src="~/scripts/lib/jquery.js"></script>
-    <!--<script type="text/javascript" src="~/scripts/lib/jquery.js"></script>-->
-    <script src="~/scripts/lib/nprogress.js"></script>
-    <script src="~/scripts/lib/modernizr-custom.js"></script>
-    <script src="~/scripts/lib/scrollanimation.js"></script>
-    <script src="~/scripts/lib/waypoints.min.js" type="text/javascript"></script>
-    <!--<script src="https://remysharp.com/downloads/jquery.inview.js"></script>-->
-    <script src="~/scripts/lib/jquery.mb.YTPlayer.js"></script>
-    <script src="~/scripts/lib/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="~/scripts/main.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" defer></script>
+    @Html.RenderJsHere()
     @RenderSection("InnerBottomScript", false)
 </body>
 </html>
