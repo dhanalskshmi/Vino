@@ -3437,6 +3437,9 @@ footer {
 .bannerWrapper {
   min-height: 422px;
 }
+.bannerWrapper .inlinePlayButton {
+  display: none;
+}
 .bannerWrapper .inline-YTPlayer {
   max-width: 100% !important;
   max-height: 422px;
@@ -5818,9 +5821,9 @@ footer {
     padding-top: 18px;
     padding-bottom: 21px;
     margin: 0 auto;
-    -webkit-transform: translateX(-65px);
-        -ms-transform: translateX(-65px);
-            transform: translateX(-65px);
+    -webkit-transform: translateX(-66px);
+        -ms-transform: translateX(-66px);
+            transform: translateX(-66px);
   }
   .communityPannel .redBlock h2 {
     padding-left: 98px;

@@ -12,12 +12,16 @@ $dbannerhgt: 965px;
 
 .bannerWrapper {
   min-height: $mbannerhgt;
+  .inlinePlayButton {
+    display: none;
+  }
   .inline-YTPlayer {
     max-width: 100% !important;
     max-height: $mbannerhgt;
     @include bp(desktop){
       //pointer-events: none;
     }
+
   }
   #wrapper_bgndVideo {
     min-height: $mbannerhgt;
