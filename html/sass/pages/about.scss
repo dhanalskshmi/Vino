@@ -576,7 +576,7 @@
                     }
                 }
                 .contentLeft {
-                    padding-left: 0;
+                    //padding-left: 0;
                     @include bp(landscape) {
                         width: 69%;
                         padding-left: 30px;
@@ -595,7 +595,7 @@
         }
     }
 }
-.firefox,.ie11{ 
+.firefox,.ie11{
     .ContentBlk1 {
         .bgWrap {
             .flexWrapper {
@@ -635,7 +635,7 @@
                         }
                     }
                 }
-            }   
+            }
         }
     }
 }

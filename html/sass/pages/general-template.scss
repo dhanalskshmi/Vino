@@ -648,8 +648,7 @@
 	&.generalBanner {
 		ul {
 			+ h3 {
-
-				margin-top: 16px;
+				margin-top: 36px;
 				@include bp(mobile) {
 					margin-top: 16px;
 				}
