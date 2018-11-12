@@ -1804,7 +1804,7 @@ header + .loginBlocks .businessLogin p a {
     content: '';
     background: #eb2837;
     width: 100%;
-    height: 6px;
+    height: 5px;
     position: absolute;
     bottom: -9px;
     left: 0;
@@ -2370,7 +2370,7 @@ header + .loginBlocks .businessLogin p a {
   .headerNav .topNav li.iWantto .subNav {
     min-width: 135px;
     padding-top: 4px;
-    top: 30px;
+    top: 29px;
   }
   .headerNav .topNav li.iWantto .subNav li a {
     font-size: 16px;
@@ -2489,7 +2489,7 @@ header + .loginBlocks .businessLogin p a {
     top: 2px;
   }
   .mainNav ul li a span::after {
-    height: 9px;
+    height: 5px;
     bottom: -28px;
   }
 
@@ -2701,8 +2701,11 @@ header + .loginBlocks .businessLogin p a {
   }
   .mainNav .search .submit i {
     background-size: contain;
-    width: 25px;
-    height: 24px;
+    width: 33px;
+    height: 31px;
+  }
+  .mainNav .search.searchOpen .submit {
+    margin-top: 0;
   }
   .mainNav .search.searchOpen .txtBox {
     width: 585px;

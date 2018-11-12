@@ -1633,11 +1633,14 @@ header {
 			.submit {
 				i {
 			    background-size: contain;
-					width: 25px;
-			    height: 24px;
+					width: 33px;
+			    height: 31px;
 				}
 			}
 			&.searchOpen {
+				.submit {
+					margin-top: 0;
+				}
 				.txtBox {
 					width: 585px;
 				}
