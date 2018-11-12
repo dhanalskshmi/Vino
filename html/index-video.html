@@ -1211,6 +1211,10 @@
         }
 
       });
+      myPlayer.on("YTPBuffering", function(){
+        $("#togglePlay").removeClass("play pause loading");
+        $("#togglePlay").addClass("loading");
+      });
       myPlayer.on("YTPPlay", function(){
         $("#togglePlay").removeClass("play pause loading");
         $("#togglePlay").addClass("pause");

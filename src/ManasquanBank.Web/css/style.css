@@ -3497,7 +3497,7 @@ footer {
   letter-spacing: 3px;
 }
 .bannerWrapper #wrapper .goto {
-  opacity: 0;
+  opacity: 1;
 }
 .bannerWrapper #wrapper .goto.visible {
   opacity: 1;
