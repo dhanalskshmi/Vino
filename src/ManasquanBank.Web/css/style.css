@@ -12555,10 +12555,11 @@ table thead th {
   text-align: center !important;
 }
 table tbody tr td:nth-child(2) {
-  display: block;
+  display: block !important;
 }
-table + ul.heroLinks {
-  margin-top: 0px;
+
+.tableSection + .heroLinks {
+  margin-top: 0px !important;
 }
 
 @media (max-width: 767px) {
