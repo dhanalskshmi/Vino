@@ -112,13 +112,3 @@ $(document).ready(function(){
 
 });
 
-// $(function() {
-//     var colCount = 0;
-//     $('tbody tr:nth-child(1) td').each(function () {
-//             colCount++;
-//     });
-    
-//     if(colCount == 2 ){
-//        $('.responsive_table').addClass('twoCols');
-//     }
-// });

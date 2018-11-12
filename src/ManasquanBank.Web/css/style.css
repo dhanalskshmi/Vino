@@ -12550,6 +12550,19 @@ footer {
   }
 }
 
+table {
+  margin: 0 auto;
+}
+table thead th {
+  text-align: center !important;
+}
+table tbody tr td:nth-child(2) {
+  display: block;
+}
+table + ul.heroLinks {
+  margin-top: 0px;
+}
+
 @media (max-width: 767px) {
   .categoryBlock {
     margin-bottom: -14px;
@@ -12686,14 +12699,6 @@ footer {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .tableClass .bgWrap table.checking.responsive_table, .greyPanel.rates .bgWrap table.checking.responsive_table {
-    display: block;
-  }
-}
-.tableClass .bgWrap table.checking.responsive_table.twoCols, .greyPanel.rates .bgWrap table.checking.responsive_table.twoCols {
-  display: table;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .tableClass .bgWrap table.checking.responsive_table.twoCols tbody tr td:nth-child(2), .greyPanel.rates .bgWrap table.checking.responsive_table.twoCols tbody tr td:nth-child(2) {
     display: block;
   }
 }
