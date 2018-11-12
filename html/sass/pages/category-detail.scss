@@ -1,3 +1,25 @@
+
+table{
+   
+    margin:0 auto;
+    thead{
+        th{
+            text-align: center !important;
+        }
+    }
+     tbody{
+        tr{
+            td{
+                &:nth-child(2){
+                    display: block;
+                }
+            }
+            } 
+        } 
+        +ul.heroLinks{
+            margin-top: 0px;
+        }
+}
 .categoryBlock {
     @include bp(mobile) {
         margin-bottom: -14px;
@@ -128,20 +150,7 @@
                     @include bp(tablandscape) {
                         display: block;
                     }
-                    &.twoCols{
-                        display: table;
-                         @include bp(tablandscape) {
-                        tbody{
-                            tr{
-                                td{
-                                    &:nth-child(2){
-                                            display: block;
-                                    }
-                                }
-                                } 
-                        }
-                    }
-                }
+                  
                 }
             }
             &.responsive_table {
