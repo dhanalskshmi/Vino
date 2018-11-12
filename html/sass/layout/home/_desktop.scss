@@ -111,6 +111,9 @@ $dbannerhgt: 965px;
           border: none;
           &.loading{
             background-image: url('#{$img}/video_loader.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
           }
           &.play {
             background-image: url('#{$img}/playpause_btn.png');
