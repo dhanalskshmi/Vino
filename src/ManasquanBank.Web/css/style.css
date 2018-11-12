@@ -6765,9 +6765,6 @@ footer {
     margin-top: 17px;
   }
 }
-.ContentBlk1.rtAlign .bgWrap .flexWrapper .contentLeft {
-  padding-left: 0;
-}
 @media (max-width: 1279px) {
   .ContentBlk1.rtAlign .bgWrap .flexWrapper .contentLeft {
     width: 69%;
@@ -15267,7 +15264,7 @@ table + ul.heroLinks {
 }
 
 .heroBlock.generalBanner ul + h3 {
-  margin-top: 16px;
+  margin-top: 36px;
 }
 @media (max-width: 767px) {
   .heroBlock.generalBanner ul + h3 {
