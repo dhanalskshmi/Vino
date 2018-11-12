@@ -10164,6 +10164,7 @@ footer {
 }
 
 .locationSection.dlview, .locationSection.pmView {
+  background: #FFF;
   padding-top: 87px;
   padding-bottom: 76px;
 }

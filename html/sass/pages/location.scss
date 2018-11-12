@@ -35,6 +35,7 @@
 }
 .locationSection {
 	&.dlview {
+		background: #FFF;
 		padding-top: 87px;
 		padding-bottom: 76px;
 	    @include bp(tablandscape) {
