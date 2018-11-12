@@ -1,5 +1,9 @@
 .heroBlock {
 	&.generalBanner {
+		ul{
+			    padding-left: 26px;
+			    
+		}
 		&+.general-template {
 			margin-top:100px;
 		}
@@ -49,12 +53,13 @@
 			&+ul {
 				margin-top: 15px;
 				margin-bottom: 15px;
+				
 				@include bp(landscape) {
-					margin-top: 10px;
+				margin-top: 10px;
 				margin-bottom: 10px;
 				}
 				@include bp(mobile) {
-					margin-top: 10px;
+				margin-top: 10px;
 				margin-bottom: 10px;
 				}
 			}

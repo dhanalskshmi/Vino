@@ -128,6 +128,20 @@
                     @include bp(tablandscape) {
                         display: block;
                     }
+                    &.twoCols{
+                        display: table;
+                         @include bp(tablandscape) {
+                        tbody{
+                            tr{
+                                td{
+                                    &:nth-child(2){
+                                            display: block;
+                                    }
+                                }
+                                } 
+                        }
+                    }
+                }
                 }
             }
             &.responsive_table {
