@@ -79,7 +79,7 @@ $dbannerhgt: 965px;
   }
   #wrapper {
     .goto {
-        opacity:0;
+        opacity:1;
       &.visible{
         opacity:1;
       }
@@ -2542,7 +2542,7 @@ $dbannerhgt: 965px;
       padding-top: 18px;
       padding-bottom: 21px;
       margin: 0 auto;
-      transform: translateX(-65px);
+      transform: translateX(-66px);
       h2 {
         padding-left: 98px;
         line-height: 51px;
