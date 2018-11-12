@@ -10,7 +10,21 @@ setTimeout(function() {
 	$('html').addClass('bodyBg')
 }, 1000);
 
-
+function detectmob() {
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
 
 
 // Button Effects
@@ -606,6 +620,7 @@ $(window).scroll(function() {
 
   // Mobile Menu Toggle
 	$('.hamburger').click(function(e) {
+		e.preventDefault();
 		$(this).toggleClass('active');
     $('html').toggleClass('menuOpened');
 		$('.mnavWrapper').toggleClass('active');
@@ -779,7 +794,7 @@ $(document).ready(function() {
 	},1250);
 	$('.bannerWrapper').bind('inview', function (event, visible) {
   if (visible == true) {
-    alert('visible');
+    //alert('visible');
   } else {
     // element has gone out of viewport
   }
@@ -800,9 +815,9 @@ $(window).scroll(function() {
 	$(function () {
 
   $('.bannerWrapper').bind('inview', function (event, visible) {
-		alert('inview');
+		//alert('inview');
     if (visible) {
-			alert('visible');
+			//alert('visible');
       $('.bannerWrapper').addClass('animate-in');
     } else {
       $('.bannerWrapper').addClass('animate-out');

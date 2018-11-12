@@ -196,7 +196,7 @@ $(document).ready(function(){
         };
     form.on("submit", function() {
         if (!this.AccessID.value) {
-            alert("Please enter a valid Access ID. Thank you!");
+            //alert("Please enter a valid Access ID. Thank you!");
             return false
         }
         this.nmUID.value = this.AccessID.value;
