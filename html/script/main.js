@@ -1238,11 +1238,13 @@ if ($('.eventsPannel').length > 0) {
 }
 
 $(document).ready(function(){
+  var headHgt = $('header').height();
+  console.log(headHgt);
     $(".scroll").on('click', function(e) {
         e.preventDefault();
         var target = $(this).attr('href');
         $('html, body').animate({
-          scrollTop: ($(target).offset().top)
+          scrollTop: ($(target).offset().top) - headHgt
         }, 500);
      });
      if ($('.warnAlert').length > 0) {
