@@ -4068,19 +4068,19 @@ footer {
   margin-bottom: -5px;
 }
 .communityPannel .titleBlock h2 {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 39px;
   color: #ec2c3a;
   padding-left: 20px;
   text-transform: uppercase;
-  line-height: 35px;
+  line-height: 34px;
 }
 .communityPannel .redBlock {
   background: #ec2c3a;
   padding: 9px 0 17px;
 }
 .communityPannel .redBlock h2 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 39px;
   color: #FFF;
   padding-left: 20px;
@@ -4962,7 +4962,7 @@ footer {
     font-size: 30px;
   }
   .communityPannel .titleBlock h2 {
-    line-height: 27px;
+    line-height: 25px;
   }
   .communityPannel .redBlock .containerWrapper {
     padding: 0;
@@ -5449,7 +5449,7 @@ footer {
   .communityPannel .titleBlock h2,
   .communityPannel .redBlock h2 {
     font-size: 38px;
-    line-height: 33px;
+    line-height: 32px;
   }
   .communityPannel .titleBlock {
     padding-bottom: 0;
@@ -5889,7 +5889,7 @@ footer {
   .communityPannel .titleBlock h2,
   .communityPannel .redBlock h2 {
     font-size: 63px;
-    line-height: 55px;
+    line-height: 54px;
   }
   .communityPannel .titleBlock {
     padding-top: 16px;
