@@ -649,6 +649,8 @@
 		figure {
 			margin-top: 36px;
 			margin-bottom: 36px;
+			display: block;
+			text-align: center;
 			@include bp(tabportrait) {
 				margin-top: 16px;
 			}
