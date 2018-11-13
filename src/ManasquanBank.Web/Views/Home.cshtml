@@ -533,41 +533,45 @@
 	  $("#togglePlay").click(function(){
         if(!$("#togglePlay").hasClass("play") && !$("#togglePlay").hasClass("pause") && !$("#togglePlay").hasClass("loading"))
         {
-        $("#togglePlay").removeClass("play pause loading");
-        $("#togglePlay").addClass("loading");
+		$("#togglePlay").addClass("loading");
       }
       });
 	  
       // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
         myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
-            if (e.type == 'YTPReady') {
-                $("#iframe_bgndVideo").attr("title","Banner Background Video");
-                $("#togglePlay").removeClass("play pause loading");
-                $("#togglePlay").addClass("play");
-                $(".goto").addClass("visible");
-            }
+        if (e.type == 'YTPReady') {
+          $("#togglePlay").addClass("play");
+          $("#togglePlay").removeClass("pause loading");
+
+            $(".goto").addClass("visible");
+        }
 
       });
       myPlayer.on("YTPBuffering", function(){
-        $("#togglePlay").removeClass("play pause loading");
         $("#togglePlay").addClass("loading");
+        $("#togglePlay").removeClass("play pause");
+
       });
       myPlayer.on("YTPPlay", function(){
-        $("#togglePlay").removeClass("play pause loading");
         $("#togglePlay").addClass("pause");
+        $("#togglePlay").removeClass("play loading");
+
       });
       myPlayer.on("YTPMuted", function(){
-        $(".muteBtn").removeClass("muted unmuted");
         $(".muteBtn").addClass("muted");
+        $(".muteBtn").removeClass("unmuted");
+
       });
       myPlayer.on("YTPUnmuted", function(){
-        $(".muteBtn").removeClass("muted unmuted");
         $(".muteBtn").addClass("unmuted");
+        $(".muteBtn").removeClass("muted");
+
       });
 
       myPlayer.on("YTPPause", function(){
-        $("#togglePlay").removeClass("play pause loading");
         $("#togglePlay").addClass("play");
+        $("#togglePlay").removeClass("pause loading");
+
       });
     });
 
