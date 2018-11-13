@@ -10,10 +10,13 @@
     string largeClass = string.Empty;
     var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
 }
+<div class="stickyEmpty">
+</div>
 <header>
     <div class="containerWrapper">
         
         <div class="headerWrapper">
+            <div class="headBg"></div>
             @if (alertPosition == "Top")
             {
                 @Html.Partial("AlertMessage")
