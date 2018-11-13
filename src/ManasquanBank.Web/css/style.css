@@ -1709,6 +1709,7 @@ header.stickyActive .mainNav {
   header.stickyActive .menuWrapper .loginBlocks {
     position: relative;
     z-index: 999;
+    top: 0 !important;
   }
 }
 @media screen and (min-width: 768px) {
