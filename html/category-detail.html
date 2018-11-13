@@ -722,8 +722,8 @@
                     <a href="#" class="btnManasq applyBtn">
                       <span>Apply Now</span>
                     </a>
-                    <a href="#" class="learnBtn">
-                        More <img src="images/careers/down-arrow.png" alt="learn-arrow" />
+                    <a  class="learnBtn">
+                        <span>More</span> <img src="images/careers/down-arrow.png" alt="learn-arrow" />
                     </a>
                 </div>
               </div>
@@ -731,7 +731,20 @@
           </div>
           <div class="bgWrap colbgWrap">
             <div class="catCollapse">
-
+              <p>A new way to take advantage of free checking, Kasasa Cash® is the perfect option for those seeking to earn more. No monthly service fees, no ATM fees, and a higher yield on your balance for every month you qualify.</p>
+              <ul>
+                <li>No Monthly Maintenance Fee</li>
+                <li>No monthly minimum balance</li>
+                <li>Free mobile banking with check deposit</li>
+                <li>Free online banking</li>
+                <li>Free eStatements</li>
+                <li>Free bill pay</li>
+                <li>Free debit card</li>
+                <li>Unlimited check writing</li>
+              </ul>
+              <div class="catLearn">
+                <a href="#">Learn more <img src="images/category-detail/learn-arrow.png" alt="learn-arrow"></a>
+              </div>
             </div>
           </div>
         </div>
@@ -777,13 +790,31 @@
                   <a href="#" class="btnManasq applyBtn">
                     <span>Apply Now</span>
                   </a>
-                  <a href="#" class="learnBtn">
-                    Learn More <img src="images/category-detail/learn-arrow.png" alt="learn-arrow" />
+                  <a  class="learnBtn">
+                      <span>More</span> <img src="images/careers/down-arrow.png" alt="learn-arrow" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
+          <div class="bgWrap colbgWrap">
+              <div class="catCollapse">
+                <p>A new way to take advantage of free checking, Kasasa Cash® is the perfect option for those seeking to earn more. No monthly service fees, no ATM fees, and a higher yield on your balance for every month you qualify.</p>
+                <ul>
+                  <li>No Monthly Maintenance Fee</li>
+                  <li>No monthly minimum balance</li>
+                  <li>Free mobile banking with check deposit</li>
+                  <li>Free online banking</li>
+                  <li>Free eStatements</li>
+                  <li>Free bill pay</li>
+                  <li>Free debit card</li>
+                  <li>Unlimited check writing</li>
+                </ul>
+                <div class="catLearn">
+                  <a href="#">Learn more <img src="images/category-detail/learn-arrow.png" alt="learn-arrow"></a>
+                </div>
+              </div>
+            </div>
         </div>
       </section>
       <section class="categorySection">
@@ -1076,6 +1107,15 @@
   <script src="script/lib/jquery.validate.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCOvCqdZB2RNzYYiPE0bUKnrHxcPSMVCe8"></script>
   <script type='text/javascript' src='script/main.min.js'></script>
+  <script>
+  $(".learnBtn").click(function(){
+    $(this).closest(".categorySection").find(".colbgWrap").slideToggle();
+      var text = $(this).find("span").text() == 'Less' ? 'More' : 'Less';
+      $(this).find("span").text(text);
+      $(this).toggleClass("active");
+  });
+  
+  </script>
 
 </body>
 

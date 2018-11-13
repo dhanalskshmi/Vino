@@ -747,6 +747,7 @@ table.checking  tbody tr td:nth-child(2) {
                         float: right;
                         font-weight: bold;
                         padding-top: 22px;
+                        cursor: pointer;
                         &:hover{
                             text-decoration: underline;
                         }
@@ -771,23 +772,91 @@ table.checking  tbody tr td:nth-child(2) {
                             top: -5px;
                             left: 7px;
                             @include bp(tablandscape) {
-                                top: -3px;
-                                left: 0px;
-                                width: 8px;
-                                display: none;
+                                display: inline-block;
+                                width: 16px;
+                                top: -5px;
+                                left: 5px;
                             }
                             @include bp(tabportrait) {
-                                top: -3px;
-                                left: 0px;
-                                width: 8px;
-                                display: none;
+                                display: inline-block;
+                                width: 16px;
+                                top: -5px;
+                                left: 5px;
                             }
                             @include bp(mobile) {
-                                top: -3px;
-                                left: 0px;
-                                width: 8px;
-                                display: none;
+                                display: inline-block;
+                                width: 16px;
+                                top: -5px;
+                                left: 5px;
                             }
+                        }
+                        &.active{
+                            img{
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.colbgWrap{
+            padding: 48px 50px;
+            padding-bottom: 39px;
+            background: #e7e7e7;
+            display: none;
+            @include bp(landscape){
+                padding: 48px 25px;
+                padding-bottom: 18px;
+            }
+            @include bp(tablet){
+                padding: 48px 22px;
+                padding-bottom: 33px;
+            }
+            @include bp(mobile){
+                padding: 44px 10px;
+                padding-bottom: 15px;
+            }
+            .catCollapse{
+                p{
+                    font-size: 26px;
+                    line-height: 30px;
+                    margin-bottom: 27px;
+                    color: #3d3d3d;
+                    @include bp(landscape){
+                        font-size: 18px;
+                        line-height: 21px;
+                        margin-bottom: 17px;
+                    }
+                }
+                ul{
+                    list-style: disc;
+                    padding-left: 25px;
+                    margin-bottom: 22px;
+                    @include bp(landscape){
+                        margin-bottom: 11px;
+                    }
+                    li{
+                        display: list-item;
+                        font-size: 26px;
+                        color: #3d3d3d;
+                        @include bp(landscape){
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .catLearn{
+                    display: inline-block;
+                    a{
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        color: #3d3d3d;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            width: 10px;
+                            margin-left: 6px;
+                            height: 16px;
                         }
                     }
                 }
