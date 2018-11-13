@@ -6567,17 +6567,17 @@ footer {
 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap:after {
   position: absolute;
   content: "";
-  bottom: -25px;
+  bottom: -13px;
   left: 0;
   width: 120px;
-  height: 25px;
+  height: 13px;
   background: #eb2837;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap:after {
-    bottom: -15px;
+    bottom: -13px;
     width: 102px;
-    height: 15px;
+    height: 13px;
   }
 }
 @media (max-width: 767px) {
@@ -13048,24 +13048,24 @@ table.checking tbody tr td:nth-child(2) {
 .categorySection .bgWrap .flexWrap .imgSection:after {
   content: "";
   position: absolute;
-  bottom: -17px;
+  bottom: -12px;
   left: 0;
   width: 232px;
-  height: 18px;
+  height: 13px;
   background: #eb2837;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .imgSection:after {
     width: 20.576%;
-    height: 15px;
-    bottom: -15px;
+    height: 13px;
+    bottom: -13px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap .imgSection:after {
     width: 25.55%;
-    height: 15px;
-    bottom: -15px;
+    height: 13px;
+    bottom: -13px;
   }
 }
 @media (max-width: 767px) {
@@ -13515,6 +13515,11 @@ table.checking tbody tr td:nth-child(2) {
     padding-top: 11px;
   }
 }
+@media (max-width: 1023px) {
+  .categorySection .bgWrap .flexWrap .contentSection a.learnBtn:hover {
+    text-decoration: none;
+  }
+}
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn img {
   position: relative;
   top: -5px;
@@ -13589,7 +13594,7 @@ table.checking tbody tr td:nth-child(2) {
 .categorySection .bgWrap.colbgWrap .catCollapse ul {
   list-style: disc;
   padding-left: 25px;
-  margin-bottom: 22px;
+  margin-bottom: 42px;
 }
 @media (max-width: 1279px) {
   .categorySection .bgWrap.colbgWrap .catCollapse ul {

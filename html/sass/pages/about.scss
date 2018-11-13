@@ -362,15 +362,15 @@
                 &:after {
                     position: absolute;
                     content: '';
-                    bottom: -25px;
+                    bottom: -13px;
                     left: 0;
                     width: 120px;
-                    height: 25px;
+                    height: 13px;
                     background: #eb2837;
                     @include bp(landscape) {
-                        bottom: -15px;
+                        bottom: -13px;
                         width: 102px;
-                        height: 15px;
+                        height: 13px;
                     }
                     @include bp(mobile) {
                         display: none;
