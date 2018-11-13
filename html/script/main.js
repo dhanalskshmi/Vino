@@ -600,7 +600,8 @@ if($(e.target).closest("span").length==0){
 
 	});
 
-  $('.mLogin a').click(function(e) {
+  $('.mLogin a').click(function(event) {
+		event.preventDefault();
 		$(this).toggleClass('active');
 		$('.loginBlocks').toggleClass('active');
 		$('.hamburger, .mnavWrapper, .mobileSearchfield, .mobileSearch .submit').removeClass('active');
@@ -996,6 +997,16 @@ $(document).ready(function() {
 		});
 	}*/
 
+});
+
+
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+
+		if ($("body").width() <= 767) {
+			console.log(scroll);
+			$('.loginBlocks').css({'top': scroll + $('header').height()});
+		}
 });
 
 
