@@ -20,10 +20,14 @@
     </div> -->
   <div class="siteWrap">
     <div class="siteInner careers">
+      <div class="stickyEmpty">
+
+      </div>
       <!-- Header -->
       <header>
         <div class="containerWrapper">
           <div class="headerWrapper">
+            <div class="headBg"> </div>
             <a href="index.html" class="logo">
               <img src="images/header/logo.png" alt="Manasquan Bank" />
             </a>
@@ -1338,11 +1342,15 @@
   <script type='text/javascript' src='script/main.min.js'></script>
   <script>
     $(document).ready(function() {
+      var headHgt = $('header').height();
+      console.log(headHgt);
       $(".btn-Lmore").click(function() {
         $(this).closest(".bluePanelInner").find(".carLst").slideToggle();
         var text = $(this).text() == 'Learn More' ? 'Less' : 'Learn More';
         $(this).text(text).toggleClass("active");
         var bluepanel = $(this).closest(".bluePanel");
+
+
         $('html, body').animate({
           scrollTop: bluepanel.offset().top
         }, "slow");

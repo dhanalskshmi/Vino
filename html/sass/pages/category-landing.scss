@@ -172,6 +172,8 @@
       padding: 20px 65px 34px 65px;
       min-height: 487px;
       height: auto;
+      border: 2px solid rgb(27, 61, 110);
+      border-radius: 14px;
       @include bp(landscape) {
         min-height: 312px;
         padding: 24px 65px;
