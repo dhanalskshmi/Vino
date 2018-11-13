@@ -1677,9 +1677,6 @@ header.stickyActive {
   position: fixed;
   margin-top: 0;
 }
-header.stickyActive .headerWrapper {
-  background: none;
-}
 header.stickyActive .headerWrapper .headBg {
   display: none;
   background: #FFF;
@@ -1703,6 +1700,9 @@ header.stickyActive .mainNav {
 }
 
 @media screen and (min-width: 768px) {
+  header.stickyActive .headerWrapper {
+    background: none;
+  }
   header.stickyActive .headerWrapper .headBg {
     display: block;
   }
@@ -14267,21 +14267,21 @@ table.checking tbody tr td:nth-child(2) {
 }
 
 .catLanding .heroBlock .bgWrap {
-  padding: 41px 58px 9px;
+  padding: 41px 50px 26px;
 }
 @media (max-width: 1279px) {
   .catLanding .heroBlock .bgWrap {
-    padding: 21px 35px 9px;
+    padding: 21px 22px 9px;
   }
 }
 @media (max-width: 1023px) {
   .catLanding .heroBlock .bgWrap {
-    padding: 15px 85px 9px;
+    padding: 41px 21px 0px;
   }
 }
 @media (max-width: 767px) {
   .catLanding .heroBlock .bgWrap {
-    padding: 16px 20px 9px;
+    padding: 33px 10px 9px;
   }
 }
 @media (max-width: 1279px) {
@@ -14302,6 +14302,14 @@ table.checking tbody tr td:nth-child(2) {
     margin-top: 0;
   }
 }
+@media (max-width: 1023px) {
+  .catLanding .heroFlex {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 @media (max-width: 767px) {
   .catLanding .heroFlex {
     margin-top: 30px;
@@ -14309,34 +14317,34 @@ table.checking tbody tr td:nth-child(2) {
 }
 .catLanding .heroFlex .flexLinkWrap {
   width: 361px;
-  height: 325px;
+  height: 260px;
   margin-bottom: 43px;
-  width: 29.7%;
+  width: 22.9%;
   margin-top: 0px;
-  margin-right: 5.45%;
+  margin-right: 2.75%;
 }
 @media (min-width: 1280px) {
-  .catLanding .heroFlex .flexLinkWrap:nth-child(3n+3) {
+  .catLanding .heroFlex .flexLinkWrap:nth-child(4n+4) {
     margin-right: 0%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .catLanding .heroFlex .flexLinkWrap {
     width: 29.7%;
-    margin-right: 2.85%;
+    margin-right: 2.75%;
     margin-top: 0px;
   }
-  .catLanding .heroFlex .flexLinkWrap:nth-child(3n+3) {
+  .catLanding .heroFlex .flexLinkWrap:nth-child(4n+4) {
     margin-right: 0%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .catLanding .heroFlex .flexLinkWrap {
     width: 43%;
-    margin-right: 2.4%;
+    margin-right: 9.4%;
     margin-top: 0px;
   }
-  .catLanding .heroFlex .flexLinkWrap:nth-child(3n+3) {
+  .catLanding .heroFlex .flexLinkWrap:nth-child(2n+2) {
     margin-right: 0%;
   }
 }
@@ -14350,23 +14358,23 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (max-width: 1279px) {
   .catLanding .heroFlex .flexLinkWrap {
-    width: 262px;
-    height: 240px;
+    width: 197px;
+    height: 190px;
     margin-bottom: 28px;
   }
 }
 @media (max-width: 1023px) {
   .catLanding .heroFlex .flexLinkWrap {
-    width: 177px;
-    height: 160px;
-    margin-bottom: 20px;
+    width: 270px;
+    height: 260px;
+    margin-bottom: 60px;
   }
 }
 @media (max-width: 767px) {
   .catLanding .heroFlex .flexLinkWrap {
-    width: 221px;
-    height: 200px;
-    margin-bottom: 15px;
+    width: 268px;
+    height: 258px;
+    margin-bottom: 20px;
   }
 }
 .catLanding .heroFlex .flexLinkWrap .flexLinks {
@@ -14375,25 +14383,25 @@ table.checking tbody tr td:nth-child(2) {
 }
 .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
   width: 361px;
-  height: 325px;
+  height: 260px;
   position: relative;
 }
 @media (max-width: 1279px) {
   .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
-    width: 262px;
-    height: 240px;
+    width: 197px;
+    height: 190px;
   }
 }
 @media (max-width: 1023px) {
   .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
-    width: 177px;
-    height: 158px;
+    width: 270px;
+    height: 260px;
   }
 }
 @media (max-width: 767px) {
   .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage {
-    width: 221px;
-    height: 198px;
+    width: 268px;
+    height: 258px;
   }
 }
 .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage:after {
@@ -14415,28 +14423,30 @@ table.checking tbody tr td:nth-child(2) {
   opacity: 0;
 }
 .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
-  padding: 6px 25px 6px 16px;
+  padding: 6px 17px 6px 11px;
   font-size: 24px;
   width: auto;
-  bottom: 25px;
+  bottom: 46px;
 }
 @media (max-width: 1279px) {
   .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
     padding: 4px 17px 4px 10px;
     font-size: 15px;
+    bottom: 34px;
   }
 }
 @media (max-width: 1023px) {
   .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
     padding: 3px 12px 3px 6px;
-    font-size: 12px;
+    font-size: 24px;
+    bottom: 46px;
   }
 }
 @media (max-width: 767px) {
   .catLanding .heroFlex .flexLinkWrap .heroFlexheading {
-    font-size: 15px;
+    font-size: 24px;
     padding: 4px 15px 4px 9px;
-    bottom: 16px;
+    bottom: 45px;
   }
 }
 .catLanding .bluePannel {
@@ -15355,6 +15365,30 @@ table.checking tbody tr td:nth-child(2) {
   margin-top: -3px;
 }
 
+.heroBlock.generalBanner figure {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroBlock.generalBanner figure {
+    margin-top: 16px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroBlock.generalBanner figure {
+    margin-top: 16px;
+  }
+}
+.heroBlock.generalBanner figure figcaption {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .heroBlock.generalBanner figure figcaption {
+    font-size: 17px;
+  }
+}
 .heroBlock.generalBanner ul + h3 {
   margin-top: 36px;
 }

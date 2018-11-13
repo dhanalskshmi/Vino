@@ -1239,7 +1239,7 @@ if ($('.eventsPannel').length > 0) {
 
 $(document).ready(function(){
   var headHgt = $('header').height();
-  console.log(headHgt);
+  //console.log(headHgt);
     $(".scroll").on('click', function(e) {
         e.preventDefault();
         var target = $(this).attr('href');

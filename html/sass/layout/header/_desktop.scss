@@ -446,7 +446,7 @@ header {
 		position: fixed;
 		margin-top: 0;
 		.headerWrapper {
-			background: none;
+			//background: none;
 			.headBg {
 				display: none;
 		    background: #FFF;
@@ -475,6 +475,7 @@ header {
 	header {
 		&.stickyActive {
 			.headerWrapper {
+				background: none;
 				.headBg {
 					display: block;
 				}

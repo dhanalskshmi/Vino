@@ -646,6 +646,24 @@
 
 .heroBlock {
 	&.generalBanner {
+		figure {
+			margin-top: 36px;
+			margin-bottom: 36px;
+			@include bp(tabportrait) {
+				margin-top: 16px;
+			}
+			@include bp(tablandscape) {
+				margin-top: 16px;
+			}
+			figcaption {
+				font-size: 20px;
+				margin-top: 10px;
+				text-align: center;
+				@include bp(mobile) {
+					font-size: 17px;
+				}
+			}
+		}
 		ul {
 			+ h3 {
 				margin-top: 36px;
@@ -657,6 +675,11 @@
 				}
 				@include bp(tablandscape) {
 					margin-top: 16px;
+				}
+			}
+			h3 {
+				+ figure {
+
 				}
 			}
 		}
