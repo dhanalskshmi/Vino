@@ -899,6 +899,31 @@ p {
   display: none;
 }
 
+#skiptocontent a {
+  padding: 6px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: #000;
+  border-bottom-right-radius: 8px;
+  background: 0 0;
+  -webkit-transition: top 1s ease-out,background 1s linear;
+  transition: top 1s ease-out,background 1s linear;
+  z-index: -999;
+}
+
+#skiptocontent a:focus, #skiptocontent a:active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #d1282d;
+  color: #fff;
+  outline: 0;
+  -webkit-transition: top .1s ease-in,background .5s linear;
+  transition: top .1s ease-in,background .5s linear;
+  z-index: 20000;
+}
+
 @media screen and (min-width: 1280px) {
   .animatable.bannerWrapper .bannerContent h1 br {
     display: none;
