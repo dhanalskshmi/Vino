@@ -1202,6 +1202,13 @@
     jQuery(function() {
 
       myPlayer = jQuery("#bgndVideo").YTPlayer();
+      $("#togglePlay").click(function(){
+        if(!$("#togglePlay").hasClass("play") && !$("#togglePlay").hasClass("pause") && !$("#togglePlay").hasClass("loading"))
+        {
+        $("#togglePlay").removeClass("play pause loading");
+        $("#togglePlay").addClass("loading");
+      }
+      });
       // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
         myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
         if (e.type == 'YTPReady') {
