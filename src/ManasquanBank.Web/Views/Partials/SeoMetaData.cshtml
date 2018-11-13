@@ -56,17 +56,15 @@ if (seoMetaData != null)
     }
 }
 
-if (Path != "/")
-{
+        if (Path != "/")
+        {
 		  <title>@metaTitle | NJ Banks for Personal and Business Needs</title>
 		}
         else
         {
 		  <title>@metaTitle</title>
 		}		
-        <meta name="title" content="@metaTitle" />
         <meta name="description" content="@metaDescription" />
-
         if (seoMetaData != null)
         {
             if (seoMetaData.NoIndex)
