@@ -599,6 +599,7 @@ p {
   -webkit-transform-origin: right center;
       -ms-transform-origin: right center;
           transform-origin: right center;
+  border-radius: 5px;
 }
 .openAccount a:hover {
   background: #de0d1d;
@@ -14433,6 +14434,8 @@ table.checking tbody tr td:nth-child(2) {
   padding: 20px 65px 34px 65px;
   min-height: 487px;
   height: auto;
+  border: 2px solid #1b3d6e;
+  border-radius: 14px;
 }
 @media (max-width: 1279px) {
   .catLanding .realAlerts .bgWrap {

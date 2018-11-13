@@ -652,6 +652,7 @@ p {
     backface-visibility: hidden;
     display: block;
     transform-origin: right center;
+    border-radius: 5px;
     &:hover {
       background: #de0d1d;
     }
