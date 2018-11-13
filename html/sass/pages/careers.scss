@@ -473,15 +473,15 @@
     }
 }
 
-.chooseList {
-    margin-top: 30px;
-    @include bp(landscape) {
-        margin-top: 37px;
-    }
-    @include bp(mobile) {
-        margin-top: 28px;
-    }
+.careerGrey {
     ul {
+        margin-top: 30px;
+        @include bp(landscape) {
+            margin-top: 37px;
+        }
+        @include bp(mobile) {
+            margin-top: 28px;
+        }
         display: flex;
         justify-content: space-between;
         width: 77%;
