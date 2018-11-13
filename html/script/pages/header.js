@@ -1014,6 +1014,13 @@ $(window).scroll(function (event) {
 
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
+		if ($("body").width() <= 767) {
+			if (scrollTop > 10) {
+	        $('header').addClass('stickyActive');
+	        $('.stickyEmpty').addClass('active');
+					$('.stickyEmpty').css({'height':  $('header').height()});
+	    }
+		}
     if (scrollTop > 100) {
         $('header').addClass('stickyActive');
         $('.stickyEmpty').addClass('active');
