@@ -741,15 +741,17 @@ table.checking  tbody tr td:nth-child(2) {
                         }
                     }
                     &.learnBtn {
-                        color: #666;
+                        color: #1268e5;
                         font-size: 24px;
                         text-transform: uppercase;
                         float: right;
                         font-weight: bold;
                         padding-top: 22px;
                         cursor: pointer;
+                        transition: all 0.3s;
                         &:hover{
-                            text-decoration: underline;
+                          color: #0b3b81;
+                            //text-decoration: underline;
                         }
                         @include bp(tablandscape) {
                             font-size: 16px;
@@ -796,6 +798,7 @@ table.checking  tbody tr td:nth-child(2) {
                             }
                         }
                         &.active{
+                          color: #0b3b81;
                             img{
                                 transform: rotate(180deg);
                             }

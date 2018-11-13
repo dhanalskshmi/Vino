@@ -13489,16 +13489,18 @@ table.checking tbody tr td:nth-child(2) {
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
-  color: #666;
+  color: #1268e5;
   font-size: 24px;
   text-transform: uppercase;
   float: right;
   font-weight: bold;
   padding-top: 22px;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn:hover {
-  text-decoration: underline;
+  color: #0b3b81;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
@@ -13555,6 +13557,9 @@ table.checking tbody tr td:nth-child(2) {
     top: -5px;
     left: 5px;
   }
+}
+.categorySection .bgWrap .flexWrap .contentSection a.learnBtn.active {
+  color: #0b3b81;
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn.active img {
   -webkit-transform: rotate(180deg);
