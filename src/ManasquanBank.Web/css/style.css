@@ -1290,6 +1290,9 @@ header .containerWrapper {
   width: -webkit-calc(100% - 22px);
   width: calc(100% - 22px);
 }
+.headerWrapper .headBg {
+  display: none;
+}
 
 .mLogin {
   float: right;
@@ -1644,6 +1647,44 @@ header + .loginBlocks .businessLogin p a {
   top: 7px;
 }
 
+header.stickyActive {
+  position: fixed;
+  margin-top: 0;
+}
+header.stickyActive .headerWrapper {
+  background: none;
+}
+header.stickyActive .headerWrapper .headBg {
+  display: none;
+  background: #FFF;
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  z-index: -1;
+}
+header.stickyActive .topNav {
+  display: none;
+}
+header.stickyActive .mainNav {
+  margin-top: 3px;
+}
+
+.stickyEmpty {
+  display: none;
+}
+.stickyEmpty.active {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  header.stickyActive .headerWrapper .headBg {
+    display: block;
+  }
+  header.stickyActive .menuWrapper .loginBlocks {
+    position: relative;
+    z-index: 999;
+  }
+}
 @media screen and (min-width: 768px) {
   header {
     margin-top: 20px;
@@ -2154,6 +2195,10 @@ header + .loginBlocks .businessLogin p a {
   }
 }
 @media screen and (min-width: 1024px) {
+  header.stickyActive .headerWrapper .headBg {
+    height: 82px;
+  }
+
   .logo {
     max-width: 227px;
     padding: 14px 0 10px 11px;
@@ -2320,6 +2365,16 @@ header + .loginBlocks .businessLogin p a {
   }
 }
 @media screen and (min-width: 1280px) {
+  header.stickyActive .headerWrapper .headBg {
+    height: 114px;
+  }
+  header.stickyActive .mainNav ul li {
+    padding-bottom: 37px;
+  }
+  header.stickyActive .mainNav ul li a span::after {
+    bottom: -38px;
+  }
+
   header {
     margin-top: 26px;
   }
