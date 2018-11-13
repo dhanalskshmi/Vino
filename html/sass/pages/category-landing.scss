@@ -1,15 +1,15 @@
 .catLanding {
   .heroBlock {
     .bgWrap {
-      padding: 41px 58px 9px;
+      padding: 41px 50px 26px;
       @include bp(landscape) {
-        padding: 21px 35px 9px;
+        padding: 21px 22px 9px;
       }
       @include bp(tablet) {
-        padding: 15px 85px 9px;
+        padding: 41px 21px 0px;
       }
       @include bp(mobile) {
-        padding: 16px 20px 9px;
+        padding: 33px 10px 9px;
       }
     }
     h2{
@@ -29,35 +29,38 @@
     @include bp(landscape) {
       margin-top: 0;
     }
+    @include bp(tablet) {
+      justify-content: center;
+    }
     @include bp(mobile) {
       margin-top: 30px;
     }
     .flexLinkWrap {
       width: 361px;
-      height: 325px;
+      height: 260px;
       margin-bottom: 43px;
-      width: 29.7%;
+      width: 22.9%;
       margin-top: 0px;
-      margin-right: 5.45%;
+      margin-right: 2.75%;
       @include bp(desktop) {
 
-          &:nth-child(3n+3) {
+          &:nth-child(4n+4) {
               margin-right:0%;
           }
       }
       @include bp(tablandscape) {
           width: 29.7%;
-          margin-right: 2.85%;
+          margin-right: 2.75%;
           margin-top: 0px;
-          &:nth-child(3n+3) {
+          &:nth-child(4n+4) {
               margin-right:0%;
           }
       }
       @include bp(tabportrait) {
           width: 43%;
-          margin-right: 2.4%;
+          margin-right: 9.4%;
           margin-top:0px;
-          &:nth-child(3n+3) {
+          &:nth-child(2n+2) {
               margin-right:0%;
           }
       }
@@ -68,19 +71,19 @@
           margin-top:0px;
       }
       @include bp(landscape) {
-        width: 262px;
-        height: 240px;
+        width: 197px;
+        height: 190px;
         margin-bottom: 28px;
       }
       @include bp(tablet) {
-        width: 177px;
-        height: 160px;
-        margin-bottom: 20px;
+        width: 270px;
+        height: 260px;
+        margin-bottom: 60px;
       }
       @include bp(mobile) {
-        width: 221px;
-        height: 200px;
-        margin-bottom: 15px;
+        width: 268px;
+        height: 258px;
+        margin-bottom: 20px;
       }
 
       .flexLinks {
@@ -88,19 +91,19 @@
 
         .flexImage {
           width: 361px;
-          height: 325px;
+          height: 260px;
           position: relative;
           @include bp(landscape) {
-            width: 262px;
-            height: 240px;
+            width: 197px;
+            height: 190px;
           }
           @include bp(tablet) {
-            width: 177px;
-            height: 158px;
+            width: 270px;
+            height: 260px;
           }
           @include bp(mobile) {
-            width: 221px;
-            height: 198px;
+            width: 268px;
+            height: 258px;
           }
 
           &:after {
@@ -128,23 +131,25 @@
       }
 
       .heroFlexheading {
-        padding: 6px 25px 6px 16px;
+        padding: 6px 17px 6px 11px;
         font-size: 24px;
         width: auto;
-        bottom: 25px;
+        bottom: 46px;
         @include bp(landscape) {
           padding: 4px 17px 4px 10px;
           font-size: 15px;
+          bottom: 34px;
           //width: 73%;
         }
         @include bp(tablet) {
           padding: 3px 12px 3px 6px;
-          font-size: 12px;
+          font-size: 24px;
+          bottom: 46px;
         }
         @include bp(mobile) {
-          font-size: 15px;
+          font-size: 24px;
           padding: 4px 15px 4px 9px;
-          bottom: 16px;
+          bottom: 45px;
         }
       }
     }
