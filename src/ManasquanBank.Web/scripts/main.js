@@ -1996,6 +1996,12 @@ $(window).on("load resize", function(e) {
     }
 });
 $(document).ready(function(){
+    $(".learnBtn").click(function(){
+        $(this).closest(".categorySection").find(".colbgWrap").slideToggle();
+          var text = $(this).find("span").text() == 'Less' ? 'More' : 'Less';
+          $(this).find("span").text(text);
+          $(this).toggleClass("active");
+      });
       if ($('.checking').length > 0) {
         resize();
 

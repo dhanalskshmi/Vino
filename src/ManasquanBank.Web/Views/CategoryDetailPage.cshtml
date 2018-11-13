@@ -23,19 +23,17 @@
         </div>
     }
 }
-<section class="heroBanner">
-    
-</section>
+<section class="heroBanner"></section>
 <section class="heroBlock tableClass categoryBlock" id="sliders-container">
     <div class="containerWrapper">
         <div class="bgWrap">
             @if (!string.IsNullOrEmpty(Title))
             {
-            <h2>@Title</h2>
+                <h2>@Title</h2>
             }
             @if (!string.IsNullOrEmpty(Description))
             {
-            @Html.Raw(Description)
+                @Html.Raw(Description)
             }
             @if (Model.Content.HasValue("comparisonChart"))
             {
@@ -48,7 +46,7 @@
                     </div>
                 </div>
             }
-            
+
             @if (Model.Content.HasValue("cTAButton1") || Model.Content.HasValue("cTAButton2"))
             {
                 <ul class="heroLinks">
@@ -103,21 +101,21 @@
 
                                 }
                                 @*else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
 
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            @Html.Raw(cTAtitle)
-                                        }
-                                    </span>
-                                }*@
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                @Html.Raw(cTAtitle)
+                                            }
+                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -175,22 +173,22 @@
 
                                 }
                                 @*else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
 
-                                    </span>
-                                    <span class="heroLinksText">
-                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                        {
-                                            var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                            @Html.Raw(replacetitle)
-                                        }
-                                    </span>
-                                }*@
+                                        </span>
+                                        <span class="heroLinksText">
+                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                            {
+                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                                @Html.Raw(replacetitle)
+                                            }
+                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -200,7 +198,7 @@
 
                 </ul>
             }
-           
+
         </div>
     </div>
 </section>
@@ -240,10 +238,7 @@
                                 {
                                     @Html.Raw(productDescription)
                                 }
-                                @if (!string.IsNullOrEmpty(featuresList))
-                                {
-                                    @Html.Raw(featuresList)
-                                }
+
                                 <div class="contentBottom">
                                     <div class="icon-section">
                                         @if (!string.IsNullOrEmpty(phoneNo))
@@ -252,8 +247,8 @@
                                                 <span>
                                                     <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon" />
                                                     <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Phone Icon Mobile View" />
-                                                    
-                                                 </span>
+
+                                                </span>
                                                 <span class="text">
                                                     @phoneNo
                                                 </span>
@@ -279,7 +274,7 @@
                                                     <span>
                                                         <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon" />
                                                         <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon Mobile View" />
-                                                        
+
                                                     </span>
                                                     <span class="text">
                                                         @branchLocator.Name
@@ -304,6 +299,45 @@
                                         }
 
                                     }
+
+                                    @if (!string.IsNullOrEmpty(featuresList))
+                                    {
+                                        <a class="learnBtn">
+                                            <span>More</span> <img src="/images/careers/down-arrow.png" alt="learn-arrow" />
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        if (learnMore != null)
+                                        {
+                                            if (learnMore.Target == "_blank")
+                                            {
+                                                <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More button" />
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@learnMore.Url" class="learnBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More Button" />
+                                                </a>
+                                            }
+                                        }
+                                    }
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(featuresList))
+                    {
+                        <div class="bgWrap colbgWrap">
+                            <div class="catCollapse">
+                                @Html.Raw(featuresList)
+                                <div class="catLearn">
                                     @if (learnMore != null)
                                     {
                                         if (learnMore.Target == "_blank")
@@ -314,7 +348,7 @@
                                         }
                                         else
                                         {
-                                            <a href="@learnMore.Url" class="learnBtn">
+                                            <a href="@learnMore.Url">
                                                 @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn Arrow" />
                                             </a>
                                         }
@@ -322,7 +356,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
+
                 </div>
             </section>
             flag = true;
@@ -359,7 +394,7 @@
                                                 <span>
                                                     <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon Desktop View" />
                                                     <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Mobile Phone Icon" />
-                                                    
+
                                                 </span>
                                                 <span class="text">
                                                     @phoneNo
@@ -374,7 +409,7 @@
                                                     <span>
                                                         <img src="/images/category-detail/location-icon.png" class="deskView" alt="Desktop View Location Icon" />
                                                         <img src="/images/category-detail/location-icon.png" class="otherView" alt="Mobile Location Icon" />
-                                                       
+
                                                     </span>
                                                     <span class="text">
                                                         @branchLocator.Name
@@ -411,25 +446,62 @@
                                         }
 
                                     }
+                                    @if (!string.IsNullOrEmpty(featuresList))
+                                    {
+                                        <a class="learnBtn">
+                                            <span>More</span> <img src="/images/careers/down-arrow.png" alt="learn arrow" />
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        if (learnMore != null)
+                                        {
+                                            if (learnMore.Target == "_blank")
+                                            {
+                                                <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More arrow" />
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@learnMore.Url" class="learnBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More Arrow" />
+                                                </a>
+                                            }
+                                        }
+                                    }
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(featuresList))
+                    {
+                        <div class="bgWrap colbgWrap">
+                            <div class="catCollapse">
+                               @Html.Raw(featuresList)
+                                <div class="catLearn">
                                     @if (learnMore != null)
                                     {
                                         if (learnMore.Target == "_blank")
                                         {
                                             <a href="@learnMore.Url" target="_blank" class="learnBtn">
-                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="@learnMore.Name" />
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn Arrow" />
                                             </a>
                                         }
                                         else
                                         {
-                                            <a href="@learnMore.Url" class="learnBtn">
-                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="@learnMore.Name" />
+                                            <a href="@learnMore.Url">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn Arrow" />
                                             </a>
                                         }
                                     }
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
+
                 </div>
             </section>
             flag = false;
