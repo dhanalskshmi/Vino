@@ -89,7 +89,7 @@ $dbannerhgt: 965px;
       }
       button {
         font-size: 0;
-        background-color: rgba(27, 61, 110,0.3);
+        //background-color: rgba(27, 61, 110,0.3);
         width: 40px;
         height: 40px;
         position: absolute;
@@ -97,14 +97,14 @@ $dbannerhgt: 965px;
         right: 0;
         z-index: 999999;
         z-index: 9999999;
-        border: 2px solid #1b3d6e;
+        //border: 2px solid #909090;
         border-radius: 50%;
         &::after,
         &::before {
           display: none;
         }
         &.playBtn {
-          background-image: url('#{$img}/playpause_btn.png');
+          background-image: url('#{$img}/video_play.svg');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 0 0;
@@ -116,31 +116,31 @@ $dbannerhgt: 965px;
             background-position: 0 0;
           }
           &.play {
-            background-image: url('#{$img}/playpause_btn.png');
+            background-image: url('#{$img}/video_play.svg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: 0 0;
-            border: 2px solid #1b3d6e;
+            //border: 2px solid #909090;
           }
           &.pause {
-            background-image: url('#{$img}/playpause_btn.png');
+            background-image: url('#{$img}/video_pause.svg');
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: 0 -48px;
-            border: 2px solid #1b3d6e;
+            background-position: 0 0px;
+            //border: 2px solid #909090;
           }
         }
         &.muteBtn {
-          background-image: url('#{$img}/on.png');
+          background-image: url('#{$img}/sound_on.svg');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 0 0;
           right: 56px;
           &.muted {
-            background-image: url('#{$img}/off.png');
+            background-image: url('#{$img}/sound_off.svg');
           }
           &.unmuted {
-            background-image: url('#{$img}/on.png');
+            background-image: url('#{$img}/sound_on.svg');
           }
         }
 

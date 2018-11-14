@@ -3589,7 +3589,6 @@ footer {
 }
 .bannerWrapper #wrapper .goto button {
   font-size: 0;
-  background-color: rgba(27, 61, 110, 0.3);
   width: 40px;
   height: 40px;
   position: absolute;
@@ -3597,14 +3596,13 @@ footer {
   right: 0;
   z-index: 999999;
   z-index: 9999999;
-  border: 2px solid #1b3d6e;
   border-radius: 50%;
 }
 .bannerWrapper #wrapper .goto button::after, .bannerWrapper #wrapper .goto button::before {
   display: none;
 }
 .bannerWrapper #wrapper .goto button.playBtn {
-  background-image: url("../images/home/playpause_btn.png");
+  background-image: url("../images/home/video_play.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -3617,31 +3615,29 @@ footer {
   background-position: 0 0;
 }
 .bannerWrapper #wrapper .goto button.playBtn.play {
-  background-image: url("../images/home/playpause_btn.png");
+  background-image: url("../images/home/video_play.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  border: 2px solid #1b3d6e;
 }
 .bannerWrapper #wrapper .goto button.playBtn.pause {
-  background-image: url("../images/home/playpause_btn.png");
+  background-image: url("../images/home/video_pause.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 -48px;
-  border: 2px solid #1b3d6e;
+  background-position: 0 0px;
 }
 .bannerWrapper #wrapper .goto button.muteBtn {
-  background-image: url("../images/home/on.png");
+  background-image: url("../images/home/sound_on.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
   right: 56px;
 }
 .bannerWrapper #wrapper .goto button.muteBtn.muted {
-  background-image: url("../images/home/off.png");
+  background-image: url("../images/home/sound_off.svg");
 }
 .bannerWrapper #wrapper .goto button.muteBtn.unmuted {
-  background-image: url("../images/home/on.png");
+  background-image: url("../images/home/sound_on.svg");
 }
 
 .loginBlocks {
