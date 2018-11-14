@@ -710,7 +710,7 @@ header {
 							}
 						}
 					}
-					&:focus,
+					&:focus-within,
 					&.active,
 					&:hover {
 						ul {
@@ -859,7 +859,7 @@ header {
 	.mainNav {
 		ul {
 			li {
-				&:focus,
+				&:focus-within,
 				&.active,
 				&:hover {
 					.SubmenuWrapper {
