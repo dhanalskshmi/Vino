@@ -2,6 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using RJP.MultiUrlPicker.Models;
 @using System.Text.RegularExpressions;
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
     var bannerImage = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage");
@@ -12,6 +13,9 @@
     string[] classes = new string[] { "bunisessBank", "serviceContent", "personalBank", "mortage", "kasasa", "didgitalCenter", "clentService" };
     /* Action Panel */
     var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
+    Html.RequiresCss("~/css/lib/jquery.mb.YTPlayer.min.css");
+    Html.RequiresJs("~/scripts/lib/jquery.mb.YTPlayer.js");
+
 
 }
 

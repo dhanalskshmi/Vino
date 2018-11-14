@@ -18,15 +18,12 @@
     var appleWallet = Model.Content.GetPropertyValue<Link>("appleWallet");
     var payWallet = Model.Content.GetPropertyValue<Link>("payWallet");
     var androidWallet = Model.Content.GetPropertyValue<Link>("androidWallet");
-    var cTAButton = Model.Content.GetPropertyValue<Link>("cTAButton"); 
-
-
+    var cTAButton = Model.Content.GetPropertyValue<Link>("cTAButton");
 }
 @section BackgroundImage {
     @if (heroImage != null)
     {
-        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
-            
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">     
         </div>
     }
 }
@@ -210,8 +207,6 @@
                         <a href="@cTAButton.Url" class="btnManasq"><span>@cTAButton.Name</span></a>
                     }
                 }
-                
-                
             </div>
             }
         </div>

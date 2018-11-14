@@ -1,7 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
 	Layout = "Master.cshtml";
-
     var backgroundHeroImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundHeroImage");
     var productDetailTitle = Model.Content.GetPropertyValue<string>("productDetailTitle");
     var productDetailContent = Model.Content.GetPropertyValue<string>("productDetailContent");
@@ -16,9 +15,7 @@
     }
 }
 <div class="proDetail">
-<section class="heroBanner">
-   
-</section>
+<section class="heroBanner"></section>
 <section class="heroBlock" id="sliders-container">
     <div class="containerWrapper">
         <div class="bgWrap">

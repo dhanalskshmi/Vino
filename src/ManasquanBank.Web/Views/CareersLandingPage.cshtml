@@ -5,9 +5,11 @@
 @using Umbraco.Web.Extensions
 @using System.Linq
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-
+    Html.RequiresCss("~/css/lib/jquery-ui.css");
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
     //var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var imageBadge = Model.Content.GetPropertyValue<IPublishedContent>("imageBadge");
@@ -63,9 +65,6 @@
 
 }
 @section InnerTopStyle {
-
-    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
-
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -528,7 +527,6 @@
     </section>
 </div>
 @section InnerBottomScript {
-<script src="~/scripts/lib/jquery-ui.js"></script>
     <script>
        
         function positionSearch()

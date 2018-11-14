@@ -7,7 +7,6 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
-
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
@@ -24,13 +23,10 @@
     var leadership = Model.Content.AncestorOrSelf(2).Children();
     var backgroundImage = Model.Content.GetPropertyValue<IPublishedContent>("backgroundImage");
     var timelineTitle = Model.Content.GetPropertyValue<string>("timelineTitle");
-
     //var timeline = Model.Content.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "timeLine");
     var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
 
 }
-
-
 @section BackgroundImage {
     @if (heroImage != null)
     {
@@ -40,9 +36,7 @@
     }
 }
 <div class="aboutUs">
-
     <section class="heroBanner">
-       
     </section>
     <section class="heroBlock" id="sliders-container">
         <div class="containerWrapper">

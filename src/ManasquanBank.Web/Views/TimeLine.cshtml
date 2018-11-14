@@ -6,27 +6,21 @@
 @using System.Linq
 @using ManasquanBank.Web.Models;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-
-
+    Html.RequiresCss("~/css/lib/jquery-ui.css");
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
     var timelinetitle = Model.Content.GetPropertyValue<string>("siteTitle");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
-
     var timelineListing = Model.Content.Children.Where("Visible");
-
     int currentYear = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-
     int startYear, endYear;
     var flag = false;
     List<IPublishedContent> timelineDetails;
 
     var YearList = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("timelineTab");
 
-}
-@section InnerTopStyle {
-
-    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -45,12 +39,9 @@
             {
                 <h2>@timelinetitle</h2>
             }
-            
             <div class="timelineWrappers">
                 <div class="timelineWrapper">
-
                     <div class="decade-wrapper" id="decade-wrapper">
-
                         @if (YearList != null)
                         {
                             int i = 0;
@@ -81,12 +72,8 @@
 
                                 }
                             </ul>
-
-
-                            <select class="decade-year-dropdown" title="Year List" id="timeline_dropdown">
-
-                                
-                                @foreach (var item in YearList)
+<select class="decade-year-dropdown" title="Year List" id="timeline_dropdown">
+                             @foreach (var item in YearList)
                                 {
                                     var startyear = item.GetPropertyValue<string>("startYear");
                                     var endyear = item.GetPropertyValue<string>("startYear");
@@ -396,6 +383,3 @@
         </div>
     </div>
 </section>
-@section InnerBottomScript {
-    <script src="~/scripts/lib/jquery-ui.js"></script>
-}

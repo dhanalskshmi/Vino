@@ -11,16 +11,11 @@
 @{
     Layout = "Master.cshtml";
     var PageTitle = "";
-    var title = Model.Content.GetPropertyValue<string>
-    ("title");
-
-    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>
-        ("heroImage");
-        var LeftNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("leftNavigation");
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var LeftNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("leftNavigation");
     var MiddleNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("middleNavigation");
     var RightNavigation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("rightNavigation");
-
-
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -30,13 +25,9 @@
         </div>
     }
 }
-<section class="heroBanner">
-  
-</section>
+<section class="heroBanner"></section>
 <section class="heroBlock" id="sliders-container">
     <div class="containerWrapper">
-
-
         <div class="bgWrap clientServiceNeed">
             <section class="sitemap-section">
                 @if (!string.IsNullOrEmpty(title))

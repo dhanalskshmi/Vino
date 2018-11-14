@@ -1,5 +1,4 @@
-﻿
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using umbraco.MacroEngines
 @using Newtonsoft.Json
 @using RJP.MultiUrlPicker.Models
@@ -9,8 +8,14 @@
 @using Umbraco.Web.Extensions
 @using System.Linq
 @using System.Web.Script.Serialization;
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
+    Html.RequiresCss("~/css/lib/jquery-ui.css");
+    Html.RequiresCss("~/css/lib/jquery.timepicker.css");
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
+    Html.RequiresJs("~/scripts/lib/country-json.js");
+    Html.RequiresJs("~/scripts/lib/jquery.timepicker.min.js");
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
@@ -22,12 +27,12 @@
     var department = Model.Content.GetPropertyValue<string>("department");
     var employee = Model.Content.GetPropertyValue<string>("employee");
     string[] departmentList = department.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-    if(departmentList.Length == 1)
+    if (departmentList.Length == 1)
     {
         department.Split(new string[] { "\n" }, StringSplitOptions.None);
     }
     string[] employeeList = employee.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-    if(employeeList.Length == 1)
+    if (employeeList.Length == 1)
     {
         employeeList = employee.Split(new string[] { "\n" }, StringSplitOptions.None);
     }
@@ -35,8 +40,6 @@
 }
 
 @section InnerTopStyle {
-    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
-    <link href="~/css/lib/jquery.timepicker.css" rel="stylesheet" />
 }
 
 @section BackgroundImage {
@@ -373,14 +376,9 @@
 
 </div>
 @section InnerBottomScript {
-    <script src="~/scripts/lib/jquery-ui.js"></script>
-    <script src="~/scripts/lib/country-json.js"></script>
-    <script src="~/scripts/lib/jquery.timepicker.min.js"></script>
-
-   <script>
+<script>
     $(document).ready(function() {
       $('#basicExample').timepicker();
-
       $("#contactSucc").length > 0 && $("html, body").animate({
         scrollTop: $(".contactFormWrap").offset().top - 200
       }, "slow")
@@ -397,9 +395,7 @@
           e.target.value = x[1];
         });
       }
-
     });
-
     $(document).ready(function() {
       $.each(myJson.countries, function(index, value) {
         $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
@@ -435,8 +431,7 @@
         $("#state").selectmenu();
 
       });
-
-    });
+});
 </script>
 
 

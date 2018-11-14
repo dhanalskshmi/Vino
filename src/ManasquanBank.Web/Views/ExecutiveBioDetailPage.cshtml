@@ -7,7 +7,6 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
-
     var title = Model.Content.GetPropertyValue<string>("title");
     var bgImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var profileImage = Model.Content.GetPropertyValue<IPublishedContent>("ProfileImage");
@@ -21,9 +20,7 @@
     var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
     var bodyText = Model.Content.GetPropertyValue<string>("bodyText");
     var email = Model.Content.GetPropertyValue<string>("email");
-
     var backUrl = Model.Content.AncestorOrSelf(2);
-
 }
 @section BackgroundImage {
     @if (bgImage != null)
@@ -34,9 +31,7 @@
     }
 }
 <div class="bioPage">
-    <section class="heroBanner">
-       
-    </section>
+    <section class="heroBanner"></section>
     <section class="heroBlock" id="sliders-container">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -102,9 +97,6 @@
                                         </a>
                                     }
                                 }
-
-
-
                             }
                         }
 

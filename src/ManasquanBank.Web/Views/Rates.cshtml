@@ -7,14 +7,12 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
-
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
     var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
     var rates = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("ratesContent");
-
     var lendingTitle = Model.Content.GetPropertyValue<string>("lendingTitle");
     var lendingImage = Model.Content.GetPropertyValue<IPublishedContent>("lendingImage");
     var lendingContent = Model.Content.GetPropertyValue<string>("lendingContent");
@@ -29,7 +27,6 @@
     }
 }
 <section class="heroBanner">
-    
 </section>
 <section class="heroBlock" id="sliders-container">
     <div class="containerWrapper">
@@ -82,7 +79,6 @@
                                             {
                                                 <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                             }
-
                                         </span>
                                         <span class="heroLinksText">
                                             @if (!string.IsNullOrEmpty(cTAtitle))
@@ -92,9 +88,7 @@
                                         </span>
                                     </a>
                                 }
-
                             }
-                           
                         </li>
                     }
 
