@@ -549,7 +549,7 @@ header {
 		//max-width: 567px;
 		.headerNav,
 		.loginBlocks {
-			float: right;
+			float: left;
 		}
 
 	}
@@ -573,6 +573,7 @@ header {
       min-width: 196px;
       max-width: 100%;
       transform: translateX(0);
+			float: right;
 			.personalLogin,
 			.businessLogin {
 				float: left;
@@ -709,6 +710,7 @@ header {
 							}
 						}
 					}
+					&:focus,
 					&.active,
 					&:hover {
 						ul {
@@ -857,6 +859,7 @@ header {
 	.mainNav {
 		ul {
 			li {
+				&:focus,
 				&.active,
 				&:hover {
 					.SubmenuWrapper {

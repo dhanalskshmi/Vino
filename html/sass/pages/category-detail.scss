@@ -397,20 +397,20 @@ table.checking  tbody tr td:nth-child(2) {
                 &:after {
                     content: '';
                     position: absolute;
-                    bottom: -17px;
+                    bottom: -12px;
                     left: 0;
                     width: 232px;
-                    height: 18px;
+                    height: 13px;
                     background: #eb2837;
                     @include bp(tablandscape) {
                         width: 20.576%;
-                        height: 15px;
-                        bottom: -15px;
+                        height: 13px;
+                        bottom: -13px;
                     }
                     @include bp(tabportrait) {
                         width: 25.55%;
-                        height: 15px;
-                        bottom: -15px;
+                        height: 13px;
+                        bottom: -13px;
                     }
                     @include bp(mobile) {
                         width: 40.204%;
@@ -741,15 +741,17 @@ table.checking  tbody tr td:nth-child(2) {
                         }
                     }
                     &.learnBtn {
-                        color: #666;
+                        color: #1268e5;
                         font-size: 24px;
                         text-transform: uppercase;
                         float: right;
                         font-weight: bold;
                         padding-top: 22px;
                         cursor: pointer;
+                        transition: all 0.3s;
                         &:hover{
-                            text-decoration: underline;
+                          color: #0b3b81;
+                            //text-decoration: underline;
                         }
                         @include bp(tablandscape) {
                             font-size: 16px;
@@ -766,6 +768,11 @@ table.checking  tbody tr td:nth-child(2) {
                             font-size: 16px;
                             float: none;
                             padding-top: 11px;
+                        }
+                        &:hover{
+                            @include bp(tablet){
+                                text-decoration: none;
+                            }
                         }
                         img {
                             position: relative;
@@ -791,6 +798,7 @@ table.checking  tbody tr td:nth-child(2) {
                             }
                         }
                         &.active{
+                          color: #0b3b81;
                             img{
                                 transform: rotate(180deg);
                             }
@@ -831,7 +839,7 @@ table.checking  tbody tr td:nth-child(2) {
                 ul{
                     list-style: disc;
                     padding-left: 25px;
-                    margin-bottom: 22px;
+                    margin-bottom: 42px;
                     @include bp(landscape){
                         margin-bottom: 11px;
                     }

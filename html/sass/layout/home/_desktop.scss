@@ -89,7 +89,7 @@ $dbannerhgt: 965px;
       }
       button {
         font-size: 0;
-        background-color: rgba(27, 61, 110,0.3);
+        //background-color: rgba(27, 61, 110,0.3);
         width: 40px;
         height: 40px;
         position: absolute;
@@ -97,14 +97,14 @@ $dbannerhgt: 965px;
         right: 0;
         z-index: 999999;
         z-index: 9999999;
-        border: 2px solid #1b3d6e;
+        //border: 2px solid #909090;
         border-radius: 50%;
         &::after,
         &::before {
           display: none;
         }
         &.playBtn {
-          background-image: url('#{$img}/playpause_btn.png');
+          background-image: url('#{$img}/video_play.svg');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 0 0;
@@ -116,31 +116,31 @@ $dbannerhgt: 965px;
             background-position: 0 0;
           }
           &.play {
-            background-image: url('#{$img}/playpause_btn.png');
+            background-image: url('#{$img}/video_play.svg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: 0 0;
-            border: 2px solid #1b3d6e;
+            //border: 2px solid #909090;
           }
           &.pause {
-            background-image: url('#{$img}/playpause_btn.png');
+            background-image: url('#{$img}/video_pause.svg');
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: 0 -48px;
-            border: 2px solid #1b3d6e;
+            background-position: 0 0px;
+            //border: 2px solid #909090;
           }
         }
         &.muteBtn {
-          background-image: url('#{$img}/on.png');
+          background-image: url('#{$img}/sound_on.svg');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 0 0;
           right: 56px;
           &.muted {
-            background-image: url('#{$img}/off.png');
+            background-image: url('#{$img}/sound_off.svg');
           }
           &.unmuted {
-            background-image: url('#{$img}/on.png');
+            background-image: url('#{$img}/sound_on.svg');
           }
         }
 
@@ -533,19 +533,19 @@ $dbannerhgt: 965px;
   .titleBlock {
     margin-bottom: -5px;
     h2 {
-      font-weight: 700;
+      font-weight: 400;
       font-size: 39px;
       color: #ec2c3a;
       padding-left: 20px;
       text-transform: uppercase;
-      line-height: 35px;
+      line-height: 34px;
     }
   }
   .redBlock {
     background: #ec2c3a;
     padding: 9px 0 17px;
     h2 {
-      font-weight: 400;
+      font-weight: 700;
       font-size: 39px;
       color: #FFF;
       padding-left: 20px;
@@ -1452,7 +1452,7 @@ $dbannerhgt: 965px;
       //max-width: calc(100% - 210px);
       //margin: 0 20px -4px;
       h2 {
-        line-height: 27px;
+        line-height: 25px;
       }
     }
     .redBlock {
@@ -2011,7 +2011,7 @@ $dbannerhgt: 965px;
       //margin: 0 59px;
       h2 {
         font-size: 38px;
-        line-height: 33px;
+        line-height: 32px;
       }
     }
     .titleBlock {
@@ -2529,7 +2529,7 @@ $dbannerhgt: 965px;
     .redBlock {
       h2 {
         font-size: 63px;
-        line-height: 55px;
+        line-height: 54px;
       }
     }
     .titleBlock {
@@ -2625,7 +2625,7 @@ $dbannerhgt: 965px;
       padding: 49px 0 31px;
     }
     h2 {
-      font-size: 50px;
+      font-size: 47px;
       + p {
         padding-top: 30px;
       }

@@ -1021,7 +1021,7 @@ $(window).scroll(function() {
 					$('.stickyEmpty').css({'height':  $('header').height()});
 	    }
 		}
-    if (scrollTop > 100) {
+    if (scrollTop > 50) {
         $('header').addClass('stickyActive');
         $('.stickyEmpty').addClass('active');
 				$('.stickyEmpty').css({'height':  $('header').height()});
