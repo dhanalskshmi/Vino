@@ -513,6 +513,9 @@ a:active, a:focus {
 .nprogress-busy .backtoTop {
   display: none;
 }
+.nprogress-busy #skiptocontent {
+  display: none;
+}
 
 img {
   max-width: 100%;
@@ -1699,6 +1702,11 @@ header.stickyActive .mainNav {
   display: block;
 }
 
+@media screen and (max-width: 767px) {
+  header {
+    position: fixed;
+  }
+}
 @media screen and (min-width: 768px) {
   header.stickyActive .headerWrapper {
     background: none;
