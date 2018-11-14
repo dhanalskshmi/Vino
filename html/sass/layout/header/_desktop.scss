@@ -863,6 +863,7 @@ header {
 				&.active,
 				&:hover {
 					.SubmenuWrapper {
+						visibility: visible;
 						display: block;
 						.bgWrap {
 							opacity: 1;
@@ -933,6 +934,7 @@ header {
 		left: 0;
 		top: 83px;
 		display: none;
+		visibility: hidden;
 		box-shadow: 0 3px 6px -4px #000;
 		.borderLine {
 			display: none;

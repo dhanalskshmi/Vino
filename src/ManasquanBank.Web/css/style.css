@@ -2065,6 +2065,7 @@ header.stickyActive .mainNav {
   }
 
   .mainNav ul li:focus-within .SubmenuWrapper, .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
+    visibility: visible;
     display: block;
   }
   .mainNav ul li:focus-within .SubmenuWrapper .bgWrap, .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
@@ -2130,6 +2131,7 @@ header.stickyActive .mainNav {
     left: 0;
     top: 83px;
     display: none;
+    visibility: hidden;
     box-shadow: 0 3px 6px -4px #000;
   }
   .SubmenuWrapper .borderLine {
