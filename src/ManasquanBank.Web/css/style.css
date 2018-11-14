@@ -1942,7 +1942,7 @@ header.stickyActive .mainNav {
     background: #1c3d6d;
     color: #FFF;
   }
-  .headerNav .topNav li.iWantto.active ul, .headerNav .topNav li.iWantto:hover ul {
+  .headerNav .topNav li.iWantto:focus ul, .headerNav .topNav li.iWantto.active ul, .headerNav .topNav li.iWantto:hover ul {
     opacity: 1;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -2064,16 +2064,16 @@ header.stickyActive .mainNav {
     visibility: visible;
   }
 
-  .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
+  .mainNav ul li:focus .SubmenuWrapper, .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
     display: block;
   }
-  .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
+  .mainNav ul li:focus .SubmenuWrapper .bgWrap, .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
     opacity: 1;
   }
-  .mainNav ul li.active.shortNav, .mainNav ul li:hover.shortNav {
+  .mainNav ul li:focus.shortNav, .mainNav ul li.active.shortNav, .mainNav ul li:hover.shortNav {
     position: relative;
   }
-  .mainNav ul li.active .subNav, .mainNav ul li:hover .subNav {
+  .mainNav ul li:focus .subNav, .mainNav ul li.active .subNav, .mainNav ul li:hover .subNav {
     display: block;
   }
 
