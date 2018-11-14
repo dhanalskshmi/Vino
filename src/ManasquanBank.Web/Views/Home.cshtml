@@ -13,12 +13,9 @@
     string[] classes = new string[] { "bunisessBank", "serviceContent", "personalBank", "mortage", "kasasa", "didgitalCenter", "clentService" };
     /* Action Panel */
     var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
-    Html.RequiresCss("~/css/lib/jquery.mb.YTPlayer.min.css");
-    Html.RequiresJs("~/scripts/lib/jquery.mb.YTPlayer.js");
-
-
+    Html.RequiresCss("~/css/lib/jquery.mb.YTPlayer.min.css", 3);
+    Html.RequiresJs("~/scripts/lib/jquery.mb.YTPlayer.js", 7);
 }
-
 @section BackgroundImage {
     @if (!string.IsNullOrEmpty(backgroundVideo))
     {

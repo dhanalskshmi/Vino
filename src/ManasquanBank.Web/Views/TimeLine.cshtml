@@ -9,8 +9,8 @@
 @using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-    Html.RequiresCss("~/css/lib/jquery-ui.css");
-    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
+    Html.RequiresCss("~/css/lib/jquery-ui.css", 6);
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js", 8);
     var timelinetitle = Model.Content.GetPropertyValue<string>("siteTitle");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var timelineListing = Model.Content.Children.Where("Visible");
