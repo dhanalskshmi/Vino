@@ -6,16 +6,16 @@
     var favicon = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("favicon");
     var logo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("siteLogo");
     var openAccountLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("openAnAccount");
-    Html.RequiresCss("~/css/lib/nprogress.css");
-    Html.RequiresCss("~/css/lib/bootstrap.min.css");
-    Html.RequiresCss("~/css/style.min.css");
-    Html.RequiresJs("~/scripts/lib/jquery.js");
-    Html.RequiresJs("~/scripts/lib/nprogress.js");
-    Html.RequiresJs("~/scripts/lib/modernizr-custom.js");
-    Html.RequiresJs("~/scripts/lib/scrollanimation.js");
-    Html.RequiresJs("~/scripts/lib/waypoints.min.js");
-    Html.RequiresJs("~/scripts/lib/jquery.validate.min.js");
-    Html.RequiresJs("~/scripts/main.min.js");        
+    Html.RequiresCss("~/css/lib/nprogress.css", 1);
+    Html.RequiresCss("~/css/lib/bootstrap.min.css", 2);
+    Html.RequiresCss("~/css/style.min.css", 15);
+    Html.RequiresJs("~/scripts/lib/jquery.js", 1);
+    Html.RequiresJs("~/scripts/lib/nprogress.js", 2);
+    Html.RequiresJs("~/scripts/lib/modernizr-custom.js", 3);
+    Html.RequiresJs("~/scripts/lib/scrollanimation.js", 4);
+    Html.RequiresJs("~/scripts/lib/waypoints.min.js", 5);
+    Html.RequiresJs("~/scripts/lib/jquery.validate.min.js", 6);
+    Html.RequiresJs("~/scripts/main.min.js", 20);        
 
 }
 <!DOCTYPE html>
@@ -100,8 +100,8 @@
             <!--<div class="overlay"></div>-->
         </div>
     </div>
-    <script src="https://www.google.com/recaptcha/api.js" defer></script>
     @Html.RenderJsHere()
+<script src="https://www.google.com/recaptcha/api.js" defer></script>
     @RenderSection("InnerBottomScript", false)
 </body>
 </html>

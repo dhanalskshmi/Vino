@@ -8,8 +8,8 @@
 @using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-    Html.RequiresCss("~/css/lib/jquery-ui.css");
-    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
+    Html.RequiresCss("~/css/lib/jquery-ui.css", 9);
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js", 10);
     //var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var imageBadge = Model.Content.GetPropertyValue<IPublishedContent>("imageBadge");

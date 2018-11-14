@@ -11,10 +11,10 @@
 @using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-    Html.RequiresCss("~/css/lib/jquery-ui.css");
-    Html.RequiresCss("~/css/lib/datepicker.css");
-    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
-    Html.RequiresJs("~/scripts/lib/bootstrap-datepicker.js");
+    Html.RequiresCss("~/css/lib/jquery-ui.css", 7);
+    Html.RequiresCss("~/css/lib/datepicker.css", 8);
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js", 8);
+    Html.RequiresJs("~/scripts/lib/bootstrap-datepicker.js", 9);
     var title = Model.Content.GetPropertyValue<string>("mediacenterTitle");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");

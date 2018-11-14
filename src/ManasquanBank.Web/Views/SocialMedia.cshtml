@@ -16,7 +16,7 @@
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
-    Html.RequiresJs("~/scripts/lib/jquery.filterizr.min.js");
+    Html.RequiresJs("~/scripts/lib/jquery.filterizr.min.js", 16);
 }
 
 @section BackgroundImage {
