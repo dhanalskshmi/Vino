@@ -389,8 +389,9 @@ $dbannerhgt: 965px;
           font-weight: 400;
           letter-spacing: -13px;
           line-height: 92px;
-          margin-top: -22px;
-          padding-left: 75px;
+          margin-top: 11px;
+          //margin-top: -22px;
+          //padding-left: 75px;
           width: 274px;
           span {
             font-size: 62px;
@@ -1279,7 +1280,7 @@ $dbannerhgt: 965px;
           }
         }
         &.mortage {
-          padding: 0 26px;
+          padding: 0 24px;
           .serviceContent {
             position: static;
             padding: 22px 0 0;
@@ -1902,7 +1903,8 @@ $dbannerhgt: 965px;
             line-height: 27px;
             strong {
               font-size: 56px;
-              margin-top: 33px;
+              //margin-top: 33px;
+              margin-top: 25px;
             }
           }
           .serviceContent {
@@ -2418,13 +2420,15 @@ $dbannerhgt: 965px;
             }
             strong {
               font-size: 126px;
-              padding-left: 60px;
-              margin-top: 43px;
+              //padding-left: 60px;
+              //margin-top: 43px;
+              margin-top: 63px;
               text-align: left;
+              letter-spacing: -8px;
               span {
                 font-size: 66px;
                 margin-top: -23px;
-                margin-left: -30px;
+                margin-left: -10px;
               }
             }
           }

@@ -14,7 +14,7 @@ $( window ).on("load", function() {
 
 if ($('.contactForm').length > 0) {
     $(document).ready(function () {
-     
+
         jQuery.validator.addMethod("EmailVal", function (e, t) {
             var o = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return this.optional(t) || o.test(e)
@@ -32,7 +32,7 @@ if ($('.contactForm').length > 0) {
                 },
             },
             ignore: [],
-            
+
             errorPlacement: function (error, element) {
             return true;
         },
@@ -53,7 +53,7 @@ if ($('.contactForm').length > 0) {
                 grecaptcha.reset(reCaptchaID);
                 grecaptcha.execute(reCaptchaID);
             },
-            // errorPlacement: function (error, element) { 
+            // errorPlacement: function (error, element) {
             //     return true;
             // }
         });
@@ -71,7 +71,7 @@ if ($('.contactForm').length > 0) {
         validator.checkForm();
         }
     });
-    
+
 
     $('.contactForm .selectBox').not("select.multiple, #country").selectmenu({
         style: 'dropdown',
@@ -93,7 +93,7 @@ if ($('.contactForm').length > 0) {
 $(document).ready(function () {
     if ($('.checkbox').length > 0) {
         $(".checkbox").focusin(function () {
-            console.log("sadgk");
+            //console.log("sadgk");
             $(this).closest('.custom-checkbox').find('.checkmark').addClass("FocusIn");
         });
         $(".checkbox").focusout(function () {
@@ -101,6 +101,6 @@ $(document).ready(function () {
         });
     }
 
-   
+
 
 });

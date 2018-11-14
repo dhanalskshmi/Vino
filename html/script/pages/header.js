@@ -970,7 +970,7 @@ $(document).ready(function() {
 	}, 500);
 	$(window).on("load resize",function() {
 		$('.SubmenuWrapper').css({'top': ''});
-		console.log("resized");
+		//console.log("resized");
 		setTimeout(function() {
 			$('.SubmenuWrapper').css({'top': $('header').height()});
 		}, 500);
@@ -1006,7 +1006,7 @@ $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
 
 		if ($("body").width() <= 767) {
-			console.log(scroll);
+			//console.log(scroll);
 			$('.loginBlocks').css({'top': scroll + $('header').height()});
 		}
 });
@@ -1037,7 +1037,7 @@ $(window).scroll(function() {
 			$(window).on("load resize",function() {
 				$('.stickyEmpty').css({'height':  $('header').height()});
 				$('.SubmenuWrapper').css({'top': ''});
-				console.log("resized");
+				//console.log("resized");
 				setTimeout(function() {
 					$('.SubmenuWrapper').css({'top': $('header').height()});
 					$('.stickyEmpty').css({'height':  $('header').height()});
@@ -1059,7 +1059,7 @@ $(window).scroll(function() {
 		}, 500);
 		$(window).on("load resize",function() {
 			$('.stickyActive .SubmenuWrapper').css({'top': ''});
-			console.log("resized");
+			//console.log("resized");
 			setTimeout(function() {
 				if ($("body").width() >= 768) {
 					$('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 23 });

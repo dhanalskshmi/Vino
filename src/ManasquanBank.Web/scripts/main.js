@@ -970,7 +970,7 @@ $(document).ready(function() {
 	}, 500);
 	$(window).on("load resize",function() {
 		$('.SubmenuWrapper').css({'top': ''});
-		console.log("resized");
+		//console.log("resized");
 		setTimeout(function() {
 			$('.SubmenuWrapper').css({'top': $('header').height()});
 		}, 500);
@@ -1006,7 +1006,7 @@ $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
 
 		if ($("body").width() <= 767) {
-			console.log(scroll);
+			//console.log(scroll);
 			$('.loginBlocks').css({'top': scroll + $('header').height()});
 		}
 });
@@ -1037,7 +1037,7 @@ $(window).scroll(function() {
 			$(window).on("load resize",function() {
 				$('.stickyEmpty').css({'height':  $('header').height()});
 				$('.SubmenuWrapper').css({'top': ''});
-				console.log("resized");
+				//console.log("resized");
 				setTimeout(function() {
 					$('.SubmenuWrapper').css({'top': $('header').height()});
 					$('.stickyEmpty').css({'height':  $('header').height()});
@@ -1059,7 +1059,7 @@ $(window).scroll(function() {
 		}, 500);
 		$(window).on("load resize",function() {
 			$('.stickyActive .SubmenuWrapper').css({'top': ''});
-			console.log("resized");
+			//console.log("resized");
 			setTimeout(function() {
 				if ($("body").width() >= 768) {
 					$('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 23 });
@@ -1298,7 +1298,7 @@ $( window ).on("load", function() {
 
 if ($('.contactForm').length > 0) {
     $(document).ready(function () {
-     
+
         jQuery.validator.addMethod("EmailVal", function (e, t) {
             var o = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return this.optional(t) || o.test(e)
@@ -1316,7 +1316,7 @@ if ($('.contactForm').length > 0) {
                 },
             },
             ignore: [],
-            
+
             errorPlacement: function (error, element) {
             return true;
         },
@@ -1337,7 +1337,7 @@ if ($('.contactForm').length > 0) {
                 grecaptcha.reset(reCaptchaID);
                 grecaptcha.execute(reCaptchaID);
             },
-            // errorPlacement: function (error, element) { 
+            // errorPlacement: function (error, element) {
             //     return true;
             // }
         });
@@ -1355,7 +1355,7 @@ if ($('.contactForm').length > 0) {
         validator.checkForm();
         }
     });
-    
+
 
     $('.contactForm .selectBox').not("select.multiple, #country").selectmenu({
         style: 'dropdown',
@@ -1377,7 +1377,7 @@ if ($('.contactForm').length > 0) {
 $(document).ready(function () {
     if ($('.checkbox').length > 0) {
         $(".checkbox").focusin(function () {
-            console.log("sadgk");
+            //console.log("sadgk");
             $(this).closest('.custom-checkbox').find('.checkmark').addClass("FocusIn");
         });
         $(".checkbox").focusout(function () {
@@ -1385,9 +1385,10 @@ $(document).ready(function () {
         });
     }
 
-   
+
 
 });
+
 
 if ($('.timelineWrappers').length > 0) {
 
@@ -1896,7 +1897,7 @@ $(document).ready(function(){
 
  $(window).on("load resize scroll",function(e){
    //make_sticky_nav();
-   console.log("test");
+   //console.log("test");
  animate_time_line();
  auto_position_timeline();
  //scrolltobottomarrowfit();

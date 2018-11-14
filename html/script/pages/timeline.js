@@ -506,7 +506,7 @@ $(document).ready(function(){
 
  $(window).on("load resize scroll",function(e){
    //make_sticky_nav();
-   console.log("test");
+   //console.log("test");
  animate_time_line();
  auto_position_timeline();
  //scrolltobottomarrowfit();
