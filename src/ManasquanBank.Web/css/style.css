@@ -1761,7 +1761,7 @@ header.stickyActive .mainNav {
   }
   .menuWrapper .headerNav,
   .menuWrapper .loginBlocks {
-    float: right;
+    float: left;
   }
 
   .menuWrapper {
@@ -1785,6 +1785,7 @@ header.stickyActive .mainNav {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
+    float: right;
   }
   .menuWrapper .loginBlocks .personalLogin,
   .menuWrapper .loginBlocks .businessLogin {
