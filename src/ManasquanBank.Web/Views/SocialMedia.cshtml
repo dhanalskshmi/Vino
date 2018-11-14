@@ -9,12 +9,14 @@
 @using System.Text.RegularExpressions
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ManasquanBank.Web.Helpers;
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var introText = Model.Content.GetPropertyValue<string>("introText");
     var siteTitle = Model.Content.GetPropertyValue<string>("siteTitle");
     SocialFeedController t = new SocialFeedController();
+    Html.RequiresJs("~/scripts/lib/jquery.filterizr.min.js");
 }
 
 @section BackgroundImage {
@@ -392,7 +394,6 @@ catch (Exception e)
     </section>
 </div>
 @section InnerBottomScript {
-<script type='text/javascript' src='~/scripts/lib/jquery.filterizr.min.js'></script>
 <script>
     $(window).on("load", function (e) {
         // Default options

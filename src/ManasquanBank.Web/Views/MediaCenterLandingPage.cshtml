@@ -8,8 +8,13 @@
 @using Umbraco.Web.Extensions
 @using System.Linq
 @using System.Web.Script.Serialization;
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
+    Html.RequiresCss("~/css/lib/jquery-ui.css");
+    Html.RequiresCss("~/css/lib/datepicker.css");
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
+    Html.RequiresJs("~/scripts/lib/bootstrap-datepicker.js");
     var title = Model.Content.GetPropertyValue<string>("mediacenterTitle");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
@@ -128,8 +133,7 @@
 }
 @section InnerTopStyle {
 
-    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
-    <link href="~/css/lib/datepicker.css" rel="stylesheet" />
+   
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -395,8 +399,6 @@
     </section>
 </div>
 @section InnerBottomScript {
-    <script src="~/scripts/lib/jquery-ui.js"></script>
-    <script src="~/scripts/lib/bootstrap-datepicker.js"></script>
     <script>
         $(function () {
             $("#resourceType").selectmenu();

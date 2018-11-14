@@ -7,7 +7,6 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
-
     var title = Model.Content.GetPropertyValue<string>("title");
     var bgImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
@@ -15,8 +14,6 @@
     var CTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
     var services = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("service");
     var actionPanel = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("actionPanel");
-
-
 }
 @section BackgroundImage {
     @if (bgImage != null)
@@ -27,7 +24,6 @@
     }
 }
 <section class="heroBanner">
-   
 </section>
 <section class="heroBlock csheorBlk" id="sliders-container">
     <div class="containerWrapper">
@@ -40,7 +36,6 @@
             {
                 @Html.Raw(content)
             }
-
             <ul class="heroLinks">
                 @if (Model.Content.HasValue("cTAButton1"))
                 {
@@ -184,17 +179,13 @@
 
                         </li>
                     }
-
                 }
-
-
             </ul>
         </div>
     </div>
 </section>
 <section class="service-section">
     <div class="containerWrapper">
-
         @if (Model.Content.HasValue("service"))
         {
             foreach (var item in services)
@@ -205,10 +196,6 @@
                 if (!string.IsNullOrEmpty(clientServiceBGColor))
                 {
                     <div class="bgWrap" style="background-color:@clientServiceBGColor">
-
-
-
-
                         @if (!string.IsNullOrEmpty(clientServiceTitle))
                         {
                             <h2>@clientServiceTitle</h2>

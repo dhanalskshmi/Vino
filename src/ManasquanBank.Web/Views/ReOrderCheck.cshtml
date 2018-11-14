@@ -8,9 +8,12 @@
 @using Umbraco.Web.Extensions
 @using System.Linq
 @using System.Web.Script.Serialization;
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-
+    Html.RequiresCss("~/css/lib/jquery-ui.css");
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
+    Html.RequiresJs("~/scripts/lib/country-json.jss");
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
@@ -19,12 +22,6 @@
     var thankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
     var reOrderCheckAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
     var reOrderCheckConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
-
-
-}
-@section InnerTopStyle {
-
-    <link href="~/css/lib/jquery-ui.css" rel="stylesheet" />
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -35,10 +32,7 @@
     }
 }
 <div class="re-order">
-
-    <section class="heroBanner">
-        
-    </section>
+    <section class="heroBanner"></section>
     <section class="heroBlock" id="sliders-container">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -338,8 +332,6 @@
     </section>
 </div>
 @section InnerBottomScript {
-    <script src="~/scripts/lib/jquery-ui.js"></script>
-    <script src="~/scripts/lib/country-json.js"></script>
 <script>
     $(document).ready(function() {
       $("#contactSucc").length > 0 && $("html, body").animate({

@@ -8,9 +8,14 @@
 @using Umbraco.Web.Extensions
 @using System.Linq
 @using System.Web.Script.Serialization;
+@using ClientDependency.Core.Mvc
 @{
     Layout = "Master.cshtml";
-
+    Html.RequiresCss("~/css/lib/jquery-ui.css");
+    Html.RequiresCss("~/css/lib/jquery.timepicker.css");
+    Html.RequiresJs("~/scripts/lib/jquery-ui.js");
+    Html.RequiresJs("~/scripts/lib/jquery.timepicker.min.js");
+    Html.RequiresJs("~/scripts/lib/country-json.js");
     var title = Model.Content.GetPropertyValue<string>("title");
     var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
     var content = Model.Content.GetPropertyValue<string>("content");
@@ -23,14 +28,14 @@
     var loanOfficer = Model.Content.GetPropertyValue<string>("loanOfficer");
     string[] purposeOfLoanList = purposeOfLoan.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
-    if(purposeOfLoanList.Length == 1)
+    if (purposeOfLoanList.Length == 1)
     {
         purposeOfLoanList = purposeOfLoan.Split(new string[] { "\n" }, StringSplitOptions.None);
     }
 
     string[] loanOfficerList = loanOfficer.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
-    if(loanOfficerList.Length == 1)
+    if (loanOfficerList.Length == 1)
     {
         loanOfficerList = loanOfficer.Split(new string[] { "\n" }, StringSplitOptions.None);
     }
@@ -49,9 +54,7 @@
     }
 }
 <div class="re-order request">
-    <section class="heroBanner">
-       
-    </section>
+    <section class="heroBanner"></section>
     <section class="heroBlock" id="sliders-container">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -385,9 +388,6 @@
 
 </div>
 @section InnerBottomScript {
-    <script src="~/scripts/lib/jquery-ui.js"></script>
-    <script src="~/scripts/lib/jquery.timepicker.min.js"></script>
-    <script src="~/scripts/lib/country-json.js"></script>
 <script>
     $(document).ready(function() {
         $('#timepicker_field').timepicker();
