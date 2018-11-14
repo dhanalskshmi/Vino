@@ -609,6 +609,8 @@
     <Content Include="images\home\demo_icon.png" />
     <Content Include="images\home\google_app.png" />
     <Content Include="images\home\img_or.png" />
+    <Content Include="images\home\off.png" />
+    <Content Include="images\home\on.png" />
     <Content Include="images\home\playpause_btn.png" />
     <Content Include="images\home\prdinfo_icon.png" />
     <Content Include="images\home\security_icon.png" />
@@ -617,10 +619,16 @@
     <Content Include="images\home\service_3.jpg" />
     <Content Include="images\home\service_4.jpg" />
     <Content Include="images\home\service_img.png" />
+    <Content Include="images\home\sound_off.svg" />
+    <Content Include="images\home\sound_on.svg" />
     <Content Include="images\home\tweet.png" />
     <Content Include="images\home\tweets.jpg" />
     <Content Include="images\home\tweets_fill.jpg" />
+    <Content Include="images\home\tweets_fill.png" />
     <Content Include="images\home\video_icon.png" />
+    <Content Include="images\home\video_loader.gif" />
+    <Content Include="images\home\video_pause.svg" />
+    <Content Include="images\home\video_play.svg" />
     <Content Include="images\location-detail\address-icon.png" />
     <Content Include="images\location-detail\alertImage.jpg" />
     <Content Include="images\location-detail\atm-icon.png" />
