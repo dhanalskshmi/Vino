@@ -1590,7 +1590,7 @@ header {
 			&.col-3 {
 				.borderLine {
 					i {
-						min-height: 244px;
+						min-height: 264px;
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
@@ -1605,7 +1605,7 @@ header {
 				}
 				.flexBox {
 					width: calc((100% / 5) * 2);
-					height: 280px;
+					height: 300px;
 					.cols {
 						//width: 33.33%;
 					}

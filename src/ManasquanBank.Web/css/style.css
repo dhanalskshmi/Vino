@@ -2676,7 +2676,7 @@ header.stickyActive .mainNav {
     left: calc((400% / 5) - 5px);
   }
   .flatNav .SubmenuWrapper.col-3 .borderLine i {
-    min-height: 244px;
+    min-height: 264px;
   }
   .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
     display: none;
@@ -2684,7 +2684,7 @@ header.stickyActive .mainNav {
   .flatNav .SubmenuWrapper.col-3 .flexBox {
     width: -webkit-calc((100% / 5) * 2);
     width: calc((100% / 5) * 2);
-    height: 280px;
+    height: 300px;
   }
   .flatNav .SubmenuWrapper.col-7 .flexBox {
     height: 310px;
