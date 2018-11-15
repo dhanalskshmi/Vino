@@ -155,13 +155,23 @@
 </section>
 
 @if (rates != null)
-            {
-                foreach (var rate in rates)
-                {
-                    var ratetitle = rate.GetPropertyValue<string>("ratesTitle");
-                    var rateContent = rate.GetPropertyValue<string>("content");
+{
+    foreach (var rate in rates)
+    {
+        var ratetitle = rate.GetPropertyValue<string>("ratesTitle");
+        var rateContent = rate.GetPropertyValue<string>("content");
 
-        <section class="greyPanel rates">
+        string scrollId = ratetitle.Replace(" ", "").ToLower().Trim();
+        string[] chars = new string[] { ",", ".", "/", "!", "@", "#", "$", "%", "^", "&", "*", "'", "\"", ";", "_", "(", ")", ":", "|", "[", "]", "®" };
+        for (int i = 0; i < chars.Length; i++)
+        {
+            if (scrollId.Contains(chars[i]))
+            {
+                scrollId = scrollId.Replace(chars[i], "");
+            }
+        }
+
+        <section class="greyPanel rates" id="@scrollId">
             <div class="containerWrapper">
                 <div class="bgWrap">
                     <div class="titleWrap">
@@ -186,8 +196,25 @@
         </section>
     }
 }
+@{
+    string scrollIdL = string.Empty;
 
-<section class="greyPanel lft-img bContent clientServiceNeed">
+    if (!string.IsNullOrEmpty(lendingTitle))
+    {
+        scrollIdL = lendingTitle.Replace(" ", "").ToLower().Trim();
+        string[] chars = new string[] { ",", ".", "/", "!", "@", "#", "$", "%", "^", "&", "*", "'", "\"", ";", "_", "(", ")", ":", "|", "[", "]", "®" };
+        for (int i = 0; i < chars.Length; i++)
+        {
+            if (scrollIdL.Contains(chars[i]))
+            {
+                scrollIdL = scrollIdL.Replace(chars[i], "");
+            }
+        }
+    }
+
+
+
+<section class="greyPanel lft-img bContent clientServiceNeed" id="@scrollIdL">
     <div class="containerWrapper">
         <div class="bgWrap">
             <div class="flexWrapper">
@@ -205,7 +232,7 @@
                     {
                         <h3 class="hidden-xs">@lendingTitle</h3>
                     }
-                    @if(!string.IsNullOrEmpty(lendingContent))
+                    @if (!string.IsNullOrEmpty(lendingContent))
                     {
                         @Html.Raw(lendingContent)
                     }
@@ -230,3 +257,5 @@
         </div>
     </div>
 </section>
+
+    }

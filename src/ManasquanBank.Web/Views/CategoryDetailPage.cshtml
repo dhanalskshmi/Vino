@@ -4,6 +4,7 @@
 @using Newtonsoft.Json
 @using Umbraco.Web.Extensions
 @using System.Linq
+@using System.Text.RegularExpressions;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
@@ -217,10 +218,20 @@
         var branchLocator = product.GetPropertyValue<Link>("branchLocator");
         var applyNow = product.GetPropertyValue<Link>("applyNow");
 
+        string scrollId = productTitle.Replace(" ", "").ToLower().Trim();
+        string[] chars = new string[] { ",", ".", "/", "!", "@", "#", "$", "%", "^", "&", "*", "'", "\"", ";", "_", "(", ")", ":", "|", "[", "]", "®" };
+        for(int i=0;i< chars.Length;i++)
+        {
+            if(scrollId.Contains(chars[i]))
+            {
+                scrollId = scrollId.Replace(chars[i], "");
+            }
+        }
+
 
         if (flag == false)
         {
-            <section class="categorySection">
+             <section class="categorySection" id="@scrollId">
                 <div class="containerWrapper">
                     <div class="bgWrap">
                         <div class="flexWrap">
@@ -364,7 +375,7 @@
         }
         else if (flag == true)
         {
-            <section class="categorySection rightImg">
+            <section class="categorySection rightImg" id="@scrollId">
                 <div class="containerWrapper">
                     <div class="bgWrap">
                         <div class="flexWrap">
@@ -480,7 +491,7 @@
                     {
                         <div class="bgWrap colbgWrap">
                             <div class="catCollapse">
-                               @Html.Raw(featuresList)
+                                @Html.Raw(featuresList)
                                 <div class="catLearn">
                                     @if (learnMore != null)
                                     {

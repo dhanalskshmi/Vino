@@ -103,6 +103,26 @@
     @Html.RenderJsHere()
 <script src="https://www.google.com/recaptcha/api.js" defer></script>
     @RenderSection("InnerBottomScript", false)
+
+<script>
+    $(document).ready(function () {
+        var hasparameter = window.location.hash;
+
+        if (hasparameter != "" && $(hasparameter).length > 0) {
+            var h = $(hasparameter).offset().top;
+                $("html, body").animate({ scrollTop: h }, "slow");
+        }
+    });
+
+    $(window).load(function () {
+        var hasparameter = window.location.hash;
+
+        if (hasparameter != "" && $(hasparameter).length > 0) {
+            var h = $(hasparameter).offset().top;
+            $("html, body").animate({ scrollTop: h }, "slow");
+        }
+    });
+</script>
 </body>
 </html>
 
