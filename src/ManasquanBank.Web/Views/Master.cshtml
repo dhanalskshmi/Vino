@@ -112,6 +112,12 @@
            
                  var h = $(hasparameter).offset().top - $('header').height();
                 $("html, body").animate({ scrollTop: h }, "slow");
+                if ($("body").width() >= 768) {
+                    $('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 23 });
+                   }
+                   if ($("body").width() >= 1280) {
+                    $('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 34 });
+                   }
         }
 
     $("a").not("a.msubMenu").click(function (e) {
