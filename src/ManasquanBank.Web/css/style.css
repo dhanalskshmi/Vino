@@ -12782,6 +12782,9 @@ table.checking tbody tr td:nth-child(2) {
 .tableClass .bgWrap table thead tr th:last-child, .greyPanel.rates .bgWrap table thead tr th:last-child {
   border-right: 0px;
 }
+.tableClass .bgWrap table thead tr th a, .greyPanel.rates .bgWrap table thead tr th a {
+  color: inherit;
+}
 .tableClass .bgWrap table tbody tr td, .greyPanel.rates .bgWrap table tbody tr td {
   border-bottom: 4px solid #f1f1f1;
   border-right: 4px solid #f1f1f1;
@@ -12829,6 +12832,9 @@ table.checking tbody tr td:nth-child(2) {
 }
 .tableClass .bgWrap table tbody tr td:last-child, .greyPanel.rates .bgWrap table tbody tr td:last-child {
   border-right: 0px;
+}
+.tableClass .bgWrap table tbody tr td a, .greyPanel.rates .bgWrap table tbody tr td a {
+  color: inherit;
 }
 .tableClass .bgWrap table tbody tr:last-child td, .greyPanel.rates .bgWrap table tbody tr:last-child td {
   border-bottom: 0px;

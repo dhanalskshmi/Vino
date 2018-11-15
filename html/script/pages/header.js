@@ -1015,16 +1015,16 @@ $(window).scroll(function (event) {
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
 		if ($("body").width() <= 767) {
-			if (scrollTop > 50) {
+			if (scrollTop > 20) {
 	        $('header').addClass('stickyActive');
 	        $('.stickyEmpty').addClass('active');
-					$('.stickyEmpty').css({'height':  $('header').height()});
+					//$('.stickyEmpty').css({'height':  $('header').height()});
 	    }
 		}
-    if (scrollTop > 50) {
+    if (scrollTop > 26) {
         $('header').addClass('stickyActive');
         $('.stickyEmpty').addClass('active');
-				$('.stickyEmpty').css({'height':  $('header').height()});
+				//$('.stickyEmpty').css({'height':  $('header').height()});
     }
 		else if (scrollTop > 0) {
 			$('header').removeClass('stickyActive');
@@ -1035,7 +1035,7 @@ $(window).scroll(function() {
 				$('.SubmenuWrapper').css({'top': $('header').height()});
 			}, 0);
 			$(window).on("load resize",function() {
-				$('.stickyEmpty').css({'height':  $('header').height()});
+				//$('.stickyEmpty').css({'height':  $('header').height()});
 				$('.SubmenuWrapper').css({'top': ''});
 				//console.log("resized");
 				setTimeout(function() {
@@ -1075,7 +1075,6 @@ $(window).scroll(function() {
 
 });
 
-$(window).on("load resize",function() {
+$(window).on("load resize scroll",function() {
 	$('.stickyEmpty').css({'height':  $('header').height()});
-
 });

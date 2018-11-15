@@ -874,3 +874,207 @@
         }
     }
 }
+.greyPanel {
+    &.charityFound{
+        margin-bottom: 100px;
+        .bgWrap{
+            padding-left: 65px;
+            padding-right: 65px;
+            padding-bottom: 80px;
+            color: #3d3d3d;
+            @include bp(tablet){
+                padding: 20px 20px 50px 20px;
+            }
+            @include bp(tablet){
+                padding: 20px 10px 50px 10px;
+            }
+            ul{
+                padding-left: 10px;
+                li{
+                    font-size: 18px;
+                    position: relative;
+                    &:after{
+                        position: absolute;
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        background: #000;
+                        border-radius: 50%;
+                        left: -10px;
+                        top: 9px;
+                    }
+                }
+            }
+            h3 {
+                font-size: 36px;
+                padding-bottom: 22px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #1268e5;
+                @include bp(landscape) {
+                    font-size: 24px;
+                    padding-bottom: 15px;
+                }
+                @include bp(tablet) {
+                    font-size: 22px;
+                    padding-bottom: 15px;
+                }
+                @include bp(mobile) {
+                    font-size: 22px;
+                    padding-bottom: 10px;
+                }
+            }
+            hr{
+                border-top-color: #666;
+                margin-top: 57px;
+                margin-bottom: 67px;
+                @include bp(landscape){
+                    margin: 35px 0px;
+                }
+            }
+            .FoundSponsers{
+                display: flex;
+                @include bp(tablet){
+                    flex-direction: column;
+                }
+                .lft{
+                    width: 31.4%;
+                    @include bp(landscape){
+                        width: 60%;
+                    }
+                    @include bp(tablet){
+                        width: 100%;
+                    }
+                    img{
+                        margin-bottom: 6px;
+                        @include bp(tablet){
+                            width: 100%;
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                        line-height: 20px;
+                        strong,b{
+                            font-size: 18px;
+                            line-height: 26px;
+                            @include bp(mobile) {
+                                font-size: 16px;
+                                line-height: 22px;
+                            }
+                        }
+                        +p{
+                            margin-top: 7px;
+                        }
+                    }
+                    +.rgt{
+                        width: calc(100% - 31.4%);
+                        padding-left: 40px;
+                        @include bp(tablet){
+                            width: 100%;
+                            padding-left: 0;
+                        }
+                    }
+                }
+                .rgt{
+                    width: 100%;
+                    h4{
+                        font-size: 20px;
+                        text-transform: uppercase;
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 24px;
+                        +h4{
+                            margin-top: 15px;
+                        }
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            .selectCriteria{
+                display: flex;
+                @include bp(tablet){
+                    flex-direction: column;
+                }
+                .ContentBlk{
+                    width: calc(100% - 540px);
+                    padding-right: 40px;
+                    @include bp(landscape){
+                        width: 60%;
+                        padding-right: 10px;
+                    }
+                    @include bp(tablet){
+                        width: 100%;
+                        padding-right: 0px;
+                    }
+                    h4{
+                        text-transform: uppercase;
+                    }
+                    p{
+                        font-size: 18px;
+                    }
+                }
+                figure{
+                    width: 540px;
+                    @include bp(landscape){
+                        width: 380px;
+                    }
+                    @include bp(tablet){
+                        width: 100%;
+                    }
+                    img{
+                        @include bp(tablet){
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .orgAbility{
+                display: flex;
+                @include bp(tablet){
+                    flex-direction: column;
+                }
+                .ContentBlk{
+                    width: calc(100% - 540px);
+                    padding-left: 40px;
+                    @include bp(landscape){
+                        width: 60%;
+                        padding-left: 30px;
+                    }
+                    @include bp(tablet){
+                        width: 100%;
+                        padding-left: 0;
+                    }
+                    ul{
+                        +p{
+                            margin-top: 39px;
+                        }
+                    }
+                }
+                figure{
+                    width: 540px;
+                    @include bp(landscape){
+                        width: 380px;
+                    }
+                    @include bp(tablet){
+                        width: 100%;
+                    }
+                    img{
+                        margin-bottom: 12px;
+                        @include bp(tablet){
+                            width: 100%;
+                        }
+                    }
+                    figcaption{
+                        font-size: 16px;
+                        @include bp(tablet){
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
