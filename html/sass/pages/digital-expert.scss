@@ -140,6 +140,7 @@
     						i {
     							content: '';
 							    background-image: url(../images/clickswitch/accordian-arrow.png);
+							    transform: rotate(180deg);
 							    display: block;
 							    background-repeat: no-repeat;
 							    background-position: right;
@@ -213,7 +214,7 @@
 						.head-panel {
 							h4 {
 								i {
-									transform: rotate(180deg);
+									transform: rotate(0deg);
 								}
 							}
 						}
