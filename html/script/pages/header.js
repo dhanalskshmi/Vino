@@ -1029,7 +1029,7 @@ $(window).scroll(function() {
 		else if (scrollTop > 0) {
 			$('header').removeClass('stickyActive');
 			$('.stickyEmpty').removeClass('active');
-			$('.stickyEmpty').css({'height':  ''});
+			//$('.stickyEmpty').css({'height':  ''});
 
 			setTimeout(function() {
 				$('.SubmenuWrapper').css({'top': $('header').height()});

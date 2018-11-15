@@ -716,7 +716,7 @@ header {
 						}
 					}
 					//&:focus-within,
-					&.active,
+					&:active,
 					&:hover {
 						ul {
 							opacity: 1;
@@ -1020,7 +1020,7 @@ header {
 			li {
 				//&:focus-within,
 				&:focus,
-				&.active,
+				&:active,
 				&:hover {
 					.SubmenuWrapper {
 						visibility: visible;
@@ -1597,7 +1597,6 @@ header {
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
-						&:nth-child(2),
 						&:nth-child(3),
 						&:nth-child(4) {
 							display: none;

@@ -182,7 +182,6 @@ input[type=text]::-ms-clear {
 }
 
 .loaderBlock {
-  background: #FFF;
   position: fixed;
   top: 0;
   left: 0;
@@ -1951,7 +1950,7 @@ header.stickyActive .mainNav {
     background: #1c3d6d;
     color: #FFF;
   }
-  .headerNav .topNav li.iWantto.active ul, .headerNav .topNav li.iWantto:hover ul {
+  .headerNav .topNav li.iWantto:active ul, .headerNav .topNav li.iWantto:hover ul {
     opacity: 1;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -2218,17 +2217,17 @@ header.stickyActive .mainNav {
             transform: none;
   }
 
-  .mainNav ul li:focus .SubmenuWrapper, .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
+  .mainNav ul li:focus .SubmenuWrapper, .mainNav ul li:active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
     visibility: visible;
     display: block;
   }
-  .mainNav ul li:focus .SubmenuWrapper .bgWrap, .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
+  .mainNav ul li:focus .SubmenuWrapper .bgWrap, .mainNav ul li:active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
     opacity: 1;
   }
-  .mainNav ul li:focus.shortNav, .mainNav ul li.active.shortNav, .mainNav ul li:hover.shortNav {
+  .mainNav ul li:focus.shortNav, .mainNav ul li:active.shortNav, .mainNav ul li:hover.shortNav {
     position: relative;
   }
-  .mainNav ul li:focus .subNav, .mainNav ul li.active .subNav, .mainNav ul li:hover .subNav {
+  .mainNav ul li:focus .subNav, .mainNav ul li:active .subNav, .mainNav ul li:hover .subNav {
     display: block;
   }
 }
@@ -2684,7 +2683,7 @@ header.stickyActive .mainNav {
   .flatNav .SubmenuWrapper.col-3 .borderLine i {
     min-height: 244px;
   }
-  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(2), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
+  .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(3), .flatNav .SubmenuWrapper.col-3 .borderLine i:nth-child(4) {
     display: none;
   }
   .flatNav .SubmenuWrapper.col-3 .flexBox {
