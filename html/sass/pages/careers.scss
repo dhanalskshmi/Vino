@@ -72,6 +72,35 @@
             p {
                 display: block;
             }
+            &.charityHero{
+                margin-bottom: 0;
+                h4{
+                    margin-bottom: 26px;
+                    margin-top: 12px;
+                    font-size: 24px;
+                    @include bp(tablet){
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                        line-height: 24px;
+                    }
+                }
+                p{
+                    display: inline-flex;
+                    align-items: flex-start;
+                    margin-bottom: 11px;
+                    @include bp(tablet){
+                        flex-direction: column;
+                    }
+                }
+                img{
+                    max-width: 390px;
+                    @include bp(tablet){
+                        margin: auto;
+                        max-width: 220px;
+                        margin-bottom: 15px;
+                    }
+                }   
+            }
         }
         .bgWrap {
             padding: 50px 65px 80px 65px;
@@ -893,6 +922,10 @@
                 li{
                     font-size: 18px;
                     position: relative;
+                    @include bp(mobile){
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
                     &:after{
                         position: absolute;
                         content: "";
@@ -980,10 +1013,17 @@
                     h4{
                         font-size: 20px;
                         text-transform: uppercase;
+                        @include bp(landscape){
+                            font-size: 18px;
+                        }
                     }
                     p{
                         font-size: 18px;
                         line-height: 24px;
+                        @include bp(mobile){
+                            font-size: 16px;
+                            line-height: 22px;
+                        }
                         +h4{
                             margin-top: 15px;
                         }
@@ -1014,6 +1054,10 @@
                     }
                     p{
                         font-size: 18px;
+                        @include bp(mobile){
+                            font-size: 16px;
+                            line-height: 22px;
+                        }
                     }
                 }
                 figure{

@@ -114,7 +114,6 @@
                 $("html, body").animate({ scrollTop: h }, "slow");
             }, 1000);
         }
-    });
 
     $("a").not("a.msubMenu").click(function (e) {
         var url = $(this).attr("href");
@@ -126,9 +125,11 @@
             }
             if (hasparameter != "" && $(hasparameter).length > 0) {
                 var h = $(hasparameter).offset().top - $('header').height();
-        
+                $(".hasSubmenu").each(function () {
+                    $(this).parent().addClass("noHover");
+                });
                 $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
-                    $("a.logo").focus();
+                    $('.searchOpen').trigger("click");
                 });
 
                 if ($(".hamburger").hasClass("active")) {
@@ -140,7 +141,38 @@
     });
 
 
+
+     $('.flatNav ul li').hover(function (event) {
+         if (!$(event.target).closest('.SubmenuWrapper').length) {
+           
+             $(".hasSubmenu").each(function () {
+                 $(this).parent().removeClass("noHover");
+             });
+         }
+    }).focus(function () {
+        if (!$(event.target).closest('.SubmenuWrapper').length) {
+           
+            $(".hasSubmenu").each(function () {
+                $(this).parent().removeClass("noHover");
+            });
+        }
+    }).click(function () {
+        if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+            $(".hasSubmenu").each(function () {
+                $(this).parent().removeClass("noHover");
+            });
+        }
+    });
+
+
+    });
 </script>
+    <style>
+        .noHover .SubmenuWrapper {
+            display:none !important;
+        }
+    </style>
 </body>
 </html>
 
