@@ -210,7 +210,12 @@
         <div class="locationDetail">
             @if (image != null)
             {
-                <img src="@image.Url" alt="@locationtitle" />
+                <a href="@loc.Url">
+                  <figure class="imgWrap" style="background-image: url('@image.Url')">
+                      <img src="@image.Url" alt="@locationtitle" />
+                  </figure>
+                </a>
+
             }
             @if (!string.IsNullOrEmpty(locationtitle))
             {
@@ -322,8 +327,8 @@
                                     {
                                         <span>@department</span>
                                     }
-                                   
-                                    
+
+
                                 <span>
                                     @if (branchLocation != null)
                                     {
