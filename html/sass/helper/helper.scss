@@ -967,7 +967,7 @@ p {
     -webkit-transition: top 1s ease-out,background 1s linear;
     transition: top 1s ease-out,background 1s linear;
     z-index: -999;
-    display: none;
+    opacity: 0;
 }
 
 #skiptocontent a:focus, #skiptocontent a:active {
@@ -980,5 +980,5 @@ p {
     -webkit-transition: top .1s ease-in,background .5s linear;
     transition: top .1s ease-in,background .5s linear;
     z-index: 20000;
-    display: block;
+    opacity: 1;
 }
