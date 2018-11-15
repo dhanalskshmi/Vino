@@ -133,7 +133,7 @@
 }
 @section InnerTopStyle {
 
-   
+
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -147,7 +147,7 @@
 
     <section class="heroWrapper">
         <div class="heroBanner">
-           
+
         </div>
         <div class="heroBlock" id="sliders-container">
             <div class="containerWrapper" id="containerWrapper">
@@ -214,7 +214,7 @@
                                 {
                                     <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
                                 }
-                            
+
                         </div>
                         <div class="form-group">
                             <label for="newkey" class="screen-reader-text">Keyword</label>
@@ -227,7 +227,7 @@
                                     <input type="text" class="form-control" id="newkey" name="newkey" placeholder="Keyword">
                                 }
                                 <input type="hidden" name="page" value="" />
-                                
+
 </div>
                         <div class="form-group searchBtn">
                             <button class="btnManasq" onclick="return fnScroll()"><span>Search</span></button>
@@ -265,13 +265,13 @@
                                     if (!string.IsNullOrEmpty(videoUrl))
                                     {
                                         <figure class="newsFlexImg video">
-                                            <a href="@videoUrl" target="_blank"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
+                                            <a href="@videoUrl" target="_blank"  style="background-image: url('@detailImage.Url')"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
                                         </figure>
                                     }
                                     else
                                     {
                                         <figure class="newsFlexImg">
-                                            <a href="@resource.Url"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
+                                            <a href="@resource.Url"  style="background-image: url('@detailImage.Url')"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
                                         </figure>
                                     }
                                         <div class="newsFlexContent">
@@ -319,7 +319,7 @@
                                 }
                                 else
                                 {
-                                   
+
                                     <div class="newsFlexContent noImage">
                                         @if (!string.IsNullOrEmpty(filterDetailTitle))
                                         {
@@ -350,7 +350,7 @@
                                         <a href="@resource.Url" class="btn-readMore">Read More ></a>
                                     </div>
                                 }
-                               
+
                             </div>
                         }
                     }
@@ -372,11 +372,11 @@
 
                                     <a data-page="@(PageNum - 1)" href="@PagiUrl"><img src="/images/media-center/arrow-left.png" alt="Media Image" title="Previous page"></a>
                                 }
-                                
+
                                 <b>@PageNum of @paginationcount</b>
-                               
+
                                 @Html.Raw(htmlstr)
-                               
+
                                 @if (PageNum < PageCount && PageCount > 1 && Count > DefaultDisplayCount && PageCount >= PageNum)
                                 {
                                     PagiUrl = "?page=" + (PageNum + 1);
@@ -433,11 +433,11 @@
         });
     </script>
     <script>
-      
+
         $('.newsPagination a').click(function (e) {
             e.preventDefault();
             var page = $(this).data("page");
-           
+
             $(".heroWrapper").find("input[name='page']").val(page);
 
             $(".heroWrapper")
@@ -464,4 +464,3 @@
 }
 
 @* the fun starts here *@
-

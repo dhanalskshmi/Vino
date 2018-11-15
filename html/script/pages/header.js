@@ -1029,7 +1029,7 @@ $(window).scroll(function() {
 		else if (scrollTop > 0) {
 			$('header').removeClass('stickyActive');
 			$('.stickyEmpty').removeClass('active');
-			//$('.stickyEmpty').css({'height':  ''});
+			$('.stickyEmpty').css({'height':  ''});
 
 			setTimeout(function() {
 				$('.SubmenuWrapper').css({'top': $('header').height()});
@@ -1075,6 +1075,6 @@ $(window).scroll(function() {
 
 });
 
-$(window).on("load resize scroll",function() {
+$(window).on("load resize",function() {
 	$('.stickyEmpty').css({'height':  $('header').height()});
 });

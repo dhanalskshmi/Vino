@@ -180,8 +180,22 @@
                     }
                     a {
                       display: block;
+                      background-repeat: no-repeat;
+          						background-position: center center;
+          						background-size: cover;
+          						min-height: 190px;
+                      @include bp(landscape) {
+                        min-height: 146px;
+                      }
+                      @include bp(tablet) {
+                        min-height: 126px;
+                      }
+                      @include bp(mobile) {
+                        min-height: 170px;
+                      }
                     }
                     img {
+                      display: none;
                         @include bp(landscape) {
                             margin-right: 32px;
                         }
