@@ -46,11 +46,20 @@
                 <div class="heroFlex">
 
                     @if (categoryDetails != null)
-                                {
-                                    foreach (var catdetail in categoryDetails)
-                                    {
-                                        var detailTitle = catdetail.GetPropertyValue<string>("categoryDetailTitle");
-                                        var detailImage = catdetail.GetPropertyValue<IPublishedContent>("heroImage");
+                    {
+                        foreach (var catdetail in categoryDetails)
+                        {
+                            var detailTitle = "";
+                            if (catdetail.DocumentTypeAlias == "rates")
+                            {
+                               detailTitle = catdetail.GetPropertyValue<string>("title");
+                            }
+                            else
+                            {
+                               detailTitle = catdetail.GetPropertyValue<string>("categoryDetailTitle");
+                            }
+
+                            var detailImage = catdetail.GetPropertyValue<IPublishedContent>("heroImage");
 
                             <div class="flexLinkWrap">
                                 <a href="@catdetail.Url" class="flexLinks">
@@ -58,6 +67,8 @@
                                     {
                                         <figure class="flexImage" style="background-image: url(@detailImage.Url)"></figure>
                                     }
+                                   
+                                   
                                     @if (!string.IsNullOrEmpty(detailTitle))
                                     {
                                         <span class="heroFlexheading">@detailTitle</span>

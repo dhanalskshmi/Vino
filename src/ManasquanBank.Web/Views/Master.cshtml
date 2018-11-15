@@ -110,18 +110,36 @@
 
         if (hasparameter != "" && $(hasparameter).length > 0) {
             var h = $(hasparameter).offset().top;
+            setTimeout(function () {
                 $("html, body").animate({ scrollTop: h }, "slow");
+            }, 1000);
         }
     });
 
-    $(window).load(function () {
-        var hasparameter = window.location.hash;
+    $("a").not("a.msubMenu").click(function (e) {
+        var url = $(this).attr("href");
+        if (typeof (url) !== "undefined")
+            {
+            var hasparameter = url.substring(url.indexOf('#') + 1);
+            if (hasparameter != '') {
+                hasparameter = '#' + hasparameter;
+            }
+            if (hasparameter != "" && $(hasparameter).length > 0) {
+                var h = $(hasparameter).offset().top - $('header').height();
+        
+                $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
+                    $("a.logo").focus();
+                });
 
-        if (hasparameter != "" && $(hasparameter).length > 0) {
-            var h = $(hasparameter).offset().top;
-            $("html, body").animate({ scrollTop: h }, "slow");
+                if ($(".hamburger").hasClass("active")) {
+                    $(".hamburger").trigger("click");
+                }
+
+            }
         }
     });
+
+
 </script>
 </body>
 </html>
