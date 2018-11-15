@@ -204,6 +204,7 @@ input[type=text]::-ms-clear {
   text-align: center;
 }
 .loaderBlock .loaderWrap img {
+  visibility: hidden;
   max-width: 70%;
 }
 
@@ -1950,7 +1951,7 @@ header.stickyActive .mainNav {
     background: #1c3d6d;
     color: #FFF;
   }
-  .headerNav .topNav li.iWantto:focus-within ul, .headerNav .topNav li.iWantto.active ul, .headerNav .topNav li.iWantto:hover ul {
+  .headerNav .topNav li.iWantto.active ul, .headerNav .topNav li.iWantto:hover ul {
     opacity: 1;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -2072,20 +2073,6 @@ header.stickyActive .mainNav {
     visibility: visible;
   }
 
-  .mainNav ul li:focus-within .SubmenuWrapper, .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
-    visibility: visible;
-    display: block;
-  }
-  .mainNav ul li:focus-within .SubmenuWrapper .bgWrap, .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
-    opacity: 1;
-  }
-  .mainNav ul li:focus-within.shortNav, .mainNav ul li.active.shortNav, .mainNav ul li:hover.shortNav {
-    position: relative;
-  }
-  .mainNav ul li:focus-within .subNav, .mainNav ul li.active .subNav, .mainNav ul li:hover .subNav {
-    display: block;
-  }
-
   .mainNav .subNav {
     display: none;
     min-width: 150px;
@@ -2148,7 +2135,6 @@ header.stickyActive .mainNav {
   .SubmenuWrapper .bgWrap {
     background: #FFF;
     padding: 20px 30px;
-    opacity: 0;
     -webkit-transition: all 0.3s;
             transition: all 0.3s;
   }
@@ -2230,6 +2216,20 @@ header.stickyActive .mainNav {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
+  }
+
+  .mainNav ul li:focus .SubmenuWrapper, .mainNav ul li.active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
+    visibility: visible;
+    display: block;
+  }
+  .mainNav ul li:focus .SubmenuWrapper .bgWrap, .mainNav ul li.active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
+    opacity: 1;
+  }
+  .mainNav ul li:focus.shortNav, .mainNav ul li.active.shortNav, .mainNav ul li:hover.shortNav {
+    position: relative;
+  }
+  .mainNav ul li:focus .subNav, .mainNav ul li.active .subNav, .mainNav ul li:hover .subNav {
+    display: block;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -10311,10 +10311,31 @@ footer {
     margin-top: 36px;
   }
 }
-@media (max-width: 767px) {
-  .locationSection.dlview .locationBgWrap .locationBox .locationDetail img, .locationSection.pmView .locationBgWrap .locationBox .locationDetail img {
-    width: 100%;
+.locationSection.dlview .locationBgWrap .locationBox .locationDetail .imgWrap, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .imgWrap {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  min-height: 212px;
+  display: block;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .locationSection.dlview .locationBgWrap .locationBox .locationDetail .imgWrap, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .imgWrap {
+    min-height: 190px;
   }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .locationSection.dlview .locationBgWrap .locationBox .locationDetail .imgWrap, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .imgWrap {
+    min-height: 190px;
+  }
+}
+@media (max-width: 767px) {
+  .locationSection.dlview .locationBgWrap .locationBox .locationDetail .imgWrap, .locationSection.pmView .locationBgWrap .locationBox .locationDetail .imgWrap {
+    min-height: 190px;
+  }
+}
+.locationSection.dlview .locationBgWrap .locationBox .locationDetail img, .locationSection.pmView .locationBgWrap .locationBox .locationDetail img {
+  display: none;
+  visibility: hidden;
 }
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail h3, .locationSection.pmView .locationBgWrap .locationBox .locationDetail h3 {
   font-size: 25px;

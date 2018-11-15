@@ -715,7 +715,7 @@ header {
 							}
 						}
 					}
-					&:focus-within,
+					//&:focus-within,
 					&.active,
 					&:hover {
 						ul {
@@ -859,31 +859,7 @@ header {
 	}
 
 
-	// Mega Menu
 
-	.mainNav {
-		ul {
-			li {
-				&:focus-within,
-				&.active,
-				&:hover {
-					.SubmenuWrapper {
-						visibility: visible;
-						display: block;
-						.bgWrap {
-							opacity: 1;
-						}
-					}
-					&.shortNav {
-						position: relative;
-					}
-					.subNav {
-						display: block;
-					}
-				}
-			}
-		}
-	}
 	.mainNav {
 		.subNav {
 			display: none;
@@ -947,7 +923,7 @@ header {
 		.bgWrap {
 			background: #FFF;
 			padding: 20px 30px;
-			opacity: 0;
+			//opacity: 0;
 			transition: all 0.3s;
 		}
 		.flexBox {
@@ -1033,6 +1009,33 @@ header {
 		.menuWrapper {
 			.loginBlocks {
 				transform: none;
+			}
+		}
+	}
+
+	// Mega Menu
+
+	.mainNav {
+		ul {
+			li {
+				//&:focus-within,
+				&:focus,
+				&.active,
+				&:hover {
+					.SubmenuWrapper {
+						visibility: visible;
+						display: block;
+						.bgWrap {
+							opacity: 1;
+						}
+					}
+					&.shortNav {
+						position: relative;
+					}
+					.subNav {
+						display: block;
+					}
+				}
 			}
 		}
 	}
