@@ -130,11 +130,11 @@
         <div class="locationDetail">
             @if (image != null)
             {
-                <figure class="imgWrap" style="background-image: url('@image.Url')">
-                    <a href="@loc.Url">
+                <a href="@loc.Url">
+                    <figure class="imgWrap" style="background-image: url('@image.Url')">
                         <img src="@image.Url" alt="@locationtitle" />
+                    </figure>
                     </a>
-               </figure>
                     }
                     @if (!string.IsNullOrEmpty(locationtitle))
                     {

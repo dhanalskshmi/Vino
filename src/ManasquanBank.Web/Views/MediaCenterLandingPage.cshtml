@@ -257,17 +257,34 @@
                             var typeofResource = resource.GetPropertyValue<IEnumerable<IPublishedContent>>("resource");
                             var detailImage = resource.GetPropertyValue<IPublishedContent>("detailImage");
                             var date = resource.GetPropertyValue<DateTime>("filterDate").ToString("MMM dd, yyyy");
+                            var videoUrl = resource.GetPropertyValue<string>("videoUrl");
 
                             <div class="newsFlex">
                                 @if (detailImage != null)
                                 {
-                                    <figure class="newsFlexImg">
-                                        <a href="@resource.Url"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
-                                    </figure>
-                                    <div class="newsFlexContent">
+                                    if (!string.IsNullOrEmpty(videoUrl))
+                                    {
+                                        <figure class="newsFlexImg video">
+                                            <a href="@videoUrl" target="_blank"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
+                                        </figure>
+                                    }
+                                    else
+                                    {
+                                        <figure class="newsFlexImg">
+                                            <a href="@resource.Url"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
+                                        </figure>
+                                    }
+                                        <div class="newsFlexContent">
                                         @if (!string.IsNullOrEmpty(filterDetailTitle))
                                         {
-                                            <h4><a href="@resource.Url">@filterDetailTitle</a></h4>
+                                            if (!string.IsNullOrEmpty(videoUrl))
+                                            {
+                                                <h4><a href="@videoUrl" target="_blank">@filterDetailTitle</a></h4>
+                                            }
+                                            else
+                                            {
+                                                <h4><a href="@resource.Url">@filterDetailTitle</a></h4>
+                                            }
                                         }
                                         <h5>
                                             @if (date != null)
@@ -290,8 +307,14 @@
                                         {
                                             @Html.Raw(teaserText)
                                         }
-
-                                        <a href="@resource.Url" class="btn-readMore">Read More ></a>
+                                            @if (!string.IsNullOrEmpty(videoUrl))
+                                            {
+                                                <a href="@videoUrl" class="btn-readMore" target="_blank">Read More ></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@resource.Url" class="btn-readMore">Read More ></a>
+                                            }
                                     </div>
                                 }
                                 else
