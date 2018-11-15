@@ -109,10 +109,9 @@
         var hasparameter = window.location.hash;
 
         if (hasparameter != "" && $(hasparameter).length > 0) {
-            var h = $(hasparameter).offset().top;
-            setTimeout(function () {
+           
+                 var h = $(hasparameter).offset().top - $('header').height();
                 $("html, body").animate({ scrollTop: h }, "slow");
-            }, 1000);
         }
 
     $("a").not("a.msubMenu").click(function (e) {
