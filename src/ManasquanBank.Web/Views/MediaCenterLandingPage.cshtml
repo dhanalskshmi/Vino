@@ -264,15 +264,19 @@
                                 {
                                     if (!string.IsNullOrEmpty(videoUrl))
                                     {
-                                        <figure class="newsFlexImg video">
-                                            <a href="@videoUrl" target="_blank"  style="background-image: url('@detailImage.Url')"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
-                                        </figure>
+                                        <a href="@videoUrl" target="_blank" class="newsFlexImg video">
+                                            <figure style="background-image: url('@detailImage.Url')">
+                                                <img src="@detailImage.Url" alt="@filterDetailTitle" />
+                                            </figure>
+                                        </a>
                                     }
                                     else
                                     {
-                                        <figure class="newsFlexImg">
-                                            <a href="@resource.Url"  style="background-image: url('@detailImage.Url')"><img src="@detailImage.Url" alt="@filterDetailTitle" /></a>
-                                        </figure>
+                                        <a href="@resource.Url" class="newsFlexImg">
+                                          <figure style="background-image: url('@detailImage.Url')">
+                                              <img src="@detailImage.Url" alt="@filterDetailTitle" />
+                                          </figure>
+                                        </a>
                                     }
                                         <div class="newsFlexContent">
                                         @if (!string.IsNullOrEmpty(filterDetailTitle))

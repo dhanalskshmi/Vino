@@ -465,9 +465,10 @@ header {
 	}
 }
 .stickyEmpty {
-	display: none;
+	height: 76px;
+	//display: none;
 	&.active {
-		display: block;
+		//display: block;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -1284,6 +1285,9 @@ header {
 @media screen and (min-width: $base) {
 
 	//Sticky nav
+	.stickyEmpty {
+		height: 148px;
+	}
 	header {
 		&.stickyActive {
 			.headerWrapper {

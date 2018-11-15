@@ -1696,10 +1696,7 @@ header.stickyActive .mainNav {
 }
 
 .stickyEmpty {
-  display: none;
-}
-.stickyEmpty.active {
-  display: block;
+  height: 76px;
 }
 
 @media screen and (max-width: 767px) {
@@ -2402,6 +2399,10 @@ header.stickyActive .mainNav {
   }
 }
 @media screen and (min-width: 1280px) {
+  .stickyEmpty {
+    height: 148px;
+  }
+
   header.stickyActive .headerWrapper .headBg {
     height: 114px;
   }
@@ -3557,7 +3558,7 @@ footer {
   width: 100%;
 }
 .bannerWrapper .bannerContent {
-  padding-top: 161px;
+  padding-top: 85px;
   position: relative;
   z-index: 9;
 }
@@ -3775,7 +3776,7 @@ footer {
 }
 
 .bankingServices {
-  margin-top: -62px;
+  margin-top: -138px;
   position: relative;
 }
 .bankingServices ul {
@@ -4647,6 +4648,10 @@ footer {
   }
 }
 @media screen and (min-width: 768px) {
+  .stickyEmpty {
+    height: 165px;
+  }
+
   .popUpWrapper {
     top: 130px;
   }
@@ -4706,7 +4711,7 @@ footer {
     min-height: 432px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 154px;
+    padding-top: 0;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 31px;
@@ -4733,7 +4738,7 @@ footer {
     max-width: -webkit-calc(100% - 152px);
     max-width: calc(100% - 152px);
     padding-bottom: 61px;
-    margin: -40px auto 0;
+    margin: -205px auto 0;
     position: relative;
     z-index: 99;
   }
@@ -5202,7 +5207,7 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: 170px;
+    top: -170px;
     right: 68px;
   }
   .bannerWrapper #wrapper .goto button.muteBtn {
@@ -5272,7 +5277,7 @@ footer {
     min-height: 576px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 195px;
+    padding-top: 32px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 38px;
@@ -5305,7 +5310,7 @@ footer {
 
   .bankingServices {
     max-width: 83.593%;
-    margin-top: -92px;
+    margin-top: -257px;
     padding-bottom: 0;
     margin-bottom: 52px;
   }
@@ -5685,7 +5690,7 @@ footer {
     min-height: 965px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 288px;
+    padding-top: 123px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 63px;
@@ -5720,7 +5725,7 @@ footer {
 
   .bankingServices {
     max-width: 1240px;
-    margin-top: -161px;
+    margin-top: -327px;
     margin-bottom: 112px;
   }
   .bankingServices ul li {
@@ -9780,7 +9785,7 @@ footer {
     margin-bottom: 12px;
   }
 }
-.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg a {
+.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg figure {
   display: block;
   background-repeat: no-repeat;
   background-position: center center;
@@ -9788,17 +9793,17 @@ footer {
   min-height: 190px;
 }
 @media (max-width: 1279px) {
-  .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg a {
+  .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg figure {
     min-height: 146px;
   }
 }
 @media (max-width: 1023px) {
-  .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg a {
+  .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg figure {
     min-height: 126px;
   }
 }
 @media (max-width: 767px) {
-  .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg a {
+  .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg figure {
     min-height: 170px;
   }
 }
@@ -9815,10 +9820,11 @@ footer {
     margin: auto;
   }
 }
-.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video a {
+.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video figure {
+  display: block;
   position: relative;
 }
-.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video a::after {
+.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video figure::after {
   content: '';
   background-color: rgba(0, 0, 0, 0.5);
   background-image: url("../images/media-center/play_icon.png");
@@ -9835,7 +9841,7 @@ footer {
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
 }
-.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video a:hover::after {
+.newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video figure:hover::after {
   -webkit-transform: translateX(-50%) translateY(-50%) scale(0.9);
       -ms-transform: translateX(-50%) translateY(-50%) scale(0.9);
           transform: translateX(-50%) translateY(-50%) scale(0.9);

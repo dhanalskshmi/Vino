@@ -1015,13 +1015,13 @@ $(window).scroll(function (event) {
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
 		if ($("body").width() <= 767) {
-			if (scrollTop > 50) {
+			if (scrollTop > 20) {
 	        $('header').addClass('stickyActive');
 	        $('.stickyEmpty').addClass('active');
 					//$('.stickyEmpty').css({'height':  $('header').height()});
 	    }
 		}
-    if (scrollTop > 50) {
+    if (scrollTop > 26) {
         $('header').addClass('stickyActive');
         $('.stickyEmpty').addClass('active');
 				//$('.stickyEmpty').css({'height':  $('header').height()});
@@ -1029,19 +1029,19 @@ $(window).scroll(function() {
 		else if (scrollTop > 0) {
 			$('header').removeClass('stickyActive');
 			$('.stickyEmpty').removeClass('active');
-			$('.stickyEmpty').css({'height':  ''});
+			//$('.stickyEmpty').css({'height':  ''});
 
 			setTimeout(function() {
-				//$('.SubmenuWrapper').css({'top': $('header').height()});
-			}, 500);
+				$('.SubmenuWrapper').css({'top': $('header').height()});
+			}, 0);
 			$(window).on("load resize",function() {
 				//$('.stickyEmpty').css({'height':  $('header').height()});
 				$('.SubmenuWrapper').css({'top': ''});
 				//console.log("resized");
 				setTimeout(function() {
 					$('.SubmenuWrapper').css({'top': $('header').height()});
-					$('.stickyEmpty').css({'height':  $('header').height()});
-				}, 500);
+					//$('.stickyEmpty').css({'height':  $('header').height()});
+				}, 50);
 
 			});
 		}
@@ -1058,7 +1058,7 @@ $(window).scroll(function() {
 				$('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 34 });
 			}
 
-		}, 500);
+		}, 50);
 		$(window).on("load resize",function() {
 			$('.stickyActive .SubmenuWrapper').css({'top': ''});
 			//console.log("resized");
@@ -1069,15 +1069,14 @@ $(window).scroll(function() {
 				if ($("body").width() >= 1280) {
 					$('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 34 });
 				}
-			}, 500);
+			}, 50);
 
 		});
 
 });
 
 $(window).on("load resize",function() {
-	$('.stickyEmpty').css({'height':  $('header').height()});
-
+	//$('.stickyEmpty').css({'height':  $('header').height()});
 });
 
 

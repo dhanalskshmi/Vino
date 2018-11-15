@@ -178,7 +178,7 @@
                         margin: auto;
                         margin-bottom: 12px;
                     }
-                    a {
+                    figure {
                       display: block;
                       background-repeat: no-repeat;
           						background-position: center center;
@@ -204,7 +204,8 @@
                         }
                     }
                     &.video {
-                      a {
+                      figure {
+                        display: block;
                         position: relative;
                         &::after {
                           content: '';
