@@ -109,16 +109,9 @@
         var hasparameter = window.location.hash;
 
         if (hasparameter != "" && $(hasparameter).length > 0) {
-           
                  var h = $(hasparameter).offset().top - $('header').height();
                 $("html, body").animate({ scrollTop: h }, "slow");
-                if ($("body").width() >= 768) {
-                    $('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 23 });
-                   }
-                   if ($("body").width() >= 1280) {
-                    $('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 34 });
-                   }
-        }
+                      }
 
     $("a").not("a.msubMenu").click(function (e) {
         var url = $(this).attr("href");
@@ -134,7 +127,7 @@
                     $(this).parent().addClass("noHover");
                 });
                 $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
-                    $('.searchOpen').trigger("click");
+                  
                 });
 
                 if ($(".hamburger").hasClass("active")) {
