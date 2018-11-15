@@ -74,9 +74,27 @@
 						margin-right:0%;
 						margin-top: 36px;
 					}
-					img {
+					.imgWrap {
+						background-repeat: no-repeat;
+						background-position: top center;
+						background-size: cover;
+						min-height: 212px;
+						display: block;
+						@include bp(tablandscape) {
+							min-height: 190px;
+						}
+						@include bp(tabportrait) {
+							min-height: 190px;
+						}
 						@include bp(mobile) {
-							width:100%;
+							min-height: 190px;
+						}
+					}
+					img {
+						display: none;
+						visibility: hidden;
+						@include bp(mobile) {
+							//width:100%;
 						}
 					}
 					h3 {

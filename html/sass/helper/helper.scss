@@ -214,6 +214,7 @@ input[type=text]::-ms-clear {
     width: 100%;
     text-align: center;
     img {
+      visibility: hidden;
       max-width: 70%;
     }
   }
