@@ -47,10 +47,7 @@
 
     <div class="bannerContent">
         <div class="containerWrapper">
-            @if (!string.IsNullOrEmpty(bannerText))
-            {
-                @Html.Raw(bannerText)
-            }
+
             @if (!string.IsNullOrEmpty(backgroundVideo))
             {
             <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
@@ -59,6 +56,10 @@
                 <button class="muteBtn muted" onclick="jQuery('#bgndVideo').YTPToggleVolume()">Mute/Unmute</button>
                 </div>
             </div>
+            }
+            @if (!string.IsNullOrEmpty(bannerText))
+            {
+                @Html.Raw(bannerText)
             }
         </div>
 
@@ -528,16 +529,16 @@
 
     var myPlayer;
     jQuery(function() {
-		
+
       myPlayer = jQuery("#bgndVideo").YTPlayer();
-	  
+
 	  $("#togglePlay").click(function(){
         if(!$("#togglePlay").hasClass("play") && !$("#togglePlay").hasClass("pause") && !$("#togglePlay").hasClass("loading"))
         {
 		$("#togglePlay").addClass("loading");
       }
       });
-	  
+
       // EVENTS: YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo
         myPlayer.on("YTPReady YTPStart YTPEnd YTPPlay YTPLoop YTPPause YTPBuffering YTPMuted YTPUnmuted YTPChangeVideo", function (e) {
         if (e.type == 'YTPReady') {
