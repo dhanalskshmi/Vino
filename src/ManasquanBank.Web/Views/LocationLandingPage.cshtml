@@ -130,26 +130,31 @@
         <div class="locationDetail">
             @if (image != null)
             {
-                <a href="@loc.Url">
-                <img src="@image.Url" alt="@locationtitle" />
-                </a>
-                }
-                @if (!string.IsNullOrEmpty(locationtitle))
-                {
+                <figure class="imgWrap" style="background-image: url('@image.Url')">
                     <a href="@loc.Url">
-                    <h3>@locationtitle</h3>
+                        <img src="@image.Url" alt="@locationtitle" />
                     </a>
-                }
-                @if (!string.IsNullOrEmpty(address))
-                {
-                    @Html.Raw(address)
-                }
-                @if (!string.IsNullOrEmpty(phone))
-                {
-                    <p><a href="tel:@phone">@phone</a></p>
-                }
-                <span class="directionLink"><a href="https://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText" target="_blank">Get Directions <img src="images/location/directionArrow.png" alt="direction Arrow" /></a></span>
-                <a class="viewButtonLink btnManasq" href="@loc.Url"><span>View Detail</span></a>
+               </figure>
+                    }
+                    @if (!string.IsNullOrEmpty(locationtitle))
+                    {
+                        <h3>
+                            <a href="@loc.Url">
+                                @locationtitle
+                            </a>
+                        </h3>
+
+                    }
+                    @if (!string.IsNullOrEmpty(address))
+                    {
+                        @Html.Raw(address)
+                    }
+                    @if (!string.IsNullOrEmpty(phone))
+                    {
+                        <p><a href="tel:@phone">@phone</a></p>
+                    }
+                    <span class="directionLink"><a href="https://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText" target="_blank">Get Directions <img src="images/location/directionArrow.png" alt="direction Arrow" /></a></span>
+                    <a class="viewButtonLink btnManasq" href="@loc.Url"><span>View Detail</span></a>
 </div>
         if (i % 3 == 2)
         {
