@@ -285,10 +285,12 @@
                         <h3>@wCUTitle</h3>
                     }
                 </div>
-                @if (!string.IsNullOrEmpty(featuredescription))
-                {
-                    @Html.Raw(featuredescription)
-                }
+                <div class="contentBlock">
+                    @if (!string.IsNullOrEmpty(featuredescription))
+                    {
+                        @Html.Raw(featuredescription)
+                    }
+                </div>
 
                 <div class="chooseList">
                     @if (Model.Content.HasValue("featureList"))
