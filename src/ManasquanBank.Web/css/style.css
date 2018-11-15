@@ -913,6 +913,7 @@ p {
   -webkit-transition: top 1s ease-out,background 1s linear;
   transition: top 1s ease-out,background 1s linear;
   z-index: -999;
+  opacity: 0;
 }
 
 #skiptocontent a:focus, #skiptocontent a:active {
@@ -925,6 +926,7 @@ p {
   -webkit-transition: top .1s ease-in,background .5s linear;
   transition: top .1s ease-in,background .5s linear;
   z-index: 20000;
+  opacity: 1;
 }
 
 @media screen and (min-width: 1280px) {
@@ -1695,10 +1697,6 @@ header.stickyActive .mainNav {
   margin-top: 3px;
 }
 
-.stickyEmpty {
-  height: 76px;
-}
-
 @media screen and (max-width: 767px) {
   header {
     position: fixed;
@@ -2399,10 +2397,6 @@ header.stickyActive .mainNav {
   }
 }
 @media screen and (min-width: 1280px) {
-  .stickyEmpty {
-    height: 148px;
-  }
-
   header.stickyActive .headerWrapper .headBg {
     height: 114px;
   }
@@ -3558,7 +3552,7 @@ footer {
   width: 100%;
 }
 .bannerWrapper .bannerContent {
-  padding-top: 85px;
+  padding-top: 161px;
   position: relative;
   z-index: 9;
 }
@@ -3776,7 +3770,7 @@ footer {
 }
 
 .bankingServices {
-  margin-top: -138px;
+  margin-top: -62px;
   position: relative;
 }
 .bankingServices ul {
@@ -4648,10 +4642,6 @@ footer {
   }
 }
 @media screen and (min-width: 768px) {
-  .stickyEmpty {
-    height: 165px;
-  }
-
   .popUpWrapper {
     top: 130px;
   }
@@ -4711,7 +4701,7 @@ footer {
     min-height: 432px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 0;
+    padding-top: 154px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 31px;
@@ -4738,7 +4728,7 @@ footer {
     max-width: -webkit-calc(100% - 152px);
     max-width: calc(100% - 152px);
     padding-bottom: 61px;
-    margin: -205px auto 0;
+    margin: -40px auto 0;
     position: relative;
     z-index: 99;
   }
@@ -5207,7 +5197,7 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: -170px;
+    top: 170px;
     right: 68px;
   }
   .bannerWrapper #wrapper .goto button.muteBtn {
@@ -5277,7 +5267,7 @@ footer {
     min-height: 576px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 32px;
+    padding-top: 195px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 38px;
@@ -5310,7 +5300,7 @@ footer {
 
   .bankingServices {
     max-width: 83.593%;
-    margin-top: -257px;
+    margin-top: -92px;
     padding-bottom: 0;
     margin-bottom: 52px;
   }
@@ -5690,7 +5680,7 @@ footer {
     min-height: 965px;
   }
   .bannerWrapper .bannerContent {
-    padding-top: 123px;
+    padding-top: 288px;
   }
   .bannerWrapper .bannerContent h1 {
     font-size: 63px;
@@ -5725,7 +5715,7 @@ footer {
 
   .bankingServices {
     max-width: 1240px;
-    margin-top: -327px;
+    margin-top: -161px;
     margin-bottom: 112px;
   }
   .bankingServices ul li {
@@ -8144,6 +8134,51 @@ footer {
 .careers .heroBlock .heroCareer p {
   display: block;
 }
+.careers .heroBlock .heroCareer.charityHero {
+  margin-bottom: 0;
+}
+.careers .heroBlock .heroCareer.charityHero h4 {
+  margin-bottom: 26px;
+  margin-top: 12px;
+  font-size: 24px;
+}
+@media (max-width: 1023px) {
+  .careers .heroBlock .heroCareer.charityHero h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 24px;
+  }
+}
+.careers .heroBlock .heroCareer.charityHero p {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 11px;
+}
+@media (max-width: 1023px) {
+  .careers .heroBlock .heroCareer.charityHero p {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.careers .heroBlock .heroCareer.charityHero img {
+  max-width: 390px;
+}
+@media (max-width: 1023px) {
+  .careers .heroBlock .heroCareer.charityHero img {
+    margin: auto;
+    max-width: 220px;
+    margin-bottom: 15px;
+  }
+}
 .careers .heroBlock .bgWrap {
   padding: 50px 65px 80px 65px;
 }
@@ -9274,6 +9309,12 @@ footer {
   font-size: 18px;
   position: relative;
 }
+@media (max-width: 767px) {
+  .greyPanel.charityFound .bgWrap ul li {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
 .greyPanel.charityFound .bgWrap ul li:after {
   position: absolute;
   content: "";
@@ -9390,9 +9431,20 @@ footer {
   font-size: 20px;
   text-transform: uppercase;
 }
+@media (max-width: 1279px) {
+  .greyPanel.charityFound .bgWrap .FoundSponsers .rgt h4 {
+    font-size: 18px;
+  }
+}
 .greyPanel.charityFound .bgWrap .FoundSponsers .rgt p {
   font-size: 18px;
   line-height: 24px;
+}
+@media (max-width: 767px) {
+  .greyPanel.charityFound .bgWrap .FoundSponsers .rgt p {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 .greyPanel.charityFound .bgWrap .FoundSponsers .rgt p + h4 {
   margin-top: 15px;
@@ -9437,6 +9489,12 @@ footer {
 }
 .greyPanel.charityFound .bgWrap .selectCriteria .ContentBlk p {
   font-size: 18px;
+}
+@media (max-width: 767px) {
+  .greyPanel.charityFound .bgWrap .selectCriteria .ContentBlk p {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 .greyPanel.charityFound .bgWrap .selectCriteria figure {
   width: 540px;

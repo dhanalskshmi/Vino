@@ -44,7 +44,7 @@ $dbannerhgt: 965px;
     width: 100%;
   }
   .bannerContent {
-    padding-top: 85px;
+    padding-top: 161px;
     position: relative;
     z-index: 9;
     h1 {
@@ -254,7 +254,7 @@ $dbannerhgt: 965px;
 }
 
 .bankingServices {
-  margin-top: -138px;;
+  margin-top: -62px;
   position: relative;
   //z-index: 9999;
   ul {
@@ -1096,10 +1096,7 @@ $dbannerhgt: 965px;
 }
 @media screen and (min-width: $tab-port-min) {
 
-  //Sticky Header
-  .stickyEmpty {
-    height: 165px;
-  }
+
   .popUpWrapper {
     top: 130px;
     .popupWrap {
@@ -1171,7 +1168,7 @@ $dbannerhgt: 965px;
       min-height: $tpbannerhgt;
     }
     .bannerContent {
-      padding-top: 0;
+      padding-top: 154px;
       h1 {
         font-size: 31px;
         line-height: 33px;
@@ -1203,7 +1200,7 @@ $dbannerhgt: 965px;
   .bankingServices {
     max-width: calc(100% - 152px);
     padding-bottom: 61px;
-    margin: -205px auto 0;
+    margin: -40px auto 0;
     position: relative;
     z-index: 99;
     .containerWrapper {
@@ -1693,7 +1690,7 @@ $dbannerhgt: 965px;
     #wrapper {
       .goto {
         button {
-          top: -170px;
+          top: 170px;
           right: 68px;
           &.muteBtn {
             right: 136px;
@@ -1790,7 +1787,7 @@ $dbannerhgt: 965px;
       min-height: $tlbannerhgt;
     }
     .bannerContent {
-      padding-top: 32px;
+      padding-top: 195px;
       h1 {
         font-size: 38px;
         line-height: 43px;
@@ -1842,7 +1839,7 @@ $dbannerhgt: 965px;
   .bankingServices {
     //max-width: 861px;
     max-width: 83.593%;
-    margin-top: -257px;
+    margin-top: -92px;
     padding-bottom: 0;
     margin-bottom: 52px;
     .containerWrapper {
@@ -2286,7 +2283,7 @@ $dbannerhgt: 965px;
       min-height: $dbannerhgt;
     }
     .bannerContent {
-      padding-top: 123px;
+      padding-top: 288px;
       h1 {
         font-size: 63px;
         line-height: 66px;
@@ -2343,7 +2340,7 @@ $dbannerhgt: 965px;
 
   .bankingServices {
     max-width: 1240px;
-    margin-top: -327px;
+    margin-top: -161px;
     margin-bottom: 112px;
     ul {
       li {
