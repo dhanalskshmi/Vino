@@ -5197,7 +5197,7 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: 170px;
+    top: -20px;
     right: 68px;
   }
   .bannerWrapper #wrapper .goto button.muteBtn {
@@ -5291,7 +5291,7 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: -230px;
+    top: -40px;
     right: 38px;
   }
   .bannerWrapper #wrapper .goto button.muteBtn {
@@ -5701,7 +5701,7 @@ footer {
   }
 
   .bannerWrapper #wrapper .goto button {
-    top: -397px;
+    top: -67px;
     right: 0;
   }
   .bannerWrapper #wrapper .goto button.muteBtn {
