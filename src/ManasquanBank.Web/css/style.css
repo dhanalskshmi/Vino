@@ -1680,6 +1680,7 @@ header + .loginBlocks .businessLogin p a {
 
 header.stickyActive {
   position: fixed;
+  margin-top: 0;
 }
 header.stickyActive .headerWrapper .headBg {
   display: none;
