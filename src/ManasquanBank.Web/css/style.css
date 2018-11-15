@@ -9837,7 +9837,7 @@ footer {
 @media (max-width: 767px) {
   .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg {
     width: auto;
-    min-width: auto;
+    min-width: 100%;
     max-width: 100%;
     margin: auto;
     margin-bottom: 12px;

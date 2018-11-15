@@ -1048,7 +1048,7 @@ $(window).scroll(function() {
 
 
 
-		// Sticky header
+		// SubMenu
 
 		setTimeout(function() {
 			if ($("body").width() >= 768) {
