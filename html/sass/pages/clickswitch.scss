@@ -1,0 +1,228 @@
+.heroBlock {
+	&.clickSwitch {
+		margin-bottom:100px;
+		@include bp(tablandscape) {
+			margin-bottom:59px;
+		}
+		@include bp(tabportrait) {
+			margin-bottom:39px;
+		}
+		.bgWrap {
+			h2 {
+				span {
+					text-transform:none;
+				}
+			}
+			.borderSection {
+				display: table;
+	    		width: 100%;
+	    		border-top: 1px solid #666666;
+	    		border-bottom: 1px solid #666666;
+	    		padding-top: 17px;
+	    		padding-bottom: 6px;
+	    		margin-bottom: 51px;
+	    		@include bp(tablandscape) {
+	    			margin-bottom: 40px;
+	    		}
+	    		@include bp(tabportrait) {
+	    			margin-bottom: 40px;
+	    		}
+	    		@include bp(mobile) {
+	    			margin-bottom: 30px;
+	    			padding-bottom:13px;
+	    		}
+	    		.fullWrap {
+	    			.imgSec {
+						width: 48.626%;
+	    				float: left;
+	    				padding-top: 19px;
+	    				@include bp(mobile) {
+	    					width:100%;
+	    					margin-bottom: 18px;
+	    					padding-top: 0px;
+	    				}
+					}
+					.contentSec {
+						width: 51.374%;
+	    				float: left;
+	    				padding-left: 42px;
+	    				padding-right: 10px;
+	    				@include bp(tablandscape) {
+	    					padding-left:25px;
+	    				}
+	    				@include bp(tabportrait) {
+	    					padding-left: 20px;
+	    				}
+	    				@include bp(mobile) {
+	    					width:100%;
+	    					padding:0px;
+	    				}
+	    				p {
+	    					color:#1c3d6d;
+	    					font-weight: 600;
+	    					font-size:20px;
+	    					margin-bottom:0px;
+	    					@include bp(tabportrait) {
+	    						font-size:18px;
+	    					}
+	    					@include bp(mobile) {
+	    						font-size:16px;
+	    					}
+	    					&+p {
+	    						margin-top:20px;
+	    					}
+	    				}
+					}
+	    		}
+			}
+			.detailSection {
+				position:relative;
+				h3 {
+					color:#3d3d3d;
+					font-weight:bold;
+					text-transform:uppercase;
+					@include bp(desktop) {
+						font-size:24px;
+					}
+					@include bp(mobile) {
+						font-size:18px;
+					}
+				}
+				ul {
+					font-size:18px;
+					color:#3d3d3d;
+					padding-left: 0px;
+					list-style: none;
+					position:relative;
+					margin-top: 7px;
+					li {
+						font-family: "manasquan";
+						font-size:18px;
+						padding-left:8px;
+						margin-bottom: 1px;
+						color:#3d3d3d;
+						@include bp(mobile) {
+							font-size:16px;
+						}
+						&:before {
+							content: "";
+						    position: absolute;
+						    width: 5px;
+						    height: 5px;
+						    background: #3d3d3d;
+						    border-radius: 8px;
+						    margin-top: 10px;
+						    left: 0;
+						}
+					}
+					&+h3 {
+						margin-top: 49px;
+						@include bp(tablandscape) {
+							margin-top: 39px;
+						}
+						@include bp(tabportrait) {
+							margin-top: 39px;
+						}
+						@include bp(mobile) {
+							margin-top: 30px;
+						}
+					}
+					&+h4 {
+						margin-top: 53px;
+						@include bp(tablandscape) {
+							margin-top: 43px;
+						}
+						@include bp(tabportrait) {
+							margin-top: 43px;
+						}
+						@include bp(mobile) {
+							margin-top: 30px;
+						}
+					}
+				}
+				p {
+					font-size:18px;
+					color:#3d3d3d;
+					margin-bottom: 17px;
+					@include bp(mobile) {
+						font-size:16px;
+					}
+					&+h5 {
+						margin-top: -16px;
+						@include bp(mobile) {
+							margin-top: -14px;
+						}
+					}
+				}
+				h4 {
+					font-size:18px;
+					color:#3d3d3d;
+					margin-bottom: 17px;
+					font-weight:normal;
+					margin-bottom: 35px;
+					@include bp(mobile) {
+						font-size:16px;
+					}
+					&+h5 {
+						margin-top: -16px;
+					}
+				}
+				h5 {
+					text-transform:uppercase; 
+					margin-bottom: 3px;
+					font-size:18px;
+					@include bp(mobile) {
+						margin-bottom:0px;
+					}
+				}
+				.link {
+					margin-top:72px;
+					@include bp(tablandscape) {
+						margin-top: 62px;
+					}
+					@include bp(tabportrait) {
+						margin-top: 50px;
+					}
+					@include bp(mobile) {
+						margin-top: 40px;
+					}
+					a {
+						color:#1c3d6d;
+						font-size:20px;
+						font-weight:bold;
+						display:block;
+						@include bp(mobile) {
+							font-size:18px;
+						}
+						&.startBtn {
+							background: #1268e5;
+						    display: inline-block;
+						    color: #fff;
+						    padding: 17px 34px 14px 34px;
+						    font-size: 28px;
+						    text-transform: uppercase;
+						    margin-top: 17px;
+						    border-radius: 18px;
+						    border:1px solid #fff;
+						    margin-bottom: 40px;
+						    font-weight: 600;
+						    @include bp(tablandscape){
+						    	margin-bottom: 35px;
+						    }
+						    @include bp(tabportrait){
+						    	margin-bottom: 35px;
+						    	font-size:24px;
+						    	padding: 13px 25px 11px;
+						    }
+						    @include bp(mobile) {
+								font-size:16px;
+								padding: 10px 22px 8px;
+								margin-bottom: 30px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
