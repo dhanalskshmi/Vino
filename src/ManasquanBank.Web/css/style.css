@@ -7928,7 +7928,7 @@ footer {
     margin-top: 39px;
   }
 }
-.service-section .bgWrap ul li a figure {
+.service-section .bgWrap ul li figure {
   width: 135px;
   height: 135px;
   display: -webkit-box;
@@ -7950,21 +7950,21 @@ footer {
           transition: all 0.3s;
 }
 @media (max-width: 1279px) {
-  .service-section .bgWrap ul li a figure {
+  .service-section .bgWrap ul li figure {
     width: 110px;
     height: 110px;
   }
 }
-.service-section .bgWrap ul li a figure img {
+.service-section .bgWrap ul li figure img {
   display: block;
   margin: 0 auto;
 }
 @media (max-width: 1279px) {
-  .service-section .bgWrap ul li a figure img {
+  .service-section .bgWrap ul li figure img {
     max-width: 40px;
   }
 }
-.service-section .bgWrap ul li a span {
+.service-section .bgWrap ul li span {
   font-family: "manasquan";
   font-size: 21px;
   font-weight: 600;
@@ -7977,29 +7977,29 @@ footer {
           transition: all 0.3s;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .service-section .bgWrap ul li a span {
+  .service-section .bgWrap ul li span {
     font-size: 16px;
     margin-top: 21px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .service-section .bgWrap ul li a span {
+  .service-section .bgWrap ul li span {
     font-size: 15px;
     margin-top: 20px;
   }
 }
 @media (max-width: 767px) {
-  .service-section .bgWrap ul li a span {
+  .service-section .bgWrap ul li span {
     font-size: 16px;
     margin-top: 22px;
   }
 }
-.service-section .bgWrap ul li a:hover figure {
+.service-section .bgWrap ul li:hover figure {
   -webkit-transform: scale(0.9);
       -ms-transform: scale(0.9);
           transform: scale(0.9);
 }
-.service-section .bgWrap ul li a:hover span {
+.service-section .bgWrap ul li:hover span {
   color: #1a3d6e;
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
