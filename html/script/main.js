@@ -996,9 +996,7 @@ $(document).ready(function() {
 	}
 	$(window).on("load resize",function() {
 		if ($("body").width() <= 767) {
-			setTimeout(function() {
-				$('.loginBlocks').css({'top': $('header').height()});
-			}, 0);
+			$('.loginBlocks').css({'top': $('header').height()});
 		}
 
 	});
