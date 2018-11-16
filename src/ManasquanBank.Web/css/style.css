@@ -929,6 +929,11 @@ p {
   opacity: 1;
 }
 
+header.menuOpenState {
+  position: absolute !important;
+  top: 0px !important;
+}
+
 @media screen and (min-width: 1280px) {
   .animatable.bannerWrapper .bannerContent h1 br {
     display: none;
@@ -3670,7 +3675,7 @@ footer {
 .loginBlocks.active {
   display: block;
   padding: 0 12px;
-  top: 72px;
+  top: 76px;
   opacity: 1;
   visibility: visible;
   z-index: 99999999999999999;
