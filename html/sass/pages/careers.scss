@@ -74,10 +74,12 @@
             }
             &.charityHero{
                 margin-bottom: 0;
+                display: block;
                 h4{
-                    margin-bottom: 26px;
+                    margin-bottom: 35px;
                     margin-top: 12px;
                     font-size: 24px;
+                    color: #3d3d3d;
                     @include bp(tablet){
                         font-size: 18px;
                         margin-bottom: 15px;
@@ -88,6 +90,7 @@
                     display: inline-flex;
                     align-items: flex-start;
                     margin-bottom: 11px;
+                    color: #3e3e3e;
                     @include bp(tablet){
                         flex-direction: column;
                     }
@@ -944,10 +947,10 @@
             padding-right: 65px;
             padding-bottom: 80px;
             color: #3d3d3d;
-            @include bp(tablet){
+            @include bp(landscape){
                 padding: 20px 20px 50px 20px;
             }
-            @include bp(tablet){
+            @include bp(mobile){
                 padding: 20px 10px 50px 10px;
             }
             ul{
@@ -964,7 +967,7 @@
                         content: "";
                         width: 4px;
                         height: 4px;
-                        background: #000;
+                        background: #3d3d3d;
                         border-radius: 50%;
                         left: -10px;
                         top: 9px;
@@ -992,10 +995,11 @@
             }
             hr{
                 border-top-color: #666;
-                margin-top: 57px;
-                margin-bottom: 67px;
+                margin: 57px auto 67px auto;
+                width: calc(100% - 30px);
                 @include bp(landscape){
                     margin: 35px 0px;
+                    width: 100%;
                 }
             }
             .FoundSponsers{

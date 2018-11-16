@@ -47,7 +47,7 @@
                         }
                         @if (!string.IsNullOrEmpty(employeeTitle))
                         {
-                            <p class="cmpTitle">@employeeTitle</p>
+                            <p class="cmpTitle">@Html.Raw(employeeTitle)</p>
                         }
                         @if (!string.IsNullOrEmpty(license))
                         {

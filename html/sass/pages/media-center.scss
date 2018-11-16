@@ -160,6 +160,9 @@
                 @include bp(mobile) {
                     flex-direction: column;
                 }
+                a{
+                    cursor: pointer;
+                }
                 .newsFlexImg {
                     width: 300px;
                     margin-right: 21px;
@@ -462,5 +465,23 @@
         text-align: center;
         color: #1268e5;
         font-size: 23px;
+    }
+}
+.modal-video-close-btn{
+    @include bp(tablet){
+        right: 0;
+    }
+    &:hover{
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+    }
+}
+.modal-video-body{
+    @include bp(tablet){
+        max-width: 90%;
     }
 }

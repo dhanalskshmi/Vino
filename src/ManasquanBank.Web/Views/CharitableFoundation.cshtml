@@ -1,0 +1,203 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
+@{
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var BackroundImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var foundation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("foundation");
+}
+@section BackgroundImage {
+    @if (BackroundImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@BackroundImage.Url')">
+            <!--<img src="images/body_bg.jpg" alt="">-->
+        </div>
+    }
+}
+<div class="careers">
+    <section class="heroBanner">
+        
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(title))
+                {
+                    <h2>@title</h2>
+                }
+                
+                <div class="heroCareer charityHero">
+                    @if (!string.IsNullOrEmpty(content))
+                    {
+                        @Html.Raw(content);
+                    }
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="greyPanel charityFound">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (foundation != null)
+                {
+                    int i = 1;
+                    foreach (var chart in foundation)
+                    {
+                        var chartTitle = chart.GetPropertyValue<string>("chartTitle");
+                        var image = chart.GetPropertyValue<IPublishedContent>("image");
+                        var imagePosition = chart.GetPropertyValue<string>("imagePosition");
+                        var imageTeaserText = chart.GetPropertyValue<string>("imageTeaserText");
+                        var chartContent = chart.GetPropertyValue<string>("chartContent");
+
+                        if (i == 1)
+                        {
+                            if (!string.IsNullOrEmpty(chartTitle))
+                            {
+                                <h3>@chartTitle</h3>
+                            }
+                            if(!string.IsNullOrEmpty(chartContent))
+                            {
+                                @Html.Raw(chartContent)
+                            }
+
+                        }
+                        else if (i == 2)
+                        {
+                            if (!string.IsNullOrEmpty(chartTitle))
+                            {
+                                <h3>@chartTitle</h3>
+                            }
+                            <div class="FoundSponsers">
+                                <div class="lft">
+                                    @if (image != null)
+                                    {
+                                        <figure>
+                                            <img src="@image.Url" alt="Manasquan Bank Sponsers">
+                                        </figure>
+                                    }
+                                    @if (!string.IsNullOrEmpty(imageTeaserText))
+                                    {
+                                        @Html.Raw(imageTeaserText)
+                                    }
+                                    
+                                </div>
+                                <div class="rgt">
+                                    @if(!string.IsNullOrEmpty(chartContent))
+                                    {
+                                        @Html.Raw(chartContent)
+                                    }
+                                </div>
+                            </div>
+
+                        }
+                        else if (i == 3)
+                        {
+                            if (!string.IsNullOrEmpty(chartTitle))
+                            {
+                                <h3>@chartTitle</h3>
+                            }
+                            <div class="selectCriteria">
+                                <div class="ContentBlk">
+                                    @if(!string.IsNullOrEmpty(chartContent))
+                                    {
+                                        @Html.Raw(chartContent)
+                                    }
+                                </div>
+                                @if (image != null)
+                                {
+                                    <figure>
+                                        <img src="@image.Url" alt="Manasquan Bank Sponsers">
+                                    </figure>
+                                }
+                            </div>
+                        }
+                        else if (i == 4)
+                        {
+                            if (!string.IsNullOrEmpty(chartTitle))
+                            {
+                                <h3>@chartTitle</h3>
+                            }
+                            <div class="orgAbility">
+                               @if (image != null)
+                               {
+                                <figure>
+                                    <img src="@image.Url" alt="Manasquan Bank Sponsers">
+                                </figure>
+                               }
+                                <div class="ContentBlk">
+                                    @if (!string.IsNullOrEmpty(chartContent))
+                                    {
+                                        @Html.Raw(chartContent)
+                                    }
+                                </div>
+                            </div>
+                        }
+                        else if (i == 5)
+                        {
+                            if (!string.IsNullOrEmpty(chartTitle))
+                            {
+                                <h3>@chartTitle</h3>
+                            }
+                            if (!string.IsNullOrEmpty(chartContent))
+                            {
+                                @Html.Raw(chartContent)
+                            }
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(chartTitle))
+                            {
+                                <h3>@chartTitle</h3>
+                            }
+                            <div class="FoundSponsers">
+                                <div class="lft">
+                                    @if (image != null)
+                                    {
+                                        <figure>
+                                            <img src="@image.Url" alt="Manasquan Bank Sponsers">
+                                        </figure>
+                                    }
+                                    @if (!string.IsNullOrEmpty(imageTeaserText))
+                                    {
+                                        @Html.Raw(imageTeaserText)
+                                    }
+
+                                </div>
+                                <div class="rgt">
+                                    if(!string.IsNullOrEmpty(chartContent))
+                                    {
+                                    @Html.Raw(chartContent)
+                                    }
+                                </div>
+                            </div>
+                        }
+                        if (i != 5)
+                        {
+                            <hr>
+                        }
+
+
+                        i = i + 1;
+
+                    }
+                }
+
+               
+                
+                
+               
+              
+            </div>
+        </div>
+    </section>
+
+</div>

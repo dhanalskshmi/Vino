@@ -324,6 +324,8 @@
                                         var empName = bio.GetPropertyValue<string>("employeeName");
                                         var empTitle = bio.GetPropertyValue<string>("employeeTitle");
 
+                                        
+
 
                                         if (k == 1)
                                         {
@@ -333,7 +335,7 @@
                                         {
                                             TblStr += "</tr><tr>";
                                         }
-                                        TblStr += "<td><h5><a href=" + bio.Url + " style='color: white'>" + empName + "</a></h5><p>" + empTitle + "</p></td>";
+                                        TblStr += "<td><h5><a href=" + bio.Url + " style='color: white'>" + empName + "</a></h5>" + Html.Raw(empTitle) + "</td>";
                                         k++;
                                     }
 
@@ -377,7 +379,7 @@
                                             @empName
                                         </a>
                                     </h5>
-                                        <p>@empTitle</p>
+                                        @Html.Raw(empTitle)
 
                                         @if (bio.DocumentTypeAlias == "bioDetailPage")
                                         {
