@@ -31,7 +31,7 @@
     {
         var Year = data.GetPropertyValue<DateTime>("filterDate").ToString("yyyy");
         var resourceCategorys = data.GetPropertyValue<IEnumerable<IPublishedContent>>("resource");
-        var resourceCategory="";
+        var resourceCategory = "";
         foreach (var item in resourceCategorys)
         {
             resourceCategory = item.Id.ToString();
@@ -104,7 +104,7 @@
 
     int paginationcount = Count / 10;
 
-    if(pagecnt != 0)
+    if (pagecnt != 0)
     {
         paginationcount = paginationcount + 1;
     }
@@ -132,8 +132,7 @@
 
 }
 @section InnerTopStyle {
-
-
+    <link href='/css/lib/modal-video.min.css' rel='stylesheet' />
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -206,29 +205,29 @@
                         </div>
                         <div class="form-group">
                             <label for="newDate" class="screen-reader-text">Date</label>
-                                @if (string.IsNullOrEmpty(Request.QueryString["newDate"]) == false)
-                                {
-                                    <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -" value="@Request.QueryString["newDate"]">
-                                }
-                                else
-                                {
-                                    <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
-                                }
+                            @if (string.IsNullOrEmpty(Request.QueryString["newDate"]) == false)
+                            {
+                                <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -" value="@Request.QueryString["newDate"]">
+                            }
+                            else
+                            {
+                                <input type="text" class="form-control" id="newDate" name="newDate" placeholder="- Select Year -">
+                            }
 
                         </div>
                         <div class="form-group">
                             <label for="newkey" class="screen-reader-text">Keyword</label>
-                                @if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
-                                {
-                                    <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder" value="@Request.QueryString["newkey"]">
-                                }
-                                else
-                                {
-                                    <input type="text" class="form-control" id="newkey" name="newkey" placeholder="Keyword">
-                                }
-                                <input type="hidden" name="page" value="" />
+                            @if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
+                            {
+                                <input type="text" class="form-control" id="newkey" name="newkey" placeholder="keyholder" value="@Request.QueryString["newkey"]">
+                            }
+                            else
+                            {
+                                <input type="text" class="form-control" id="newkey" name="newkey" placeholder="Keyword">
+                            }
+                            <input type="hidden" name="page" value="" />
 
-</div>
+                        </div>
                         <div class="form-group searchBtn">
                             <button class="btnManasq" onclick="return fnScroll()"><span>Search</span></button>
 
@@ -264,7 +263,8 @@
                                 {
                                     if (!string.IsNullOrEmpty(videoUrl))
                                     {
-                                        <a href="@videoUrl" target="_blank" class="newsFlexImg video">
+                                        string[] videoid = videoUrl.Split(new[] { "v=" }, StringSplitOptions.None);
+                                        <a href="@videoUrl" data-video-id="@videoid[1]" target="_blank" class="newsFlexImg video">
                                             <figure style="background-image: url('@detailImage.Url')">
                                                 <img src="@detailImage.Url" alt="@filterDetailTitle" />
                                             </figure>
@@ -273,12 +273,12 @@
                                     else
                                     {
                                         <a href="@resource.Url" class="newsFlexImg">
-                                          <figure style="background-image: url('@detailImage.Url')">
-                                              <img src="@detailImage.Url" alt="@filterDetailTitle" />
-                                          </figure>
+                                            <figure style="background-image: url('@detailImage.Url')">
+                                                <img src="@detailImage.Url" alt="@filterDetailTitle" />
+                                            </figure>
                                         </a>
                                     }
-                                        <div class="newsFlexContent">
+                                    <div class="newsFlexContent">
                                         @if (!string.IsNullOrEmpty(filterDetailTitle))
                                         {
                                             if (!string.IsNullOrEmpty(videoUrl))
@@ -311,14 +311,14 @@
                                         {
                                             @Html.Raw(teaserText)
                                         }
-                                            @if (!string.IsNullOrEmpty(videoUrl))
-                                            {
-                                                <a href="@videoUrl" class="btn-readMore" target="_blank">Read More ></a>
-                                            }
-                                            else
-                                            {
-                                                <a href="@resource.Url" class="btn-readMore">Read More ></a>
-                                            }
+                                        @if (!string.IsNullOrEmpty(videoUrl))
+                                        {
+                                            <a href="@videoUrl" class="btn-readMore" target="_blank">Read More ></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@resource.Url" class="btn-readMore">Read More ></a>
+                                        }
                                     </div>
                                 }
                                 else
@@ -391,10 +391,10 @@
                         </div>
                     </div>
                 }
-                                @*<div class="newsPagination">
-        previous next
-            <b>1</b> of 10 <a href="#"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
-        </div>*@
+                @*<div class="newsPagination">
+                    previous next
+                        <b>1</b> of 10 <a href="#"><img src="images/media-center/arrow-right.png" alt="Media Image" title="Media Image"></a>
+                    </div>*@
             </div>
         </div>
     </section>
@@ -426,6 +426,7 @@
     </section>
 </div>
 @section InnerBottomScript {
+    <script src="/scripts/lib/jquery-modal-video.min.js"></script>
     <script>
         $(function () {
             $("#resourceType").selectmenu();
@@ -455,15 +456,16 @@
 
     </script>
 
-<script>
+    <script>
         var url = window.location.search;
         if (url.match("resourceType").length > 0 || url.match("newDate").length > 0 || url.match("newkey").length > 0 || url.match("page").length > 0) {
             $("#newsFlexWrap").length > 0 && $("html, body").animate({
                 scrollTop: $(".heroBlock").offset().top
             }, "slow")
         }
+        $(".newsFlexImg").modalVideo();
 
-</script>
+    </script>
 
 }
 
