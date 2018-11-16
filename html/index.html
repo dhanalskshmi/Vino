@@ -615,7 +615,7 @@
               <div class="serviceContent">
                 <h3>
                   <span>Mortgage <br>Rates</span>
-                  10 YEAr 
+                  10 YEAr
                   Fixed
                   <strong>
                     4.0
@@ -1148,6 +1148,70 @@
   <script src="script/lib/jquery.validate.min.js"></script>
   <!--<script src="http://remysharp.com/downloads/jquery.inview.js"></script>-->
   <script type='text/javascript' src='script/main.min.js'></script>
+
+  <script>
+    $(document).ready(function () {
+        var hasparameter = window.location.hash;
+
+        if (hasparameter != "" && $(hasparameter).length > 0) {
+                 var h = $(hasparameter).offset().top - $('header').height();
+                $("html, body").animate({ scrollTop: h }, "slow");
+                      }
+
+    $("a").not("a.msubMenu").click(function (e) {
+        var url = $(this).attr("href");
+        if (typeof (url) !== "undefined")
+            {
+            var hasparameter = url.substring(url.indexOf('#') + 1);
+            if (hasparameter != '') {
+                hasparameter = '#' + hasparameter;
+            }
+            if (hasparameter != "" && $(hasparameter).length > 0) {
+                var h = $(hasparameter).offset().top - $('header').height();
+                $(".hasSubmenu").each(function () {
+                    $(this).parent().addClass("noHover");
+                });
+                $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
+
+                });
+
+                if ($(".hamburger").hasClass("active")) {
+                    $(".hamburger").trigger("click");
+                }
+
+            }
+        }
+    });
+
+
+
+     $('.flatNav ul li').hover(function (event) {
+         if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+             $(".hasSubmenu").each(function () {
+                 $(this).parent().removeClass("noHover");
+             });
+         }
+    }).focus(function () {
+        if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+            $(".hasSubmenu").each(function () {
+                $(this).parent().removeClass("noHover");
+            });
+        }
+    }).click(function () {
+        if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+            $(".hasSubmenu").each(function () {
+                $(this).parent().removeClass("noHover");
+            });
+        }
+    });
+
+
+    });
+</script>
+
 </body>
 
 </html>

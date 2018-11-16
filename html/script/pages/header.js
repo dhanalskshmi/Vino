@@ -1031,7 +1031,7 @@ $(window).scroll(function() {
 					//$('.stickyEmpty').css({'height':  $('header').height()});
 	    }
 		}
-    if (scrollTop > 26) {
+    else if (scrollTop > 26) {
         $('header').addClass('stickyActive');
 				if ($("body").width() >= 768) {
 					$('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 23 });
