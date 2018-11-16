@@ -1,0 +1,105 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
+@{
+    Layout = "Master.cshtml";
+
+
+    var BackroundImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var heroTitle = Model.Content.GetPropertyValue<string>("heroTitle");
+    var image = Model.Content.GetPropertyValue<IPublishedContent>("image");
+    var description = Model.Content.GetPropertyValue<string>("description");
+    var cTAButton = Model.Content.GetPropertyValue<Link>("cTAButton");
+    var fAQ = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("fAQ");
+}
+@section BackgroundImage {
+    @if (BackroundImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@BackroundImage.Url')">
+            <!--<img src="images/body_bg.jpg" alt="">-->
+        </div>
+    }
+}
+<section class="heroBanner">
+    
+</section>
+<section class="heroBlock digitalExpert">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if (!string.IsNullOrEmpty(heroTitle))
+            {
+                <h2>@heroTitle</h2>
+            }
+            <div class="scheduleWrap">
+                <div class="fullWrap">
+                    @if (image != null)
+                    {
+                        <div class="imgSec" style="background-image: url('@image.Url');">
+                        </div>
+                    }
+                    
+                    <div class="contentSec">
+                        @if (!string.IsNullOrEmpty(description))
+                        {
+                            @Html.Raw(description)
+                        }
+                        @if (cTAButton != null)
+                        {
+                            if (cTAButton.Target == "_blank")
+                            {
+                                <div class="link">
+                                    <a href="@cTAButton.Url" class="startBtn btnManasq" target="_blank"><span>@cTAButton.Name</span></a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="link">
+                                    <a href="@cTAButton.Url" class="startBtn btnManasq"><span>@cTAButton.Name</span></a>
+                                </div>
+                            }
+
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="faqSection">
+                @if (fAQ != null)
+                {
+                    foreach (var faqList in fAQ)
+                    {
+                        var title = faqList.GetPropertyValue<string>("digitalTitle");
+                        var faqquestion = faqList.GetPropertyValue<IEnumerable<IPublishedContent>>("digitalFaq");
+                        if (!string.IsNullOrEmpty(title))
+                        {
+                            <h3>@title</h3>
+                        }
+                        if (faqquestion != null)
+                        {
+                            foreach (var faqques in faqquestion)
+                            {
+                                var question = faqques.GetPropertyValue<string>("question");
+                                var answer = faqques.GetPropertyValue<string>("answer");
+                                if (!string.IsNullOrEmpty(question))
+                                {
+                                    <h4>@question</h4>
+                                }
+                                if (!string.IsNullOrEmpty(answer))
+                                {
+                                    @Html.Raw(answer)
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+             </div>
+        </div>
+    </div>
+</section>
