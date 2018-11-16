@@ -13186,7 +13186,6 @@ table.checking tbody tr td:nth-child(1):hover a {
   color: #2d5aa7;
   font-size: 15px;
   font-weight: 500;
-  text-align: center;
   vertical-align: middle;
 }
 @media (min-width: 1280px) {
@@ -13213,7 +13212,6 @@ table.checking tbody tr td:nth-child(1):hover a {
   background: #2d5aa7;
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .tableClass .bgWrap table tbody tr td:nth-child(1), .greyPanel.rates .bgWrap table tbody tr td:nth-child(1) {
