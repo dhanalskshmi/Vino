@@ -401,6 +401,10 @@ $(window).on("load resize",function(e) {
 			//var headHgt = $('header').outerHeight();
 			//console.log(headHgt);
 
+			$('.loginBlocks .txtBox').on('focus', function () {
+				$("html, body").animate({ scrollTop: 0 }, "slow");
+			});
+
 
 });
 
@@ -611,7 +615,7 @@ if($(e.target).closest("span").length==0){
 $(window).scroll(function() {
     var scrollTop = $(window).scrollTop();
     if (scrollTop > 900) {
-        $('.loginBlocks, .mLogin a').removeClass('active');
+        //$('.loginBlocks, .mLogin a').removeClass('active');
         $('.mainNav ul li a').removeClass('active');
     }
 });
