@@ -8133,6 +8133,7 @@ footer {
 }
 .careers .heroBlock .heroCareer.charityHero {
   margin-bottom: 0;
+  display: block;
 }
 .careers .heroBlock .heroCareer.charityHero h4 {
   margin-bottom: 35px;
@@ -9858,6 +9859,9 @@ footer {
             flex-direction: column;
   }
 }
+.newsWrap .bgWrap .newsFlexWrap .newsFlex a {
+  cursor: pointer;
+}
 .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg {
   width: 300px;
   margin-right: 21px;
@@ -10233,6 +10237,11 @@ footer {
   font-size: 23px;
 }
 
+@media (max-width: 1023px) {
+  .modal-video-close-btn {
+    right: 0;
+  }
+}
 .modal-video-close-btn:hover:before {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -10242,6 +10251,12 @@ footer {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+@media (max-width: 1023px) {
+  .modal-video-body {
+    max-width: 90%;
+  }
 }
 
 .bioPage .heroBlock {
