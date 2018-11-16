@@ -364,16 +364,6 @@ function equalheightBlock(container){
 
 
 
-// Scroll to Top
-
-$('.backtoTop').click(function(event) {
-	event.preventDefault();
-    $('html, body').animate({
-        scrollTop: $("body").offset().top-parseInt(300)
-    }, 800);
-});
-
-
 
 
 
@@ -394,15 +384,10 @@ $(window).on("load resize",function(e) {
 				$('.siteInner').attr("style","");
 			}
 
-			setTimeout(function(){
-	      //$('footer').addClass('animateIt');
-	    }, 1200);
-
-			//var headHgt = $('header').outerHeight();
-			//console.log(headHgt);
+			
 
 			$('.loginBlocks .txtBox').on('focus', function () {
-				$("html, body").animate({ scrollTop: 0 }, "fast");
+				//$("html, body").animate({ scrollTop: 0 }, "fast");
 			});
 
 
