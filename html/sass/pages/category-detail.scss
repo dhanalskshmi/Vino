@@ -130,7 +130,7 @@ table {
               padding: 11px 9px 6px;
 
               &:nth-child(2) {
-                display: none;
+                /*display: none;*/
               }
             }
             @include bp(tabportrait) {
