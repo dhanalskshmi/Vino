@@ -356,9 +356,15 @@ table {
                   width: 100%;
                   border-collapse: collapse;
                   padding-left: 30px !important;
+                  a {
+                    color: inherit;
+                  }
                 }
                 @include bp(mobile) {
                   padding-left: 10px !important;
+                  a {
+                    color: inherit;
+                  }
                 }
               }
             }
