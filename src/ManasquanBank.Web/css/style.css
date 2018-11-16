@@ -13067,15 +13067,18 @@ table.checking tbody tr td:nth-child(2) {
 table.checking thead th {
   text-align: left !important;
 }
+table.checking tbody tr td:nth-child(1) {
+  position: relative;
+  text-align: left;
+}
 table.checking tbody tr td:nth-child(1) a {
-  padding-left: 20px;
+  padding-top: 30px 9px;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   right: 0;
   bottom: 0;
   width: 100%;
-  text-align: center;
   display: block;
   -webkit-transform: translateX(-50%) translateY(-50%);
       -ms-transform: translateX(-50%) translateY(-50%);
@@ -13170,6 +13173,11 @@ table.checking tbody tr td:nth-child(1):hover a {
 .tableClass .bgWrap table thead tr th a, .greyPanel.rates .bgWrap table thead tr th a {
   color: inherit;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tableClass .bgWrap table thead tr th a, .greyPanel.rates .bgWrap table thead tr th a {
+    color: inherit;
+  }
+}
 .tableClass .bgWrap table tbody tr td, .greyPanel.rates .bgWrap table tbody tr td {
   border-bottom: 4px solid #f1f1f1;
   border-right: 4px solid #f1f1f1;
@@ -13220,6 +13228,11 @@ table.checking tbody tr td:nth-child(1):hover a {
 }
 .tableClass .bgWrap table tbody tr td a, .greyPanel.rates .bgWrap table tbody tr td a {
   color: inherit;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tableClass .bgWrap table tbody tr td a, .greyPanel.rates .bgWrap table tbody tr td a {
+    color: inherit;
+  }
 }
 .tableClass .bgWrap table tbody tr:last-child td, .greyPanel.rates .bgWrap table tbody tr:last-child td {
   border-bottom: 0;

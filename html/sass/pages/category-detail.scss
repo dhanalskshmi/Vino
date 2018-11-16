@@ -33,15 +33,16 @@ table {
       tr {
         td {
           &:nth-child(1) {
+            position: relative;
+            text-align: left;
             a {
-              padding-left: 20px;
+              padding-top: 30px 9px;
               position: absolute;
-              top: 60%;
+              top: 50%;
               left: 50%;
               right: 0;
               bottom: 0;
               width: 100%;
-              text-align: center;
               display: block;
               transform: translateX(-50%) translateY(-50%);
             }
@@ -142,6 +143,9 @@ table {
 
             a {
               color: inherit;
+              @include bp(tabportrait) {
+                color: inherit;
+              }
             }
           }
         }
@@ -195,6 +199,9 @@ table {
 
             a {
               color: inherit;
+              @include bp(tabportrait) {
+                color: inherit;
+              }
             }
           }
 
