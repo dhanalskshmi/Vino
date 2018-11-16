@@ -402,7 +402,7 @@ $(window).on("load resize",function(e) {
 			//console.log(headHgt);
 
 			$('.loginBlocks .txtBox').on('focus', function () {
-				$("html, body").animate({ scrollTop: 0 }, "slow");
+				$("html, body").animate({ scrollTop: 0 }, "fast");
 			});
 
 
@@ -998,7 +998,7 @@ $(document).ready(function() {
 		if ($("body").width() <= 767) {
 			setTimeout(function() {
 				$('.loginBlocks').css({'top': $('header').height()});
-			}, 500);
+			}, 0);
 		}
 
 	});
