@@ -63,6 +63,7 @@
                 height: auto;
                 width: 500px;
                 margin: 42px auto 82px auto;
+                text-align: center;
                 @include bp(landscape){
                     margin: 37px auto 62px auto;
                 }

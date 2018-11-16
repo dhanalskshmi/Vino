@@ -473,6 +473,11 @@ header {
 @media screen and (max-width: 767px) {
 	header {
 		position: fixed;
+		&.stickyActive {
+			.headerWrapper {
+				background: #FFF;
+			}
+		}
 	}
 }
 @media screen and (min-width: $tab-port-min) {

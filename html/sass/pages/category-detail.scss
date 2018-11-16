@@ -74,9 +74,9 @@ table.checking  tbody tr td:nth-child(2) {
                         border-right: 4px solid #f1f1f1;
                         background: #5678bf;
                         color: #fff;
-                        font-size: 15px;
+                        font-size: 16px;
                         text-transform: uppercase;
-                        text-align: center;
+                        text-align: left;
                         vertical-align: middle;
                         font-weight: 500;
                         @include bp(desktop) {

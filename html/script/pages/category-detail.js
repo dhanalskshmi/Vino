@@ -33,28 +33,28 @@ $(document).ready(function(){
                             $('<table />', { 'class': 'responsive_table', 'id': 'tablemobile' + i + j }).insertAfter(vInsertAfter);
                             $(this).find('td').each(function () {
 
-                               
 
-                             
+
+
                                 if($(this).attr("colspan")>0){
                                     var col=$(this).attr("colspan");
                                     $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).append($('<td/>', { 'html': $(this).html() })).appendTo($('#tablemobile' + i + j)).find("td:last-child").attr({'rowspan' : col});
                                      k++;
                                     col=parseInt(col);
                                     col=col-1;
-                                    
+
                                     for(var a=0;a<col;a++){
                                      $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).appendTo($('#tablemobile' + i + j));
                                     k++;
                                     }
-                                    
+
                                 }else{
                                      $('<tr/>').append($('<td/>', { 'html': arr[k], 'style': 'background-color:' + arrBG[k] + ';font-weight:bold' })).append($('<td/>', { 'html': $(this).html() })).appendTo($('#tablemobile' + i + j));
                                      k++;
                                 }
 
                             });
-                            
+
                             vInsertAfter = '#tablemobile' + i + j;
                         }
                         j++;
@@ -97,7 +97,7 @@ $(document).ready(function(){
             }
           });
 
-         
+
             $(window).on("load resize",function(e){
               $(".responsive_table tr:first-child").each(function() {
                $(this).addClass('blueBg')
@@ -106,15 +106,18 @@ $(document).ready(function(){
 
             });
 
-          
+
 
         }
+
 };
 
   $(".responsive_table tr:first-child").each(function() {
    $(this).addClass('blueBg');
+   if ($('tr.blueBg').find('td').find('a')) {
+     $('tr.blueBg').find('td').addClass('storno');
+   }
   });
 
 
 });
-
