@@ -1,0 +1,156 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
+@{
+    Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var BackroundImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+    var foundation = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("foundation");
+}
+@section BackgroundImage {
+    @if (BackroundImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@BackroundImage.Url')">
+            <!--<img src="images/body_bg.jpg" alt="">-->
+        </div>
+    }
+}
+<div class="careers">
+    <section class="heroBanner">
+        
+    </section>
+    <section class="heroBlock">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if (!string.IsNullOrEmpty(title))
+                {
+                    <h2>@title</h2>
+                }
+                
+                <div class="heroCareer charityHero">
+                    @if (!string.IsNullOrEmpty(content))
+                    {
+                        @Html.Raw(content);
+                    }
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="greyPanel charityFound">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                @if(foundation != null)
+                {
+                    int i = 0;
+                    foreach(var chart in foundation)
+                    {
+                        var chartTitle = chart.GetPropertyValue<string>("chartTitle");
+                        var image = chart.GetPropertyValue<IPublishedContent>("image");
+                        var imagePosition = chart.GetPropertyValue<string>("imagePosition");
+                        var imageTeaserText = chart.GetPropertyValue<string>("imageTeaserText");
+                      
+                    }
+                }
+
+                <h3>Our Mission</h3>
+                <p>
+                    Manasquan Bank Charitable Foundation, Inc. is a private foundation designed to support the local
+                    communities served by Manasquan Bank through grants and other funding. Our goal is to enhance the efforts
+                    of not-for-profit groups, institutions, schools and other organizations within our local communities who
+                    are working to solve unfulfilled needs through innovative thinking and programs.
+                </p>
+                <hr>
+                <h3>Targeted Funding  Priorities</h3>
+                <div class="FoundSponsers">
+                    <div class="lft">
+                        <figure>
+                            <img src="images/charity/charitable-foundation-group.png" alt="Manasquan Bank Sponsers">
+                        </figure>
+                        <p>Manasquan Bank Sponsors Coastal Habitat for Humanity Build Day in Partnership with NJBankers</p>
+                        <p><strong>We believe in creating stronger, more prosperous communities. As such, the efforts of the Foundation will be aligned around the following areas of impact. We are especially interested in programs that exhibit an innovative approach to serving needs not already being met.</strong></p>
+                    </div>
+                    <div class="rgt">
+                        <h4>Education</h4>
+                        <p>We seek to support those who inspire passion about learning. This may include programs that enhance education or deepen student aspirations. Efforts focusing on economics, finance, communications, business and public speaking are of particular interest.</p>
+                        <h4>Health and Wellness</h4>
+                        <p>Better health is the pathway to building stronger communities. Health care organizations or non-profits that are bringing new thinking to the advancement of physical and mental health for all ages are welcome to apply.</p>
+                        <h4>Social and Civic Services</h4>
+                        <p>Quality of life is made better for all by those who provide vital services. The Foundation will support volunteer and other organizations that bolster the social infrastructure, including fire departments, rescue squads and health-care services.</p>
+                        <h4>Culture and Arts</h4>
+                        <p>A form of economic enterprise, arts and culture bring people together across cultures and ages. Whether in the form of education, entertainment, or the creation of platforms that showcase local talent, we believe in their importance.</p>
+                        <h4>Recreation</h4>
+                        <p>Productive communities benefit from numerous forms of engagement beyond work or the classroom. Programs that provide facilities for and promote athletic and recreation teams and programs may be eligible.</p>
+                    </div>
+                </div>
+                <hr>
+                <h3>Grand Selection Criteria</h3>
+                <div class="selectCriteria">
+                    <div class="ContentBlk">
+                        <h4>Relevance</h4>
+                        <p>Directly relates to Foundation priorities and areas of interest</p>
+                        <h4>Funding Plan</h4>
+                        <p>Includes a strategy for leveraging other local/regional resources and support</p>
+                        <h4>ROI</h4>
+                        <p>Produces cost-effective results which can be measured and evaluated</p>
+                        <h4>Collaboration</h4>
+                        <p>Incentivizes collective community problem solving in the private & public sectors</p>
+                        <h4>Originality</h4>
+                        <p>Uniquely meets community needs and encourages coordination with other efforts</p>
+                        <h4>Fills a Need</h4>
+                        <p>Provides services to the Community that may not otherwise be available</p>
+                        <h4>Innovation</h4>
+                        <p>Advances innovative and long-term strategies to address recognized needs</p>
+                        <h4>Sustainability</h4>
+                        <p>Demonstrates sustainability and an ability to obtain future funding if needed</p>
+                    </div>
+                    <figure>
+                        <img src="images/careers/cultureImg1.png" alt="Culture Image">
+                    </figure>
+                </div>
+                <hr>
+                <h3>Determine your organization's eligibility</h3>
+                <div class="orgAbility">
+                    <figure>
+                        <img src="images/charity/organization-eligibility.png" alt="">
+                        <figcaption>Members of Team 140 Visit the Food Bank of Monmouth and Ocean Counties</figcaption>
+                    </figure>
+                    <div class="ContentBlk">
+                        <p><strong>Grants or awards are generally limited to the Bank’s existing market areas. Awards will include support for program development as well as for new and expanded facilities and equipment. Grant recipients must demonstrate:</strong></p>
+                        <ul>
+                            <li>501 (c) (3) or other non-profit status</li>
+                            <li>A need for private financial support</li>
+                            <li>Direct relevance to the Foundation’s areas of giving interest</li>
+                        </ul>
+                        <p><strong>Please note that the Foundation does not provide grants or financial support to the following:</strong></p>
+                        <ul>
+                            <li>Political organizations or candidates for political office</li>
+                            <li>Religious organizations or activities for sectarian purposes</li>
+                            <li>Individual endeavors (other than scholarship funds)</li>
+                            <li>Officers and Directors of the Bank, the Company, and any affiliates thereof</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <h3>Apply for Funding</h3>
+                <p><strong>Your request for funding begins with the completion of our Grant Application Form. Upon review, you may also be asked to submit additional details, including:</strong></p>
+                <ul>
+                    <li>A statement of purpose</li>
+                    <li>The target area the project addresses and the goals it hopes to achieve</li>
+                    <li>Financial statements, including sources of funding, the organization’s total budget, total project budget and amount requested</li>
+                    <li>Disclosure of any Bank Employee, Director or Advisory Director knowledgeable about the project or initiative</li>
+                    <li>A list of your organization’s Officers and Board of Directors</li>
+                    <li>Evidence of non-profit status</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>

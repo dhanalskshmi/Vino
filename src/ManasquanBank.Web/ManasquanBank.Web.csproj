@@ -832,6 +832,7 @@
     </Content>
     <Content Include="Views\DigitalExpert.cshtml" />
     <Content Include="Views\ClickSWITCH.cshtml" />
+    <Content Include="Views\CharitableFoundation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
