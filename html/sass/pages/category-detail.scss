@@ -358,12 +358,14 @@ table {
                   padding-left: 30px !important;
                   a {
                     color: inherit;
+                    display: block;
                   }
                 }
                 @include bp(mobile) {
                   padding-left: 10px !important;
                   a {
                     color: inherit;
+                    display: block;
                   }
                 }
               }

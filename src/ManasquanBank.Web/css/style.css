@@ -13414,6 +13414,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
   .tableClass .bgWrap table.responsive_table tr.blueBg td:nth-child(2) a, .greyPanel.rates .bgWrap table.responsive_table tr.blueBg td:nth-child(2) a {
     color: inherit;
+    display: block;
   }
 }
 @media (max-width: 767px) {
@@ -13422,6 +13423,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
   .tableClass .bgWrap table.responsive_table tr.blueBg td:nth-child(2) a, .greyPanel.rates .bgWrap table.responsive_table tr.blueBg td:nth-child(2) a {
     color: inherit;
+    display: block;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
