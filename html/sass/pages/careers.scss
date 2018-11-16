@@ -597,6 +597,9 @@
                 @include bp(mobile){
                     margin-top: 27px;
                 }
+                + p{
+                    margin-top: 20px;
+                }
             }
         }
         p {
