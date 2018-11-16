@@ -67,61 +67,59 @@
 					margin-right:0%;
 					margin-top:39px;
 				}
-				a {
-					figure {
-						width: 135px;
-						height: 135px;
-						display: flex;
-						flex-wrap: wrap;
-						align-items: center;
-						margin: auto;
-						border-radius: 50%;
-						padding: 10px;
-						background: #fff;
-						transition: all .3s;
+				figure {
+					width: 135px;
+					height: 135px;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					margin: auto;
+					border-radius: 50%;
+					padding: 10px;
+					background: #fff;
+					transition: all .3s;
+					@include bp(landscape){
+						width: 110px;
+						height: 110px;
+					}
+					img {
+						display: block;
+						margin: 0 auto;
 						@include bp(landscape){
-							width: 110px;
-							height: 110px;
+							max-width: 40px;
 						}
-						img {
-							display: block;
-							margin: 0 auto;
-							@include bp(landscape){
-								max-width: 40px;
-							}
-						}
+					}
+				}
+				span {
+					font-family: "manasquan";
+					font-size: 21px;
+					font-weight: 600;
+					color:#616161;
+					display:block;
+					text-align:center;
+					text-transform: uppercase;
+					margin-top: 40px;
+					transition: all .3s;
+					@include bp(tablandscape) {
+						font-size:16px;
+						margin-top: 21px;
+					}
+					@include bp(tabportrait) {
+						font-size:15px;
+						margin-top:20px;
+					}
+					@include bp(mobile) {
+						font-size:16px;
+						margin-top:22px;
+					}
+				}
+				&:hover {
+					figure {
+						transform: scale(.9);
 					}
 					span {
-						font-family: "manasquan";
-    					font-size: 21px;
-    					font-weight: 600;
-    					color:#616161;
-    					display:block;
-    					text-align:center;
-    					text-transform: uppercase;
-    					margin-top: 40px;
-    					transition: all .3s;
-    					@include bp(tablandscape) {
-    						font-size:16px;
-    						margin-top: 21px;
-    					}
-    					@include bp(tabportrait) {
-    						font-size:15px;
-    						margin-top:20px;
-    					}
-    					@include bp(mobile) {
-    						font-size:16px;
-    						margin-top:22px;
-    					}
-					}
-					&:hover {
-						figure {
-							transform: scale(.9);
-						}
-						span {
-							color:#1a3d6e;
-							transform: scale(1.1);
-						}
+						color:#1a3d6e;
+						transform: scale(1.1);
 					}
 				}
 				&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4) {

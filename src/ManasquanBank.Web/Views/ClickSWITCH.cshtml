@@ -1,0 +1,54 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ClientDependency.Core.Mvc
+@{
+	Layout = "Master.cshtml";
+
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var BackroundImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var content = Model.Content.GetPropertyValue<string>("content");
+}
+@section BackgroundImage {
+    @if (BackroundImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@BackroundImage.Url')">
+            <!--<img src="images/body_bg.jpg" alt="">-->
+        </div>
+    }
+}
+<section class="heroBanner">
+    
+</section>
+<section class="heroBlock clickSwitch">
+    <div class="containerWrapper">
+        <div class="bgWrap">
+            @if (!string.IsNullOrEmpty(title))
+            {
+                <h1>@title</h1>
+            }
+            
+            <!-- <div class="borderSection">
+                <div class="fullWrap">
+                    <div class="imgSec">
+                        <img src="images/clickswitch/clickswitch.png" alt="clickswitch"/>
+                    </div>
+                    <div class="contentSec">
+                        <p>Migrating to Manasquan Bank from your current financial institution might seem like a hassle, but we’ve made it easier than ever with ClickSWITCH, a free online tool that safely and securely switches your accounts over in just a few easy steps.</p>
+                    </div>
+                </div>
+            </div> -->
+            @if (!string.IsNullOrEmpty(content))
+            {
+                <div class="detailSection">
+                  @Html.Raw(content)
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>

@@ -569,6 +569,39 @@
                 }
             }
         }
+        .contentBlock{
+            p{
+                b,strong{
+                    display: block;
+                    margin-top: 46px;
+                    margin-bottom: 27px;
+                    @include bp(landscape){
+                        margin-top: 27px;
+                        margin-bottom: 20px;
+                    }
+                    @include bp(tablet){
+                        margin-top: 19px;
+                    }
+                    @include bp(mobile){
+                        margin-top: 30px;
+                    }
+                }
+            }
+            ul{
+                @include bp(landscape){
+                    margin-top: 33px;
+                }
+                @include bp(tablet){
+                    margin-top: 31px;
+                }
+                @include bp(mobile){
+                    margin-top: 27px;
+                }
+                + p{
+                    margin-top: 20px;
+                }
+            }
+        }
         p {
             font-size: 18px;
             line-height: 22px;
