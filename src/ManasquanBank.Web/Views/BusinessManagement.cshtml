@@ -380,7 +380,7 @@
     $(document).ready(function() {
       $('#basicExample').timepicker();
       $("#contactSucc").length > 0 && $("html, body").animate({
-        scrollTop: $(".contactFormWrap").offset().top - 200
+          scrollTop: $(".contactFormWrap").offset().top - $("header").height()
       }, "slow")
 
       // if (jQuery("#zip").length > 0) {
