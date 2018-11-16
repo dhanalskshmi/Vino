@@ -460,7 +460,7 @@
         var url = window.location.search;
         if (url.match("resourceType").length > 0 || url.match("newDate").length > 0 || url.match("newkey").length > 0 || url.match("page").length > 0) {
             $("#newsFlexWrap").length > 0 && $("html, body").animate({
-                scrollTop: $(".heroBlock").offset().top+$("header").height()
+                scrollTop: $(".heroBlock").offset().top - $("header").height()
             }, "slow")
         }
         $(".newsFlexImg").modalVideo();

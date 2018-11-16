@@ -551,7 +551,7 @@
             $(this).text(text).toggleClass("active");
             var bluepanel = $(this).closest(".bluePanel");
             $('html, body').animate({
-                scrollTop: bluepanel.offset().top
+                scrollTop: bluepanel.offset().top - $("header").height()
             }, "slow");
         });
     });
@@ -570,7 +570,7 @@
         var url = window.location.search;
         if (url.match("position").length > 0) {
             $("html, body").animate({
-                scrollTop: $(".openPosition").offset().top
+                scrollTop: $(".openPosition").offset().top - $("header").height()
             }, "slow")
         }
 
