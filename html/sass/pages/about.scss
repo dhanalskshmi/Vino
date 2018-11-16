@@ -104,10 +104,10 @@
             padding: 45px 60px 20px 55px;
         }
         @include bp(tablet) {
-            padding: 42px 60px 20px 60px;
+            padding: 40px 60px 20px 60px;
         }
         @include bp(mobile) {
-            padding: 50px 10px 0px 10px;
+            padding: 33px 10px 0px 10px;
         }
     }
     h2,

@@ -6221,12 +6221,12 @@ footer {
 }
 @media (max-width: 1023px) {
   .heroBlock .bgWrap {
-    padding: 42px 60px 20px 60px;
+    padding: 40px 60px 20px 60px;
   }
 }
 @media (max-width: 767px) {
   .heroBlock .bgWrap {
-    padding: 50px 10px 0px 10px;
+    padding: 33px 10px 0px 10px;
   }
 }
 .heroBlock h2,
@@ -13098,6 +13098,10 @@ footer {
   }
 }
 
+.lowerCase {
+  text-transform: lowercase;
+}
+
 table {
   margin: 0 auto;
 }
@@ -13207,7 +13211,7 @@ table.checking tbody tr td:nth-child(1):hover a {
     padding: 11px 9px 6px;
   }
   .tableClass .bgWrap table thead tr th:nth-child(2), .greyPanel.rates .bgWrap table thead tr th:nth-child(2) {
-    display: none;
+    /*display: none;*/
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -18562,7 +18566,7 @@ section.searchPage .searchWrap .btn-readMore:hover {
   }
 }
 .heroBlock.digitalExpert .bgWrap .scheduleWrap {
-  display: table;
+  display: block;
   width: 100%;
   margin-top: 31px;
   margin-bottom: 104px;
@@ -18588,6 +18592,9 @@ section.searchPage .searchWrap .btn-readMore:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 @media (max-width: 767px) {
   .heroBlock.digitalExpert .bgWrap .scheduleWrap .fullWrap {
@@ -18630,6 +18637,9 @@ section.searchPage .searchWrap .btn-readMore:hover {
     padding-left: 0px;
     padding-top: 20px;
   }
+}
+.heroBlock.digitalExpert .bgWrap .scheduleWrap .fullWrap .contentSec p {
+  margin-bottom: 10px;
 }
 @media (min-width: 1280px) {
   .heroBlock.digitalExpert .bgWrap .scheduleWrap .fullWrap .contentSec p {
@@ -18704,6 +18714,7 @@ section.searchPage .searchWrap .btn-readMore:hover {
   text-transform: uppercase;
   color: #3d3d3d;
   font-weight: 700;
+  font-size: 20px;
 }
 @media (min-width: 1280px) {
   .heroBlock.digitalExpert .bgWrap .faqSection h4 {
