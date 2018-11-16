@@ -8135,9 +8135,10 @@ footer {
   margin-bottom: 0;
 }
 .careers .heroBlock .heroCareer.charityHero h4 {
-  margin-bottom: 26px;
+  margin-bottom: 35px;
   margin-top: 12px;
   font-size: 24px;
+  color: #3d3d3d;
 }
 @media (max-width: 1023px) {
   .careers .heroBlock .heroCareer.charityHero h4 {
@@ -8156,6 +8157,7 @@ footer {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-bottom: 11px;
+  color: #3e3e3e;
 }
 @media (max-width: 1023px) {
   .careers .heroBlock .heroCareer.charityHero p {
@@ -9328,12 +9330,12 @@ footer {
   padding-bottom: 80px;
   color: #3d3d3d;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .greyPanel.charityFound .bgWrap {
     padding: 20px 20px 50px 20px;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .greyPanel.charityFound .bgWrap {
     padding: 20px 10px 50px 10px;
   }
@@ -9356,7 +9358,7 @@ footer {
   content: "";
   width: 4px;
   height: 4px;
-  background: #000;
+  background: #3d3d3d;
   border-radius: 50%;
   left: -10px;
   top: 9px;
@@ -9388,12 +9390,14 @@ footer {
 }
 .greyPanel.charityFound .bgWrap hr {
   border-top-color: #666;
-  margin-top: 57px;
-  margin-bottom: 67px;
+  margin: 57px auto 67px auto;
+  width: -webkit-calc(100% - 30px);
+  width: calc(100% - 30px);
 }
 @media (max-width: 1279px) {
   .greyPanel.charityFound .bgWrap hr {
     margin: 35px 0px;
+    width: 100%;
   }
 }
 .greyPanel.charityFound .bgWrap .FoundSponsers {
@@ -10227,6 +10231,17 @@ footer {
   text-align: center;
   color: #1268e5;
   font-size: 23px;
+}
+
+.modal-video-close-btn:hover:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.modal-video-close-btn:hover:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .bioPage .heroBlock {
@@ -13083,10 +13098,6 @@ footer {
   }
 }
 
-.lowerCase {
-  text-transform: lowercase;
-}
-
 table {
   margin: 0 auto;
 }
@@ -13196,7 +13207,7 @@ table.checking tbody tr td:nth-child(1):hover a {
     padding: 11px 9px 6px;
   }
   .tableClass .bgWrap table thead tr th:nth-child(2), .greyPanel.rates .bgWrap table thead tr th:nth-child(2) {
-    /*display: none;*/
+    display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

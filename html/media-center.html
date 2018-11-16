@@ -10,6 +10,7 @@
   <link href='css/lib/jquery-ui.css' rel='stylesheet' />
   <link href='css/lib/bootstrap.min.css' rel='stylesheet' />
   <link href='css/lib/datepicker.css' rel='stylesheet' />
+  <link href='css/lib/modal-video.min.css' rel='stylesheet' />
   <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 
@@ -597,9 +598,9 @@
           <div class="bgWrap">
             <div class="newsFlexWrap">
               <div class="newsFlex">
-                <figure class="newsFlexImg video">
-                  <a href="" style="background-image: url('images/media-center/news1.jpg')"> <img src="images/media-center/news1.jpg" alt="Media Image" title="Media Image"></a>
-                </figure>
+                <a data-video-id="JWqoU4GqtDg" class="newsFlexImg video">
+                    <figure style="background-image: url('images/media-center/news1.jpg')"></figure>
+                </a>
                 <div class="newsFlexContent">
                   <h4><a href="">Manasquan Bank Promotes Mike Carafa to VP, Commercial Lending</a></h4>
                   <h5><span class="newsDate">June 20, 2018</span><a href="" class="newsType">type of
@@ -613,8 +614,8 @@
                 </div>
               </div>
               <div class="newsFlex">
-                <figure class="newsFlexImg">
-                  <img src="images/media-center/news2.jpg" alt="">
+                <figure class="newsFlexImg" style="background-image: url(images/media-center/news2.jpg)">
+                  <img src="images/media-center/news2.jpg" alt="" class="">
                 </figure>
                 <div class="newsFlexContent">
                   <h4>Manasquan Bank Promotes Mike Carafa to VP, Commercial Lending</h4>
@@ -850,6 +851,7 @@
   <script src="script/lib/jquery.validate.min.js"></script>
   <script src="script/lib/jquery-ui.js"></script>
   <script src="script/lib/bootstrap-datepicker.js"></script>
+  <script src="script/lib/jquery-modal-video.min.js"></script>
   <script type='text/javascript' src='script/main.min.js'></script>
   <script>
     $(function() {
@@ -860,6 +862,7 @@
         minViewMode: "years"
       });
     });
+    $(".newsFlexImg").modalVideo();
   </script>
 
 </body>

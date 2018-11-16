@@ -464,3 +464,13 @@
         font-size: 23px;
     }
 }
+.modal-video-close-btn{
+    &:hover{
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+    }
+}
