@@ -1,0 +1,6 @@
+<appSettings>
+  <!-- recaptcha keys for wb.dev. They will need to be updated if using a different hostname-->
+  <add key="recaptchaPublicKey" value="xxxxxxxxxxxxxxx" />
+  <add key="recaptchaPrivateKey" value="xxxxxxxxxxxxxxx" />
+  <add key="recaptchaApiVersion" value="2" />
+</appSettings>

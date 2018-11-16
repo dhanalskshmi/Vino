@@ -784,6 +784,8 @@
     <Content Include="App_Plugins\Skybrud.Social\Styles\Social.less" />
     <Content Include="App_Plugins\Skybrud.Social\package.manifest" />
     <Content Include="config\rewriteMaps.config" />
+    <Content Include="appSettings.config" />
+    <Content Include="appSettings.config.template" />
     <None Include="packages.config" />
     <Content Include="Views\ContactUsPage.cshtml" />
     <Content Include="Views\Partials\Form\ContactUs.cshtml" />
