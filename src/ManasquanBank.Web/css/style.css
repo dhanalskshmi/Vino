@@ -13064,8 +13064,15 @@ table.checking tbody tr td:nth-child(2) {
   display: table-cell !important;
 }
 
+table.checking thead th {
+  text-align: left !important;
+}
+table.checking tbody tr.tdBgwrap td:nth-child(1):hover {
+  background: #1268e5;
+}
+
 .tableSection + .heroLinks {
-  margin-top: 0px !important;
+  margin-top: 0 !important;
 }
 
 @media (max-width: 767px) {
@@ -13075,17 +13082,17 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (min-width: 1280px) {
   .categoryBlock .bgWrap {
-    padding: 41px 58px 20px 58px;
+    padding: 41px 58px 20px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categoryBlock .bgWrap {
-    padding: 45px 20px 20px 20px;
+    padding: 45px 20px 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categoryBlock .bgWrap {
-    padding: 42px 20px 40px 20px;
+    padding: 42px 20px 40px;
   }
 }
 @media (min-width: 1280px) {
@@ -13131,7 +13138,7 @@ table.checking tbody tr td:nth-child(2) {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .tableClass .bgWrap table thead tr th, .greyPanel.rates .bgWrap table thead tr th {
     font-size: 15px;
-    padding: 11px 9px 6px 9px;
+    padding: 11px 9px 6px;
   }
   .tableClass .bgWrap table thead tr th:nth-child(2), .greyPanel.rates .bgWrap table thead tr th:nth-child(2) {
     display: none;
@@ -13144,7 +13151,7 @@ table.checking tbody tr td:nth-child(2) {
   }
 }
 .tableClass .bgWrap table thead tr th:last-child, .greyPanel.rates .bgWrap table thead tr th:last-child {
-  border-right: 0px;
+  border-right: 0;
 }
 .tableClass .bgWrap table thead tr th a, .greyPanel.rates .bgWrap table thead tr th a {
   color: inherit;
@@ -13152,7 +13159,7 @@ table.checking tbody tr td:nth-child(2) {
 .tableClass .bgWrap table tbody tr td, .greyPanel.rates .bgWrap table tbody tr td {
   border-bottom: 4px solid #f1f1f1;
   border-right: 4px solid #f1f1f1;
-  border-top: 0px;
+  border-top: 0;
   background: #d9e0ea;
   color: #2d5aa7;
   font-size: 15px;
@@ -13195,13 +13202,13 @@ table.checking tbody tr td:nth-child(2) {
   text-align: left;
 }
 .tableClass .bgWrap table tbody tr td:last-child, .greyPanel.rates .bgWrap table tbody tr td:last-child {
-  border-right: 0px;
+  border-right: 0;
 }
 .tableClass .bgWrap table tbody tr td a, .greyPanel.rates .bgWrap table tbody tr td a {
   color: inherit;
 }
 .tableClass .bgWrap table tbody tr:last-child td, .greyPanel.rates .bgWrap table tbody tr:last-child td {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 @media (min-width: 1280px) {
   .tableClass .bgWrap table.checking.responsive_table, .greyPanel.rates .bgWrap table.checking.responsive_table {
@@ -13236,7 +13243,7 @@ table.checking tbody tr td:nth-child(2) {
   }
 }
 .tableClass .bgWrap table.responsive_table tr:last-child td, .greyPanel.rates .bgWrap table.responsive_table tr:last-child td {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 @media (min-width: 320px) and (max-width: 1023px) {
   .tableClass .bgWrap table.responsive_table tr td, .greyPanel.rates .bgWrap table.responsive_table tr td {
@@ -13283,7 +13290,7 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (min-width: 320px) and (max-width: 1023px) {
   .tableClass .bgWrap table.responsive_table tr td:last-child, .greyPanel.rates .bgWrap table.responsive_table tr td:last-child {
-    border-right: 0px;
+    border-right: 0;
     text-align: center;
   }
 }
@@ -13348,7 +13355,7 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .tableClass .bgWrap table.responsive_table:last-child, .greyPanel.rates .bgWrap table.responsive_table:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1280px) {
@@ -13377,7 +13384,7 @@ table.checking tbody tr td:nth-child(2) {
 @media (max-width: 767px) {
   .tableClass .bgWrap .tableSection .table-responsive, .greyPanel.rates .bgWrap .tableSection .table-responsive {
     border: none;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 .tableClass .bgWrap .tableSection + ul.heroLinks, .greyPanel.rates .bgWrap .tableSection + ul.heroLinks {
@@ -13420,13 +13427,13 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap {
-    margin-left: 0px;
+    margin-left: 0;
     margin-top: 75px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap {
-    margin-left: 0px;
+    margin-left: 0;
     margin-top: 55px;
   }
 }
@@ -13434,8 +13441,8 @@ table.checking tbody tr td:nth-child(2) {
   .categorySection .bgWrap .flexWrap {
     display: table;
     width: 100%;
-    margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 .categorySection .bgWrap .flexWrap .imgSection {
@@ -13453,8 +13460,8 @@ table.checking tbody tr td:nth-child(2) {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .imgSection {
     width: 50%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     background-position: center;
     min-height: 390px;
   }
@@ -13462,8 +13469,8 @@ table.checking tbody tr td:nth-child(2) {
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap .imgSection {
     width: 38.187%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     background-position: center;
     min-height: 390px;
   }
@@ -13472,8 +13479,8 @@ table.checking tbody tr td:nth-child(2) {
   .categorySection .bgWrap .flexWrap .imgSection {
     width: 100%;
     min-height: 250px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 .categorySection .bgWrap .flexWrap .imgSection:after {
@@ -13536,7 +13543,7 @@ table.checking tbody tr td:nth-child(2) {
   .categorySection .bgWrap .flexWrap .contentSection {
     width: 100%;
     min-height: auto;
-    padding: 19px 11px 16px 11px;
+    padding: 19px 11px 16px;
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection h2 {
@@ -13676,7 +13683,7 @@ table.checking tbody tr td:nth-child(2) {
   display: block;
   width: 100%;
   margin-right: 20px;
-                    /*margin-top: 26px;
+          /*margin-top: 26px;
 					margin-bottom: 20px;*/
 }
 @media (min-width: 1280px) {
@@ -13799,7 +13806,7 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (max-width: 767px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location {
-    margin-left: 0px;
+    margin-left: 0;
     margin-top: -4px;
   }
 }
@@ -13809,12 +13816,12 @@ table.checking tbody tr td:nth-child(2) {
 }
 @media (min-width: 1280px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location span img {
-    top: 0px;
+    top: 0;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section a.location span img {
-    top: 0px;
+    top: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -13892,7 +13899,7 @@ table.checking tbody tr td:nth-child(2) {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.applyBtn {
     font-size: 18px;
-    padding: 5px 26px 4px 26px;
+    padding: 5px 26px 4px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -13904,7 +13911,7 @@ table.checking tbody tr td:nth-child(2) {
 @media (max-width: 767px) {
   .categorySection .bgWrap .flexWrap .contentSection a.applyBtn {
     font-size: 18px;
-    padding: 9px 26px 4px 26px;
+    padding: 9px 26px 4px;
     margin: 0 auto;
     width: 63%;
     display: block;
@@ -13991,27 +13998,23 @@ table.checking tbody tr td:nth-child(2) {
           transform: rotate(180deg);
 }
 .categorySection .bgWrap.colbgWrap {
-  padding: 48px 50px;
-  padding-bottom: 39px;
+  padding: 48px 50px 39px;
   background: #e7e7e7;
   display: none;
 }
 @media (max-width: 1279px) {
   .categorySection .bgWrap.colbgWrap {
-    padding: 48px 25px;
-    padding-bottom: 18px;
+    padding: 48px 25px 18px;
   }
 }
 @media (max-width: 1023px) {
   .categorySection .bgWrap.colbgWrap {
-    padding: 48px 22px;
-    padding-bottom: 33px;
+    padding: 48px 22px 33px;
   }
 }
 @media (max-width: 767px) {
   .categorySection .bgWrap.colbgWrap {
-    padding: 44px 10px;
-    padding-bottom: 15px;
+    padding: 44px 10px 15px;
   }
 }
 .categorySection .bgWrap.colbgWrap .catCollapse p {
@@ -14192,7 +14195,7 @@ table.checking tbody tr td:nth-child(2) {
 .heroBlock table ul li {
   font-weight: 500;
   font-size: 20px;
-  margin: 10px 0px;
+  margin: 10px 0;
   color: #3d3d3d;
   position: relative;
   padding-left: 10px;
