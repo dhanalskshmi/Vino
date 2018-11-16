@@ -63,8 +63,8 @@
         }
         if (string.IsNullOrEmpty(Request.QueryString["newkey"]) == false)
         {
-            var keySearch = Request.QueryString["newkey"].ToString();
-            if (filterTitle.Contains(keySearch) || filterTeaser.Contains(keySearch) || filterbodyTest.Contains(keySearch))
+            var keySearch = Request.QueryString["newkey"].ToLower().ToString();
+            if (filterTitle.ToLower().Contains(keySearch) || filterTeaser.ToLower().Contains(keySearch) || filterbodyTest.ToLower().Contains(keySearch))
             {
                 keyFilterStatus = true;
             }
@@ -263,8 +263,8 @@
                                 {
                                     if (!string.IsNullOrEmpty(videoUrl))
                                     {
-                                        string[] videoid = videoUrl.Split(new[] { "v=" }, StringSplitOptions.None);
-                                        <a href="@videoUrl" data-video-id="@videoid[1]" target="_blank" class="newsFlexImg video">
+                                        //string[] videoid = videoUrl.Split(new[] { "v=" }, StringSplitOptions.None);
+                                        <a href="@videoUrl" data-video-id="@videoUrl" target="_blank" class="newsFlexImg video">
                                             <figure style="background-image: url('@detailImage.Url')">
                                                 <img src="@detailImage.Url" alt="@filterDetailTitle" />
                                             </figure>
@@ -460,7 +460,7 @@
         var url = window.location.search;
         if (url.match("resourceType").length > 0 || url.match("newDate").length > 0 || url.match("newkey").length > 0 || url.match("page").length > 0) {
             $("#newsFlexWrap").length > 0 && $("html, body").animate({
-                scrollTop: $(".heroBlock").offset().top
+                scrollTop: $(".heroBlock").offset().top+$("header").height()
             }, "slow")
         }
         $(".newsFlexImg").modalVideo();
