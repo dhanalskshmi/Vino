@@ -8836,6 +8836,9 @@ footer {
     margin-top: 27px;
   }
 }
+.careerGrey .bgWrap .contentBlock ul + p, .cultureWrap .bgWrap .contentBlock ul + p {
+  margin-top: 20px;
+}
 .careerGrey .bgWrap p, .cultureWrap .bgWrap p {
   font-size: 18px;
   line-height: 22px;
@@ -18261,7 +18264,7 @@ section.searchPage .searchWrap .btn-readMore:hover {
     margin-bottom: 39px;
   }
 }
-.heroBlock.clickSwitch .bgWrap h2 span {
+.heroBlock.clickSwitch .bgWrap h2, .heroBlock.clickSwitch .bgWrap h1 {
   text-transform: none;
 }
 .heroBlock.clickSwitch .bgWrap img {
