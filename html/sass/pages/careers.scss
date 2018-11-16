@@ -1156,6 +1156,15 @@
                     }
                 }
             }
+            .btnManasq{
+                @extend .btn-mansq;
+                font-size: 14px;
+                padding: 5px 14px;
+                text-transform: none;
+                font-weight: normal;
+                vertical-align: text-bottom;
+                margin-left: 5px;
+            }
         }
     }
 }
