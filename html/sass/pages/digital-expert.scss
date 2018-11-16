@@ -1,92 +1,3 @@
-.scheduleWrap {
-	display:table;
-	width:100%;
-	margin-top: 31px;
-	margin-bottom: 104px;
-	@include bp(tablandscape) {
-		margin-bottom:80px;
-	}
-	@include bp(tabportrait) {
-		margin-bottom: 70px;
-		margin-top:22px;
-	}
-	@include bp(mobile) {
-		margin-bottom: 40px;
-	}
-	.fullWrap {
-		display:flex;
-		@include bp(mobile) {
-			display:block;
-		}
-		.imgSec {
-			width: 31.305%;
-    		float: left;
-    		min-height:240px;
-    		background-size: cover;
-    		background-position: center;
-    		@include bp(tabportrait) {
-    			width:40%;
-    		}
-    		@include bp(mobile) {
-    			width:100%;
-    			min-height:200px;
-    		}
-		}
-		.contentSec {
-			width: 68.695%;
-    		float: left;
-    		padding-left: 40px;
-    		padding-top: 2px;
-    		@include bp(tablandsacpe) {
-    			padding-left:25px;
-    		}
-    		@include bp(tabportrait) {
-    			width:60%;
-    			padding-left:25px;
-    		}
-    		@include bp(mobile) {
-    			width:100%;
-    			padding-left: 0px;
-    			padding-top: 20px;
-    		}
-    		p {
-    			@include bp(desktop) {
-    				font-size:19px;
-    			}
-    		}
-    		.link {
-    			@include bp(mobile) {
-    				text-align:center;
-    			}
-    			a {
-    				&.startBtn {
- 						background: #1268e5;
-						display: inline-block;
-						color: #fff;
-						padding: 10px 33px 11px;
-						font-size: 28px;
-						font-weight:600;
-						text-transform: uppercase;
-						margin-top: 27px;
-						border-radius: 18px;
-						border:1px solid #fff; 
-						@include bp(tablandscape) {
-							font-size:22px;
-						}
-						@include bp(tabportrait) {
-							font-size:20px;
-							margin-top:10px;
-						} 	
-						@include bp(mobile) {
-							font-size:20px;
-							margin-top: 10px;
-						}				
-    				}
-    			}
-    		}
-		}
-	}
-}
 .heroBlock {
 	&.digitalExpert {
 		margin-bottom:100px;
@@ -97,130 +8,200 @@
 			margin-bottom:39px;
 		}
 		.bgWrap {
-			.accordianSection {
+			.scheduleWrap {
 				display:table;
 				width:100%;
-				margin-bottom: 40px;
+				margin-top: 31px;
+				margin-bottom: 104px;
 				@include bp(tablandscape) {
-					margin-bottom: 30px;
+					margin-bottom:80px;
 				}
+				@include bp(tabportrait) {
+					margin-bottom: 70px;
+					margin-top:22px;
+				}
+				@include bp(mobile) {
+					margin-bottom: 40px;
+				}
+				.fullWrap {
+					display:flex;
+					@include bp(mobile) {
+						display:block;
+					}
+					.imgSec {
+						width: 31.305%;
+			    		float: left;
+			    		min-height:240px;
+			    		background-size: cover;
+			    		background-position: center;
+			    		@include bp(tabportrait) {
+			    			width:40%;
+			    		}
+			    		@include bp(mobile) {
+			    			width:100%;
+			    			min-height:200px;
+			    		}
+					}
+					.contentSec {
+						width: 68.695%;
+			    		float: left;
+			    		padding-left: 40px;
+			    		padding-top: 2px;
+			    		@include bp(tablandsacpe) {
+			    			padding-left:25px;
+			    		}
+			    		@include bp(tabportrait) {
+			    			width:60%;
+			    			padding-left:25px;
+			    		}
+			    		@include bp(mobile) {
+			    			width:100%;
+			    			padding-left: 0px;
+			    			padding-top: 20px;
+			    		}
+			    		p {
+			    			@include bp(desktop) {
+			    				font-size:19px;
+			    			}
+			    		}
+			    		.link {
+			    			@include bp(mobile) {
+			    				text-align:center;
+			    			}
+			    			a {
+			    				&.startBtn {
+			 						background: #1268e5;
+									display: inline-block;
+									color: #fff;
+									padding: 10px 33px 11px;
+									font-size: 28px;
+									font-weight:600;
+									text-transform: uppercase;
+									margin-top: 27px;
+									border-radius: 18px;
+									border:1px solid #fff; 
+									@include bp(tablandscape) {
+										font-size:22px;
+									}
+									@include bp(tabportrait) {
+										font-size:20px;
+										margin-top:10px;
+									} 	
+									@include bp(mobile) {
+										font-size:20px;
+										margin-top: 10px;
+									}				
+			    				}
+			    			}
+			    		}
+					}
+				}
+			}
+			.faqSection {
+				display:table;
+				width:100%;
+				margin-bottom: 4px;
 				h3 {
 					color:#3d3d3d;
-					margin-bottom: 21px;
+					margin-bottom: 36px;
 					text-transform: uppercase;
 					@include bp(desktop) {
 						font-size:36px;
 					}
+					@include bp(tablandscape) {
+						margin-bottom:25px;
+					}
 					@include bp(tabportrait) {
 						margin-bottom: 15px;
 					}
+					@include bp(mobile) {
+						margin-bottom: 15px;
+					}
 				}
-				.accordian-panel {
-					display:table;
-					width:100%;
-					.head-panel {
-						position:relative;
-						border-bottom: 1px solid #fff;
-						h4 {
-							color:#fff;
-							background:#1c3d6d;
-							cursor:pointer;
-							font-weight: normal;
-    						padding:12px 17px 8px 21px;
-    						@include bp(desktop) {
-    							font-size: 20px;
-    						}
-    						@include bp(tabportrait) {
-    							font-size:18px;
-    						}
-    						@include bp(mobile) {
-    							padding:12px 40px 8px 17px;
-    							font-size:18px;
-    						}
-    						i {
-    							content: '';
-							    background-image: url(../images/clickswitch/accordian-arrow.png);
-							    transform: rotate(180deg);
-							    display: block;
-							    background-repeat: no-repeat;
-							    background-position: right;
-							    background-size: contain;
-							    position: absolute;
-							    right: 17px;
-							    top: 17px;
-							    width: 14px;
-							    height: 10px;
-							    transition: .2s;
-    						}
+				h4 {
+    				text-transform: uppercase;
+    				color: #3d3d3d;
+    				font-weight: 700;
+    				@include bp(desktop) {
+    					font-size: 24px;
+    				}
+    				&+ul {
+    					margin-top: 10px;
+    				}
+    				&+p {
+    					margin-top: 10px;
+    					@include bp(tablandscape) {
+    						margin-top:5px;
+    					}
+    					@include bp(mobile) {
+    						margin-top:5px;
+    					}
+    				}
+				}
+				p {
+					@include bp(desktop) {
+						font-size:18px;
+					}
+					&+p {
+						margin-top:-20px;
+					}
+					&+h4 {
+						margin-top: -4px;
+						@include bp(tabportrait) {
+							margin-top:0px;
 						}
 					}
-					.detail {
-						display:none;
-						.inner-detail {
-							.full-width {
-								background:#fff;
-								padding: 18px 43px 22px;
-								@include bp(tabportrait) {
-									padding: 18px 30px 22px;	
-								}
-								@include bp(mobile) {
-									padding: 18px 17px 22px;
-								}
-								ul {
-									position:relative;
-									list-style: none;
-									padding-left: 0px;
-									margin-top:0px;
-									margin-bottom: 0px;
-									li {
-										color:#3d3d3d;
-										padding-left: 37px;
-										margin-bottom: -3px;
-										font-size:18px;
-										@include bp(desktop) {
-											font-size:20px;
-										}
-										@include bp(tabportrait) {
-											padding-left: 25px;
-										}
-										@include bp(mobile) {
-											padding-left: 20px;
-										}
-										&:before {
-											content: "";
-										    position: absolute;
-										    width: 4px;
-										    height: 4px;
-										    background: #3d3d3d;
-										    border-radius: 50%;
-										    margin-top: 10px;
-										    left: 0;
-										}
-									}
-									&+p {
-										margin-top:20px;
-									}
-								}
-								p {
-									margin-bottom:0px;
-									&+p {
-										margin-top:20px;
-									}
-								}
+					&+ul {
+						margin-top: -20px;
+					}
+				}
+				ul {
+					position:relative;
+					list-style: none;
+					padding-left: 0px;
+					li {
+						color:#3d3d3d;
+						padding-left: 70px;
+						margin-bottom: -3px;
+						@include bp(desktop) {
+							font-size:18px;
+						}
+						@include bp(tabportrait) {
+							padding-left: 45px;
+							margin-bottom:0px;
+							font-size:18px;
+						}
+						@include bp(mobile) {
+							padding-left: 20px;
+							font-size:18px;
+						}
+						&:before {
+							content: "";
+							position: absolute;
+							width: 4px;
+							height: 4px;
+							background: #3d3d3d;
+							border-radius: 50%;
+							margin-top: 11px;
+							left: 35px;
+							@include bp(tabportrait) {
+								margin-top:8px;
+								left:20px;
+							}
+							@include bp(mobile) {
+								left: 5px;
+								margin-top:10px;
 							}
 						}
 					}
-					&.active {
-						.head-panel {
-							h4 {
-								i {
-									transform: rotate(0deg);
-								}
-							}
+					&+h4 {
+						margin-top: 32px;
+						@include bp(mobile) {
+							margin-top: 20px;
 						}
-						.detail {
-							display:block;
-						}
+					}
+					&+p {
+						margin-top:20px;
 					}
 				}
 			}
