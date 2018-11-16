@@ -263,8 +263,8 @@
                                 {
                                     if (!string.IsNullOrEmpty(videoUrl))
                                     {
-                                        //string[] videoid = videoUrl.Split(new[] { "v=" }, StringSplitOptions.None);
-                                        <a href="@videoUrl" data-video-id="@videoUrl" target="_blank" class="newsFlexImg video">
+                                        string[] videoid = videoUrl.Split(new[] { "v=" }, StringSplitOptions.None);
+                                        <a href="@videoUrl" data-video-id="@videoid[1]" target="_blank" class="newsFlexImg video">
                                             <figure style="background-image: url('@detailImage.Url')">
                                                 <img src="@detailImage.Url" alt="@filterDetailTitle" />
                                             </figure>
