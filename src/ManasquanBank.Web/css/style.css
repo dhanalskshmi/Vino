@@ -8800,6 +8800,42 @@ footer {
     padding-bottom: 7px;
   }
 }
+.careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
+  display: block;
+  margin-top: 46px;
+  margin-bottom: 27px;
+}
+@media (max-width: 1279px) {
+  .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
+    margin-top: 27px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
+    margin-top: 19px;
+  }
+}
+@media (max-width: 767px) {
+  .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 1279px) {
+  .careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
+    margin-top: 33px;
+  }
+}
+@media (max-width: 1023px) {
+  .careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
+    margin-top: 31px;
+  }
+}
+@media (max-width: 767px) {
+  .careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
+    margin-top: 27px;
+  }
+}
 .careerGrey .bgWrap p, .cultureWrap .bgWrap p {
   font-size: 18px;
   line-height: 22px;
