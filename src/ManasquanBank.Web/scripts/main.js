@@ -2131,9 +2131,6 @@ $(document).ready(function(){
 
   $(".responsive_table tr:first-child").each(function() {
    $(this).addClass('blueBg');
-   if ($('tr.blueBg').find('td').find('a')) {
-     $('tr.blueBg').find('td').addClass('tdBgwrap');
-   }
   });
 
 

@@ -30,11 +30,25 @@ table {
       }
     }
     tbody {
-      tr.tdBgwrap {
+      tr {
         td {
           &:nth-child(1) {
+            a {
+              padding-left: 20px;
+              position: absolute;
+              top: 60%;
+              left: 50%;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              text-align: center;
+              display: block;
+              transform: translateX(-50%) translateY(-50%);
+            }
             &:hover {
-              background: #1268e5;
+              a {
+                background: #1268e5;
+              }
             }
           }
         }
