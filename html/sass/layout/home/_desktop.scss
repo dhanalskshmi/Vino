@@ -511,6 +511,21 @@ $dbannerhgt: 965px;
     margin: 24px auto 19px;
   }
 }
+.ie11{
+  .bluePannel {
+    figure{
+      img{
+        max-width: 147px;
+        @include bp(landscape){
+          max-width: 85px;
+        }
+        @include bp(mobile){
+          max-width: 122px;
+        }
+      }
+    }
+  }
+}
 
 // Community Pannel
 
