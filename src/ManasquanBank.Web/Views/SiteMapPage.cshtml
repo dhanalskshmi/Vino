@@ -171,14 +171,77 @@
                                                                         }
 
                                                                     </li>
-                                                                                    }
+                                                                                }
 
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                {
+                                                                                    PageTitle = ChildNode.Name;
+
+                                                                                    if (ChildNode.HasValue("title"))
+                                                                                    {
+                                                                                        PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                    }
+                                                                                    <li>
+                                                                                        <h5>
+                                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a>
+                                                                                        </h5>
+                                                                                    </li>
+                                                                                    }
                                                                                 }
 
 
                                                                             }
                                                     </ul>
                                                                                 }
+                                                                                else
+                                                                            {
+                                                                                if (CurrentNode.Children.Count() > 0 && CurrentNodehideFromSitemap.Children.Where("hideFromSitemap == False").Count() > 0)
+                                                                                {
+                                                                                    <ul>
+                                                                                        @foreach (var childNode in CurrentNode.Children)
+                                                                                        {
+                                                                                            var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                            if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                            {
+                                                                                                PageTitle = ChildNode.Name;
+
+                                                                                                if (ChildNode.HasValue("title"))
+                                                                                                {
+                                                                                                    PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                                }
+
+                                                                                                if (ChildNode.NodeTypeAlias == "categoryDetailPage" || ChildNode.NodeTypeAlias == "home" || ChildNode.NodeTypeAlias == "mediaCenterLandingPage" || ChildNode.NodeTypeAlias == "productDetailPage")
+                                                                                                {
+                                                                                                    if (ChildNode.HasValue("categoryDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("categoryDetailTitle");
+                                                                                                    }
+
+                                                                                                    if (ChildNode.HasValue("siteTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("siteTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("mediacenterTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("mediacenterTitle");
+                                                                                                    }
+                                                                                                    if (ChildNode.HasValue("productDetailTitle"))
+                                                                                                    {
+                                                                                                        PageTitle = ChildNode.GetProperty<string>("productDetailTitle");
+                                                                                                    }
+                                                                                                }
+                                                                                                <li><h5><a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a></h5></li>
+                                                                                            }
+                                                                                        }
+                                                                                    </ul>
+                                                                                                }
+                                                                                            }
                                                                             }
                                                                             else
                                                                             {
@@ -294,7 +357,7 @@
                                                                 if (childNode.GetProperty<bool>("hideFromSitemap") != true)
                                                                 {
                                                                     PageTitle = ChildNode.Name;
-
+                                                                    
                                                                     if (ChildNode.HasValue("title"))
                                                                     {
                                                                         PageTitle = ChildNode.GetProperty<string>("title");
@@ -369,13 +432,33 @@
                                                                         }
 
                                                                     </li>
-                                                                                    }
-
                                                                                 }
 
-
                                                                             }
-                                                    </ul>
+                                                                            else
+                                                                            {
+                                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                {
+                                                                                    PageTitle = ChildNode.Name;
+
+                                                                                    if (ChildNode.HasValue("title"))
+                                                                                    {
+                                                                                        PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                    }
+                                                                                    <li>
+                                                                                        <h5>
+                                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a>
+                                                                                        </h5>
+                                                                                        </li>
+                                                                                        }
+                                                                                        }
+
+
+
+                                                                                        }
+</ul>
                                                                                 }
                                                                             }
                                                                             else
@@ -565,8 +648,27 @@
                                                                         }
 
                                                                     </li>
-                                                                                    }
+                                                                                }
 
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                var ChildNode = new DynamicNode().NodeById(childNode.Id);
+
+                                                                                if (childNode.GetProperty<bool>("hideFromSitemap") != true)
+                                                                                {
+                                                                                    PageTitle = ChildNode.Name;
+
+                                                                                    if (ChildNode.HasValue("title"))
+                                                                                    {
+                                                                                        PageTitle = ChildNode.GetProperty<string>("title");
+                                                                                    }
+                                                                                    <li>
+                                                                                        <h5>
+                                                                                            <a class="hvr-underline-from-center" href="@ChildNode.Url">@PageTitle</a>
+                                                                                        </h5>
+                                                                                    </li>
+                                                                                    }
                                                                                 }
 
 
