@@ -585,15 +585,7 @@ if($(e.target).closest("span").length==0){
 
 
     });
-    $(document).mouseup(function (e) {
-        var container = $("#dsearch,.search");
-    
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            $(".search").removeClass("searchOpen");
-            $(".submit").removeClass("active");
-        }
-    
-    });
+
 
   $('.mLogin a').click(function(event) {
 		event.preventDefault();
@@ -636,7 +628,11 @@ $(window).scroll(function() {
 
 	$('.mobileSearch .submit').click(function(e) {
         $('header').removeClass('menuOpenState');
-        $(this).toggleClass('active');
+        if($(this).hasClass("active")){
+            $(this).removeClass('active');
+        } else {
+            $(this).addClass('active');
+        }
 		$('.mobileSearchfield').toggleClass('active');
 		$('html').removeClass('menuOpened');
         $('.hamburger, .mnavWrapper').removeClass('active');
