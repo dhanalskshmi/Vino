@@ -2,6 +2,7 @@
 @using umbraco.MacroEngines
 @using Newtonsoft.Json
 @using RJP.MultiUrlPicker.Models
+@using ManasquanBank.Web.Models;
 @using umbraco.NodeFactory
 @using ContentModels = Umbraco.Web.PublishedContentModels
 @using umbraco.cms.businesslogic.web
@@ -24,26 +25,50 @@
     var businessthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
     var businessAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
     var businessConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
-    var department = Model.Content.GetPropertyValue<string>("department");
-    var employee = Model.Content.GetPropertyValue<string>("employee");
-    string[] departmentList = department.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-    if (departmentList.Length == 1)
+    //var department = Model.Content.GetPropertyValue<string>("department");
+    List<departmentslist> departmentList = new List<departmentslist>();
+    List<employeeList> employeeList = new List<employeeList>();
+    var departmentEmployee = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("departmentsEmployees");
+    if (departmentEmployee != null)
     {
-        department.Split(new string[] { "\n" }, StringSplitOptions.None);
+        foreach(var depart in departmentEmployee)
+        {
+            var departmentName = depart.GetPropertyValue<string>("departmentName");
+            departmentslist dept = new departmentslist();
+            dept.departmentName = departmentName;
+
+            departmentList.Add(dept);
+
+        }
     }
-    string[] employeeList = employee.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-    if (employeeList.Length == 1)
+    if(departmentEmployee != null)
     {
-        employeeList = employee.Split(new string[] { "\n" }, StringSplitOptions.None);
+        foreach(var depart in departmentEmployee)
+        {
+            var departmentName = depart.GetPropertyValue<string>("departmentName");
+            var employeesName = depart.GetPropertyValue<IEnumerable<IPublishedContent>>("employeeNameTiles");
+            if(employeesName != null)
+            {
+                foreach(var emp in employeesName)
+                {
+                    var employeeName = emp.GetPropertyValue<string>("managementEmployeeName");
+                    employeeList emplist = new employeeList();
+                    emplist.employeeName = employeeName;
+                    emplist.departmentName = departmentName;
+                    employeeList.Add(emplist);
+                }
+            }
+        }
     }
 
-}
 
-@section InnerTopStyle {
-}
+    }
 
-@section BackgroundImage {
-    @if (heroImage != null)
+    @section InnerTopStyle {
+    }
+
+    @section BackgroundImage {
+        @if (heroImage != null)
     {
         <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
             @*<img src="images/body_bg.jpg" alt="">*@
@@ -260,14 +285,12 @@
                                         <label for="department">Department</label>
                                         <select name="department" title="Department" id="department" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            @if (departmentList.Length > 0)
-                                            {
-                                                for (int i = 0; i < departmentList.Length; i++)
+                                          
+                                                @foreach(var deptName in departmentList)
                                                 {
-                                                    <option value="@departmentList[i]">@departmentList[i]</option>
+                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName">@deptName.departmentName</option>
                                                 }
-                                            }
-
+                                         
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -275,14 +298,11 @@
                                         <label for="employee">Employee</label>
                                         <select name="employee" title="Employee" id="employee" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            @if (employeeList.Length > 0)
-                                            {
-                                                for (int j = 0; j < employeeList.Length; j++)
-                                                {
-                                                    <option value="@employeeList[j]">@employeeList[j]</option>
-                                                }
-                                            }
-                                        </select>
+                                           @foreach (var emplist in employeeList)
+                                           {
+                                                <option data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
+                                           }
+                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-4 col-sm-6 col-xs-12 nopadding">
@@ -377,7 +397,44 @@
 </div>
 @section InnerBottomScript {
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
+        $("#department").find("option[value='']").remove();
+        $("#department").find("option:last-child").prop("selected", "selected");
+        var sel = $("#department").val();
+        if (sel != '') {
+            $("#employee,#department").selectmenu("destroy");
+            $("#employee").find("option").attr("disabled", true);
+            $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
+            var i = 0;
+            $("#employee").find("option").each(function () {
+                if (i == 0 && $(this).prop("disabled") == false) {
+                    $(this).prop("selected", "selected");
+                    i++;
+                }
+            });
+            $("#department").selectmenu();
+            $("#employee").selectmenu();
+        }
+
+      $("#department").on('selectmenuchange', function () {
+          var sel = $("#department").val();
+          $("#employee").selectmenu("destroy");
+          $("#employee").val('');
+          $("#employee").find("option").attr("disabled", true);
+          if (sel != '') {
+              $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
+          }
+          var i=0;
+          $("#employee").find("option").each(function () {
+              if (i == 0 && $(this).prop("disabled") == false) {
+                  $(this).prop("selected", "selected");
+                  i++;
+              }
+          });
+          $("#employee").selectmenu();
+      });
+
+      $("#state").selectmenu("destroy");
       $('#basicExample').timepicker();
       $("#contactSucc").length > 0 && $("html, body").animate({
           scrollTop: $(".contactFormWrap").offset().top - $("header").height()
