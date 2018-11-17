@@ -614,9 +614,10 @@ $(window).scroll(function() {
   // Mobile Menu Toggle
 	$('.hamburger').click(function(e) {
 		e.preventDefault();
+        $('header').removeClass('menuOpenState');
 		$(this).toggleClass('active');
-    $('html').toggleClass('menuOpened');
-		$('.mnavWrapper').toggleClass('active');
+        $('html').toggleClass('menuOpened');
+        $('.mnavWrapper').toggleClass('active');
 		$('.loginBlocks, .mLogin a, .mobileSearchfield, .mobileSearch .submit').removeClass('active');
 
 	});
@@ -625,10 +626,11 @@ $(window).scroll(function() {
   //Mobile Search
 
 	$('.mobileSearch .submit').click(function(e) {
-		$(this).toggleClass('active');
+        $('header').removeClass('menuOpenState');
+        $(this).toggleClass('active');
 		$('.mobileSearchfield').toggleClass('active');
 		$('html').removeClass('menuOpened');
-		$('.hamburger, .mnavWrapper').removeClass('active');
+        $('.hamburger, .mnavWrapper').removeClass('active');
 		$('.loginBlocks, .mLogin a').removeClass('active');
 	});
 
