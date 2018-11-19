@@ -1749,10 +1749,11 @@ $(document).ready(function(){
 
 
        var tab_id = $(this).attr('href');
+       var data_id = $(this).attr('data-id');
 
        $('ul.tabs li a').removeClass('active');
 
-       $(this).addClass('active');
+       $(".time_" + data_id).addClass('active');
 
        $(".timeline").removeClass('active');
 

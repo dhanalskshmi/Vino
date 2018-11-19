@@ -6186,7 +6186,7 @@ footer {
 }
 
 .heroBanner {
-  min-height: 830px;
+  min-height: 736px;
   margin-bottom: -230px;
 }
 @media (max-width: 1279px) {
@@ -16916,6 +16916,9 @@ table.checking tbody tr td:nth-child(1):hover a {
   .decade-wrapper {
     top: 0px;
     padding: 15px 0px;
+  }
+  .decade-wrapper.decade-wrapper2 {
+    display: none;
   }
   .decade-wrapper ul {
     display: none;

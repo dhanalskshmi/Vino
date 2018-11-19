@@ -118,6 +118,9 @@
 	.decade-wrapper {
 			top: 0px;
 			padding: 15px 0px;
+			&.decade-wrapper2 {
+				display: none;
+			}
 			ul {
 				display:none;
 				li {
