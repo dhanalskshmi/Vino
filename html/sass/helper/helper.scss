@@ -178,6 +178,9 @@ input[type=text]::-ms-clear {
       opacity: 0;
     }
   }
+  .bannerWrapper  {
+    min-height: 100%;
+  }
 }
 .fade {
   .siteWrap {

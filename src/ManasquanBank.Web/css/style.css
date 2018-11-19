@@ -167,6 +167,9 @@ input[type=text]::-ms-clear {
 .fixedBg.fade.out {
   opacity: 0;
 }
+.fixedBg .bannerWrapper {
+  min-height: 100%;
+}
 
 .fade .siteWrap {
   -webkit-transition: all 0.55s;
