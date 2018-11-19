@@ -54,4 +54,14 @@ namespace ManasquanBank.Web.Models
 
         public int ConfirmationEmail { get; set; }
     }
+    public class departmentslist
+    {
+       
+        public string departmentName { get; set; }
+    }
+    public class employeeList
+    {
+        public string employeeName { get; set; }
+        public string departmentName { get; set; }
+    }
 }

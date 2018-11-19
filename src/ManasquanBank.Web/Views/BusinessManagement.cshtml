@@ -2,6 +2,7 @@
 @using umbraco.MacroEngines
 @using Newtonsoft.Json
 @using RJP.MultiUrlPicker.Models
+@using ManasquanBank.Web.Models;
 @using umbraco.NodeFactory
 @using ContentModels = Umbraco.Web.PublishedContentModels
 @using umbraco.cms.businesslogic.web
@@ -24,18 +25,42 @@
     var businessthankYouMessage = Model.Content.GetProperty("thankYouMessage").HasValue ? Model.Content.GetProperty("thankYouMessage").Value : "";
     var businessAdminEmail = Model.Content.HasValue("adminEmail") ? Model.Content.GetPropertyValue<int>("adminEmail") : 0;
     var businessConfirmationEmail = Model.Content.HasValue("confirmationEmail") ? Model.Content.GetPropertyValue<int>("confirmationEmail") : 0;
-    var department = Model.Content.GetPropertyValue<string>("department");
-    var employee = Model.Content.GetPropertyValue<string>("employee");
-    string[] departmentList = department.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-    if (departmentList.Length == 1)
+    //var department = Model.Content.GetPropertyValue<string>("department");
+    List<departmentslist> departmentList = new List<departmentslist>();
+    List<employeeList> employeeList = new List<employeeList>();
+    var departmentEmployee = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("departmentsEmployees");
+    if (departmentEmployee != null)
     {
-        department.Split(new string[] { "\n" }, StringSplitOptions.None);
+        foreach (var depart in departmentEmployee)
+        {
+            var departmentName = depart.GetPropertyValue<string>("departmentName");
+            departmentslist dept = new departmentslist();
+            dept.departmentName = departmentName;
+
+            departmentList.Add(dept);
+
+        }
     }
-    string[] employeeList = employee.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-    if (employeeList.Length == 1)
+    if (departmentEmployee != null)
     {
-        employeeList = employee.Split(new string[] { "\n" }, StringSplitOptions.None);
+        foreach (var depart in departmentEmployee)
+        {
+            var departmentName = depart.GetPropertyValue<string>("departmentName");
+            var employeesName = depart.GetPropertyValue<IEnumerable<IPublishedContent>>("employeeNameTiles");
+            if (employeesName != null)
+            {
+                foreach (var emp in employeesName)
+                {
+                    var employeeName = emp.GetPropertyValue<string>("managementEmployeeName");
+                    employeeList emplist = new employeeList();
+                    emplist.employeeName = employeeName;
+                    emplist.departmentName = departmentName;
+                    employeeList.Add(emplist);
+                }
+            }
+        }
     }
+
 
 }
 
@@ -52,9 +77,7 @@
 }
 <div class="re-order">
 
-    <section class="heroBanner">
-      
-    </section>
+    <section class="heroBanner"></section>
     <section class="heroBlock" id="sliders-container">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -87,7 +110,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -106,7 +129,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -119,21 +142,21 @@
 
                                 }
                                 @*else
-                                {
-                                    <span class="heroLinksImage">
-                                        @if (iconImage != null)
-                                        {
-                                            <img src="@iconImage.Url" alt="@iconImage.Name">
-                                        }
-                                        
-                                    </span>
-                                                    <span class="heroLinksText">
-                                                        @if (!string.IsNullOrEmpty(cTAtitle))
-                                                        {
-                                                            @Html.Raw(cTAtitle)
-                                                        }
-                                                    </span>
-                                }*@
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@iconImage.Name">
+                                            }
+
+                                        </span>
+                                                        <span class="heroLinksText">
+                                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                                            {
+                                                                @Html.Raw(cTAtitle)
+                                                            }
+                                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -158,7 +181,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -177,7 +200,7 @@
                                                 {
                                                     <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
                                                 }
-                                                
+
                                             </span>
                                             <span class="heroLinksText">
                                                 @if (!string.IsNullOrEmpty(cTAtitle))
@@ -191,22 +214,22 @@
 
                                 }
                                 @*else
-    {
-        <span class="heroLinksImage">
-            @if (iconImage != null)
-            {
-                <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
-            }
+                                    {
+                                        <span class="heroLinksImage">
+                                            @if (iconImage != null)
+                                            {
+                                                <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                            }
 
-        </span>
-                        <span class="heroLinksText">
-                            @if (!string.IsNullOrEmpty(cTAtitle))
-                            {
-                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                @Html.Raw(replacetitle)
-                            }
-                        </span>
-    }*@
+                                        </span>
+                                                        <span class="heroLinksText">
+                                                            @if (!string.IsNullOrEmpty(cTAtitle))
+                                                            {
+                                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
+                                                                @Html.Raw(replacetitle)
+                                                            }
+                                                        </span>
+                                    }*@
 
                             </li>
                         }
@@ -253,21 +276,25 @@
                             string secretKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPrivateKey"];
                             string publicKey = @System.Configuration.ConfigurationManager.AppSettings["recaptchaPublicKey"];
                             <div class="row">
-                               
+
                                 <div class="col-md-12 col-sm-12 col-lg-12 parentWrapper">
-                                   
+
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="department">Department</label>
                                         <select name="department" title="Department" id="department" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            @if (departmentList.Length > 0)
+
+                                            @foreach (var deptName in departmentList)
                                             {
-                                                for (int i = 0; i < departmentList.Length; i++)
+                                                if (deptName.departmentName == Request.QueryString["department"])
                                                 {
-                                                    <option value="@departmentList[i]">@departmentList[i]</option>
+                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName" selected="selected">@deptName.departmentName</option>
+                                                }
+                                                else
+                                                {
+                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName">@deptName.departmentName</option>
                                                 }
                                             }
-
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -275,12 +302,9 @@
                                         <label for="employee">Employee</label>
                                         <select name="employee" title="Employee" id="employee" class="form-control selectBox" default="" required="">
                                             <option value=""></option>
-                                            @if (employeeList.Length > 0)
+                                            @foreach (var emplist in employeeList)
                                             {
-                                                for (int j = 0; j < employeeList.Length; j++)
-                                                {
-                                                    <option value="@employeeList[j]">@employeeList[j]</option>
-                                                }
+                                                <option data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
                                             }
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
@@ -324,7 +348,7 @@
                                         <label for="state">State</label>
                                         <select name="state" title="State" id="state" class="form-control selectBox" default="" required="">
                                             <option value="">-Select State-</option>
-                                            
+
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
@@ -338,29 +362,29 @@
                                         <label for="country">Country</label>
                                         <select name="country" title="Country" id="country" class="form-control selectBox" default="United States" required="">
                                             <option value="" rel="">-Select Country-</option>
-                                            
+
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
-                                    
+
                                     <div class="col-lg-12 col-xs-12 form-group">
-                                       
-                                            <label for="cntComments">Message</label>
-                                            <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
-                                       
+
+                                        <label for="cntComments">Message</label>
+                                        <textarea class="form-control txtArea" name="cntComments" id="cntComments" rows="4"></textarea>
+
                                     </div>
 
                                 </div>
-                                
-                            </div>
-                            
-                                           
-                                            <div class="row mob-flex">
 
-                                                <button class="btnManasq"><span>SUBMIT</span></button>
-                                                @*<input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
-                                                <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />*@
-                                            </div>
+                            </div>
+
+
+                            <div class="row mob-flex">
+
+                                <button class="btnManasq"><span>SUBMIT</span></button>
+                                @*<input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
+                                    <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />*@
+                            </div>
                                             <div class="captchaBlock">
                                                 <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
                                                 <p class="form1_error hide">The captcha is required and can't be empty.</p>
@@ -376,63 +400,105 @@
 
 </div>
 @section InnerBottomScript {
-<script>
-    $(document).ready(function() {
-      $('#basicExample').timepicker();
-      $("#contactSucc").length > 0 && $("html, body").animate({
-        scrollTop: $(".contactFormWrap").offset().top - 200
-      }, "slow")
+    <script>
+        $(document).ready(function () {
+            $("#department").find("option[value='']").remove();
 
-      // if (jQuery("#zip").length > 0) {
-      //   document.getElementById('zip').addEventListener('input', function(e) {
-      //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
-      //     e.target.value = x[1];
-      //   });
-      // }
-      if (jQuery("#accNo").length > 0) {
-        document.getElementById('accNo').addEventListener('input', function(e) {
-          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
-          e.target.value = x[1];
+            var sel = $("#department").val();
+            if (sel == '') {
+                $("#department").find("option:first-child").prop("selected", true);
+                sel = $("#department").val();
+            }
+
+
+            $("#employee,#department").selectmenu("destroy");
+            $("#employee").find("option").attr("disabled", true);
+            $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
+            var i = 0;
+            $("#employee").find("option").each(function () {
+                if (i == 0 && $(this).prop("disabled") == false) {
+                    $(this).prop("selected", "selected");
+                    i++;
+                }
+            });
+
+            $("#department").selectmenu();
+            $("#employee").selectmenu();
+
+            $("#department").on('selectmenuchange', function () {
+                var sel = $("#department").val();
+                $("#employee").selectmenu("destroy");
+                $("#employee").val('');
+                $("#employee").find("option").attr("disabled", true);
+                if (sel != '') {
+                    $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
+                }
+                var i = 0;
+                $("#employee").find("option").each(function () {
+                    if (i == 0 && $(this).prop("disabled") == false) {
+                        $(this).prop("selected", "selected");
+                        i++;
+                    }
+                });
+                $("#employee").selectmenu();
+            });
+
+            $("#state").selectmenu("destroy");
+            $('#basicExample').timepicker();
+            $("#contactSucc").length > 0 && $("html, body").animate({
+                scrollTop: $(".contactFormWrap").offset().top - $("header").height()
+            }, "slow")
+
+            // if (jQuery("#zip").length > 0) {
+            //   document.getElementById('zip').addEventListener('input', function(e) {
+            //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,5})/);
+            //     e.target.value = x[1];
+            //   });
+            // }
+            if (jQuery("#accNo").length > 0) {
+                document.getElementById('accNo').addEventListener('input', function (e) {
+                    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,4})/);
+                    e.target.value = x[1];
+                });
+            }
         });
-      }
-    });
-    $(document).ready(function() {
-      $.each(myJson.countries, function(index, value) {
-        $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
-      });
-      country_id = $("#country").attr("default");
-      $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+        $(document).ready(function () {
+            $.each(myJson.countries, function (index, value) {
+                $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+            });
+            country_id = $("#country").attr("default");
+            $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
 
 
-      country_id = $("#country").find('option:selected').attr('rel');
-      // console.log("Country INDEX : " + country_id);
-      if (country_id != "") {
-        $.each(myJson.countries[country_id].states, function(index1, value1) {
-          $("#state").find("option:first").text("-Select State-");
-          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-          // $("#state").selectmenu("refresh");
+            country_id = $("#country").find('option:selected').attr('rel');
+            // console.log("Country INDEX : " + country_id);
+            if (country_id != "") {
+                $.each(myJson.countries[country_id].states, function (index1, value1) {
+                    $("#state").find("option:first").text("-Select State-");
+                    $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+                    // $("#state").selectmenu("refresh");
+                });
+
+                state_id = $("#state").attr("default");
+                $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+            }
+            $("#state,#country").selectmenu();
+            $("#country").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
+            $("#country").on('selectmenuchange', function () {
+                $("#state").selectmenu("destroy");
+                country_id = $(this).find('option:selected').attr('rel');
+                $("#state").find("option").not("option:nth-child(1)").remove();
+                $("#state").find("option:first").text("-Select State-");
+                $.each(myJson.countries[country_id].states, function (index1, value1) {
+
+                    $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+                    console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+                });
+                $("#state").selectmenu();
+
+            });
         });
-
-        state_id = $("#state").attr("default");
-        $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
-      }
-      $("#state,#country").selectmenu();
-      $("#country").parent().find("span.vd").removeClass('f-important f-error').addClass('f-success');
-      $("#country").on('selectmenuchange', function() {
-        $("#state").selectmenu("destroy");
-        country_id = $(this).find('option:selected').attr('rel');
-        $("#state").find("option").not("option:nth-child(1)").remove();
-        $("#state").find("option:first").text("-Select State-");
-        $.each(myJson.countries[country_id].states, function(index1, value1) {
-
-          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-          console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-        });
-        $("#state").selectmenu();
-
-      });
-});
-</script>
+    </script>
 
 
 

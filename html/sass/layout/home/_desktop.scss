@@ -165,7 +165,7 @@ $dbannerhgt: 965px;
   &.active {
     display: block;
     padding: 0 12px;
-    top: 72px;
+    top: 76px;
     opacity: 1;
     visibility: visible;
     z-index: 99999999999999999;
@@ -509,6 +509,29 @@ $dbannerhgt: 965px;
     display: block;
     max-width: 122px;
     margin: 24px auto 19px;
+  }
+  &.home{
+    .bgWrap{
+      background: transparent;
+      .detailsWrap{
+        background: #1b3d6e;
+      }
+    }
+  }
+}
+.ie11{
+  .bluePannel {
+    figure{
+      img{
+        max-width: 147px;
+        @include bp(landscape){
+          max-width: 85px;
+        }
+        @include bp(mobile){
+          max-width: 122px;
+        }
+      }
+    }
   }
 }
 

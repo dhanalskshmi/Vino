@@ -982,3 +982,8 @@ p {
     z-index: 20000;
     opacity: 1;
 }
+
+header.menuOpenState{
+    position:absolute !important;
+    top: 0px !important;
+}
