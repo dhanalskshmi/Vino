@@ -2842,3 +2842,73 @@ $dbannerhgt: 965px;
     }
   }
 }
+
+/*   Speedbump   */
+.speedBumpModule{
+  .modal-dialog{
+    width: 800px;
+    margin: 220px auto 30px;
+    @include bp(tablet){
+      width: 600px;
+    }
+    @include bp(mobile){
+      margin: 40px auto 30px;
+      width: 90%;
+    }
+  }
+  .modal-header{
+    padding: 20px 15px;
+    @include bp(mobile){
+      padding: 15px;
+    }
+    h3{
+      font-size: 26px;
+      font-weight: normal;
+      @include bp(mobile){
+        line-height: normal;
+        padding-right: 30px;
+      }
+    }
+    button{
+      position: absolute;
+      right: 30px;
+      top: 15px;
+      font-size: 40px;
+      &:after, &:before{
+        display: none;
+      }
+      @include bp(mobile){
+        right: 22px;
+        top: 12px;
+      }
+    }
+  }
+  .modal-body{
+    padding: 20px 15px;
+    padding-bottom: 10px;
+  }
+  .modal-footer{
+    text-align: left;
+    border: none;
+    padding-bottom: 30px;
+    .btnManasq{
+      display: inline-block;
+      background: #1268e5;
+      padding: 10px 80px;
+      line-height: 16px;
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1px;
+      @include bp(mobile){
+        padding: 10px 32px;
+      }
+    }
+    #stayOn{
+      background: #eb2837;
+    }
+  }
+}

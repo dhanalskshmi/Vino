@@ -206,3 +206,27 @@ $(document).ready(function(){
         this.action = url.protocol + (this.app.value == 0 ? url.roDomain + url.ro : url.boDomain + url.bo) + url.rt
     })
 });
+
+
+/*       Speedbump     */
+$('body').on('click', 'a.speedbump', function(e){
+    e.preventDefault();
+    var link = $(this);
+    $("#SpdBump_Popup").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+    $("#leaveThispage").attr('href', link.attr('href'));
+});
+$(document).ready(function(){
+    $('a.speedbump').click(function(){
+        $("#SpdBump_Popup").modal('show');
+    });
+    $('#stayOn').click(function(e){
+        e.preventDefault();
+        $("#SpdBump_Popup").modal('hide');
+    });
+    $('#leaveThispage').click(function(e){
+        $("#SpdBump_Popup").modal('hide');
+    });
+});
