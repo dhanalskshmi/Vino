@@ -1331,7 +1331,7 @@ header.menuOpenState {
 header {
   margin-top: 6px;
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -17209,6 +17209,10 @@ table.checking tbody tr td:nth-child(1):hover a {
 
   .Android .timeline::after {
     left: 97%;
+  }
+
+  .timelineWrapper ul li {
+    margin-bottom: 30px;
   }
 }
 .animated {
