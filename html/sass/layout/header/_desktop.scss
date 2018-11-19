@@ -6,7 +6,7 @@ $img: '../images/header';
 header {
 	margin-top: 6px;
 	position: fixed;
-	z-index: 99;
+	z-index: 9999;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -1833,4 +1833,65 @@ header {
 
 
 
+}
+/* Quick Links Update - In progress*/
+
+.openAccount{
+	right: -200px;
+	transition: .3s all;
+	ul{
+		position: absolute;
+		width: 200px;
+		background: #fff;
+		z-index: 10;
+		box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.58);
+		right: 0;
+		top: 0px;
+		li{
+			font-size: 24px;
+			text-align: center;
+			padding: 0px;
+			a{
+				padding: 10px 20px;
+				transform: none;
+				background: transparent;
+				border-bottom: 1px solid #ddd;
+				border-radius: 0;
+				color: #3d3d3d;
+				font-size: 18px;
+				@include bp(landscape){
+					font-size: 17px;
+					padding: 7px 20px;
+				}
+				@include bp(tablet){
+					font-size: 16px;
+				}
+				&:hover{
+					color: #fff;
+				}
+			}
+			&:last-child{
+				a{
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	.openQuickLnk{
+		transform: rotate(-90deg);
+		transform-origin: 50% 51%;
+		margin-top: 85px;
+    	margin-right: 140px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		@include bp(landscape){
+			margin-right: 155px;
+		}
+		@include bp(tablet){
+			margin-right: 165px;
+		}
+	}
+	&.active{
+		right: 0px;
+	}
 }

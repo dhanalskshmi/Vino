@@ -26,6 +26,8 @@
     //var timeline = Model.Content.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "timeLine");
     var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
 
+   
+
 }
 @section BackgroundImage {
     @if (heroImage != null)
@@ -394,7 +396,9 @@
                                                 <p>
                                                     @if (!string.IsNullOrEmpty(email))
                                                     {
-                                                        <a href="mailto:@email"><img src="images/about/mail_icon.png" alt="Mail Icon for @empName"></a>
+
+                                                        <a href="mailto:@email?subject=manasquanbank.com"><img src="images/about/mail_icon.png" alt="Mail Icon for @empName"></a>
+
                                                     }
                                                     else
                                                     {

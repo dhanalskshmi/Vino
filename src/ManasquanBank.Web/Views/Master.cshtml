@@ -5,7 +5,7 @@
     Layout = null;
     var favicon = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("favicon");
     var logo = Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("siteLogo");
-    var openAccountLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("openAnAccount");
+    var openAccountLink = Model.Content.AncestorOrSelf(1).GetPropertyValue<MultiUrls>("openAnAccount");
     Html.RequiresCss("~/css/lib/nprogress.css", 1);
     Html.RequiresCss("~/css/lib/bootstrap.min.css", 2);
     Html.RequiresCss("~/css/style.min.css", 15);
@@ -47,22 +47,32 @@
             <div class="openAccount">
                 @if (openAccountLink != null)
                 {
-                    if (openAccountLink.Target == "_blank")
+                    int i = 0;
+                    foreach (var quicklink in openAccountLink)
                     {
-                        <a href="@openAccountLink.Url" target="_blank">
-                            <span>
-                                @openAccountLink.Name
-                            </span>
-                        </a>
+                        if (i == 0)
+                        {
+                            if (quicklink.Target == "_blank")
+                            {
+                                <a href="@quicklink.Url" target="_blank">
+                                    <span>
+                                        @quicklink.Name
+                                    </span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@quicklink.Url">
+                                    <span>
+                                        @quicklink.Name
+                                    </span>
+                                </a>
+                            }
+                        }
+
+                        i++;
                     }
-                    else
-                    {
-                        <a href="@openAccountLink.Url">
-                            <span>
-                                @openAccountLink.Name
-                            </span>
-                        </a>
-                    }
+
                 }
 
             </div>
