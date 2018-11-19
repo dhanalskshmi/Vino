@@ -16606,6 +16606,7 @@ table.checking tbody tr td:nth-child(1):hover a {
 
 .timeline.invert-order.active {
   display: block;
+  padding-bottom: 32px;
 }
 
 .timeline.flex-order.active {
@@ -17128,6 +17129,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
   .timeline.invert-order.active {
     display: block;
+    padding-bottom: 0;
   }
 
   .timeline-heading img {
