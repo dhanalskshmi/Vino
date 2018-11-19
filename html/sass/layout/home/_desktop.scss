@@ -3,7 +3,7 @@ $img: '../images/home';
 $mbannerhgt: 422px;
 $tpbannerhgt: 432px;
 $tlbannerhgt: 576px;
-$dbannerhgt: 965px;
+$dbannerhgt: 667px;
 #wrapper_bgndVideo {
   min-height: 719px;
   //background-image: url('images/banner/banner_bg.jpg');
@@ -52,30 +52,33 @@ $dbannerhgt: 965px;
       font-size: 23px;
       color: #FFF;
       line-height: 25px;
-      text-align: center;
+      //text-align: center;
       text-transform: uppercase;
+      text-shadow: 0px 0px 4px #888;
       span {
-        display: block;
+        //display: block;
         &:nth-child(1) {
-          letter-spacing: 1px;
+          //letter-spacing: 1px;
         }
         &:nth-child(2) {
-          letter-spacing: -0.5px;
+          //letter-spacing: -0.5px;
         }
 
       }
       strong {
-        font-weight: 700;
-        display: inline-block;
+        font-weight: 400;
+        //display: inline-block;
         span {
+          //display: block;
           &:nth-child(1) {
-            letter-spacing: 1.8px;
+            font-size: 32px;
+            //letter-spacing: 1.8px;
           }
           &:nth-child(2) {
-            letter-spacing: 1.2px;
+            //letter-spacing: 1.2px;
           }
           &:nth-child(3) {
-            letter-spacing: 3px;
+            //letter-spacing: 3px;
           }
         }
       }
@@ -1193,27 +1196,30 @@ $dbannerhgt: 965px;
     .bannerContent {
       padding-top: 154px;
       h1 {
-        font-size: 31px;
+        font-size: 26px;
         line-height: 33px;
-        text-align: left;
+        max-width: 466px;
         span {
           &:nth-child(1) {
-            letter-spacing: 1.5px;
+            //letter-spacing: 1.5px;
           }
           &:nth-child(2) {
-            letter-spacing: -0.4px;
+            //letter-spacing: -0.4px;
           }
         }
         strong {
           span {
             &:nth-child(1) {
-              letter-spacing: 2.7px;
+              font-size: 40px;
+              //letter-spacing: 2.7px;
             }
             &:nth-child(2) {
-              letter-spacing: 1.9px;
+              display: block;
+              text-align: right;
+              //letter-spacing: 1.9px;
             }
             &:nth-child(3) {
-              letter-spacing: 4px;
+              //letter-spacing: 4px;
             }
           }
         }
@@ -1812,27 +1818,29 @@ $dbannerhgt: 965px;
     .bannerContent {
       padding-top: 195px;
       h1 {
-        font-size: 38px;
+        font-size: 30px;
         line-height: 43px;
         padding-left: 44px;
+        max-width: 597px;
         span {
           &:nth-child(1) {
-            letter-spacing: normal;
+            //letter-spacing: normal;
           }
           &:nth-child(2) {
-            letter-spacing: -1.8px;
+            //letter-spacing: -1.8px;
           }
         }
         strong {
           span {
             &:nth-child(1) {
-              letter-spacing: 1.5px;
+              font-size: 49px;
+              //letter-spacing: 1.5px;
             }
             &:nth-child(2) {
-              letter-spacing: 0.7px;
+              //letter-spacing: 0.7px;
             }
             &:nth-child(3) {
-              letter-spacing: 3.3px;
+              //letter-spacing: 3.3px;
             }
           }
         }
@@ -2306,26 +2314,31 @@ $dbannerhgt: 965px;
       min-height: $dbannerhgt;
     }
     .bannerContent {
-      padding-top: 288px;
+      padding-top: 251px;
       h1 {
-        font-size: 63px;
+        font-size: 39px;
         line-height: 66px;
         padding-left: 0;
+        max-width: 712px;
         span {
           &:nth-child(2) {
-            letter-spacing: -3.3px;
+            //letter-spacing: -3.3px;
           }
         }
         strong {
+          display: inline;
           span {
             &:nth-child(1) {
-              letter-spacing: 2px;
+              font-size: 63px;
+              //letter-spacing: 2px;
             }
             &:nth-child(2) {
-              letter-spacing: 1px;
+              margin-top: -13px;
+              line-height: normal;
+              //letter-spacing: 1px;
             }
             &:nth-child(3) {
-              letter-spacing: 5.1px;
+              //letter-spacing: 5.1px;
             }
           }
         }
