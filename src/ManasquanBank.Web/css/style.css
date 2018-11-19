@@ -17210,6 +17210,10 @@ table.checking tbody tr td:nth-child(1):hover a {
   .Android .timeline::after {
     left: 97%;
   }
+
+  .timelineWrapper ul li {
+    margin-bottom: 30px;
+  }
 }
 .animated {
   -webkit-animation-duration: 1s;
