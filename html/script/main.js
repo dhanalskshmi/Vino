@@ -445,63 +445,94 @@ $(document).ready(function() {
     $('.mnavWrapper').css({'top':headHgt});
     $('.innerloginWrapper').css({'top':headHgt});
   });
-
+/*
 	$(".marginWrap ul li a").not(".inner li a").click(function(e) {
+        $($this).removeClass("menuOpen");
+        var $this = $(this);
+        if($(e.target).closest("span").length==0){
+    		if($this.hasClass("msubMenu")){
+    			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
+    			$($this).removeClass("menuOpen");
+    			$($this).parent().find(".inner li a").removeClass("menuOpen");
+    		}
+            else{
+                $($this).addClass("menuOpen");
+            }
 
-
-    var $this = $(this);
-if($(e.target).closest("span").length==0){
-		if($this.hasClass("msubMenu")){
-			$(".marginWrap ul li a").not(".inner li a").not($this).removeClass("menuOpen");
-			$($this).toggleClass("menuOpen");
-			$($this).parent().find(".inner li a").removeClass("menuOpen");
-		}
-	}
+    	}
 
 	});
 
 
 	$(".inner li a").click(function(e) {
 
-    var $this = $(this);
-if($(e.target).closest("span").length==0){
-		if($this.hasClass("msubMenu")){
-			$(".inner li a").not($this).removeClass("menuOpen");
-			$($this).toggleClass("menuOpen");
-		}
-}
+        var $this = $(this);
+        $($this).removeClass("menuOpen");
+        if($(e.target).closest("span").length==0){
+    		if($this.hasClass("msubMenu")){
+    			$(".inner li a").not($this).removeClass("menuOpen");
+    			$($this).removeClass("menuOpen");
+    		}
+            else{
+                $($this).addClass("menuOpen");
+            }
+        }
 	});
 
-	$(".msubMenu").each(function(){
-		$(this).wrapInner( "<span></span>");
-	});
+	
 
   $('.msubMenu').click(function(e) {
 
-    var $this = $(this);
-
-
+        var $this = $(this);
+        $this.next().removeClass('mainActive');
 		if($(e.target).closest("span").length==0){
-				e.preventDefault();
-     if ($this.next().hasClass("mainActive"))
-     {
-       $this.next().toggleClass('mainActive');
-			 $this.parent().parent().removeClass('mainActive');
-
-       $this.next().slideUp();
-     }else{
-
-			 $this.parent().parent().find('li .inner').removeClass('mainActive');
-        $this.parent().parent().find('li .inner').slideUp();
-        $this.next().toggleClass('mainActive');
-        $this.next().slideToggle();
-     }
-
-	 }
+			e.preventDefault();
+            if ($this.next().hasClass("mainActive"))
+            {
+                $this.next().addClass('mainActive');
+                $this.parent().parent().removeClass('mainActive');
+                $this.next().slideUp();
+            }else{
+                $this.parent().parent().find('li .inner').removeClass('mainActive');
+                $this.parent().parent().find('li .inner').slideUp();
+                $this.next().addClass('mainActive');
+                $this.next().slideToggle();
+            }
+	    }
 
   });
+  */
+  $(".msubMenu").each(function(){
+        $(this).wrapInner( "<span></span>");
+    });
 
+    $('.msubMenu').on('click',function(e) {
+        e.preventDefault();
+        $this = $(this);
+        $this.parent().parent().each(function(){
 
+                $(this).find('.inner').not($this).removeClass('mainActive');
+                $(this).find('a.msubMenu').not($this).removeClass('menuOpen');
+                $(this).find('a.msubMenu').next().slideUp();
+                
+        });
+        //$this.parent().parent().find('li .inner').removeClass('mainActive');
+        //$this.parent().parent().siblings().find('a.msubMenu').removeClass('menuOpen');
+        //$this.removeClass('menuOpen');
+        if (!$this.hasClass("menuOpen"))
+        {
+            $this.addClass('menuOpen');
+            $this.next().addClass('mainActive');
+            $this.next().slideToggle();
+        }
+        else{
+
+            $this.parent().parent().find('li .inner').removeClass('mainActive');
+            $this.removeClass('menuOpen');
+            $this.next().removeClass('mainActive');
+            $this.next().slideUp();
+        }
+    });
 
 	/*$('.msubMenu').click(function(e) {
   	e.preventDefault();

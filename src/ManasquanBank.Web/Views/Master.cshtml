@@ -15,7 +15,7 @@
     Html.RequiresJs("~/scripts/lib/scrollanimation.js", 4);
     Html.RequiresJs("~/scripts/lib/waypoints.min.js", 5);
     Html.RequiresJs("~/scripts/lib/jquery.validate.min.js", 6);
-    Html.RequiresJs("~/scripts/main.min.js", 20);        
+    Html.RequiresJs("~/scripts/main.min.js", 20);
 
 }
 <!DOCTYPE html>
@@ -168,7 +168,15 @@
         }
     });
 
+     $('a').each(function () {
+         var url = $(this).href;
+         var a = new RegExp('/' + window.location.host + '/');
+         var b = new RegExp("^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$");
+         if (!a.test(this.href) && this.href != "javascript:;" && this.href != "javascript::void(0);" && b.test(this.href)) {
+             $(this).addClass("speedpumb");
+         }
 
+     });
     });
 </script>
     <style>

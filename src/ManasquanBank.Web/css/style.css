@@ -2939,7 +2939,6 @@ footer {
   margin-left: -webkit-calc(100% - 136% / 2);
   margin-left: calc(100% - 136% / 2);
   font-weight: 700;
-  text-transform: uppercase;
 }
 .fMenu ul li {
   font-size: 20px;
@@ -3096,9 +3095,10 @@ footer {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-left: 0;
     border-bottom: 1px solid #FFF;
   }
