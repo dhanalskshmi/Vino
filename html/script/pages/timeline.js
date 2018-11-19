@@ -385,7 +385,7 @@ $(document).ready(function(){
        if(overlapHeight!=0)
        {
         $('html, body').stop().animate({
-           scrollTop: $('.decade-wrapper').offset().top-overlapHeight
+           scrollTop: $('.decade-wrapper').offset().top-overlapHeight-$('header').height()
          },750, function() {
            //$(tab_id).addClass('active').addClass('in').hide().slideDown(1000);
 
@@ -402,7 +402,7 @@ $(document).ready(function(){
          {
 
             $('html, body').stop().animate({
-              scrollTop: $('.decade-wrapper').offset().top-overlapHeight
+              scrollTop: $('.decade-wrapper').offset().top-overlapHeight-$('header').height()
              },750, function() {
 
 
@@ -460,7 +460,7 @@ $(document).ready(function(){
         if(overlapHeight!=0)
        {
         $('html, body').stop().animate({
-           scrollTop: $('.decade-wrapper').offset().top
+           scrollTop: $('.decade-wrapper').offset().top-$('header').height()
          },750, function() {
            //$(tab_id).addClass('active').addClass('in').hide().slideDown(1000);
 
@@ -477,7 +477,7 @@ $(document).ready(function(){
 
 
             $('html, body').stop().animate({
-              scrollTop: $('.decade-wrapper').offset().top-overlapHeight
+              scrollTop: $('.decade-wrapper').offset().top-overlapHeight-$('header').height()
              },750, function() {
 
 

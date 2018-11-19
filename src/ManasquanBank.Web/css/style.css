@@ -2915,7 +2915,7 @@ header.stickyActive .mainNav {
   padding: 0px;
 }
 .openAccount ul li a {
-  padding: 10px 20px;
+  padding: 10px 15px;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
@@ -2933,7 +2933,7 @@ header.stickyActive .mainNav {
 }
 @media (max-width: 1023px) {
   .openAccount ul li a {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 .openAccount ul li a:hover {
@@ -6287,7 +6287,7 @@ footer {
   padding-bottom: 10px;
 }
 .speedBumpModule .modal-footer {
-  text-align: left;
+  text-align: center;
   border: none;
   padding-bottom: 30px;
 }
@@ -6303,10 +6303,12 @@ footer {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
+  margin: 0px 10px;
 }
 @media (max-width: 767px) {
   .speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply {
-    padding: 10px 32px;
+    padding: 10px 28px;
+    margin: 0 4px;
   }
 }
 .speedBumpModule .modal-footer #stayOn {
