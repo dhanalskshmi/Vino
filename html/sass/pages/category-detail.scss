@@ -29,7 +29,7 @@ table {
   &.checking {
     thead {
       th {
-        text-align: left !important;
+        text-align: center !important;
       }
     }
     tbody {
@@ -187,9 +187,10 @@ table {
               background: #2d5aa7;
               color: #fff;
               text-transform: uppercase;
+              text-align: center;
               //text-align: center;
               @include bp(tablandscape) {
-                text-align: left;
+                text-align: center;
               }
             }
 
@@ -283,12 +284,14 @@ table {
                 padding-top: 11px;
                 padding-bottom: 7px;
                 padding-left: 30px;
+                text-align: center;
               }
               @include bp(mobile) {
                 width: 64.1%;
                 padding-left: 10px;
                 padding-top: 15px;
                 padding-bottom: 12px;
+                text-align: center;
               }
             }
 
@@ -343,6 +346,7 @@ table {
             td {
               @include bp(tabmax) {
                 border-top: 5px solid #f1f1f1;
+                text-align: center;
               }
             }
           }
