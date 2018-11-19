@@ -2915,7 +2915,7 @@ header.stickyActive .mainNav {
   padding: 0px;
 }
 .openAccount ul li a {
-  padding: 10px 20px;
+  padding: 10px 15px;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
@@ -2933,7 +2933,7 @@ header.stickyActive .mainNav {
 }
 @media (max-width: 1023px) {
   .openAccount ul li a {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 .openAccount ul li a:hover {
