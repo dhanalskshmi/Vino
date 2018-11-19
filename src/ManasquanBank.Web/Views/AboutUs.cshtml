@@ -317,6 +317,13 @@
                                 
                             </div>
                             <table class="table">
+                                <thead class="screen-reader-text">
+                                    <tr>
+                                    <th>Board of Directors 1</th>
+                                    <th>Board of Directors 2</th>
+                                    <th>Board of Directors 3</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
 
                                     @foreach (var bio in bios)
@@ -339,7 +346,7 @@
                                         k++;
                                     }
 
-                                    @Html.Raw(TblStr);
+                                    @Html.Raw(TblStr)
                                 </tbody>
                             </table>
                         </div>
@@ -387,13 +394,13 @@
                                                 <p>
                                                     @if (!string.IsNullOrEmpty(email))
                                                     {
-                                                        <a href="mailto:@email"><img src="images/about/mail_icon.png" alt="Mail_Icon"></a>
+                                                        <a href="mailto:@email"><img src="images/about/mail_icon.png" alt="Mail Icon for @empName"></a>
                                                     }
                                                     else
                                                     {
-                                                        <img src="images/about/mail_icon.png" alt="Mail_Icon">
+                                                        <img src="images/about/mail_icon.png" alt="Mail Icon for @empName">
                                                     }
-                                                    <a href="@bio.Url" alt="@bio.Name"><img src="images/about/user_icon.png" alt="User_Icon"></a>
+                                                    <a href="@bio.Url" alt="@bio.Name"><img src="images/about/user_icon.png" alt="User Icon for @empName"></a>
                                                 </p>
                                             </div>
                                         }
