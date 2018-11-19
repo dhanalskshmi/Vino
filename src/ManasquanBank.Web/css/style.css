@@ -13356,7 +13356,7 @@ table.checking tbody tr td:nth-child(2) {
 }
 
 table.checking thead th {
-  text-align: center !important;
+  text-align: left !important;
 }
 table.checking tbody tr td:nth-child(1) {
   position: relative;
@@ -13504,11 +13504,10 @@ table.checking tbody tr td:nth-child(1):hover a {
   background: #2d5aa7;
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .tableClass .bgWrap table tbody tr td:nth-child(1), .greyPanel.rates .bgWrap table tbody tr td:nth-child(1) {
-    text-align: center;
+    text-align: left;
   }
 }
 .tableClass .bgWrap table tbody tr td:nth-child(2), .greyPanel.rates .bgWrap table tbody tr td:nth-child(2) {
@@ -13596,7 +13595,6 @@ table.checking tbody tr td:nth-child(1):hover a {
     padding-top: 11px;
     padding-bottom: 7px;
     padding-left: 30px;
-    text-align: center;
   }
 }
 @media (max-width: 767px) {
@@ -13605,7 +13603,6 @@ table.checking tbody tr td:nth-child(1):hover a {
     padding-left: 10px;
     padding-top: 15px;
     padding-bottom: 12px;
-    text-align: center;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
@@ -13653,7 +13650,6 @@ table.checking tbody tr td:nth-child(1):hover a {
 @media (min-width: 320px) and (max-width: 1023px) {
   .tableClass .bgWrap table.responsive_table tr:nth-child(3) td, .greyPanel.rates .bgWrap table.responsive_table tr:nth-child(3) td {
     border-top: 5px solid #f1f1f1;
-    text-align: center;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
