@@ -364,16 +364,6 @@ function equalheightBlock(container){
 
 
 
-// Scroll to Top
-
-$('.backtoTop').click(function(event) {
-	event.preventDefault();
-    $('html, body').animate({
-        scrollTop: $("body").offset().top-parseInt(300)
-    }, 800);
-});
-
-
 
 
 
@@ -394,17 +384,9 @@ $(window).on("load resize",function(e) {
 				$('.siteInner').attr("style","");
 			}
 
-			setTimeout(function(){
-	      //$('footer').addClass('animateIt');
-	    }, 1200);
+			
 
-			//var headHgt = $('header').outerHeight();
-			//console.log(headHgt);
-
-			$('.loginBlocks .txtBox').on('focus', function () {
-				$("html, body").animate({ scrollTop: 0 }, "fast");
-			});
-
+		
 
 });
 
@@ -598,16 +580,23 @@ if($(e.target).closest("span").length==0){
 		$(".mainNav li.item-1, .mainNav li.item-2, .mainNav li.item-3, .mainNav li.item-4").removeClass('visibilityHide');
 		if($(this).parent().parent().hasClass("searchOpen")){
 			$(this).parent().parent().siblings().addClass('visibilityHide');
-		}
+        }
 		//$(".mainNav li.item-1, .mainNav li.item-2, .mainNav li.item-3, .mainNav li.item-4").toggleClass('visibilityHide');
 
 
-	});
+    });
+
 
   $('.mLogin a').click(function(event) {
 		event.preventDefault();
 		$(this).toggleClass('active');
 		$('.loginBlocks').toggleClass('active');
+        if($(this).hasClass('active')){
+            $('header').addClass('menuOpenState');
+            $("html, body").animate({ scrollTop: 0 }, "fast");
+        }else{
+             $('header').removeClass('menuOpenState');
+        }
 		$('.hamburger, .mnavWrapper, .mobileSearchfield, .mobileSearch .submit').removeClass('active');
 		$('html').removeClass('menuOpened');
 });
@@ -626,9 +615,10 @@ $(window).scroll(function() {
   // Mobile Menu Toggle
 	$('.hamburger').click(function(e) {
 		e.preventDefault();
+        $('header').removeClass('menuOpenState');
 		$(this).toggleClass('active');
-    $('html').toggleClass('menuOpened');
-		$('.mnavWrapper').toggleClass('active');
+        $('html').toggleClass('menuOpened');
+        $('.mnavWrapper').toggleClass('active');
 		$('.loginBlocks, .mLogin a, .mobileSearchfield, .mobileSearch .submit').removeClass('active');
 
 	});
@@ -637,13 +627,29 @@ $(window).scroll(function() {
   //Mobile Search
 
 	$('.mobileSearch .submit').click(function(e) {
-		$(this).toggleClass('active');
+        $('header').removeClass('menuOpenState');
+        if($(this).hasClass("active")){
+            $(this).removeClass('active');
+        } else {
+            $(this).addClass('active');
+        }
 		$('.mobileSearchfield').toggleClass('active');
 		$('html').removeClass('menuOpened');
-		$('.hamburger, .mnavWrapper').removeClass('active');
-		$('.loginBlocks, .mLogin a').removeClass('active');
+        $('.hamburger, .mnavWrapper').removeClass('active');
+        $('.loginBlocks, .mLogin a').removeClass('active');
+        if($(this).hasClass('active')){
+            $("#msearch").focus();
+        }
 	});
-
+    $(document).mouseup(function (e) {
+        var container = $("#msearch,.mobileSearch");
+    
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $(".mobileSearch .submit").removeClass("active");
+            $(".mobileSearchfield").removeClass("active");
+        }
+    
+    });
 
 
 
@@ -999,9 +1005,9 @@ $(window).on('scroll',function() {
 
 		if ($("body").width() <= 767) {
 			if($("header").hasClass("stickyActive")){//console.log(scroll);
-			$('.loginBlocks').css({'top': scroll + $('header').height() -10});
+			//$('.loginBlocks').css({'top': scroll + $('header').height() -10});
 		}else{
-			$('.loginBlocks').css({'top': scroll + $('header').height()});
+			//$('.loginBlocks').css({'top': scroll + $('header').height()});
 		}
 		}
 });
@@ -1065,11 +1071,9 @@ $(window).on("load resize",function() {
 			$('.stickyActive .SubmenuWrapper').css({'top': $('header').height() - 34 });
 		}
 		if ($("body").width() <= 767) {
-			if($("header").hasClass("stickyActive")){//console.log(scroll);
-			$('.loginBlocks').css({'top': scroll + $('header').height() -10});
-		}else{
-			$('.loginBlocks').css({'top': scroll + $('header').height()});
+			
+			//$('.loginBlocks').css({'top':  $('header').height() - 10});
 		}
-		}
+		
 
 });
