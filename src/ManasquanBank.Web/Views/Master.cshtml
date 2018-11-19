@@ -22,14 +22,14 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no", shrink-to-fit="no">
-  @Html.Partial("SeoMetaData")
-  <link rel="shortcut icon" href="@favicon.Url" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" , shrink-to-fit="no">
+    @Html.Partial("SeoMetaData")
+    <link rel="shortcut icon" href="@favicon.Url" type="image/x-icon">
     @RenderSection("InnerTopStyle1", false)
-  @Html.RenderCssHere()
-  @RenderSection("InnerTopStyle", false)
+    @Html.RenderCssHere()
+    @RenderSection("InnerTopStyle", false)
 </head>
 <div id="skiptocontent"><a href="#sliders-container">skip to main content</a></div>
 <body style="display: none">
@@ -45,33 +45,43 @@
             @Html.Partial("homePopUp")
             @Html.Partial("Header")
             <div class="openAccount">
+                <a href="#" class="openQuickLnk">
+                    <span>
+
+                        Quick Links
+                    </span>
+                </a>
+
                 @if (openAccountLink != null)
                 {
                     int i = 0;
-                    foreach (var quicklink in openAccountLink)
-                    {
-                        if (i == 0)
+                    <ul>
+
+                        @foreach (var quicklink in openAccountLink)
                         {
                             if (quicklink.Target == "_blank")
                             {
-                                <a href="@quicklink.Url" target="_blank">
-                                    <span>
-                                        @quicklink.Name
-                                    </span>
-                                </a>
-                            }
-                            else
-                            {
-                                <a href="@quicklink.Url">
-                                    <span>
-                                        @quicklink.Name
-                                    </span>
-                                </a>
-                            }
+                                    <li>
+                                        <a href="@quicklink.Url" target="_blank">
+                                            <span>
+                                                @quicklink.Name
+                                            </span>
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@quicklink.Url">
+                                            <span>
+                                                @quicklink.Name
+                                            </span>
+                                        </a>
+                                    </li>
+                                }
+                           
                         }
-
-                        i++;
-                    }
+                    </ul>
 
                 }
 
@@ -114,89 +124,86 @@
         </div>
     </div>
     @Html.RenderJsHere()
-<script src="https://www.google.com/recaptcha/api.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" defer></script>
     @RenderSection("InnerBottomScript", false)
 
-<script>
-    $(document).ready(function () {
-        var hasparameter = window.location.hash;
+    <script>
+        $(document).ready(function () {
+            var hasparameter = window.location.hash;
 
-        if (hasparameter != "" && $(hasparameter).length > 0) {
-
-            setTimeout(function () {
-                var h = $(hasparameter).offset().top - $('header').height();
-                $("html, body").animate({ scrollTop: h }, "slow");
-            }, 700);
-            
-          }
-
-    $("a").not("a.msubMenu").click(function (e) {
-        var url = $(this).attr("href");
-        if (typeof (url) !== "undefined")
-            {
-            var hasparameter = url.substring(url.indexOf('#') + 1);
-            if (hasparameter != '') {
-                hasparameter = '#' + hasparameter;
-            }
             if (hasparameter != "" && $(hasparameter).length > 0) {
-                var h = $(hasparameter).offset().top - $('header').height();
-                $(".hasSubmenu").each(function () {
-                    $(this).parent().addClass("noHover");
-                });
-                $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
-                  
-                });
 
-                if ($(".hamburger").hasClass("active")) {
-                    $(".hamburger").trigger("click");
+                setTimeout(function () {
+                    var h = $(hasparameter).offset().top - $('header').height();
+                    $("html, body").animate({ scrollTop: h }, "slow");
+                }, 700);
+
+            }
+
+            $("a").not("a.msubMenu").click(function (e) {
+                var url = $(this).attr("href");
+                if (typeof (url) !== "undefined") {
+                    var hasparameter = url.substring(url.indexOf('#') + 1);
+                    if (hasparameter != '') {
+                        hasparameter = '#' + hasparameter;
+                    }
+                    if (hasparameter != "" && $(hasparameter).length > 0) {
+                        var h = $(hasparameter).offset().top - $('header').height();
+                        $(".hasSubmenu").each(function () {
+                            $(this).parent().addClass("noHover");
+                        });
+                        $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
+
+                        });
+
+                        if ($(".hamburger").hasClass("active")) {
+                            $(".hamburger").trigger("click");
+                        }
+
+                    }
+                }
+            });
+
+
+
+            $('.flatNav ul li').hover(function (event) {
+                if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+                    $(".hasSubmenu").each(function () {
+                        $(this).parent().removeClass("noHover");
+                    });
+                }
+            }).focus(function () {
+                if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+                    $(".hasSubmenu").each(function () {
+                        $(this).parent().removeClass("noHover");
+                    });
+                }
+            }).click(function () {
+                if (!$(event.target).closest('.SubmenuWrapper').length) {
+
+                    $(".hasSubmenu").each(function () {
+                        $(this).parent().removeClass("noHover");
+                    });
+                }
+            });
+
+            $('a').each(function () {
+                var url = $(this).href;
+                var a = new RegExp('/' + window.location.host + '/');
+                var b = new RegExp("^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$");
+                if (!a.test(this.href) && this.href != "javascript:;" && this.href != "javascript::void(0);" && b.test(this.href)) {
+                    $(this).addClass("speedbump");
                 }
 
-            }
-        }
-    });
-
-
-
-     $('.flatNav ul li').hover(function (event) {
-         if (!$(event.target).closest('.SubmenuWrapper').length) {
-           
-             $(".hasSubmenu").each(function () {
-                 $(this).parent().removeClass("noHover");
-             });
-         }
-    }).focus(function () {
-        if (!$(event.target).closest('.SubmenuWrapper').length) {
-           
-            $(".hasSubmenu").each(function () {
-                $(this).parent().removeClass("noHover");
             });
-        }
-    }).click(function () {
-        if (!$(event.target).closest('.SubmenuWrapper').length) {
-
-            $(".hasSubmenu").each(function () {
-                $(this).parent().removeClass("noHover");
-            });
-        }
-    });
-
-     $('a').each(function () {
-         var url = $(this).href;
-         var a = new RegExp('/' + window.location.host + '/');
-         var b = new RegExp("^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$");
-         if (!a.test(this.href) && this.href != "javascript:;" && this.href != "javascript::void(0);" && b.test(this.href)) {
-             $(this).addClass("speedbump");
-         }
-
-     });
-    });
-</script>
+        });
+    </script>
     <style>
         .noHover .SubmenuWrapper {
-            display:none !important;
+            display: none !important;
         }
     </style>
 </body>
 </html>
-
-
