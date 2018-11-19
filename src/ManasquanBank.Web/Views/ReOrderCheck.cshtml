@@ -297,8 +297,8 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="country">Country</label>
-                                        <select name="country" id="country" required default="United States" class="form-control selectBox">
-                                            <option value="" rel="">-Select Country-</option>
+                                        <select name="country" id="country" required data-default="United States" class="form-control selectBox">
+                                            <option value="" data-rel="">-Select Country-</option>
                                            
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
@@ -355,22 +355,22 @@
 
     $(document).ready(function() {
       $.each(myJson.countries, function(index, value) {
-        $("#country").append('<option rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
+        $("#country").append('<option data-rel="' + index + '" value="' + value.country + '">' + value.country + '</option>');
       });
-      country_id = $("#country").attr("default");
+      country_id = $("#country").attr("data-default");
       $("#country").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
 
 
-      country_id = $("#country").find('option:selected').attr('rel');
+      country_id = $("#country").find('option:selected').attr('data-rel');
       // console.log("Country INDEX : " + country_id);
       if (country_id != "") {
         $.each(myJson.countries[country_id].states, function(index1, value1) {
           $("#state").find("option:first").text("-Select State-");
-          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+          $("#state").append('<option data-rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
           // $("#state").selectmenu("refresh");
         });
 
-        state_id = $("#state").attr("default");
+        state_id = $("#state").attr("data-default");
         $("#state").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
       }
       $("#state,#country").selectmenu();
@@ -378,13 +378,13 @@
 
       $("#country").on('selectmenuchange', function() {
         $("#state").selectmenu("destroy");
-        country_id = $(this).find('option:selected').attr('rel');
+        country_id = $(this).find('option:selected').attr('data-rel');
         $("#state").find("option").not("option:nth-child(1)").remove();
         $("#state").find("option:first").text("-Select State-");
         $.each(myJson.countries[country_id].states, function(index1, value1) {
 
-          $("#state").append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
-          console.log('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+          $("#state").append('<option data-rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+          console.log('<option data-rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
         });
         $("#state").selectmenu();
 

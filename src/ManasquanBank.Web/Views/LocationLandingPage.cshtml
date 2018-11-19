@@ -151,7 +151,7 @@
                     }
                     @if (!string.IsNullOrEmpty(phone))
                     {
-                        <p><a href="tel:@phone">@phone</a></p>
+                        <p><a href="tel:@phone.Replace(" ", "")">@phone</a></p>
                     }
                     <span class="directionLink"><a href="https://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText" target="_blank">Get Directions <img src="images/location/directionArrow.png" alt="direction Arrow" /></a></span>
                     <a class="viewButtonLink btnManasq" href="@loc.Url"><span>View Detail</span></a>
