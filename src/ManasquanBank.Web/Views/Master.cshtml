@@ -141,7 +141,7 @@
 
             }
 
-            $("a").not("a.msubMenu").click(function (e) {
+            $("a").not("a.msubMenu,.tabs a").click(function (e) {
                 var url = $(this).attr("href");
                 if (typeof (url) !== "undefined") {
                     var hasparameter = url.substring(url.indexOf('#') + 1);
