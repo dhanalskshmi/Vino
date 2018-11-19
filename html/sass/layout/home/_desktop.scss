@@ -2902,7 +2902,7 @@ $dbannerhgt: 667px;
     padding-bottom: 10px;
   }
   .modal-footer{
-    text-align: left;
+    text-align: center;
     border: none;
     padding-bottom: 30px;
     .btnManasq{
@@ -2917,8 +2917,10 @@ $dbannerhgt: 667px;
       text-transform: uppercase;
       font-weight: 800;
       letter-spacing: 1px;
+      margin: 0px 10px;
       @include bp(mobile){
-        padding: 10px 32px;
+        padding: 10px 28px;
+        margin: 0 4px;
       }
     }
     #stayOn{
