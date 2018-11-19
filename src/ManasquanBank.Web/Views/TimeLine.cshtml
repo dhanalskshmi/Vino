@@ -58,13 +58,13 @@
                                     if (i == 0)
                                     {
                                         <li>
-                                            <a href="#@start" class="active">@title</a>
+                                            <a href="#@start" data-id="@start" class="time_@start active">@title</a>
                                         </li>
                                     }
                                     else
                                     {
                                         <li>
-                                            <a href="#@start">@title</a>
+                                            <a href="#@start" data-id="@start" class="time_@start">@title</a>
                                         </li>
                                     }
 
@@ -375,6 +375,60 @@
                             }
                         }
 
+                    </div>
+
+                    <div class="decade-wrapper decade-wrapper2" id="decade-wrapper">
+                        @if (YearList != null)
+                        {
+                            int i = 0;
+                            int j = 0;
+                            <ul class="tabs">
+                                @foreach (var item in YearList)
+                                {
+                                    var startyear = item.GetPropertyValue<string>("startYear");
+                                    var endyear = item.GetPropertyValue<string>("startYear");
+                                    var title = item.GetPropertyValue<string>("timelineTitle");
+
+                                    int start = Convert.ToInt32(startyear);
+
+                                    if (i == 0)
+                                    {
+                                        <li>
+                                            <a href="#@start" data-id="@start" class="time_@start active">@title</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a href="#@start" data-id="@start" class="time_@start">@title</a>
+                                        </li>
+                                    }
+
+                                    i++;
+
+                                }
+                            </ul>
+                            <select class="decade-year-dropdown" title="Year List" id="timeline_dropdown">
+                                @foreach (var item in YearList)
+                                {
+                                    var startyear = item.GetPropertyValue<string>("startYear");
+                                    var endyear = item.GetPropertyValue<string>("startYear");
+                                    var title = item.GetPropertyValue<string>("timelineTitle");
+
+                                    int start = Convert.ToInt32(startyear);
+
+                                    if (j == 0)
+                                    {
+                                        <option value="@start" selected>@title</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@start">@title</option>
+                                    }
+                                }
+                            </select>
+
+                        }
                     </div>
                 </div>
 
