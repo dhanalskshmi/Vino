@@ -3404,7 +3404,7 @@ footer {
   }
   .fMenu ul {
     border-bottom: none;
-    max-width: 722px;
+    max-width: 100%;
     margin: 0 auto;
   }
   .fMenu ul li {
@@ -4049,6 +4049,12 @@ footer {
   display: block;
   max-width: 122px;
   margin: 24px auto 19px;
+}
+.bluePannel.home .bgWrap {
+  background: transparent;
+}
+.bluePannel.home .bgWrap .detailsWrap {
+  background: #1b3d6e;
 }
 
 .ie11 .bluePannel figure img {

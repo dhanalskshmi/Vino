@@ -510,6 +510,14 @@ $dbannerhgt: 965px;
     max-width: 122px;
     margin: 24px auto 19px;
   }
+  &.home{
+    .bgWrap{
+      background: transparent;
+      .detailsWrap{
+        background: #1b3d6e;
+      }
+    }
+  }
 }
 .ie11{
   .bluePannel {
