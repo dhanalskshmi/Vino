@@ -131,7 +131,7 @@
     <script>
         $(document).ready(function () {
             var hasparameter = window.location.hash;
-
+            console.log(hasparameter);
             if (hasparameter != "" && $(hasparameter).length > 0) {
 
                 setTimeout(function () {
@@ -145,22 +145,24 @@
                 var url = $(this).attr("href");
                 if (typeof (url) !== "undefined") {
                     var hasparameter = url.substring(url.indexOf('#') + 1);
-                    if (hasparameter != '') {
+                    if (hasparameter != '' && hasparameter != url) {
                         hasparameter = '#' + hasparameter;
-                    }
-                    if (hasparameter != "" && $(hasparameter).length > 0) {
-                        var h = $(hasparameter).offset().top - $('header').height();
-                        $(".hasSubmenu").each(function () {
-                            $(this).parent().addClass("noHover");
-                        });
-                        $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
 
-                        });
 
-                        if ($(".hamburger").hasClass("active")) {
-                            $(".hamburger").trigger("click");
+                        if (hasparameter != "" && $(hasparameter).length > 0) {
+                            var h = $(hasparameter).offset().top - $('header').height();
+                            $(".hasSubmenu").each(function () {
+                                $(this).parent().addClass("noHover");
+                            });
+                            $("html, body").animate({ scrollTop: h }, "slow").promise().done(function () {
+
+                            });
+
+                            if ($(".hamburger").hasClass("active")) {
+                                $(".hamburger").trigger("click");
+                            }
+
                         }
-
                     }
                 }
             });
