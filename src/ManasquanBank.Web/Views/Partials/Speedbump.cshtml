@@ -1,5 +1,25 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
+    var speedbumpTitle = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("speedbumpTitle");
     var speedbump = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("speedbump");
 }
+<section class="speedBumpModule">
+    <div id="SpdBump_Popup" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header blueBg">
+                    <h3>You're Now Leaving Manasquan Bank</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>By accessing this link you will be leaving Manasquan Bank’s website and entering a website hosted by another party. This site may have a Privacy Policy different from Manasquan Bank. Manasquan Bank is not responsible for the products, services and content on any third party website. Manasquan Bank does not endorse the content contained on this site nor the organization publishing the site and hereby disclaims any responsibility for such content.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="" id="stayOn" class="btnManasq hvr-shutter-out-horizontal"><span>Cancel</span></a>
+                    <a href="http://manasquanbank.activitystaging.com" target="_blank" id="leaveThispage" class="btnManasq hvr-shutter-out-horizontal"><span>Proceed</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
