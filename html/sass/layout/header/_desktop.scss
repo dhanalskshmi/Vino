@@ -1838,15 +1838,18 @@ header {
 
 .openAccount{
 	right: -200px;
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 	transition: .3s all;
+	@include bp(mobile){
+		display: none;
+	}
 	ul{
-		position: absolute;
 		width: 200px;
 		background: #fff;
 		z-index: 10;
 		box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.58);
-		right: 0;
-		top: 0px;
 		li{
 			font-size: 24px;
 			text-align: center;
@@ -1879,17 +1882,11 @@ header {
 	}
 	.openQuickLnk{
 		transform: rotate(-90deg);
-		transform-origin: 50% 51%;
-		margin-top: 85px;
-    	margin-right: 140px;
+		transform-origin: 69% -24%;
+		margin-top: 0px;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
-		@include bp(landscape){
-			margin-right: 155px;
-		}
-		@include bp(tablet){
-			margin-right: 165px;
-		}
+		cursor: pointer;
 	}
 	&.active{
 		right: 0px;
