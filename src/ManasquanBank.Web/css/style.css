@@ -167,6 +167,9 @@ input[type=text]::-ms-clear {
 .fixedBg.fade.out {
   opacity: 0;
 }
+.fixedBg .bannerWrapper {
+  min-height: 100%;
+}
 
 .fade .siteWrap {
   -webkit-transition: all 0.55s;
@@ -16603,6 +16606,7 @@ table.checking tbody tr td:nth-child(1):hover a {
 
 .timeline.invert-order.active {
   display: block;
+  padding-bottom: 32px;
 }
 
 .timeline.flex-order.active {
@@ -17125,6 +17129,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
   .timeline.invert-order.active {
     display: block;
+    padding-bottom: 0;
   }
 
   .timeline-heading img {
