@@ -1331,7 +1331,7 @@ header.menuOpenState {
 header {
   margin-top: 6px;
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
