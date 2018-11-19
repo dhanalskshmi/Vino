@@ -6162,6 +6162,86 @@ footer {
     width: 416px;
   }
 }
+/*   Speedbump   */
+.speedBumpModule .modal-dialog {
+  width: 800px;
+  margin: 220px auto 30px;
+}
+@media (max-width: 1023px) {
+  .speedBumpModule .modal-dialog {
+    width: 600px;
+  }
+}
+@media (max-width: 767px) {
+  .speedBumpModule .modal-dialog {
+    margin: 40px auto 30px;
+    width: 90%;
+  }
+}
+.speedBumpModule .modal-header {
+  padding: 20px 15px;
+}
+@media (max-width: 767px) {
+  .speedBumpModule .modal-header {
+    padding: 15px;
+  }
+}
+.speedBumpModule .modal-header h3 {
+  font-size: 26px;
+  font-weight: normal;
+}
+@media (max-width: 767px) {
+  .speedBumpModule .modal-header h3 {
+    line-height: normal;
+    padding-right: 30px;
+  }
+}
+.speedBumpModule .modal-header button {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 40px;
+}
+.speedBumpModule .modal-header button:after, .speedBumpModule .modal-header button:before {
+  display: none;
+}
+@media (max-width: 767px) {
+  .speedBumpModule .modal-header button {
+    right: 22px;
+    top: 12px;
+  }
+}
+.speedBumpModule .modal-body {
+  padding: 20px 15px;
+  padding-bottom: 10px;
+}
+.speedBumpModule .modal-footer {
+  text-align: left;
+  border: none;
+  padding-bottom: 30px;
+}
+.speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button {
+  display: inline-block;
+  background: #1268e5;
+  padding: 10px 80px;
+  line-height: 16px;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+@media (max-width: 767px) {
+  .speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button {
+    padding: 10px 32px;
+  }
+}
+.speedBumpModule .modal-footer #stayOn {
+  background: #eb2837;
+}
+
 .full-width {
   width: 100%;
   float: left;

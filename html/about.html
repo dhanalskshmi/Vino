@@ -575,7 +575,7 @@
             <ul class="heroLinks">
               <li class="client-service"><a href=""><span class="heroLinksImage"><img src="images/about/client-services.png"></span><span class="heroLinksText">Client<br> Services</span></a></li>
               <li class="find-us"><a href=""><span class="heroLinksImage"><img src="images/about/find-us.png"></span><span class="heroLinksText">Find<br> Us<span></span></a></li>
-              <li class="call-us"><a href=""><span class="heroLinksImage"><img src="images/about/call-us.png"></span><span class="heroLinksText">Call<br> Us</span></a></li>
+              <li class="call-us"><a href="#" class="speedbump"><span class="heroLinksImage"><img src="images/about/call-us.png"></span><span class="heroLinksText">Call<br> Us</span></a></li>
             </ul>
           </div>
         </div>
@@ -1117,8 +1117,28 @@
       </footer>
     </div>
   </div>
+  <section class="speedBumpModule">
+      <div id="SpdBump_Popup" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header blueBg">
+              <h3>You're Now Leaving Manasquan Bank</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>By accessing this link you will be leaving Manasquan Bank’s website and entering a website hosted by another party. This site may have a Privacy Policy different from Manasquan Bank. Manasquan Bank is not responsible for the products, services and content on any third party website. Manasquan Bank does not endorse the content contained on this site nor the organization publishing the site and hereby disclaims any responsibility for such content.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="" id="stayOn" class="btnManasq hvr-shutter-out-horizontal"><span>Cancel</span></a>
+              <a href="http://manasquanbank.activitystaging.com" target="_blank" id="leaveThispage" class="btnManasq hvr-shutter-out-horizontal"><span>Proceed</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <script type='text/javascript' src='script/lib/jquery.js'></script>
+  <script type='text/javascript' src='script/lib/bootstrap.min.js'></script>
   <script src='script/lib/nprogress.js'></script>
   <script src="script/lib/modernizr-custom.js"></script>
   <script src="script/lib/jquery.validate.min.js"></script>

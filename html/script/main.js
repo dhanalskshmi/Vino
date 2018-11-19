@@ -1318,6 +1318,29 @@ $(document).ready(function(){
     })
 });
 
+
+/*       Speedbump     */
+$('body').on('click', 'a.speedbump', function(e){
+    e.preventDefault();
+    var link = $(this);
+    $("#SpdBump_Popup").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+    $("#leaveThispage").attr('href', link.attr('href'));
+});
+$(document).ready(function(){
+    $('a.speedbump').click(function(){
+        $("#SpdBump_Popup").modal('show');
+    });
+    $('#stayOn').click(function(e){
+        e.preventDefault();
+        $("#SpdBump_Popup").modal('hide');
+    });
+    $('#leaveThispage').click(function(e){
+        $("#SpdBump_Popup").modal('hide');
+    });
+});
 // Form moduleA
 function onSubmit(token) {
   document.getElementById('contactForm').submit();
