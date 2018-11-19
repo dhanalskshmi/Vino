@@ -229,4 +229,8 @@ $(document).ready(function(){
     $('#leaveThispage').click(function(e){
         $("#SpdBump_Popup").modal('hide');
     });
+    /*   Quick Links toggle function   */
+     $(".openQuickLnk").click(function(){
+        $(".openAccount").toggleClass("active");
+     });
 });
