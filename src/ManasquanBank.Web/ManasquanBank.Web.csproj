@@ -541,6 +541,7 @@
     <Content Include="images\category-detail\category2.jpg" />
     <Content Include="images\category-detail\category3.jpg" />
     <Content Include="images\category-detail\client-service.png" />
+    <Content Include="images\category-detail\learn-arrow-blue.png" />
     <Content Include="images\category-detail\learn-arrow.png" />
     <Content Include="images\category-detail\location-icon.png" />
     <Content Include="images\category-detail\location-icon1.png" />

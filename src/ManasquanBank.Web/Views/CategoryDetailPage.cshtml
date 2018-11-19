@@ -14,6 +14,7 @@
     var comparisonChart = Model.Content.GetPropertyValue<string>("comparisonChart");
     var cTAButton1 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton1");
     var cTAButton2 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton2");
+    var cTAButton3 = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton3");
     var productAndService = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("productAndService");
 }
 @section BackgroundImage {
@@ -48,7 +49,7 @@
                 </div>
             }
 
-            @if (Model.Content.HasValue("cTAButton1") || Model.Content.HasValue("cTAButton2"))
+            @if (Model.Content.HasValue("cTAButton1") || Model.Content.HasValue("cTAButton2")|| Model.Content.HasValue("cTAButton3") )
             {
                 <ul class="heroLinks">
                     @if (Model.Content.HasValue("cTAButton1"))
@@ -101,23 +102,7 @@
                                     }
 
                                 }
-                                @*else
-                                    {
-                                        <span class="heroLinksImage">
-                                            @if (iconImage != null)
-                                            {
-                                                <img src="@iconImage.Url" alt="@iconImage.Name">
-                                            }
-
-                                        </span>
-                                        <span class="heroLinksText">
-                                            @if (!string.IsNullOrEmpty(cTAtitle))
-                                            {
-                                                @Html.Raw(cTAtitle)
-                                            }
-                                        </span>
-                                    }*@
-
+                                
                             </li>
                         }
 
@@ -173,24 +158,64 @@
                                     }
 
                                 }
-                                @*else
+                               
+
+                            </li>
+                        }
+
+                    }
+
+                    @if (Model.Content.HasValue("cTAButton3"))
+                    {
+                    foreach (var CTA in cTAButton3)
+                    {
+                        var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                        var link = CTA.GetPropertyValue<Link>("link");
+
+                            <li class="call-us">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
                                     {
-                                        <span class="heroLinksImage">
-                                            @if (iconImage != null)
-                                            {
-                                                <img src="@iconImage.Url" alt="@iconImage.Name">
-                                            }
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
 
-                                        </span>
-                                        <span class="heroLinksText">
-                                            @if (!string.IsNullOrEmpty(cTAtitle))
-                                            {
-                                                var replacetitle = cTAtitle.Replace("<p>", "").Replace("</p>", "");
-                                                @Html.Raw(replacetitle)
-                                            }
-                                        </span>
-                                    }*@
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
 
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                               
                             </li>
                         }
 

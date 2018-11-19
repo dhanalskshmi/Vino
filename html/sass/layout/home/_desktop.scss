@@ -779,6 +779,21 @@ $dbannerhgt: 667px;
       }
     }
   }
+  .eventsBtn{
+    text-align: center;
+    margin-top: 50px;
+    .btnManasq{
+      display: inline-block;
+      background: #1268e5;
+      font-size: 13px;
+      color: #FFF;
+      font-weight: 700;
+      padding: 9px 22px;
+      text-transform: uppercase;
+      border: 1px solid #FFF;
+      border-radius: 15px;
+    }
+  }
 }
 
 
@@ -1635,6 +1650,13 @@ $dbannerhgt: 667px;
     figure {
       //min-height: 114px;
     }
+    .eventsBtn{
+      margin-top: 20px;
+      .btnManasq{
+        font-size: 12px;
+        padding: 4px 19px;
+      }
+    }
   }
 
 
@@ -2170,6 +2192,13 @@ $dbannerhgt: 667px;
           font-size: 14px;
           margin-bottom: 19px;
         }
+      }
+    }
+    .eventsBtn{
+      margin-top: 30px;
+      .btnManasq{
+        font-size: 15px;
+        padding: 6px 24px;
       }
     }
 
@@ -2731,6 +2760,14 @@ $dbannerhgt: 667px;
         p {
           margin-bottom: 0;
         }
+      }
+    }
+    .eventsBtn{
+      margin-top: 50px;
+      .btnManasq{
+        font-size: 19px;
+        padding: 8px 38px;
+        border-radius: 22px;
       }
     }
   }

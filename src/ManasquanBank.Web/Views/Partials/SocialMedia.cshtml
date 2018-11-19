@@ -1,6 +1,7 @@
 ﻿@using ClientDependency.Core.Mvc
 @using ManasquanBank.Web.Controllers
 @using Newtonsoft.Json.Linq
+@using RJP.MultiUrlPicker.Models
 @using System.Web.Script.Serialization;
 @using System.Text.RegularExpressions
 @inherits UmbracoTemplatePage
@@ -9,121 +10,146 @@
     var twitterConsumerKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterConsumerKey");
     var twitterSecretKey = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterSecretKey");
     var twitterId = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("twitterId");
+    var socialCTAButton = Model.Content.AncestorOrSelf(1).GetPropertyValue<Link>("socialCTAButton");
     SocialFeedController t = new SocialFeedController();
 }
 <section class="eventsPannel">
-<div class="containerWrapper">
-<h2>
-CURRENT EVENTS
-</h2>
-@try
-{
-    var twitterFeeds = t.GetTwitterFeed(twitterConsumerKey, twitterSecretKey, twitterId);
-    var jArray = JArray.Parse(twitterFeeds);
-    if (jArray.Count > 0)
-    {
-        int i = 0;
-        <ul>
-            @foreach (dynamic tweetlist in jArray)
+    <div class="containerWrapper">
+        <h2>
+            CURRENT EVENTS
+        </h2>
+        @try
+        {
+            var twitterFeeds = t.GetTwitterFeed(twitterConsumerKey, twitterSecretKey, twitterId);
+            var jArray = JArray.Parse(twitterFeeds);
+            if (jArray.Count > 0)
             {
-                if (i < 3)
-                {
-
-                    // var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-                    string[] temp, timesplit;
-                    string date, date1, displayTime;
-                    try
+                int i = 0;
+                <ul>
+                    @foreach (dynamic tweetlist in jArray)
                     {
-                        date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                        if (i < 3)
+                        {
 
-                        temp = date.Split(' ');
+                            // var date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                            string[] temp, timesplit;
+                            string date, date1, displayTime;
+                            try
+                            {
+                                date = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
 
-                        timesplit = temp[3].Split(':');
+                                temp = date.Split(' ');
 
-                       int timesp = Convert.ToInt32(timesplit[0]) - 7;
+                                timesplit = temp[3].Split(':');
 
-                        TimeSpan timespan = new TimeSpan(timesp, Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
-                        DateTime time = DateTime.Today.Add(timespan);
-                        displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
-                    }
-                    catch (Exception ex)
-                    {
-                        displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
-                    }
+                                int timesp = Convert.ToInt32(timesplit[0]) - 7;
 
-
-
-                    <li>
-                        <div class="eventHead">
-                            <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="eventLogo">
-                                <img src="~/images/header/logo.png" alt="Manasquan Bank Logo">
-                            </a>
-
-                            <div class="followShare">
-                                <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
-                                    <img src="/images/home/tweet.png" alt="Twitter Logo">
-                                </a>
-
-                            </div>
+                                TimeSpan timespan = new TimeSpan(timesp, Convert.ToInt32(timesplit[1]), Convert.ToInt32(timesplit[2]));
+                                DateTime time = DateTime.Today.Add(timespan);
+                                displayTime = time.ToString("hh:mm tt") + ", " + temp[2] + " " + temp[1] + " " + temp[5];
+                            }
+                            catch (Exception ex)
+                            {
+                                displayTime = tweetlist.created_at.ToString("hh:mm , dd MMM yyyy");
+                            }
 
 
-                        </div>
-                        <div class="eventDetails">
-                            <p class="evenhgt">
-                                @{string msg = tweetlist.full_text.ToString();
-                                    string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
-                                    foreach (var url in tweetlist.entities.urls)
-                                    {
-                                        string link = url.url.ToString();
-                                        string newtab = "true";
-                                        text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
 
-                                    }
+                            <li>
+                                <div class="eventHead">
+                                    <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank" class="eventLogo">
+                                        <img src="~/images/header/logo.png" alt="Manasquan Bank Logo">
+                                    </a>
 
-                                    @Html.Raw(text)
-                                }
+                                    <div class="followShare">
+                                        <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank">
+                                            <img src="/images/home/tweet.png" alt="Twitter Logo">
+                                        </a>
 
-                            </p>
-                            @if (tweetlist.extended_entities != null)
+                                    </div>
+
+
+                                </div>
+                                <div class="eventDetails">
+                                    <p class="evenhgt">
+                                        @{string msg = tweetlist.full_text.ToString();
+                                            string text = t.ReplaceHashTagsAndUsernamesWithUrls(msg).ToString();
+                                            foreach (var url in tweetlist.entities.urls)
+                                            {
+                                                string link = url.url.ToString();
+                                                string newtab = "true";
+                                                text = t.ReplaceFlatUrlWithHTMLUrl(text, link, newtab);
+
+                                            }
+
+                                            @Html.Raw(text)
+                                        }
+
+                                    </p>
+                                    @if (tweetlist.extended_entities != null)
                             {
                                 int s = 0;
                                 foreach (dynamic media in tweetlist.extended_entities["media"])
                                 {
                                     if (s == 0)
                                     {
-                                        <figure style="background-image: url('@media.media_url')">
-                                                <a href="@media.url" target="_blank"><span class="screen-reader-text">Media Link</span></a>
-                                        </figure>
-                                        s++;
-                                    }
+                                                <figure style="background-image: url('@media.media_url')">
+                                                    <a href="@media.url" target="_blank"><span class="screen-reader-text">Media Link</span></a>
+                                                </figure>
+                                                s++;
+                                            }
 
-                                }
-
-                            }
-                            else
-                            {
-                                <figure style="background-image: url('/images/home/tweets_fill.jpg')">
-                                    <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank"><span class="screen-reader-text">Media Link</span></a>
-                                </figure>
-                            }
-                            <div class="venue">
-                                <p>
-                                    <small>
-                                        @displayTime
-                                    </small>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
                                         }
-                                        i++;
-                                    }
-        </ul>
-    }
 
-}
-catch (Exception e)
-{                                                                                               
-}
-</div>
+                                    }
+                                    else
+                                    {
+                                        <figure style="background-image: url('/images/home/tweets_fill.jpg')">
+                                            <a href="https://twitter.com/@tweetlist.user.screen_name" target="_blank"><span class="screen-reader-text">Media Link</span></a>
+                                        </figure>
+                                    }
+                                    <div class="venue">
+                                        <p>
+                                            <small>
+                                                @displayTime
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                                                }
+                                                i++;
+                                            }
+                </ul>
+                                                }
+
+                                            }
+                                            catch (Exception e)
+                                            {
+                                            }
+
+        @if (socialCTAButton != null)
+        {
+            <div class="eventsBtn">
+                @if (socialCTAButton.Target == "_blank")
+                {
+                    <a href="@socialCTAButton.Url" class="btnManasq" target="_blank">
+                        <span>
+                            @socialCTAButton.Name
+                        </span>
+                    </a>
+                }
+                else
+                {
+                    <a href="@socialCTAButton.Url" class="btnManasq">
+                        <span>
+                           @socialCTAButton.Name
+                        </span>
+                    </a>
+                }
+                
+            </div>
+        }
+        
+    </div>
 </section>
