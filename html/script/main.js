@@ -1162,7 +1162,6 @@ if ($('.joinEmail').length > 0) {
 }
 
 // Home PopUP
-
 var isshow = window.localStorage.getItem('isshow');
 var isshowalert = window.localStorage.getItem('isshowalert');
 if(isshow == null){
