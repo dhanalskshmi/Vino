@@ -4315,6 +4315,21 @@ footer {
   font-size: 12px;
   color: #778593;
 }
+.eventsPannel .eventsBtn {
+  text-align: center;
+  margin-top: 50px;
+}
+.eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+  display: inline-block;
+  background: #1268e5;
+  font-size: 13px;
+  color: #FFF;
+  font-weight: 700;
+  padding: 9px 22px;
+  text-transform: uppercase;
+  border: 1px solid #FFF;
+  border-radius: 15px;
+}
 
 .joinEmail {
   background: #efba36;
@@ -5142,6 +5157,13 @@ footer {
   .eventsPannel ul li:nth-child(2) {
     margin: 0 2px;
   }
+  .eventsPannel .eventsBtn {
+    margin-top: 20px;
+  }
+  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+    font-size: 12px;
+    padding: 4px 19px;
+  }
 
   .joinEmail {
     padding: 24px 0 25px;
@@ -5582,6 +5604,13 @@ footer {
   .eventsPannel .eventDetails .venue p {
     font-size: 14px;
     margin-bottom: 19px;
+  }
+  .eventsPannel .eventsBtn {
+    margin-top: 30px;
+  }
+  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+    font-size: 15px;
+    padding: 6px 24px;
   }
 
   .joinEmail {
@@ -6059,6 +6088,14 @@ footer {
   }
   .eventsPannel .eventDetails .venue p {
     margin-bottom: 0;
+  }
+  .eventsPannel .eventsBtn {
+    margin-top: 50px;
+  }
+  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+    font-size: 19px;
+    padding: 8px 38px;
+    border-radius: 22px;
   }
 
   .joinEmail {
