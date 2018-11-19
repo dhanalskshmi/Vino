@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
+    var speedbumpTitle = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("speedbumpTitle");
     var speedbump = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("speedbump");
 }
