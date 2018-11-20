@@ -46,7 +46,26 @@
         {
             var departmentName = depart.GetPropertyValue<string>("departmentName");
             var employeesName = depart.GetPropertyValue<IEnumerable<IPublishedContent>>("employeeNameTiles");
-            if (employeesName != null)
+            var departEmployeesName = depart.GetPropertyValue<IPublishedContent>("departmentsEmployeeList");
+            if (departEmployeesName != null)
+            {
+                var employeechild = Umbraco.Content(departEmployeesName.Id).Children();
+
+                foreach (var empchild in employeechild)
+                {
+                    var employeeName = empchild.GetPropertyValue<string>("employeeName");
+                    if(string.IsNullOrEmpty(employeeName))
+                    {
+                        employeeName = empchild.GetPropertyValue<string>("managername");
+                    }
+                    employeeList emplist = new employeeList();
+                    emplist.employeeName = employeeName;
+                    emplist.departmentName = departmentName;
+                    employeeList.Add(emplist);
+                }
+
+            }
+            if(employeesName != null)
             {
                 foreach (var emp in employeesName)
                 {
