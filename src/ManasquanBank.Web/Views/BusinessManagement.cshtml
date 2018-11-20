@@ -301,7 +301,14 @@
                                             <option value=""></option>
                                             @foreach (var emplist in employeeList)
                                             {
-                                                <option data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
+                                                if (emplist.employeeName == Request.QueryString["employee"])
+                                                {
+                                                    <option data-rel="@emplist.departmentName" value="@emplist.employeeName" selected="selected">@emplist.employeeName</option>
+                                                }
+                                                else
+                                                {
+                                                    <option data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
+                                                }
                                             }
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
@@ -402,13 +409,20 @@
             $("#department").find("option[value='']").remove();
 
             var sel = $("#department").val();
+            var emp = $("#employee").val();
             if (sel == '') {
                 $("#department").find("option:first-child").prop("selected", true);
                 sel = $("#department").val();
             }
+            if (emp == '')
+            {
+                $("#employee,#department").selectmenu("destroy");
+            }
+            else {
+                $("#department").selectmenu("destroy");
+            }
 
-
-            $("#employee,#department").selectmenu("destroy");
+           
             $("#employee").find("option").attr("disabled", true);
             $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
             var i = 0;

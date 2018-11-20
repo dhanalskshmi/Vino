@@ -481,6 +481,7 @@
     <Content Include="css\lib\jquery-ui.min.css" />
     <Content Include="css\lib\jquery.mb.YTPlayer.min.css" />
     <Content Include="css\lib\jquery.timepicker.css" />
+    <Content Include="css\lib\modal-video.min.css" />
     <Content Include="css\lib\nprogress.css" />
     <Content Include="css\lib\swiper.min.css" />
     <Content Include="css\lib\YouTubePopUp.css" />
@@ -679,8 +680,10 @@
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\lib\bootstrap-datepicker.js" />
+    <Content Include="scripts\lib\bootstrap.min.js" />
     <Content Include="scripts\lib\country-json.js" />
     <Content Include="scripts\lib\jquery-3.2.1.min.js" />
+    <Content Include="scripts\lib\jquery-modal-video.min.js" />
     <Content Include="scripts\lib\jquery-ui.js" />
     <Content Include="scripts\lib\jquery.filterizr.min.js" />
     <Content Include="scripts\lib\jquery.js" />
