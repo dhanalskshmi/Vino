@@ -959,9 +959,24 @@ table {
                 left: 5px;
               }
             }
-
+            &.lmoBtn {
+              span {
+                &::after {
+                  background: url('../images/careers/hover-down-arrow.png') no-repeat;
+                  background-size: cover;
+                  transform: rotate(180deg);
+                }
+              }
+            }
             &.active {
-              color: #0b3b81;
+              color: #1268e5;
+              span {
+                &::after {
+                  background: url('../images/careers/hover-down-arrow.png') no-repeat;
+                  background-size: cover;
+                  transform: rotate(180deg);
+                }
+              }
 
               img {
                 transform: rotate(180deg);

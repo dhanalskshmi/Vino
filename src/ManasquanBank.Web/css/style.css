@@ -14349,8 +14349,22 @@ table.checking tbody tr td:nth-child(1):hover a {
     left: 5px;
   }
 }
+.categorySection .bgWrap .flexWrap .contentSection a.learnBtn.lmoBtn span::after {
+  background: url("../images/careers/hover-down-arrow.png") no-repeat;
+  background-size: cover;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn.active {
-  color: #0b3b81;
+  color: #1268e5;
+}
+.categorySection .bgWrap .flexWrap .contentSection a.learnBtn.active span::after {
+  background: url("../images/careers/hover-down-arrow.png") no-repeat;
+  background-size: cover;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn.active img {
   -webkit-transform: rotate(180deg);
