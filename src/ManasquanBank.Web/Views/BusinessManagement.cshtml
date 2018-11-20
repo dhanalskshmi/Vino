@@ -54,13 +54,22 @@
                 foreach (var empchild in employeechild)
                 {
                     var employeeName = empchild.GetPropertyValue<string>("employeeName");
-                    if(string.IsNullOrEmpty(employeeName))
+                    var email = empchild.GetPropertyValue<string>("email");
+                    if (string.IsNullOrEmpty(employeeName))
                     {
                         employeeName = empchild.GetPropertyValue<string>("managername");
                     }
                     employeeList emplist = new employeeList();
                     emplist.employeeName = employeeName;
                     emplist.departmentName = departmentName;
+                    if(!string.IsNullOrEmpty(email))
+                    {
+                        emplist.employeeEmail = email;
+                    }
+                    else
+                    {
+                        emplist.employeeEmail = string.Empty;
+                    }
                     employeeList.Add(emplist);
                 }
 
@@ -70,9 +79,18 @@
                 foreach (var emp in employeesName)
                 {
                     var employeeName = emp.GetPropertyValue<string>("managementEmployeeName");
+                    var email = emp.GetPropertyValue<string>("employeeEmail");
                     employeeList emplist = new employeeList();
                     emplist.employeeName = employeeName;
                     emplist.departmentName = departmentName;
+                    if(!string.IsNullOrEmpty(email))
+                    {
+                        emplist.employeeEmail = email;
+                    }
+                    else
+                    {
+                        emplist.employeeEmail = string.Empty;
+                    }
                     employeeList.Add(emplist);
                 }
             }
@@ -322,14 +340,16 @@
                                             {
                                                 if (emplist.employeeName == Request.QueryString["employee"])
                                                 {
-                                                    <option data-rel="@emplist.departmentName" value="@emplist.employeeName" selected="selected">@emplist.employeeName</option>
+                                                    <option data-email="@emplist.employeeEmail" data-rel="@emplist.departmentName" value="@emplist.employeeName" selected="selected">@emplist.employeeName</option>
+                                                    
                                                 }
                                                 else
                                                 {
-                                                    <option data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
+                                                    <option data-email="@emplist.employeeEmail" data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
                                                 }
                                             }
                                         </select>
+                                        <input type="hidden" name="employeeEmail" id="employeeEmail" />
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-4 col-sm-6 col-xs-12 nopadding">
@@ -455,6 +475,10 @@
             $("#department").selectmenu();
             $("#employee").selectmenu();
 
+            var empEmail = $("#employee").find("option:selected").attr('data-email');
+            $("#employeeEmail").val(empEmail);
+
+
             $("#department").on('selectmenuchange', function () {
                 var sel = $("#department").val();
                 $("#employee").selectmenu("destroy");
@@ -471,6 +495,17 @@
                     }
                 });
                 $("#employee").selectmenu();
+                var empEmail = $("#employee").find("option:selected").attr('data-email');
+                $("#employeeEmail").val(empEmail);
+                $("#employee").on('selectmenuchange', function () {
+                    var empEmail = $("#employee").find("option:selected").attr('data-email');
+                    $("#employeeEmail").val(empEmail);
+                });
+            });
+
+            $("#employee").on('selectmenuchange', function () {
+                var empEmail = $("#employee").find("option:selected").attr('data-email');
+                $("#employeeEmail").val(empEmail);
             });
 
             $("#state").selectmenu("destroy");

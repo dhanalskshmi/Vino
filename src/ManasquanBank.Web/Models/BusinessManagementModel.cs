@@ -63,5 +63,6 @@ namespace ManasquanBank.Web.Models
     {
         public string employeeName { get; set; }
         public string departmentName { get; set; }
+        public string employeeEmail { get; set; }
     }
 }
