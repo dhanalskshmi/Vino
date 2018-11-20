@@ -1390,7 +1390,7 @@ header .containerWrapper {
   max-width: 34px;
 }
 .mobileSearch .txtBox {
-  width: 0%;
+  width: 0;
 }
 .mobileSearch .submit {
   display: inline-block;
@@ -1470,7 +1470,7 @@ header .containerWrapper {
   margin-right: 37px;
   margin-top: 0;
 }
-.hamburger.active .lines::before, .hamburger.active .lines::after {
+.hamburger.active .lines::after, .hamburger.active .lines::before {
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
@@ -1591,7 +1591,7 @@ header .containerWrapper {
   font-size: 16px;
 }
 .mnavWrapper ul ul.inner li a {
-  padding: 11px 16px 11px;
+  padding: 11px 16px;
 }
 
 .mnavWrapper ul li a {
@@ -1656,7 +1656,7 @@ header .containerWrapper {
   font-weight: 700;
   font-size: 16px;
   padding-bottom: 3px;
-  padding-top: 0px;
+  padding-top: 0;
 }
 .mnavWrapper ul li .inner li .inner li a::after {
   display: none;
@@ -1668,8 +1668,8 @@ header .containerWrapper {
   background-position: 0 -49px;
 }
 
-header + .loginBlocks .personalLogin p,
-header + .loginBlocks .businessLogin p {
+header + .loginBlocks .businessLogin p,
+header + .loginBlocks .personalLogin p {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1682,8 +1682,8 @@ header + .loginBlocks .businessLogin p {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-header + .loginBlocks .personalLogin p:last-child,
-header + .loginBlocks .businessLogin p:last-child {
+header + .loginBlocks .businessLogin p:last-child,
+header + .loginBlocks .personalLogin p:last-child {
   margin-left: 0 !important;
 }
 header + .loginBlocks .businessLogin p {
@@ -1779,12 +1779,12 @@ header.stickyActive .mainNav {
     margin: 0 auto;
   }
 
-  .mnavWrapper,
-  .mLogin,
-  .mobileSearchwrap,
   .hamburger,
+  .mLogin,
+  .mnavWrapper,
   .mobileSearch,
-  .mobileSearchfield {
+  .mobileSearchfield,
+  .mobileSearchwrap {
     display: none;
   }
 
@@ -1827,21 +1827,21 @@ header.stickyActive .mainNav {
             transform: translateX(0);
     float: right;
   }
-  .menuWrapper .loginBlocks .personalLogin,
-  .menuWrapper .loginBlocks .businessLogin {
+  .menuWrapper .loginBlocks .businessLogin,
+  .menuWrapper .loginBlocks .personalLogin {
     float: left;
     padding: 1px 5px 0;
     min-width: 98px;
     max-width: 98px;
   }
-  .menuWrapper .loginBlocks .personalLogin h3,
-  .menuWrapper .loginBlocks .businessLogin h3 {
+  .menuWrapper .loginBlocks .businessLogin h3,
+  .menuWrapper .loginBlocks .personalLogin h3 {
     font-size: 8px;
     font-weight: 700;
     line-height: 12px;
   }
-  .menuWrapper .loginBlocks .personalLogin p,
-  .menuWrapper .loginBlocks .businessLogin p {
+  .menuWrapper .loginBlocks .businessLogin p,
+  .menuWrapper .loginBlocks .personalLogin p {
     line-height: 15px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1855,24 +1855,24 @@ header.stickyActive .mainNav {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .menuWrapper .loginBlocks .personalLogin p a:last-child,
-  .menuWrapper .loginBlocks .businessLogin p a:last-child {
+  .menuWrapper .loginBlocks .businessLogin p a:last-child,
+  .menuWrapper .loginBlocks .personalLogin p a:last-child {
     margin-left: 4px;
   }
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin button,
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button,
+  .menuWrapper .loginBlocks .personalLogin .txtBox,
+  .menuWrapper .loginBlocks .personalLogin button {
     font-size: 8px;
     height: 13px;
     padding: 0 6px;
   }
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin .txtBox {
+  .menuWrapper .loginBlocks .businessLogin .txtBox,
+  .menuWrapper .loginBlocks .personalLogin .txtBox {
     margin-bottom: 5px;
   }
-  .menuWrapper .loginBlocks .personalLogin p a,
-  .menuWrapper .loginBlocks .businessLogin p a {
+  .menuWrapper .loginBlocks .businessLogin p a,
+  .menuWrapper .loginBlocks .personalLogin p a {
     font-size: 7px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
@@ -1975,7 +1975,7 @@ header.stickyActive .mainNav {
     color: #3d3d3d;
     padding: 6px 9px 8px;
   }
-  .headerNav .topNav li.iWantto .subNav li a:before, .headerNav .topNav li.iWantto .subNav li a::after {
+  .headerNav .topNav li.iWantto .subNav li a::after, .headerNav .topNav li.iWantto .subNav li a:before {
     display: none;
   }
   .headerNav .topNav li.iWantto .subNav li a:hover {
@@ -2041,8 +2041,8 @@ header.stickyActive .mainNav {
     -webkit-transform: scaleY(0);
         -ms-transform: scaleY(0);
             transform: scaleY(0);
-    -webkit-transition: all .75s;
-    transition: all .75s;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
   }
   .mainNav ul li a::after {
     content: '';
@@ -2077,8 +2077,8 @@ header.stickyActive .mainNav {
     margin-top: -7px;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all .55s;
-            transition: all .55s;
+    -webkit-transition: all 0.55s;
+            transition: all 0.55s;
   }
   .mainNav .search .submit {
     display: inline-block;
@@ -2118,8 +2118,8 @@ header.stickyActive .mainNav {
     -webkit-transform: translateY(10px);
         -ms-transform: translateY(10px);
             transform: translateY(10px);
-    -webkit-transition: all .3s;
-            transition: all .3s;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
   }
   .mainNav .subNav li {
     display: block;
@@ -2185,8 +2185,8 @@ header.stickyActive .mainNav {
             flex-wrap: wrap;
   }
   .SubmenuWrapper .flexBox .cols {
-    width: -webkit-calc( 100% / 3 );
-    width: calc( 100% / 3 );
+    width: -webkit-calc(100% / 3);
+    width: calc(100% / 3);
   }
   .SubmenuWrapper h2 {
     font-size: 22px;
@@ -2249,17 +2249,17 @@ header.stickyActive .mainNav {
             transform: none;
   }
 
-  .mainNav ul li:focus .SubmenuWrapper, .mainNav ul li:active .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
+  .mainNav ul li:active .SubmenuWrapper, .mainNav ul li:focus .SubmenuWrapper, .mainNav ul li:hover .SubmenuWrapper {
     visibility: visible;
     display: block;
   }
-  .mainNav ul li:focus .SubmenuWrapper .bgWrap, .mainNav ul li:active .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
+  .mainNav ul li:active .SubmenuWrapper .bgWrap, .mainNav ul li:focus .SubmenuWrapper .bgWrap, .mainNav ul li:hover .SubmenuWrapper .bgWrap {
     opacity: 1;
   }
-  .mainNav ul li:focus.shortNav, .mainNav ul li:active.shortNav, .mainNav ul li:hover.shortNav {
+  .mainNav ul li:active.shortNav, .mainNav ul li:focus.shortNav, .mainNav ul li:hover.shortNav {
     position: relative;
   }
-  .mainNav ul li:focus .subNav, .mainNav ul li:active .subNav, .mainNav ul li:hover .subNav {
+  .mainNav ul li:active .subNav, .mainNav ul li:focus .subNav, .mainNav ul li:hover .subNav {
     display: block;
   }
 }
@@ -2309,31 +2309,31 @@ header.stickyActive .mainNav {
   .menuWrapper .loginBlocks {
     width: 244px;
   }
-  .menuWrapper .loginBlocks .personalLogin,
-  .menuWrapper .loginBlocks .businessLogin {
+  .menuWrapper .loginBlocks .businessLogin,
+  .menuWrapper .loginBlocks .personalLogin {
     min-width: 122px;
     max-width: 122px;
     padding: 5px 7px 0;
   }
-  .menuWrapper .loginBlocks .personalLogin h3,
-  .menuWrapper .loginBlocks .businessLogin h3 {
+  .menuWrapper .loginBlocks .businessLogin h3,
+  .menuWrapper .loginBlocks .personalLogin h3 {
     font-size: 10px;
     margin-bottom: 4px;
   }
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin .txtBox {
+  .menuWrapper .loginBlocks .businessLogin .txtBox,
+  .menuWrapper .loginBlocks .personalLogin .txtBox {
     font-size: 10px;
     height: 17px;
     margin-bottom: 6px;
   }
-  .menuWrapper .loginBlocks .personalLogin button,
-  .menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button,
+  .menuWrapper .loginBlocks .personalLogin button {
     font-size: 9px;
     margin-bottom: 6px;
     height: 17px;
   }
-  .menuWrapper .loginBlocks .personalLogin p a,
-  .menuWrapper .loginBlocks .businessLogin p a {
+  .menuWrapper .loginBlocks .businessLogin p a,
+  .menuWrapper .loginBlocks .personalLogin p a {
     font-size: 9px;
   }
 
@@ -2385,8 +2385,8 @@ header.stickyActive .mainNav {
     height: 510px;
   }
   .SubmenuWrapper .flexBox .cols {
-    width: -webkit-calc( 100% / 3 );
-    width: calc( 100% / 3 );
+    width: -webkit-calc(100% / 3);
+    width: calc(100% / 3);
   }
   .SubmenuWrapper h2 {
     font-size: 24px;
@@ -2401,7 +2401,7 @@ header.stickyActive .mainNav {
     padding-top: 9px;
   }
   .SubmenuWrapper ul li {
-    padding: 7px 0 0 0;
+    padding: 7px 0 0;
   }
   .SubmenuWrapper .cols {
     padding-bottom: 36px;
@@ -2513,19 +2513,19 @@ header.stickyActive .mainNav {
   .menuWrapper .loginBlocks {
     width: 346px;
   }
-  .menuWrapper .loginBlocks .personalLogin,
-  .menuWrapper .loginBlocks .businessLogin {
+  .menuWrapper .loginBlocks .businessLogin,
+  .menuWrapper .loginBlocks .personalLogin {
     max-width: 173px;
     min-width: 173px;
     padding: 9px 10px 4px;
   }
-  .menuWrapper .loginBlocks .personalLogin h3,
-  .menuWrapper .loginBlocks .businessLogin h3 {
+  .menuWrapper .loginBlocks .businessLogin h3,
+  .menuWrapper .loginBlocks .personalLogin h3 {
     font-size: 12px;
     margin-bottom: 8px;
   }
-  .menuWrapper .loginBlocks .personalLogin p,
-  .menuWrapper .loginBlocks .businessLogin p {
+  .menuWrapper .loginBlocks .businessLogin p,
+  .menuWrapper .loginBlocks .personalLogin p {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2538,28 +2538,28 @@ header.stickyActive .mainNav {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .menuWrapper .loginBlocks .personalLogin p a,
-  .menuWrapper .loginBlocks .businessLogin p a {
+  .menuWrapper .loginBlocks .businessLogin p a,
+  .menuWrapper .loginBlocks .personalLogin p a {
     font-size: 11px;
   }
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin .txtBox {
+  .menuWrapper .loginBlocks .businessLogin .txtBox,
+  .menuWrapper .loginBlocks .personalLogin .txtBox {
     font-size: 13px;
   }
-  .menuWrapper .loginBlocks .personalLogin button,
-  .menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button,
+  .menuWrapper .loginBlocks .personalLogin button {
     font-size: 12px;
     margin-bottom: 8px;
   }
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin button,
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button,
+  .menuWrapper .loginBlocks .personalLogin .txtBox,
+  .menuWrapper .loginBlocks .personalLogin button {
     height: 24px;
     margin-bottom: 10px;
   }
-  .menuWrapper .loginBlocks .personalLogin button,
-  .menuWrapper .loginBlocks .businessLogin button {
+  .menuWrapper .loginBlocks .businessLogin button,
+  .menuWrapper .loginBlocks .personalLogin button {
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
@@ -2903,8 +2903,11 @@ header.stickyActive .mainNav {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: .3s all;
-          transition: .3s all;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  -webkit-transition: 0.3s all;
+          transition: 0.3s all;
 }
 @media (max-width: 767px) {
   .openAccount {
@@ -2915,12 +2918,12 @@ header.stickyActive .mainNav {
   width: 200px;
   background: #fff;
   z-index: 10;
-  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.58);
+  box-shadow: 0 0 18px -6px rgba(0, 0, 0, 0.58);
 }
 .openAccount ul li {
   font-size: 24px;
   text-align: center;
-  padding: 0px;
+  padding: 0;
 }
 .openAccount ul li a {
   padding: 10px 15px;
@@ -2957,13 +2960,13 @@ header.stickyActive .mainNav {
   -webkit-transform-origin: 69% -24%;
       -ms-transform-origin: 69% -24%;
           transform-origin: 69% -24%;
-  margin-top: 0px;
+  margin-top: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   cursor: pointer;
 }
 .openAccount.active {
-  right: 0px;
+  right: 0;
 }
 
 /*@import "tabletLandscape";

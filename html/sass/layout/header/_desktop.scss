@@ -1,5 +1,3 @@
-
-
 //variables
 $img: '../images/header';
 
@@ -10,26 +8,31 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
+
 	.containerWrapper {
 		padding: 0;
 	}
 }
+
 .logo {
 	display: inline-block;
 	padding: 11px 0 10px 7px;
 	max-width: 205px;
 	float: left;
 }
+
 .headerWrapper {
 	background: rgba(255,255,255,0.87);
 	margin: 0 12px;
 	position: relative;
 	display: table;
-  width: calc(100% - 22px);
+	width: calc(100% - 22px);
+
 	.headBg {
 		display: none;
 	}
 }
+
 .mLogin {
 	float: right;
 	margin-top: 12px;
@@ -37,6 +40,7 @@ header {
 	min-width: 75px;
 	margin-right: 5px;
 	text-align: right;
+
 	a {
 		background: #1268e5;
 		font-size: 11px;
@@ -47,39 +51,45 @@ header {
 		text-transform: uppercase;
 	}
 }
+
 .mobileSearchwrap {
 	display: table;
 	padding-bottom: 2px;
-
 }
+
 .mobileSearch {
 	float: right;
 	margin-top: 12px;
 	margin-right: 11px;
 	margin-left: 6px;
 	max-width: 34px;
+
 	.txtBox {
-		width: 0%;
+		width: 0;
 	}
+
 	.submit {
 		display: inline-block;
+
 		i {
 			display: block;
-			background-image: url('#{$img}/search_icon.png');
+			background-image: url("#{$img}/search_icon.png");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
 			width: 25px;
 			height: 24px;
 		}
+
 		&.active {
 			i {
-				background-image: url('#{$img}/search_close.png');
+				background-image: url("#{$img}/search_close.png");
 				background-size: cover;
 			}
 		}
 	}
 }
+
 .searchloginWrap {
 	max-width: 80px;
 	float: right;
@@ -91,9 +101,10 @@ header {
 	float: right;
 	margin-top: 13px;
 	margin-right: 0;
-  text-align: right;
+	text-align: right;
 	transition: 0.3s;
-  position: relative;
+	position: relative;
+
 	&::before {
 		content: '';
 		width: 100%;
@@ -104,11 +115,13 @@ header {
 		left: 0;
 		transition: 0.18s;
 	}
+
 	.lines {
 		display: inline-block;
 		margin-right: 33px;
 		transition: 0.3s;
 		position: relative;
+
 		&::after,
 		&::before {
 			content: '';
@@ -119,40 +132,48 @@ header {
 			left: 0;
 			transition: 0.3s;
 		}
+
 		&::before {
 			top: -10px;
 		}
+
 		&::after {
 			top: 6px;
 		}
 	}
+
 	&.active {
 		//transform: translateX(-25%);
 		&::before {
 			transform: translateX(-100%);
 			opacity: 0;
 		}
+
 		.lines {
 			background: transparent;
 			margin-right: 37px;
 			margin-top: 0;
-			&::before,
-			&::after {
+
+			&::after,
+			&::before {
 				transform-origin: 50% 50%;
 				top: -1px;
 				left: 2px;
 				width: 32px;
 				height: 4px;
 			}
+
 			&::before {
 				transform: rotate3d(0, 0, 1, 45deg);
 			}
+
 			&::after {
 				transform: rotate3d(0, 0, 1, -45deg);
 			}
 		}
 	}
 }
+
 .menuOpened {
 	//height: 100%;
 	//overflow-y: hidden;
@@ -160,131 +181,150 @@ header {
 		//height: 100%;
 		//overflow-y: hidden;
 	}
+
 	.siteInner {
 		//height: 100%;
 	}
 }
+
 .menuWrapper {
 	display: none;
 }
-
-
 // Mobile Menu
-
 .mnavWrapper {
-  width: calc(100% - 22px);
-  min-height: 100%;
-  margin: 0 12px;
-  overflow: hidden;
-  //position: fixed;
-  position: absolute;
-  z-index: 9;
-  transform: translateX(120%);
-  transition: all 0.3s;
-  &.active {
-    transform: translateX(0);
-  }
-  .wraps {
-    min-height: 100%;
+	width: calc(100% - 22px);
+	min-height: 100%;
+	margin: 0 12px;
+	overflow: hidden;
+	//position: fixed;
+	position: absolute;
+	z-index: 9;
+	transform: translateX(120%);
+	transition: all 0.3s;
+
+	&.active {
+		transform: translateX(0);
+	}
+
+	.wraps {
+		min-height: 100%;
 		max-width: 388px;
 		margin: 0 auto;
 		overflow: visible;
+
 		.marginWrap {
 			background: #fff;
 			padding: 8px 0 0;
 			max-width: 410px;
 		}
-  }
-  ul {
-    li {
-      font-size: 20px;
+	}
+
+	ul {
+		li {
+			font-size: 20px;
 			font-weight: 700;
 			padding: 0 10px;
 			text-transform: uppercase;
-      border-bottom: 1px solid #e3e3e3;
-      a {
-        display: block;
-        color: #1c3d6d;
-        padding: 2px 0 3px;
-        &.msubMenu {
-          position: relative;
-          &::before {
-            content: '';
-            background: url('#{$img}/m_submenu.png') no-repeat;
-            width: 12px;
-            height: 23px;
-            position: absolute;
-            right: 19px;
-            top: 25.5%;
-          }
+			border-bottom: 1px solid #e3e3e3;
+
+			a {
+				display: block;
+				color: #1c3d6d;
+				padding: 2px 0 3px;
+
+				&.msubMenu {
+					position: relative;
+
+					&::before {
+						content: '';
+						background: url("#{$img}/m_submenu.png") no-repeat;
+						width: 12px;
+						height: 23px;
+						position: absolute;
+						right: 19px;
+						top: 25.5%;
+					}
+
 					span {
 						display: block;
 						max-width: calc(100% - 30px);
 					}
-        }
-        &:hover {
-          //color: #0d7ec3;
-        }
-      }
-      &.mainActive {
-        a {
-          &.msubMenu {
-            &::before {
-              transform: rotate(-90deg);
-            }
-          }
-        }
-      }
-      &.mtopNav {
+				}
+
+				&:hover {
+					//color: #0d7ec3;
+				}
+			}
+
+			&.mainActive {
+				a {
+					&.msubMenu {
+						&::before {
+							transform: rotate(-90deg);
+						}
+					}
+				}
+			}
+
+			&.mtopNav {
 				background: #f0f0f0;
 				line-height: 16px;
 				text-transform: unset;
-        border-bottom: 1px solid #dbdbdb;
-        a {
-          background: #f0f0f0;
-          color: #1c3d6d;
+				border-bottom: 1px solid #dbdbdb;
+
+				a {
+					background: #f0f0f0;
+					color: #1c3d6d;
 					padding-top: 5px;
-			    padding-bottom: 5px;
-        }
+					padding-bottom: 5px;
+				}
+
 				ul.inner {
 					background: #f0f0f0;
+
 					li {
 						a {
 							color: #4c4c4c;
 						}
 					}
 				}
-				&:nth-last-child(5)  {
+
+				&:nth-last-child(5) {
 					padding-top: 8px;
 				}
-      }
+			}
+
 			li {
 				+ .mtopNav {
 					padding-top: 8px;
 				}
 			}
-      &.mainActive {
-        a {
-          &::before {
-            right: 23px;
-          }
-        }
-      }
-    }
-    ul {
-      &.inner {
-        display: none;
-        border-top: 1px solid #e3e3e3;
-        li {
-          font-size: 16px;
-          a {
-            //color: #023b67;
-            padding: 11px 16px 11px;
-          }
-        }
-      }
-    }
-  }
+
+			&.mainActive {
+				a {
+					&::before {
+						right: 23px;
+					}
+				}
+			}
+		}
+
+		ul {
+			&.inner {
+				display: none;
+				border-top: 1px solid #e3e3e3;
+
+				li {
+					font-size: 16px;
+
+					a {
+						//color: #023b67;
+						padding: 11px 16px;
+					}
+				}
+			}
+		}
+	}
 }
 
 .mnavWrapper {
@@ -292,10 +332,11 @@ header {
 		li {
 			a {
 				position: relative;
+
 				&.msubMenu {
 					&::after {
 						content: '';
-						background-image: url('#{$img}/mobilearrow_sprite.png');
+						background-image: url("#{$img}/mobilearrow_sprite.png");
 						background-position: 0 -29px;
 						width: 18px;
 						height: 11px;
@@ -303,6 +344,7 @@ header {
 						top: 10px;
 						right: 0;
 					}
+
 					&.menuOpen {
 						&::after {
 							transform: rotate(-90deg);
@@ -316,7 +358,7 @@ header {
 							.msubMenu {
 								&::after {
 									content: '';
-									background-position: 0 -69px;;
+									background-position: 0 -69px;
 									width: 18px;
 									height: 11px;
 								}
@@ -325,41 +367,50 @@ header {
 					}
 				}
 			}
+
 			.inner {
 				background: #1c3d6d;
 				padding: 2px 3px 13px;
 				margin: 0 -10px;
+
 				li {
 					border-bottom: none;
 					line-height: 15px;
 					margin-bottom: -3px;
+
 					a {
 						font-weight: 500;
 						font-size: 16px;
 						color: #FFF;
 						padding: 10px 6px 0;
 						line-height: 16px;
+
 						&::before {
 							display: none;
 						}
 					}
+
 					.inner {
 						padding-left: 21px;
 						padding-bottom: 0;
-				    margin-top: 6px;
+						margin-top: 6px;
 						margin-bottom: -3px;
 						border-top: none;
+
 						li {
 							text-transform: capitalize;
 							padding-bottom: 10px;
+
 							&:last-child {
 								padding-bottom: 0;
 							}
+
 							a {
 								font-weight: 700;
 								font-size: 16px;
 								padding-bottom: 3px;
-								padding-top: 0px;
+								padding-top: 0;
+
 								&::after {
 									display: none;
 								}
@@ -368,12 +419,14 @@ header {
 					}
 				}
 			}
+
 			&.mainActive {
 				a {
 					&::after {
 						background-position: 0 -9px;
 					}
 				}
+
 				ul.inner {
 					li {
 						&.mainActive {
@@ -389,22 +442,26 @@ header {
 		}
 	}
 }
+
 header {
 	+ .loginBlocks {
-		.personalLogin,
-		.businessLogin {
+		.businessLogin,
+		.personalLogin {
 			p {
 				display: flex;
-		    flex-wrap: wrap;
-		    justify-content: space-between;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
 				&:last-child {
 					margin-left: 0 !important;
 				}
 			}
 		}
+
 		.businessLogin {
 			p {
 				display: block;
+
 				a {
 					margin-left: 0;
 				}
@@ -412,14 +469,16 @@ header {
 		}
 	}
 }
+
 .mobileSearchfield {
 	.txtBox {
-		background: #e3e3e3 url('#{$img}/search_icon.png') 98% center no-repeat;
+		background: #e3e3e3 url("#{$img}/search_icon.png") 98% center no-repeat;
 		font-size: 16px;
 		padding: 0 36px 0 6px;
 		width: 100%;
 		height: 35px;
 	}
+
 	&.active {
 		display: block;
 	}
@@ -430,6 +489,7 @@ header {
 		z-index: -1;
 	}
 }
+
 .Android {
 	.hamburger {
 		&::before {
@@ -437,33 +497,34 @@ header {
 		}
 	}
 }
-
-
 // Sticky Header
-
 header {
 	&.stickyActive {
 		position: fixed;
 		margin-top: 0;
+
 		.headerWrapper {
 			//background: none;
 			.headBg {
 				display: none;
-		    background: #FFF;
-		    width: 100%;
-		    height: 65px;
+				background: #FFF;
+				width: 100%;
+				height: 65px;
 				position: absolute;
-		    z-index: -1;
+				z-index: -1;
 			}
 		}
+
 		.topNav {
 			display: none;
 		}
+
 		.mainNav {
 			margin-top: 3px;
 		}
 	}
 }
+
 .stickyEmpty {
 	//display: none;
 	&.active {
@@ -473,6 +534,7 @@ header {
 @media screen and (max-width: 767px) {
 	header {
 		position: fixed;
+
 		&.stickyActive {
 			.headerWrapper {
 				background: #FFF;
@@ -481,18 +543,20 @@ header {
 	}
 }
 @media screen and (min-width: $tab-port-min) {
-
 	header {
 		&.stickyActive {
 			.headerWrapper {
 				background: none;
+
 				.headBg {
 					display: block;
 				}
 			}
+
 			.SubmenuWrapper {
 				//z-index: -1;
 			}
+
 			.menuWrapper {
 				.loginBlocks {
 					position: relative;
@@ -504,19 +568,21 @@ header {
 	}
 }
 @media screen and (min-width: $tab-port-min) {
-
 	header {
 		margin-top: 20px;
 		z-index: 9999;
 	}
+
 	.loginBlocks {
 		//display: none; // Mobile Login Block
 	}
-	.loginBlocks{
+
+	.loginBlocks {
 		&.active {
 			display: none;
 		}
 	}
+
 	.mobileSearchfield {
 		&.active {
 			display: none !important;
@@ -539,20 +605,23 @@ header {
 		width: 100%;
 		margin: 0 auto;
 	}
-	.mnavWrapper,
-	.mLogin,
-	.mobileSearchwrap,
+
 	.hamburger,
+	.mLogin,
+	.mnavWrapper,
 	.mobileSearch,
-	.mobileSearchfield {
+	.mobileSearchfield,
+	.mobileSearchwrap {
 		display: none;
 	}
+
 	.logo {
 		max-width: 161px;
 		padding: 12px 0 10px 9px;
 		margin-right: 8px;
 		float: left;
 	}
+
 	.menuWrapper {
 		display: block;
 		float: right;
@@ -561,8 +630,8 @@ header {
 		.loginBlocks {
 			float: left;
 		}
-
 	}
+
 	.menuWrapper {
 		//width: calc(100% - 24.5%);
 		width: calc(100% - 169px);
@@ -572,6 +641,7 @@ header {
 			//width: calc(100% - 35.67%);
 			//width: 64.88%;
 		}
+
 		.loginBlocks {
 			margin-top: 0;
 			width: 196px;
@@ -580,47 +650,55 @@ header {
 			visibility: visible;
 			z-index: 9;
 			left: 0;
-      min-width: 196px;
-      max-width: 100%;
-      transform: translateX(0);
+			min-width: 196px;
+			max-width: 100%;
+			transform: translateX(0);
 			float: right;
-			.personalLogin,
-			.businessLogin {
+
+			.businessLogin,
+			.personalLogin {
 				float: left;
 				padding: 1px 5px 0;
 				min-width: 98px;
 				max-width: 98px;
+
 				h3 {
 					font-size: 8px;
 					font-weight: 700;
 					line-height: 12px;
 				}
+
 				p {
 					line-height: 15px;
 					display: flex;
 					flex-wrap: wrap;
 					justify-content: space-between;
+
 					a {
 						&:last-child {
 							margin-left: 4px;
 						}
 					}
 				}
+
 				.txtBox,
 				button {
 					font-size: 8px;
 					height: 13px;
 					padding: 0 6px;
 				}
+
 				.txtBox {
 					margin-bottom: 5px;
 				}
+
 				p {
 					a {
 						font-size: 7px;
 					}
 				}
 			}
+
 			.businessLogin {
 				p {
 					justify-content: flex-end;
@@ -628,29 +706,36 @@ header {
 			}
 		}
 	}
+
 	.headerNav {
 		padding-top: 13px;
+
 		.topNav {
 			font-size: 11px;
 			font-weight: 700;
 			display: table;
 			width: 100%;
+
 			ul {
 				float: right;
 				margin-right: 5px;
 			}
+
 			li {
 				display: inline-block;
 				vertical-align: top;
 				padding-right: 10px;
-		    letter-spacing: 1px;
+				letter-spacing: 1px;
 				position: relative;
+
 				&:last-child {
 					padding-right: 0;
 				}
+
 				a {
 					color: #1b3d6e;
 					position: relative;
+
 					&::after {
 						content: '';
 						background: #eb2837;
@@ -660,30 +745,34 @@ header {
 						bottom: -9px;
 						left: 0;
 						opacity: 0;
-				    transform: scaleY(0);
+						transform: scaleY(0);
 						transition: all 0.75s;
 					}
-
 				}
+
 				&.iWantto {
 					padding-right: 16px;
 					margin-right: 7px;
 					position: relative;
+
 					a {
 						position: relative;
+
 						&::after {
 							width: 130%;
 						}
+
 						&::before {
 							content: '';
-							background-image: url('#{$img}/icon_1.png');
+							background-image: url("#{$img}/icon_1.png");
 							width: 8px;
 							height: 6px;
 							position: absolute;
 							top: 4px;
-					    right: -13px;
+							right: -13px;
 						}
 					}
+
 					.subNav {
 						opacity: 0;
 						visibility: hidden;
@@ -695,24 +784,29 @@ header {
 						top: 18px;
 						left: -20px;
 						z-index: 99;
-				    transform: translateY(10px);
+						transform: translateY(10px);
 						transition: all 0.3s;
+
 						li {
 							display: block;
 							padding: 0 3px;
 							border-bottom: 1px solid #e5e5e5;
+
 							&:last-child {
 								border-bottom: none;
 							}
+
 							a {
 								font-size: 12px;
 								display: block;
 								color: #3d3d3d;
 								padding: 6px 9px 8px;
-								&:before,
-								&::after {
+
+								&::after,
+								&:before {
 									display: none;
 								}
+
 								&:hover {
 									background: #1c3d6d;
 									color: #FFF;
@@ -725,12 +819,12 @@ header {
 					&:hover {
 						ul {
 							opacity: 1;
-					    transform: translateY(0);
+							transform: translateY(0);
 							visibility: visible;
 						}
-
 					}
 				}
+
 				&:hover {
 					a {
 						&::after {
@@ -742,6 +836,7 @@ header {
 			}
 		}
 	}
+
 	.mainNav {
 		font-size: 14px;
 		font-weight: 400;
@@ -750,15 +845,18 @@ header {
 		margin-right: 7px;
 		margin-left: 7px;
 		text-transform: uppercase;
+
 		a {
 			display: inline-block;
 			color: #262626;
 			line-height: 16px;
-	    letter-spacing: 1px;
+			letter-spacing: 1px;
 		}
+
 		ul {
 			display: table;
 			width: 100%;
+
 			li {
 				float: left;
 				padding: 0 8px 5px 10px;
@@ -769,23 +867,26 @@ header {
 
 				a {
 					position: relative;
+
 					span {
 						display: block;
 						position: relative;
+
 						&:after {
 							content: '';
-					    background: #eb2837;
-					    width: 100%;
-					    height: 5px;
-					    position: absolute;
-					    bottom: -7px;
-					    left: 0;
-					    opacity: 0;
-					    transform: scaleY(0);
-					    -webkit-transition: all .75s;
-					    transition: all .75s;
+							background: #eb2837;
+							width: 100%;
+							height: 5px;
+							position: absolute;
+							bottom: -7px;
+							left: 0;
+							opacity: 0;
+							transform: scaleY(0);
+							-webkit-transition: all 0.75s;
+							transition: all 0.75s;
 						}
 					}
+
 					&::after {
 						content: '';
 						background: #d3d3d3;
@@ -796,38 +897,44 @@ header {
 						right: -8px;
 					}
 				}
+
 				&:first-child {
 					padding-left: 0;
 				}
+
 				&.active,
 				&:hover {
 					a {
 						span {
 							&::after {
 								opacity: 1;
-						    transform: scaleY(1);
+								transform: scaleY(1);
 							}
 						}
 					}
 				}
 			}
 		}
+
 		.search {
 			width: 27px;
 			margin-top: 6px;
-	    padding-left: 10px;
+			padding-left: 10px;
+
 			&::after {
 				display: none;
 			}
+
 			.txtBox {
 				width: 0;
-		    position: absolute;
-		    right: 196px;
-		    margin-top: -7px;
+				position: absolute;
+				right: 196px;
+				margin-top: -7px;
 				opacity: 0;
 				visibility: hidden;
-		    transition: all .55s;
+				transition: all 0.55s;
 			}
+
 			.submit {
 				display: inline-block;
 				position: relative;
@@ -835,7 +942,7 @@ header {
 
 				i {
 					display: block;
-					background-image: url('#{$img}/search_icon.png');
+					background-image: url("#{$img}/search_icon.png");
 					background-size: cover;
 					background-repeat: no-repeat;
 					background-position: center;
@@ -843,17 +950,19 @@ header {
 					height: 17px;
 				}
 			}
+
 			&.searchOpen {
 				.txtBox {
-			    background: #eeeeee;
+					background: #eeeeee;
 					color: #666666;
 					width: 355px;
-			    height: 31px;
-			    padding: 0 28px 0 15px;
-			    //border: 1px solid #1b3d6e;
+					height: 31px;
+					padding: 0 28px 0 15px;
+					//border: 1px solid #1b3d6e;
 					opacity: 1;
 					visibility: visible;
 				}
+
 				.submit {
 					i {
 						//margin-top: 10px;
@@ -863,47 +972,51 @@ header {
 		}
 	}
 
-
-
 	.mainNav {
 		.subNav {
 			display: none;
-	    min-width: 150px;
-	    padding: 0 1px;
-	    background: #fff;
-	    font-size: 11px;
-	    position: absolute;
-	    top: 29px;
-	    left: 9px;
-	    z-index: 99;
-	    text-transform: none;
-	    transform: translateY(10px);
-	    transition: all .3s;
+			min-width: 150px;
+			padding: 0 1px;
+			background: #fff;
+			font-size: 11px;
+			position: absolute;
+			top: 29px;
+			left: 9px;
+			z-index: 99;
+			text-transform: none;
+			transform: translateY(10px);
+			transition: all 0.3s;
+
 			li {
 				display: block;
 				float: none;
 				padding-left: 2px;
 				padding-right: 2px;
 				padding-bottom: 0;
+
 				h4 {
 					font-size: 17px;
 					color: #1c3d6d;
 					margin: 4px 9px 1px;
 					text-transform: uppercase;
 				}
+
 				a {
 					font-size: 15px;
 					display: block;
 					padding: 6px 7px 4px;
 					border-bottom: 1px solid #b3b3b3;
+
 					&::after {
 						display: none;
 					}
+
 					&:hover {
 						background: #1c3d6d;
 						color: #FFF;
 					}
 				}
+
 				&:last-child {
 					a {
 						border-bottom: none;
@@ -913,7 +1026,6 @@ header {
 		}
 	}
 
-
 	.SubmenuWrapper {
 		position: absolute;
 		width: 100%;
@@ -922,61 +1034,75 @@ header {
 		display: none;
 		visibility: hidden;
 		box-shadow: 0 3px 6px -4px #000;
+
 		.borderLine {
 			display: none;
 		}
+
 		.bgWrap {
 			background: #FFF;
 			padding: 20px 30px;
 			//opacity: 0;
 			transition: all 0.3s;
 		}
+
 		.flexBox {
 			height: 374px;
 			display: flex;
 			flex-direction: column;
 			flex-wrap: wrap;
+
 			.cols {
 				//flex: 1 1 80px;
-        width:calc( 100% / 3 );
+				width: calc(100% / 3);
 			}
 		}
+
 		h2 {
 			font-size: 22px;
 			color: #1c3d6d;
 			padding-bottom: 14px;
 			text-transform: uppercase;
-			a{
+
+			a {
 				color: inherit;
-				&::after{
+
+				&::after {
 					display: none;
 				}
 			}
 		}
+
 		h3 {
 			font-size: 19px;
 			color: #3d3d3d;
 			line-height: 22px;
 			text-transform: uppercase;
+
 			a {
 				&::after {
 					display: none;
 				}
 			}
 		}
+
 		ul {
 			font-size: 17px;
 			padding-top: 5px;
 			margin-left: -9px;
-	    text-transform: capitalize;
+			text-transform: capitalize;
+
 			li {
 				float: none;
 				padding: 0 12px 0 0;
+
 				a {
 					padding: 3px 11px 2px;
+
 					&::after {
 						display: none;
 					}
+
 					&:hover {
 						background: #1c3d6d;
 						color: #FFF;
@@ -984,11 +1110,12 @@ header {
 				}
 			}
 		}
+
 		.cols {
 			padding-bottom: 20px;
-			+ .cols {
 
-			}
+			+ .cols {}
+
 			&:last-child {
 				padding-bottom: 0;
 			}
@@ -1002,6 +1129,7 @@ header {
 					height: 220px;
 				}
 			}
+
 			&.col-7 {
 				.flexBox {
 					height: 390px;
@@ -1017,26 +1145,27 @@ header {
 			}
 		}
 	}
-
 	// Mega Menu
-
 	.mainNav {
 		ul {
 			li {
 				//&:focus-within,
-				&:focus,
 				&:active,
+				&:focus,
 				&:hover {
 					.SubmenuWrapper {
 						visibility: visible;
 						display: block;
+
 						.bgWrap {
 							opacity: 1;
 						}
 					}
+
 					&.shortNav {
 						position: relative;
 					}
+
 					.subNav {
 						display: block;
 					}
@@ -1044,21 +1173,9 @@ header {
 			}
 		}
 	}
-
-
-
-
-
-
-
 }
-
-
 @media screen and (min-width: $tab-lands-min) {
-
-
 	//Sticky Nav
-
 	header {
 		&.stickyActive {
 			.headerWrapper {
@@ -1071,27 +1188,35 @@ header {
 
 	.headerWrapper {
 		//width: calc(100% - 106px);
-    //margin: 0 53px;
+		//margin: 0 53px;
 	}
+
 	.logo {
 		max-width: 227px;
 		padding: 14px 0 10px 11px;
 	}
+
 	.headerNav {
 		padding-top: 16px;
+
 		.topNav {
 			font-size: 12px;
 			margin-right: 12px;
+
 			ul {
 				float: right;
 				margin-right: 9px;
 			}
+
 			li {
 				padding-right: 17px;
+
 				&.iWantto {
 					padding-right: 23px;
+
 					.subNav {
 						left: -15px;
+
 						li {
 							a {
 								font-size: 12px;
@@ -1102,33 +1227,41 @@ header {
 			}
 		}
 	}
+
 	.menuWrapper {
 		width: calc(100% - 235px);
+
 		.headerNav {
 			width: calc(100% - 244px);
 			padding-left: 13px;
 		}
+
 		.loginBlocks {
 			width: 244px;
-			.personalLogin,
-			.businessLogin {
+
+			.businessLogin,
+			.personalLogin {
 				min-width: 122px;
 				max-width: 122px;
 				padding: 5px 7px 0;
+
 				h3 {
 					font-size: 10px;
 					margin-bottom: 4px;
 				}
+
 				.txtBox {
 					font-size: 10px;
 					height: 17px;
 					margin-bottom: 6px;
 				}
+
 				button {
 					font-size: 9px;
-			    margin-bottom: 6px;
+					margin-bottom: 6px;
 					height: 17px;
 				}
+
 				p {
 					a {
 						font-size: 9px;
@@ -1137,19 +1270,23 @@ header {
 			}
 		}
 	}
+
 	.mainNav {
 		font-size: 16px;
 		float: right;
 		margin-left: 0;
-    margin-top: 20px;
+		margin-top: 20px;
 		margin-right: 12px;
+
 		a {
 			line-height: 18px;
 		}
+
 		ul {
 			li {
 				padding-right: 13px;
 				padding-bottom: 15px;
+
 				a {
 					&::after {
 						top: 3px;
@@ -1159,32 +1296,33 @@ header {
 				}
 			}
 		}
+
 		.search {
 			.submit {
 				i {
 					height: 17px;
 				}
 			}
+
 			.txtBox {
 				right: 250px;
-		    margin-top: -7px;
+				margin-top: -7px;
 			}
-			&.searchOpen{
+
+			&.searchOpen {
 				.txtBox {
 					width: 410px;
-			    height: 40px;
+					height: 40px;
 					padding: 0 28px 0 15px;
 				}
+
 				.submit {
 					margin-top: 4px;
 				}
 			}
 		}
 	}
-
-
 	// Mega Menu
-
 	.SubmenuWrapper {
 		position: absolute;
 		width: 100%;
@@ -1194,32 +1332,39 @@ header {
 		.bgWrap {
 			padding: 29px 49px 0;
 		}
+
 		.flexBox {
 			height: 510px;
+
 			.cols {
-        width:calc( 100% / 3 );
+				width: calc(100% / 3);
 			}
 		}
+
 		h2 {
 			font-size: 24px;
 			padding-bottom: 25px;
 		}
+
 		h3 {
 			font-size: 20px;
 			line-height: 24px;
 		}
+
 		ul {
 			font-size: 18px;
 			padding-top: 9px;
+
 			li {
-				padding: 7px 0 0 0;
+				padding: 7px 0 0;
 			}
 		}
+
 		.cols {
 			padding-bottom: 36px;
-			+ .cols {
 
-			}
+			+ .cols {}
+
 			&:last-child {
 				padding-bottom: 0;
 			}
@@ -1231,6 +1376,7 @@ header {
 			top: 45px;
 		}
 	}
+
 	.flatNav {
 		.SubmenuWrapper {
 			&.col-3 {
@@ -1238,6 +1384,7 @@ header {
 					height: 310px;
 				}
 			}
+
 			&.col-7 {
 				.flexBox {
 					height: 502px;
@@ -1245,6 +1392,7 @@ header {
 			}
 		}
 	}
+
 	.Windows {
 		&.iOS {
 			.flatNav {
@@ -1258,6 +1406,7 @@ header {
 			}
 		}
 	}
+
 	.iOS {
 		.flatNav {
 			.SubmenuWrapper {
@@ -1281,13 +1430,8 @@ header {
 			}
 		}
 	}
-
-
-
 }
-
 @media screen and (min-width: $base) {
-
 	//Sticky nav
 	header {
 		&.stickyActive {
@@ -1296,10 +1440,12 @@ header {
 					height: 114px;
 				}
 			}
+
 			.mainNav {
 				ul {
 					li {
 						padding-bottom: 37px;
+
 						a {
 							span {
 								&::after {
@@ -1321,6 +1467,7 @@ header {
 			background: rgba(255,255,255,.92);
 			z-index: 999999999;
 			margin-top: 0;
+
 			.headerWrapper {
 				background: transparent;
 			}
@@ -1329,37 +1476,46 @@ header {
 
 	.headerWrapper {
 		width: calc(100% - 40px);
-    margin: 0 20px;
+		margin: 0 20px;
 	}
+
 	.logo {
 		max-width: 291px;
 		margin-top: 20px;
 		margin-left: 17px;
 		padding: 0;
 	}
+
 	.headerNav {
 		padding-top: 23px;
+
 		.topNav {
 			font-size: 16px;
 			margin-right: 0;
 			padding-right: 7px;
+
 			ul {
 				margin-right: 0;
 			}
+
 			li {
 				padding-right: 26px;
+
 				&.iWantto {
 					padding-right: 36px;
+
 					a {
 						&::before {
 							top: 7px;
 							right: -16px;
 						}
 					}
+
 					.subNav {
 						min-width: 135px;
 						padding-top: 4px;
 						top: 29px;
+
 						li {
 							a {
 								font-size: 16px;
@@ -1371,52 +1527,65 @@ header {
 			}
 		}
 	}
+
 	.menuWrapper {
 		width: calc(100% - 316px);
+
 		.headerNav {
 			width: calc(100% - 348px);
 			padding-right: 10px;
 		}
+
 		.loginBlocks {
 			width: 346px;
-			.personalLogin,
-			.businessLogin {
+
+			.businessLogin,
+			.personalLogin {
 				max-width: 173px;
 				min-width: 173px;
 				padding: 9px 10px 4px;
+
 				h3 {
 					font-size: 12px;
 					margin-bottom: 8px;
 				}
+
 				p {
 					display: flex;
-			    flex-wrap: wrap;
-			    justify-content: space-between;
+					flex-wrap: wrap;
+					justify-content: space-between;
+
 					a {
 						font-size: 11px;
 					}
 				}
+
 				.txtBox {
 					font-size: 13px;
 				}
+
 				button {
 					font-size: 12px;
 					margin-bottom: 8px;
 				}
+
 				.txtBox,
 				button {
 					height: 24px;
 					margin-bottom: 10px;
 				}
+
 				button {
 					margin-bottom: 8px;
 				}
 			}
+
 			.businessLogin {
 				//padding-bottom: 4px;
 				p {
-			    justify-content: flex-end;
+					justify-content: flex-end;
 					text-align: right;
+
 					a {
 						&:last-child {
 							margin-left: 0;
@@ -1429,48 +1598,57 @@ header {
 
 	.mainNav {
 		font-size: 22px;
-    margin-top: 28px;
+		margin-top: 28px;
 		margin-right: 15px;
+
 		a {
 			line-height: 23px;
 		}
+
 		.search {
 			width: 27px;
 			margin-top: 11px;
 			padding-left: 10px;
+
 			.txtBox {
 				right: 346px;
 				margin-top: -11px;
 			}
+
 			.submit {
 				transition: all 0.3s;
+
 				i {
 					width: 26px;
 					height: 24px;
 				}
 			}
+
 			&.searchOpen {
 				.txtBox {
 					width: 545px;
-			    height: 53px;
+					height: 53px;
 					padding: 0 58px 0 15px;
 				}
+
 				.submit {
 					//margin-top: 6px;
 				}
 			}
-
 		}
+
 		ul {
 			li {
 				padding-right: 19px;
 				padding-bottom: 29px;
+
 				a {
 					&::after {
 						height: 49px;
 						right: -16px;
 						top: 2px;
 					}
+
 					span {
 						&::after {
 							height: 5px;
@@ -1480,25 +1658,26 @@ header {
 				}
 			}
 		}
-
 	}
-
 	// Mega Menu
-
 	.SubmenuWrapper {
 		top: 148px;
+
 		ul {
 			margin-left: 0;
 		}
+
 		.bgWrap {
 			//background: #FFF;
 			padding: 23px 19px 0;
 		}
+
 		.borderLine {
 			display: block;
 			position: relative;
 			width: 100%;
 			height: 100%;
+
 			i {
 				background: #b3b3b3;
 				//background: #e5e5e5;
@@ -1506,56 +1685,70 @@ header {
 				min-height: 275px;
 				position: absolute;
 				top: 65px;
+
 				&:nth-child(1) {
 					//left: 235px;
 					left: 19.8%;
 				}
+
 				&:nth-child(2) {
 					//left: 482px;
 					left: 39.7%;
 				}
+
 				&:nth-child(3) {
 					//left: 729px;
 					left: 59.6%;
 				}
+
 				&:nth-child(4) {
 					//left: 977px;
 					left: 79.5%;
 				}
 			}
 		}
+
 		.flexBox {
 			height: 310px;
+
 			.cols {
 				//width: calc(100% / 5);
 				width: 230px;
+
 				&.extWidth {
 					width: 235px;
 				}
 			}
 		}
+
 		h2 {
 			//color: #1c3d6d;
 			padding-bottom: 17px;
 		}
+
 		h3 {
 			//color: #3d3d3d;
-			line-height: 23px
+			line-height: 23px;
 		}
+
 		h2,
 		h3 {
 			padding-left: 10px;
 		}
+
 		ul {
 			padding-top: 9px;
+
 			li {
 				padding-top: 2px;
 				padding-right: 0 !important;
 				padding-bottom: 0 !important;
+
 				a {
 					display: block;
 					padding: 3px 11px 0;
-			    line-height: 22px !important;
+					line-height: 22px !important;
+
 					&:hover {
 						background: #1c3d6d;
 						color: #FFF;
@@ -1564,8 +1757,9 @@ header {
 			}
 		}
 	}
+
 	.openAccount {
-    top: 30%;
+		top: 30%;
 	}
 
 	.mainNav {
@@ -1581,41 +1775,51 @@ header {
 					&:nth-child(1) {
 						left: calc((100% / 5) - 5px);
 					}
+
 					&:nth-child(2) {
 						left: calc((200% / 5) - 5px);
 					}
+
 					&:nth-child(3) {
 						left: calc((300% / 5) - 5px);
 					}
+
 					&:nth-child(4) {
 						left: calc((400% / 5) - 5px);
 					}
 				}
 			}
+
 			&.col-3 {
 				.borderLine {
 					i {
 						min-height: 264px;
+
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
+
 						&:nth-child(1) {
 							//left: calc(100% - 944px);
 						}
+
 						&:nth-child(3),
 						&:nth-child(4) {
 							display: none;
 						}
 					}
 				}
+
 				.flexBox {
 					width: calc((100% / 5) * 2);
 					height: 300px;
+
 					.cols {
 						//width: 33.33%;
 					}
 				}
 			}
+
 			&.col-7 {
 				.flexBox {
 					height: 310px;
@@ -1635,11 +1839,7 @@ header {
 			}
 		}
 	}
-
-
-
 }
-
 /*@media screen and (min-width: 1284px) {
 
 	.flatNav {
@@ -1692,11 +1892,11 @@ header {
 	}
 }*/
 @media screen and (min-width: 1300px) {
-
 	.headerWrapper {
 		width: 100%;
-    margin: 0;
+		margin: 0;
 	}
+
 	.logo {
 		max-width: 308px;
 	}
@@ -1704,16 +1904,21 @@ header {
 	.menuWrapper {
 		width: calc(100% - 333px);
 	}
+
 	.headerNav {
 		padding-top: 23px;
+
 		.topNav {
 			padding-right: 17px;
+
 			ul {
 				//margin-right: 11px;
 				li {
 					padding-right: 33px;
+
 					&.iWantto {
 						padding-right: 45px;
+
 						a {
 							&::after {
 								//top: 8px;
@@ -1724,14 +1929,18 @@ header {
 			}
 		}
 	}
+
 	.mainNav {
 		margin-top: 29px;
+
 		ul {
 			li {
 				padding-right: 27px;
-		    padding-bottom: 25px;
+				padding-bottom: 25px;
+
 				a {
 					line-height: 25px;
+
 					span {
 						&::after {
 							bottom: -26px;
@@ -1740,33 +1949,35 @@ header {
 				}
 			}
 		}
+
 		.search {
 			.submit {
 				i {
-			    background-size: contain;
+					background-size: contain;
 					width: 33px;
-			    height: 31px;
+					height: 31px;
 				}
 			}
+
 			&.searchOpen {
 				.submit {
 					margin-top: 0;
 				}
+
 				.txtBox {
 					width: 585px;
 				}
 			}
 		}
 	}
-
 	// Mega Menu
-
 	.SubmenuWrapper {
 		.borderLine {
 			display: block;
 			position: relative;
 			width: 100%;
 			height: 100%;
+
 			i {
 				background: #b3b3b3;
 				//background: #e5e5e5;
@@ -1774,21 +1985,25 @@ header {
 				min-height: 274px;
 				position: absolute;
 				top: 65px;
+
 				&:nth-child(1) {
 					//left: 235px;
 					//left: 19%;
 					left: calc(100% - 950px);
 				}
+
 				&:nth-child(2) {
 					//left: 482px;
 					//left: 38.9%;
 					left: calc(100% - 714px);
 				}
+
 				&:nth-child(3) {
 					//left: 729px;
 					//left: 58.7%;
 					left: calc(100% - 477px);
 				}
+
 				&:nth-child(4) {
 					//left: 977px;
 					//left: 78.7%;
@@ -1796,6 +2011,7 @@ header {
 				}
 			}
 		}
+
 		.flexBox {
 			.cols {
 				&.extWidth {
@@ -1806,7 +2022,7 @@ header {
 	}
 
 	.openAccount {
-    top: 35%;
+		top: 35%;
 	}
 
 	.flatNav {
@@ -1816,12 +2032,15 @@ header {
 					&:nth-child(1) {
 						left: calc(100% - 1004px);
 					}
+
 					&:nth-child(2) {
 						left: calc(100% - 755px);
 					}
+
 					&:nth-child(3) {
 						left: calc(100% - 507px);
 					}
+
 					&:nth-child(4) {
 						left: calc(100% - 258px);
 					}
@@ -1829,32 +2048,31 @@ header {
 			}
 		}
 	}
-
-
-
-
 }
 /* Quick Links Update - In progress*/
-
-.openAccount{
+.openAccount {
 	right: -200px;
 	display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-	transition: .3s all;
-	@include bp(mobile){
+	flex-wrap: wrap;
+	align-items: center;
+	transform: none;
+	transition: 0.3s all;
+	@include bp(mobile) {
 		display: none;
 	}
-	ul{
+
+	ul {
 		width: 200px;
 		background: #fff;
 		z-index: 10;
-		box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.58);
-		li{
+		box-shadow: 0 0 18px -6px rgba(0,0,0,0.58);
+
+		li {
 			font-size: 24px;
 			text-align: center;
-			padding: 0px;
-			a{
+			padding: 0;
+
+			a {
 				padding: 10px 15px;
 				transform: none;
 				background: transparent;
@@ -1862,33 +2080,37 @@ header {
 				border-radius: 0;
 				color: #3d3d3d;
 				font-size: 18px;
-				@include bp(landscape){
+				@include bp(landscape) {
 					font-size: 17px;
 					padding: 7px 20px;
 				}
-				@include bp(tablet){
+				@include bp(tablet) {
 					font-size: 14px;
 				}
-				&:hover{
+
+				&:hover {
 					color: #fff;
 				}
 			}
-			&:last-child{
-				a{
+
+			&:last-child {
+				a {
 					border-bottom: none;
 				}
 			}
 		}
 	}
-	.openQuickLnk{
+
+	.openQuickLnk {
 		transform: rotate(-90deg);
 		transform-origin: 69% -24%;
-		margin-top: 0px;
+		margin-top: 0;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 		cursor: pointer;
 	}
-	&.active{
-		right: 0px;
+
+	&.active {
+		right: 0;
 	}
 }
