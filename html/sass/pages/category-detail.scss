@@ -907,6 +907,14 @@ table {
                   right: -4px;
                 }
               }
+              @include bp(mobile) {
+                &::after {
+                  width: 16px;
+                  height: 8px;
+                  top: 7px;
+                  right: -4px;
+                }
+              }
             }
             &:hover {
               color: #1268e5
@@ -953,7 +961,7 @@ table {
                 left: 5px;
               }
               @include bp(mobile) {
-                display: inline-block;
+                //display: inline-block;
                 width: 16px;
                 top: -5px;
                 left: 5px;
@@ -964,7 +972,12 @@ table {
                 &::after {
                   background: url('../images/careers/hover-down-arrow.png') no-repeat;
                   background-size: cover;
-                  transform: rotate(180deg);
+                  transform: rotate(-90deg);
+                }
+                @include bp(mobile) {
+                  &::after {
+                    right: 3px;
+                  }
                 }
               }
             }
