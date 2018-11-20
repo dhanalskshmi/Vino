@@ -28,7 +28,8 @@
     //string thankYouMessageJoin1 = thankYouMessageJoin.ToString().Replace("<p>","").Replace("</p>","");
     var newsLetterAdminEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterAdminEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterAdminEmail") : 0;
     var newsLetterConfirmationEmail = Model.Content.AncestorOrSelf(1).HasValue("newsLetterConfirmationEmail") ? Model.Content.AncestorOrSelf(1).GetPropertyValue<int>("newsLetterConfirmationEmail") : 0;
-    var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
+    //var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
+    var bottomAlertContent = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("bottomAlertContent");
 }
 
 
@@ -146,7 +147,7 @@
 
     </div>
 </section>
-@if (alertPosition == "Bottom")
+@if (!string.IsNullOrEmpty(bottomAlertContent))
 {
     @Html.Partial("AlertMessage")
 }
@@ -283,6 +284,5 @@
               </ul>
             </div>
           </div>
-
-        </footer>
+ </footer>
 
