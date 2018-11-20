@@ -167,7 +167,7 @@ input[type=text]::-ms-clear {
 .fixedBg.fade.out {
   opacity: 0;
 }
-.fixedBg .bannerWrapper {
+.fixedBg.bannerWrapper {
   min-height: 100%;
 }
 
@@ -584,6 +584,8 @@ p {
   top: 30%;
   right: 0;
   z-index: 999;
+  -webkit-transform: perspective(1px) rotate(-90deg) translate3d(0, 0, 0);
+          transform: perspective(1px) rotate(-90deg) translate3d(0, 0, 0);
   -webkit-transform-origin: right;
       -ms-transform-origin: right;
           transform-origin: right;
@@ -595,6 +597,8 @@ p {
   color: #FFF;
   padding: 3px 7px 2px;
   text-transform: uppercase;
+  -webkit-transform: perspective(1px) rotate(0deg) translateY(-10px) translate3d(0, 0, 0);
+          transform: perspective(1px) rotate(0deg) translateY(-10px) translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   display: block;
@@ -735,7 +739,7 @@ p {
 
   .openAccount a {
     font-size: 24px;
-    padding: 4px 14px 5px;
+    padding: 4px 14px 24px;
   }
 }
 @media screen and (min-width: 1360px) {
@@ -14245,7 +14249,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
-  color: #1268e5;
+  color: #666;
   font-size: 24px;
   text-transform: uppercase;
   float: right;
@@ -14255,8 +14259,31 @@ table.checking tbody tr td:nth-child(1):hover a {
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
 }
+.categorySection .bgWrap .flexWrap .contentSection a.learnBtn span {
+  display: inline-block;
+  position: relative;
+}
+.categorySection .bgWrap .flexWrap .contentSection a.learnBtn span::after {
+  content: '';
+  display: inline-block;
+  background: url("../images/careers/down-arrow.png") no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 10px;
+  right: -32px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .categorySection .bgWrap .flexWrap .contentSection a.learnBtn span::after {
+    width: 16px;
+    height: 8px;
+    top: 4px;
+    right: -25px;
+  }
+}
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn:hover {
-  color: #0b3b81;
+  color: #1268e5;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.learnBtn {
@@ -14475,11 +14502,6 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .MacOS .categorySection .bgWrap .flexWrap .contentSection a.learnBtn img {
-    top: -2px;
-  }
-}
 .heroBlock table > tbody > tr:nth-of-type(odd) td {
   background-color: #d9e0ea;
   border-right: 4px solid #f1f1f1;
@@ -14542,6 +14564,14 @@ table.checking tbody tr td:nth-child(1):hover a {
   left: 0;
 }
 
+@media screen and (min-width: 1280px) {
+  table.checking thead tr th {
+    min-width: 182px;
+  }
+  table.checking tbody tr td {
+    min-width: 182px;
+  }
+}
 .persLending .greyPanel .bgWrap {
   padding: 0;
 }

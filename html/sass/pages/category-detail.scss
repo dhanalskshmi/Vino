@@ -868,7 +868,7 @@ table {
           }
 
           &.learnBtn {
-            color: #1268e5;
+            color: #666;
             font-size: 24px;
             text-transform: uppercase;
             float: right;
@@ -876,9 +876,29 @@ table {
             padding-top: 22px;
             cursor: pointer;
             transition: all 0.3s;
-
+            span {
+              display: inline-block;
+              position: relative;
+              &::after {
+                content: '';
+                display: inline-block;
+                background: url('../images/careers/down-arrow.png') no-repeat;
+                background-size: cover;
+                width: 20px;
+                height: 10px;
+                position: absolute;
+                top: 10px;
+                right: -32px;
+                @include bp(tablandscape) {
+                  width: 16px;
+                  height: 8px;
+                  top: 4px;
+                  right: -25px;
+                }
+              }
+            }
             &:hover {
-              color: #0b3b81;
+              color: #1268e5
               //text-decoration: underline;
             }
             @include bp(tablandscape) {
@@ -1085,7 +1105,7 @@ table {
             a {
               &.learnBtn {
                 img {
-                  top: -2px;
+                  //top: -2px;
                 }
               }
             }
@@ -1161,6 +1181,29 @@ table {
           border-radius: 8px;
           top: 9px;
           left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: $base) {
+
+  table {
+    &.checking {
+      thead {
+        tr {
+          th {
+            min-width: 182px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            min-width: 182px;
+          }
         }
       }
     }
