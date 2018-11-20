@@ -46,7 +46,7 @@
     }
 }
 
-@if (Model.Content.HasValue("alertShowPage"))
+@if (alertShowPage != null)
 {
     pageVisible = false;
     foreach (var node in alertShowPage)
