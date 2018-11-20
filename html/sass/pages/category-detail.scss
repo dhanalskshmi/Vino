@@ -896,7 +896,15 @@ table {
                   width: 16px;
                   height: 8px;
                   top: 4px;
-                  right: -25px;
+                  right: -4px;
+                }
+              }
+              @include bp(tabportrait) {
+                &::after {
+                  width: 16px;
+                  height: 8px;
+                  top: 4px;
+                  right: -4px;
                 }
               }
             }
@@ -933,13 +941,13 @@ table {
               top: -5px;
               left: 7px;
               @include bp(tablandscape) {
-                display: inline-block;
+                //display: inline-block;
                 width: 16px;
                 top: -5px;
                 left: 5px;
               }
               @include bp(tabportrait) {
-                display: inline-block;
+                //display: inline-block;
                 width: 16px;
                 top: -5px;
                 left: 5px;
@@ -957,6 +965,14 @@ table {
 
               img {
                 transform: rotate(180deg);
+              }
+            }
+            &:hover {
+              span {
+                &::after {
+                  background: url('../images/careers/hover-down-arrow.png') no-repeat;
+                  background-size: cover;
+                }
               }
             }
           }
