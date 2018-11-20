@@ -890,7 +890,9 @@ table {
                 position: absolute;
                 top: 10px;
                 right: -7px;
-                @include bp(tablandscape) {
+              }
+              @include bp(tablandscape) {
+                &::after {
                   width: 16px;
                   height: 8px;
                   top: 4px;
@@ -926,10 +928,10 @@ table {
             }
 
             img {
+              display: none;
               position: relative;
               top: -5px;
               left: 7px;
-              display: none;
               @include bp(tablandscape) {
                 display: inline-block;
                 width: 16px;

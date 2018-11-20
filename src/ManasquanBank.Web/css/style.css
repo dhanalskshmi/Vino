@@ -14314,10 +14314,10 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn img {
+  display: none;
   position: relative;
   top: -5px;
   left: 7px;
-  display: none;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection a.learnBtn img {
