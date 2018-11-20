@@ -11,16 +11,18 @@
 @using System.Web.Script.Serialization;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    var alertMessage = "";
+    //var alertMessage = "";
     var alertVisible = false;
     var pageVisible = false;
-    var hideAlert = Model.Content.AncestorOrSelf(1).GetPropertyValue<bool>("hideAlert"); 
-    var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
+    var hideAlert = Model.Content.AncestorOrSelf(1).GetPropertyValue<bool>("hideAlert");
+    //var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
     var alertShowPage = Model.Content.AncestorOrSelf(1).GetPropertyValue<IEnumerable<IPublishedContent>>("alertShowPage");
-    if (Model.Content.AncestorOrSelf(1).HasProperty("alertContent") && Model.Content.AncestorOrSelf(1).HasValue("alertContent"))
-    {
-        alertMessage = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertContent");
-    }
+    var topAlertContent = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertContent");
+    var bottomAlertContent = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("bottomAlertContent");
+    //if (Model.Content.AncestorOrSelf(1).HasProperty("alertContent") && Model.Content.AncestorOrSelf(1).HasValue("alertContent"))
+    //{
+    //    alertMessage = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertContent");
+    //}
 
     var startDate = Model.Content.AncestorOrSelf(1).HasProperty("alertStartDate") && Model.Content.AncestorOrSelf(1).HasValue("alertStartDate") ? Model.Content.AncestorOrSelf(1).GetProperty("alertStartDate").Value.ToString() : string.Empty;
     var endDate = Model.Content.AncestorOrSelf(1).HasProperty("alertEndDate") && Model.Content.AncestorOrSelf(1).HasValue("alertEndDate") ? Model.Content.AncestorOrSelf(1).GetProperty("alertEndDate").Value.ToString() : string.Empty;
@@ -64,12 +66,12 @@
 
 @if (alertVisible && pageVisible)
 {
-    if (alertPosition == "Top")
+    if (!string.IsNullOrEmpty(topAlertContent))
     {
         <div class="alertsPannel" style="display: none;">
             <div class="alertsWrap">
                 <div class="wrap">
-                    @Html.Raw(alertMessage)
+                    @Html.Raw(topAlertContent)
                     <a href="#" class="close-alerts">
                         <i></i>
                     </a>
@@ -77,12 +79,13 @@
             </div>
         </div>
     }
-    else
+    
+    if(!string.IsNullOrEmpty(bottomAlertContent))
     {
         <div class="floatingAlerts" style="display: none;">
             <div class="floatWrap">
                 <div class="wrap">
-                   @Html.Raw(alertMessage)
+                   @Html.Raw(bottomAlertContent)
                     <a href="#" class="close-alerts">
                         <i></i>
                     </a>

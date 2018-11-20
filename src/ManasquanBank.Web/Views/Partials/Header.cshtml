@@ -8,9 +8,10 @@
     var secondaryNavigation = Model.Content.AncestorOrSelf(1).GetPropertyValue<IEnumerable<IPublishedContent>>("secondaryNavigation");
     var SearchKeyword = Request.QueryString["q"];
     string largeClass = string.Empty;
-    var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition");
+    //var alertPosition = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertPosition
+    var topAlertContent = Model.Content.AncestorOrSelf(1).GetPropertyValue<string>("alertContent");
     var parentId = Model.Content.AncestorOrSelf(2).Id;
-   
+
 
 
 }
@@ -20,7 +21,7 @@
     <div class="containerWrapper">
         
         <div class="headerWrapper">
-            @if (alertPosition == "Top")
+            @if (!string.IsNullOrEmpty(topAlertContent))
             {
                 @Html.Partial("AlertMessage")
             }
