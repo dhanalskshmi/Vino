@@ -279,7 +279,7 @@
                                     <div class="icon-section">
                                         @if (!string.IsNullOrEmpty(phoneNo))
                                         {
-                                            <a href="tel:@phoneNo">
+                                            <a href="tel:@phoneNo.Replace(" ", "")">
                                                 <span>
                                                     <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon" />
                                                     <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Phone Icon Mobile View" />
@@ -576,7 +576,7 @@
                 </div>
             </div>
             <figure class="imgDesg">
-                <img src="/images/home/app_img.png" alt="">
+                <img src="/images/home/app_img.png" alt="App Icon">
             </figure>
         </div>
     </div>
