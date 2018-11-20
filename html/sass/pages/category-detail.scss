@@ -878,6 +878,7 @@ table {
             transition: all 0.3s;
             span {
               display: inline-block;
+              padding-right: 25px;
               position: relative;
               &::after {
                 content: '';
@@ -888,7 +889,7 @@ table {
                 height: 10px;
                 position: absolute;
                 top: 10px;
-                right: -32px;
+                right: -7px;
                 @include bp(tablandscape) {
                   width: 16px;
                   height: 8px;
@@ -928,6 +929,7 @@ table {
               position: relative;
               top: -5px;
               left: 7px;
+              display: none;
               @include bp(tablandscape) {
                 display: inline-block;
                 width: 16px;
