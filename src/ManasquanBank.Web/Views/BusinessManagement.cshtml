@@ -46,14 +46,51 @@
         {
             var departmentName = depart.GetPropertyValue<string>("departmentName");
             var employeesName = depart.GetPropertyValue<IEnumerable<IPublishedContent>>("employeeNameTiles");
-            if (employeesName != null)
+            var departEmployeesName = depart.GetPropertyValue<IPublishedContent>("departmentsEmployeeList");
+            if (departEmployeesName != null)
+            {
+                var employeechild = Umbraco.Content(departEmployeesName.Id).Children();
+
+                foreach (var empchild in employeechild)
+                {
+                    var employeeName = empchild.GetPropertyValue<string>("employeeName");
+                    var email = empchild.GetPropertyValue<string>("email");
+                    if (string.IsNullOrEmpty(employeeName))
+                    {
+                        employeeName = empchild.GetPropertyValue<string>("managername");
+                    }
+                    employeeList emplist = new employeeList();
+                    emplist.employeeName = employeeName;
+                    emplist.departmentName = departmentName;
+                    if(!string.IsNullOrEmpty(email))
+                    {
+                        emplist.employeeEmail = email;
+                    }
+                    else
+                    {
+                        emplist.employeeEmail = string.Empty;
+                    }
+                    employeeList.Add(emplist);
+                }
+
+            }
+            if(employeesName != null)
             {
                 foreach (var emp in employeesName)
                 {
                     var employeeName = emp.GetPropertyValue<string>("managementEmployeeName");
+                    var email = emp.GetPropertyValue<string>("employeeEmail");
                     employeeList emplist = new employeeList();
                     emplist.employeeName = employeeName;
                     emplist.departmentName = departmentName;
+                    if(!string.IsNullOrEmpty(email))
+                    {
+                        emplist.employeeEmail = email;
+                    }
+                    else
+                    {
+                        emplist.employeeEmail = string.Empty;
+                    }
                     employeeList.Add(emplist);
                 }
             }
@@ -285,7 +322,7 @@
                                             {
                                                 if (deptName.departmentName == Request.QueryString["department"])
                                                 {
-                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName" selected="selected">@deptName.departmentName</option>
+                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName" selected>@deptName.departmentName</option>
                                                 }
                                                 else
                                                 {
@@ -303,14 +340,16 @@
                                             {
                                                 if (emplist.employeeName == Request.QueryString["employee"])
                                                 {
-                                                    <option data-rel="@emplist.departmentName" value="@emplist.employeeName" selected="selected">@emplist.employeeName</option>
+                                                    <option data-email="@emplist.employeeEmail" data-rel="@emplist.departmentName" value="@emplist.employeeName" selected>@emplist.employeeName</option>
+                                                    
                                                 }
                                                 else
                                                 {
-                                                    <option data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
+                                                    <option data-email="@emplist.employeeEmail" data-rel="@emplist.departmentName" value="@emplist.employeeName">@emplist.employeeName</option>
                                                 }
                                             }
                                         </select>
+                                        <input type="hidden" name="employeeEmail" id="employeeEmail" />
                                         <span class="errorSpan vd f-error">*</span>
                                     </div>
                                     <div class="form-group col-lg-4 col-sm-6 col-xs-12 nopadding">
@@ -385,9 +424,9 @@
 
                             <div class="row mob-flex">
 
-                                <button class="btnManasq"><span>SUBMIT</span></button>
-                                @*<input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
-                                    <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />*@
+                                <button class="btnManasq" onclick="fnvalue()"><span>SUBMIT</span></button>
+                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
+                                    <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />
                             </div>
                                             <div class="captchaBlock">
                                                 <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
@@ -405,9 +444,12 @@
 </div>
 @section InnerBottomScript {
     <script>
+
         $(document).ready(function () {
             $("#department").find("option[value='']").remove();
-
+            //alert($("#employee").val());
+            var url = window.location.search;
+            
             var sel = $("#department").val();
             var emp = $("#employee").val();
             if (sel == '') {
@@ -422,19 +464,30 @@
                 $("#department").selectmenu("destroy");
             }
 
-           
+
             $("#employee").find("option").attr("disabled", true);
             $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
-            var i = 0;
-            $("#employee").find("option").each(function () {
-                if (i == 0 && $(this).prop("disabled") == false) {
-                    $(this).prop("selected", "selected");
-                    i++;
-                }
-            });
+           
+            if (window.location.href.indexOf('employee=') == -1)
+            {
+
+                var i = 0;
+                $("#employee").find("option").each(function () {
+                    if (i == 0 && $(this).prop("disabled") == false) {
+                        $(this).prop("selected", "selected");
+                        i++;
+                    }
+                });
+            }
+            
+           
 
             $("#department").selectmenu();
             $("#employee").selectmenu();
+            
+            var empEmail = $("#employee").find("option:selected").attr('data-email');
+            $("#employeeEmail").val(empEmail);
+
 
             $("#department").on('selectmenuchange', function () {
                 var sel = $("#department").val();
@@ -452,6 +505,19 @@
                     }
                 });
                 $("#employee").selectmenu();
+                var empEmail = $("#employee").find("option:selected").attr('data-email');
+                $("#employeeEmail").val(empEmail);
+                
+                $("#employee").on('selectmenuchange', function () {
+                    var empEmail = $("#employee").find("option:selected").attr('data-email');
+                    $("#employeeEmail").val(empEmail);
+                });
+            });
+
+            $("#employee").on('selectmenuchange', function () {
+                var empEmail = $("#employee").find("option:selected").attr('data-email');
+                $("#employeeEmail").val(empEmail);
+                
             });
 
             $("#state").selectmenu("destroy");

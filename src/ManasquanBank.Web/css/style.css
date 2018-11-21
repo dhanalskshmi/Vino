@@ -2957,9 +2957,9 @@ header.stickyActive .mainNav {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  -webkit-transform-origin: 69% -24%;
-      -ms-transform-origin: 69% -24%;
-          transform-origin: 69% -24%;
+  -webkit-transform-origin: 72% -10%;
+      -ms-transform-origin: 72% -10%;
+          transform-origin: 72% -10%;
   margin-top: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;

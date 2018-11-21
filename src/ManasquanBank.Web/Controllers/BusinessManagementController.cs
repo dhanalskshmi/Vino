@@ -31,9 +31,6 @@ namespace ManasquanBank.Web.Controllers
                         business.cntComments = "";
                     }
 
-
-                    
-
                     if (business.AdminEmail > 0 || business.ConfirmationEmail >= 0)
                     {
 
@@ -50,8 +47,8 @@ namespace ManasquanBank.Web.Controllers
                         listoftags.Add(new PerplexMail.EmailTag("[#State#]", business.state));
                         listoftags.Add(new PerplexMail.EmailTag("[#Zip#]", business.zip));
                         listoftags.Add(new PerplexMail.EmailTag("[#Country#]", business.country));
-                        
                         listoftags.Add(new PerplexMail.EmailTag("[#Message#]", business.cntComments));
+                        listoftags.Add(new PerplexMail.EmailTag("[#employeeEmail#]", business.employeeEmail));
 
 
                         //listoftags.Add(new PerplexMail.EmailTag("[#AreaofInterest#]", (string.IsNullOrEmpty(contact.AreaofInterest) ? string.Empty : contact.AreaofInterest)));

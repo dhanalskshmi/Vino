@@ -52,8 +52,8 @@
             {
             <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
                 <div class="goto">
-                <button id="togglePlay" class="command playBtn" onclick="jQuery('#bgndVideo').YTPTogglePlay()"></button>
-                <button class="muteBtn muted" onclick="jQuery('#bgndVideo').YTPToggleVolume()">Mute/Unmute</button>
+                <button id="togglePlay" class="command playBtn" onclick="playYoutube()"><span class="screen-reader-text">Play / Pause Button</span></button>
+                <button class="muteBtn muted" onclick="muteVideo()">Mute/Unmute</button>
                 </div>
             </div>
             }
@@ -87,36 +87,38 @@
                     {
 
                         <li class="bunisessBank">
-                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                                @if (cTAButton != null)
+                            @if (cTAButton != null)
+                            {
+                                if (cTAButton.Target == "_blank")
                                 {
-                                    if (cTAButton.Target == "_blank")
-                                    {
-                                        <a href="@cTAButton.Url" target="_blank">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+                                    <a href="@cTAButton.Url" target="_blank" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
-                                                @promoTitle
-                                            }
+                                            @promoTitle
+                                        }
 
 
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@cTAButton.Url">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
-
-                                                @promoTitle
-                                            }
-
-                                        </a>
-                                    }
+                                    </a>
                                 }
+                                else
+                                {
+                                    <a href="@cTAButton.Url" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
+                                            @promoTitle
+                                        }
+
+                                    </a>
+                                }
+                            }
+
+
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                
                             </figure>
                             <div class="serviceContent">
                                 <div class="title">
@@ -131,35 +133,36 @@
                     else if (i == 2)
                     {
                         <li class="personalBank">
-                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                                @if (cTAButton != null)
+                            @if (cTAButton != null)
+                            {
+                                if (cTAButton.Target == "_blank")
                                 {
-                                    if (cTAButton.Target == "_blank")
-                                    {
-                                        <a href="@cTAButton.Url" target="_blank">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+                                    <a href="@cTAButton.Url" target="_blank" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
-                                                @promoTitle
-                                            }
+                                            @promoTitle
+                                        }
 
 
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@cTAButton.Url">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
-
-                                                @promoTitle
-                                            }
-
-                                        </a>
-                                    }
+                                    </a>
                                 }
+                                else
+                                {
+                                    <a href="@cTAButton.Url" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                            @promoTitle
+                                        }
+
+                                    </a>
+                                }
+                            }
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                
                             </figure>
                             <div class="serviceContent">
                                 <div class="title">
@@ -178,7 +181,13 @@
                         <li class="mortage" style="background: @backgroundColor">
                             @if (cTAButton.Target == "_blank")
                             {
-                                <a href="@cTAButton.Url" target="_blank">
+                                <a href="@cTAButton.Url" target="_blank" class="link"> </a>
+                            }
+                            else
+                            {
+                                <a href="@cTAButton.Url" class="link"></a>
+                            }
+                           
                                     <div class="serviceContent">
                                         @if (!string.IsNullOrEmpty(promotionTitle))
                                         {
@@ -186,20 +195,9 @@
                                         }
 
                                     </div>
-                                </a>
-                            }
-                            else
-                            {
-                                <a href="@cTAButton.Url">
-                                    <div class="serviceContent">
-                                        @if (!string.IsNullOrEmpty(promotionTitle))
-                                        {
-                                            @Html.Raw(promotionTitle)
-                                        }
-                                    </div>
-                                </a>
-                            }
-                        </li>
+
+                                   
+</li>
                     }
                     else if (i == 4)
                     {
@@ -227,36 +225,37 @@
                     else if (i == 5)
                     {
                         <li class="didgitalCenter">
-                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                                @if (cTAButton != null)
+                            @if (cTAButton != null)
+                            {
+                                if (cTAButton.Target == "_blank")
                                 {
-                                    if (cTAButton.Target == "_blank")
-                                    {
-                                        <a href="@cTAButton.Url" target="_blank">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+                                    <a href="@cTAButton.Url" target="_blank" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
-                                                @promoTitle
-                                            }
+                                            @promoTitle
+                                        }
 
 
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@cTAButton.Url">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
-
-                                                @promoTitle
-                                            }
-
-
-                                        </a>
-                                    }
+                                    </a>
                                 }
+                                else
+                                {
+                                    <a href="@cTAButton.Url" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                            @promoTitle
+                                        }
+
+
+                                    </a>
+                                }
+                            }
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                
                             </figure>
                             <div class="serviceContent">
                                 <div class="title">
@@ -273,36 +272,37 @@
                     {
 
                         <li class="clentService">
-                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
-                                @if (cTAButton != null)
+                            @if (cTAButton != null)
+                            {
+                                if (cTAButton.Target == "_blank")
                                 {
-                                    if (cTAButton.Target == "_blank")
-                                    {
-                                        <a href="@cTAButton.Url" target="_blank">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+                                    <a href="@cTAButton.Url" target="_blank" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
 
-                                                @promoTitle
-                                            }
+                                            @promoTitle
+                                        }
 
 
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@cTAButton.Url">
-                                            @if (!string.IsNullOrEmpty(promotionTitle))
-                                            {
-                                                string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
-
-                                                @promoTitle
-                                            }
-
-
-                                        </a>
-                                    }
+                                    </a>
                                 }
+                                else
+                                {
+                                    <a href="@cTAButton.Url" class="link">
+                                        @if (!string.IsNullOrEmpty(promotionTitle))
+                                        {
+                                            string promoTitle = Regex.Replace(promotionTitle, "<.*?>", String.Empty);
+
+                                            @promoTitle
+                                        }
+
+
+                                    </a>
+                                }
+                            }
+                            <figure class="imgBlock" style="background-image: url('@backgroundImage.Url')">
+                                
                             </figure>
                             <div class="serviceContent">
                                 <div class="title">
@@ -320,7 +320,7 @@
         </ul>
     </div>
 </section>
-<section class="bluePannel home animatable">
+<section class="bluePannel animatable">
     <div class="containerWrapper">
         <div class="bgWrap">
             @if (Model.Content.AncestorOrSelf(1).HasValue("actionPanel"))
@@ -581,7 +581,12 @@
     function checkForVal(val) {
       return val || 0;
     }
-
+    function playYoutube() {
+        jQuery('#bgndVideo').YTPTogglePlay()
+    }
+    function muteVideo() {
+        jQuery('#bgndVideo').YTPToggleVolume()
+    }
 
 </script>
 
