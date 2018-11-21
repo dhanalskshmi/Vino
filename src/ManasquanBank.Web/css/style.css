@@ -583,12 +583,14 @@ p {
   position: fixed;
   top: 30%;
   right: 0;
-  z-index: 999;
   -webkit-transform: perspective(1px) rotate(-90deg) translate3d(0, 0, 0);
           transform: perspective(1px) rotate(-90deg) translate3d(0, 0, 0);
   -webkit-transform-origin: right;
       -ms-transform-origin: right;
           transform-origin: right;
+}
+.openAccount.active {
+  z-index: 999;
 }
 .openAccount a {
   background: #eb2837;
