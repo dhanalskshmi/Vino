@@ -200,6 +200,10 @@
             </div>
         </div>
     </section>
+
+   
+    @if (Request.QueryString["report"]!="true")
+            {
     <section class="greyPanel">
         <div class="containerWrapper">
             <div class="bgWrap">
@@ -251,6 +255,7 @@
             </div>
         </div>
     </section>
+    }
     <section class="greyPanel clientServiceNeed">
         <div class="containerWrapper">
             <div class="bgWrap">
