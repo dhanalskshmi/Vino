@@ -24,12 +24,13 @@
       <header>
         <div class="containerWrapper">
           <div class="headerWrapper">
+            <div class="headBg"> </div>
             <a href="index.html" class="logo">
               <img src="images/header/logo.png" alt="Manasquan Bank" />
             </a>
             <div class="searchloginWrap">
               <div class="mLogin">
-                <a href="javascript:void(0)">Login</a>
+                <a href="#">Login</a>
               </div>
               <div class="mobileSearchwrap">
                 <a href="javascript:void(0)" class="hamburger">
@@ -49,36 +50,7 @@
               </form>
             </div>
             <div class="menuWrapper">
-              <div class="loginBlocks">
-                <div class="personalLogin">
-                  <h3>PERSONAL BANKING</h3>
-                  <form id="personalLogin" action="" method="post">
-                    <label for="accessid" class="screen-reader-text ">access id</label>
-                    <input type="text" title="accessid" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID" required>
-                    <label for="password2" class="screen-reader-text ">Password</label>
-                    <input type="password" title="password2" name="password2" id="password2" value="" class="txtBox" placeholder="Password" required>
-                    <button type="submit" name="button"> <span>Login</span></button>
-                    <p>
-                      <a href="#">Sign Up</a>
-                      <a href="#">Forgot Password</a>
-                    </p>
-                  </form>
-                </div>
-                <div class="businessLogin">
-                  <h3>BUSINESS BANKING</h3>
-                  <form id="businessLogin" action="" method="post">
-                    <label for="businessaccessid" class="screen-reader-text">business access id</label>
-                    <input type="text" name="businessaccessid" title="businessaccessid" id="businessaccessid" value="" class="txtBox" placeholder="Access ID" required>
-                    <label for="businesspassword" class="screen-reader-text ">password</label>
-                    <input type="password" name="businesspassword" title="businessaccesspwd" id="businesspassword" value="" class="txtBox" placeholder="Password" required>
-                    <button type="submit" name="button"> <span>Login</span></button>
-                    <p>
-                      <a href="#">Forgot Password</a>
-                    </p>
-                  </form>
-                </div>
 
-              </div>
               <div class="headerNav">
                 <div class="topNav">
                   <ul>
@@ -126,9 +98,9 @@
                     </li>
                   </ul>
                 </div>
-                <div class="mainNav">
+                <div class="mainNav flatNav">
                   <ul>
-                    <li>
+                    <li class="item1">
                       <a href="#">
                         <span>
                           PERSONAL<br>
@@ -144,11 +116,12 @@
                               <i></i>
                               <i></i>
                             </div>
-                            <h2>
-                              Personal BANKING
+                          <h2>
+                            <a href="#">Personal Banking</a>
                             </h2>
+
                             <div class="flexBox">
-                              <div class="cols extWidth">
+                              <div class="cols">
                                 <h3>
                                   CHECKING
                                 </h3>
@@ -164,7 +137,7 @@
                                   </li>
                                 </ul>
                               </div>
-                              <div class="cols extWidth">
+                              <div class="cols">
                                 <h3>
                                   Savings
                                 </h3>
@@ -279,7 +252,7 @@
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li class="item2">
                       <a href="#">
                         <span>
                           BUSINESS<br>
@@ -287,7 +260,7 @@
                         </span>
                       </a>
                     </li>
-                    <li>
+                    <li class="item3">
                       <a href="#">
                         <span>
                           DIGITAL<br>
@@ -295,7 +268,7 @@
                         </span>
                       </a>
                     </li>
-                    <li class="shortNav">
+                    <li class="shortNav item4">
                       <a href="#">
                         <span>
                           CLIENT<br>
@@ -326,7 +299,36 @@
                   </ul>
                 </div>
               </div>
+              <div class="loginBlocks">
+                <div class="personalLogin">
+                  <h3>PERSONAL BANKING</h3>
+                  <form id="personalLogin" action="" method="post">
+                    <label for="accessid" class="screen-reader-text ">access id</label>
+                    <input type="text" title="accessid" name="accessid" id="accessid" value="" class="txtBox" placeholder="Access ID" required>
+                    <label for="password2" class="screen-reader-text ">Password</label>
+                    <input type="password" title="password2" name="password2" id="password2" value="" class="txtBox" placeholder="Password" required>
+                    <button type="submit" name="button"> <span>Login</span></button>
+                    <p>
+                      <a href="#">Sign Up</a>
+                      <a href="#">Forgot Password</a>
+                    </p>
+                  </form>
+                </div>
+                <div class="businessLogin">
+                  <h3>BUSINESS BANKING</h3>
+                  <form id="businessLogin" action="" method="post">
+                    <label for="businessaccessid" class="screen-reader-text">business access id</label>
+                    <input type="text" name="businessaccessid" title="businessaccessid" id="businessaccessid" value="" class="txtBox" placeholder="Access ID" required>
+                    <label for="businesspassword" class="screen-reader-text ">password</label>
+                    <input type="password" name="businesspassword" title="businessaccesspwd" id="businesspassword" value="" class="txtBox" placeholder="Password" required>
+                    <button type="submit" name="button"> <span>Login</span></button>
+                    <p>
+                      <a href="#">Forgot Password</a>
+                    </p>
+                  </form>
+                </div>
 
+              </div>
             </div>
           </div>
 
@@ -519,12 +521,18 @@
         </div>
       </header>
       <div class="openAccount">
-        <a href="#">
-          <span>
-            Open an Account
-          </span>
-        </a>
-      </div>
+          <a href="#" class="openQuickLnk">
+            <span>
+              Quick Links
+            </span>
+          </a>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Find a Branch</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+        </div>
       <div class="loginBlocks">
         <div class="personalLogin">
           <h3>PERSONAL BANKING</h3>
@@ -557,46 +565,45 @@
       <section class="heroBanner">
         <figure class="bannerImage" style="background-image: url('images/banner/client_service_bg.jpg')"></figure>
       </section>
-      <section class="heroBlock csheorBlk">
+      <section class="heroBlock csheorBlk digitalService">
         <div class="containerWrapper">
-          <div class="bgWrap">
+          <div class="bgWrap heroBg">
             <h2>Client Services</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa tellus, euismod sed fermentum sed, pellentesque varius lectus. Proin gravida orci sed aliquam aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa
               tellus, euismod sed fermentum sed, pellentesque varius lectus. Proin gravida orci sed aliquam aliquet.</p>
           </div>
-          <div class="service-section digitalService">
-              <div class="containerWrapper">
-                <div class="bgWrap">
+          <div class="service-section">
+                <div class="bgWrap ">
                   <h2>ACCOUNT SERVICES</h2>
                   <ul>
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/useful_forms.png" alt="service-icon1" />
+                          <img src="images/client-service/lost_card.svg" alt="service-icon1" />
                         </figure>
-                        <span>FAQ</span>
+                        <span>Lost Card</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/faq.png" alt="service-icon2" />
+                          <img src="images/client-service/order_checks.svg" alt="service-icon2" />
                         </figure>
-                        <span>mobile assistance</span>
+                        <span>Order Checks</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/service-icon3.png" alt="service-icon3" />
+                          <img src="images/client-service/change_address.svg" alt="service-icon3" />
                         </figure>
-                        <span>clickswitch</span>
+                        <span>Change Address</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/service-icon4.png" alt="service-icon4" />
+                          <img src="images/client-service/make_a_loan_payment.svg" alt="service-icon4" />
                         </figure>
                         <span>make a loan payment</span>
                       </a>
@@ -609,7 +616,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/client-icon1.png" alt="client-icon1" />
+                          <img src="images/client-service/apply_for_loan.svg" alt="client-icon1" />
                         </figure>
                         <span>apply for a loan</span>
                       </a>
@@ -617,7 +624,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/client-icon2.png" alt="client-icon2" />
+                          <img src="images/client-service/open_account.svg" alt="client-icon2" />
                         </figure>
                         <span>open an account</span>
                       </a>
@@ -625,7 +632,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/client-icon3.png" alt="client-icon3" />
+                          <img src="images/client-service/clickswitch.svg" alt="client-icon3" />
                         </figure>
                         <span>clickswitch</span>
                       </a>
@@ -633,7 +640,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/client-icon4.png" alt="client-icon4" />
+                          <img src="images/client-service/digital_expert.svg" alt="client-icon4" />
                         </figure>
                         <span>digital expert</span>
                       </a>
@@ -646,7 +653,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/info-icon1.png" alt="info-icon1" />
+                          <img src="images/client-service/faq.png" alt="info-icon1" />
                         </figure>
                         <span>FAQ</span>
                       </a>
@@ -654,7 +661,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/info-icon2.png" alt="info-icon2" />
+                          <img src="images/client-service/mobile_assistance.svg" alt="info-icon2" />
                         </figure>
                         <span>mobile assistance</span>
                       </a>
@@ -662,7 +669,7 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/info-icon3.png" alt="info-icon3" />
+                          <img src="images/client-service/online_assistance.svg" alt="info-icon3" />
                         </figure>
                         <span>online assistance</span>
                       </a>
@@ -670,14 +677,33 @@
                     <li>
                       <a href="#">
                         <figure>
-                          <img src="images/client-service/info-icon4.png" alt="info-icon4" />
+                          <img src="images/client-service/useful_forms.svg" alt="info-icon4" />
                         </figure>
                         <span>USeful forms</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-              </div>
+            </div>
+        </div>
+      </section>
+      <section class="ctaButton">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <ul class="heroLinks">
+                    <li class="find-us">
+                      <a href="">
+                        <span class="heroLinksImage"><img src="images/about/find-us.png"></span>
+                        <span class="heroLinksText">Contact <br> Us</span>
+                      </a>
+                    </li>
+                    <li class="client-service">
+                      <a href="">
+                        <span class="heroLinksImage"><img src="images/about/client-services.png"></span>
+                        <span class="heroLinksText">Digital <br> Experts</span>
+                      </a>
+                    </li>
+                  </ul>
             </div>
         </div>
       </section>
