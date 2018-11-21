@@ -1275,8 +1275,7 @@ table {
     }
   }
 }
-.categoryBlock{
-  &.digitalService{
+.digitalService{
     .heroBg{
       min-height: auto;
       padding-bottom: 10px;
@@ -1293,10 +1292,28 @@ table {
         margin: 0;
         li{
           list-style: none;
+          @include bp(desktop){
+            width: 22.334%;
+            margin-right: 2.58%;
+          }
+        }
+      }
+      .ratesCatg{
+        ul{
+          li{
+            width: 30.334%;
+            margin-right: 2.58%;
+            @include bp(mobile){
+              width: 100%;
+              margin-right: 0;
+            }
+            &:nth-child(4){
+              margin-top: 50px;
+            }
+          }
         }
       }
     }
-  }
 }
 .ctaButton{
   margin-top: 87px;
@@ -1334,4 +1351,7 @@ table {
       }
     }
   }
+}
+.justify-flex-center{
+  justify-content: center;
 }
