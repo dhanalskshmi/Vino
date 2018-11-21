@@ -4086,6 +4086,7 @@ footer {
   padding-right: 16px;
   position: relative;
   z-index: 99;
+  text-align: right;
 }
 .bankingServices li.kasasa .serviceContent h3 {
   font-size: 20px;
@@ -4093,8 +4094,15 @@ footer {
   line-height: 20px;
   text-transform: uppercase;
 }
+.bankingServices li.kasasa .serviceContent h3 span {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.bankingServices li.kasasa .serviceContent h3 span b {
+  font-size: 27px;
+}
 .bankingServices li.kasasa .serviceContent h3 strong {
-  font-size: inherit;
+  font-size: 23px;
 }
 .bankingServices li.kasasa .serviceContent .btnManasq, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply, .bankingServices li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices li.kasasa .serviceContent button {
   font-size: 12px;
@@ -4994,6 +5002,7 @@ footer {
     line-height: 20px;
   }
   .bankingServices ul li.mortage h3 strong {
+    font-weight: 700;
     font-size: 40px;
     padding-left: 0;
     margin-top: 17px;
@@ -5002,7 +5011,7 @@ footer {
     width: 100%;
   }
   .bankingServices ul li.mortage h3 strong span {
-    font-size: 30px;
+    font-size: 26px;
     margin-top: -9px;
     margin-left: -9px;
   }
@@ -5010,18 +5019,22 @@ footer {
     min-height: 154px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
-    width: 112px;
+    width: 132px;
     padding-right: 5px;
     padding-top: 13px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 15px;
     margin-bottom: 6px;
   }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span b {
+    font-size: 16px;
+  }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
     font-weight: 700;
+    font-size: 15px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 sup {
     top: 0;
@@ -5553,13 +5566,19 @@ footer {
     border-right: none;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
-    width: 150px;
+    width: 220px;
     padding-top: 19px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
     font-size: 25px;
     margin-bottom: 5px;
-    line-height: 20px;
+    line-height: 23px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span b {
+    font-size: 28px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
+    font-size: 25px;
   }
   .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button {
     font-size: 10px;
@@ -6012,13 +6031,13 @@ footer {
     font-weight: 400;
   }
   .bankingServices ul li.mortage h3 strong {
-    font-size: 126px;
+    font-size: 113px;
     margin-top: 63px;
     text-align: left;
     letter-spacing: -8px;
   }
   .bankingServices ul li.mortage h3 strong span {
-    font-size: 66px;
+    font-size: 64px;
     margin-top: -23px;
     margin-left: -10px;
   }
@@ -6033,17 +6052,31 @@ footer {
     bottom: 0;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
-    width: 202px;
+    width: 296px;
     padding-top: 20px;
+    margin-right: 25px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
-    font-size: 29px;
-    margin-bottom: 17px;
+    font-size: 30px;
+    margin-bottom: 20px;
     line-height: 29px;
   }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span {
+    margin-bottom: 12px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span b {
+    font-size: 50px;
+    display: inline-block;
+    margin-top: 6px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
+    font-size: 42px;
+    line-height: 36px;
+  }
   .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button {
-    font-size: 13px;
-    padding: 10px 27px;
+    font-size: 15px;
+    padding: 8px 24px;
+    border-width: 2px;
   }
   .bankingServices ul li.kasasa figure {
     width: 182px;
@@ -6352,9 +6385,6 @@ footer {
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
     padding-top: 21px;
     margin-right: 33px;
-  }
-  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
-    font-size: 34px;
   }
 
   .joinEmail form div {

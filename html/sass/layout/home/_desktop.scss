@@ -445,14 +445,22 @@ $dbannerhgt: 667px;
           padding-right: 16px;
           position: relative;
           z-index: 99;
+          text-align: right;
         }
         h3 {
           font-size: 20px;
           margin-bottom: 12px;
           line-height: 20px;
           text-transform: uppercase;
+          span {
+            display: inline-block;
+            margin-bottom: 8px;
+            b {
+              font-size: 27px;
+            }
+          }
           strong {
-            font-size: inherit;
+            font-size: 23px;
           }
         }
         .btnManasq {
@@ -1389,6 +1397,7 @@ $dbannerhgt: 667px;
             font-size: 20px;
             line-height: 20px;
             strong {
+              font-weight: 700;
               font-size: 40px;
               padding-left: 0;
               margin-top: 17px;
@@ -1396,7 +1405,7 @@ $dbannerhgt: 667px;
               letter-spacing: -1px;
               width: 100%;
               span {
-                font-size: 30px;
+                font-size: 26px;
                 margin-top: -9px;
                 margin-left: -9px;
               }
@@ -1407,16 +1416,22 @@ $dbannerhgt: 667px;
           .serviceContent {
             min-height: 154px;
             .detailBlock {
-              width: 112px;
+              width: 132px;
               padding-right: 5px;
               padding-top: 13px;
               h3 {
                 font-weight: 400;
-                font-size: 18px;
+                font-size: 14px;
                 line-height: 15px;
                 margin-bottom: 6px;
+                span {
+                  b {
+                    font-size: 16px;
+                  }
+                }
                 strong {
                   font-weight: 700;
+                  font-size: 15px;
                 }
                 sup {
                   top: 0;
@@ -2029,12 +2044,20 @@ $dbannerhgt: 667px;
           border-right: none;
           .serviceContent {
             .detailBlock {
-              width: 150px;
+              width: 220px;
               padding-top: 19px;
               h3 {
                 font-size: 25px;
                 margin-bottom: 5px;
-                line-height: 20px;
+                line-height: 23px;
+                span {
+                  b {
+                    font-size: 28px;
+                  }
+                }
+                strong {
+                  font-size: 25px;
+                }
               }
             }
             .btnManasq {
@@ -2396,7 +2419,7 @@ $dbannerhgt: 667px;
     }
   }
 
-  
+
 
   #wrapper_bgndVideo {
     min-height: $dbannerhgt;
@@ -2589,14 +2612,14 @@ $dbannerhgt: 667px;
               font-weight: 400;
             }
             strong {
-              font-size: 126px;
+              font-size: 113px;
               //padding-left: 60px;
               //margin-top: 43px;
               margin-top: 63px;
               text-align: left;
               letter-spacing: -8px;
               span {
-                font-size: 66px;
+                font-size: 64px;
                 margin-top: -23px;
                 margin-left: -10px;
               }
@@ -2612,17 +2635,31 @@ $dbannerhgt: 667px;
           .serviceContent {
             bottom: 0;
             .detailBlock {
-              width: 202px;
+              width: 296px;
               padding-top: 20px;
+              margin-right: 25px;
               h3 {
-                font-size: 29px;
-                margin-bottom: 17px;
+                font-size: 30px;
+                margin-bottom: 20px;
                 line-height: 29px;
+                span {
+                  margin-bottom: 12px;
+                  b {
+                    font-size: 50px;
+                    display: inline-block;
+                    margin-top: 6px;
+                  }
+                }
+                strong {
+                  font-size: 42px;
+                  line-height: 36px;
+                }
               }
             }
             .btnManasq {
-              font-size: 13px;
-              padding: 10px 27px;
+              font-size: 15px;
+              padding: 8px 24px;
+              border-width: 2px;
             }
           }
           figure {
@@ -2974,7 +3011,7 @@ $dbannerhgt: 667px;
               padding-top: 21px;
               margin-right: 33px;
               h3 {
-                font-size: 34px;
+                //font-size: 34px;
               }
             }
           }
