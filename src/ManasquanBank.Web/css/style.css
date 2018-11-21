@@ -2934,16 +2934,16 @@ header.stickyActive .mainNav {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
-  top: 15px;
+  top: 34px;
 }
 @media (max-width: 1279px) {
   .openAccount ul {
-    top: 17px;
+    top: 35px;
   }
 }
 @media (max-width: 1023px) {
   .openAccount ul {
-    top: 22px;
+    top: 38px;
   }
 }
 .openAccount ul li {

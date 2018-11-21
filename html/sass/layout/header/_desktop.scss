@@ -2073,12 +2073,12 @@ header {
 		box-shadow: 0 0 18px -6px rgba(0,0,0,0.58);
 		position: absolute;
 		transform: rotate(90deg);
-		top: 15px;
+		top: 34px;
 		@include bp(landscape){
-			top: 17px;
+			top: 35px;
 		}
 		@include bp(tablet){
-			top: 22px;
+			top: 38px;
 		}
 
 		li {
