@@ -1343,6 +1343,7 @@ $(document).ready(function(){
         $(".openAccount").toggleClass("active");
      });
 });
+
 // Form moduleA
 function onSubmit(token) {
   document.getElementById('contactForm').submit();

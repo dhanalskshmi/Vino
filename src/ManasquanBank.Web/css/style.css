@@ -611,6 +611,10 @@ p {
   background: #de0d1d;
 }
 
+.modal-content {
+  background: #c5d9f4;
+}
+
 @media screen and (max-width: 767px) {
   html,
   body {
@@ -4713,7 +4717,7 @@ footer {
 
 .floatingAlerts {
   position: fixed;
-  bottom: 1%;
+  top: 235px;
   left: 50%;
   width: 100%;
   z-index: 999999;
@@ -5766,7 +5770,7 @@ footer {
 }
 @media screen and (min-width: 1280px) {
   .popUpWrapper {
-    top: 246px;
+    top: 316px;
   }
 
   .alertsPannel .alertsWrap .wrap {

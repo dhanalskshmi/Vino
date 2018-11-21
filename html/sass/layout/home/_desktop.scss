@@ -1071,7 +1071,7 @@ $dbannerhgt: 667px;
 }
 .floatingAlerts {
   position: fixed;
-  bottom: 1%;
+  top: 235px;
   left: 50%;
   width: 100%;
   z-index: 999999;
@@ -2293,7 +2293,7 @@ $dbannerhgt: 667px;
 
 
   .popUpWrapper {
-    top: 246px;
+    top: 316px;
   }
   .alertsPannel {
     .alertsWrap {
