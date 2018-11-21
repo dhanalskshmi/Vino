@@ -2051,12 +2051,17 @@ header {
 }
 /* Quick Links Update - In progress*/
 .openAccount {
-	right: -200px;
+	right: 0px;
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
-	transform: none;
+	transform: rotate(-90deg);
 	transition: 0.3s all;
+	z-index: 100	;
+	&.active{
+		right: 200px;
+	}
 	@include bp(mobile) {
 		display: none;
 	}
@@ -2066,6 +2071,15 @@ header {
 		background: #fff;
 		z-index: 10;
 		box-shadow: 0 0 18px -6px rgba(0,0,0,0.58);
+		position: absolute;
+		transform: rotate(90deg);
+		top: 15px;
+		@include bp(landscape){
+			top: 17px;
+		}
+		@include bp(tablet){
+			top: 22px;
+		}
 
 		li {
 			font-size: 24px;
@@ -2102,15 +2116,10 @@ header {
 	}
 
 	.openQuickLnk {
-		transform: rotate(-90deg);
-		transform-origin: 72% -10% ;
-		margin-top: 0;
+		transform: none;
+		margin-top: -20px;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 		cursor: pointer;
-	}
-
-	&.active {
-		right: 0;
 	}
 }

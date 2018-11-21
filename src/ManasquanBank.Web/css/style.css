@@ -24,7 +24,6 @@ a {
   text-decoration: none;
   outline: none;
 }
-
 p a {
   color: inherit;
   text-decoration: underline;
@@ -34,9 +33,9 @@ p a:hover {
 }
 
 textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
+input[type=text],
+input[type=button],
+input[type=submit] {
   -webkit-appearance: none;
   border-radius: 0;
 }
@@ -124,7 +123,7 @@ html .siteWrap .siteInner {
 
 /* common Styles */
 body {
-  font-family: 'manasquan';
+  font-family: "manasquan";
   font-weight: 400;
   background: #FFF;
   color: #17140e;
@@ -272,9 +271,9 @@ input[type=text]::-ms-clear {
   pointer-events: none;
 }
 
-.btnSection input[type="button"],
-.btnSection input[type="reset"],
-.btnSection input[type="submit"] {
+.btnSection input[type=button],
+.btnSection input[type=reset],
+.btnSection input[type=submit] {
   border: 0;
   font-style: normal;
   font-size: inherit;
@@ -392,7 +391,7 @@ button span {
   z-index: 99;
 }
 
-.btnManasq, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .heroBlock.clickSwitch .bgWrap .detailSection p button,
+.btnManasq, .heroBlock.clickSwitch .bgWrap .detailSection p button, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply,
 button {
   background: #1268e5;
   position: relative;
@@ -400,15 +399,15 @@ button {
           transform: translateZ(0);
   overflow: hidden;
 }
-.btnManasq span, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply span, .heroBlock.clickSwitch .bgWrap .detailSection p button span,
+.btnManasq span, .heroBlock.clickSwitch .bgWrap .detailSection p button span, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply span,
 button span {
   position: relative;
   z-index: 99;
 }
-.btnManasq::before, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::before, .heroBlock.clickSwitch .bgWrap .detailSection p button::before, .btnManasq::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::after, .heroBlock.clickSwitch .bgWrap .detailSection p button::after,
+.btnManasq::before, .heroBlock.clickSwitch .bgWrap .detailSection p button::before, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::before, .btnManasq::after, .heroBlock.clickSwitch .bgWrap .detailSection p button::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::after,
 button::before,
 button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -424,12 +423,12 @@ button::after {
   -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
           transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
-.btnManasq::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::after, .heroBlock.clickSwitch .bgWrap .detailSection p button::after,
+.btnManasq::after, .heroBlock.clickSwitch .bgWrap .detailSection p button::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply::after,
 button::after {
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.btnManasq:hover::before, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply:hover::before, .heroBlock.clickSwitch .bgWrap .detailSection p button:hover::before, .btnManasq:hover::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply:hover::after, .heroBlock.clickSwitch .bgWrap .detailSection p button:hover::after,
+.btnManasq:hover::before, .heroBlock.clickSwitch .bgWrap .detailSection p button:hover::before, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply:hover::before, .btnManasq:hover::after, .heroBlock.clickSwitch .bgWrap .detailSection p button:hover::after, .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply:hover::after,
 button:hover::before,
 button:hover::after {
   -webkit-transform: translate(0, 0);
@@ -462,7 +461,7 @@ button:hover::after {
 .error-page .pageNot-found-section .page-section-box {
   padding: 0px 0 30px;
 }
-.error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply, .error-page .pageNot-found-section .actionBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .error-page .pageNot-found-section .actionBlock button {
+.error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .error-page .pageNot-found-section .actionBlock button, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply {
   font-size: 24px;
   padding: 16px 48px;
   border: 1px solid #fff;
@@ -490,7 +489,6 @@ a {
 a:focus, a:hover {
   text-decoration: none;
 }
-
 button, input, textarea {
   background: none;
   border: none;
@@ -619,7 +617,7 @@ p {
 
 @media screen and (max-width: 767px) {
   html,
-  body {
+body {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -703,7 +701,7 @@ p {
 }
 @media screen and (min-width: 1280px) {
   body,
-  html {
+html {
     height: 100%;
     min-height: 0;
   }
@@ -919,8 +917,8 @@ p {
   color: #000;
   border-bottom-right-radius: 8px;
   background: 0 0;
-  -webkit-transition: top 1s ease-out,background 1s linear;
-  transition: top 1s ease-out,background 1s linear;
+  -webkit-transition: top 1s ease-out, background 1s linear;
+  transition: top 1s ease-out, background 1s linear;
   z-index: -999;
   opacity: 0;
 }
@@ -932,8 +930,8 @@ p {
   background: #d1282d;
   color: #fff;
   outline: 0;
-  -webkit-transition: top .1s ease-in,background .5s linear;
-  transition: top .1s ease-in,background .5s linear;
+  -webkit-transition: top 0.1s ease-in, background 0.5s linear;
+  transition: top 0.1s ease-in, background 0.5s linear;
   z-index: 20000;
   opacity: 1;
 }
@@ -1040,31 +1038,31 @@ header.menuOpenState {
             transition-delay: 0.9s;
   }
   .animatable.animate-in {
-      /*
-      li {
-        &.bunisessBank,
-        &.mortage {
-          opacity: 1;
-          transform: scale(1) translateX(0) translateY(0);
-        }
-        &.personalBank {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      */
+    /*
+          li {
+            &.bunisessBank,
+            &.mortage {
+              opacity: 1;
+              transform: scale(1) translateX(0) translateY(0);
+            }
+            &.personalBank {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+    
+          */
   }
   .animatable.animate-in.bannerWrapper .bannerContent h1 span {
-    -webkit-animation: topBot .5s forwards;
-            animation: topBot .5s forwards;
+    -webkit-animation: topBot 0.5s forwards;
+            animation: topBot 0.5s forwards;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
     opacity: 0;
   }
   .animatable.animate-in.bannerWrapper .bannerContent h1 span:nth-child(2) {
-    -webkit-animation: topBot .8s forwards;
-            animation: topBot .8s forwards;
+    -webkit-animation: topBot 0.8s forwards;
+            animation: topBot 0.8s forwards;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
     opacity: 0;
@@ -1200,18 +1198,18 @@ header.menuOpenState {
     display: none;
   }
   .bannerWrapper .bannerContent h1 span,
-  .bannerWrapper .bannerContent h1 b {
+.bannerWrapper .bannerContent h1 b {
     font-style: normal;
     opacity: 0;
   }
   .bannerWrapper.animateIt .bannerContent h1 span {
-    -webkit-animation: topBot .5s forwards;
-            animation: topBot .5s forwards;
+    -webkit-animation: topBot 0.5s forwards;
+            animation: topBot 0.5s forwards;
     opacity: 0;
   }
   .bannerWrapper.animateIt .bannerContent h1 span:nth-child(2) {
-    -webkit-animation: topBot .8s forwards;
-            animation: topBot .8s forwards;
+    -webkit-animation: topBot 0.8s forwards;
+            animation: topBot 0.8s forwards;
     opacity: 0;
   }
   .bannerWrapper.animateIt .bannerContent h1 strong span {
@@ -1231,40 +1229,40 @@ header.menuOpenState {
   }
 
   /*.bankingServices {
-    ul {
-      li {
-        &.bunisessBank {
-          opacity: 0;
-          transform: scale(1.1) translateX(-50px) translateY(-50px);
-          transition: all 1s;
-        }
-        &.mortage {
-          opacity: 0;
-          transform: scale(1.1) translateX(50px) translateY(-50px);
-          transition: all 1s;
-        }
-        &.personalBank {
-          opacity: 0;
-          transform: translateY(15%);
-          transition: all 0.75s;
-        }
-      }
-      &.animateIt {
+      ul {
         li {
-          &.bunisessBank,
+          &.bunisessBank {
+            opacity: 0;
+            transform: scale(1.1) translateX(-50px) translateY(-50px);
+            transition: all 1s;
+          }
           &.mortage {
-            opacity: 1;
-            transform: scale(1) translateX(0) translateY(0);
+            opacity: 0;
+            transform: scale(1.1) translateX(50px) translateY(-50px);
+            transition: all 1s;
           }
           &.personalBank {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 0;
+            transform: translateY(15%);
+            transition: all 0.75s;
           }
         }
-
+        &.animateIt {
+          li {
+            &.bunisessBank,
+            &.mortage {
+              opacity: 1;
+              transform: scale(1) translateX(0) translateY(0);
+            }
+            &.personalBank {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+  
+        }
       }
-    }
-  }*/
+    }*/
 }
 @-webkit-keyframes lftRgt {
   0% {
@@ -1432,7 +1430,7 @@ header .containerWrapper {
   position: relative;
 }
 .hamburger::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 4px;
   background: #1b3d6e;
@@ -1450,7 +1448,7 @@ header .containerWrapper {
   position: relative;
 }
 .hamburger .lines::after, .hamburger .lines::before {
-  content: '';
+  content: "";
   background: #1b3d6e;
   width: 32px;
   height: 4px;
@@ -1544,7 +1542,7 @@ header .containerWrapper {
   position: relative;
 }
 .mnavWrapper ul li a.msubMenu::before {
-  content: '';
+  content: "";
   background: url("../images/header/m_submenu.png") no-repeat;
   width: 12px;
   height: 23px;
@@ -1604,7 +1602,7 @@ header .containerWrapper {
   position: relative;
 }
 .mnavWrapper ul li a.msubMenu::after {
-  content: '';
+  content: "";
   background-image: url("../images/header/mobilearrow_sprite.png");
   background-position: 0 -29px;
   width: 18px;
@@ -1619,7 +1617,7 @@ header .containerWrapper {
           transform: rotate(-90deg);
 }
 .mnavWrapper ul li a.msubMenu + ul li .msubMenu::after {
-  content: '';
+  content: "";
   background-position: 0 -69px;
   width: 18px;
   height: 11px;
@@ -1786,11 +1784,11 @@ header.stickyActive .mainNav {
   }
 
   .hamburger,
-  .mLogin,
-  .mnavWrapper,
-  .mobileSearch,
-  .mobileSearchfield,
-  .mobileSearchwrap {
+.mLogin,
+.mnavWrapper,
+.mobileSearch,
+.mobileSearchfield,
+.mobileSearchwrap {
     display: none;
   }
 
@@ -1806,7 +1804,7 @@ header.stickyActive .mainNav {
     float: right;
   }
   .menuWrapper .headerNav,
-  .menuWrapper .loginBlocks {
+.menuWrapper .loginBlocks {
     float: left;
   }
 
@@ -1834,20 +1832,20 @@ header.stickyActive .mainNav {
     float: right;
   }
   .menuWrapper .loginBlocks .businessLogin,
-  .menuWrapper .loginBlocks .personalLogin {
+.menuWrapper .loginBlocks .personalLogin {
     float: left;
     padding: 1px 5px 0;
     min-width: 98px;
     max-width: 98px;
   }
   .menuWrapper .loginBlocks .businessLogin h3,
-  .menuWrapper .loginBlocks .personalLogin h3 {
+.menuWrapper .loginBlocks .personalLogin h3 {
     font-size: 8px;
     font-weight: 700;
     line-height: 12px;
   }
   .menuWrapper .loginBlocks .businessLogin p,
-  .menuWrapper .loginBlocks .personalLogin p {
+.menuWrapper .loginBlocks .personalLogin p {
     line-height: 15px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1862,23 +1860,23 @@ header.stickyActive .mainNav {
             justify-content: space-between;
   }
   .menuWrapper .loginBlocks .businessLogin p a:last-child,
-  .menuWrapper .loginBlocks .personalLogin p a:last-child {
+.menuWrapper .loginBlocks .personalLogin p a:last-child {
     margin-left: 4px;
   }
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin button,
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin button {
+.menuWrapper .loginBlocks .businessLogin button,
+.menuWrapper .loginBlocks .personalLogin .txtBox,
+.menuWrapper .loginBlocks .personalLogin button {
     font-size: 8px;
     height: 13px;
     padding: 0 6px;
   }
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin .txtBox {
+.menuWrapper .loginBlocks .personalLogin .txtBox {
     margin-bottom: 5px;
   }
   .menuWrapper .loginBlocks .businessLogin p a,
-  .menuWrapper .loginBlocks .personalLogin p a {
+.menuWrapper .loginBlocks .personalLogin p a {
     font-size: 7px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
@@ -1916,7 +1914,7 @@ header.stickyActive .mainNav {
     position: relative;
   }
   .headerNav .topNav li a::after {
-    content: '';
+    content: "";
     background: #eb2837;
     width: 100%;
     height: 5px;
@@ -1942,7 +1940,7 @@ header.stickyActive .mainNav {
     width: 130%;
   }
   .headerNav .topNav li.iWantto a::before {
-    content: '';
+    content: "";
     background-image: url("../images/header/icon_1.png");
     width: 8px;
     height: 6px;
@@ -2036,7 +2034,7 @@ header.stickyActive .mainNav {
     position: relative;
   }
   .mainNav ul li a span:after {
-    content: '';
+    content: "";
     background: #eb2837;
     width: 100%;
     height: 5px;
@@ -2051,7 +2049,7 @@ header.stickyActive .mainNav {
     transition: all 0.75s;
   }
   .mainNav ul li a::after {
-    content: '';
+    content: "";
     background: #d3d3d3;
     width: 1px;
     height: 28px;
@@ -2109,7 +2107,6 @@ header.stickyActive .mainNav {
     opacity: 1;
     visibility: visible;
   }
-
   .mainNav .subNav {
     display: none;
     min-width: 150px;
@@ -2316,30 +2313,30 @@ header.stickyActive .mainNav {
     width: 244px;
   }
   .menuWrapper .loginBlocks .businessLogin,
-  .menuWrapper .loginBlocks .personalLogin {
+.menuWrapper .loginBlocks .personalLogin {
     min-width: 122px;
     max-width: 122px;
     padding: 5px 7px 0;
   }
   .menuWrapper .loginBlocks .businessLogin h3,
-  .menuWrapper .loginBlocks .personalLogin h3 {
+.menuWrapper .loginBlocks .personalLogin h3 {
     font-size: 10px;
     margin-bottom: 4px;
   }
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin .txtBox {
+.menuWrapper .loginBlocks .personalLogin .txtBox {
     font-size: 10px;
     height: 17px;
     margin-bottom: 6px;
   }
   .menuWrapper .loginBlocks .businessLogin button,
-  .menuWrapper .loginBlocks .personalLogin button {
+.menuWrapper .loginBlocks .personalLogin button {
     font-size: 9px;
     margin-bottom: 6px;
     height: 17px;
   }
   .menuWrapper .loginBlocks .businessLogin p a,
-  .menuWrapper .loginBlocks .personalLogin p a {
+.menuWrapper .loginBlocks .personalLogin p a {
     font-size: 9px;
   }
 
@@ -2520,18 +2517,18 @@ header.stickyActive .mainNav {
     width: 346px;
   }
   .menuWrapper .loginBlocks .businessLogin,
-  .menuWrapper .loginBlocks .personalLogin {
+.menuWrapper .loginBlocks .personalLogin {
     max-width: 173px;
     min-width: 173px;
     padding: 9px 10px 4px;
   }
   .menuWrapper .loginBlocks .businessLogin h3,
-  .menuWrapper .loginBlocks .personalLogin h3 {
+.menuWrapper .loginBlocks .personalLogin h3 {
     font-size: 12px;
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .businessLogin p,
-  .menuWrapper .loginBlocks .personalLogin p {
+.menuWrapper .loginBlocks .personalLogin p {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2545,27 +2542,27 @@ header.stickyActive .mainNav {
             justify-content: space-between;
   }
   .menuWrapper .loginBlocks .businessLogin p a,
-  .menuWrapper .loginBlocks .personalLogin p a {
+.menuWrapper .loginBlocks .personalLogin p a {
     font-size: 11px;
   }
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin .txtBox {
+.menuWrapper .loginBlocks .personalLogin .txtBox {
     font-size: 13px;
   }
   .menuWrapper .loginBlocks .businessLogin button,
-  .menuWrapper .loginBlocks .personalLogin button {
+.menuWrapper .loginBlocks .personalLogin button {
     font-size: 12px;
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .businessLogin .txtBox,
-  .menuWrapper .loginBlocks .businessLogin button,
-  .menuWrapper .loginBlocks .personalLogin .txtBox,
-  .menuWrapper .loginBlocks .personalLogin button {
+.menuWrapper .loginBlocks .businessLogin button,
+.menuWrapper .loginBlocks .personalLogin .txtBox,
+.menuWrapper .loginBlocks .personalLogin button {
     height: 24px;
     margin-bottom: 10px;
   }
   .menuWrapper .loginBlocks .businessLogin button,
-  .menuWrapper .loginBlocks .personalLogin button {
+.menuWrapper .loginBlocks .personalLogin button {
     margin-bottom: 8px;
   }
   .menuWrapper .loginBlocks .businessLogin p {
@@ -2673,7 +2670,7 @@ header.stickyActive .mainNav {
     line-height: 23px;
   }
   .SubmenuWrapper h2,
-  .SubmenuWrapper h3 {
+.SubmenuWrapper h3 {
     padding-left: 10px;
   }
   .SubmenuWrapper ul {
@@ -2815,7 +2812,6 @@ header.stickyActive .mainNav {
   .headerNav .topNav ul li.iWantto {
     padding-right: 45px;
   }
-
   .mainNav {
     margin-top: 29px;
   }
@@ -2897,11 +2893,16 @@ header.stickyActive .mainNav {
 }
 /* Quick Links Update - In progress*/
 .openAccount {
-  right: -200px;
+  right: 0px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -2909,11 +2910,15 @@ header.stickyActive .mainNav {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   -webkit-transition: 0.3s all;
           transition: 0.3s all;
+  z-index: 100;
+}
+.openAccount.active {
+  right: 200px;
 }
 @media (max-width: 767px) {
   .openAccount {
@@ -2925,6 +2930,21 @@ header.stickyActive .mainNav {
   background: #fff;
   z-index: 10;
   box-shadow: 0 0 18px -6px rgba(0, 0, 0, 0.58);
+  position: absolute;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  top: 15px;
+}
+@media (max-width: 1279px) {
+  .openAccount ul {
+    top: 17px;
+  }
+}
+@media (max-width: 1023px) {
+  .openAccount ul {
+    top: 22px;
+  }
 }
 .openAccount ul li {
   font-size: 24px;
@@ -2960,19 +2980,13 @@ header.stickyActive .mainNav {
   border-bottom: none;
 }
 .openAccount .openQuickLnk {
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: 72% -10%;
-      -ms-transform-origin: 72% -10%;
-          transform-origin: 72% -10%;
-  margin-top: 0;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  margin-top: -20px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   cursor: pointer;
-}
-.openAccount.active {
-  right: 0;
 }
 
 /*@import "tabletLandscape";
@@ -3149,7 +3163,6 @@ footer {
 .fRow ul li.fLink {
   margin-bottom: 9px;
 }
-
 @media screen and (min-width: 768px) {
   .Windows footer {
     position: relative;
@@ -3166,8 +3179,8 @@ footer {
     padding-bottom: 22px;
   }
   .footerWraps .fCols,
-  .footerWraps .fCols2,
-  .footerWraps .fCols3 {
+.footerWraps .fCols2,
+.footerWraps .fCols3 {
     display: inline-block;
     vertical-align: top;
   }
@@ -3265,7 +3278,7 @@ footer {
   }
 
   .fCols2,
-  .fCols3 {
+.fCols3 {
     padding-left: 0;
   }
 
@@ -3341,7 +3354,7 @@ footer {
     padding-right: 21px;
   }
   .fRow ul li::after {
-    content: '';
+    content: "";
     background: #FFF;
     width: 1px;
     height: 18px;
@@ -3763,8 +3776,8 @@ footer {
   z-index: -9;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
   min-width: 291px;
   max-width: 410px;
   -webkit-transform: translateX(-50%);
@@ -3779,7 +3792,7 @@ footer {
   top: 76px;
   opacity: 1;
   visibility: visible;
-  z-index: 99999999999999999;
+  z-index: 100000000000000020;
 }
 .loginBlocks .personalLogin {
   background: #1268e5;
@@ -3959,10 +3972,10 @@ footer {
   position: relative;
 }
 .bankingServices li .imgBlock::after {
-  content: '';
+  content: "";
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.45)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#a6000000",GradientType=0 );
   position: absolute;
   bottom: 0;
   left: 0;
@@ -4080,7 +4093,7 @@ footer {
 .bankingServices li.kasasa .serviceContent h3 strong {
   font-size: inherit;
 }
-.bankingServices li.kasasa .serviceContent .btnManasq, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply, .bankingServices li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices li.kasasa .serviceContent button {
+.bankingServices li.kasasa .serviceContent .btnManasq, .bankingServices li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices li.kasasa .serviceContent button, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply {
   font-size: 12px;
   text-transform: uppercase;
   background: #1268e5;
@@ -4093,7 +4106,7 @@ footer {
   padding: 6px 30px;
   border-radius: 25px;
 }
-.bankingServices li.kasasa .serviceContent .btnManasq span, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply span, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply span, .bankingServices li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button span, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices li.kasasa .serviceContent button span {
+.bankingServices li.kasasa .serviceContent .btnManasq span, .bankingServices li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button span, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices li.kasasa .serviceContent button span, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply span, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply span {
   position: relative;
   z-index: 99;
 }
@@ -4148,7 +4161,7 @@ footer {
   font-size: 10px;
   line-height: 12px;
 }
-.bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button {
+.bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
   display: inline-block;
   background: #1268e5;
   color: #FFF;
@@ -4242,7 +4255,7 @@ footer {
   margin-bottom: 14px;
   line-height: 21px;
 }
-.communityPannel .detailBlock .btnManasq, .communityPannel .detailBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .communityPannel .detailBlock .btn-carApply, .communityPannel .detailBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .communityPannel .detailBlock button {
+.communityPannel .detailBlock .btnManasq, .communityPannel .detailBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .communityPannel .detailBlock button, .communityPannel .detailBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .communityPannel .detailBlock .btn-carApply {
   display: inline-block;
   font-size: 13px;
   font-weight: 700;
@@ -4329,7 +4342,7 @@ footer {
   text-transform: capitalize;
   text-align: center;
 }
-.knowledgePannel .btnManasq, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button {
+.knowledgePannel .btnManasq, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply {
   display: inline-block;
   background: #1268e5;
   font-size: 13px;
@@ -4425,7 +4438,7 @@ footer {
   text-align: center;
   margin-top: 50px;
 }
-.eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+.eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply {
   display: inline-block;
   background: #1268e5;
   font-size: 13px;
@@ -4507,7 +4520,7 @@ footer {
           transition: all 0.55s;
 }
 .joinEmail .groupCheckbox div .checkbox::after {
-  content: '';
+  content: "";
   width: 7px;
   height: 12px;
   position: absolute;
@@ -4608,7 +4621,7 @@ footer {
   margin-top: -14px;
 }
 .popUpWrapper .close i::after, .popUpWrapper .close i::before {
-  content: '';
+  content: "";
   background: #1b3d6e;
   width: 3px;
   height: 26px;
@@ -4659,7 +4672,7 @@ footer {
   position: relative;
 }
 .alertsPannel .alertsWrap .wrap::before {
-  content: '';
+  content: "";
   background-image: url("../images/home/alert_icon.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -4690,7 +4703,7 @@ footer {
   margin-top: 0px;
 }
 .close-alerts i::after, .close-alerts i::before {
-  content: '';
+  content: "";
   background: #fff;
   width: 3px;
   height: 19px;
@@ -4752,7 +4765,7 @@ footer {
   position: relative;
 }
 .floatingAlerts .floatWrap .wrap::before {
-  content: '';
+  content: "";
   background-image: url("../images/home/alert_icon.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -4872,7 +4885,6 @@ footer {
   .bannerWrapper .bannerContent h1 strong span:nth-child(1) {
     font-size: 40px;
   }
-
   .bankingServices {
     max-width: -webkit-calc(100% - 152px);
     max-width: calc(100% - 152px);
@@ -5011,7 +5023,7 @@ footer {
     top: 0;
     font-size: 100%;
   }
-  .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button {
+  .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply {
     font-weight: 700;
     font-size: 7px;
     padding: 3px 5px;
@@ -5071,7 +5083,7 @@ footer {
     font-size: 12px;
     line-height: 14px;
   }
-  .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button {
+  .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
     font-size: 12px;
     padding: 3px 18px;
     margin-top: 0;
@@ -5122,15 +5134,15 @@ footer {
     height: 280px;
   }
   .communityPannel .titleBlock h2,
-  .communityPannel .titleBlock .wraps,
-  .communityPannel .redBlock h2,
-  .communityPannel .redBlock .wraps,
-  .communityPannel .detailBlock h2,
-  .communityPannel .detailBlock .wraps {
+.communityPannel .titleBlock .wraps,
+.communityPannel .redBlock h2,
+.communityPannel .redBlock .wraps,
+.communityPannel .detailBlock h2,
+.communityPannel .detailBlock .wraps {
     padding-left: 62px;
   }
   .communityPannel .redBlock h2,
-  .communityPannel .titleBlock h2 {
+.communityPannel .titleBlock h2 {
     font-size: 30px;
   }
   .communityPannel .titleBlock h2 {
@@ -5256,7 +5268,7 @@ footer {
   .knowledgePannel ul h4 {
     font-size: 16px;
   }
-  .knowledgePannel .btnManasq, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button {
+  .knowledgePannel .btnManasq, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply {
     font-size: 12px;
     padding: 4px 19px;
   }
@@ -5287,7 +5299,7 @@ footer {
   .eventsPannel .eventsBtn {
     margin-top: 20px;
   }
-  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply {
     font-size: 12px;
     padding: 4px 19px;
   }
@@ -5459,7 +5471,6 @@ footer {
   .bannerWrapper .bannerContent h1 strong span:nth-child(1) {
     font-size: 49px;
   }
-
   .bannerWrapper #wrapper .goto button {
     top: -40px;
     right: 38px;
@@ -5545,7 +5556,7 @@ footer {
     margin-bottom: 5px;
     line-height: 20px;
   }
-  .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button {
+  .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply {
     font-size: 10px;
     padding: 5px 12px;
     border-radius: 20px;
@@ -5602,7 +5613,7 @@ footer {
   .bluePannel .detailsWrap p a {
     font-size: inherit;
   }
-  .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button {
+  .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
     font-size: 15px;
     padding: 5px 27px;
     margin-top: 0;
@@ -5614,11 +5625,11 @@ footer {
     margin-bottom: 50px;
   }
   .communityPannel .titleBlock h2,
-  .communityPannel .titleBlock .wraps,
-  .communityPannel .redBlock h2,
-  .communityPannel .redBlock .wraps,
-  .communityPannel .detailBlock h2,
-  .communityPannel .detailBlock .wraps {
+.communityPannel .titleBlock .wraps,
+.communityPannel .redBlock h2,
+.communityPannel .redBlock .wraps,
+.communityPannel .detailBlock h2,
+.communityPannel .detailBlock .wraps {
     padding-left: 70px;
   }
   .communityPannel .bgWraps {
@@ -5627,13 +5638,13 @@ footer {
     max-width: 904px;
   }
   .communityPannel .titleBlock,
-  .communityPannel .redBlock {
+.communityPannel .redBlock {
     max-width: -webkit-calc(100% - 305px);
     max-width: calc(100% - 305px);
     padding: 14px 0 9px;
   }
   .communityPannel .titleBlock h2,
-  .communityPannel .redBlock h2 {
+.communityPannel .redBlock h2 {
     font-size: 38px;
     line-height: 32px;
   }
@@ -5716,7 +5727,7 @@ footer {
   .knowledgePannel ul h4 {
     font-size: 20px;
   }
-  .knowledgePannel .btnManasq, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button {
+  .knowledgePannel .btnManasq, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply {
     font-size: 15px;
     padding: 6px 24px;
   }
@@ -5752,7 +5763,7 @@ footer {
   .eventsPannel .eventsBtn {
     margin-top: 30px;
   }
-  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply {
     font-size: 15px;
     padding: 6px 24px;
   }
@@ -5889,7 +5900,6 @@ footer {
     margin-top: -13px;
     line-height: normal;
   }
-
   .bannerWrapper #wrapper .goto button {
     top: -67px;
     right: 0;
@@ -6025,7 +6035,7 @@ footer {
     margin-bottom: 17px;
     line-height: 29px;
   }
-  .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button {
+  .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply {
     font-size: 13px;
     padding: 10px 27px;
   }
@@ -6083,7 +6093,7 @@ footer {
     font-size: 18px;
     line-height: 22px;
   }
-  .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button {
+  .bluePannel .detailsWrap .btnManasq, .bluePannel .detailsWrap .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bluePannel .detailsWrap button, .bluePannel .detailsWrap .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bluePannel .detailsWrap .btn-carApply {
     font-size: 19px;
     padding: 8px 41px 9px;
     border-radius: 23px;
@@ -6107,7 +6117,7 @@ footer {
     position: relative;
   }
   .communityPannel .titleBlock h2,
-  .communityPannel .redBlock h2 {
+.communityPannel .redBlock h2 {
     font-size: 63px;
     line-height: 54px;
   }
@@ -6147,7 +6157,7 @@ footer {
     font-size: 18px;
     margin-bottom: 25px;
   }
-  .communityPannel .detailBlock .btnManasq, .communityPannel .detailBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .communityPannel .detailBlock .btn-carApply, .communityPannel .detailBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .communityPannel .detailBlock button {
+  .communityPannel .detailBlock .btnManasq, .communityPannel .detailBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .communityPannel .detailBlock button, .communityPannel .detailBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .communityPannel .detailBlock .btn-carApply {
     font-size: 19px;
     padding: 10px 37px;
     border-radius: 20px;
@@ -6216,7 +6226,7 @@ footer {
     max-width: 116px;
     min-height: 112px;
   }
-  .knowledgePannel .btnManasq, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button {
+  .knowledgePannel .btnManasq, .knowledgePannel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .knowledgePannel button, .knowledgePannel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .knowledgePannel .btn-carApply {
     font-size: 19px;
     padding: 8px 38px;
     border-radius: 22px;
@@ -6264,7 +6274,7 @@ footer {
   .eventsPannel .eventsBtn {
     margin-top: 50px;
   }
-  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button {
+  .eventsPannel .eventsBtn .btnManasq, .eventsPannel .eventsBtn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .eventsPannel .eventsBtn button, .eventsPannel .eventsBtn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .eventsPannel .eventsBtn .btn-carApply {
     font-size: 19px;
     padding: 8px 38px;
     border-radius: 22px;
@@ -6403,7 +6413,7 @@ footer {
   border: none;
   padding-bottom: 30px;
 }
-.speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button {
+.speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply {
   display: inline-block;
   background: #1268e5;
   padding: 10px 80px;
@@ -6418,7 +6428,7 @@ footer {
   margin: 0px 10px;
 }
 @media (max-width: 767px) {
-  .speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button {
+  .speedBumpModule .modal-footer .btnManasq, .speedBumpModule .modal-footer .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .speedBumpModule .modal-footer button, .speedBumpModule .modal-footer .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .speedBumpModule .modal-footer .btn-carApply {
     padding: 10px 28px;
     margin: 0 4px;
   }
@@ -6436,7 +6446,7 @@ footer {
   display: inline;
 }
 
-.btn-mansq, .error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply, .error-page .pageNot-found-section .actionBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .error-page .pageNot-found-section .actionBlock button, .historyTimeline .bgWrap .titleWrap a, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button, .greyPanel.charityFound .bgWrap .btnManasq, .greyPanel.charityFound .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .greyPanel.charityFound .bgWrap .bluePanelInner .carblk .btn-carApply, .greyPanel.charityFound .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .greyPanel.charityFound .bgWrap .detailSection p button, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button, .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button, .persLending .homeStartWrap .homeStart .homeStartBtn a, .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button {
+.btn-mansq, .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply, .persLending .homeStartWrap .homeStart .homeStartBtn a, .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .realAlerts .bgWrap .btnManasq, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .greyPanel.charityFound .bgWrap .btnManasq, .greyPanel.charityFound .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .greyPanel.charityFound .bgWrap .detailSection p button, .greyPanel.charityFound .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .greyPanel.charityFound .bgWrap .bluePanelInner .carblk .btn-carApply, .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .historyTimeline .bgWrap .titleWrap a, .error-page .pageNot-found-section .actionBlock .btnManasq, .error-page .pageNot-found-section .actionBlock .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .error-page .pageNot-found-section .actionBlock button, .error-page .pageNot-found-section .actionBlock .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .error-page .pageNot-found-section .actionBlock .btn-carApply {
   display: inline-block;
   background: #1268e5;
   padding: 10px 45px;
@@ -6562,21 +6572,21 @@ footer {
 }
 @media (max-width: 1279px) {
   .heroBlock h2,
-  .heroBlock h1 {
+.heroBlock h1 {
     font-size: 36px;
     margin-bottom: 10px;
   }
 }
 @media (max-width: 1023px) {
   .heroBlock h2,
-  .heroBlock h1 {
+.heroBlock h1 {
     font-size: 24px;
     margin-bottom: 5px;
   }
 }
 @media (max-width: 767px) {
   .heroBlock h2,
-  .heroBlock h1 {
+.heroBlock h1 {
     font-size: 32px;
     margin-bottom: 20px;
     text-align: center;
@@ -6872,8 +6882,8 @@ footer {
   height: 100%;
   background-size: cover;
   background-position: center;
-  -webkit-transition: .55s all;
-          transition: .55s all;
+  -webkit-transition: 0.55s all;
+          transition: 0.55s all;
 }
 @media (max-width: 1279px) {
   .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap .contentImg {
@@ -6893,7 +6903,7 @@ footer {
 }
 .ContentBlk1 .bgWrap .flexWrapper .ContentImageWrap:after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: -13px;
   left: 0;
   width: 120px;
@@ -7673,21 +7683,21 @@ footer {
   width: 100%;
 }
 
-.contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
+.contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
   padding: 41px 141px 31px 141px;
 }
 @media (max-width: 1279px) {
-  .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
+  .contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
     padding: 45px 21px 24px 21px;
   }
 }
 @media (max-width: 1023px) {
-  .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
+  .contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
     padding: 41px 21px 24px 21px;
   }
 }
 @media (max-width: 767px) {
-  .contactPadding, .contactUs .heroBlock .bgWrap, .greyPanel .bgWrap {
+  .contactPadding, .greyPanel .bgWrap, .contactUs .heroBlock .bgWrap {
     padding: 32px 11px 25px 11px;
   }
 }
@@ -7698,19 +7708,19 @@ footer {
 }
 @media (max-width: 1279px) {
   .contactUs .heroBlock h1,
-  .contactUs .heroBlock h2 {
+.contactUs .heroBlock h2 {
     margin-bottom: 20px;
   }
 }
 @media (max-width: 1023px) {
   .contactUs .heroBlock h1,
-  .contactUs .heroBlock h2 {
+.contactUs .heroBlock h2 {
     margin-bottom: 15px;
   }
 }
 @media (max-width: 767px) {
   .contactUs .heroBlock h1,
-  .contactUs .heroBlock h2 {
+.contactUs .heroBlock h2 {
     margin-bottom: 20px;
   }
 }
@@ -7740,7 +7750,7 @@ footer {
 }
 @media (max-width: 1279px) {
   .contactUs .heroBlock p b,
-  .contactUs .heroBlock p strong {
+.contactUs .heroBlock p strong {
     font-size: 18px;
   }
 }
@@ -8065,14 +8075,14 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .contactFormWrap .contactForm .mob-flex .btnManasq, .contactFormWrap .contactForm .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .mob-flex .btn-carApply, .contactFormWrap .contactForm .mob-flex .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm .mob-flex button {
+  .contactFormWrap .contactForm .mob-flex .btnManasq, .contactFormWrap .contactForm .mob-flex .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm .mob-flex button, .contactFormWrap .contactForm .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .mob-flex .btn-carApply {
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
         -ms-flex-order: 3;
             order: 3;
   }
 }
-.contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button {
+.contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply {
   min-height: 48px;
   min-width: 200px;
   font-size: 18px;
@@ -8081,7 +8091,7 @@ footer {
   margin-top: 5px;
 }
 @media (max-width: 1023px) {
-  .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button {
+  .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply {
     min-height: auto;
     min-width: 160px;
     font-size: 14px;
@@ -8090,7 +8100,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button {
+  .contactFormWrap .contactForm .btnManasq, .contactFormWrap .contactForm .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .contactFormWrap .contactForm button, .contactFormWrap .contactForm .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .contactFormWrap .contactForm .btn-carApply {
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
@@ -8196,8 +8206,8 @@ footer {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 44px;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .service-section .bgWrap h2 {
@@ -8269,8 +8279,8 @@ footer {
   border-radius: 50%;
   padding: 10px;
   background: #fff;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
 }
 @media (max-width: 1279px) {
   .service-section .bgWrap ul li figure {
@@ -8296,8 +8306,8 @@ footer {
   text-align: center;
   text-transform: uppercase;
   margin-top: 40px;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .service-section .bgWrap ul li span {
@@ -8394,7 +8404,7 @@ footer {
 }
 .ui-menu .ui-menu-item .ui-menu-item-wrapper {
   font-size: 16px;
-  padding: .3em .7em;
+  padding: 0.3em 0.7em;
 }
 .ui-menu .ui-state-active {
   background: #1268e5;
@@ -8408,7 +8418,7 @@ footer {
   font-family: inherit;
 }
 .ui-selectmenu-button.ui-button .ui-selectmenu-text {
-  padding: 0.6em 2.1em 0.6em .7em;
+  padding: 0.6em 2.1em 0.6em 0.7em;
 }
 
 .careers .heroBlock .heroCareer {
@@ -8612,8 +8622,8 @@ footer {
   width: 340px;
   margin-bottom: 50px;
   background-size: cover;
-  -webkit-transition: .2s all;
-          transition: .2s all;
+  -webkit-transition: 0.2s all;
+          transition: 0.2s all;
 }
 @media (max-width: 1279px) {
   .heroFlex .flexLinkWrap .flexLinks .flexImage {
@@ -8662,8 +8672,8 @@ footer {
   -webkit-transform: scale(1.3);
       -ms-transform: scale(1.3);
           transform: scale(1.3);
-  -webkit-transition: .3s all;
-          transition: .3s all;
+  -webkit-transition: 0.3s all;
+          transition: 0.3s all;
 }
 
 .openPosition {
@@ -8745,19 +8755,19 @@ footer {
   height: 45px;
   border-radius: 0px;
 }
-.openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button {
+.openPosition .bgWrap .careerSearch .btnManasq, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply {
   border: 3px solid #fff;
   font-size: 24px;
   font-weight: normal;
   padding: 10px 38px;
 }
 @media (max-width: 1279px) {
-  .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button {
+  .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply {
     padding: 10px 38px;
   }
 }
 @media (max-width: 767px) {
-  .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button {
+  .openPosition .bgWrap .careerSearch .btnManasq, .openPosition .heroBlock.clickSwitch .bgWrap .careerSearch .detailSection p button, .heroBlock.clickSwitch .openPosition .bgWrap .careerSearch .detailSection p button, .openPosition .heroBlock.clickSwitch .bgWrap .detailSection p .careerSearch button, .heroBlock.clickSwitch .openPosition .bgWrap .detailSection p .careerSearch button, .openPosition .bluePanel .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .bluePanel .openPosition .bgWrap .careerSearch .bluePanelInner .carblk .btn-carApply, .openPosition .bluePanel .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply, .bluePanel .openPosition .bgWrap .bluePanelInner .carblk .careerSearch .btn-carApply {
     width: 170px;
     margin: auto;
   }
@@ -9278,7 +9288,7 @@ footer {
     text-align: center;
   }
 }
-.careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button {
+.careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
   width: 250px;
   height: 62px;
   padding: 0;
@@ -9303,13 +9313,13 @@ footer {
   text-decoration: none;
 }
 @media (max-width: 1279px) {
-  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button {
+  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
     margin-left: 54px;
     margin-top: 0px;
   }
 }
 @media (max-width: 1023px) {
-  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button {
+  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
     margin-left: 44px;
     margin-top: 0px;
     font-size: 20px;
@@ -9323,7 +9333,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button {
+  .careerGrey .bgWrap .browsePos .browsePosRgt .btnManasq, .careerGrey .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .careerGrey .bgWrap .browsePos .browsePosRgt .detailSection p button, .careerGrey .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .careerGrey .bgWrap .detailSection p .browsePos .browsePosRgt button, .cultureWrap .bgWrap .browsePos .browsePosRgt .btnManasq, .cultureWrap .heroBlock.clickSwitch .bgWrap .browsePos .browsePosRgt .detailSection p button, .heroBlock.clickSwitch .cultureWrap .bgWrap .browsePos .browsePosRgt .detailSection p button, .cultureWrap .heroBlock.clickSwitch .bgWrap .detailSection p .browsePos .browsePosRgt button, .heroBlock.clickSwitch .cultureWrap .bgWrap .detailSection p .browsePos .browsePosRgt button, .careerGrey .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .cultureWrap .bluePanel .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .careerGrey .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .bluePanel .cultureWrap .bgWrap .browsePos .browsePosRgt .bluePanelInner .carblk .btn-carApply, .careerGrey .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .cultureWrap .bluePanel .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .careerGrey .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply, .bluePanel .cultureWrap .bgWrap .bluePanelInner .carblk .browsePos .browsePosRgt .btn-carApply {
     padding: 0;
     margin: auto;
   }
@@ -9942,7 +9952,7 @@ footer {
     margin-bottom: 30px;
   }
 }
-.greyPanel.charityFound .bgWrap .btnManasq, .greyPanel.charityFound .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .greyPanel.charityFound .bgWrap .bluePanelInner .carblk .btn-carApply, .greyPanel.charityFound .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .greyPanel.charityFound .bgWrap .detailSection p button {
+.greyPanel.charityFound .bgWrap .btnManasq, .greyPanel.charityFound .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .greyPanel.charityFound .bgWrap .detailSection p button, .greyPanel.charityFound .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .greyPanel.charityFound .bgWrap .bluePanelInner .carblk .btn-carApply {
   font-size: 14px;
   padding: 5px 14px;
   text-transform: none;
@@ -10081,12 +10091,12 @@ footer {
 }
 @media (max-width: 1279px) {
   .mediaCenter .heroBlock .bgWrap .mediaForm .form-group .ui-selectmenu-button .ui-selectmenu-text {
-    padding: 0.1em 2.1em 0.1em .7em;
+    padding: 0.1em 2.1em 0.1em 0.7em;
   }
 }
 @media (max-width: 1023px) {
   .mediaCenter .heroBlock .bgWrap .mediaForm .form-group .ui-selectmenu-button .ui-selectmenu-text {
-    padding: 0.6em 2.1em 0.6em .7em;
+    padding: 0.6em 2.1em 0.6em 0.7em;
   }
 }
 .mediaCenter .heroBlock .bgWrap .mediaForm .form-group input::-webkit-input-placeholder {
@@ -10102,7 +10112,7 @@ footer {
   width: auto;
   margin-right: 0;
 }
-.mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button {
+.mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply {
   margin: 0;
   width: 170px;
   padding: 13px 40px;
@@ -10110,7 +10120,7 @@ footer {
   border: 3px solid #fff;
 }
 @media (max-width: 1279px) {
-  .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button {
+  .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply {
     width: 120px;
     padding: 6px 0px;
     font-size: 18px;
@@ -10118,14 +10128,14 @@ footer {
   }
 }
 @media (max-width: 1023px) {
-  .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button {
+  .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply {
     width: 164px;
     padding: 12px 0;
     font-size: 22px;
   }
 }
 @media (max-width: 767px) {
-  .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button {
+  .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .btnManasq, .mediaCenter .heroBlock.clickSwitch .bgWrap .mediaForm .form-group.searchBtn .detailSection p button, .mediaCenter .heroBlock.clickSwitch .bgWrap .detailSection p .mediaForm .form-group.searchBtn button, .mediaCenter .heroBlock .bluePanel .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .mediaForm .form-group.searchBtn .bluePanelInner .carblk .btn-carApply, .mediaCenter .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply, .bluePanel .mediaCenter .heroBlock .bgWrap .bluePanelInner .carblk .mediaForm .form-group.searchBtn .btn-carApply {
     margin: auto;
   }
 }
@@ -10258,7 +10268,7 @@ footer {
   position: relative;
 }
 .newsWrap .bgWrap .newsFlexWrap .newsFlex .newsFlexImg.video figure::after {
-  content: '';
+  content: "";
   background-color: rgba(0, 0, 0, 0.5);
   background-image: url("../images/media-center/play_icon.png");
   background-size: contain;
@@ -10534,7 +10544,7 @@ footer {
     max-width: 138px;
   }
 }
-.realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button {
+.realAlerts .bgWrap .btnManasq, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
   margin-top: 49px;
   min-width: 203px;
   font-size: 22px;
@@ -10545,7 +10555,7 @@ footer {
   color: #fff;
 }
 @media (max-width: 1279px) {
-  .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button {
+  .realAlerts .bgWrap .btnManasq, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
     margin-top: 10px;
     font-size: 16px;
     padding: 8px 16px;
@@ -10553,7 +10563,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .realAlerts .bgWrap .btnManasq, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button {
+  .realAlerts .bgWrap .btnManasq, .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .realAlerts .bgWrap .detailSection p button, .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
     margin-top: 51px;
   }
 }
@@ -10761,7 +10771,7 @@ footer {
     width: 20px;
   }
 }
-.bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button {
+.bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply {
   margin-top: 49px;
   height: 60px;
   font-size: 24px;
@@ -10778,7 +10788,7 @@ footer {
   bottom: 0;
 }
 @media (max-width: 1023px) {
-  .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button {
+  .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply {
     margin-top: 23px;
     height: 53px;
     font-size: 20px;
@@ -10789,7 +10799,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button {
+  .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .btnManasq, .bioPage .heroBlock.clickSwitch .bgWrap .bioFlex .bioFlexContent .detailSection p button, .bioPage .heroBlock.clickSwitch .bgWrap .detailSection p .bioFlex .bioFlexContent button, .bioPage .heroBlock .bluePanel .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bioFlex .bioFlexContent .bluePanelInner .carblk .btn-carApply, .bioPage .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply, .bluePanel .bioPage .heroBlock .bgWrap .bluePanelInner .carblk .bioFlex .bioFlexContent .btn-carApply {
     margin-top: 18px;
     height: 38px;
     font-size: 16px;
@@ -11069,7 +11079,7 @@ footer {
 }
 .locationSection.dlview .locationBgWrap .locationBox .locationDetail, .locationSection.pmView .locationBgWrap .locationBox .locationDetail {
   width: 24.532%;
-  margin-right: 13.200%;
+  margin-right: 13.2%;
   float: left;
   margin-top: 50px;
 }
@@ -11946,7 +11956,7 @@ footer {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection {
-    width: 39.4230%;
+    width: 39.423%;
     min-height: 489px;
   }
 }
@@ -11969,45 +11979,45 @@ footer {
     padding-left: 28px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
   display: table;
   width: 100%;
   margin-bottom: 22px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
     margin-bottom: 31px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
     margin-bottom: 22px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr {
     margin-bottom: 11px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
   float: left;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
     width: 32px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
     width: 32px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr img {
     width: 32px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
   display: block;
   width: 85%;
   float: left;
@@ -12015,84 +12025,84 @@ footer {
   padding-top: 10px;
 }
 @media (min-width: 1280px) and (max-width: 1359px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
     width: 83%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
-    width: 83.40%;
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
+    width: 83.4%;
     padding-left: 11px;
     padding-top: 10px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
     padding-top: 10px;
     padding-left: 9px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail {
     width: 87.5%;
     padding-top: 11px;
     padding-left: 9px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
   margin-bottom: 0px;
   line-height: 23px;
   color: #666666;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
     font-size: 16px;
     line-height: 17px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
     font-size: 16px;
     line-height: 18px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p {
     font-size: 16px;
     line-height: 17px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
   display: block;
   margin-bottom: 1px;
 }
 @media (min-width: 1280px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
     margin-bottom: 0px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
     margin-bottom: 2px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p strong {
     margin-bottom: -1px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a {
   text-decoration: none;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a:hover {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p a:hover, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p a:hover {
   text-decoration: underline;
   color: inherit;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong {
   margin-top: 7px;
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .pnoneNumber div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .printIcon div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .mailMember div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .lftSec .locationAddr div.detail p + p strong {
     margin-top: 6px;
   }
 }
@@ -12224,48 +12234,48 @@ footer {
     padding-left: 19px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
   display: table;
   width: 100%;
   margin-bottom: 15px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
     margin-bottom: 27px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
     margin-bottom: 18px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec {
     margin-bottom: 6px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
   float: left;
   margin-top: 3px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
     width: 34px;
     margin-top: 0px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
     width: 34px;
     margin-top: 0px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec img, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec img {
     width: 34px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
   display: block;
   width: 81.8%;
   float: left;
@@ -12273,25 +12283,25 @@ footer {
   padding-top: 16px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
     width: 81%;
     padding-left: 9px;
     padding-top: 9px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
     padding-top: 10px;
     padding-left: 10px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail {
     padding-top: 13px;
     padding-left: 10px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
   font-size: 18px;
   color: #ababab;
   text-transform: uppercase;
@@ -12299,28 +12309,28 @@ footer {
   line-height: 23px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
     font-size: 16px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
     font-size: 16px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p {
     font-size: 16px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p strong {
   display: block;
   margin-bottom: 1px;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p a {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p a, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p a {
   text-decoration: none;
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p + p strong {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .walkAtm div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .boxSec div.detail p + p strong, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .fullWrap .rgtSec .hoursSec div.detail p + p strong {
   margin-top: 7px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -12388,46 +12398,46 @@ footer {
     position: relative;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
   width: 50%;
   float: left;
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs {
     width: 100%;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
   font-size: 20px;
   color: #ffffff;
   margin-bottom: 23px;
   font-weight: 400;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
     font-size: 16px;
     margin-bottom: 11px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4 {
     font-size: 16px;
     margin-bottom: -1px;
   }
 }
-.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
+.heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
   color: #fff;
   font-size: 20px;
   margin-bottom: -1px;
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
     font-size: 16px;
     margin-bottom: -5.6px;
   }
 }
 @media (max-width: 767px) {
-  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
+  .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p {
     font-size: 16px;
   }
 }
@@ -12471,22 +12481,22 @@ footer {
     display: none;
   }
 }
-.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs {
+.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs {
   width: 50%;
   float: left;
 }
-.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4 {
+.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4 {
   font-size: 20px;
   color: #ffffff;
   margin-bottom: 24px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4 {
+  .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs h4, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs h4 {
     font-size: 16px;
     margin-bottom: 14px;
   }
 }
-.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs p {
+.heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .lobbbyHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .cloneTimeHrs .bgWrap .contentSection .addrSection .timehrsSection .driveHrs p, .heroBlock.locationDetailBlk .bgWrap .contentSection .addrSection .cloneTimeHrs .timehrsSection .driveHrs p {
   color: #fff;
   font-size: 16px;
   margin-bottom: -3px;
@@ -12857,7 +12867,7 @@ footer {
     text-align: center;
   }
 }
-.proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button {
+.proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply {
   margin-top: 68px;
   margin-bottom: 75px;
   font-size: 28px;
@@ -12882,7 +12892,7 @@ footer {
   line-height: initial;
 }
 @media (max-width: 1279px) {
-  .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button {
+  .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply {
     margin-top: 49px;
     margin-bottom: 58px;
     font-weight: 600;
@@ -12893,7 +12903,7 @@ footer {
   }
 }
 @media (max-width: 1023px) {
-  .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button {
+  .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply {
     margin: 30px 0px 38px 20px;
     border-radius: 11px;
     max-width: 156px;
@@ -12902,7 +12912,7 @@ footer {
   }
 }
 @media (max-width: 767px) {
-  .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button {
+  .proDetail .heroBlock .bgWrap .btnWrap .btnManasq, .proDetail .heroBlock.clickSwitch .bgWrap .btnWrap .detailSection p button, .proDetail .heroBlock.clickSwitch .bgWrap .detailSection p .btnWrap button, .proDetail .heroBlock .bluePanel .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .btnWrap .bluePanelInner .carblk .btn-carApply, .proDetail .heroBlock .bluePanel .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply, .bluePanel .proDetail .heroBlock .bgWrap .bluePanelInner .carblk .btnWrap .btn-carApply {
     margin: 25px auto 18px auto;
     max-width: 156px;
     height: 35px;
@@ -13203,8 +13213,8 @@ footer {
   font-size: 24px;
   color: #1268e5;
   cursor: pointer;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
 }
 @media (max-width: 1279px) {
   .socialMedia .heroBlock .bgWrap ul li {
@@ -13454,7 +13464,6 @@ table {
 table thead th {
   text-align: center !important;
 }
-
 table.checking tbody tr td:nth-child(2) {
   display: table-cell !important;
 }
@@ -13740,7 +13749,6 @@ table.checking tbody tr td:nth-child(1):hover a {
     text-align: center;
   }
 }
-
 @media (min-width: 320px) and (max-width: 1023px) {
   .tableClass .bgWrap table.responsive_table tr:nth-child(1) td:nth-child(1), .greyPanel.rates .bgWrap table.responsive_table tr:nth-child(1) td:nth-child(1) {
     display: none;
@@ -13913,7 +13921,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
 }
 .categorySection .bgWrap .flexWrap .imgSection:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -12px;
   left: 0;
@@ -13986,14 +13994,14 @@ table.checking tbody tr td:nth-child(1):hover a {
 @media (min-width: 1024px) and (max-width: 1279px) {
   .categorySection .bgWrap .flexWrap .contentSection h2 {
     font-size: 24px;
-    margin-left: -0px;
+    margin-left: 0px;
     margin-bottom: -2px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .categorySection .bgWrap .flexWrap .contentSection h2 {
     font-size: 24px;
-    margin-left: -0px;
+    margin-left: 0px;
     margin-bottom: 1px;
   }
 }
@@ -14112,8 +14120,8 @@ table.checking tbody tr td:nth-child(1):hover a {
   display: block;
   width: 100%;
   margin-right: 20px;
-          /*margin-top: 26px;
-					margin-bottom: 20px;*/
+  /*margin-top: 26px;
+  margin-bottom: 20px;*/
 }
 @media (min-width: 1280px) {
   .categorySection .bgWrap .flexWrap .contentSection .icon-section {
@@ -14365,7 +14373,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   position: relative;
 }
 .categorySection .bgWrap .flexWrap .contentSection a.learnBtn span::after {
-  content: '';
+  content: "";
   display: inline-block;
   background: url("../images/careers/down-arrow.png") no-repeat;
   background-size: cover;
@@ -14558,7 +14566,7 @@ table.checking tbody tr td:nth-child(1):hover a {
           align-items: center;
 }
 .categorySection .bgWrap.colbgWrap .catCollapse .catLearn a::after {
-  content: '';
+  content: "";
   background: url("../images/category-detail/learn-arrow2.png");
   background-size: cover;
   width: 10px;
@@ -14793,7 +14801,7 @@ table.checking tbody tr td:nth-child(1):hover a {
 }
 .persLending .flexWrapper .flexImage:after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: -18px;
   left: 0;
   width: 180px;
@@ -14934,7 +14942,7 @@ table.checking tbody tr td:nth-child(1):hover a {
     height: 228px;
   }
 }
-.persLending .profDisplayWrap .profDisplay .consult-btn .btnManasq, .persLending .profDisplayWrap .profDisplay .consult-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .persLending .profDisplayWrap .profDisplay .consult-btn .btn-carApply, .persLending .profDisplayWrap .profDisplay .consult-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .persLending .profDisplayWrap .profDisplay .consult-btn button {
+.persLending .profDisplayWrap .profDisplay .consult-btn .btnManasq, .persLending .profDisplayWrap .profDisplay .consult-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .persLending .profDisplayWrap .profDisplay .consult-btn button, .persLending .profDisplayWrap .profDisplay .consult-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .persLending .profDisplayWrap .profDisplay .consult-btn .btn-carApply {
   text-transform: uppercase;
   color: #fff;
   background: #1c3d6d;
@@ -14945,7 +14953,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   margin-bottom: 12px;
 }
 @media (max-width: 1279px) {
-  .persLending .profDisplayWrap .profDisplay .consult-btn .btnManasq, .persLending .profDisplayWrap .profDisplay .consult-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .persLending .profDisplayWrap .profDisplay .consult-btn .btn-carApply, .persLending .profDisplayWrap .profDisplay .consult-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .persLending .profDisplayWrap .profDisplay .consult-btn button {
+  .persLending .profDisplayWrap .profDisplay .consult-btn .btnManasq, .persLending .profDisplayWrap .profDisplay .consult-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .persLending .profDisplayWrap .profDisplay .consult-btn button, .persLending .profDisplayWrap .profDisplay .consult-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .persLending .profDisplayWrap .profDisplay .consult-btn .btn-carApply {
     font-size: 15px;
     padding: 16px 20px;
   }
@@ -15441,7 +15449,7 @@ table.checking tbody tr td:nth-child(1):hover a {
 }
 .catLanding .heroFlex .flexLinkWrap .flexLinks .flexImage:after {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   bottom: 0;
   left: 0;
@@ -15589,14 +15597,14 @@ table.checking tbody tr td:nth-child(1):hover a {
     max-width: 20px;
   }
 }
-.catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button {
+.catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
   margin-top: 52px;
   min-width: 245px;
   padding: 19px 20px;
   font-size: 27px;
 }
 @media (max-width: 1279px) {
-  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button {
+  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
     font-size: 17px;
     padding: 10px 17px;
     min-width: 157px;
@@ -15604,7 +15612,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
 }
 @media (max-width: 1023px) {
-  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button {
+  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
     font-size: 17px;
     margin-top: 19px;
     padding: 11px 22px 9px;
@@ -15612,7 +15620,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   }
 }
 @media (max-width: 767px) {
-  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button {
+  .catLanding .realAlerts .bgWrap .btnManasq, .catLanding .realAlerts .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .catLanding .realAlerts .bgWrap .detailSection p button, .catLanding .realAlerts .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .catLanding .realAlerts .bgWrap .bluePanelInner .carblk .btn-carApply {
     min-width: 118px;
     font-size: 13px;
     padding: 6px 17px;
@@ -16444,7 +16452,6 @@ table.checking tbody tr td:nth-child(1):hover a {
     margin-top: 16px;
   }
 }
-
 .timelinePage header {
   margin-bottom: 49px;
 }
@@ -16455,7 +16462,6 @@ table.checking tbody tr td:nth-child(1):hover a {
 .historyBlock h1 {
   font-size: 45px;
 }
-
 .timelineWrapper {
   margin-top: 30px;
 }
@@ -16534,7 +16540,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   position: relative;
 }
 .decade-wrapper ul li::after {
-  content: '';
+  content: "";
   background: #3d3d3d;
   width: 1px;
   height: 30px;
@@ -16667,7 +16673,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   border-radius: 50%;
 }
 .timeline > li > .timeline-badge a::after {
-  content: '';
+  content: "";
   background: #3a3a3a;
   width: 121px;
   height: 3px;
@@ -16977,7 +16983,7 @@ table.checking tbody tr td:nth-child(1):hover a {
     padding: 20px 0 0;
   }
   .timeline > li > li.timeline-inverted,
-  .timeline .timeline > li.timeline-inverted {
+.timeline .timeline > li.timeline-inverted {
     margin-bottom: 60px;
   }
   .timeline.invert-order.active {
@@ -17097,8 +17103,8 @@ table.checking tbody tr td:nth-child(1):hover a {
     right: auto;
   }
   .timeline li.timeline-inverted {
-    	/*float: right;
-      clear: right;*/
+    /*float: right;
+     clear: right;*/
     margin-bottom: 30px;
   }
   .timeline li.timeline-inverted .timeline-panel {
@@ -17240,10 +17246,10 @@ table.checking tbody tr td:nth-child(1):hover a {
     border-radius: 0px;
   }
   .timelineWrapper .ui-selectmenu-button-closed .ui-selectmenu-icon,
-  .timelineWrapper .ui-state-hover .ui-icon,
-  .timelineWrapper .ui-state-focus .ui-icon,
-  .timelineWrapper .ui-button:hover .ui-icon,
-  .timelineWrapper .ui-button:focus .ui-icon {
+.timelineWrapper .ui-state-hover .ui-icon,
+.timelineWrapper .ui-state-focus .ui-icon,
+.timelineWrapper .ui-button:hover .ui-icon,
+.timelineWrapper .ui-button:focus .ui-icon {
     background-image: url("../images/history/formdropdown_arrow.png") !important;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17260,7 +17266,6 @@ table.checking tbody tr td:nth-child(1):hover a {
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
   }
-
   .decade-wrapper {
     top: 0px;
     padding: 15px 0px;
@@ -17395,7 +17400,6 @@ table.checking tbody tr td:nth-child(1):hover a {
     display: block;
     padding-bottom: 0;
   }
-
   .timeline-heading img {
     width: 100%;
   }
@@ -17535,7 +17539,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   50% {
     -webkit-transform: scale(1.6);
             transform: scale(1.6);
-    opacity: .7;
+    opacity: 0.7;
   }
   60% {
     -webkit-transform: scale(0.6);
@@ -17561,7 +17565,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   50% {
     -webkit-transform: scale(1.6);
             transform: scale(1.6);
-    opacity: .7;
+    opacity: 0.7;
   }
   60% {
     -webkit-transform: scale(0.6);
@@ -17786,7 +17790,7 @@ table.checking tbody tr td:nth-child(1):hover a {
   padding: 0px;
 }
 @media (max-width: 767px) {
-  .re-order .greyPanel .bgWrap .btnManasq, .re-order .greyPanel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .re-order .greyPanel .bgWrap .bluePanelInner .carblk .btn-carApply, .re-order .greyPanel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .re-order .greyPanel .bgWrap .detailSection p button {
+  .re-order .greyPanel .bgWrap .btnManasq, .re-order .greyPanel .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .re-order .greyPanel .bgWrap .detailSection p button, .re-order .greyPanel .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .re-order .greyPanel .bgWrap .bluePanelInner .carblk .btn-carApply {
     margin-top: 0px;
   }
 }
@@ -17968,11 +17972,11 @@ table.checking tbody tr td:nth-child(1):hover a {
 .re-order .mob-flex {
   text-align: center;
 }
-.re-order .mob-flex .btnManasq, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply, .re-order .mob-flex .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .re-order .mob-flex button {
+.re-order .mob-flex .btnManasq, .re-order .mob-flex .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .re-order .mob-flex button, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply {
   margin-right: 0px;
 }
 @media (max-width: 767px) {
-  .re-order .mob-flex .btnManasq, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply, .re-order .mob-flex .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .re-order .mob-flex button {
+  .re-order .mob-flex .btnManasq, .re-order .mob-flex .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .re-order .mob-flex button, .re-order .mob-flex .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .re-order .mob-flex .btn-carApply {
     margin: 0 auto;
   }
 }
@@ -18046,35 +18050,35 @@ table.checking tbody tr td:nth-child(1):hover a {
   line-height: 21px;
   padding-top: 18px;
   padding-bottom: 18px;
-    					/*&:nth-of-type(1){
-			 				    width: 16.5%;
-			 				}
-			 			&:nth-of-type(2){
-			 				    width: 20.4%;
-							    padding-right: 41px;
-							     @include bp(tablandscape) {
-							     	width: 20.5%;
-								    padding-right: 20px;
-
-							     }
-			 			}
-			 			&:nth-of-type(3){
-			 				        width: 24%;
-								    padding-right: 15px;
-								    
-			 			}
-			 			&:nth-of-type(4){
-			 				            width: 17%;
-									    padding-right: 20px;
-									   @include bp(tablandscape) {
-									   	width: 16.5%;
-									   }
-			 			}
-			 			&:nth-of-type(5){
-			 				            width: 20%;
-									    padding-right: 20px;
-									    
-			 			}*/
+  /*&:nth-of-type(1){
+  			 				    width: 16.5%;
+  			 				}
+  			 			&:nth-of-type(2){
+  			 				    width: 20.4%;
+  							    padding-right: 41px;
+  							     @include bp(tablandscape) {
+  							     	width: 20.5%;
+  								    padding-right: 20px;
+  
+  							     }
+  			 			}
+  			 			&:nth-of-type(3){
+  			 				        width: 24%;
+  								    padding-right: 15px;
+  								    
+  			 			}
+  			 			&:nth-of-type(4){
+  			 				            width: 17%;
+  									    padding-right: 20px;
+  									   @include bp(tablandscape) {
+  									   	width: 16.5%;
+  									   }
+  			 			}
+  			 			&:nth-of-type(5){
+  			 				            width: 20%;
+  									    padding-right: 20px;
+  									    
+  			 			}*/
 }
 .greyPanel.rates .bgWrap table thead tr th:last-child {
   width: 20%;
@@ -18289,20 +18293,20 @@ table.checking tbody tr td:nth-child(1):hover a {
     text-align: center;
   }
 }
-.greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button {
+.greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
   font-size: 18px;
   color: #fff;
   padding: 17px 50px;
   font-weight: 700;
 }
 @media (max-width: 1023px) {
-  .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button {
+  .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
     font-size: 15px;
     padding: 11px 36px;
   }
 }
 @media (max-width: 767px) {
-  .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button {
+  .greyPanel.lft-img .rates-btn .btnManasq, .greyPanel.lft-img .rates-btn .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .greyPanel.lft-img .rates-btn button, .greyPanel.lft-img .rates-btn .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .greyPanel.lft-img .rates-btn .btn-carApply {
     font-size: 14px;
   }
 }
@@ -18512,10 +18516,10 @@ section.sitemap-section .sitemap-section-box .full-width .hvr-underline-from-cen
   bottom: 0;
   background: #2098D1;
   height: 1px;
-  -webkit-transition-property: left,right;
-  transition-property: left,right;
-  -webkit-transition-duration: .3s;
-  transition-duration: .3s;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
