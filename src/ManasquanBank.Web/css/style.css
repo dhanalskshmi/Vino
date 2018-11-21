@@ -14469,7 +14469,7 @@ table.checking tbody tr td:nth-child(1):hover a {
 .categorySection .bgWrap.colbgWrap .catCollapse .catLearn a {
   text-transform: uppercase;
   font-size: 16px;
-  color: #1b3d6e;
+  color: #3D3D3D;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -14481,7 +14481,7 @@ table.checking tbody tr td:nth-child(1):hover a {
           align-items: center;
 }
 .categorySection .bgWrap.colbgWrap .catCollapse .catLearn a:hover {
-  color: #1268e5;
+  color: #1167E5;
 }
 .categorySection .bgWrap.colbgWrap .catCollapse .catLearn a img {
   width: 10px;
