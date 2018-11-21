@@ -6034,12 +6034,12 @@ footer {
     font-size: 113px;
     margin-top: 63px;
     text-align: left;
-    letter-spacing: -8px;
+    letter-spacing: 0;
   }
   .bankingServices ul li.mortage h3 strong span {
     font-size: 64px;
-    margin-top: -23px;
-    margin-left: -10px;
+    margin-top: -36px;
+    margin-left: -18px;
   }
   .bankingServices ul li.kasasa {
     overflow: visible;
