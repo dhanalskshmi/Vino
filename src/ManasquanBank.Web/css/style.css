@@ -14480,10 +14480,23 @@ table.checking tbody tr td:nth-child(1):hover a {
       -ms-flex-align: center;
           align-items: center;
 }
+.categorySection .bgWrap.colbgWrap .catCollapse .catLearn a::after {
+  content: '';
+  background: url("../images/category-detail/learn-arrow2.png");
+  background-size: cover;
+  width: 10px;
+  height: 16px;
+  margin-left: 6px;
+}
 .categorySection .bgWrap.colbgWrap .catCollapse .catLearn a:hover {
   color: #1167E5;
 }
+.categorySection .bgWrap.colbgWrap .catCollapse .catLearn a:hover::after {
+  background: url("../images/category-detail/learn-arrow-blue2.png");
+  background-size: cover;
+}
 .categorySection .bgWrap.colbgWrap .catCollapse .catLearn a img {
+  display: none;
   width: 10px;
   margin-left: 6px;
   height: 16px;

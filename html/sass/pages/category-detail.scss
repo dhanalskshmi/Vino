@@ -1063,12 +1063,24 @@ table {
             font-weight: bold;
             display: flex;
             align-items: center;
-
+            &::after {
+              content: '';
+              background: url('../images/category-detail/learn-arrow2.png');
+              background-size: cover;
+              width: 10px;
+              height: 16px;
+              margin-left: 6px;
+            }
             &:hover {
               color: #1167E5;
+              &::after {
+                background: url('../images/category-detail/learn-arrow-blue2.png');
+                background-size: cover;
+              }
             }
 
             img {
+              display: none;
               width: 10px;
               margin-left: 6px;
               height: 16px;
