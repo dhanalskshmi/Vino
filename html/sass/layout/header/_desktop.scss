@@ -2051,12 +2051,15 @@ header {
 }
 /* Quick Links Update - In progress*/
 .openAccount {
-	right: -200px;
+	right: 0;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	transform: none;
 	transition: 0.3s all;
+	&.active {
+		right: -200px
+	}
 	@include bp(mobile) {
 		display: none;
 	}
@@ -2066,7 +2069,8 @@ header {
 		background: #fff;
 		z-index: 10;
 		box-shadow: 0 0 18px -6px rgba(0,0,0,0.58);
-
+		position: absolute;
+		right: -200px;
 		li {
 			font-size: 24px;
 			text-align: center;

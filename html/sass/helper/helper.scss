@@ -645,9 +645,7 @@ p {
   position: fixed;
   top: 30%;
   right: 0;
-  &.active {
-    z-index: 999;
-  }
+  z-index: 999;
   transform: perspective(1px) rotate(-90deg) translate3d( 0, 0, 0);
   transform-origin: right;
   a {
