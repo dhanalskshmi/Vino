@@ -49,10 +49,13 @@ namespace ManasquanBank.Web.Models
 
         public string cntComments { get; set; }
 
+        public string employeeEmail { get; set; }
+
 
         public int AdminEmail { get; set; }
 
         public int ConfirmationEmail { get; set; }
+
     }
     public class departmentslist
     {

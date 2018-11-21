@@ -322,7 +322,7 @@
                                             {
                                                 if (deptName.departmentName == Request.QueryString["department"])
                                                 {
-                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName" selected="selected">@deptName.departmentName</option>
+                                                    <option data-rel="@deptName.departmentName" value="@deptName.departmentName" selected>@deptName.departmentName</option>
                                                 }
                                                 else
                                                 {
@@ -340,7 +340,7 @@
                                             {
                                                 if (emplist.employeeName == Request.QueryString["employee"])
                                                 {
-                                                    <option data-email="@emplist.employeeEmail" data-rel="@emplist.departmentName" value="@emplist.employeeName" selected="selected">@emplist.employeeName</option>
+                                                    <option data-email="@emplist.employeeEmail" data-rel="@emplist.departmentName" value="@emplist.employeeName" selected>@emplist.employeeName</option>
                                                     
                                                 }
                                                 else
@@ -424,9 +424,9 @@
 
                             <div class="row mob-flex">
 
-                                <button class="btnManasq"><span>SUBMIT</span></button>
-                                @*<input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
-                                    <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />*@
+                                <button class="btnManasq" onclick="fnvalue()"><span>SUBMIT</span></button>
+                                <input type="hidden" id="AdminEmail" name="AdminEmail" value="@businessAdminEmail" />
+                                    <input type="hidden" id="ConfirmationEmail" name="ConfirmationEmail" value="@businessConfirmationEmail" />
                             </div>
                                             <div class="captchaBlock">
                                                 <div id="capt_contact" class="g-recaptcha" data-sitekey="@publicKey" data-callback="onSubmit" data-size="invisible"></div>
@@ -444,9 +444,12 @@
 </div>
 @section InnerBottomScript {
     <script>
+
         $(document).ready(function () {
             $("#department").find("option[value='']").remove();
-
+            //alert($("#employee").val());
+            var url = window.location.search;
+            
             var sel = $("#department").val();
             var emp = $("#employee").val();
             if (sel == '') {
@@ -461,20 +464,27 @@
                 $("#department").selectmenu("destroy");
             }
 
-           
+
             $("#employee").find("option").attr("disabled", true);
             $("#employee").find("option[data-rel='" + sel + "']").attr("disabled", false);
-            var i = 0;
-            $("#employee").find("option").each(function () {
-                if (i == 0 && $(this).prop("disabled") == false) {
-                    $(this).prop("selected", "selected");
-                    i++;
-                }
-            });
+           
+            if (window.location.href.indexOf('employee=') == -1)
+            {
+
+                var i = 0;
+                $("#employee").find("option").each(function () {
+                    if (i == 0 && $(this).prop("disabled") == false) {
+                        $(this).prop("selected", "selected");
+                        i++;
+                    }
+                });
+            }
+            
+           
 
             $("#department").selectmenu();
             $("#employee").selectmenu();
-
+            
             var empEmail = $("#employee").find("option:selected").attr('data-email');
             $("#employeeEmail").val(empEmail);
 
@@ -497,6 +507,7 @@
                 $("#employee").selectmenu();
                 var empEmail = $("#employee").find("option:selected").attr('data-email');
                 $("#employeeEmail").val(empEmail);
+                
                 $("#employee").on('selectmenuchange', function () {
                     var empEmail = $("#employee").find("option:selected").attr('data-email');
                     $("#employeeEmail").val(empEmail);
@@ -506,6 +517,7 @@
             $("#employee").on('selectmenuchange', function () {
                 var empEmail = $("#employee").find("option:selected").attr('data-email');
                 $("#employeeEmail").val(empEmail);
+                
             });
 
             $("#state").selectmenu("destroy");
