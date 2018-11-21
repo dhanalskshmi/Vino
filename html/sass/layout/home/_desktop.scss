@@ -290,6 +290,20 @@ $dbannerhgt: 667px;
     min-height: 228px;
     margin-bottom: 26px;
     position: relative;
+    .link {
+      display: block;
+      min-height: 100%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 999;
+      font-size: 0;
+      color: transparent;
+    }
     .imgBlock {
       display: block;
       background-repeat: no-repeat;
@@ -309,20 +323,7 @@ $dbannerhgt: 667px;
         width: 100%;
         height: 100%;
       }
-      a {
-        display: block;
-        min-height: 100%;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        z-index: 9;
-        font-size: 0;
-        color: transparent;
-      }
+
     }
     .serviceContent {
       position: absolute;
@@ -453,13 +454,14 @@ $dbannerhgt: 667px;
 
 // Blue bluePannel
 .bluePannel {
-  background: #1b3d6e;
+  //background: #1b3d6e;
   padding: 40px 18px;
   //margin-bottom: 41px;
   .wraps {
     padding: 12px 19px 0;
   }
   .detailsWrap {
+    background: #1b3d6e;
     color: #FFF;
     padding-bottom: 14px;
     border: 1px solid #FFF;
@@ -1395,7 +1397,7 @@ $dbannerhgt: 667px;
     padding: 0;
     margin-bottom: 31px;
     .bgWrap {
-      background: #1b3d6e;
+      //background: #1b3d6e;
       padding: 27px 24px;
       display: flex;
       flex-wrap: wrap;
@@ -2410,9 +2412,9 @@ $dbannerhgt: 667px;
     margin-bottom: 112px;
     ul {
       li {
-        max-width: 328px;
-        min-height: 338px;
-        max-height: 338px;
+        max-width: 340px;
+        min-height: 326px;
+        max-height: 332px;
         overflow: hidden;
         .imgBlock {
           min-height: 338px;
@@ -2449,9 +2451,9 @@ $dbannerhgt: 667px;
         }
         &.personalBank,
         &.didgitalCenter {
-          max-width: 584px;
-          min-height: 354px;
-          max-height: 354px;
+          max-width: 560px;
+          min-height: 351px;
+          max-height: 351px;
           .imgBlock {
             min-height: 354px;
           }
@@ -2475,6 +2477,7 @@ $dbannerhgt: 667px;
           }
         }
         &.mortage {
+          min-height: 334px;
           .serviceContent {
             padding: 15px 0 0 27px;
           }
@@ -2503,6 +2506,9 @@ $dbannerhgt: 667px;
         &.kasasa {
           overflow: visible;
           border-top: none;
+          clear: left;
+          margin-top: -3px;
+          min-height: 332px;
           .serviceContent {
             bottom: 0;
             .detailBlock {
@@ -2525,6 +2531,8 @@ $dbannerhgt: 667px;
           }
         }
         &.clentService {
+          margin-top: -1px;
+          max-height: 330px;
           .serviceContent {
             .title {
               padding-left: 46px;
@@ -2844,7 +2852,27 @@ $dbannerhgt: 667px;
     max-width: 1280px;
     ul {
       li {
-        max-width: 348px;
+        max-width: 359px;
+      }
+    }
+  }
+  .bankingServices {
+    ul {
+      li {
+        &.kasasa {
+          figure {
+            left: -25px;
+          }
+          .serviceContent {
+            .detailBlock {
+              padding-top: 21px;
+              margin-right: 33px;
+              h3 {
+                font-size: 34px;
+              }
+            }
+          }
+        }
       }
     }
   }
