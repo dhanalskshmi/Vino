@@ -67,10 +67,12 @@ $dbannerhgt: 667px;
       }
       strong {
         font-weight: 400;
+        display: block;
         //display: inline-block;
         span {
           //display: block;
           &:nth-child(1) {
+            font-weight: 700;
             font-size: 32px;
             //letter-spacing: 1.8px;
           }
@@ -358,6 +360,28 @@ $dbannerhgt: 667px;
       color: #FFF;
       strong {
         font-weight: 700;
+      }
+    }
+    &.personalBank {
+      h2 {
+        strong {
+          letter-spacing: 5px;
+        }
+      }
+    }
+    &.bunisessBank {
+      h2 {
+        strong {
+          letter-spacing: 3px;
+        }
+      }
+    }
+    &.clentService {
+      h2 {
+        letter-spacing: 7px;
+        strong {
+          letter-spacing: 0px;
+        }
       }
     }
     &.didgitalCenter,
@@ -1216,7 +1240,7 @@ $dbannerhgt: 667px;
       h1 {
         font-size: 26px;
         line-height: 33px;
-        max-width: 466px;
+        //max-width: 466px;
         span {
           &:nth-child(1) {
             //letter-spacing: 1.5px;
@@ -1226,14 +1250,15 @@ $dbannerhgt: 667px;
           }
         }
         strong {
+          margin-left: 55px;
           span {
             &:nth-child(1) {
               font-size: 40px;
               //letter-spacing: 2.7px;
             }
             &:nth-child(2) {
-              display: block;
-              text-align: right;
+              //display: block;
+              //text-align: right;
               //letter-spacing: 1.9px;
             }
             &:nth-child(3) {
@@ -1265,7 +1290,7 @@ $dbannerhgt: 667px;
         margin-bottom: 0;
         border: 1px solid #FFF;
         h2 {
-          font-size: 20px;
+          font-size: 22px;
           line-height: 19px;
         }
         .imgBlock {
@@ -1280,6 +1305,28 @@ $dbannerhgt: 667px;
         }
         &.bunisessBank {
           border-right: none;
+          h2 {
+            strong {
+              letter-spacing: 2px;
+            }
+          }
+        }
+        &.didgitalCenter {
+          border-right: none;
+          h2 {
+            letter-spacing: 1px;
+            strong {
+              letter-spacing: 1px;
+            }
+          }
+        }
+        &.personalBank {
+          border-right: none;
+          h2 {
+            strong {
+              letter-spacing: 3px;
+            }
+          }
         }
         &.mortage {
           border-left: none;
@@ -1298,6 +1345,12 @@ $dbannerhgt: 667px;
           }
         }
         &.clentService {
+          h2 {
+            letter-spacing: 5px;
+            strong {
+              letter-spacing: 0px;
+            }
+          }
           .serviceContent {
             .title {
               float: none;
@@ -1846,7 +1899,7 @@ $dbannerhgt: 667px;
         font-size: 30px;
         line-height: 43px;
         padding-left: 44px;
-        max-width: 597px;
+        //max-width: 597px;
         span {
           &:nth-child(1) {
             //letter-spacing: normal;
@@ -1856,6 +1909,7 @@ $dbannerhgt: 667px;
           }
         }
         strong {
+          margin-left: 47px;
           span {
             &:nth-child(1) {
               font-size: 49px;
@@ -1917,9 +1971,12 @@ $dbannerhgt: 667px;
           min-height: 223px;
         }
         h2 {
-          font-size: 28px;
+          font-size: 30px;
           line-height: 26px;
           padding-bottom: 13px;
+          strong {
+            letter-spacing: 2px;
+          }
         }
         &.bunisessBank,
         &.mortage {
@@ -1993,9 +2050,29 @@ $dbannerhgt: 667px;
           }
         }
         &.clentService {
+          h2 {
+            letter-spacing: 6px;
+            strong {
+              letter-spacing: 0
+            }
+          }
           .serviceContent {
             .title {
               padding-left: 12px;
+            }
+          }
+        }
+        &.personalBank {
+          h2 {
+            strong {
+              letter-spacing: 4px;
+            }
+          }
+        }
+        &.didgitalCenter {
+          h2 {
+            strong {
+              letter-spacing: 0;
             }
           }
         }
@@ -2346,22 +2423,22 @@ $dbannerhgt: 667px;
       min-height: $dbannerhgt;
     }
     .bannerContent {
-      padding-top: 251px;
+      padding-top: 298px;
       h1 {
-        font-size: 39px;
+        font-size: 50px;
         line-height: 66px;
         padding-left: 0;
-        max-width: 712px;
+        //max-width: 712px;
         span {
           &:nth-child(2) {
             //letter-spacing: -3.3px;
           }
         }
         strong {
-          display: inline;
+          margin-left: 107px;
           span {
             &:nth-child(1) {
-              font-size: 63px;
+              font-size: 76px;
               //letter-spacing: 2px;
             }
             &:nth-child(2) {
@@ -2436,16 +2513,20 @@ $dbannerhgt: 667px;
           }
         }
         h2 {
-          font-size: 43px;
+          font-size: 45px;
           line-height: 39px;
           transition: all 0.75s;
+          strong {
+            font-size: 38px;
+            letter-spacing: 7px;
+          }
         }
         &.clentService,
         &.bunisessBank {
           .serviceContent {
             .title {
-              min-width: 205px;
-              max-width: 205px;
+              min-width: 215px;
+              max-width: 215px;
             }
           }
         }
@@ -2459,6 +2540,11 @@ $dbannerhgt: 667px;
           }
         }
         &.personalBank {
+          h2 {
+            strong {
+              letter-spacing: 11px;
+            }
+          }
           .serviceContent {
             .title {
               min-width: 253px;
@@ -2466,8 +2552,20 @@ $dbannerhgt: 667px;
             }
           }
         }
+        &.bunisessBank {
+          h2 {
+            strong {
+              letter-spacing: 8px;
+            }
+          }
+        }
         &.didgitalCenter {
           border-top: none;
+          h2 {
+            strong {
+              letter-spacing: 4px;
+            }
+          }
           .serviceContent {
             bottom: 32px;
             .title {
@@ -2533,6 +2631,12 @@ $dbannerhgt: 667px;
         &.clentService {
           margin-top: -1px;
           max-height: 330px;
+          h2 {
+            letter-spacing: 5px;
+            strong {
+              letter-spacing: 0px;
+            }
+          }
           .serviceContent {
             .title {
               padding-left: 46px;

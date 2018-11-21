@@ -1269,4 +1269,9 @@ table {
       }
     }
   }
+  .ieEdge {
+    .table-responsive {
+      overflow-x: visible;
+    }
+  }
 }
