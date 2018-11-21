@@ -538,12 +538,15 @@
     <Content Include="images\careers\cultureImg1.png" />
     <Content Include="images\careers\down-arrow.png" />
     <Content Include="images\careers\EmpStory.jpg" />
+    <Content Include="images\careers\hover-down-arrow.png" />
     <Content Include="images\category-detail\category1.jpg" />
     <Content Include="images\category-detail\category2.jpg" />
     <Content Include="images\category-detail\category3.jpg" />
     <Content Include="images\category-detail\client-service.png" />
     <Content Include="images\category-detail\learn-arrow-blue.png" />
+    <Content Include="images\category-detail\learn-arrow-blue2.png" />
     <Content Include="images\category-detail\learn-arrow.png" />
+    <Content Include="images\category-detail\learn-arrow2.png" />
     <Content Include="images\category-detail\location-icon.png" />
     <Content Include="images\category-detail\location-icon1.png" />
     <Content Include="images\category-detail\location-icon2.png" />
@@ -562,6 +565,11 @@
     <Content Include="images\category-landing\mobile-wallet.jpg" />
     <Content Include="images\category-landing\payment.png" />
     <Content Include="images\category-landing\samsung-pay.png" />
+    <Content Include="images\charity\charitable-foundation-group.png" />
+    <Content Include="images\charity\charitable-foundation-logo.png" />
+    <Content Include="images\charity\organization-eligibility.png" />
+    <Content Include="images\clickswitch\accordian-arrow.png" />
+    <Content Include="images\clickswitch\clickswitch.png" />
     <Content Include="images\client-service\client-icon1.png" />
     <Content Include="images\client-service\client-icon2.png" />
     <Content Include="images\client-service\client-icon3.png" />
@@ -577,6 +585,7 @@
     <Content Include="images\client-service\service-icon2.png" />
     <Content Include="images\client-service\service-icon3.png" />
     <Content Include="images\client-service\service-icon4.png" />
+    <Content Include="images\digital-expert\scedule.jpg" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\filter-detail\filter-detail.jpg" />
     <Content Include="images\footer\fb.jpg" />
@@ -652,6 +661,7 @@
     <Content Include="images\media-center\arrow-right.png" />
     <Content Include="images\media-center\news1.jpg" />
     <Content Include="images\media-center\news2.jpg" />
+    <Content Include="images\media-center\play_icon.png" />
     <Content Include="images\media-center\realTime.jpg" />
     <Content Include="images\media-center\real_image_bg.png" />
     <Content Include="images\personal-lending\home-icon.png" />
