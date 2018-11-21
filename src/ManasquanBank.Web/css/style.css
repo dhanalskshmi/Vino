@@ -14774,6 +14774,74 @@ table.checking tbody tr td:nth-child(1):hover a {
     overflow-x: visible;
   }
 }
+.categoryBlock.digitalService .heroBg {
+  min-height: auto;
+  padding-bottom: 10px;
+}
+@media (min-width: 1280px) {
+  .categoryBlock.digitalService .heroBg p {
+    margin-bottom: 10px;
+  }
+}
+.categoryBlock.digitalService .service-section {
+  margin: 0;
+}
+.categoryBlock.digitalService .service-section ul {
+  padding: 0;
+  margin: 0;
+}
+.categoryBlock.digitalService .service-section ul li {
+  list-style: none;
+}
+
+.ctaButton {
+  margin-top: 87px;
+}
+@media (max-width: 1279px) {
+  .ctaButton {
+    margin-top: 40px;
+  }
+}
+.ctaButton .bgWrap {
+  background: #f1f1f1;
+}
+@media (max-width: 767px) {
+  .ctaButton .bgWrap {
+    background: transparent;
+  }
+}
+.ctaButton .bgWrap .heroLinks {
+  padding: 40px 0px;
+}
+@media (max-width: 767px) {
+  .ctaButton .bgWrap .heroLinks {
+    padding: 10px 0;
+  }
+}
+.ctaButton .bgWrap .heroLinks li a {
+  margin: 0px 30px;
+}
+@media (max-width: 767px) {
+  .ctaButton .bgWrap .heroLinks li a {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.ctaButton + .categoryApp {
+  margin-top: 100px;
+}
+@media (max-width: 1279px) {
+  .ctaButton + .categoryApp {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1279px) and (max-width: 767px) {
+  .ctaButton + .categoryApp {
+    margin-top: 15px;
+  }
+}
+
 .persLending .greyPanel .bgWrap {
   padding: 0;
 }
