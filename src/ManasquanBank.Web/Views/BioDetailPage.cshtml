@@ -48,7 +48,7 @@
                         }
                         @if (!string.IsNullOrEmpty(employeeTitle))
                         {
-                            <p class="cmpTitle">@Html.Raw(employeeTitle)</p>
+                           @Html.Raw(employeeTitle)
                         }
                         @if (!string.IsNullOrEmpty(address1))
                         {
@@ -62,11 +62,11 @@
                         }
                         @if (!string.IsNullOrEmpty(officeNumber))
                         {
-                            <p class="phoneNo"><img src="/images/bio/phone_icon.png" alt="">Office: <a href="tel:@officeNumber">@officeNumber</a></p>
+                            <p class="phoneNo"><img src="/images/bio/phone_icon.png">Office: <a href="tel:@officeNumber.Replace(" ", "")">@officeNumber</a></p>
                         }
                         @if (!string.IsNullOrEmpty(phoneNumber))
                         {
-                            <p class="phoneNo"><img src="/images/bio/phone_icon.png" alt="">Cell Phone: <a href="tel:@phoneNumber">@phoneNumber</a></p>
+                            <p class="phoneNo"><img src="/images/bio/phone_icon.png">Cell Phone: <a href="tel:@phoneNumber.Replace(" ", "")">@phoneNumber</a></p>
                         }
                         @if (Model.Content.HasValue("cTAButton"))
                         {
@@ -139,7 +139,7 @@
                     }
                     @if (backUrl != null)
                     {
-                        <p><a href="@backUrl.Url" class="back-btn"><img src="/images/bio/back_arrow.png" alt=""> Back</a></p>
+                        <p><a href="@backUrl.Url" class="back-btn"><img src="/images/bio/back_arrow.png" alt="Back Arrow"> Back</a></p>
                     }
                 </div>
                 </div>

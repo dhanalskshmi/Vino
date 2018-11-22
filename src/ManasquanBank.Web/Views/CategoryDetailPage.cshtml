@@ -423,7 +423,7 @@
                                     <div class="icon-section">
                                         @if (!string.IsNullOrEmpty(phoneNo))
                                         {
-                                            <a href="tel:@phoneNo">
+                                            <a href="tel:@phoneNo.Replace(" ", "")">
                                                 <span>
                                                     <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon Desktop View" />
                                                     <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Mobile Phone Icon" />

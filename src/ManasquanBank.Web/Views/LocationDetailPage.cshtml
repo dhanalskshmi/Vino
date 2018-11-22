@@ -166,7 +166,7 @@
 
                                     @if (!string.IsNullOrEmpty(faxNumber))
                                     {
-                                        <p><a href="tel:@faxNumber">@faxNumber</a></p>
+                                        <p><a href="tel:@faxNumber.Replace(" ", "")">@faxNumber</a></p>
                                     }
                                     </div>
 
