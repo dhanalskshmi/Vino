@@ -607,7 +607,7 @@
                     margin-top: 15px;
                 }
                 + p{
-                    b{
+                    b,strong{
                         margin-top: 23px;
                         @include bp(tablet){
                             margin-top: 15px;
@@ -670,7 +670,7 @@
                 }
                 + p{
                     margin-top: 23px;
-                    b{
+                    b,strong{
                         margin-top: 23px;
                     }
                 }

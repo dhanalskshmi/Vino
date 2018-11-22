@@ -9207,11 +9207,11 @@ footer {
     margin-top: 15px;
   }
 }
-.careerGrey .bgWrap .contentBlock ul + p b, .cultureWrap .bgWrap .contentBlock ul + p b {
+.careerGrey .bgWrap .contentBlock ul + p b, .cultureWrap .bgWrap .contentBlock ul + p b, .careerGrey .bgWrap .contentBlock ul + p strong, .cultureWrap .bgWrap .contentBlock ul + p strong {
   margin-top: 23px;
 }
 @media (max-width: 1023px) {
-  .careerGrey .bgWrap .contentBlock ul + p b, .cultureWrap .bgWrap .contentBlock ul + p b {
+  .careerGrey .bgWrap .contentBlock ul + p b, .cultureWrap .bgWrap .contentBlock ul + p b, .careerGrey .bgWrap .contentBlock ul + p strong, .cultureWrap .bgWrap .contentBlock ul + p strong {
     margin-top: 15px;
   }
 }
@@ -9288,7 +9288,7 @@ footer {
 .careerGrey .bgWrap .contentBlock ol + p, .cultureWrap .bgWrap .contentBlock ol + p {
   margin-top: 23px;
 }
-.careerGrey .bgWrap .contentBlock ol + p b, .cultureWrap .bgWrap .contentBlock ol + p b {
+.careerGrey .bgWrap .contentBlock ol + p b, .cultureWrap .bgWrap .contentBlock ol + p b, .careerGrey .bgWrap .contentBlock ol + p strong, .cultureWrap .bgWrap .contentBlock ol + p strong {
   margin-top: 23px;
 }
 .careerGrey .bgWrap p, .cultureWrap .bgWrap p {
