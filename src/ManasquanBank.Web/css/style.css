@@ -8289,8 +8289,8 @@ footer {
   }
 }
 .service-section .bgWrap ul li figure {
-  width: 135px;
-  height: 135px;
+  width: 155px;
+  height: 155px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8321,7 +8321,14 @@ footer {
 }
 @media (max-width: 1279px) {
   .service-section .bgWrap ul li figure img {
-    max-width: 40px;
+    max-width: 75%;
+    max-height: 75%;
+  }
+}
+@media (max-width: 1279px) {
+  .service-section .bgWrap ul li figure img {
+    max-width: 60%;
+    max-height: 60%;
   }
 }
 .service-section .bgWrap ul li span {
@@ -14899,6 +14906,15 @@ table.checking tbody tr td:nth-child(1):hover a {
 .digitalService .service-section {
   margin: 0;
 }
+.digitalService .service-section .bgWrap {
+  min-height: auto;
+  padding: 30px 50px;
+}
+@media (max-width: 1023px) {
+  .digitalService .service-section .bgWrap {
+    padding: 30px 10px;
+  }
+}
 .digitalService .service-section ul {
   padding: 0;
   margin: 0;
@@ -14909,8 +14925,11 @@ table.checking tbody tr td:nth-child(1):hover a {
 @media (min-width: 1280px) {
   .digitalService .service-section ul li {
     width: 22.334%;
-    margin-right: 2.58%;
+    margin-right: 2.98%;
   }
+}
+.digitalService .service-section ul li span {
+  margin-top: 30px;
 }
 .digitalService .service-section .ratesCatg ul li {
   width: 30.334%;
@@ -14937,17 +14956,12 @@ table.checking tbody tr td:nth-child(1):hover a {
 .ctaButton .bgWrap {
   background: #f1f1f1;
 }
-@media (max-width: 767px) {
-  .ctaButton .bgWrap {
-    background: transparent;
-  }
-}
 .ctaButton .bgWrap .heroLinks {
   padding: 40px 0px;
 }
 @media (max-width: 767px) {
   .ctaButton .bgWrap .heroLinks {
-    padding: 10px 0;
+    padding: 30px 0;
   }
 }
 .ctaButton .bgWrap .heroLinks li a {
@@ -14959,6 +14973,9 @@ table.checking tbody tr td:nth-child(1):hover a {
     margin-left: auto;
     margin-right: auto;
   }
+}
+.ctaButton .bgWrap .heroLinks li:last-child a {
+  margin-bottom: 0;
 }
 .ctaButton + .categoryApp {
   margin-top: 100px;
