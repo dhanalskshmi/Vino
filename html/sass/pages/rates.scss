@@ -438,4 +438,10 @@
 	}
 }
 
+#lendingrates{
+	margin-bottom: 80px;
+	@include bp(landscape){
+		margin-bottom: 50px;
+	}
+}
 

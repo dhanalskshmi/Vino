@@ -1363,6 +1363,12 @@ table {
       }
     }
   }
+  &.ratesCta{
+    margin-bottom: 100px;
+    @include bp(landscape){
+      margin-bottom: 50px;
+    }
+  }
 }
 .justify-flex-center{
   justify-content: center;

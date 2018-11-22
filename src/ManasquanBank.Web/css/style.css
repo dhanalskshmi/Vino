@@ -14990,6 +14990,14 @@ table.checking tbody tr td:nth-child(1):hover a {
     margin-top: 15px;
   }
 }
+.ctaButton.ratesCta {
+  margin-bottom: 100px;
+}
+@media (max-width: 1279px) {
+  .ctaButton.ratesCta {
+    margin-bottom: 50px;
+  }
+}
 
 .justify-flex-center {
   -webkit-box-pack: center;
@@ -18706,6 +18714,15 @@ table.checking tbody tr td:nth-child(1):hover a {
 @media (max-width: 1279px) {
   .greyPanel.lft-img .flexContent ul li {
     font-size: 18px;
+  }
+}
+
+#lendingrates {
+  margin-bottom: 80px;
+}
+@media (max-width: 1279px) {
+  #lendingrates {
+    margin-bottom: 50px;
   }
 }
 
