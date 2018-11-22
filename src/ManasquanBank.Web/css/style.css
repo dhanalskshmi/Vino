@@ -4081,6 +4081,7 @@ footer {
   padding-right: 16px;
   position: relative;
   z-index: 99;
+  text-align: right;
 }
 .bankingServices li.kasasa .serviceContent h3 {
   font-size: 20px;
@@ -4088,8 +4089,15 @@ footer {
   line-height: 20px;
   text-transform: uppercase;
 }
+.bankingServices li.kasasa .serviceContent h3 span {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.bankingServices li.kasasa .serviceContent h3 span b {
+  font-size: 27px;
+}
 .bankingServices li.kasasa .serviceContent h3 strong {
-  font-size: inherit;
+  font-size: 23px;
 }
 .bankingServices li.kasasa .serviceContent .btnManasq, .bankingServices li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices li.kasasa .serviceContent button, .bankingServices li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices li.kasasa .serviceContent .btn-carApply {
   font-size: 12px;
@@ -4988,6 +4996,7 @@ footer {
     line-height: 20px;
   }
   .bankingServices ul li.mortage h3 strong {
+    font-weight: 700;
     font-size: 40px;
     padding-left: 0;
     margin-top: 17px;
@@ -4996,7 +5005,7 @@ footer {
     width: 100%;
   }
   .bankingServices ul li.mortage h3 strong span {
-    font-size: 30px;
+    font-size: 26px;
     margin-top: -9px;
     margin-left: -9px;
   }
@@ -5004,18 +5013,22 @@ footer {
     min-height: 154px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
-    width: 112px;
+    width: 132px;
     padding-right: 5px;
     padding-top: 13px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 15px;
     margin-bottom: 6px;
   }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span b {
+    font-size: 16px;
+  }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
     font-weight: 700;
+    font-size: 15px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 sup {
     top: 0;
@@ -5546,13 +5559,19 @@ footer {
     border-right: none;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
-    width: 150px;
+    width: 220px;
     padding-top: 19px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
     font-size: 25px;
     margin-bottom: 5px;
-    line-height: 20px;
+    line-height: 23px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span b {
+    font-size: 28px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
+    font-size: 25px;
   }
   .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply {
     font-size: 10px;
@@ -6004,15 +6023,15 @@ footer {
     font-weight: 400;
   }
   .bankingServices ul li.mortage h3 strong {
-    font-size: 126px;
+    font-size: 113px;
     margin-top: 63px;
     text-align: left;
-    letter-spacing: -8px;
+    letter-spacing: 0;
   }
   .bankingServices ul li.mortage h3 strong span {
-    font-size: 66px;
-    margin-top: -23px;
-    margin-left: -10px;
+    font-size: 64px;
+    margin-top: -36px;
+    margin-left: -18px;
   }
   .bankingServices ul li.kasasa {
     overflow: visible;
@@ -6025,17 +6044,31 @@ footer {
     bottom: 0;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock {
-    width: 202px;
+    width: 296px;
     padding-top: 20px;
+    margin-right: 25px;
   }
   .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
-    font-size: 29px;
-    margin-bottom: 17px;
+    font-size: 30px;
+    margin-bottom: 20px;
     line-height: 29px;
   }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span {
+    margin-bottom: 12px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 span b {
+    font-size: 50px;
+    display: inline-block;
+    margin-top: 6px;
+  }
+  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 strong {
+    font-size: 42px;
+    line-height: 36px;
+  }
   .bankingServices ul li.kasasa .serviceContent .btnManasq, .bankingServices ul li.kasasa .serviceContent .heroBlock.clickSwitch .bgWrap .detailSection p button, .heroBlock.clickSwitch .bgWrap .detailSection p .bankingServices ul li.kasasa .serviceContent button, .bankingServices ul li.kasasa .serviceContent .bluePanel .bgWrap .bluePanelInner .carblk .btn-carApply, .bluePanel .bgWrap .bluePanelInner .carblk .bankingServices ul li.kasasa .serviceContent .btn-carApply {
-    font-size: 13px;
-    padding: 10px 27px;
+    font-size: 15px;
+    padding: 8px 24px;
+    border-width: 2px;
   }
   .bankingServices ul li.kasasa figure {
     width: 182px;
@@ -6345,10 +6378,6 @@ footer {
     padding-top: 21px;
     margin-right: 33px;
   }
-  .bankingServices ul li.kasasa .serviceContent .detailBlock h3 {
-    font-size: 34px;
-  }
-
   .joinEmail form div {
     width: 416px;
   }
@@ -9136,8 +9165,10 @@ footer {
 }
 .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
   display: block;
-  margin-top: 46px;
-  margin-bottom: 27px;
+  margin-top: 35px;
+  margin-bottom: 18px;
+  font-size: 24px;
+  line-height: initial;
 }
 @media (max-width: 1279px) {
   .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
@@ -9147,13 +9178,19 @@ footer {
 }
 @media (max-width: 1023px) {
   .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
-    margin-top: 19px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 15px;
   }
 }
 @media (max-width: 767px) {
   .careerGrey .bgWrap .contentBlock p b, .cultureWrap .bgWrap .contentBlock p b, .careerGrey .bgWrap .contentBlock p strong, .cultureWrap .bgWrap .contentBlock p strong {
     margin-top: 30px;
   }
+}
+.careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
+  width: 100%;
+  padding-left: 27px;
 }
 @media (max-width: 1279px) {
   .careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
@@ -9162,16 +9199,97 @@ footer {
 }
 @media (max-width: 1023px) {
   .careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
-    margin-top: 31px;
+    margin-top: 15px;
   }
 }
 @media (max-width: 767px) {
   .careerGrey .bgWrap .contentBlock ul, .cultureWrap .bgWrap .contentBlock ul {
-    margin-top: 27px;
+    margin-top: 15px;
   }
 }
-.careerGrey .bgWrap .contentBlock ul + p, .cultureWrap .bgWrap .contentBlock ul + p {
-  margin-top: 20px;
+.careerGrey .bgWrap .contentBlock ul + p b, .cultureWrap .bgWrap .contentBlock ul + p b {
+  margin-top: 23px;
+}
+@media (max-width: 1023px) {
+  .careerGrey .bgWrap .contentBlock ul + p b, .cultureWrap .bgWrap .contentBlock ul + p b {
+    margin-top: 15px;
+  }
+}
+.careerGrey .bgWrap .contentBlock ul li, .cultureWrap .bgWrap .contentBlock ul li {
+  font-size: 20px;
+  position: relative;
+  color: #3d3d3d;
+  width: 100%;
+  margin-bottom: 7px;
+}
+@media (max-width: 1023px) {
+  .careerGrey .bgWrap .contentBlock ul li, .cultureWrap .bgWrap .contentBlock ul li {
+    font-size: 18px;
+  }
+}
+.careerGrey .bgWrap .contentBlock ul li:after, .cultureWrap .bgWrap .contentBlock ul li:after {
+  position: absolute;
+  background: #3d3d3d;
+  content: "";
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  top: 10px;
+  border-radius: 50%;
+}
+.careerGrey .bgWrap .contentBlock ol, .cultureWrap .bgWrap .contentBlock ol {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  max-width: 66%;
+  margin: auto;
+}
+@media (max-width: 767px) {
+  .careerGrey .bgWrap .contentBlock ol, .cultureWrap .bgWrap .contentBlock ol {
+    max-width: 100%;
+    padding-left: 27px;
+  }
+}
+.careerGrey .bgWrap .contentBlock ol li, .cultureWrap .bgWrap .contentBlock ol li {
+  width: 50%;
+  font-size: 20px;
+  position: relative;
+  color: #3d3d3d;
+  margin-bottom: 7px;
+}
+@media (max-width: 1023px) {
+  .careerGrey .bgWrap .contentBlock ol li, .cultureWrap .bgWrap .contentBlock ol li {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .careerGrey .bgWrap .contentBlock ol li, .cultureWrap .bgWrap .contentBlock ol li {
+    width: 100%;
+  }
+}
+.careerGrey .bgWrap .contentBlock ol li:after, .cultureWrap .bgWrap .contentBlock ol li:after {
+  position: absolute;
+  background: #3d3d3d;
+  content: "";
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  top: 10px;
+  border-radius: 50%;
+}
+.careerGrey .bgWrap .contentBlock ol + p, .cultureWrap .bgWrap .contentBlock ol + p {
+  margin-top: 23px;
+}
+.careerGrey .bgWrap .contentBlock ol + p b, .cultureWrap .bgWrap .contentBlock ol + p b {
+  margin-top: 23px;
 }
 .careerGrey .bgWrap p, .cultureWrap .bgWrap p {
   font-size: 18px;
@@ -9200,9 +9318,13 @@ footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;
-  padding: 25px 0 20px 0;
+  padding: 20px 0;
   margin: 40px -45px 0 -45px;
 }
 @media (max-width: 1279px) {
@@ -9338,7 +9460,7 @@ footer {
 }
 .careerGrey .bgWrap .empStory, .cultureWrap .bgWrap .empStory {
   display: block;
-  margin: 90px -45px 0 -45px;
+  margin: 50px -45px 0 -45px;
 }
 @media (max-width: 1279px) {
   .careerGrey .bgWrap .empStory, .cultureWrap .bgWrap .empStory {
@@ -9394,7 +9516,7 @@ footer {
   }
 }
 .careerGrey .bgWrap .empStory .empStoryImg img, .cultureWrap .bgWrap .empStory .empStoryImg img {
-  margin: 45px 0px;
+  margin: 0px;
 }
 @media (max-width: 1279px) {
   .careerGrey .bgWrap .empStory .empStoryImg img, .cultureWrap .bgWrap .empStory .empStoryImg img {
@@ -9464,12 +9586,22 @@ footer {
   font-size: 20px;
   color: #666666;
 }
+@media (max-width: 1023px) {
+  .careerGrey .bgWrap .empStory .empStoryCont p b, .cultureWrap .bgWrap .empStory .empStoryCont p b {
+    font-size: 18px;
+  }
+}
 
 .cultureWrap {
-  margin-bottom: 100px;
+  margin-bottom: 0px;
+}
+@media (max-width: 1279px) {
+  .cultureWrap {
+    margin-bottom: 100px;
+  }
 }
 .cultureWrap .bgWrap {
-  padding: 23px 80px 65px 81px;
+  padding: 23px 80px 170px 81px;
 }
 @media (max-width: 1279px) {
   .cultureWrap .bgWrap {
@@ -9496,6 +9628,11 @@ footer {
 }
 .cultureWrap .bgWrap .cultureBlk p {
   font-size: 20px;
+}
+@media (max-width: 1023px) {
+  .cultureWrap .bgWrap .cultureBlk p {
+    font-size: 18px;
+  }
 }
 .cultureWrap .bgWrap .cultureBlk p b {
   font-size: 20px;
@@ -9545,12 +9682,23 @@ footer {
     margin-bottom: 19px;
   }
 }
+.cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent h4 {
+  font-size: 24px;
+  margin-bottom: 21px;
+}
+@media (max-width: 1023px) {
+  .cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
 .cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent p {
   color: #3d3d3d;
+  margin-bottom: 22px;
 }
 @media (max-width: 1279px) {
   .cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent p {
-    margin-bottom: 0;
+    margin-bottom: 15px;
   }
 }
 .cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent p b {
@@ -9586,6 +9734,11 @@ footer {
   .cultureWrap .bgWrap .cultureBlk .cultureSingle.imgRgt .cultureContent p {
     padding-right: 20px;
     text-align: right;
+  }
+}
+@media (max-width: 767px) {
+  .cultureWrap .bgWrap .cultureBlk .cultureSingle.imgRgt .cultureContent p {
+    text-align: left;
   }
 }
 .cultureWrap .bgWrap .browsePos {

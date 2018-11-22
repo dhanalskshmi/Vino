@@ -576,14 +576,18 @@
             p{
                 b,strong{
                     display: block;
-                    margin-top: 46px;
-                    margin-bottom: 27px;
+                    margin-top: 35px;
+                    margin-bottom: 18px;
+                    font-size: 24px;
+                    line-height: initial;
                     @include bp(landscape){
                         margin-top: 27px;
                         margin-bottom: 20px;
                     }
                     @include bp(tablet){
-                        margin-top: 19px;
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                        margin-top: 15px;
                     }
                     @include bp(mobile){
                         margin-top: 30px;
@@ -591,17 +595,84 @@
                 }
             }
             ul{
+                width: 100%;
+                padding-left: 27px;
                 @include bp(landscape){
                     margin-top: 33px;
                 }
                 @include bp(tablet){
-                    margin-top: 31px;
+                    margin-top: 15px;
                 }
                 @include bp(mobile){
-                    margin-top: 27px;
+                    margin-top: 15px;
                 }
                 + p{
-                    margin-top: 20px;
+                    b{
+                        margin-top: 23px;
+                        @include bp(tablet){
+                            margin-top: 15px;
+                        }
+                    }
+                }
+                li{
+                    font-size: 20px;
+                    position: relative;
+                    color: #3d3d3d;
+                    width: 100%;
+                    margin-bottom: 7px;
+                    @include bp(tablet){
+                        font-size: 18px;
+                    }
+                    &:after{
+                        position: absolute;
+                        background: #3d3d3d;
+                        content: '';
+                        left: -10px;
+                        width: 5px;
+                        height: 5px;
+                        top: 10px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            ol{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 66%;
+                margin: auto;
+                @include bp(mobile){
+                    max-width: 100%;
+                    padding-left: 27px;
+                }
+                li{
+                    width: 50%;
+                    font-size: 20px;
+                    position: relative;
+                    color: #3d3d3d;
+                    margin-bottom: 7px;
+                    @include bp(tablet){
+                        font-size: 18px;
+                    }
+                    @include bp(mobile){
+                        width: 100%;
+                    }
+                    &:after{
+                        position: absolute;
+                        background: #3d3d3d;
+                        content: '';
+                        left: -10px;
+                        width: 5px;
+                        height: 5px;
+                        top: 10px;
+                        border-radius: 50%;
+                    }
+                }
+                + p{
+                    margin-top: 23px;
+                    b{
+                        margin-top: 23px;
+                    }
                 }
             }
         }
@@ -623,9 +694,10 @@
         }
         .browsePos {
             display: flex;
+            align-items: center;
             border-top: 1px solid #666666;
             border-bottom: 1px solid #666666;
-            padding: 25px 0 20px 0;
+            padding: 20px 0;
             margin: 40px -45px 0 -45px;
             @include bp(landscape) {
                 margin: 0;
@@ -712,7 +784,7 @@
         }
         .empStory {
             display: block;
-            margin: 90px -45px 0 -45px;
+            margin: 50px -45px 0 -45px;
             @include bp(landscape) {
                 margin: 26px 0;
             }
@@ -752,7 +824,7 @@
                     margin-right: 0;
                 }
                 img {
-                    margin: 45px 0px;
+                    margin: 0px;
                     @include bp(landscape) {
                         margin-bottom: 0;
                     }
@@ -800,6 +872,9 @@
                     b {
                         font-size: 20px;
                         color: #666666;
+                        @include bp(tablet){
+                            font-size: 18px;
+                        }
                     }
                 }
             }
@@ -809,9 +884,12 @@
 
 .cultureWrap {
     @extend .careerGrey;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
+    @include bp(landscape){
+        margin-bottom: 100px;
+    }
     .bgWrap {
-        padding: 23px 80px 65px 81px;
+        padding: 23px 80px 170px 81px;
         @include bp(landscape) {
             padding: 23px 19px 24px 20px;
         }
@@ -832,6 +910,9 @@
         .cultureBlk {
             p{
                 font-size: 20px;
+                @include bp(tablet){
+                    font-size: 18px;
+                }
                 b{
                     font-size: 20px;
                     @include bp(landscape){
@@ -862,10 +943,19 @@
                     }
                 }
                 .cultureContent {
+                    h4{
+                        font-size: 24px;
+                        margin-bottom: 21px;
+                        @include bp(tablet){
+                            font-size: 20px;
+                            margin-bottom: 15px;
+                        }
+                    }
                     p {
                         color: #3d3d3d;
+                        margin-bottom: 22px;
                         @include bp(landscape){
-                            margin-bottom: 0;
+                            margin-bottom: 15px;
                         }
                         b{
                             font-size: 20px;
@@ -891,6 +981,9 @@
                             @include bp(tablet){
                                 padding-right: 20px;
                                 text-align: right;
+                            }
+                            @include bp(mobile){
+                                text-align: left;
                             }
                         }
                     }
