@@ -485,7 +485,7 @@ ul {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 a:focus, a:hover {
   text-decoration: none;
@@ -496,7 +496,7 @@ button, input, textarea {
   border: none;
   outline: none;
   border-radius: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -506,7 +506,7 @@ button {
 
 a {
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 a:active, a:focus {
   -webkit-transition: all 0.3s;
@@ -3976,8 +3976,8 @@ footer {
 }
 .bankingServices li .imgBlock::after {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.45)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.45)));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.45) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   position: absolute;
   bottom: 0;
@@ -14774,24 +14774,43 @@ table.checking tbody tr td:nth-child(1):hover a {
     overflow-x: visible;
   }
 }
-.categoryBlock.digitalService .heroBg {
+.digitalService .heroBg {
   min-height: auto;
   padding-bottom: 10px;
 }
 @media (min-width: 1280px) {
-  .categoryBlock.digitalService .heroBg p {
+  .digitalService .heroBg p {
     margin-bottom: 10px;
   }
 }
-.categoryBlock.digitalService .service-section {
+.digitalService .service-section {
   margin: 0;
 }
-.categoryBlock.digitalService .service-section ul {
+.digitalService .service-section ul {
   padding: 0;
   margin: 0;
 }
-.categoryBlock.digitalService .service-section ul li {
+.digitalService .service-section ul li {
   list-style: none;
+}
+@media (min-width: 1280px) {
+  .digitalService .service-section ul li {
+    width: 22.334%;
+    margin-right: 2.58%;
+  }
+}
+.digitalService .service-section .ratesCatg ul li {
+  width: 30.334%;
+  margin-right: 2.58%;
+}
+@media (max-width: 767px) {
+  .digitalService .service-section .ratesCatg ul li {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.digitalService .service-section .ratesCatg ul li:nth-child(4) {
+  margin-top: 50px;
 }
 
 .ctaButton {
@@ -14840,6 +14859,13 @@ table.checking tbody tr td:nth-child(1):hover a {
   .ctaButton + .categoryApp {
     margin-top: 15px;
   }
+}
+
+.justify-flex-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .persLending .greyPanel .bgWrap {

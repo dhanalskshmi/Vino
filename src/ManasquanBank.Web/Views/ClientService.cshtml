@@ -24,9 +24,9 @@
     }
 }
 <section class="heroBanner"></section>
-<section class="heroBlock csheorBlk" id="sliders-container">
+<section class="heroBlock csheorBlk digitalService" id="sliders-container">
     <div class="containerWrapper">
-        <div class="bgWrap">
+        <div class="bgWrap heroBg">
             @if (!string.IsNullOrEmpty(title))
             {
                 <h2>@title</h2>
@@ -37,7 +37,7 @@
             }
         </div>
             <div class="service-section">
-                <div class="bgWrap">
+                
                     @if (Model.Content.HasValue("service"))
                     {
                         foreach (var item in services)
@@ -120,10 +120,7 @@
                             }
                         }
                     }
-                </div>
-            </div>
-
-        
+                </div>   
     </div>
 </section>
 <section class="ctaButton">
