@@ -211,7 +211,7 @@
                 @if (!string.IsNullOrEmpty(phoneNumber))
                 {	
                 	<h3>Phone:</h3>
-                    <p><a href="tel:@phoneNumber">@phoneNumber </a></p>
+                    <p><a href="tel:@phoneNumber.Replace(" ", "")">@phoneNumber </a></p>
                 }
                 @if (!string.IsNullOrEmpty(routingNumber))
                 {	

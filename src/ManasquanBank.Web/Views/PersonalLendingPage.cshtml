@@ -126,7 +126,7 @@
                                 {
                                     if (link.Target == "_blank")
                                     {
-                                        <a href="tel:@link.Url" target="_blank">
+                                        <a href="tel:@link.Url.Replace(" ", "")" target="_blank">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -145,7 +145,7 @@
                                     }
                                     else
                                     {
-                                        <a href="tel:@link.Url">
+                                        <a href="tel:@link.Url.Replace(" ", "")">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -273,11 +273,11 @@
 
                                     @if (!string.IsNullOrEmpty(officeNo))
                                     {
-                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Phone Icon"> Office:<a href="tel:@officeNo">@officeNo</a></p>
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Phone Icon"> Office:<a href="tel:@officeNo.Replace(" ", "")">@officeNo</a></p>
                                     }
                                     @if (!string.IsNullOrEmpty(cellPhone))
                                     {
-                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Mobile Icon"> Cell Phone: <a href="tel:@cellPhone">@cellPhone</a></p>
+                                        <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Mobile Icon"> Cell Phone: <a href="tel:@cellPhone.Replace(" ", "")">@cellPhone</a></p>
                                     }
                                     
                                 </div>
@@ -431,12 +431,12 @@
                                         }
                                         @if (!string.IsNullOrEmpty(constructionOfficeNo))
                                         {
-                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Phone Icon"> Office: <a href="tel:@constructionOfficeNo">@constructionOfficeNo</a></p>
+                                            <p class="profPhone"><img src="/images/personal-lending/phone-icon.png" alt="Phone Icon"> Office: <a href="tel:@constructionOfficeNo.Replace(" ", "")">@constructionOfficeNo</a></p>
                                         }
                                         @if (!string.IsNullOrEmpty(constructionCellPhone))
                                         {
                                             <p class="profPhone">
-                                                <img src="/images/personal-lending/phone-icon.png" alt="Cell Phone Icon"> Cell Phone: <a href="tel:@constructionCellPhone">@constructionCellPhone</a>
+                                                <img src="/images/personal-lending/phone-icon.png" alt="Cell Phone Icon"> Cell Phone: <a href="tel:@constructionCellPhone.Replace(" ", "")">@constructionCellPhone</a>
 </p>
                                         }
 

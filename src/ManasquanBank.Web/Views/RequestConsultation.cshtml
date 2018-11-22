@@ -152,7 +152,7 @@
                                 {
                                     if (link.Target == "_blank")
                                     {
-                                        <a href="tel:@link.Url" target="_blank">
+                                        <a href="tel:@link.Url.Replace(" ", "")" target="_blank">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -171,7 +171,7 @@
                                     }
                                     else
                                     {
-                                        <a href="tel:@link.Url">
+                                        <a href="tel:@link.Url.Replace(" ", "")">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -260,7 +260,7 @@
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="loanPurpose">Purpose of loan</label>
                                         <select name="loanPurpose" id="loanPurpose" class="form-control selectBox" data-default="">
-                                            <option value=""></option>
+                                            <option value="">Choose Purpose of loan</option>
                                             @if (purposeOfLoanList.Length > 0)
                                             {
                                                 for (int i = 0; i < purposeOfLoanList.Length; i++)
@@ -275,7 +275,7 @@
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="loanOfficer">Loan officer</label>
                                         <select name="loanOfficer" id="loanOfficer" class="form-control selectBox" data-default="">
-                                            <option value=""></option>
+                                            <option value="">Choose Loan Officer</option>
                                             @if (loanOfficerList.Length > 0)
                                             {
                                                 for (int j = 0; j < loanOfficerList.Length; j++)

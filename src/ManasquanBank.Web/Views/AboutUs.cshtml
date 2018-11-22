@@ -183,7 +183,7 @@
                                 {
                                     if (link.Target == "_blank")
                                     {
-                                        <a href="tel:@link.Url" target="_blank">
+                                        <a href="tel:@link.Url.Replace(" ", "")" target="_blank">
                                             <span class="heroLinksImage">
                                                 @if (iconImage != null)
                                                 {
@@ -204,7 +204,7 @@
                                     }
                                     else
                                     {
-                                        <a href="tel:@link.Url">
+                                        <a href="tel:@link.Url.Replace(" ", "")">
                                             <span class="heroLinksImage">
                                             @if (iconImage != null)
                                             {

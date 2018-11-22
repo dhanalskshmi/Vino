@@ -316,7 +316,7 @@
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="department">Department</label>
                                         <select name="department" title="Department" id="department" class="form-control selectBox"  required="">
-                                            <option value=""></option>
+                                            <option value="">Choose Department</option>
 
                                             @foreach (var deptName in departmentList)
                                             {
@@ -335,7 +335,7 @@
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="employee">Employee</label>
                                         <select name="employee" title="Employee" id="employee" class="form-control selectBox"  required="">
-                                            <option value=""></option>
+                                            <option value="">Select Employee</option>
                                             @foreach (var emplist in employeeList)
                                             {
                                                 if (emplist.employeeName == Request.QueryString["employee"])
@@ -390,7 +390,7 @@
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="state">State</label>
                                         <select name="state" title="State" id="state" class="form-control selectBox" data-default="" required="">
-                                            <option value="">-Select State-</option>
+                                            <option value="">Select State</option>
 
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
@@ -404,7 +404,7 @@
                                     <div class="form-group col-lg-6 col-xs-12 nopadding">
                                         <label for="country">Country</label>
                                         <select name="country" title="Country" id="country" class="form-control selectBox" data-default="United States" required="">
-                                            <option value="" data-rel="">-Select Country-</option>
+                                            <option value="" data-rel="">Select Country</option>
 
                                         </select>
                                         <span class="errorSpan vd f-error">*</span>
