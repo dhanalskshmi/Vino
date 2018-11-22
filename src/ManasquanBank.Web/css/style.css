@@ -9257,7 +9257,7 @@ footer {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   max-width: 66%;
-  margin: auto;
+  padding-left: 27px;
 }
 @media (max-width: 767px) {
   .careerGrey .bgWrap .contentBlock ol, .cultureWrap .bgWrap .contentBlock ol {
@@ -9749,7 +9749,7 @@ footer {
   }
 }
 .cultureWrap .bgWrap .browsePos {
-  margin: 63px 0 0 0;
+  margin: 0;
 }
 @media (max-width: 1279px) {
   .cultureWrap .bgWrap .browsePos {
@@ -9799,7 +9799,7 @@ footer {
 }
 .cultureWrap .bgWrap .br-line {
   display: block;
-  margin: 57px 0;
+  margin: 50px 0;
   border-top: 1px solid #666666;
 }
 @media (max-width: 1279px) {
@@ -14931,17 +14931,27 @@ table.checking tbody tr td:nth-child(1):hover a {
 .digitalService .service-section ul li span {
   margin-top: 30px;
 }
-.digitalService .service-section .ratesCatg ul li {
+.digitalService .service-section .ratesService ul {
+  width: 85%;
+  margin: auto;
+}
+@media (max-width: 1279px) {
+  .digitalService .service-section .ratesService ul {
+    margin: 0;
+    width: 100%;
+  }
+}
+.digitalService .service-section .ratesService ul li {
   width: 30.334%;
   margin-right: 2.58%;
 }
 @media (max-width: 767px) {
-  .digitalService .service-section .ratesCatg ul li {
+  .digitalService .service-section .ratesService ul li {
     width: 100%;
     margin-right: 0;
   }
 }
-.digitalService .service-section .ratesCatg ul li:nth-child(4) {
+.digitalService .service-section .ratesService ul li:nth-child(4) {
   margin-top: 50px;
 }
 

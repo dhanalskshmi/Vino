@@ -1308,8 +1308,14 @@ table {
           }
         }
       }
-      .ratesCatg{
+      .ratesService{
         ul{
+          width: 85%;
+          margin: auto;
+          @include bp(landscape){
+            margin: 0;
+            width: 100%;
+          }
           li{
             width: 30.334%;
             margin-right: 2.58%;

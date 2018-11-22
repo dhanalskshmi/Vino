@@ -640,7 +640,7 @@
                 justify-content: space-between;
                 flex-wrap: wrap;
                 max-width: 66%;
-                margin: auto;
+                padding-left: 27px;
                 @include bp(mobile){
                     max-width: 100%;
                     padding-left: 27px;
@@ -991,7 +991,7 @@
             }
         }
         .browsePos {
-            margin: 63px 0 0 0;
+            margin: 0;
             @include bp(landscape) {
                 margin: 21px 0 0 0;
             }
@@ -1021,7 +1021,7 @@
         }
         .br-line {
             display: block;
-            margin: 57px 0;
+            margin: 50px 0;
             border-top: 1px solid #666666;
             @include bp(landscape) {
                 margin: 35px 0;
