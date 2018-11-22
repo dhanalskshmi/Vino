@@ -38,10 +38,17 @@
     <section class="heroBlock" id="sliders-container">
         <div class="containerWrapper">
             <div class="bgWrap">
-                @if (!string.IsNullOrEmpty(title))
-            {
+@if (Request.QueryString["report"] != "true")
+{
+                if (!string.IsNullOrEmpty(title))
+                {
                     <h2>@title</h2>
-                }
+    }
+}
+else
+{
+    <h2>Report Lost or Stolen Card</h2>
+}
                 @if (!string.IsNullOrEmpty(content))
             {
                     @Html.Raw(content)
