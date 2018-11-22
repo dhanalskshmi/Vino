@@ -86,7 +86,12 @@
 						display: block;
 						margin: 0 auto;
 						@include bp(landscape){
-							max-width: 40px;
+							max-width: 75%;
+							max-height: 75%;
+						}
+						@include bp(landscape){
+							max-width: 60%;
+							max-height: 60%;
 						}
 					}
 				}
