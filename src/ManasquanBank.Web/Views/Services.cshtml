@@ -46,8 +46,8 @@
             <div class="bgWrap clients">
                 @if (services != null)
                 {
-                    
-                    <ul class="justify-flex-center">
+                    int count = services.Count();
+                    <ul class="@((count <= 3)? "justify-flex-center" : "")">
                         
                         @foreach (var tile in services)
                         {
