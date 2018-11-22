@@ -9638,6 +9638,7 @@ footer {
 }
 .cultureWrap .bgWrap .cultureBlk p {
   font-size: 20px;
+  color: #3d3d3d;
 }
 @media (max-width: 1023px) {
   .cultureWrap .bgWrap .cultureBlk p {
@@ -9695,6 +9696,7 @@ footer {
 .cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent h4 {
   font-size: 24px;
   margin-bottom: 21px;
+  color: #3d3d3d;
 }
 @media (max-width: 1023px) {
   .cultureWrap .bgWrap .cultureBlk .cultureSingle .cultureContent h4 {

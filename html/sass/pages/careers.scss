@@ -911,6 +911,7 @@
         .cultureBlk {
             p{
                 font-size: 20px;
+                color: #3d3d3d;
                 @include bp(tablet){
                     font-size: 18px;
                 }
@@ -947,6 +948,7 @@
                     h4{
                         font-size: 24px;
                         margin-bottom: 21px;
+                        color: #3d3d3d;
                         @include bp(tablet){
                             font-size: 20px;
                             margin-bottom: 15px;
