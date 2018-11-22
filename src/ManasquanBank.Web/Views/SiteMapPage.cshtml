@@ -41,8 +41,6 @@
                             {
                                 foreach (var node in LeftNavigation)
                                 {
-
-                                    //var tittle = CurrentNode.Name;
                                     var CurrentNode = node;
                                     var CurrentNodehideFromSitemap = Umbraco.TypedContent(CurrentNode.Id);
                                     if (!string.IsNullOrEmpty(CurrentNode.Name))
