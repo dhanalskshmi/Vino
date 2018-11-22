@@ -850,6 +850,7 @@
     <Content Include="Views\ClickSWITCH.cshtml" />
     <Content Include="Views\CharitableFoundation.cshtml" />
     <Content Include="Views\Partials\Speedbump.cshtml" />
+    <Content Include="Views\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
@@ -880,7 +881,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>40655</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

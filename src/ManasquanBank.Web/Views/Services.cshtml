@@ -1,0 +1,678 @@
+﻿@using Umbraco.Core.Logging
+@using umbraco.MacroEngines
+@using RJP.MultiUrlPicker.Models
+@using Newtonsoft.Json
+@using Umbraco.Web.Extensions
+@using System.Linq
+@using System.Text.RegularExpressions;
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var heroImage = Model.Content.GetPropertyValue<IPublishedContent>("heroImage");
+    var title = Model.Content.GetPropertyValue<string>("title");
+    var description = Model.Content.GetPropertyValue<string>("description");
+    var productAndService = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("productAndService");
+    var services = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("service");
+    var cTAButton = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("cTAButton");
+}
+@section BackgroundImage {
+    @if (heroImage != null)
+    {
+        <div class="fixedBg fade out" style="background-image: url('@heroImage.Url')">
+            @*<img src="images/body_bg.jpg" alt="">*@
+        </div>
+    }
+}
+<section class="heroBanner">
+  
+</section>
+<section class="heroBlock tableClass categoryBlock digitalService">
+    <div class="containerWrapper">
+        <div class="bgWrap heroBg">
+            @if (!string.IsNullOrEmpty(title))
+            {
+                <h2>@title</h2>
+            }
+            @if (!string.IsNullOrEmpty(description))
+            {
+                @Html.Raw(description)
+            }
+            
+        </div>
+        <div class="service-section">
+            <div class="bgWrap clients">
+                @if (services != null)
+                {
+                    <ul>
+
+                        @foreach (var tile in services)
+                        {
+                            var icons = tile.GetPropertyValue<IPublishedContent>("icons");
+                            var descriptors = tile.GetPropertyValue<string>("iconDescriptors");
+                            var link = tile.GetPropertyValue<Link>("clientServiceLink");
+
+                            <li>
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            @if (icons != null)
+                                            {
+                                                <figure>
+                                                    <img src="@icons.Url" alt="@descriptors" />
+                                                </figure>
+                                            }
+                                            @if (!string.IsNullOrEmpty(descriptors))
+                                            {
+                                                <span>@descriptors</span>
+                                            }
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            @if (icons != null)
+                                            {
+                                                <figure>
+                                                    <img src="@icons.Url" alt="@descriptors" />
+                                                </figure>
+                                            }
+                                            @if (!string.IsNullOrEmpty(descriptors))
+                                            {
+                                                <span>@descriptors</span>
+                                            }
+                                        </a>
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (icons != null)
+                                    {
+                                        <figure>
+                                            <img src="@icons.Url" alt="@descriptors" />
+                                        </figure>
+                                    }
+                                    if (!string.IsNullOrEmpty(descriptors))
+                                    {
+                                        <span>@descriptors</span>
+                                    }
+                                }
+                            </li>
+                        }
+
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@if (Model.Content.HasValue("productAndService"))
+{
+    var flag = false;
+    foreach (var product in productAndService)
+    {
+        var productImage = product.GetPropertyValue<IPublishedContent>("productImage");
+        var productTitle = product.GetPropertyValue<string>("productTitle");
+        var productDescription = product.GetPropertyValue<string>("productDescription");
+        var phoneNo = product.GetPropertyValue<string>("phoneNo");
+        var featuresList = product.GetPropertyValue<string>("featuresList");
+        var learnMore = product.GetPropertyValue<Link>("learnMore");
+        var branchLocator = product.GetPropertyValue<Link>("branchLocator");
+        var applyNow = product.GetPropertyValue<Link>("applyNow");
+
+        string scrollId = productTitle.Replace(" ", "").ToLower().Trim();
+        string[] chars = new string[] { ",", ".", "/", "!", "@", "#", "$", "%", "^", "&", "*", "'", "\"", ";", "_", "(", ")", ":", "|", "[", "]", "®" };
+        for (int i = 0; i < chars.Length; i++)
+        {
+            if (scrollId.Contains(chars[i]))
+            {
+                scrollId = scrollId.Replace(chars[i], "");
+            }
+        }
+
+
+        if (flag == false)
+        {
+            <section class="categorySection" id="@scrollId">
+                <div class="containerWrapper">
+                    <div class="bgWrap">
+                        <div class="flexWrap">
+                            @if (productImage != null)
+                            {
+                                <div class="imgSection" style="background-image:url(@productImage.Url);">
+                                </div>
+                            }
+                            <div class="contentSection">
+                                @if (!string.IsNullOrEmpty(productTitle))
+                                {
+                                    <h2>@productTitle</h2>
+                                }
+                                @if (!string.IsNullOrEmpty(productDescription))
+                                {
+                                    @Html.Raw(productDescription)
+                                }
+
+                                <div class="contentBottom">
+                                    <div class="icon-section">
+                                        @if (!string.IsNullOrEmpty(phoneNo))
+                                        {
+                                            <a href="tel:@phoneNo.Replace(" ", "")">
+                                                <span>
+                                                    <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon" />
+                                                    <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Phone Icon Mobile View" />
+
+                                                </span>
+                                                <span class="text">
+                                                    @phoneNo
+                                                </span>
+                                            </a>
+                                        }
+                                        @if (branchLocator != null)
+                                        {
+                                            if (branchLocator.Target == "_blank")
+                                            {
+                                                <a href="@branchLocator.Url" class="location" target="_blank">
+                                                    <span>
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon Mobile View" />
+                                                    </span>
+                                                    <span class="text">
+                                                        @branchLocator.Name
+                                                    </span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@branchLocator.Url" class="location">
+                                                    <span>
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon Mobile View" />
+
+                                                    </span>
+                                                    <span class="text">
+                                                        @branchLocator.Name
+                                                    </span>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                    @if (applyNow != null)
+                                    {
+                                        if (applyNow.Target == "_blank")
+                                        {
+                                            <a href="@applyNow.Url" target="_blank" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@applyNow.Url" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
+                                        }
+
+                                    }
+
+                                    @if (!string.IsNullOrEmpty(featuresList))
+                                    {
+                                        <a class="learnBtn">
+                                            <span>More</span> <img src="/images/careers/down-arrow.png" alt="learn-arrow" />
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        if (learnMore != null)
+                                        {
+                                            if (learnMore.Target == "_blank")
+                                            {
+                                                <a href="@learnMore.Url" target="_blank" class="learnBtn lmoBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More button" />
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@learnMore.Url" class="learnBtn lmoBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More Button" />
+                                                </a>
+                                            }
+                                        }
+                                    }
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(featuresList))
+                    {
+                        <div class="bgWrap colbgWrap">
+                            <div class="catCollapse">
+                                @Html.Raw(featuresList)
+                                <div class="catLearn">
+                                    @if (learnMore != null)
+                                    {
+                                        if (learnMore.Target == "_blank")
+                                        {
+                                            <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow-blue.png" alt="Learn Arrow" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@learnMore.Url">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow-blue.png" alt="Learn Arrow" />
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </section>
+            flag = true;
+        }
+        else if (flag == true)
+        {
+            <section class="categorySection rightImg" id="@scrollId">
+                <div class="containerWrapper">
+                    <div class="bgWrap">
+                        <div class="flexWrap">
+                            @if (productImage != null)
+                            {
+                                <div class="imgSection" style="background-image:url(@productImage.Url);">
+                                </div>
+                            }
+                            <div class="contentSection">
+                                @if (!string.IsNullOrEmpty(productTitle))
+                                {
+                                    <h2>@productTitle</h2>
+                                }
+                                @if (!string.IsNullOrEmpty(productDescription))
+                                {
+                                    @Html.Raw(productDescription)
+                                }
+
+                                <div class="contentBottom">
+                                    <div class="icon-section">
+                                        @if (!string.IsNullOrEmpty(phoneNo))
+                                        {
+                                            <a href="tel:@phoneNo">
+                                                <span>
+                                                    <img src="/images/category-detail/phone-icon.png" class="deskView" alt="Phone Icon Desktop View" />
+                                                    <img src="/images/category-detail/phone-icon.png" class="otherView" alt="Mobile Phone Icon" />
+
+                                                </span>
+                                                <span class="text">
+                                                    @phoneNo
+                                                </span>
+                                            </a>
+                                        }
+                                        @if (branchLocator != null)
+                                        {
+                                            if (branchLocator.Target == "_blank")
+                                            {
+                                                <a href="@branchLocator.Url" target="_blank" class="location">
+                                                    <span>
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Desktop View Location Icon" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Mobile Location Icon" />
+
+                                                    </span>
+                                                    <span class="text">
+                                                        @branchLocator.Name
+                                                    </span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@branchLocator.Url" class="location">
+                                                    <span>
+                                                        <img src="/images/category-detail/location-icon.png" class="deskView" alt="Location Icon Desktop" />
+                                                        <img src="/images/category-detail/location-icon.png" class="otherView" alt="Location Icon" />
+                                                    </span>
+                                                    <span class="text">
+                                                        @branchLocator.Name
+                                                    </span>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                    @if (applyNow != null)
+                                    {
+                                        if (applyNow.Target == "_blank")
+                                        {
+                                            <a href="@applyNow.Url" target="_blank" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@applyNow.Url" class="btnManasq applyBtn">
+                                                <span>@applyNow.Name</span>
+                                            </a>
+                                        }
+
+                                    }
+                                    @if (!string.IsNullOrEmpty(featuresList))
+                                    {
+                                        <a class="learnBtn">
+                                            <span>More</span> <img src="/images/careers/down-arrow.png" alt="learn arrow" />
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        if (learnMore != null)
+                                        {
+                                            if (learnMore.Target == "_blank")
+                                            {
+                                                <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More arrow" />
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@learnMore.Url" class="learnBtn">
+                                                    @learnMore.Name <img src="/images/category-detail/learn-arrow.png" alt="Learn More Arrow" />
+                                                </a>
+                                            }
+                                        }
+                                    }
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(featuresList))
+                    {
+                        <div class="bgWrap colbgWrap">
+                            <div class="catCollapse">
+                                @Html.Raw(featuresList)
+                                <div class="catLearn">
+                                    @if (learnMore != null)
+                                    {
+                                        if (learnMore.Target == "_blank")
+                                        {
+                                            <a href="@learnMore.Url" target="_blank" class="learnBtn">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow-blue.png" alt="Learn Arrow" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@learnMore.Url">
+                                                @learnMore.Name <img src="/images/category-detail/learn-arrow-blue.png" alt="Learn Arrow" />
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </section>
+            flag = false;
+        }
+
+    }
+}
+
+@if (cTAButton != null)
+{
+    int i = 0;
+    <section class="ctaButton">
+        <div class="containerWrapper">
+            <div class="bgWrap">
+                <ul class="heroLinks">
+                    @foreach (var CTA in cTAButton)
+                    {
+                        var cTAtitle = CTA.GetPropertyValue<string>("title");
+                        var iconImage = CTA.GetPropertyValue<IPublishedContent>("iconImage");
+                        var link = CTA.GetPropertyValue<Link>("link");
+
+                        if (i == 0)
+                        {
+                            <li class="find-us">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                            </li>
+                        }
+                        else if (i == 1)
+                        {
+                            <li class="client-service">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                            </li>
+                        }
+                        else if (i == 2)
+                        {
+                            <li class="call-us">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="find-us">
+                                @if (link != null)
+                                {
+                                    if (link.Target == "_blank")
+                                    {
+                                        <a href="@link.Url" target="_blank">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link.Url">
+                                            <span class="heroLinksImage">
+                                                @if (iconImage != null)
+                                                {
+                                                    <img src="@iconImage.Url" alt="@Umbraco.StripHtml(cTAtitle.ToString())">
+                                                }
+
+                                            </span>
+                                            <span class="heroLinksText">
+                                                @if (!string.IsNullOrEmpty(cTAtitle))
+                                                {
+                                                    @Html.Raw(cTAtitle)
+                                                }
+                                            </span>
+                                        </a>
+                                    }
+
+                                }
+                            </li>
+                        }
+
+                        i++;
+                    }
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+}
+
+
+@{
+            var appTitle = Model.Content.GetPropertyValue<string>("appTitle");
+            var appleStoreLink = Model.Content.GetPropertyValue<string>("appleStoreLink");
+            var googlePlayStoreLink = Model.Content.GetPropertyValue<string>("googlePlayStoreLink");
+            var appDescription = Model.Content.GetPropertyValue<string>("appDescription");
+            var appLogo = Model.Content.GetPropertyValue<IPublishedContent>("appLogo");
+}
+
+<section class="appPannel animatable categoryApp">
+    <div class="containerWrapper">
+        <div class="bgWraps">
+            <div class="appDetails">
+                @if (!string.IsNullOrEmpty(appTitle))
+                {
+                    <h2>@appTitle </h2>
+                }
+                @if (!string.IsNullOrEmpty(appDescription))
+                {
+                    @Html.Raw(appDescription)
+                }
+                <div class="appStores">
+                    <figure class="">
+                        <a href="@appleStoreLink" target="_blank">
+
+                            <img src="~/images/home/apple_app.png" alt="App Store Icon">
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="@googlePlayStoreLink" target="_blank">
+                            <img src="~/images/home/google_app.png" alt="Play Store Icon">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+            <figure class="imgDesg">
+                @if (appLogo != null)
+                {
+                    <img src="@appLogo.Url" alt="Mobile Icon">
+                }
+
+            </figure>
+        </div>
+    </div>
+</section>
+
