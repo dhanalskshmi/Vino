@@ -46,8 +46,9 @@
             <div class="bgWrap clients">
                 @if (services != null)
                 {
-                    <ul>
-
+                    
+                    <ul class="justify-flex-center">
+                        
                         @foreach (var tile in services)
                         {
                             var icons = tile.GetPropertyValue<IPublishedContent>("icons");
