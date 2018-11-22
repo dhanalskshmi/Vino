@@ -153,7 +153,7 @@
                     {
                         <p><a href="tel:@phone.Replace(" ", "")">@phone</a></p>
                     }
-                    <span class="directionLink"><a href="https://maps.google.com/maps?saddr=Current+Location&daddr=@getDirectionAddressText" target="_blank">Get Directions <img src="images/location/directionArrow.png" alt="Get Direction Link for @locationtitle" /></a></span>
+                    <span class="directionLink"><a href="https://maps.google.com/maps?saddr=Current+Location&daddr=@HttpUtility.UrlEncode(getDirectionAddressText)" target="_blank">Get Directions <img src="images/location/directionArrow.png" alt="Get Direction Link for @locationtitle" /></a></span>
                     <a class="viewButtonLink btnManasq" href="@loc.Url"><span>View Detail</span></a>
 </div>
         if (i % 3 == 2)

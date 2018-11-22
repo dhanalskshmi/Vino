@@ -62,11 +62,11 @@
                         }
                         @if (!string.IsNullOrEmpty(officeNumber))
                         {
-                            <p class="phoneNo"><img src="/images/bio/phone_icon.png">Office: <a href="tel:@officeNumber.Replace(" ", "")">@officeNumber</a></p>
+                            <p class="phoneNo"><img src="/images/bio/phone_icon.png" alt="Office Number Icon">Office: <a href="tel:@officeNumber.Replace(" ", "")">@officeNumber</a></p>
                         }
                         @if (!string.IsNullOrEmpty(phoneNumber))
                         {
-                            <p class="phoneNo"><img src="/images/bio/phone_icon.png">Cell Phone: <a href="tel:@phoneNumber.Replace(" ", "")">@phoneNumber</a></p>
+                            <p class="phoneNo"><img src="/images/bio/phone_icon.png" alt="Cell Phone Number Icon">Cell Phone: <a href="tel:@phoneNumber.Replace(" ", "")">@phoneNumber</a></p>
                         }
                         @if (Model.Content.HasValue("cTAButton"))
                         {
