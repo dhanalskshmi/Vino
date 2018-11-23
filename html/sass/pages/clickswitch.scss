@@ -195,28 +195,19 @@
 							font-size:18px;
 						}
 					}
-					button {
-						@extend .btnManasq;
-						font-size: 28px;
-						font-weight: 600;
-						margin-top: 11px;
-						border-radius: 18px;
-						border: 1px solid #fff;
-						margin-bottom: 35px;
-						display: block;
-						text-transform: uppercase;
-						a {
-							display: block;
-							color: #FFF;
-							padding: 12px 34px 12px 34px;
-							width: 110%;
-							margin-left: -9px;
-							&::after,
-							&::before {
-								display: none;
-							}
-						}
-					}
+				}
+				.btnManasq {
+					font-size: 28px;
+					font-weight: 600;
+					margin-top: 11px;
+					border-radius: 18px;
+					border: 2px solid #fff;
+					display: inline-block;
+					background: #1268e5;
+					margin-bottom: 35px;
+					text-transform: uppercase;
+					color: #FFF;
+					padding: 12px 34px 12px 34px;
 				}
 			}
 		}
